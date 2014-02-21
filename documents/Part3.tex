@@ -1,0 +1,30 @@
+\section{Algorithms}
+We can now present our algorithms. Both algorithms have the same skeleton:
+first, they enumerate the $k$ most promising subspaces. Then they apply the
+beam search in each subspace sequentially.
+
+\subsection{Top-k subgroups}
+
+Here is a rough sketch of the algorithm:
+\begin{verbatim}
+sigma <- largest weight in the graph
+cand  <- {}
+While less than k cliques found
+    Get partial graph G(sigma)
+    Find all cliques, append them to cand
+    Lower sigma
+\end{verbatim}
+
+\subsection{Diverse k subgroups}
+
+Here is a rough sketch of the algorithm:
+\begin{verbatim}
+sigma <- largest weight in the graph
+cand  <- {}
+While less than k cliques found
+    Get partial graph G(sigma)
+    Find all DISTINCT cliques, OVERWRITE cand 
+    Lower sigma
+\end{verbatim}
+
+As it turns out, \textbf{this is exactly the complete link algorithm}. Aha!

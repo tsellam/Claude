@@ -1,0 +1,57 @@
+\section{Preliminaries}
+\label{sec:preliminaries}
+
+\subsection{The problem}
+In this section, we introduce our notations and formalize Subgroup
+Discovery. We introduce two ``flavours'' of the problem. In
+the first variant, we seek the \emph{k best} subgroups. In the second one,
+we seek \emph{k diverse} sugroups.
+
+\subsubsection{Definitions}
+Consider a database $DB$. We use the expressions \emph{variable} and
+\emph{column} indifferently. The set $C_i \in \Gamma$
+represents the $|\Gamma|$ non-target variables, and $T$ represents the target
+variable.
+
+Our aim is to discover interesting sugroups. A subgroup is a set of tuples $G
+\in DB$, defined by a \emph{description} $d(G)$. In principle, the description
+is expressed in a language $L$ chosen by the user. In this paper, we restrict $L$
+to conjunctions (e.g., $\text{age} > 40 \wedge \text{size} < 180$). In other
+words,  $d(G)$ is a pattern. We denote $\gamma(G)$ the variables which appear
+in $d(G)$ (e.g., \{age, size\}).
+
+To evaluate a subgroup, we need a \emph{quality measure}. A quality measure is
+a function $\varphi : L \to \mathbb{R}^+ $. It assigns a score to each subgroup.
+By convention, higher is better.
+
+\subsubsection{Objective}
+We can now define our two problems. The first problem describes the ``usual'' Subgroup
+Discovery task:
+
+\begin{problem}
+    (Top-k subgroup discovery) Given a database $DB$, a quality measure
+    $\varphi$ and an integer $k$, find the $k$ best subgroups with regards to
+    $\varphi$.
+\end{problem}
+
+This approach is based on local criteria: the aim is to maximize the quality
+for each subgroup separately. As pointed out by out  \cite{van2011non}, this
+approach tends to produce highly redundant patterns sets. To avoid this, we use
+a \emph{global} approach: 
+
+\begin{problem}
+    (Diverse-k subgroup discovery) Given a database $DB$, a quality measure
+    $\varphi$ and an integer $k$, find a non redundant set of $k$ high quality subgroups
+\end{problem}
+
+As the authors of the original paper point out, defining redundancy 
+is non trivial. In our work, we consider that two subgroup are redundant when
+their \emph{description} overlap. [there are other definitions in the paper]
+
+\subsection{Quality measures}
+In this section, we describe a few usual quality measures. This includes (but
+isnot limited to ) the Weighted Relative Accuracy (WRAcc), the Weighted
+Kullback-Leibler divergence (WKL), the weighted Krimp gain (WKG).
+
+\subsection{Search strategies}
+In this section, we explain beam search and the alternatives.

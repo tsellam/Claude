@@ -4,23 +4,37 @@
 \usepackage{balance}
 \usepackage{algpseudocode}
 
+\newtheorem{definition}{Definition}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}
+
 \begin{document}
 
-\title{Awesome paper}
+\title{Very Fast Subgroup Discovery for Query Recommendation}
 
-\numberofauthors{1}
+\numberofauthors{2}
 \author{
 \alignauthor
 Thibault Sellam\\
        \affaddr{CWI}\\
        \email{thibault.sellam@cwi.nl}
 \alignauthor
+Emmanuel M\"uller\\
+       \affaddr{KIT}\\
+       \email{emmanuel.mueller@kit.edu}
 }
 
 \maketitle
 
+\input{Introduction}
+\input{Part1}
+\input{Part2}
+\input{Part3}
+\input{RelatedWorks}
+\input{Conclusion}
+
 \bibliographystyle{abbrv}
-\bibliography{template}  
+\bibliography{TurboGroups}  
 \balancecolumns
 
 \end{document}

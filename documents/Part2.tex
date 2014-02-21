@@ -1,0 +1,87 @@
+\section{Promising subspaces}
+
+\subsection{Subgroup quality and mutual information}
+First, we define the class of quality measures on which our work applies.
+\begin{definition}
+    Let $G$ describe any sugbroup based on the columns $C_0, \ldots, C_k \in
+    \gamma(G)$.  A quality measure $\varphi$ is \textbf{consistent} if and only if it grows
+    with $I(C_0, \ldots, C_k; T)$.  
+\end{definition}
+
+Recall that $I(T | C_0, \ldots, C_k) = H(T) - H(T | C_0, \ldots,C_k)$. In other
+words, this quantity describes \emph{the influence of the subgroup variables on
+the target}. If it is high, then the choice of variables is promising:
+conditionning on $C_0, \ldots,C_k$ reduces the uncertainety of the target
+variable.  A subgroup based on these variables is likely to reveal an
+``unusual'' distribution. If is is low, this indicates that there is little
+influence. Regardless of how we condition, the the subgroups cannot be very
+interesting.
+
+\begin{lemma}
+    The WKL is consistent. The WRAcc is \emph{not} consistent, but its absolute value
+    is. I stronly suspect that WKG gain is consistent, but this is hard to
+    prove.
+\end{lemma}
+
+These observations are fundamental: they allow us to \emph{decouple} subspace search and
+sugroup search. If a subspace scores high wrt. the mutual information, then it
+contains at least one interesting subgroup. Therefore, we operate in two
+phases. During the first phase, we enumerate $k$ promising subspaces. During the
+second phase, we explore these subspaces sequentially with a regular beam
+search.
+
+\subsection{Enumerating promising susbpaces}
+
+At this point we could create a naive algorithm: for every group of variables
+$C_0, \ldots,C_k$, compute $I(C_0, \ldots, C_k; T)$ and report the best $k$
+candidates.
+Unfortunately, this algorithm is highly unefficient. First, the search space is
+exponential with the number of variables. Second, the constant cost is huge:
+calculating $I(C_0, \ldots, C_k; T)$ requires a very expensive cross product of
+$k$ variables.
+
+[Actually, this is more or less the classic beam search algorithm!]
+
+Maximizing $I(C_0, \ldots, C_k; T)$ directly is difficult.  Instead, we propose
+to use a lower bound.
+
+\begin{lemma}
+    For any set of variables $C_0, \ldots, C_k$, the following property holds:
+    $$
+    I(C_0, \ldots, C_k; T) \geq \min_{i,j\in [0,k]} I(C_i, C_j ; T)
+    $$
+\end{lemma}
+
+\begin{proof}
+    We have $I(C_0, \ldots, C_k; T) = H(T) - H(T|C_0, \ldots, C_k)$ Recall that
+    conditioning reduces entropy. Therefore, for any $i,j$, we have $H(T|C_0,
+    \ldots, C_k) \leq H(T |C_i, C_j)$. Therefore, we have:
+    $I(C_0, \ldots, C_k; T) \geq H(T) - \max_{i,j\in [0,k]} H(T | C_i, C_j)$.
+    The final formula is obtained by using the definition of mutual
+    information.
+\end{proof}
+
+This lower bond is not very interesting if we want to know the exact value of
+$I(C_0, \ldots, C_k; T)$. However, it allows us to do some serious pruning.
+To explain how this works, we need to introduce a new construct: \emph{the
+co-influence graph}.
+
+\begin{definition}
+    The \textbf{co-influence graph} $\mathcal{G}$ is a weighted undirected
+    graph. Each node represents a variable $C_i$, and each edge between two
+    vertices $C_i$ and $C_j$ has a weight $I(C_i, C_j ; T)$.
+\end{definition}
+
+Intuitively, the graph represents which variables ``work well'' together. A
+heavy edge means that the joint distribution of the vertex-variables has a high impact on
+the target variable. From $\mathcal{G}$ we can derive the \textbf{partial
+co-influence graph} $\mathcal{G}(\sigma)$. This graph is a \emph{non weighted}
+undirected graph. It contains all the vertices of $\mathcal{G}$, and all the
+edges $\mathcal{G}$ with a weight greater than $\sigma$.
+
+\begin{lemma}
+    The variables $C_0, \ldots, C_k$ form a clique in $\mathcal{G}(\sigma)$ if
+    and only if $ I(C_0, \ldots, C_k; T) \geq \sigma$.
+\end{lemma}
+
+Thanks to this lemma, we have a conveninent way to identify promising subspaces.
