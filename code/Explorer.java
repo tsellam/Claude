@@ -79,6 +79,7 @@ public class Explorer {
 		
 	class Beam extends TreeSet<Rule> {
 		
+		private static final long serialVersionUID = 1L;
 		private int width;
 		
 		Beam(int width) {

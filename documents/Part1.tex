@@ -9,20 +9,20 @@ we seek \emph{k diverse} sugroups.
 
 \subsubsection{Definitions}
 Consider a database $DB$. We use the expressions \emph{variable} and
-\emph{column} indifferently. The set $C_i \in \Gamma$
+\emph{column} indifferently. The set $\Gamma$
 represents the $|\Gamma|$ non-target variables, and $T$ represents the target
 variable.
 
 Our aim is to discover interesting sugroups. A subgroup is a set of tuples $G
-\in DB$, defined by a \emph{description} $d(G)$. In principle, the description
-is expressed in a language $L$ chosen by the user. In this paper, we restrict $L$
-to conjunctions (e.g., $\text{age} > 40 \wedge \text{size} < 180$). In other
-words,  $d(G)$ is a pattern. We denote $\gamma(G)$ the variables which appear
-in $d(G)$ (e.g., \{age, size\}).
+\subset DB$, defined by a \emph{description} $d(G)$. In principle, the
+description is expressed in a language chosen by the user. In this paper, we
+restrict the language to conjunctions (e.g., $\text{age} > 40 \wedge
+\text{size} < 180$). We denote $\gamma(G)$ the variables which appear in $G$'s
+description (e.g., \{age, size\}).
 
 To evaluate a subgroup, we need a \emph{quality measure}. A quality measure is
-a function $\varphi : L \to \mathbb{R}^+ $. It assigns a score to each subgroup.
-By convention, higher is better.
+a function $\varphi : L \to \mathbb{R}$, where $L$ is the language. This
+function assigns a score to each subgroup.  By convention, higher is better.
 
 \subsubsection{Objective}
 We can now define our two problems. The first problem describes the ``usual'' Subgroup
@@ -50,7 +50,7 @@ their \emph{description} overlap. [there are other definitions in the paper]
 
 \subsection{Quality measures}
 In this section, we describe a few usual quality measures. This includes (but
-isnot limited to ) the Weighted Relative Accuracy (WRAcc), the Weighted
+is not limited to ) the Weighted Relative Accuracy (WRAcc), the Weighted
 Kullback-Leibler divergence (WKL), the weighted Krimp gain (WKG).
 
 \subsection{Search strategies}

@@ -1,11 +1,16 @@
 \section{Promising subspaces}
 
+Our framework Turbo Subgroup operates in two steps. During the first step, it
+identifies candidate subspaces.  During the second step, it scans each
+candidate to reveal the subgroups. In this section, we explain how to reveal
+the promising subspaces.
+
 \subsection{Subgroup quality and mutual information}
 First, we define the class of quality measures on which our work applies.
 \begin{definition}
-    Let $G$ describe any sugbroup based on the columns $C_0, \ldots, C_k \in
-    \gamma(G)$.  A quality measure $\varphi$ is \textbf{consistent} if and only if it grows
-    with $I(C_0, \ldots, C_k; T)$.  
+    Let $G$ describe any sugbroup based on the columns $\gamma(G) = \{C_0,
+\ldots, C_k\}$.  A quality measure $\varphi$ is \textbf{consistent} if and only
+if it grows with $I(C_0, \ldots, C_k; T)$.  
 \end{definition}
 
 Recall that $I(T | C_0, \ldots, C_k) = H(T) - H(T | C_0, \ldots,C_k)$. In other
@@ -25,12 +30,12 @@ interesting.
 
 These observations are fundamental: they allow us to \emph{decouple} subspace search and
 sugroup search. If a subspace scores high wrt. the mutual information, then it
-contains at least one interesting subgroup. Therefore, we operate in two
+contains at least one interesting subgroup. This is why we can operate in two
 phases. During the first phase, we enumerate $k$ promising subspaces. During the
 second phase, we explore these subspaces sequentially with a regular beam
 search.
 
-\subsection{Enumerating promising susbpaces}
+\subsection{Dececting promising susbpaces}
 
 At this point we could create a naive algorithm: for every group of variables
 $C_0, \ldots,C_k$, compute $I(C_0, \ldots, C_k; T)$ and report the best $k$
@@ -40,15 +45,13 @@ exponential with the number of variables. Second, the constant cost is huge:
 calculating $I(C_0, \ldots, C_k; T)$ requires a very expensive cross product of
 $k$ variables.
 
-[Actually, this is more or less the classic beam search algorithm!]
-
-Maximizing $I(C_0, \ldots, C_k; T)$ directly is difficult.  Instead, we propose
-to use a lower bound.
+Maximizing $I(C_0, \ldots, C_k; T)$ directly is difficult.  Instead, we can
+to use some bounds.
 
 \begin{lemma}
-    For any set of variables $C_0, \ldots, C_k$, the following property holds:
+    For any set of variables $C_0, \ldots, C_k, T$, the following property holds:
     $$
-    I(C_0, \ldots, C_k; T) \geq \min_{i,j\in [0,k]} I(C_i, C_j ; T)
+        I(C_0, \ldots, C_k; T) \geq \max_{i,j\in [0,k]} I(C_i, C_j ; T)
     $$
 \end{lemma}
 
@@ -56,14 +59,44 @@ to use a lower bound.
     We have $I(C_0, \ldots, C_k; T) = H(T) - H(T|C_0, \ldots, C_k)$ Recall that
     conditioning reduces entropy. Therefore, for any $i,j$, we have $H(T|C_0,
     \ldots, C_k) \leq H(T |C_i, C_j)$. Therefore, we have:
-    $I(C_0, \ldots, C_k; T) \geq H(T) - \max_{i,j\in [0,k]} H(T | C_i, C_j)$.
+    $I(C_0, \ldots, C_k; T) \geq H(T) - \min_{i,j\in [0,k]} H(T | C_i, C_j)$.
     The final formula is obtained by using the definition of mutual
     information.
 \end{proof}
 
-This lower bond is not very interesting if we want to know the exact value of
-$I(C_0, \ldots, C_k; T)$. However, it allows us to do some serious pruning.
-To explain how this works, we need to introduce a new construct: \emph{the
+Thanks to the chain rule, we can also obtain a higher bound:
+
+\begin{lemma}
+    For any set of variables $C_0, \ldots, C_k, T$, the following property holds:
+    \[ 
+    I(C_0, \ldots, C_k; T) \leq \min
+    \begin{cases}
+        H(T)\\
+        I(C_0, C_1) + H(C_2, C_3) + \ldots + H(C_{k-1}, C_k)
+    \end{cases}
+   \] 
+\end{lemma}
+
+\begin{proof}
+According to the chain rule, we have: 
+$$
+I(C_0, C_1, \ldots, C_k;T) = I(C_0, C_1 ; T) + I(C_2,\ldots,C_k ; T | C_0, C_1)
+$$
+By definition of the conditional mutual information, we have $I(X;Y|Z) \leq
+H(X)$ for any triplet of variables. Therefore:
+\[
+    I(C_2,\ldots,C_k ; T | C_0, C_1) \leq H(T)
+\]and also:
+\[
+    \begin{split}
+        I(C_2,\ldots,C_k ; T | C_0, C_1) & \leq H(C_2,\ldots,C_k)\\
+        & \leq H(C_2, C_3) + \ldots + H(C_{k-1},C_k)\\
+    \end{split}
+\]
+\end{proof}
+These bounds are not very interesting if we want to know the exact value of
+$I(C_0, \ldots, C_k; T)$. However, it allows us to do some pruning.
+To explain how this works, we introduce a new construct: \emph{the
 co-influence graph}.
 
 \begin{definition}
@@ -72,16 +105,10 @@ co-influence graph}.
     vertices $C_i$ and $C_j$ has a weight $I(C_i, C_j ; T)$.
 \end{definition}
 
+
 Intuitively, the graph represents which variables ``work well'' together. A
 heavy edge means that the joint distribution of the vertex-variables has a high impact on
 the target variable. From $\mathcal{G}$ we can derive the \textbf{partial
 co-influence graph} $\mathcal{G}(\sigma)$. This graph is a \emph{non weighted}
 undirected graph. It contains all the vertices of $\mathcal{G}$, and all the
 edges $\mathcal{G}$ with a weight greater than $\sigma$.
-
-\begin{lemma}
-    The variables $C_0, \ldots, C_k$ form a clique in $\mathcal{G}(\sigma)$ if
-    and only if $ I(C_0, \ldots, C_k; T) \geq \sigma$.
-\end{lemma}
-
-Thanks to this lemma, we have a conveninent way to identify promising subspaces.

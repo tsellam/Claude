@@ -1,9 +1,8 @@
 #!/bin/sh
 
-MAINFILE=TurbGroups
+MAINFILE=TurboGroups
 
 REFSIZE=''
-#REFSIZE='\\scriptsize'
 
 rm -f .pdflatex.log .bibtex.log
 echo pdflatex.1 && pdflatex $MAINFILE              </dev/null > .pdflatex.log && \
