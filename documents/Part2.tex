@@ -46,7 +46,9 @@ calculating $I(C_0, \ldots, C_k; T)$ requires a very expensive cross product of
 $k$ variables.
 
 Maximizing $I(C_0, \ldots, C_k; T)$ directly is difficult.  Instead, we can
-to use some bounds.
+to use bounds, or approximations.
+
+\subsubsection{Technique 1: bounds}
 
 \begin{lemma}
     For any set of variables $C_0, \ldots, C_k, T$, the following property holds:
@@ -94,21 +96,20 @@ H(X)$ for any triplet of variables. Therefore:
     \end{split}
 \]
 \end{proof}
-These bounds are not very interesting if we want to know the exact value of
-$I(C_0, \ldots, C_k; T)$. However, it allows us to do some pruning.
-To explain how this works, we introduce a new construct: \emph{the
-co-influence graph}.
 
-\begin{definition}
-    The \textbf{co-influence graph} $\mathcal{G}$ is a weighted undirected
-    graph. Each node represents a variable $C_i$, and each edge between two
-    vertices $C_i$ and $C_j$ has a weight $I(C_i, C_j ; T)$.
-\end{definition}
+\subsubsection{Technique 2: approximations}
 
+Unfortunately our bounds are quite weak. One alternative is to
+approximate the mutual informations. We can make a Naive hypothesis:
+\[
+    I(C_k ; T | C_0, \ldots, C_{k-1}) = I(C_k ; T | C_{k-1})
+\]
 
-Intuitively, the graph represents which variables ``work well'' together. A
-heavy edge means that the joint distribution of the vertex-variables has a high impact on
-the target variable. From $\mathcal{G}$ we can derive the \textbf{partial
-co-influence graph} $\mathcal{G}(\sigma)$. This graph is a \emph{non weighted}
-undirected graph. It contains all the vertices of $\mathcal{G}$, and all the
-edges $\mathcal{G}$ with a weight greater than $\sigma$.
+With this assumption, we have:
+\[
+    I(T ; C_0, \ldots, C_{k-1}) \approx I(T, C_0) + I(T, C_1 | C_0)+ \ldots +  I(T, C_k | C_{k-1})
+\]
+
+One last problem: since every permutation is possible, which one gives us the
+best approximation?  Maybe we could use maximum weight
+maximum spanning tree (cf. Chow Liu trees).
