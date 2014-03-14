@@ -1,0 +1,24 @@
+\begin{appendix}
+    In this appendix, we prove the Shannon-type bounds of Lemma
+\ref{lem:bounds}. From the Chain Rule, we derive:
+
+\begin{equation*}
+    \sigma(Q)  = \sigma(C_0, \ldots , C_i) +  I(C_{i+1}, \ldots, C_n ; M | C_0, \ldots , C_i)\\
+\end{equation*}
+
+We deduce Equation \ref{bound1}. Also, note that:
+\begin{equation*}
+\begin{split}
+    & I(C_{i+1}, \ldots, C_n ; M | C_0, \ldots , C_i) \\
+    &= H(C_{i+1}, \ldots, C_n | C_0, \ldots , C_i) 
+        - H(C_{i+1}, \ldots, C_n | M , C_0, \ldots , C_i)\\
+    & \leq H(C_{i+1}, \ldots, C_n | C_0, \ldots , C_i) \\
+    & \leq H(C_{i+1}, \ldots, C_n) \text{  (conditionning reduces entropy)}\\
+    & \leq H(C_{i+1}) +  \ldots +H( C_n) \text{  (classic result)}\\
+\end{split}
+\end{equation*}
+
+We deduce Equations \ref{bound2} and \ref{bound3} from the two last lines.
+
+
+\end{appendix}
