@@ -1,14 +1,14 @@
 \section{Preliminaries}
 
 \subsection{Concepts}
-In this paper, we model the database as a large relation $T$. This table
-contains two types of columns: the dimensions $D_0, \ldots, D_d$ and the
-measures of interest $M_0, \ldots, M_m$.  Note that this view is logical: we are oblivious
-to the physical structure of the data. Furtermore, we assume that each
-dimension $D_k$ has several variants $D_k^p$, where $p$ is the level of
-precision.  If the dimensions are explicitely organized as a hierarchy (e.g.
-Country > State > City), then $p$ describes the level in the hierarchy ($D_k^1$
-represents Country). If not, $D_k^p$ describes a binned version of $D_k$, with $2^p$ bins
+We model the database as a large relation $DB$. This table contains two types of
+columns: the dimensions $D_0, \ldots, D_d$ and the target columns $T_0, \ldots,
+T_t$.  Note that this view is logical: we are oblivious to the physical
+structure of the data. Furtermore, we assume that each dimension $D_k$ has
+several variants $D_k^p$, where $p$ is the level of precision.  If the
+dimensions are explicitely organized as a hierarchy (e.g.  Country > State >
+City), then $p$ describes the level in the hierarchy ($D_k^1$ represents
+Country). If not, $D_k^p$ describes a binned version of $D_k$, with $2^p$ bins
 of equal size.
 
 \begin{figure}[t!]
@@ -18,27 +18,28 @@ of equal size.
 \label{cube}
 \end{figure}
 
-Given a hypercube $T$, Claude's aim is to generate a ranked set of suggestions.
-Each suggestion contains two elements: a \textbf{view} and a set of
-\textbf{points of interest} (POI). We illustrate these concepts with Figure
-\ref{cube}. Our example database describes light sources with three
-dimensions: \texttt{right ascension}, \texttt{declination} and \texttt{error}.
-The first two describe a source's position. The thrid one describes the
-measurement errors. Our aim is to study the luminosity of these sources. The
-recommendations are highlighted in red. Claude suggests a view based on
-\texttt{right ascension}, and \texttt{declination}, with precision levels 2 and
-3 respectively. We see that the view is a SQL query with the following
-structure:
+Given a hypercube $DB$, Claude's aim is to generate a ranked set of
+\textbf{suggestions}.  Each suggestion contains two elements: a \textbf{view}
+and a set of \textbf{points of interest} (POI). A view is a set of dimensions.
+A point of interest is a selection on these dimensions. It reveals a region
+in which the target has an ``usual'' distribution.  We illustrate these
+concepts with Figure \ref{cube}. Our example database describes light sources
+with three dimensions: \texttt{right ascension}, \texttt{declination} and
+\texttt{error}.  The first two describe a source's position. The thrid one
+describes the measurement errors. Our aim is to study the luminosity of these
+sources. Claude's recommendations are highlighted in red. It suggests a view
+based on \texttt{right ascension}, and \texttt{declination}, with precision
+levels 2 and 3 respectively. We see that the view is a SQL query with the
+following structure:
 \begin{verbatim}
 SELECT   D0, ... , Dn , AVG(M0), ... , AVG(Mm)
 FROM     T
 GROUPBY  D0, ... , Dn
 \end{verbatim}
-Claude's job is to pick $n$ distinct variables $\texttt{D0} \ldots
+Claude's job is to pick the $n$ distinct variables $\texttt{D0} \ldots
 \texttt{Dn}$. Each of these variables represents one dimension and its
 precision level.  Once Claude has chosen a view, it must explain \emph{why} it
-has chosen this view.  This is the role of POIs. A POI is a 
-cell with an ``interesting'' values. In Figure \ref{cube}, Claude suggests
+has chosen this view.  This is the role of POIs. In Figure \ref{cube}, Claude suggests
 four POIs. We can express them in SQL as follows:
 \begin{verbatim}
 SELECT   AVG(M0), ... , AVG(Mm)
@@ -59,25 +60,27 @@ challenge is to set the ranges $\texttt{[l0,h0]}, \dots \texttt{[ln,hn]}$.
 \label{poi}
 \end{figure}
 
-In the previous section, we defined our search space: we want to suggest views
-and POIs. We now present how to recognize interesting suggestions.
+We defined our search space: we want to suggest views and POIs. We now present
+how to recognize the interesting ones. We describe the $t$ target columns with
+a random vector $T$.  We represent each  dimension $D_k^p$ by a random
+variable $D_k$ (for now we abstract the level of precision).
 
-Let the random vector $M$ describe the $m$ measures of interest.  For each dimension
-$D_k^p$, we only consider the maximum precision level (for now). We represent it with
-a random variable $D_k$. Intuitively, we consider that a dimension is interesting if
-it has a large impact on the measure. We can model this with information
-theory. Consider a dimension $D_k$. If the mutual information between $D_k$ and
-$M$ is low, then the two variables have no relationship.  Oppositely, a high
-value indicates that $D_k$ has a large influence on $M$'s distribution.  We can
-generalize this observation to $n$ variables:
+First let's explain how to choose the views.  Intuitively a view is worth
+consering if its columns are ``related'' to the target.  We model this
+relationship with statistical dependency. \emph{We assume that a view is
+interesting if there exists some statistical dependency between its variables
+and the target}. In our framework, the more dependent the dimensions are to the
+target, the more interesting the view is. We can formalize this statement 
+wihtout loss of generality with Mutual Information \cite{cover2012elements}:
 
 \begin{definition}
-Consider a view $Q$, based on the variables $D_0, \ldots, D_n$. The variable
-$M$ describes the measures.  We define the \textbf{impact} of $Q$ as follows:
-$\alpha(Q) = I(D_0, \ldots, D_n ; M)$.
+Consider a view $V$, based on the variables $D_0, \ldots, D_n$. The variable
+$T$ describes the target variables.  Let $I$ denote the \emph{Mutual
+Information}. We define the \textbf{interestingness} of $V$ as follows: $\alpha(V) =
+I(D_0, \ldots, D_n ; M)$.
 \end{definition}
 
-Thanks to this definition, Claude can pick dimensions with high influence.
+Note that this definition d
 The next step is to \emph{describe} this influence with the POIs. The POIs
 contain tuples for which the measure have an ``unusual'' distribution.
 Consider Figure \ref{poi}. The curves show the probability mass function of the
