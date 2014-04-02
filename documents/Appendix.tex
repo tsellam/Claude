@@ -1,20 +1,15 @@
 \begin{appendix}
     In this appendix, we prove the Shannon-type bounds of Lemma
-\ref{lem:bounds}. From the Chain Rule, we derive:
-
-\begin{equation*}
-    \sigma(Q)  = \sigma(C_0, \ldots , C_i) +  I(C_{i+1}, \ldots, C_n ; M | C_0, \ldots , C_i)\\
-\end{equation*}
-
-We deduce Equation \ref{bound1}. Also, note that:
+\ref{lem:bounds}. From the Chain Rule, we derive Equation \ref{bound1}
+directly.  Also, note that:
 \begin{equation*}
 \begin{split}
-    & I(C_{i+1}, \ldots, C_n ; M | C_0, \ldots , C_i) \\
-    &= H(C_{i+1}, \ldots, C_n | C_0, \ldots , C_i) 
-        - H(C_{i+1}, \ldots, C_n | M , C_0, \ldots , C_i)\\
-    & \leq H(C_{i+1}, \ldots, C_n | C_0, \ldots , C_i) \\
-    & \leq H(C_{i+1}, \ldots, C_n) \text{  (conditionning reduces entropy)}\\
-    & \leq H(C_{i+1}) +  \ldots +H( C_n) \text{  (classic result)}\\
+         & I(D_{i+1}, \ldots, D_n ; T | D_0, \ldots , D_i) \\
+    =    & H(D_{i+1}, \ldots, D_n | D_0, \ldots , D_i) \\
+         & - H(D_{i+1}, \ldots, D_n | T , D_0, \ldots , D_i)\\
+    \leq & H(D_{i+1}, \ldots, D_n | D_0, \ldots , D_i) \\
+    \leq & H(D_{i+1}, \ldots, D_n) \text{  (conditionning reduces entropy)}\\
+    \leq & H(D_{i+1}) +  \ldots +H( D_n) \text{  (classic result)}\\
 \end{split}
 \end{equation*}
 
