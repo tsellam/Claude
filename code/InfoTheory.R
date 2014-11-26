@@ -34,28 +34,6 @@ entropy <- function(col, data){
 #################
 # Two variables #
 #################
-joint_entropy <- function(cols, data){
-    if (!is.data.frame(data) || !all(cols %in% names(data)))
-        stop("Incorrect input data")
-        
-    selector  <- as.list(cols)
-    na_filter <- paste0("!is.na(", cols, ")", collapse = " && ")
-    
-    counts <- data %>%
-        select_(.dots=selector) %>%
-        filter_(na_filter) %>%
-        group_by_(.dots=selector) %>%
-        summarize(count = n())
-    
-    total <- sum(counts$count)
-    
-    per_item <- counts %>% 
-      mutate(proba = count / total,
-             info  = -log(proba) * proba)
-   
-    sum(per_item$info)
-}
-
 cond_entropy <- function(col2, col1, data){
     if (!is.data.frame(data) 
         || !(col1 %in% names(data))
@@ -113,9 +91,60 @@ mutual_info_check <- function(col1, col2, data){
     entropy1 + entropy2 - entropy_12 
 }
 
-###################
-# Three variables #
-###################
+############################
+# Three variables and more #
+############################
+joint_entropy <- function(cols, data, simplify=TRUE){
+    if (!is.data.frame(data) || !all(cols %in% names(data)))
+        stop("Incorrect input data")
+    
+    selector  <- as.list(cols)
+    na_filter <- paste0("!is.na(", cols, ")", collapse = " && ")
+    
+    counts <- data %>%
+        select_(.dots=selector) %>%
+        filter_(na_filter) %>%
+        group_by_(.dots=selector) %>%
+        summarize(count = n())
+    
+    total <- sum(counts$count)
+    
+    per_item <- counts %>% 
+        mutate(proba = count / total,
+               info  = -log(proba) * proba) %>%
+               as.data.frame %>%
+               summarize(entropy = sum(info))
+    
+    if (simplify){
+        return(as.numeric(per_item$entropy))
+    } else {
+        return(per_item)
+    }
+}
+
+cond_joint_entropy <- function(cols, cond_cols, data, simplify=TRUE){
+    if (!is.data.frame(data) 
+        || !all(c(cols, cond_cols) %in% names(data)))
+        stop("Incorrect input data")
+    
+    all_columns <- c(cols, cond_cols)
+    na_filter <- paste0("!is.na(", all_columns, ")", collapse = " && ")
+    
+    df <- data %>%
+        select_(.dots = as.list(all_columns)) %>%
+        filter_(na_filter) %>%
+        group_by_(.dots = as.list(cond_cols))
+    
+    per_group <- df %>% do(data.frame(
+        JE = joint_entropy(cols, .),
+        count = nrow(.))
+    )
+    
+    per_group <- as.data.frame(per_group)
+    cmi <- sum( per_group$JE * per_group$count ) / sum(per_group$count)
+    return(cmi)
+}
+
 cond_mutual_information <- function(col1, col2, cond_cols, data){
     if (!is.data.frame(data) 
         || !all(c(col1, col2, cond_cols) %in% names(data)))
@@ -128,7 +157,6 @@ cond_mutual_information <- function(col1, col2, cond_cols, data){
             select_(.dots = as.list(all_columns)) %>%
             filter_(na_filter) %>%
             group_by_(.dots = as.list(cond_cols))
-    if (nrow(df) < 2) return(0)
     
     per_group <- df %>% do(data.frame(
             MI = mutual_information(col1, col2, .),

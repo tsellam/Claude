@@ -22,86 +22,108 @@ preprocess <- function(table){
 # Utils
 get_next_items <- function(x, vect){
     pos <- which(vect == x)
-    if (length(pos) > 1){
-        warning("Duplicate columns name detected!")
-        pos <- pos[1]
-    }
-    vect[pos:length(vect)]
     
+    if (length(pos) != 1){
+        warning("Duplicate or ghost column name detected!")
+        pos <- pos[1]
+    } 
+    
+    if (pos == length(vect)) return(NULL)
+    vect[(pos+1):length(vect)]
+}
+
+decompose_sum <- function(total, max){
+    n_max <- floor(total / max)
+    remain <- total %% max
+    elts <- c(remain, rep(max, n_max))
+    elts[elts!=0]
 }
 
 ##########
 # Kernel #
 ##########
 # Method 1: Exact-Exhaustive
-upper_bound <- function(view, entropies, add_levels){
-    name_columns_left <- names(entropies)[!names(entropies) %in% view]
-    columns_left <- entropies[name_columns_left]
+maximum_improvement <- function(level_cur, level_max, max_joint_entropies){
+    n_slack <- level_max - level_cur
+    max_slack <- length(max_joint_entropies)
     
-    sum(columns_left[1:add_levels])
+    # Easy cases
+    if (n_slack == 0){
+        return(0)
+    } else if (n_slack <= max_slack){
+        return(max_joint_entropies[n_slack])
+    }
+    
+    slacks <- decompose_sum(n_slack, max_slack)
+    sum(max_joint_entropies[slacks])
 }
 
-search_exact <- function(data, target_col, q, n_columns){
+search_exact <- function(data, target_col, q, size_view){
     # Basic stuff
-    dim_cols <- names(data)[!names(data) == target_col]
-    n_columns <- min(n_columns, length(dim_cols))
+    dim_names <- names(data)[!names(data) == target_col]
+    size_view <- min(size_view, length(dim_names))
     
-    # Calculates the entropy of each column
-    cat("Computes entropy for each column\n")
-    entropies <- sapply(dim_cols, function(c) entropy(c, data))
-    names(entropies) <- dim_cols
-    entropies <- sort(entropies, decreasing = TRUE)
+    # Initialization and useful variables
+    views <- list()
+    max_joint_entropies <- c()
+    target_entropy <- entropy(target_col, data)
     
-    # First, initialize with one variable views
-    cat("Initializes...\n")
-    views <- lapply(dim_cols, function(col){
-        list(
-            columns  = col,
-            strength = mutual_information(col, target_col, data)
-        )
-    })
-    if (n_columns < 2) return(views)
-    
-    # Higher dependencies
-    for (level in 2:n_columns){
-        cat("Search for level:", level, "\n")
+    # Main loop
+    for (level in 1:size_view){
+        cat("**** Running search for level", level, "\n")
         
-        # Creates the permutations
-        cat("Creates combinations\n")
-        new_columns <- lapply(views, function(view){
-            old_cols <- view$columns
-            get_next_items(old_cols[length(old_cols)], dim_cols)
-        })
-        old_views <- rep(views, sapply(new_columns, length))
-        new_columns <- unlist(new_columns)
+        # Generates new candidates from the old ones
+        if (level > 1) {
+            new_cand_cols <- lapply(cand_cols, function(cand){
+                next_cols <- get_next_items(cand[length(cand)], dim_names)
+                lapply(next_cols, function(col) c(col, cand))
+            })
+            cand_cols <- unlist(new_cand_cols, recursive = FALSE)
+        } else {
+            cand_cols <- as.list(dim_names)
+        }
+        cat("Going through", length(cand_cols), "candidates\n")
         
-        # Prunes non promising candidates
-        scores <- sapply(old_views, function(v) v$strength)
-        threshold <- sort(scores, decreasing = TRUE)[min(q, length(scores))]
-        cat("Computes lower bounds - Threshold:", threshold, "\n")
-        upper_bounds <- sapply(old_views, upper_bound,
-                               entropies, n_columns - level + 1)
+        # Computes the strength of the view
+        cat("Gets joint entropies...")
+        joint_entropies <- sapply(cand_cols, joint_entropy, data)
+        cat("done\nGets conditional joint entropies...")
+        cond_joint_entropies <- sapply(cand_cols, cond_joint_entropy, target, data)
+        cat("done\n")
+        cand_strengths <- joint_entropies - cond_joint_entropies
+        max_joint_entropies <- c(max_joint_entropies, max(joint_entropies))
         
-        # Runs the computations
-        views <- lapply(1:length(new_columns), function(i){
-            # Gets column names
-            old_view <- old_views[[i]]
-            new_col  <- new_columns[[i]]
-            # Gets the data and computes the strenth gain
-            if (new_col %in% old_view$columns) return(old_view)  
-            strength_gain <- cond_mutual_information(new_col, target_col, 
-                                                     old_view$columns, data)
-            new_strength <- old_view$strength + strength_gain
-            # Output
+        # Applies pruning
+        all_scores <- if (length(views) > 1){
+            c(cand_strengths, sapply(views, function(v) v$strength))
+        } else {
+            cand_strengths
+        }
+        min_pos <- min(q, length(all_scores))
+        threshold <- sort(all_scores, decreasing = TRUE)[min_pos]
+        # Strategy 1: dimension-based
+        max_delta <- maximum_improvement(level, size_view, max_joint_entropies)
+        prune_dim <- (cand_strengths + max_delta < threshold)
+        cat("Removes", sum(prune_dim), "candidates based on dimension\n")
+        # Strategy 2: target-based
+        prune_target <- (cand_strengths + target_entropy < threshold)
+        cat("Removes", sum(prune_target), "candidates based on target\n")
+        
+        # Wrapping up
+        to_keep        <- !prune_dim & !prune_target
+        cand_cols      <- cand_cols[to_keep]
+        cand_strengths <- cand_strengths[to_keep]
+        cat("Adding", length(cand_cols), "new views\n")
+        new_views <- lapply(1:length(cand_cols), function(i){
             list(
-                columns = c(old_view$columns, new_col),
-                strength = new_strength
+                columns  = cand_cols[[i]],
+                strength = cand_strengths[i]
             )
-        })  
+        })
+        views <- c(new_views, views)
     }
     
     return(views)
-    
 }
 
 # Method 2: Exact-Pruning
@@ -121,21 +143,21 @@ communities <- data.frame(lapply(communities, function(col){
 }))
 census <- read.csv("~/Projects/TurboGroups/data/census.csv", na.strings="?")
 census <- select(census, -fnlwgt)
-#census <- census[, c(names(census)[1:10], "salary")]
+#census <- census[, c(names(census)[1:5], "salary")]
 
 # Preprocessing
 data <- preprocess(census)
 target <- "salary"
 
 # Runs the search
-exact <- search_exact(data, target, q = 50, n = 5)
+exact <- search_exact(data, target, q = 5, size_view = 4)
 
-seq <- order(sapply(exact, function(v) v$strength), decreasing = TRUE)
-exact <- exact[seq]
-scores <- sapply(exact, function(v) v$strength)
-columns <- sapply(exact, function(v) paste0(v$columns, collapse=","))
-hist(scores)
-print("Best")
-print(columns[1:10])
-print("Worse")
-print(columns[(length(columns) - 10):length(columns)])
+# seq <- order(sapply(exact, function(v) v$strength), decreasing = TRUE)
+# exact <- exact[seq]
+# scores <- sapply(exact, function(v) v$strength)
+# columns <- sapply(exact, function(v) paste0(v$columns, collapse=","))
+# hist(scores)
+# print("Best")
+# print(columns[1:10])
+# print("Worse")
+# print(columns[(length(columns) - 10):length(columns)])
