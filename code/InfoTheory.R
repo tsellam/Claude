@@ -1,4 +1,5 @@
 library(dplyr)
+dyn.load("Rlib/info_theory.so")
 
 ###########
 # Entropy #
@@ -8,7 +9,7 @@ library(dplyr)
     tab <- table(s)
     tab <- tab[tab != 0]
     probas <- tab / sum(tab)
-    -1 * sum(log(probas) * probas)
+    -1 * sum(log2(probas) * probas)
 }
 
 entropy <- function(col, data){
@@ -26,7 +27,7 @@ entropy <- function(col, data){
     per_item <- counts %>% 
         mutate(total = sum(count),
                proba = count / total,
-               info  = -log(proba) * proba)
+               info  = -log2(proba) * proba)
     
     sum(per_item$info)
 }
@@ -49,7 +50,7 @@ cond_entropy <- function(col2, col1, data){
         summarize(count_s1 = n()) %>%
         mutate(total_s1 = sum(count_s1),
                proba_s1 = count_s1 / total_s1,
-               info_s1  = -log(proba_s1) * proba_s1)
+               info_s1  = -log2(proba_s1) * proba_s1)
     
     agg <- probas_given_s1 %>%
         summarize(entropy = sum(info_s1), count = first(total_s1)) %>%
@@ -58,7 +59,7 @@ cond_entropy <- function(col2, col1, data){
         as.numeric    
 }
 
-mutual_information <- function(col1, col2, data){
+mutual_info_check <- function(col1, col2, data){
     if (!is.data.frame(data) 
         || !(col1 %in% names(data))
         || !(col2 %in% names(data)))
@@ -74,7 +75,7 @@ mutual_information <- function(col1, col2, data){
     entropy_col2 - entropy_col2_cond_col1
 }
 
-mutual_info_check <- function(col1, col2, data){
+mutual_information <- function(col1, col2, data){
     if (!is.data.frame(data) 
         || !(col1 %in% names(data))
         || !(col2 %in% names(data)))
@@ -111,7 +112,7 @@ joint_entropy <- function(cols, data, simplify=TRUE){
     
     per_item <- counts %>% 
         mutate(proba = count / total,
-               info  = -log(proba) * proba) %>%
+               info  = -log2(proba) * proba) %>%
                as.data.frame %>%
                summarize(entropy = sum(info))
     
@@ -134,6 +135,8 @@ cond_joint_entropy <- function(cols, cond_cols, data, simplify=TRUE){
         select_(.dots = as.list(all_columns)) %>%
         filter_(na_filter) %>%
         group_by_(.dots = as.list(cond_cols))
+    
+    if (nrow(df) < 1) return(0)
     
     per_group <- df %>% do(data.frame(
         JE = joint_entropy(cols, .),
@@ -167,3 +170,30 @@ cond_mutual_information <- function(col1, col2, cond_cols, data){
     cmi <- sum( per_group$MI * per_group$count ) / sum(per_group$count)
     return(cmi)
 }
+
+##########################
+# Fast C implementations #
+##########################
+fast_joint_mutual_information <- function(cols, target, data){
+    if (!is.data.frame(data) ||
+        !all(c(cols, target) %in% names(data)) ||
+        !all(sapply(data[c(cols, target)], is.numeric)))
+        stop("Incorrect input data")
+    
+    # Remove NAs
+    no_nas <- na.omit(data[,c(cols, target)])
+    if (nrow(no_nas) < 2) return(0)
+    # Merge cols
+    data_cols <- do.call(paste, no_nas[cols])
+    # Lowers indices
+    data_cols  <- as.integer(factor(data_cols))
+    target_col <- as.integer(factor(no_nas[,target]))
+    if (length(data_cols) != length(target_col)) stop("FUCK")
+    # Super fast calculations
+    joint_entropy <- .Call("jointEntropy", data_cols, target_col)
+    entropy1      <- .Call("entropy", data_cols)
+    entropy2      <- .Call("entropy", target_col)
+    jmi <- entropy1 + entropy2 - joint_entropy
+    return(jmi)
+}
+        
