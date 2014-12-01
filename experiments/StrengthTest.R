@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 args <- commandArgs(trailingOnly = TRUE)
-test_mode <- if (length(args) > 0) TRUE else FALSE
+#test_mode <- if (length(args) > 0) TRUE else FALSE
 if (test_mode) print("*** Test Mode! ***")
 
 library(foreign)
@@ -10,9 +10,11 @@ source("../code/Baselines.R", chdir = TRUE)
 
 files_location <- "../data/experiments"
 file_list <- list.files(path = files_location, pattern = "*.arff$")
+file_list <- file_list[!(file_list %in% c("vowel.arff", "insurance.arff",
+                                          "internet_usage.arff"))]
 
 file_log     <- "compare_scores.out"
-log_headers <- c("file", "beam_size", "size_view",
+log_headers <- c("file", "size_view",
                  "view", "strength", "NB_score\n")
 cat(paste0(log_headers, collapse="\t"), file = file_log)
 
@@ -20,11 +22,9 @@ cat(paste0(log_headers, collapse="\t"), file = file_log)
 s <- 3
 if (test_mode){
     file_list <- file_list
-    q <- 25
-    b <- 25
+    q <- 50
 } else {
     q <- 250
-    b <- 250
 }
 
 for (arff_file in file_list){
@@ -32,7 +32,7 @@ for (arff_file in file_list){
 
     # Prepares a function to output stuff
     writelog <- function(...){
-        line <- paste0(c(arff_file, b, s, ... ), collapse="\t")
+        line <- paste0(c(arff_file, s, ... ), collapse="\t")
         cat(line, "\n", file = file_log, append = TRUE)
     }
   
@@ -43,14 +43,29 @@ for (arff_file in file_list){
         
         cat("Running algos\n")
         
-        # Claude stuff
+        # Generates random views and gets strength
         clean_data <- preprocess(file, target)
-        beamed <- search_exact(clean_data, target, q = q,
-                    size_view = s, size_beam = b)
         
-        # Baseline
+        cat("Generating random views\n")
+        colnames  <- names(clean_data)
+        dim_names <- colnames[1:(length(colnames) - 1)]
+        target    <- colnames[length(colnames)]
+        
+        combinations <-  combn(dim_names, 3)
+        nsamples <-  min(q, ncol(combinations))
+        combinations <- combinations[,sample(1:ncol(combinations), nsamples)]
+        
+        cat("Computing score\n")
+        views <- apply(combinations, 2, function(cols){
+            return(list(
+                columns  = cols,
+                strength = fast_joint_mutual_information(cols, target, clean_data)
+            ))
+        })
+        
+        # Get NB score
         clean_data <- preprocess_NB(file, target)
-        get_NB_score(beamed, clean_data, target, writelog)
+        get_NB_score(views, clean_data, target, writelog)
         
         cat("Done\n")
     },
