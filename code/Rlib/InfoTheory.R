@@ -1,5 +1,5 @@
 library(dplyr)
-dyn.load("Rlib/info_theory.so")
+dyn.load("info_theory.so")
 
 ###########
 # Entropy #

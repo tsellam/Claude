@@ -141,98 +141,135 @@ the \emph{POI dectection} step: for each view we extract $r$ POIs. In practice,
 our top $q$ strategy can generate redundancy. We tackle this problem with an
 optional \emph{refinment} step.
 
-
-\section{Base algorithm}
-
-\subsection{Column Search}
+\section{Column selection}
 \label{sec:colum}
-The aim of this phase is identify the $q$ strongest sets of variables. To begin
-with, we introduce an alternative formulation of strength. From here on, we use
-the notations $D_i$ and $\rv{D}_i$ interchangeably. We can use the context to
-distinguish database columns and random variables.
+
+The aim of this phase is identify the $q$ strongest sets of variables. From
+here on, we use the notations $D_i$ and $\rv{D}_i$ interchangeably. We can use
+the context to distinguish database columns and random variables.
+
+\subsection{Base algorithm}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.8\columnwidth]{images/beam-search}
+\caption{Example of Beam Search, with a beam size of 2}
+\label{pic:beam-search}
+\end{figure}
+
+To recommend views, Claude must find the best sets of at most $n$ variables.
+The search space of this problen grows exponentially with $n$: from a database
+with $d$ variable, we can generate $\sum_{i \leq n} \binom{d}{i}$ combinations.
+Besides, there is to our knowledge no bound which would allow us to prune the
+search space efficiently. Therefore, we use level-wise search. To initialise
+the algorithm, we compute the strength of each variable in isolation.  To do
+so, we compute the mutual information between the target $T$ and each dimension
+$D_i$, $\sigma(D_i) =  I(D_i; T)$. We order the candidates, and keep the top
+$b$ results. We call this set the \emph{beam}. We then form new candidates by
+appending each variable of the database to each view in the beam. We compute
+the best $b$ results and update the beam. The procedure is repeated until the
+beam contains views with $n$ variables. We illustrate the procedure in Figure
+\ref{pic:beam-search}.
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.8\columnwidth]{images/strength-jump}
+\caption{Limit cases of the beam search strategy. The variables $var1$ and
+$var2$ represent two dimensions. The symbol and color of the plots represent
+the value of the target class. }
+\label{pic:strength-jump}
+\end{figure}
+Thanks to our beam strategy, we avoid exploring an exponentially large search
+space. Instead, we compute the strengths of at at most $n.b$ settings.
+Unfortunately, this strategy induces an accuracy penalty: if the beam is too
+small, we may miss some good candidates. This is a consequence of the following
+observation: a set of columns which is outside the top $q$ candidates at step
+$i$, could very well appear in the top $q$ at step $i+1$. Consider for instance
+the two classic scenarios pictured in Figure \ref{pic:strength-jump}. The
+dimensions $var1$ and $var2$ taken in isolation are weak: we can infer no
+useful information about the target from either of them. However, their
+combination is very interesting.  This observation is reflected by the
+strength: the views $\{var1\}$ and $\{var2\}$ have a very poor strength, but
+$\{var1, var2\}$ is an excellent candidate. If use a beam search strategy, we
+may discard  $\{var1\}$ and $\{var2\}$ early because they have a low score.
+This would be a loss, because we lose the opportunity to discover $\{var1,
+var2\}$.
+
+\subsection{Approximating the View Strength}
+
+The Beam Search aslgorithm gives us a convenient way to find good views.
+Through the size of the beam, we can find a compromise between execution time
+and accuracy.  Nevertheless, the algorithm is too heavy for interaction. For
+each candidate, it computes the mutual information between the variables of the
+view and the target, which involves heavy grouping operations. Our solution is
+to \emph{approximate} the strength of the views during the iterations of the
+algorithm. Then, we use exact calculations for the final ranking.
+
+To present our approximation scheme, we must first describe how a
+view is impacted when we add a column to it.
 
 \begin{lemma}\label{lem:chain}
-(Chaine Rule) Consider a view $\{D_1, \ldots, D_i\}$, and a target $T$.
+Consider a view $V = \{D_1, \ldots, D_i\}$, and a target $T$.
 For any column $D_{i+1}$: 
-\begin{multline*}
-    \sigma(D_1 , \ldots, D_i , D_{i+1}) \\= \sigma(D_1 , \ldots, D_i)
-                + I(D_{i+1} ; T | D_1 , \ldots, D_i)
-\end{multline*}
+$$
+\sigma(V \cup \{D_{i+1}\}) =  \sigma(V) + I(D_{i+1} ; T | D_1 , \ldots, D_i)
+ $$
 \end{lemma}
 \begin{proof}
 This lemma is a direct consequence of the Mutual Information's chain rule
 \cite{cover2012elements}.
 \end{proof}
 
- Lemma \ref{lem:chain} describes how much a view improves if we append a new
-dimension. Given a view $\{D_1, \ldots, D_i\}$ and a dimension $D_{i+1}$, it
-gives the strength of $\{D_1, \ldots, D_i, D_{i+1}\}$.  For any random
-variables $X,Y,Z$, the notation $I(X;Y|Z)$ expresses the \emph{conditional
-mutual information}. It describes the dependency between $X$ and $Y$,
-\emph{given $Z$}. The influence of $Z$ can go either way: it can weaken or
-strengthen the relationship between $X$ and $Y$. This value is always positive
-or null \cite{cover2012elements}.  According to the lemma, the contribution of
-$D_{i+1}$ equals the Mutual Information between $D_{i+1}$, and the target given
-the view's variables. 
+This lemma describes how much a view improves if we append a new dimension.
+For any random variables $X,Y,Z$, the notation $I(X;Y|Z)$ expresses the
+\emph{conditional mutual information}. It describes the dependency between $X$
+and $Y$, \emph{given $Z$}. The influence of $Z$ can go either way: it can
+weaken or strengthen the relationship between $X$ and $Y$. In any case, it is
+positive or null, and it is bounded by the entropy of $X$ and $Y$.
 
-From this observation, we can build a first level-wise algorithm. First, we
-enumerate all the sets of exactly one columns. From this set, we obtain all the
-sets of two columns. We reiterate until we obtain all the sets of $n$ columns,
-and return the $q$ most promising.
+In practive, computing $ I(D_{i+1} ; T | D_1 , \ldots, D_i)$ is not less
+expensive than calculating the strength of $\{D_1, \ldots, D_{i+1}\}$ directly.
+We propose to use the following approximation:
+\[
+\begin{split}
+    \sigma(V \cup \{D_{n+1}\}) & = \sigma(V)   + I(D_{n+1} ; T | D_0, \ldots, D_{n})\\
+                           & \approx \sigma(V) + I(D_{n+1} ; T | D_{i})
+\text{ for } D_i \in V
+\end{split}
+\]
 
-Obvioulsy, this procedures does not scale well with the number of dimension
-$n$: our algorithm must consider $\sum_{i \leq n} \binom{d}{i}$ candidates,
-where $d$ is the number of dimensions in $DB$.  However, $n$ is very small in
-practice. It cannot exceed the number of dimensions that a user can visualize
-(typically, less than ten).  Also, we can prune the search space:
+The idea behind this approximation is naive: we assume that $I(D_{n+1} ; T |
+D_0, \ldots, D_{n}) \approx I(D_{n+1} ; M | D_{i})$. We ignore the high order
+dependencies. In practice, this assumption rarely holds.  However, this score
+is easy to compute. Consider a directed graph in which each vertex represents a
+variables $D_i$. Each edge $(D_i, D_{i+1})$ has a a weight $ I(D_{i+1} ; T |
+D_{i})$.  We call this graph \emph{co-dependency} graph.  To compute the
+approximate strength of ${D_0, \ldots, D_i}$, we build a spanning tree which
+covers all the vertices of the view, and sum the weights of the edges.
 
-\begin{lemma}
-\label{lem:bounds}
-Given a view $V = \{D_0, \ldots , D_i, D_{i+1}, \ldots, D_n\}$:
-\begin{align}
-    \sigma(V)  & \geq \sigma(D_0, \ldots , D_i) \label{bound1}\\
-     \sigma(V) & \leq \sigma(D_0, \ldots , D_i) + H(D_{i+1}, \ldots, D_n) \label{bound2}\\
-               & \leq \sigma(D_0, \ldots , D_i) + H(D_{i+1}) + \ldots + H(D_n) \label{bound3}
-\end{align}
-\end{lemma}
+In most cases, we can build several different spanning trees with different
+weights. Which one should we use? We could use two variants. An
+\emph{optimisic} approximation $\sigma_+ $ would consider the \emph{maximum}
+spanning tree.  A \emph{pessimistic} approximation $\sigma_- $ would use the
+weight of the \emph{minimum} spanning tree. For the rest of this paper, we will
+only consider the former aleternative. 
 
-\begin{proof}
-Cf. appendix.
-\end{proof}
+We now present a faster version of our view search algorithm.  We operate in
+two steps. First, we compute the strength of every couple column.  This gives
+us a first set of candidates, and we can derive the co-dependency graph.  Then,
+we run Beam Search as previously, but with the approximate strength computation.
+To append the variable $D_i$ to the view $V_k$, we list every edge which
+connects  $D_i$ to the columns of $V_k$. We identify the lightest one and add
+the value of its weight to $\sigma(V_k)$.  
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=\columnwidth]{images/pruning_example}
-\caption{Strength bounds for a few example candidates, i=2 q=2 n=5}
-\label{pruning}
-\end{figure}
+This algorithm is much faster because it spares expensive operations on the
+database. Instead, we perform computations on a graph with $d$ nodes.  To save
+some accuracy, we use the exact version of the view strength for the final top
+$q$ ranking.
 
-Thanks to these bounds, we can eliminate unpromising candidates.  Consider a
-view at step $i$.  Let $\sigma_i$ represent the q\textsuperscript{th} highest
-strength obtained so far. If we can predict that our candidate will never
-exceed $\sigma_i$, no matter which variables we append to it, then we can
-safely discard it. We illustrate this
-strategy with Figure \ref{pruning}. The table displays four candidates, for
-i=2. Consider the set $\{time, tupleID\}$. Any solution based on this set
-will have a strength below 3. The second best candidate found so far has
-strength $\sigma_2$ = 4. Therefore,we can can discard it.
-
-To calculate the bounds, we can use Equations \ref{bound2} or \ref{bound3}.
-Equation \ref{bound2} is the tightest bound, but it is based on the joint
-distribution $C_{i+1}, \ldots, C_n$. If $i>n/2$ we do not have to
-compute this distribution, we can ``recycle'' it from previous steps of the
-algorithm.  Consider the example table.  Suppose that we want a bound on the
-strength of the set $\{ra, decl, time, tupleID\}$. We need to compute
-$\sigma(\{ra, decl\}) + H(\{time, tupleID\})$. We obtain $\sigma(\{ra, decl\})$
-directly from the first candidate. Also, the last line indicates that we
-already computed the joint distribution of $\{time, tupleID\}$. We can reuse
-the intermediate results to calculate the upper bound. In some cases, we cannot
-apply this ``recycling'' strategy. Then, we use the looser bound of
-Equation \ref{bound3}.
-
-
-\subsection{Detecting Points Of Interest}
+\section{Detecting Points Of Interest}
 \label{sec:detec}
+
 During this phase, we find the $r$ most divergent regions for each view.
 Fortunatly, this task is an instance of a known Data Mining problem,
 \emph{Subgroup Discovery} \cite{klosgen1996explora}\cite{wrobel1997algorithm}.
@@ -269,53 +306,6 @@ represents a range with cover $|R|$, and $|V|$ represent the number of tuples
 in the view. We use the \emph{weighted} deviation $\delta_w(R) = |R|/|V| \times
 \delta(R)$. This new score introduces a penalty for small POIs.
 
- 
-\section{Faster column search}
-
-We present two strategies to speed up column search. First, we introduce a
-tractable approximation of view strength. Then, we detail a faster search
-procedure, based on Beam Search.
-
-\subsection{Approximating the strength of a view}
-
-In Sections \ref{sec:infor} and \ref{sec:colum} we introduce two ways to
-compute the strength of a set of variables. Unfortunately, both of them rely on
-expensive joint distributions. There is to our knowlege no faster way to
-compute the exact value of this score. We propose to use an approximation:
-\[
-\begin{split}
-    \sigma(V \cup \{D_{n+1}\}) & = \sigma(V)   + I(D_{n+1} ; T | D_0, \ldots, D_{n})\\
-                           & \approx \sigma(V) + I(D_{n+1} ; T | D_{i})
-\text{ for } D_i \in V
-\end{split}
-\]
-
-The idea behind this approximation is very naive: we assume that $I(D_{n+1} ; T
-| D_0, \ldots, D_{n}) \approx I(D_{n+1} ; M | D_{i})$. We ignore the high order
-dependencies. In practice, this assumption rarely holds. 
-However, this score is easy to compute. Consider
-a directed graph in which each vertex represents a variables $D_i$. Each edge
-$(D_i, D_{i+1})$ has a a weight $ I(D_{i+1} ; M | D_{i})$.  The obtain the
-approximation, we build a spanning tree and sum its weights.
-
-In most cases, we can build several different spanning trees with different
-weights. Which one should we use? We introduce two variants.  Our
-\emph{pessimistic} approximation $\sigma_- $ uses the weight of the
-\emph{minimum} spanning tree.  Our \emph{optimisic} approximation $\sigma_+ $
-considers the \emph{maximum} spanning tree. Consider a view $V$ and a variable
-$D_{i+1}$. To obtain $\sigma_+(V \cup \{D_{i+1}\})$, we add the lightest weight
-between $ D_{i+1}$ and $V$'s variables to $\sigma_+(V)$.  To obtain $\sigma_-(V
-\cup \{D_{i+1}\})$, we add the heaviest one.
-
-
-\subsection{Heuristic Search}
-To speed up column search, we enforce a harsher pruning strategy: at each step,
-we discard all the views which are not in the top $q$ strongest candidates.
-This strategy is equivalent to Beam Search, presented in the context of POI
-detection (Section \ref{sec:detec}). It reduces the complexity dramatically:
-our algorithm evaluates $\sum_{i < n} q = q \times n$ candidates.  However, it
-is a heursitic: it can miss promising regions of the search space.
-
 
 \section{Eliminating redundancy}
 As Claude is based on a top-k approach, its output may be redundant.  The views
@@ -339,3 +329,26 @@ is better.
 
 
 \section{Experiments}
+
+\subsection{View strength and prediction}
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\columnwidth]{plots/compare-strength-f1}
+\caption{}
+\label{pic:strength-vs-f1}
+\end{figure}
+
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=2\columnwidth]{plots/column-select-score}
+\caption{column-select-score}
+\label{pic:column-select-score}
+\end{figure*}
+
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=2\columnwidth]{plots/column-select-time}
+\caption{column-select-time}
+\label{pic:column-select-time}
+\end{figure*}

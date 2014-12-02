@@ -1,5 +1,4 @@
 library(e1071)
-library(FactoMineR)
 
 preprocess_NB <- function(data, target){
     if (is.numeric(data[[target]]) && length(unique(t_col)) > 5)
@@ -124,7 +123,7 @@ search_exact_NB <- function(data, target_col, q, size_view, size_beam=NULL,
     
     TIME2 <- proc.time()["elapsed"] - TIME
     if (!is.null(logfun))
-        logfun("Exhaustive", "Time", TIME2)
+        logfun("Wrap_NaiveBayes", "Time", TIME2)
     write_results("Wrap_NaiveBayes", views, outfun)
     
     return(views)

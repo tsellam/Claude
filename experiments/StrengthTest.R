@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 args <- commandArgs(trailingOnly = TRUE)
-#test_mode <- if (length(args) > 0) TRUE else FALSE
+test_mode <- if (length(args) > 0) TRUE else FALSE
 if (test_mode) print("*** Test Mode! ***")
 
 library(foreign)
@@ -24,7 +24,7 @@ if (test_mode){
     file_list <- file_list
     q <- 50
 } else {
-    q <- 250
+    q <- 1000
 }
 
 for (arff_file in file_list){
