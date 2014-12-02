@@ -2,7 +2,7 @@ library(foreign)
 library(igraph)
 library(tidyr)
 library(dplyr)
-source("InfoTheory.R")
+source("Rlib/InfoTheory.R")
 
 ##############
 # Primitives #
@@ -23,8 +23,8 @@ preprocess <- function(table, target){
     # The rest
     content <- lapply(table, function(col){
         new_col <- if (is.numeric(col)){
-                        cut(col, 16)
-                    } else if (length(unique(col)) <= 16 && length(unique(col)) > 1) {
+                        cut(col, 64)
+                    } else if (length(unique(col)) <= 64 && length(unique(col)) > 1) {
                         as.factor(col)
                     } else {
                         print("Excluding")
@@ -384,7 +384,7 @@ search_cliques <- function(data, target_col, q=NULL, size_view, size_beam,
     if (!is.null(logfun)) logfun("Clique", "Time-PostProcess", TIMEP - TIMES)
     TIME2 <- proc.time()["elapsed"] - TIME
     if (!is.null(logfun)) logfun("Clique", "Time", TIME2)
-    write_results("Approximative", views, outfun)
+    write_results("Clique", views, outfun)
     
     return(views)
 }
