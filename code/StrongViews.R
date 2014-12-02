@@ -2,7 +2,7 @@ library(foreign)
 library(igraph)
 library(tidyr)
 library(dplyr)
-source("Rlib/InfoTheory.R")
+source("Rlib/InfoTheory.R", chdir=TRUE)
 
 ##############
 # Primitives #

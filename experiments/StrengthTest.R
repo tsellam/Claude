@@ -51,12 +51,14 @@ for (arff_file in file_list){
         dim_names <- colnames[1:(length(colnames) - 1)]
         target    <- colnames[length(colnames)]
         
-        combinations <-  combn(dim_names, 3)
-        nsamples <-  min(q, ncol(combinations))
-        combinations <- combinations[,sample(1:ncol(combinations), nsamples)]
+        combinations <-  c(combn(dim_names, 1, simplify=F),
+                           combn(dim_names, 2, simplify=F),
+                           combn(dim_names, 3, simplify=F))
+        nsamples <-  min(q, length(combinations))
+        combinations <- combinations[sample(1:length(combinations), nsamples)]
         
         cat("Computing score\n")
-        views <- apply(combinations, 2, function(cols){
+        views <- lapply(combinations, function(cols){
             return(list(
                 columns  = cols,
                 strength = fast_joint_mutual_information(cols, target, clean_data)
