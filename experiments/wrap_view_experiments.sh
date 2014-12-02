@@ -5,6 +5,9 @@ cd ../data/experiments
 
 mkdir KEEP
 case $machine in
+	rocks136)
+        mv internet_usage.arff pendigits.arff vowel.arff KEEP
+	;;
 	rocks138)
         mv adult.arff communities.arff diabetes.arff KEEP
 	;;
@@ -13,9 +16,6 @@ case $machine in
 	;;
 	rocks140)
         mv breast.arff cover_type.arff glass.arff KEEP
-	;;
-	rocks141)
-        mv internet_usage.arff pendigits.arff vowel.arff KEEP
 	;;
 esac
 rm *.arff
