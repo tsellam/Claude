@@ -3,7 +3,8 @@
 #cd ../data/experiments
 #./get_data.sh
 
-#mkdir KEEP
+#mkdir KEEP THROW
+#machine=`hostname -s`
 #case $machine in
 #	rocks136)
 #        mv internet_usage.arff pendigits.arff vowel.arff KEEP
@@ -15,15 +16,15 @@
 #        mv insurance.arff liver.arff shape.arff KEEP
 #	;;
 #	rocks140)
-#        mv breast.arff cover_type.arff glass.arff KEEP
+#       mv breast.arff cover_type.arff glass.arff KEEP
 #	;;
 #esac
-#rm *.arff
+#mv *.arff THROW
 #mv KEEP/* .
 
 cd ../../experiments
-./StrengthTest.R
-./ViewSelection.R
+R -f StrengthTest.R
+R -f ViewSelection.R
 
 tarname=FindView-`hostname -s`-` date +'%B%d'`.tar.gz
 tar -czvf $tarname nohup.out *.csv *.out *.log
