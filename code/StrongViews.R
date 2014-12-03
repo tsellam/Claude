@@ -22,7 +22,7 @@ preprocess <- function(table, target){
     
     # The rest
     content <- lapply(table, function(col){
-        new_col <- if (is.numeric(col)){
+        new_col <- if (is.numeric(col) && length(unique(col)) > 1){
                         cut(col, 64)
                     } else if (length(unique(col)) <= 64 && length(unique(col)) > 1) {
                         as.factor(col)

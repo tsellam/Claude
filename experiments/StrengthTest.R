@@ -10,8 +10,8 @@ source("../code/Baselines.R", chdir = TRUE)
 
 files_location <- "../data/experiments"
 file_list <- list.files(path = files_location, pattern = "*.arff$")
-file_list <- file_list[!(file_list %in% c("vowel.arff", "insurance.arff",
-                                          "internet_usage.arff"))]
+#file_list <- file_list[!(file_list %in% c("vowel.arff", "insurance.arff",
+#                                          "internet_usage.arff"))]
 
 file_log     <- "compare_scores.out"
 log_headers <- c("file", "size_view",

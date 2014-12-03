@@ -4,6 +4,7 @@ test_mode <- if (length(args) > 0) TRUE else FALSE
 if (test_mode) print("*** Test Mode! ***")
 
 library(foreign)
+library(R.utils)
 
 source("../code/StrongViews.R", chdir = TRUE)
 source("../code/Baselines.R", chdir = TRUE)
@@ -31,7 +32,7 @@ if (test_mode){
     file_list <- file_list
 } else {
     q    <- c(50)
-    beam <- c(100, 250)
+    beam <- c(50, 250)
     size_view <- c(2, 5)    
 }
 
@@ -60,23 +61,33 @@ for (arff_file in file_list){
                 
                 # Claude stuff
                 clean_data <- preprocess(file, target)
-                beamed <- search_exact(clean_data, target, q = q,
-                            size_view = s, size_beam = b,
-                            logfun = writelog, outfun = writeout)
+                beamed <- evalWithTimeout(
+                            search_exact(clean_data, target, q = q,
+                                         size_view = s, size_beam = b,
+                                         logfun = writelog, outfun = writeout),
+                            timeout = 900)
                 
-                approx <- search_approx(clean_data, target, q = q,
-                            size_view = s, size_beam = b,
-                            logfun = writelog, outfun = writeout)
+                approx <-  evalWithTimeout(
+                            search_approx(clean_data, target, q = q,
+                                size_view = s, size_beam = b,
+                                logfun = writelog, outfun = writeout),
+                            timeout = 900)
                 
-                clique_approx <- search_cliques(clean_data, target, q = q,
-                            size_view = s, size_beam = b, 
-                            logfun = writelog, outfun = writeout)
+                clique_approx <-  evalWithTimeout(
+                            search_cliques(clean_data, target, q = q,
+                                size_view = s, size_beam = b, 
+                                logfun = writelog, outfun = writeout),
+                            timeout = 900)
                 
                 # Baseline
                 clean_data <- preprocess_NB(file, target)
-                beamed_NB <- search_exact_NB(clean_data, target, q = q,
+                beamed_NB <-  evalWithTimeout(
+                            search_exact_NB(clean_data, target, q = q,
                                size_view = s, size_beam = b,
-                               logfun = writelog, outfun = writeout)
+                               logfun = writelog, outfun = writeout),
+                            timeout = 900)
+
+
                 cat("Done\n")
             },
             error = function(e){
