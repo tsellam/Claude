@@ -51,11 +51,8 @@ for (arff_file in file_list){
         dim_names <- colnames[1:(length(colnames) - 1)]
         target    <- colnames[length(colnames)]
         
-        combinations <-  c(combn(dim_names, 1, simplify=F),
-                           combn(dim_names, 2, simplify=F),
-                           combn(dim_names, 3, simplify=F))
-        nsamples <-  min(q, length(combinations))
-        combinations <- combinations[sample(1:length(combinations), nsamples)]
+        combinations <- lapply(1:q, function(i) 
+            unique(sample(x=dim_names, 4 ,replace = TRUE)))
         
         cat("Computing score\n")
         views <- lapply(combinations, function(cols){
