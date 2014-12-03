@@ -36,6 +36,19 @@ if (test_mode){
     size_view <- c(2, 5)    
 }
 
+wrapper <- function(...){
+    tryCatch(
+        evalWithTimeout(
+            ...,
+            timeout=900
+        ),
+        error = function(e){
+                cat("TIMEOUT!\n")
+                print(e)
+        }
+    )
+}
+
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
@@ -61,32 +74,31 @@ for (arff_file in file_list){
                 
                 # Claude stuff
                 clean_data <- preprocess(file, target)
-                beamed <- evalWithTimeout(
-                            search_exact(clean_data, target, q = q,
+                beamed <- wrapper(
+                                  search_exact(clean_data, target, q = q,
                                          size_view = s, size_beam = b,
-                                         logfun = writelog, outfun = writeout),
-                            timeout = 900)
+                                         logfun = writelog, outfun = writeout)
+                                  )
                 
-                approx <-  evalWithTimeout(
+                approx <- wrapper(
                             search_approx(clean_data, target, q = q,
                                 size_view = s, size_beam = b,
-                                logfun = writelog, outfun = writeout),
-                            timeout = 900)
+                                logfun = writelog, outfun = writeout)
+                            )
                 
-                clique_approx <-  evalWithTimeout(
+                clique_approx <-  wrapper(
                             search_cliques(clean_data, target, q = q,
                                 size_view = s, size_beam = b, 
-                                logfun = writelog, outfun = writeout),
-                            timeout = 900)
+                                logfun = writelog, outfun = writeout)
+                            )
                 
                 # Baseline
                 clean_data <- preprocess_NB(file, target)
-                beamed_NB <-  evalWithTimeout(
+                beamed_NB <-  wrapper(
                             search_exact_NB(clean_data, target, q = q,
                                size_view = s, size_beam = b,
-                               logfun = writelog, outfun = writeout),
-                            timeout = 900)
-
+                               logfun = writelog, outfun = writeout)
+                            )
 
                 cat("Done\n")
             },
