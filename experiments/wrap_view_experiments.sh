@@ -24,6 +24,7 @@ mv KEEP/* .
 cd ../../experiments
 
 R -f StrengthTest.R
+R -f get-target-entropies.R
 R -f ViewSelection.R
 
 tarname=FindView-`hostname -s`-` date +'%B%d'`.tar.gz
