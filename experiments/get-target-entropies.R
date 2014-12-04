@@ -18,6 +18,7 @@ for (arff_file in file_list){
     cat("Getting entropy\n")
     H <- entropy(target, file)
     
-    cat(sub(".arff", "", arff_file), "\t", H, "\n", file=file_out, append = TRUE)
+    line <- paste0(sub(".arff", "", arff_file), "\t", H, "\n")
+    cat(line, file=file_out, append = TRUE)
     print(H)
 }

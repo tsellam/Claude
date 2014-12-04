@@ -1,5 +1,7 @@
 library(e1071)
+library(class)
 
+# Naive Bayes
 preprocess_NB <- function(data, target){
     if (is.numeric(data[[target]]) && length(unique(t_col)) > 5)
         data[,target] <- cut(data[,target], 5)
@@ -129,12 +131,58 @@ search_exact_NB <- function(data, target_col, q, size_view, size_beam=NULL,
     return(views)
 }
 
-
 get_NB_score <- function(view_set, data, target, logfun){
     for (i in 1:length(view_set)){
         view <- view_set[[i]]
         strength <- view$strength
         NB_strength <- NB_strength(view$columns, target, data, folds=10)
-        logfun(i, strength, NB_strength)
+        logfun(i, strength, "NaiveBayes", NB_strength)
+    }
+}
+
+
+
+# kNN
+preprocess_kNN <- function(data, target){
+    if (is.numeric(data[[target]]) && length(unique(t_col)) > 5)
+        data[,target] <- cut(data[,target], 5)
+    data
+}
+
+
+kNN_strength <- function(columns, target, data,
+                        folds=2, F1 = TRUE){
+    set <- data[,c(columns, target)]
+    set <- na.omit(set)
+    
+    bin_width <- floor(nrow(set) / folds)
+    folds <- lapply(1:folds, function(i){
+        c((i - 1) * bin_width, i * bin_width - 1)
+    })
+    
+    scores <- c()
+    for (fold in folds){
+        test  <- set[fold[1]:fold[2],]
+        train <- set[-fold[1]:-fold[2],]
+        
+        nb_model <- naiveBayes(train[, columns, drop=FALSE], train[[target]], laplace = 1)
+        nb_predict <- predict(nb_model, test[, columns, drop=FALSE], type = "class")
+        
+        knn_predict <- knn(train[, columns, drop=FALSE],
+                           test[, columns, drop=FALSE], 
+                           train[[target]])
+        if (length(knn_predict) < 1 ) stop()
+        scores <- c(scores, score(knn_predict, test[[target]], F1))
+    }
+    
+    return(mean(scores))
+}
+
+get_kNN_score <- function(view_set, data, target, logfun){
+    for (i in 1:length(view_set)){
+        view <- view_set[[i]]
+        strength <- view$strength
+        kNN_strength <- kNN_strength(view$columns, target, data, folds=10)
+        logfun(i, strength, "kNN", kNN_strength)
     }
 }

@@ -1,8 +1,8 @@
 #!/usr/bin/Rscript
-args <- commandArgs(trailingOnly = TRUE)
-test_mode <- if (length(args) > 0) TRUE else FALSE
-if (test_mode) print("*** Test Mode! ***")
-
+#args <- commandArgs(trailingOnly = TRUE)
+#test_mode <- if (length(args) > 0) TRUE else FALSE
+#if (test_mode) print("*** Test Mode! ***")
+test_mode <- TRUE
 library(foreign)
 
 source("../code/StrongViews.R", chdir = TRUE)
@@ -10,19 +10,17 @@ source("../code/Baselines.R", chdir = TRUE)
 
 files_location <- "../data/experiments"
 file_list <- list.files(path = files_location, pattern = "*.arff$")
-#file_list <- file_list[!(file_list %in% c("vowel.arff", "insurance.arff",
-#                                          "internet_usage.arff"))]
+
 
 file_log     <- "compare_scores.out"
-log_headers <- c("file", "size_view",
-                 "view", "strength", "NB_score\n")
-cat(paste0(log_headers, collapse="\t"), file = file_log)
+#log_headers <- c("file", "size_view",
+#                 "view", "strength", "NB_score\n")
+#cat(paste0(log_headers, collapse="\t"), file = file_log)
 
 
 s <- 3
 if (test_mode){
-    file_list <- file_list
-    q <- 50
+    q <- 10
 } else {
     q <- 1000
 }
@@ -63,8 +61,14 @@ for (arff_file in file_list){
         })
         
         # Get NB score
+        cat("Computing NB F1\n")
         clean_data <- preprocess_NB(file, target)
         get_NB_score(views, clean_data, target, writelog)
+        
+        # Get kNN score
+        cat("Computing kNN F1\n")
+        clean_data <- preprocess_kNN(file, target)
+        get_kNN_score(views, clean_data, target, writelog)
         
         cat("Done\n")
     },
