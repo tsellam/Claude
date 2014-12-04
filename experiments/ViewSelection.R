@@ -31,8 +31,8 @@ if (test_mode){
     size_view <- c(3)
     file_list <- file_list
 } else {
-    q    <- c(50)
-    beam <- c(50, 250)
+    q    <- c(100)
+    beam <- c(100, 500)
     size_view <- c(2, 5)    
 }
 
