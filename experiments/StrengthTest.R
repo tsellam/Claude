@@ -19,7 +19,7 @@ log_headers <- c("file", "size_view",
 cat(paste0(log_headers, collapse="\t"), file = file_log)
 
 
-s <- 5
+s <- 3
 if (test_mode){
     q <- 10
 } else {
