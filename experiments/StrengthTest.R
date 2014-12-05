@@ -2,7 +2,6 @@
 args <- commandArgs(trailingOnly = TRUE)
 test_mode <- if (length(args) > 0|| exists("R_TEST")) TRUE else FALSE
 if (test_mode) print("*** Test Mode! ***")
-test_mode <- TRUE
 library(foreign)
 
 source("../code/StrongViews.R", chdir = TRUE)
