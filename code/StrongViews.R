@@ -12,20 +12,19 @@ preprocess <- function(table, target){
     
     # Special case: the target column
     t_col <- table[,target]
-    if (is.numeric(t_col) && length(unique(t_col)) > 5 ){
-        table[,target] <- cut(t_col, 5)
+    if (is.numeric(t_col) && length(unique(t_col)) > 10 ){
+        table[,target] <- cut(t_col, 10)
     } else {
-        if (length(unique(t_col)) > 5)
-            warning("Target with many classes, this will take a while!")
         table[,target] <- factor(t_col)
     }
     
     # The rest
     content <- lapply(table, function(col){
         new_col <- if (is.numeric(col) && length(unique(col)) > 1){
-                        cut(col, 64)
-                    } else if (length(unique(col)) <= 64 && length(unique(col)) > 1) {
-                        as.factor(col)
+                        cut(col, ceiling(log2(length(col))) + 1)
+                    } else if ( (is.factor(col) || is.character(col)) &&
+                                    length(unique(col)) > 1){
+                        factor(col)
                     } else {
                         print("Excluding")
                         NULL
@@ -42,7 +41,7 @@ preprocess <- function(table, target){
 
 
 # Utils
-get_next_items <- function(x, vect){
+get_next_items <- function(x, vect){c
     pos <- which(vect == x)
     
     if (length(pos) != 1){

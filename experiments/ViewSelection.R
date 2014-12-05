@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 args <- commandArgs(trailingOnly = TRUE)
-test_mode <- if (length(args) > 0) TRUE else FALSE
+test_mode <- if (length(args) > 0 || exists("R_TEST")) TRUE else FALSE
 if (test_mode) print("*** Test Mode! ***")
 
 library(foreign)
@@ -31,9 +31,9 @@ if (test_mode){
     size_view <- c(3)
     file_list <- file_list
 } else {
-    q    <- c(100)
-    beam <- c(100, 500)
-    size_view <- c(2, 5)    
+    q    <- c(25)
+    beam <- c(25, 250)
+    size_view <- c(3, 8)    
 }
 
 wrapper <- function(...){
@@ -43,7 +43,7 @@ wrapper <- function(...){
             timeout=900
         ),
         error = function(e){
-                cat("TIMEOUT!\n")
+                cat("Error, or TIMEOUT!\n")
                 print(e)
         }
     )
@@ -68,6 +68,7 @@ for (arff_file in file_list){
             tryCatch({
                 cat("Loading file...\n")
                 file  <- read.arff(paste0(files_location, "/", arff_file))
+                file  <- file[sample(1:nrow(file), nrow(file), replace=FALSE),]
                 target <- names(file)[[ncol(file)]]
                 
                 cat("Running algos\n")

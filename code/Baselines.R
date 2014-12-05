@@ -3,20 +3,30 @@ library(class)
 
 # Naive Bayes
 preprocess_NB <- function(data, target){
-    if (is.numeric(data[[target]]) && length(unique(t_col)) > 5)
-        data[,target] <- cut(data[,target], 5)
-    data <- lapply(data, function(col){
-        if (!class(col) %in% c("factor", "numeric")){
+    if (is.numeric(data[[target]]) && length(unique(data[[target]])) > 10)
+        data[,target] <- cut(data[,target], 10)
+    content <- lapply(data, function(col){
+        if (length(unique(col)) < 2) {
+            NULL
+        } else if (!class(col) %in% c("factor", "numeric")){
             factor(col)
-        } else{
+        } else {
             col
         }
     })
-    as.data.frame(data)
+    nulls <- sapply(content, is.null)
+    cat("Done. Eliminated the following columns:\n")
+    print(names(data)[nulls])
+    data.frame(content[!nulls])
 }
 
 score <- function(pred, truth, F1=TRUE){
+    cl  <- sort(unique(truth))
+    cll <- as.character(cl)
+    truth <- factor(truth, levels = cl, labels = cll)
+    pred  <- factor(pred,  levels = cl, labels = cll)
     tab <- table(pred, truth)
+    
     accuracy <- sum(diag(tab)) / sum(tab)
     if (!F1) return(accuracy)
     
@@ -53,7 +63,8 @@ NB_strength <- function(columns, target, data,
         data.matrix(test[, columns, drop=FALSE])
         
         nb_predict <- predict(nb_model, test[, columns, drop=FALSE], type = "class")
-        if (length(nb_predict) < 1 ) stop()
+        if (length(nb_predict) < 1 )
+            nb_predict <- rep(train[[target]][1], length(test[[target]]))
         scores <- c(scores, score(nb_predict, test[[target]], F1))
     }
     
@@ -144,9 +155,21 @@ get_NB_score <- function(view_set, data, target, logfun){
 
 # kNN
 preprocess_kNN <- function(data, target){
-    if (is.numeric(data[[target]]) && length(unique(t_col)) > 5)
-        data[,target] <- cut(data[,target], 5)
-    data
+    if (is.numeric(data[[target]]) && length(unique(data[[target]])) > 10)
+        data[,target] <- cut(data[,target], 10)
+    content <- lapply(data, function(col){
+        if (length(unique(col)) < 2) {
+            NULL
+        } else if (!class(col) %in% c("numeric")){
+            as.numeric(factor(col))
+        } else {
+            col
+        }
+    })
+    nulls <- sapply(content, is.null)
+    cat("Done. Eliminated the following columns:\n")
+    print(names(data)[nulls])
+    data.frame(content[!nulls])
 }
 
 
@@ -168,13 +191,16 @@ kNN_strength <- function(columns, target, data,
         nb_model <- naiveBayes(train[, columns, drop=FALSE], train[[target]], laplace = 1)
         nb_predict <- predict(nb_model, test[, columns, drop=FALSE], type = "class")
         
-        knn_predict <- knn(train[, columns, drop=FALSE],
-                           test[, columns, drop=FALSE], 
-                           train[[target]])
-        if (length(knn_predict) < 1 ) stop()
-        scores <- c(scores, score(knn_predict, test[[target]], F1))
+        try({
+            predict <- knn_predict <- knn(train[, columns, drop=FALSE],
+                               test[, columns, drop=FALSE], 
+                               train[[target]],
+                               k = 5,
+                               use.all = FALSE)
+            scores <- c(scores, score(knn_predict, test[[target]], F1))
+        }, silent = TRUE)
     }
-    
+        
     return(mean(scores))
 }
 

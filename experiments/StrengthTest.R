@@ -1,7 +1,7 @@
 #!/usr/bin/Rscript
-#args <- commandArgs(trailingOnly = TRUE)
-#test_mode <- if (length(args) > 0) TRUE else FALSE
-#if (test_mode) print("*** Test Mode! ***")
+args <- commandArgs(trailingOnly = TRUE)
+test_mode <- if (length(args) > 0|| exists("R_TEST")) TRUE else FALSE
+if (test_mode) print("*** Test Mode! ***")
 test_mode <- TRUE
 library(foreign)
 
@@ -13,9 +13,10 @@ file_list <- list.files(path = files_location, pattern = "*.arff$")
 
 
 file_log     <- "compare_scores.out"
-#log_headers <- c("file", "size_view",
-#                 "view", "strength", "NB_score\n")
-#cat(paste0(log_headers, collapse="\t"), file = file_log)
+log_headers <- c("file", "size_view",
+                 "view", "strength", 
+                 "algo", "F1_score\n")
+cat(paste0(log_headers, collapse="\t"), file = file_log)
 
 
 s <- 3
@@ -37,6 +38,7 @@ for (arff_file in file_list){
     tryCatch({
         cat("Loading file...\n")
         file  <- read.arff(paste0(files_location, "/", arff_file))
+        file  <- file[sample(1:nrow(file), nrow(file), replace=FALSE),]
         target <- names(file)[[ncol(file)]]
         
         cat("Running algos\n")
@@ -71,7 +73,7 @@ for (arff_file in file_list){
         get_kNN_score(views, clean_data, target, writelog)
         
         cat("Done\n")
-    },
+     },
     error = function(e){
         cat("ERROR!\n")
         print(e)
