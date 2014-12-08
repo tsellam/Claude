@@ -7,13 +7,13 @@ source("Rlib/InfoTheory.R", chdir=TRUE)
 ##############
 # Primitives #
 ##############
-preprocess <- function(table, target){
+preprocess <- function(table, target, nbins_target = 10){
     cat("Preprocessing in progress...")
     
     # Special case: the target column
     t_col <- table[,target]
-    if (is.numeric(t_col) && length(unique(t_col)) > 10 ){
-        table[,target] <- cut(t_col, 10)
+    if (is.numeric(t_col) && length(unique(t_col)) > nbins_target ){
+        table[,target] <- cut(t_col, nbins_target)
     } else {
         table[,target] <- factor(t_col)
     }
@@ -23,7 +23,8 @@ preprocess <- function(table, target){
         new_col <- if (is.numeric(col) && length(unique(col)) > 1){
                         cut(col, ceiling(log2(length(col))) + 1)
                     } else if ( (is.factor(col) || is.character(col)) &&
-                                    length(unique(col)) > 1){
+                                    length(unique(col)) > 1 &&
+                                    length(unique(col)) < 32 ){
                         factor(col)
                     } else {
                         print("Excluding")
@@ -138,6 +139,8 @@ search_exact <- function(data, target_col, q, size_view, size_beam=NULL,
     return(views)
 }
 
+
+
 # Method 2: Approx
 filter_views <- function(views, maxs=NULL){
     scores <- sapply(views, function(v) v$strength)
@@ -195,7 +198,7 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                           size_beam=NULL, pessimistic=TRUE,
                           logfun=NULL, outfun = NULL){
     
-    cat("Starting exact search\n")
+    cat("Starting approximate search\n")
     TIME <- proc.time()["elapsed"]
     
     # Basic stuff
@@ -208,14 +211,22 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     second_level <- data.frame()
     for (i in 1:min(size_view, 2)){
         cat("*** Computing level", i, "... ")
-        combs <- combn(dim_names, i)
+        
+        if (i == 1) {
+            candidate_cols <- dim_names
+        } else {
+            candidate_cols <- first_level[["column1"]]
+        }
+        combs <- combn(candidate_cols, i)
+        cat("Getting strength for", length(combs), "views...")
         strengths <- apply(combs, 2, fast_joint_mutual_information, target, data)
         
         views_df <- as.data.frame(t(combs), stringsAsFactors = F)
         names(views_df) <- paste0("column", 1:i)
         views_df[["strength"]] <- strengths
-        views <- flush_views(views_df, views, size_beam)
+        views_df <- filter(views_df, row_number(desc(strength)) <= size_beam)
         
+        views <- flush_views(views_df, views)
         if (i == 1) {
             first_level <- views_df
         } else {

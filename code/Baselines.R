@@ -15,7 +15,7 @@ preprocess_NB <- function(data, target){
         }
     })
     nulls <- sapply(content, is.null)
-    cat("Done. Eliminated the following columns:\n")
+    cat("Eliminated the following columns:\n")
     print(names(data)[nulls])
     data.frame(content[!nulls])
 }
@@ -167,7 +167,7 @@ preprocess_kNN <- function(data, target){
         }
     })
     nulls <- sapply(content, is.null)
-    cat("Done. Eliminated the following columns:\n")
+    cat("Eliminated the following columns:\n")
     print(names(data)[nulls])
     data.frame(content[!nulls])
 }
