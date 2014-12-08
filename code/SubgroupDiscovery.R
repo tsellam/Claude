@@ -1,7 +1,6 @@
 source("Rlib/InfoTheory.R", chdir=TRUE)
 library(tidyr)
 library(dplyr)
-library(ggplot2)
 
 #########
 # Utils #
