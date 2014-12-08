@@ -196,4 +196,35 @@ fast_joint_mutual_information <- function(cols, target, data){
     jmi <- entropy1 + entropy2 - joint_entropy
     return(jmi)
 }
-        
+
+
+# col1 : the model, ideal value
+# col2 : the approximation
+fast_kullback_leibler <- function(col1, col2){
+    
+    if (!(is.numeric(col1) || is.factor(col1)) ||
+        !(is.numeric(col2) || is.factor(col2)) )
+        stop("Incorrect input data!")
+    
+    col1 <- na.omit(col1)
+    col2 <- na.omit(col2)
+    
+    if (length(col1) < 2 || length(col2) < 2)
+        return(NA)    
+    
+    if (is.factor(col1) && is.factor(col1)){
+        if (!setequal(levels(col1), levels(col2)))
+            warning("BEWARE: suspicious levels in KL divergence!")
+        col1 <- as.numeric(col1)
+        col2 <- as.numeric(col2)
+    }
+    
+    if (max(col2) > max(col1))
+        warning("BEWARE: levels of SMALL variable not found in BIG variable!")
+    levs <- sort(unique(col1))
+    col1 <- as.integer(factor(col1, levels=levs))
+    col2 <- as.integer(factor(col2, levels=levs))
+    
+    KL_divergence <- .Call("KullbackLeibler", col1, col2)
+    return(KL_divergence)
+}

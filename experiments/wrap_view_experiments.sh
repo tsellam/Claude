@@ -27,6 +27,7 @@ then
     cd ../../experiments
 fi
 
+R -f wrap_view_experiments.sh
 R -f StrengthTest.R
 R -f get-target-entropies.R
 R -f ViewSelection.R

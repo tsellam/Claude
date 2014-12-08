@@ -4,12 +4,6 @@
 #include <R.h>
 #include <Rinternals.h>
 
-static int compare (void const *a, void const *b) {
-    int const *pa = a;
-    int const *pb = b;
-    return *pa - *pb;
-}
-
 /******************/
 /* Simple entropy */
 /******************/
@@ -163,6 +157,121 @@ SEXP jointEntropy(SEXP series1, SEXP series2) {
     return ScalarReal(out);
 }
 
+/*******************************/
+/* Kullback-Leibler Divergence */
+/*******************************/
+ double calcKullbackLeibler(int *s1, int *s2, int n1, int n2){
+
+    // Trivial cases
+    if (n1 < 2 || n2 < 2) return 0;
+
+
+    // HISTOGRAM FOR SERIES 1
+    // Gets bounds
+    int min1 = s1[0], max1 = s1[0];
+    for (int i=0; i < n1; i++)
+        if (s1[i] == NA_INTEGER){
+            continue;
+        } else {
+            min1 = s1[i];
+            max1 = s1[i];
+            break;
+        } 
+    for (int i=0; i < n1; i++){
+        if (s1[i] == NA_INTEGER) continue;
+        if (s1[i] < min1) min1 = s1[i];
+        if (s1[i] > max1) max1 = s1[i];
+    } 
+    // Allocs mem space
+    int nBins1   = (max1 - min1 + 1);    
+    int *counts1 = calloc(nBins1, sizeof(int));
+    if (!counts1){
+        printf("Error creating histogram\n");
+        return 0;
+    }
+    // Updates the histogram
+    for (int i=0; i < n1; i++){
+        if (s1[i] == NA_INTEGER) continue;
+        counts1[s1[i] - min1]++;
+    }
+    
+    // HISTOGRAM FOR SERIES 2
+    // Gets bounds
+    int min2 = s2[0], max2 = s2[0];
+    for (int i=0; i < n2; i++)
+        if (s2[i] == NA_INTEGER){
+            continue;
+        } else {
+            min2 = s2[i];
+            max2 = s2[i];
+            break;
+        } 
+    for (int i=0; i < n2; i++){
+        if (s2[i] == NA_INTEGER) continue;
+        if (s2[i] < min2) min2 = s2[i];
+        if (s2[i] > max2) max2 = s2[i];
+    } 
+    // Allocs mem space
+    int nBins2   = (max2 - min2 + 1); 
+    if (nBins2 > nBins1 || min2 < min1 || max2 > max1){
+        printf("The small series is bigger than the big one!");
+        return NA_REAL;
+    }
+    int *counts2 = calloc(nBins1, sizeof(int));
+    if (!counts2){
+        printf("Error creating histogram\n");
+        return 0;
+    }
+    // Updates the histogram
+    for (int i=0; i < n2; i++){
+        if (s2[i] == NA_INTEGER) continue;
+        counts2[s2[i] - min1]++;
+    }
+
+    // Scans the two histograms in parallel
+    // first pass to get the count distinct - for smoothing
+    int countDistinct = 0;
+    for (int i = 0; i < nBins1; i++){
+        if (counts1[i] > 0) countDistinct++;
+    }
+
+    double proba1, proba2, KLDistance = 0;
+    for (int i = 0; i < nBins1; i++){
+        if (counts1[i] < 1) continue;
+        proba1 = (double) (counts1[i] + 1) / (n1 + countDistinct);
+        proba2 = (double) (counts2[i] + 1) / (n2 + countDistinct);
+        KLDistance += proba1 * log2(proba1 / proba2) ;
+    }
+
+    free(counts1);
+    free(counts2);
+
+    return KLDistance;
+
+}
+
+SEXP KullbackLeibler(SEXP series1, SEXP series2) {
+    int *v1, *v2, nItems1, nItems2;
+    double out;
+
+    // Checking input
+    if (isVector(series1) && isInteger(series1) &&
+        isVector(series2) && isInteger(series2)){
+        nItems1 = LENGTH(series1);
+        v1      = INTEGER(series1);            
+        nItems2 = LENGTH(series2);
+        v2      = INTEGER(series2);            
+    } else {
+        printf("Invalid input.\n");
+        return R_NilValue;
+    }
+
+    // Doing stuff
+    out = calcKullbackLeibler(v1, v2, nItems1, nItems2);
+
+    // Out
+    return ScalarReal(out);
+}
 /****************************/
 /* Variation of information */
 /****************************/
