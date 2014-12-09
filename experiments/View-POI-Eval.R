@@ -30,7 +30,7 @@ if (test_mode){
     size_views <- c(3)
 } else {
     qs    <- c(10, 25)
-    ks    <- c(10, 50)
+    ks    <- c(10, 25)
     size_views <- c(3, 8)    
 }
 

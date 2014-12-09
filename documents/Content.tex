@@ -240,8 +240,8 @@ We propose to use the following approximation:
 
 The idea behind this approximation is naive: we assume that $I(D_{n+1} ; T |
 D_0, \ldots, D_{n}) \approx I(D_{n+1} ; M | D_{i})$. We ignore the high order
-dependencies. In practice, this assumption rarely holds.  However, this score
-is easy to compute. Consider a directed graph in which each vertex represents a
+dependencies. Thanks to this assumption, we can compute the strength of a view
+much faster.  Consider a directed graph in which each vertex represents a
 variables $D_i$. Each edge $(D_i, D_{i+1})$ has a a weight $ I(D_{i+1} ; T |
 D_{i})$.  We call this graph \emph{co-dependency} graph.  To compute the
 approximate strength of ${D_0, \ldots, D_i}$, we build a spanning tree which
@@ -252,20 +252,21 @@ weights. Which one should we use? We could use two variants. An
 \emph{optimisic} approximation $\sigma_+ $ would consider the \emph{maximum}
 spanning tree.  A \emph{pessimistic} approximation $\sigma_- $ would use the
 weight of the \emph{minimum} spanning tree. For the rest of this paper, we will
-only consider the former aleternative. 
+only consider the latter aleternative. 
 
 We now present a faster version of our view search algorithm.  We operate in
-two steps. First, we compute the strength of every couple column.  This gives
-us a first set of candidates, and we can derive the co-dependency graph.  Then,
-we run Beam Search as previously, but with the approximate strength computation.
-To append the variable $D_i$ to the view $V_k$, we list every edge which
-connects  $D_i$ to the columns of $V_k$. We identify the lightest one and add
-the value of its weight to $\sigma(V_k)$.  
+two steps. First, we compute the strength of every column and every couple of
+columns.  This gives us a first set of candidates, and we can derive the
+co-dependency graph using the fact that $I(D_{j} ; T | D_i) = \sigma(D_i ;
+D_{j}) - \sigma(D_i)$.  Then, we run Beam Search as previously, but with the
+approximate strength computation.  To append the variable $D_i$ to the view
+$V$, we list every edge which connects  $D_i$ to the columns of $V$. We
+identify the lightest one and add the value of its weight to $\sigma(V)$.  
 
-This algorithm is much faster because it spares expensive operations on the
-database. Instead, we perform computations on a graph with $d$ nodes.  To save
-some accuracy, we use the exact version of the view strength for the final top
-$q$ ranking.
+This algorithm is much faster because it spares us expensive database
+operations. Instead, we perform computations on a graph with $d$ nodes.  To
+save some accuracy, we use the exact version of the view strength for the final
+top $q$ ranking.
 
 \section{Detecting Points Of Interest}
 \label{sec:detec}
@@ -278,25 +279,13 @@ maximizes a user-defined quality measure. To solve our problem, we instantiate
 the quality measure with the divergence.
 
 In principle, we could use any efficient algorithm from the Subgroup Discovery
-litterature.  In practice, we favour the Beam Search heuristic. This algorithm
-is simple and widely accepted \cite{van2011non}. It explores the view top-down,
-level wise. To run Beam Search, we need two elements: an initial set of
-candidates, called the \emph{beam}, and a \emph{refinment operator}. The
-refinment operator generatase several specializations for a given candidate. At
-each step of the algorithm, we apply the refinment operator to each item in the
-beam. We obtain a large set of candidates. We keep the $r$ best ones, and use
-them for the next iteration. The operation is repeated until the algorithm
-converges, or some minimum cover threshold is met.
-
-In our implementation, we initialize the algorithm with all the tuples in the
-view.  To generate the refinments, we use binning.  Consider a set of tuples
-from the beam.  We create $b \geq 2$ bins for each column, and return one
-candidate per bin. Thus, if the view contains $n$ columns, our refinment
-operator generates $n \times b$ candidates for each set in the beam.  In some
-Data Warehouses, the dimensions are already organized in a hierarchy (e.g.,
-Country > Region > City). Then, we can use the natural aggregates
-in the data rather than bins. We start at the highest level, and ``drill down''
-as many times as necessary.
+litterature.  We propose to reuse the beam Search strategy from the previous
+section, but to explore \emph{tuples} instead of columns. We bin the data in a
+coarse manner and get a first set of $b$ cells. We then refine these cells with
+a thinner binning, etc...  In some Data Warehouses, the dimensions are already
+organized in a hierarchy (e.g., Country > Region > City). Then, we can use the
+natural aggregates in the data rather than bins. We start at the highest level,
+and ``drill down'' as many times as necessary.
 
 As mentioned in the Subgroup Discovery litterature \cite{van2011non}, our
 divergence score has a drawback: it favours smaller groups.  Therefore, Beam
@@ -330,25 +319,98 @@ is better.
 
 \section{Experiments}
 
+We use real data sets from the UCI repository and KIT, with different
+charatetistics. We interrupt experiments which last more than 15 minutes.
+
 \subsection{View strength and prediction}
 
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{plots/compare-strength-f1}
-\caption{}
+\caption{Strength vs. Classification accuracy for 1,000 random views. The blue
+    line represents a local regression, obtained by linear regression on a
+    sliding window of 80 points. The grey shade represents a 90\% confidence
+interval.}
 \label{pic:strength-vs-f1}
 \end{figure}
 
-\begin{figure*}[t!]
+In this set of experiments, we justify our initial hypothesis: the mutual
+information between a set of views and the target tells us how interesting the
+columns are. We generate 1,000 random views each dataset and compute their
+strength. Then, we apply a classifier on each of these views, and measure how
+well it predicts the target (we use the F1 measure, with 10-fold
+cross-validation). If the classifier has a low performance with weak views and
+a high performance with strong views, then our approach is validated. We use
+Naive Bayes because it is simple, efficient, and it has no built-in
+mechanism to filter irrelevant variables (as opposed to decision trees).
+
+For all our datasets we observed that the classifier's F1 grows or stays
+constant with the strength of the views. We present the results for four
+datasets in Figure \ref{pic:strength-vs-f1}. The influence is clearly positive
+for the dataset Adult, Diabetes and Pen Digits.  It is however neutral for the
+dataset communities. This shows that our notion of interestingness is
+optimistic, the mutual information gives a ``best case scenario'' which could
+or could not be reflected by the classifer.
+
+[in progress: try other algorithms, e.g. kNN]
+
+
+\subsection{View Selection}
+
+\begin{figure*}[t!]V
 \centering
-\includegraphics[width=2\columnwidth]{plots/column-select-score}
-\caption{column-select-score}
-\label{pic:column-select-score}
+\includegraphics[width=2\columnwidth]{plots/column-select-score-algo}
+\caption{Performance of the View Selection Algorithms with n=2 and n=5. The
+symbol \texttt{x} represents a missing value.}
+\label{pic:column-select-score-algo}
 \end{figure*}
 
-\begin{figure*}[t!]
+\begin{figure*}[t!]V
 \centering
-\includegraphics[width=2\columnwidth]{plots/column-select-time}
-\caption{column-select-time}
-\label{pic:column-select-time}
+\includegraphics[width=2\columnwidth]{plots/column-select-score-beam}
+\caption{Performance of the View Selection Algorithms wity varying Beam Sizes}
+\label{pic:column-select-score-beam}
 \end{figure*}
+
+ 
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\columnwidth]{plots/column-select-time}
+\caption{Runtime of the View Selection Algorithms. The symbol \texttt{x}
+indicates that the experiment breached our 15 minutes threshold.} 
+\label{pic:column-select-time}
+\end{figure}
+We now evaluate the performance of our view search algorithm. We benchmark
+Claude's two algorithms: \texttt{Exhaustive} represents the classic Beam Search
+scenario, while \texttt{Approximative} represents its optimized version. We use
+two baselines. The first baseline, \texttt{Clique}, is a graph-theoretic
+algorithm. The idea is to build a graph inside which each edge $V_i$-$V_j$
+represents the strength if the view  $\{V_i, V_j\}$. We select the top $b$
+edges of the graph, and detect maximal cliques of at most $n$ elements. The
+second baseline is a ``wrapper'', from the feature selection litterature. The
+idea is take a classifier, and evaluate how it performs with increasingly large
+views. As previously, we use Naive Bayes, and we use Claude's beam search
+strategy to generate the views. As we showed earlier, Naive Bayes is
+more conservative than Claude. Therefore, we expect it to have a better recall.
+
+To obtain Figure \ref{pic:column-select-score-algo}, we generated the top 100
+views with 2 and 5 dimensions, and measures how stong they were in average. We
+used a beam size of 100.  We observe that the algorithms Exhaustive,
+Approximative have almost always the same score. This shows that the
+performance performance penalty induced by our approximation is very weak.
+Clique is inferior for two datasets (Communities, Internet), and it
+overperforms Exhaustive for two others (Liver and Diabetes). The Naive Bayes
+Wrapper has a more extreme bahaviour: it outperfroms all the other approaches
+on Adult, Communities and Diabetes, but it gives very poor results for Glass,
+Pendigits and Vowel. To conclude, we cannot identify a clear winner, each
+algorithm can perform well with a dataset, bad with another.
+
+Figure \ref{pic:column-select-score-beam} shows how the scores vary when we
+change the Beam Size from 50 to 250. Except for Clique on Communities and
+Internet, we notice almost no difference.
+
+
+Figure \ref{pic:column-select-time} shows the runtimes of the different
+algorithms. We excluded the Naive Bayse approach because it is orders of
+magnitude slower than all the other algorithms.  Clique and Approximative have
+almost the same runtimes, they are orders of magnitude faster than Exhaustive.

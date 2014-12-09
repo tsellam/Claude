@@ -6,29 +6,20 @@ library(tidyr)
 
 
 # READING AND PREPROCESSING
-#raw_file <- read.delim("results-05:12/compare_scores.agg.out", stringsAsFactors = FALSE)
-raw_file <- read.delim("results-05:12/compare_scores.out", stringsAsFactors = FALSE, header = FALSE)
-names(raw_file) <- c("file", "x", "y", "strength", "algo", "NB_score")
+raw_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/compare_scores.tsv")
+levels(raw_file$file) <-  sub(".arff", "", levels(raw_file$file))
+raw_file$F1_score    <- as.numeric(as.character(raw_file$F1_score))
+#raw_file$strength    <- as.numeric(as.character(raw_file$strength))
 
-raw_file <- raw_file %>%
-        mutate(file = sub(".arff", "", file),
-               strength = strength,
-               NB_score = NB_score) %>%
-        filter(!(file=="internet_usage" & strength > 0.75) &
-               !(file=="insurance" & strength > 0.075) &
-               !(file=="liver" & strength < 0.25))
-
-
-target_entropies <- read.delim("entropies.out", stringsAsFactors = FALSE)
+target_entropies <- read.delim("entropies.out")
 raw_file <- left_join(raw_file, target_entropies, by = c('file' = 'file'))
 raw_file <- mutate(raw_file, strength = strength / entropy)
 
 # PLOTTING
 
+to_plot_all <- filter(raw_file, !file %in% c("insurance", "internet_usage"))
 
-to_plot_all <- filter(raw_file, !file %in% c("vowel"))
-
-outplotall <- ggplot(to_plot_all, aes(x = strength, y=NB_score, color=algo)) +
+outplotall <- ggplot(to_plot_all, aes(x = strength, y=F1_score, color=algo)) +
     geom_point(size=0.5) +
     stat_smooth(method = "loess") +
     scale_x_continuous(name = "") +
@@ -37,31 +28,29 @@ outplotall <- ggplot(to_plot_all, aes(x = strength, y=NB_score, color=algo)) +
     facet_grid( . ~ file)
 
 outplotall <- prettify(outplotall)
-print(outplotall)
+plot(outplotall)
 
 
 
 
-to_plot_1 <- filter(raw_file, file %in% c("adult", "diabetes"))
+to_plot_1 <- filter(raw_file, file %in% c("breast", "communities", "diabetes"))
 
-outplot1 <- ggplot(to_plot_1, aes(x = strength, y=NB_score, color=algo)) +
+outplot1 <- ggplot(to_plot_1, aes(x = strength, y=F1_score, color=algo, shape = algo)) +
             geom_point(size=0.5) +
             stat_smooth(method = "loess") +
-            scale_x_continuous(name = "") +
-            scale_y_continuous(name = "Naive Bayes - F1") +
-            expand_limits(x = 0, y = 0) +
+            scale_x_continuous(name = "View Score (Normalized)", limits=c(0,1), breaks=c(0,1)) +
+            scale_y_continuous(name = "Classification F1", limits=c(0,1)) +
             facet_grid( . ~ file, scales = "free_x")
 
 outplot1 <- prettify(outplot1)
 
-to_plot_2 <- filter(raw_file, file %in% c("pendigits", "communities"))
+to_plot_2 <- filter(raw_file, file %in% c("pendigits", "shape", "vowel"))
 
-outplot2 <- ggplot(to_plot_2, aes(x = strength, y=NB_score, color=algo)) +
+outplot2 <- ggplot(to_plot_2, aes(x = strength, y=F1_score, color=algo, shape = algo)) +
     geom_point(size=0.5) +
     stat_smooth(method = "loess") +
-    scale_x_continuous(name = "View Strength") +
-    scale_y_continuous(name = "Naive Bayes -  F1") +
-    expand_limits(x = 0, y = 0) +
+    scale_x_continuous(name = "View Score (Normalized)", limits=c(0,1), breaks=c(0,1)) +
+    scale_y_continuous(name = "Classification F1", limits=c(0,1)) +
     facet_grid( . ~file, scales = "free_x")
 
 outplot2 <- prettify(outplot2)

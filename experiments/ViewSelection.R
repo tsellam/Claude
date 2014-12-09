@@ -40,7 +40,7 @@ wrapper <- function(...){
     tryCatch(
         evalWithTimeout(
             ...,
-            timeout=900
+            timeout=1800
         ),
         error = function(e){
                 cat("Error, or TIMEOUT!\n")

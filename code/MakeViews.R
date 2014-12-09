@@ -18,7 +18,7 @@ generate_views <- function(data, target_col, nbins_target = 2,
     
     
     TIME <- proc.time()["elapsed"]
-    ALGO <- logfun(paste0("Just_POIs_", just_POIs))
+    ALGO <- paste0("Just_POIs_", just_POIs)
     
     # First, get views
     if (!just_POIs) {
