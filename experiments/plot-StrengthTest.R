@@ -6,7 +6,8 @@ library(tidyr)
 
 
 # READING AND PREPROCESSING
-raw_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/compare_scores.tsv")
+#raw_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/compare_scores.tsv")
+raw_file <- read.delim("~/Projects/TurboGroups/experiments/compare_scores.out")
 levels(raw_file$file) <-  sub(".arff", "", levels(raw_file$file))
 raw_file$F1_score    <- as.numeric(as.character(raw_file$F1_score))
 #raw_file$strength    <- as.numeric(as.character(raw_file$strength))

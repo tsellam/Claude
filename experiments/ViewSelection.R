@@ -29,24 +29,23 @@ if (test_mode){
     q    <- c(5)
     beam <- c(5)
     size_view <- c(3)
-    file_list <- file_list
+    file_list <- file_list[3]
 } else {
     q    <- c(25)
     beam <- c(25, 250)
     size_view <- c(3, 8)    
 }
 
-wrapper <- function(...){
-    tryCatch(
-        evalWithTimeout(
-            ...,
-            timeout=1800
-        ),
-        error = function(e){
-                cat("Error, or TIMEOUT!\n")
-                print(e)
-        }
-    )
+wrapper <- function(..., score_function, algo){
+#     tryCatch({
+        out <- evalWithTimeout(... , timeout=1800)
+        score_function(out, algo)
+#     },
+#     error = function(e){
+#            cat("Error, or TIMEOUT!\n")
+#            print(e)
+#        }
+#     )
 }
 
 for (arff_file in file_list){
@@ -65,7 +64,7 @@ for (arff_file in file_list){
                 cat(line, "\n", file = file_out, append = TRUE)
             }
             
-            tryCatch({
+#             tryCatch({
                 cat("Loading file...\n")
                 file  <- read.arff(paste0(files_location, "/", arff_file))
                 file  <- file[sample(1:nrow(file), nrow(file), replace=FALSE),]
@@ -75,38 +74,52 @@ for (arff_file in file_list){
                 
                 # Claude stuff
                 clean_data <- preprocess(file, target)
-                beamed <- wrapper(
-                                  search_exact(clean_data, target, q = q,
-                                         size_view = s, size_beam = b,
-                                         logfun = writelog, outfun = writeout)
-                                  )
+                clean_data_NB <- preprocess_NB(file, target)
                 
+                 score_function <- function(res, algo){
+                     get_NB_score(res, clean_data_NB, target, writeout, algo)
+                 }
+             
+                beamed <- wrapper(
+                              search_exact(clean_data, target, q = q,
+                                     size_view = s, size_beam = b,
+                                     logfun = writelog, outfun = writeout),
+                                    score_function = score_function,
+                                    algo = "Exhaustive"
+                                  )
+
                 approx <- wrapper(
                             search_approx(clean_data, target, q = q,
                                 size_view = s, size_beam = b,
-                                logfun = writelog, outfun = writeout)
-                            )
+                                logfun = writelog, outfun = writeout),
+                                score_function = score_function,
+                                algo = "Approximative"
+                            )                
                 
                 clique_approx <-  wrapper(
                             search_cliques(clean_data, target, q = q,
                                 size_view = s, size_beam = b, 
-                                logfun = writelog, outfun = writeout)
-                            )
+                                logfun = writelog, outfun = writeout),
+                            score_function = score_function,
+                            algo = "Clique"
+                            
+                )
                 
                 # Baseline
-                clean_data <- preprocess_NB(file, target)
                 beamed_NB <-  wrapper(
                             search_exact_NB(clean_data, target, q = q,
                                size_view = s, size_beam = b,
-                               logfun = writelog, outfun = writeout)
-                            )
-
+                               logfun = writelog, outfun = writeout),
+                            score_function = score_function,
+                            algo = "Wrap_NaiveBayes"
+                )
+                
                 cat("Done\n")
-            },
-            error = function(e){
-                cat("ERROR!\n")
-                print(e)
-            })
+#            },
+#             error = function(e){
+#                 cat("ERROR!\n")
+#                 print(e)
+#             })
         }
     }
 }

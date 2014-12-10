@@ -402,30 +402,25 @@ search_cliques <- function(data, target_col, q=NULL, size_view, size_beam,
 ###############
 # Experiments #
 ###############
-# # Load data
-# cereals <- read.delim("~/Projects/TurboGroups/data/cereal.csv")
-# communities  <- read.arff("~/Projects/TurboGroups/data/communities.arff")
 # census <- read.csv("~/Projects/TurboGroups/data/census.csv", na.strings="?")
 # census <- select(census, -fnlwgt)
+
+# # Load data
+# communities  <- read.arff("~/Projects/TurboGroups/data/communities.arff")
+# data <- communities
+# target <- "ViolentCrimesPerPop"
 # 
-# # Preprocessing
-# # data <- communities
-# # target <- "ViolentCrimesPerPop"
-# #data <- rbind(data,)
-# #target <- "salary"
-# #data <- preprocess(census, target)
-# Runs the search
 # clean_data <- preprocess(data, target)
-#  
-# time <- Sys.time()
-# beamed <- search_exact(clean_data, target, q = 25, size_view = 4, size_beam = 15)
-# print(Sys.time() - time) ; time <- Sys.time(); cat("\n")
-# 
+# #  
+# #time <- Sys.time()
+# # beamed <- search_exact(clean_data, target, q = 25, size_view = 4, size_beam = 15)
+# # print(Sys.time() - time) ; time <- Sys.time(); cat("\n")
+# # 
 # approx <- search_approx(clean_data, target, q = 25, size_view = 4, size_beam = 15)
-# print(Sys.time() - time) ; time <- Sys.time(); cat("\n")
-# 
-# clique_approx <- search_cliques(data, target, q = 25, size_view = 4, top_threshold = 0.05)
-# print(Sys.time() - time) ; time <- Sys.time(); cat("\n")
-# 
-# clean_data <- preprocess_NB(data, target)
-# res <- search_exact_NB(clean_data, target, q = 5, size_view = 4, size_beam = 10)
+# #print(Sys.time() - time) ; time <- Sys.time(); cat("\n")
+# # 
+# # clique_approx <- search_cliques(data, target, q = 25, size_view = 4, top_threshold = 0.05)
+# # print(Sys.time() - time) ; time <- Sys.time(); cat("\n")
+# # 
+# # clean_data <- preprocess_NB(data, target)
+# # res <- search_exact_NB(clean_data, target, q = 5, size_view = 4, size_beam = 10)

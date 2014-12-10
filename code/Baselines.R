@@ -149,15 +149,18 @@ search_exact_NB <- function(data, target_col, q, size_view, size_beam=NULL,
     return(views)
 }
 
-get_NB_score <- function(view_set, data, target, logfun){
+get_NB_score <- function(view_set, data, target, logfun, algo = NULL){
     for (i in 1:length(view_set)){
         view <- view_set[[i]]
         strength <- view$strength
         NB_strength <- NB_strength(view$columns, target, data, folds=10)
-        logfun(i, strength, "NaiveBayes", NB_strength)
+        if (is.null(algo)) {
+            logfun(i, strength, "NaiveBayes", NB_strength)
+        } else {
+            logfun(algo, i, "NaiveBayes - F1", NB_strength)
+        }
     }
 }
-
 
 
 # kNN
