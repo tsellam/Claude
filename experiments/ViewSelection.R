@@ -37,15 +37,15 @@ if (test_mode){
 }
 
 wrapper <- function(..., score_function, algo){
-#     tryCatch({
+     tryCatch({
         out <- evalWithTimeout(... , timeout=1800)
         score_function(out, algo)
-#     },
-#     error = function(e){
-#            cat("Error, or TIMEOUT!\n")
-#            print(e)
-#        }
-#     )
+     },
+     error = function(e){
+            cat("Error, or TIMEOUT!\n")
+            print(e)
+        }
+     )
 }
 
 for (arff_file in file_list){
@@ -64,7 +64,7 @@ for (arff_file in file_list){
                 cat(line, "\n", file = file_out, append = TRUE)
             }
             
-#             tryCatch({
+             tryCatch({
                 cat("Loading file...\n")
                 file  <- read.arff(paste0(files_location, "/", arff_file))
                 file  <- file[sample(1:nrow(file), nrow(file), replace=FALSE),]
@@ -115,11 +115,11 @@ for (arff_file in file_list){
                 )
                 
                 cat("Done\n")
-#            },
-#             error = function(e){
-#                 cat("ERROR!\n")
-#                 print(e)
-#             })
+            },
+             error = function(e){
+                 cat("ERROR!\n")
+                 print(e)
+             })
         }
     }
 }
