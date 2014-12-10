@@ -33,16 +33,23 @@ score <- function(pred, truth, F1=TRUE){
     class_pred_count <- apply(tab, 1, sum)
     class_true_count <- apply(tab, 2, sum)
     class_pred_hits  <- diag(tab)
-    precision <- class_pred_hits / class_pred_count
-    recall    <- class_pred_hits / class_true_count
+    precision <- ifelse(class_pred_count > 0,
+                        class_pred_hits / class_pred_count,
+                        1)
+    recall    <- ifelse(class_true_count > 0,
+                        class_pred_hits / class_true_count,
+                        1)
     F1 <- 2 * precision * recall / (precision + recall)
     
-    avg_F1 <- sum(F1 * class_true_count, na.rm = TRUE) / sum(class_true_count)
+    if (length(class_true_count) < 3){
+        mino_class<- which.min(class_true_count)
+        avg_F1 <- F1[mino_class]
+    } else {
+        avg_F1 <- sum(F1 * class_true_count, na.rm = TRUE) / sum(class_true_count)
+    }
+    
     return(avg_F1)
 }
-predict <- sample(c(0, 1), 20, replace=T)
-true <- sample(c(0, 1), 20, replace=T)
-score(predict, true)
 
 NB_strength <- function(columns, target, data,
                         folds=2, F1 = TRUE){
