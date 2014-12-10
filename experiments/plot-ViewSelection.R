@@ -12,14 +12,12 @@ out_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/results
                        stringsAsFactors=FALSE)
 
 log_file <- log_file %>%
-    filter(!(file %in% c("insurance.arff", "cover_type.arff"))) %>%
+    filter(!(file %in% c("insurance.arff", "cover_type.arff")))%>%
     filter(!algo %in% c("Clique", "Wrap_NaiveBayes"))
 
 out_file <- out_file %>%
-    filter(!(file %in% c("insurance.arff", "cover_type.arff"))) %>%
+    filter(!(file %in% c("insurance.arff", "cover_type.arff")))%>%
     filter(!algo %in% c("Clique", "Wrap_NaiveBayes"))
-
-
 
 
 log_file$algo <- factor(log_file$algo,
@@ -31,7 +29,6 @@ log_file$size_view <- factor(log_file$size_view,
 log_file$beam_size <- factor(log_file$beam_size,
                              levels = unique(sort(out_file$beam_size)),
                              labels = paste("Beam Size: ", unique(sort(out_file$beam_size))))
-
 
 order_files <- log_file %>%
                 filter(beam_size == "Beam Size:  25" &
@@ -98,7 +95,7 @@ algo_accuracy <- ggplot(accuracies, aes(x = file, y=strength, color = algo, fill
                         scale_y_continuous(name = "View Score (Normalized)", breaks = c(0,1))
 
 algo_accuracy <- prettify(algo_accuracy) +
-                    theme(legend.position = "top")
+                    theme(legend.position = "top", axis.text.x = element_text(angle = 22, hjust = 1))
 print(algo_accuracy)
 
 
@@ -140,7 +137,7 @@ algo_runtime <- ggplot(runtimes, aes(x = file, y=runtime, color = algo, fill = a
     scale_y_continuous(name = "Runtime (% max)", breaks=c(0,100))
 
 algo_runtime <- prettify(algo_runtime)+
-    theme(legend.position = "top")
+    theme(legend.position = "top", axis.text.x = element_text(angle = 22, hjust = 1))
 print(algo_runtime)
 
 

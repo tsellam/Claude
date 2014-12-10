@@ -196,6 +196,7 @@ This would be a loss, because we lose the opportunity to discover $\{var1,
 var2\}$.
 
 \subsection{Approximating the View Strength}
+\label{sec:approx}
 
 The Beam Search aslgorithm gives us a convenient way to find good views.
 Through the size of the beam, we can find a compromise between execution time
@@ -334,83 +335,92 @@ interval.}
 \label{pic:strength-vs-f1}
 \end{figure}
 
-In this set of experiments, we justify our initial hypothesis: the mutual
-information between a set of views and the target tells us how interesting the
-columns are. We generate 1,000 random views each dataset and compute their
-strength. Then, we apply a classifier on each of these views, and measure how
-well it predicts the target (we use the F1 measure, with 10-fold
-cross-validation). If the classifier has a low performance with weak views and
-a high performance with strong views, then our approach is validated. We use
-Naive Bayes because it is simple, efficient, and it has no built-in
-mechanism to filter irrelevant variables (as opposed to decision trees).
+In this set of experiments, we examine how interesting strong views really are.
+To do so, we simulate the users with statistical classifiers.  We generate
+1,000 random views for each dataset. We compute the strength of the views, and
+measure how well the classifiers perform with them. If the classifiers have a
+low performance with weak views and a high performance with strong views, then
+our approach is validated. We use two different classifiers: 3-NN, and Naive
+Bayes.  These approaches are known to be simple, efficient, and they have no
+built-in mechanism to filter irrelevant variables (as opposed to decision
+trees). To measure their performance, we use 10-fold cross-validation.
 
-For all our datasets we observed that the classifier's F1 grows or stays
-constant with the strength of the views. We present the results for four
-datasets in Figure \ref{pic:strength-vs-f1}. The influence is clearly positive
-for the dataset Adult, Diabetes and Pen Digits.  It is however neutral for the
-dataset communities. This shows that our notion of interestingness is
-optimistic, the mutual information gives a ``best case scenario'' which could
-or could not be reflected by the classifer.
-
-[in progress: try other algorithms, e.g. kNN]
+For all our datasets we observe that the classifier's F1 stays constant or
+grows with the strength of the views. We present the results for six datasets
+in Figure \ref{pic:strength-vs-f1}. Clearly, the view strength has a positive
+influence on accuracy for the datasets Adult, Pen Digits and Shape. The
+relationship is more subtle for the datasets Communities and Breast. This is
+due to the fact that the classifiers are not perfect: they may not exploit all
+the information contained in the variables. We conclude that the strength of a
+view describes a potential. A strong view contains all the information
+necessary to understand how the target varies. However, the measure is somehow
+optimistic: the information contained by the variables may not be directly
+exploitable by a classifier.
 
 
 \subsection{View Selection}
 
-\begin{figure*}[t!]V
+\begin{figure*}[t!]
 \centering
-\includegraphics[width=2\columnwidth]{plots/column-select-score-algo}
-\caption{Performance of the View Selection Algorithms with n=2 and n=5. The
-symbol \texttt{x} represents a missing value.}
-\label{pic:column-select-score-algo}
+\includegraphics[width=2\columnwidth]{plots/column-select-score}
+\caption{Performance of the View Selection Algorithms with different view and
+beam sizes. The symbol \texttt{x} represents a missing value.}
+\label{pic:column-select-score}
 \end{figure*}
-
-\begin{figure*}[t!]V
-\centering
-\includegraphics[width=2\columnwidth]{plots/column-select-score-beam}
-\caption{Performance of the View Selection Algorithms wity varying Beam Sizes}
-\label{pic:column-select-score-beam}
-\end{figure*}
-
  
-\begin{figure}[t!]
+\begin{figure*}[t!]
 \centering
-\includegraphics[width=\columnwidth]{plots/column-select-time}
+\includegraphics[width=2\columnwidth]{plots/column-select-time}
 \caption{Runtime of the View Selection Algorithms. The symbol \texttt{x}
 indicates that the experiment breached our 15 minutes threshold.} 
 \label{pic:column-select-time}
-\end{figure}
-We now evaluate the performance of our view search algorithm. We benchmark
-Claude's two algorithms: \texttt{Exhaustive} represents the classic Beam Search
-scenario, while \texttt{Approximative} represents its optimized version. We use
-two baselines. The first baseline, \texttt{Clique}, is a graph-theoretic
-algorithm. The idea is to build a graph inside which each edge $V_i$-$V_j$
-represents the strength if the view  $\{V_i, V_j\}$. We select the top $b$
-edges of the graph, and detect maximal cliques of at most $n$ elements. The
-second baseline is a ``wrapper'', from the feature selection litterature. The
-idea is take a classifier, and evaluate how it performs with increasingly large
-views. As previously, we use Naive Bayes, and we use Claude's beam search
-strategy to generate the views. As we showed earlier, Naive Bayes is
-more conservative than Claude. Therefore, we expect it to have a better recall.
-
-To obtain Figure \ref{pic:column-select-score-algo}, we generated the top 100
-views with 2 and 5 dimensions, and measures how stong they were in average. We
-used a beam size of 100.  We observe that the algorithms Exhaustive,
-Approximative have almost always the same score. This shows that the
-performance performance penalty induced by our approximation is very weak.
-Clique is inferior for two datasets (Communities, Internet), and it
-overperforms Exhaustive for two others (Liver and Diabetes). The Naive Bayes
-Wrapper has a more extreme bahaviour: it outperfroms all the other approaches
-on Adult, Communities and Diabetes, but it gives very poor results for Glass,
-Pendigits and Vowel. To conclude, we cannot identify a clear winner, each
-algorithm can perform well with a dataset, bad with another.
-
-Figure \ref{pic:column-select-score-beam} shows how the scores vary when we
-change the Beam Size from 50 to 250. Except for Clique on Communities and
-Internet, we notice almost no difference.
+\end{figure*}
 
 
-Figure \ref{pic:column-select-time} shows the runtimes of the different
-algorithms. We excluded the Naive Bayse approach because it is orders of
-magnitude slower than all the other algorithms.  Clique and Approximative have
-almost the same runtimes, they are orders of magnitude faster than Exhaustive.
+We now evaluate our view selection strategy. We compare two approaches, both
+based on beam search. The first approach uses the exact strength computations.
+The second approach use our approximation described in \ref{sec:approx}. Figure 
+\ref{pic:column-select-score} shows the average score of the top 25 views
+returned by both approaches. In almost all cases, the approximation does induce a
+very slight penalty. Also, we note that the size of the beam has little to no influence
+on the results. This hints that Beam Search is an efficient heuristic: we do
+not need to explore the whole search space to find good solutions.
+
+Figure \ref{pic:column-select-time} describes the runtime of each strategy. It
+shows that our solultion is extremely efficient: the view search based on
+approximations is up to two orders magnitude faster than its competitor.
+
+\subsection{View and POIs}
+
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=2\columnwidth]{plots/View-POI-Acc}
+\caption{Quality of the POIs returned by Claude, for different q, k and n.}
+\label{pic:quali-POIs}
+\end{figure*}
+ 
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=2\columnwidth]{plots/View-POI-Time}
+\caption{Execution time of Claude versus Beam Search for different q, k and n.} 
+\label{pic:time-POIs}
+\end{figure*}
+
+Figures \ref{pic:quali-POIs} and \ref{pic:time-POIs} present our evaluation of
+Claude's POIs. We compare two approaches: \texttt{View Search + POI} is Claude's
+natural approach, presented in the paper. The idea behind \texttt{POI} is to
+apply Beam Search on the whole database directly. Ths strategy is used by many
+state-of-art subgroup discovery algorithms. Instead of seeking $k$ POIs in $q$
+projections, the algorithms obtains $q.k$ selections from the whole the full column
+space.
+
+Figure \ref{pic:quali-POIs} describes the quality of the POIs. In most case, we
+observe that difference is very subtle. The \texttt{POI} approach tends to give
+better results for low $q$ and $k$ and small views (llustrated by the top left
+corner of the Figure). When $q$, $k$ and $n$ and higher, Claude tends to find
+better POIs.
+
+Claude's advantage comes from its runtime. In Figure \ref{pic:time-POIs}, we
+see that in mamny cases, Claude is at least twice as fast as the pure Beam
+Search approach. As Claude decouples view search and POI search, it
+overperforms state of the art Subgroup Discovert techniques.

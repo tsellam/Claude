@@ -47,7 +47,7 @@ prettify <- function(chart, ...) {
     
     chart <- chart + theme(legend.title=element_blank(),
                            plot.margin=unit(c(0,0,0,0),"cm"),
-                            legend.key.height=unit(8,"pt"))
+                            legend.key.height=unit(8,"pt"),
           #axis.title.y=element_text(vjust=0.5),
-          #plot.margin=unit(c(0.1,0.1,0.1,0.1),"cm"))
+                            plot.margin=unit(c(0.1,0.1,0.1,0.1),"cm"))
 }

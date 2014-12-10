@@ -40,9 +40,11 @@ outplot1 <- ggplot(to_plot_1, aes(x = strength, y=F1_score, color=algo, shape = 
             stat_smooth(method = "loess") +
             scale_x_continuous(name = "View Score (Normalized)", limits=c(0,1), breaks=c(0,1)) +
             scale_y_continuous(name = "Classification F1", limits=c(0,1)) +
+            coord_fixed(ratio = 1) +
             facet_grid( . ~ file, scales = "free_x")
 
-outplot1 <- prettify(outplot1)
+outplot1 <- prettify(outplot1) +
+    theme(legend.position = "top")
 
 to_plot_2 <- filter(raw_file, file %in% c("pendigits", "shape", "vowel"))
 
@@ -53,12 +55,13 @@ outplot2 <- ggplot(to_plot_2, aes(x = strength, y=F1_score, color=algo, shape = 
     scale_y_continuous(name = "Classification F1", limits=c(0,1)) +
     facet_grid( . ~file, scales = "free_x")
 
-outplot2 <- prettify(outplot2)
+outplot2 <- prettify(outplot2) +
+    theme(legend.position = "bottom")
 
 
 
 # WRITING
 
-pdf("../documents/plots/tmp_compare-strength-f1.pdf", width = 3.33, height = 3.33)
+pdf("../documents/plots/tmp_compare-strength-f1.pdf", width = 3.5, height = 4)
 outplot <- grid.arrange(outplot1, outplot2, ncol=1)
 dev.off()
