@@ -20,25 +20,25 @@ rm -rf Databases data.zip*
 #done
 
 
-#####################
-# BIG FILES FROM 4S #
-#####################
-# Gets the public files
-echo Getting big files of 4S
-
-wget --quiet http://www.ipd.kit.edu/~muellere/4S/data.zip
-unzip data.zip  real/mutant1.csv real/gisette.csv #real/har.csv
-mv real/*.csv .
-rm -rf real synthetic
-
-rm mutant2*
-
-cut -d';' -f1-2500,5001 gisette.csv > tmp
-mv tmp gisette.csv
-
-cut -d';' -f4827-5409 mutant1.csv > mutant0.csv
-cut -d';' -f1-4000,5409 mutant1.csv > tmp
-mv tmp mutant1.csv
+######################
+## BIG FILES FROM 4S #
+######################
+## Gets the public files
+#echo Getting big files of 4S
+#
+#wget --quiet http://www.ipd.kit.edu/~muellere/4S/data.zip
+#unzip data.zip  real/mutant1.csv real/gisette.csv #real/har.csv
+#mv real/*.csv .
+#rm -rf real synthetic
+#
+#rm mutant2*
+#
+#cut -d';' -f1-2500,5001 gisette.csv > tmp
+#mv tmp gisette.csv
+#
+#cut -d';' -f4827-5409 mutant1.csv > mutant0.csv
+#cut -d';' -f1-4000,5409 mutant1.csv > tmp
+#mv tmp mutant1.csv
 
 
 ######################
@@ -77,8 +77,9 @@ rm covtype.data
 
 # Crime
 wget http://archive.ics.uci.edu/ml/machine-learning-databases/communities/communities.data
-awk -F',' '{if ($128 < 0.4) $128 = 0 ; else $128 = 1 ; print}' communities.data \
-	| sed 's/ /;/g' > communities.csv
+#awk -F',' '{if ($128 < 0.4) $128 = 0 ; else $128 = 1 ; print}' communities.data \
+#	| sed 's/ /;/g' > communities.csv
+cat communities.data |  sed 's/ /;/g' > communities.csv
 rm communities.data
 
 
