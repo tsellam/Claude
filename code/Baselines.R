@@ -75,7 +75,7 @@ NB_strength <- function(columns, target, data,
         scores <- c(scores, score(nb_predict, test[[target]], F1))
     }
     
-    return(mean(scores))
+    return(mean(scores, na.rm = TRUE))
 }
 
 search_exact_NB <- function(data, target_col, q, size_view, size_beam=NULL,
@@ -211,7 +211,7 @@ kNN_strength <- function(columns, target, data,
         }, silent = TRUE)
     }
         
-    return(mean(scores))
+    return(mean(scores, na.rm = TRUE))
 }
 
 get_kNN_score <- function(view_set, data, target, logfun){

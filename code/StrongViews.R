@@ -24,7 +24,7 @@ preprocess <- function(table, target, nbins_target = 10){
                         cut(col, ceiling(log2(length(col))) + 1)
                     } else if ( (is.factor(col) || is.character(col)) &&
                                     length(unique(col)) > 1 &&
-                                    length(unique(col)) < 32 ){
+                                    length(unique(col)) < 1024 ){
                         factor(col)
                     } else {
                         print("Excluding")

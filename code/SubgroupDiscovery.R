@@ -52,6 +52,7 @@ filter_refinments <- function(refinments, maxs=NULL){
 }
 
 flush_refinments <- function(df, refinments = list(), size_beam=NULL){
+    if (nrow(df) < 1) return(NULL)
     # Generates new refinment objects
     new_refinments <- lapply(1:nrow(df), function(i){
         new_predicate <- paste0(df$column[[i]], ": ", df$label[[i]])
@@ -179,3 +180,14 @@ subgroup_discovery <- function(df, cols, target,
 # 
 # plot_subgroups(groups, data_file)
 
+
+
+# backup <- data_file
+# 
+# target <- "ViolentCrimesPerPop"
+# dimensions <- names(data_file)[names(data_file) != target]
+# data_file <- preprocess_for_sd(data_file, target, 8)
+# 
+# groups <- subgroup_discovery(data_file, dimensions, "ViolentCrimesPerPop")
+# 
+# plot_subgroups(groups, data_file)

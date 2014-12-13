@@ -6,8 +6,7 @@ library(tidyr)
 
 
 # READING AND PREPROCESSING
-#raw_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/compare_scores.tsv")
-raw_file <- read.delim("~/Projects/TurboGroups/experiments/compare_scores.out")
+raw_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.compare_scores.out")
 levels(raw_file$file) <-  sub(".arff", "", levels(raw_file$file))
 raw_file$F1_score    <- as.numeric(as.character(raw_file$F1_score))
 #raw_file$strength    <- as.numeric(as.character(raw_file$strength))
@@ -18,7 +17,7 @@ raw_file <- mutate(raw_file, strength = strength / entropy)
 
 # PLOTTING
 
-to_plot_all <- filter(raw_file, !file %in% c("insurance", "internet_usage"))
+#to_plot_all <- filter(raw_file, !file %in% c("insurance", "internet_usage"))
 
 outplotall <- ggplot(to_plot_all, aes(x = strength, y=F1_score, color=algo)) +
     geom_point(size=0.5) +
@@ -34,10 +33,10 @@ plot(outplotall)
 
 
 
-to_plot_1 <- filter(raw_file, file %in% c("breast", "communities", "diabetes"))
+to_plot_1 <- filter(raw_file, file %in% c("adult", "cover_type", "diabetes"))
 
 outplot1 <- ggplot(to_plot_1, aes(x = strength, y=F1_score, color=algo, shape = algo)) +
-            geom_point(size=0.5) +
+            geom_point(size=0.2) +
             stat_smooth(method = "loess") +
             scale_x_continuous(name = "View Score (Normalized)", limits=c(0,1), breaks=c(0,1)) +
             scale_y_continuous(name = "Classification F1", limits=c(0,1)) +
@@ -50,7 +49,7 @@ outplot1 <- prettify(outplot1) +
 to_plot_2 <- filter(raw_file, file %in% c("pendigits", "shape", "vowel"))
 
 outplot2 <- ggplot(to_plot_2, aes(x = strength, y=F1_score, color=algo, shape = algo)) +
-    geom_point(size=0.5) +
+    geom_point(size=0.2) +
     stat_smooth(method = "loess") +
     scale_x_continuous(name = "View Score (Normalized)", limits=c(0,1), breaks=c(0,1)) +
     scale_y_continuous(name = "Classification F1", limits=c(0,1)) +

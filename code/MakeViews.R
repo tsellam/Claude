@@ -1,5 +1,18 @@
+library(MASS)
+library(dplyr)
 source("StrongViews.R", chdir = TRUE)
 source("SubgroupDiscovery.R", chdir = TRUE)
+
+FEW_COLS = c(
+  green="#008C48",
+  blue="#185AA9",
+  orange="#F47D23",
+  red="#EE2E2F",
+  purple="#662C91",
+  maroon="#A21D21",
+  magenta="#B43894"
+)
+
 
 write_results <- function(algo, POIs, outfun){
     if (is.null(outfun)) return()
@@ -12,8 +25,8 @@ write_results <- function(algo, POIs, outfun){
 }
 
 generate_views <- function(data, target_col, nbins_target = 2,
-                           q=15, size_view=3, size_beam_q=25, pessimistic=TRUE,
-                           min_freq = 0.05, k = 3, size_beam_k = 3, nbins = 5, levels = 3,
+                           q=250, size_view=5, size_beam_q=300, pessimistic=TRUE,
+                           min_freq = 0.05, k = 1, size_beam_k = 10, nbins = 5, levels = 3,
                            just_POIs = FALSE, logfun = NULL, outfun = NULL){
     
     
@@ -61,7 +74,7 @@ generate_views <- function(data, target_col, nbins_target = 2,
     if (!is.null(outfun)) write_results(ALGO, POIs, outfun)
     
     # Plots
-    return(POIs)
+    return(list(views, POIs))
 }
 # 
 # # Experiments
@@ -77,3 +90,54 @@ generate_views <- function(data, target_col, nbins_target = 2,
 #                      outfun = function(...) print(paste(...))
 #                      )
 #       )
+
+# Experiments
+library(foreign)
+o_data_file <- read.arff("/Users/thib/Data/Files/vibrations/meteo.arff")
+
+vibra_cols <- sort(names(o_data_file))[51:113]
+pca <- prcomp(o_data_file[,vibra_cols],
+                 center = TRUE,
+                 scale. = TRUE) 
+vibra_cols_compressed <- predict(pca, o_data_file[,vibra_cols])[, 1:2]
+km_vibra_cols <- kmeans(vibra_cols_compressed, 16, nstart = 5)
+data_file_vibrid <- km_vibra_cols$cluster
+#rain <- rainbow(length(unique(vibra_cols_coded)))
+#plot(vibra_cols_compressed, col = rain[as.numeric(vibra_cols_coded)])
+
+dimensions <- names(o_data_file)[!names(o_data_file) %in% vibra_cols]
+target <- "data_file_vibrid"
+data_file <- cbind(o_data_file[,dimensions], data_file_vibrid)
+names(data_file) <- c(dimensions, target)
+
+groups <- generate_views(data_file, target)
+
+plot_group <- function(i, group = NULL){
+    columns <- groups[[1]][[i]]$columns
+    subgroups <- groups[[2]][[i]]
+    
+    colors <- rep("#737373", nrow(data_file))
+    
+    the_groups <- if (is.null(group)) {
+        1:length(subgroups)
+    } else {
+        c(group)
+    }
+    
+    for (n in the_groups){
+        gp <- subgroups[[n]]
+        colors[gp$items] <- FEW_COLS[which(the_groups == n)]
+    }
+    parcoord(data_file[, columns], col = colors)
+}
+
+plot_target <- function(i, group=1){
+    items <- groups[[2]][[i]][[group]]$items
+    non_items <- setdiff(1:nrow(vibra_cols_compressed), items)
+    plot(vibra_cols_compressed[non_items,], col = "#737373")
+    points(vibra_cols_compressed[items,], col = FEW_COLS[1])
+}
+
+plot_group(1)
+plot_target(2)
+#plot(vibra_cols_compressed[groups[[2]][[5]][[1]]$items,])

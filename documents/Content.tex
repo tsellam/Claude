@@ -284,9 +284,8 @@ litterature.  We propose to reuse the beam Search strategy from the previous
 section, but to explore \emph{tuples} instead of columns. We bin the data in a
 coarse manner and get a first set of $b$ cells. We then refine these cells with
 a thinner binning, etc...  In some Data Warehouses, the dimensions are already
-organized in a hierarchy (e.g., Country > Region > City). Then, we can use the
-natural aggregates in the data rather than bins. We start at the highest level,
-and ``drill down'' as many times as necessary.
+organized in a hierarchy (e.g., Country > Region > City). We could use the
+natural aggregates in the data rather than bins.
 
 As mentioned in the Subgroup Discovery litterature \cite{van2011non}, our
 divergence score has a drawback: it favours smaller groups.  Therefore, Beam
@@ -297,7 +296,7 @@ in the view. We use the \emph{weighted} deviation $\delta_w(R) = |R|/|V| \times
 \delta(R)$. This new score introduces a penalty for small POIs.
 
 
-\section{Eliminating redundancy}
+\section{Improving the Diversity of the Views}
 As Claude is based on a top-k approach, its output may be redundant.  The views
 may be very similar to each other, and the POIs may be very close.  Some users
 prefer small but diverse sets of suggestions. Here again, we exploit the Data
@@ -310,18 +309,69 @@ strategy, based on the Minimum Description Length principle
 \cite{vreeken2011krimp}.
 
 
-\section{Real-life example: radio astronomy}
-The aim here is to showcase Claude with a real life use case: finding
-transients in an astronomical database. Here, the database represents several
-thousands light sources (e.g., stars). The measure of interest is a statistic,
-which describes how much the sources deviate from some physical model. Higher
-is better.
+\section{Real-life example: meteorology data set}
 
+\begin{figure*}[t!]
+        \centering
+        \begin{subfigure}[b]{0.75\textwidth}
+                \includegraphics[width=\textwidth]{images/vibration_group_1}
+                \caption{Visualization of the First view. The green area
+                represents the first point of interest.}
+                \label{fig:vibration_group_1}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.25\textwidth}
+                \includegraphics[width=\textwidth]{images/vibration_target_1}
+                \caption{Items of the POI projected on the target columns.}
+                \label{fig:/vibration_target_2}
+        \end{subfigure}
+        \caption{First view, first POI}\label{fig:vibra-group1}
+\end{figure*}
+
+\begin{figure*}[t!]
+        \centering
+        \begin{subfigure}[b]{0.75\textwidth}
+                \includegraphics[width=\textwidth]{images/vibration_group_2}
+                \caption{Third view, fifth point of interest.}
+                \label{fig:vibration_group_1}
+        \end{subfigure}%
+        \begin{subfigure}[b]{0.25\textwidth}
+                \includegraphics[width=\textwidth]{images/vibration_target_2}
+                \caption{Items of the POI projected on the target columns.}
+                \label{fig:/vibration_target_2}
+        \end{subfigure}
+        \caption{Third view, fifth POI}\label{fig:vibra-group2}
+\end{figure*}
+
+Our task is to study vibrations in a plane. The data contains sensor
+observations. We have lots of target variables, each describing a type of
+vibration.
+
+Before we apply Claude, we need to aggregate the target variables into one
+composite column. To do so, we operate in two steps. First, we reduce the
+target dimensionality with PCA. Luckily, most of the variance is explained by
+the first two principal components. Then, we cluster the resulting space with
+k-means. We obtain a cluster identifier for each row: we will use this column
+as a target.
+
+We can now run our view detection algorithm. We generate 10 views, with 10 POIs
+each. We illustrate some results with Figures \ref{fig:vibra-group1} and
+\ref{fig:vibra-group2}. We see that Claude manages to ``explain'' different
+areas of the target space.
+
+PROBLEM: the subgroups are uber-redundant. Even if their description is
+different, their extents all look the same. Maybe we could change the target
+as the algorithm runs, or see how the SD literature does it.
+
+PROBLEM 2: I have no idea what these subgroups mean.
+
+To be continued.
 
 \section{Experiments}
 
 We use real data sets from the UCI repository and KIT, with different
-charatetistics. We interrupt experiments which last more than 15 minutes.
+charatetistics. We interrupt experiments which last more than 30 minutes.
+Claude is implemented in R, but the information theory primitives are written
+in C.
 
 \subsection{View strength and prediction}
 
@@ -329,8 +379,8 @@ charatetistics. We interrupt experiments which last more than 15 minutes.
 \centering
 \includegraphics[width=\columnwidth]{plots/compare-strength-f1}
 \caption{Strength vs. Classification accuracy for 1,000 random views. The blue
-    line represents a local regression, obtained by linear regression on a
-    sliding window of 80 points. The grey shade represents a 90\% confidence
+    and red lines represent local regressions, computed on a sliding window of
+    80 points. The grey shade around the lines represents a 90\% confidence
 interval.}
 \label{pic:strength-vs-f1}
 \end{figure}
@@ -345,17 +395,11 @@ Bayes.  These approaches are known to be simple, efficient, and they have no
 built-in mechanism to filter irrelevant variables (as opposed to decision
 trees). To measure their performance, we use 10-fold cross-validation.
 
-For all our datasets we observe that the classifier's F1 stays constant or
-grows with the strength of the views. We present the results for six datasets
-in Figure \ref{pic:strength-vs-f1}. Clearly, the view strength has a positive
-influence on accuracy for the datasets Adult, Pen Digits and Shape. The
-relationship is more subtle for the datasets Communities and Breast. This is
-due to the fact that the classifiers are not perfect: they may not exploit all
-the information contained in the variables. We conclude that the strength of a
-view describes a potential. A strong view contains all the information
-necessary to understand how the target varies. However, the measure is somehow
-optimistic: the information contained by the variables may not be directly
-exploitable by a classifier.
+For all our datasets we observe that the classifier's F1 grows with the
+strength of the views. We present the results for six datasets in Figure
+\ref{pic:strength-vs-f1}. Clearly, the view strength has a positive influence
+on accuracy. This confirms our approach: a strong view contains all the
+information necessary to understand how the target varies. 
 
 
 \subsection{View Selection}
@@ -376,19 +420,22 @@ indicates that the experiment breached our 15 minutes threshold.}
 \label{pic:column-select-time}
 \end{figure*}
 
-
 We now evaluate our view selection strategy. We compare two approaches, both
 based on beam search. The first approach uses the exact strength computations.
-The second approach use our approximation described in \ref{sec:approx}. Figure 
+The second approach use the approximation described in \ref{sec:approx}. Figure
 \ref{pic:column-select-score} shows the average score of the top 25 views
-returned by both approaches. In almost all cases, the approximation does induce a
-very slight penalty. Also, we note that the size of the beam has little to no influence
-on the results. This hints that Beam Search is an efficient heuristic: we do
-not need to explore the whole search space to find good solutions.
+returned by both approaches. In almost all cases, the approximation does induce
+a very slight penalty. Also, we note that the size of the beam has little to no
+influence on the results. This hints that Beam Search is an efficient
+heuristic: we do not need to explore the whole search space to find good
+solutions.
 
 Figure \ref{pic:column-select-time} describes the runtime of each strategy. It
 shows that our solultion is extremely efficient: the view search based on
-approximations is up to two orders magnitude faster than its competitor.
+approximations is up to two orders magnitude faster than its competitor. To
+explain this, recall that the ``exact'' algorithm must scan the
+whole database to evaluate the strength of each view. The approximate algorithm
+only performs a few lookups on the co-dependency graph.
 
 \subsection{View and POIs}
 
@@ -407,12 +454,13 @@ approximations is up to two orders magnitude faster than its competitor.
 \end{figure*}
 
 Figures \ref{pic:quali-POIs} and \ref{pic:time-POIs} present our evaluation of
-Claude's POIs. We compare two approaches: \texttt{View Search + POI} is Claude's
-natural approach, presented in the paper. The idea behind \texttt{POI} is to
-apply Beam Search on the whole database directly. Ths strategy is used by many
-state-of-art subgroup discovery algorithms. Instead of seeking $k$ POIs in $q$
-projections, the algorithms obtains $q.k$ selections from the whole the full column
-space.
+Claude's POIs. We compare two approaches. The algorithm \texttt{View Search +
+POI} is Claude's natural approach, presented in the paper. First we search $q$
+views, then we return $k$ POIs per view. The idea behind \texttt{POI} is to
+apply Beam Search on the whole database directly. Instead of seeking $k$ POIs
+in $q$ projections, we seek $q.k$ selections from the full column space.  We
+skip the view selection step. Ths strategy is used by many state-of-art
+subgroup discovery algorithms. 
 
 Figure \ref{pic:quali-POIs} describes the quality of the POIs. In most case, we
 observe that difference is very subtle. The \texttt{POI} approach tends to give
@@ -421,6 +469,12 @@ corner of the Figure). When $q$, $k$ and $n$ and higher, Claude tends to find
 better POIs.
 
 Claude's advantage comes from its runtime. In Figure \ref{pic:time-POIs}, we
-see that in mamny cases, Claude is at least twice as fast as the pure Beam
+see that in many cases, Claude is at least twice as fast as the pure Beam
 Search approach. As Claude decouples view search and POI search, it
 overperforms state of the art Subgroup Discovert techniques.
+
+Last minute comment: it seems that the price to pay is redundancy. It is
+possible to obtain the \emph{same subgroup} from \emph{different views}. The
+description is different, but the tuples are the same. Thereore Claude's POIs
+are even more redundant that those obtained by normal Subgroup Discovery.  This
+could explain why the KL deviations are overall so high.

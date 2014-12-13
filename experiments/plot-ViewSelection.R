@@ -6,9 +6,9 @@ library(tidyr)
 ###############
 # PREPARATION #
 ###############
-log_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/results.agg.log",
+log_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.results.log",
                        stringsAsFactors=FALSE)
-out_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/results.agg.out",
+out_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.results.out",
                        stringsAsFactors=FALSE)
 
 log_file <- log_file %>%
@@ -31,7 +31,7 @@ log_file$beam_size <- factor(log_file$beam_size,
                              labels = paste("Beam Size: ", unique(sort(out_file$beam_size))))
 
 order_files <- log_file %>%
-                filter(beam_size == "Beam Size:  25" &
+                filter(beam_size == "Beam Size:  250" &
                            size_view == "3  dim." &
                            key == "Time" & algo == "Approximative") %>%
                            arrange(value) %>% select(file)
@@ -40,9 +40,6 @@ order_files <- order_files[,1]
 log_file$file <- factor(log_file$file, levels = order_files, labels = order_files)
 levels(log_file$file) <- sub(".arff", "", levels(log_file$file))
 log_file <- arrange(log_file, file, size_view, beam_size, algo)
-
-
-
 
 
 out_file$algo <- factor(out_file$algo,
@@ -116,9 +113,9 @@ runtimes <- runtimes %>%
     gather_(gather_cols = algo_names,
             na.rm = FALSE) %>%
     mutate(algo = variable,
-           xceed = ifelse(is.na(value) ,">999", round(value, 1))) %>%
-    group_by(file, beam_size) %>%
-    mutate(runtime = ifelse(is.na(value), max(value, na.rm=TRUE), value)) %>%
+           xceed = ifelse(is.na(value) ,">2000", round(value, 1))) %>%
+    group_by(file, beam_size, size_view) %>%
+    mutate(runtime = ifelse(is.na(value), 2000, value)) %>%
     data.frame
 
 

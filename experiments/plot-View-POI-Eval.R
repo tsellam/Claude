@@ -8,23 +8,29 @@ source("graph-utils.R")
 
 
 # Reading, preprocessing and so on
-log_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/view+poi.log")
+log_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.view+poi.log")
 log_file <- log_file %>%
-    group_by(file, q, k, size, key) %>%
-    mutate(algo = c("ViewSearch + POI", "POI")[row_number()]) %>%
-    ungroup %>%
-    filter( (q==10 & k==10) | (q==25 & k==50)  ) %>%
+    #group_by(file, q, k, size, key) %>%
+    #mutate(algo = c("ViewSearch + POI", "POI")[row_number()]) %>%
+    #ungroup %>%
+    mutate(algo = factor(algo,
+                         levels = c("Just_POIs_FALSE", "Just_POIs_TRUE"), 
+                         labels = c("ViewSearch + POI", "POI"))) %>%
+    filter( (q==10 & k==10) | (q==25 & k==25)  ) %>%
     mutate(file = sub(".arff", "", file),
            setup = paste0("q = ", q, ", k = ", k),
            size = factor(size,
                          levels = unique(sort(size)),
                          labels = paste(unique(sort(size)), " dimensions")))
 
-out_file <- read.delim("~/Projects/TurboGroups/experiments/results-08:12/view+poi.out")
+out_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.view+poi.out")
 out_file <- out_file %>%
-    group_by(file, q, k, size, view) %>%
-    mutate(algo = c("ViewSearch + POI", "POI")[row_number()]) %>%
-    data.frame %>%
+    #group_by(file, q, k, size, view) %>%
+    #mutate(algo = c("ViewSearch + POI", "POI")[row_number()]) %>%
+    #data.frame %>%
+    mutate(algo = factor(algo,
+                         levels = c("Just_POIs_FALSE", "Just_POIs_TRUE"), 
+                         labels = c("ViewSearch + POI", "POI"))) %>%
     select(-description) %>%
     filter( (q==10 & k==10) | (q==25 & k==50)  ) %>%
     mutate(file = sub(".arff", "", file),
@@ -66,7 +72,7 @@ all_matches <- log_file %>%
 
 no_match <- all_matches %>%
                 anti_join(filter(log_file, algo == "POI"))%>%
-                mutate(algo = "POI", time = 999, xceed = ">999")
+                mutate(algo = "POI", time = 1999, xceed = ">1999")
 log_file <- rbind(log_file, no_match)
 
 log_file <- log_file %>%
@@ -88,7 +94,7 @@ time_plot <- ggplot(log_file, aes(x = factor(file),
                 scale_x_discrete(name = "Dataset") +
                 scale_y_continuous(name = "Runtime (% max)")
 
-time_plot <- prettify(time_plot)+
+time_plot <- prettify(time_plot) +
     theme(legend.position = "top", axis.text.x = element_text(angle = 22, hjust = 1))
 
 plot(time_plot)

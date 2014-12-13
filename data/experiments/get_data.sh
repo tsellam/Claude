@@ -77,9 +77,13 @@ rm covtype.data
 
 # Crime
 wget http://archive.ics.uci.edu/ml/machine-learning-databases/communities/communities.data
-#awk -F',' '{if ($128 < 0.4) $128 = 0 ; else $128 = 1 ; print}' communities.data \
-#	| sed 's/ /;/g' > communities.csv
-cat communities.data |  sed 's/ /;/g' > communities.csv
+awk -F',' '{if ($128 < 0.2) $128 = 0
+            else if ($128 < 0.4) $128 = 1
+            else if ($128 < 0.6) $128 = 2
+            else if ($128 < 0.8) $128 = 3
+            else $128 = 4
+            print}' communities.data \
+	| sed 's/ /;/g' > communities.csv
 rm communities.data
 
 
