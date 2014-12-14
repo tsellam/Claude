@@ -123,15 +123,15 @@ runtimes <- runtimes %>%
                 group_by(size_view, beam_size, file) %>%
                 mutate(runtime = runtime / max(runtime))
 
-algo_runtime <- ggplot(runtimes, aes(x = file, y=runtime, color = algo, fill = algo)) +
+algo_runtime <- ggplot(runtimes, aes(x = file, y=runtime * 100, color = algo, fill = algo)) +
     geom_bar(stat = "identity", position = "dodge") +
-    geom_text(aes(y=runtime / 2, label = xceed),
+    geom_text(aes(y=runtime * 100 / 2, label = xceed),
               position = position_dodge(width = 0.9),
               size=2,
               color = "black") +
     facet_grid(size_view ~ beam_size) +
     scale_x_discrete(name="Dataset") +
-    scale_y_continuous(name = "Runtime (% max)", breaks=c(0,100))
+    scale_y_continuous(name = "Runtime (% max)", breaks = c(0, 100))
 
 algo_runtime <- prettify(algo_runtime)+
     theme(legend.position = "top", axis.text.x = element_text(angle = 22, hjust = 1))

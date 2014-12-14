@@ -82,17 +82,17 @@ log_file <- log_file %>%
 
 
 time_plot <- ggplot(log_file, aes(x = factor(file),
-                                  y = time,
+                                  y = time * 100,
                                   fill = algo,
                                   color = algo)) +
                 geom_bar(stat = "identity", position = "dodge") +
-                geom_text(aes(label = xceed, y = time / 2), 
+                geom_text(aes(label = xceed, y = time * 100 / 2), 
                           position = position_dodge(width = 0.9),
                           color = "black",
                           size=2) +
                 facet_grid(size ~ setup, scale = "free") +
                 scale_x_discrete(name = "Dataset") +
-                scale_y_continuous(name = "Runtime (% max)")
+                scale_y_continuous(name = "Runtime (% max)", breaks = c(0,100))
 
 time_plot <- prettify(time_plot) +
     theme(legend.position = "top", axis.text.x = element_text(angle = 22, hjust = 1))
