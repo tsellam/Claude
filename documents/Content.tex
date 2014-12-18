@@ -71,6 +71,10 @@ define the \textbf{strength} of $V$ as follows:
 \[\sigma(V) = I(\rv{D}_1, \ldots, \rv{D}_n ; \rv{T})\]
 \end{definition}
 
+{\color{red}
+Detail what the MI is, how to compute, etc...
+}
+
 Claude seeks variables which are \emph{jointly depdendent} to the target. We
 measure dependency with the mutual information, because this quantity is
 general (correlation is only one type of dependency).
@@ -146,12 +150,21 @@ optional \emph{refinment} step.
 \section{Column selection}
 \label{sec:colum}
 
+{\color{red} 
+This section requires some reordering.
+\begin{itemize}
+    \item Introduce Lemma 2, and the idea to search for columns greedily
+    \item Present the exact approach
+    \item Present the approximation
+\end{itemize}
+Also, the description of the approximation should be deepened.
+}
+
 The aim of this phase is identify the $q$ strongest sets of variables. From
 here on, we use the notations $D_i$ and $\rv{D}_i$ interchangeably - we can use
 the context to distinguish database columns and random variables.
 
 \subsection{Base algorithm}
-
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/beam-search}
@@ -200,6 +213,7 @@ var2\}$.
 
 \subsection{Approximating the View Strength}
 \label{sec:approx}
+
 
 The Beam Search aslgorithm gives us a convenient way to find good views.
 Through the size of the beam, we can find a compromise between execution time
@@ -299,6 +313,10 @@ in the view. We use the \emph{weighted} deviation $\delta_w(R) = |R|/|V| \times
 
 
 \section{Improving the Diversity of the Views}
+
+{ \color{red} This section should go. Instead, replace it with a few mentions
+to deduplication in the previous section and/or in the experiments}
+
 As Claude is based on a top-k approach, its output may be redundant: the views
 may be very similar to each other.  Some users prefer small but diverse sets of
 suggestions.  We tackle this problem with compression techniques from the
@@ -309,6 +327,11 @@ return one representative view per cluster.
 
 
 \section{Real-life example: meteorology data set}
+
+{\color{red}
+    The discussion about how to reduce the target space with PCA is irrelevant.
+    Instead, we can just pick two vibration columns and ignore the others.
+}
 
 \begin{figure*}[t!]
         \centering
@@ -367,6 +390,10 @@ To be continued.
 
 \section{Experiments}
 
+{\color{red}
+The graphs should be simplified. Instead, use tables.
+}
+
 We use real data sets from the UCI repository and KIT, with different
 charatetistics. We interrupt experiments which last more than 30 minutes.
 Claude is implemented in R, but the information theory primitives are written
@@ -406,6 +433,16 @@ information necessary to understand how the target varies.
 
 
 \subsection{View Selection}
+
+{\color{red}
+    We need more baselines here.
+    \begin{itemize}
+        \item The wrapper based on Naive Bayes
+        \item A feature selection algorithm
+        \item HiCS?
+     \end{itemize}
+}
+
 
 \begin{figure*}[t!]
 \centering

@@ -6,6 +6,9 @@
 \usepackage{balance}
 \usepackage{algpseudocode}
 
+\usepackage{color}
+
+
 \newtheorem{definition}{Definition}
 \newtheorem{problem}{Problem}
 \newtheorem{lemma}{Lemma}
@@ -37,13 +40,24 @@ Martin Kersten\\
 \maketitle
 
 \begin{abstract}
-In this paper, we introduce \textit{Claude}, a generic query generation system.
-With Claude, the users leads, and the system
-explores. Here is how it works. The users assign a value to each tuple in the
-database.  This value can come from the raw data, a calculation, or manual
-effort. Claude's job is to crunch the data and present the ``big picture'': it
-explains how the target is distributed across the database, and what influences
-it.
+Exploratory data analysis tries to discover novel dependencies and unexpected
+patterns in large databases. Traditionally, such exploration is manual and
+hypothesis-driven, e.g. within a data warehouse system. However, analysts'
+patience and imagination are not unlimited. Data warehouses lack automated
+analysis of unknown dependencies of dimensions, and detection of unexpected
+local patterns.
+ 
+With Claude we follow a 2-step approach: (1) Claude detects non-linear
+statistical dependencies among dimensions, and hence selects views for
+semi-automated exploration. (2) To explain its findings, Claude detects local
+patterns in these views with so-called point-of-interest anaysis.
+
+Technically, we propose a statistical dependency analysis based on mutual
+information. Due to exponential search space of all possible views, we face
+severe efficiency challenges. For a scalable computation we propose a novel
+approximate selection of views. By analyzing the unexpectedness of the data
+distribution revealed by these views, we generate hypothese and express them
+with SQL queries.
 \end{abstract}
 
 \input{Introduction}
