@@ -50,12 +50,17 @@ deduplicate_views <- function(candidates, size_beam){
     if(nrow(candidates) <= size_beam || size_beam < 1)
         return(candidates)
     
+    cat("Before:", nrow(candidates))
     # Formatting
+    if (!"id" %in% colnames(candidates))
+        candidates <- mutate(candidates, id=1:nrow(candidates))
+    
     bin_candidates <- candidates %>%
                     select(-strength) %>%
                     gather(key, item, starts_with('column')) %>%
                     mutate(value = 1) %>% select(-key) %>%
                     spread(item, value, fill = 0)
+    
     rownames(bin_candidates) <- bin_candidates$id
     bin_candidates <- bin_candidates %>% select(-id)
     
@@ -67,6 +72,7 @@ deduplicate_views <- function(candidates, size_beam){
     med_names <- rownames(medoids)
     candidates <- candidates %>% filter(id %in% med_names)
     
+    cat("...After:", nrow(candidates), "...")
     return(candidates)
 }
 
@@ -238,16 +244,11 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     
     # First iterations are classic
     views <- list()
-    first_level <- data.frame()
-    second_level <- data.frame()
+    first_levels <- list()
     for (i in 1:min(size_view, 2)){
         cat("*** Computing level", i, "... ")
         
-        if (i == 1) {
-            candidate_cols <- dim_names
-        } else {
-            candidate_cols <- first_level[["column1"]]
-        }
+        candidate_cols <- if (i == 1) dim_names else views_df[["column1"]]
         combs <- combn(candidate_cols, i)
         cat("Getting strength for", length(combs), "views...")
         strengths <- apply(combs, 2, fast_joint_mutual_information, target, data)
@@ -255,15 +256,16 @@ search_approx <- function(data, target_col, q=NULL, size_view,
         views_df <- as.data.frame(t(combs), stringsAsFactors = F)
         names(views_df) <- paste0("column", 1:i)
         views_df[["strength"]] <- strengths
-        views_df <- filter(views_df, row_number(desc(strength)) <= size_beam)
         
-        views <- flush_views(views_df, views)
-        if (i == 1) {
-            first_level <- views_df
+        if (i > 1 && dup_factor != 1){
+            views_df <- filter(views_df, row_number(desc(strength)) <= size_beam * dup_factor)
+            views_df <- deduplicate_views(views_df, size_beam)
         } else {
-            second_level <- views_df
+            views_df <- filter(views_df, row_number(desc(strength)) <= size_beam)
         }
         
+        views <- flush_views(views_df, views)
+        first_levels[[i]] <- views_df
         cat("Done\n")
     }
     if (size_view <= 2) {
@@ -281,13 +283,13 @@ search_approx <- function(data, target_col, q=NULL, size_view,
         
     # Builds the graph
     cat("*** Computing graph...")
-    graph <- compute_graph(first_level, second_level)
+    graph <- compute_graph(first_levels[[1]], first_levels[[2]])
     cat(" Done\n")
     TIMEG <- proc.time()["elapsed"]
     if (!is.null(logfun)) logfun("Approximative", "Time-Graph", TIMEG - TIME)
     
     # Generates an id and ship to the main loop
-    candidates <- mutate(second_level, id = generate_ids(column1, column2))
+    candidates <- mutate(first_levels[[2]], id = generate_ids(column1, column2))
     for (level in 3:size_view){
         cat("*** Computing level", level, "... ")
         
@@ -330,9 +332,8 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                             }) %>% ungroup
         
         # prunes
-        if (!is.null(size_beam))
-            candidates <- candidates %>% 
-                          filter(row_number(desc(strength)) <= size_beam * dup_factor)
+        candidates <- candidates %>% 
+                        filter(row_number(desc(strength)) <= size_beam * dup_factor)
         
         # deduplicates soft
         if (dup_factor != 1){
