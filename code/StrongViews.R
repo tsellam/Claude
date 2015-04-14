@@ -2,6 +2,7 @@ library(foreign)
 library(igraph)
 library(tidyr)
 library(dplyr)
+library(cluster)
 source("Rlib/InfoTheory.R", chdir=TRUE)
 
 ##############
@@ -40,6 +41,34 @@ preprocess <- function(table, target, nbins_target = 10){
     data.frame(content[!nulls])
 }
 
+deduplicate_views <- function(candidates, size_beam){
+    
+    # Special cases
+    if (!is.data.frame(candidates) || !is.numeric(size_beam))
+        stop("Error: incorrect input to view deduplication function")
+    
+    if(nrow(candidates) <= size_beam || size_beam < 1)
+        return(candidates)
+    
+    # Formatting
+    bin_candidates <- candidates %>%
+                    select(-strength) %>%
+                    gather(key, item, starts_with('column')) %>%
+                    mutate(value = 1) %>% select(-key) %>%
+                    spread(item, value, fill = 0)
+    rownames(bin_candidates) <- bin_candidates$id
+    bin_candidates <- bin_candidates %>% select(-id)
+    
+    # Clustering
+    clust_analysis <- pam(bin_candidates, size_beam, metric = "manhattan")
+    medoids <- clust_analysis$medoids
+    
+    # Final join
+    med_names <- rownames(medoids)
+    candidates <- candidates %>% filter(id %in% med_names)
+    
+    return(candidates)
+}
 
 # Utils
 get_next_items <- function(x, vect){c
@@ -67,7 +96,8 @@ write_results <- function(algo, view_set, logfun){
 ##########
 # Kernel #
 ##########
-# Method 1: Exact Values
+# Method 1: Exact Values #
+##########################
 search_exact <- function(data, target_col, q, size_view, size_beam=NULL,
                          logfun=NULL, outfun = NULL){
     
@@ -141,7 +171,8 @@ search_exact <- function(data, target_col, q, size_view, size_beam=NULL,
 
 
 
-# Method 2: Approx
+# Method 2: Approx #
+#####################
 filter_views <- function(views, maxs=NULL){
     scores <- sapply(views, function(v) v$strength)
     out_order <- order(scores, decreasing = T)
@@ -195,7 +226,7 @@ generate_ids <- function(...){
 }
 
 search_approx <- function(data, target_col, q=NULL, size_view, 
-                          size_beam=NULL, pessimistic=TRUE,
+                          size_beam=NULL, pessimistic=TRUE, dup_factor=1,
                           logfun=NULL, outfun = NULL){
     
     cat("Starting approximate search\n")
@@ -289,7 +320,7 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                         mutate(strength = strength + delta) %>%
                         select(-delta, -new_column) 
         
-        # dedpuplicates
+        # dedpuplicates hard
         candidates <- candidates %>%
                         group_by(id) %>%
                         filter(1 == if (pessimistic){
@@ -298,10 +329,18 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                                 row_number(desc(strength))
                             }) %>% ungroup
         
-        # prunes and flushes
+        # prunes
         if (!is.null(size_beam))
             candidates <- candidates %>% 
-                          filter(row_number(desc(strength)) <= size_beam)
+                          filter(row_number(desc(strength)) <= size_beam * dup_factor)
+        
+        # deduplicates soft
+        if (dup_factor != 1){
+            cat("Deduplicating...")
+            candidates <- deduplicate_views(candidates, size_beam)            
+        }
+        
+        # flushes
         views <- flush_views(candidates, views, size_beam)
         cat("Done\n")
     }
@@ -331,7 +370,8 @@ search_approx <- function(data, target_col, q=NULL, size_view,
 }
 
 
-# method 3: clique based
+# method 3: clique based #
+##########################
 search_cliques <- function(data, target_col, q=NULL, size_view, size_beam,
                            logfun=NULL, outfun = NULL){
     cat("Starting clique search\n")
