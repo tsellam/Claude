@@ -10,10 +10,9 @@ data_file <- select(data_file, -community)
 # Execution
 target <- "ViolentCrimesPerPop"
 
-
 views <- generate_views(data_file, target, 
-                        nbins_target = 10,
-                        q=100, size_view=3, size_beam_q=50, dup_factor=500,
+                        nbins_target = 2,
+                        q=50, size_view=3, size_beam_q=50, dup_factor=250, # 50-250 is optimal
                         min_freq = 0.05, k=5, size_beam_k=10, nbins=5, levels=3,
                         logfun = function(...) print(paste(...)),
                         outfun = function(...) print(paste(...))

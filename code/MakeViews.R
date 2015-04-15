@@ -25,7 +25,7 @@ write_results <- function(algo, POIs, outfun){
 }
 
 generate_views <- function(data, target_col, nbins_target = 2,
-                           q=25, size_view=5, size_beam_q=50, pessimistic=TRUE, dup_factor=1,
+                           q=25, size_view=5, size_beam_q=50, pessimistic=TRUE, dup_factor=NULL,
                            min_freq = 0.05, k = 1, size_beam_k = 10, nbins = 5, levels = 3,
                            just_POIs = FALSE, logfun = NULL, outfun = NULL){
     

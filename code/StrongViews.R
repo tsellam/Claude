@@ -41,13 +41,13 @@ preprocess <- function(table, target, nbins_target = 10){
     data.frame(content[!nulls])
 }
 
-deduplicate_views <- function(candidates, size_beam){
+deduplicate_views <- function(candidates, size_out){
     
     # Special cases
-    if (!is.data.frame(candidates) || !is.numeric(size_beam))
+    if (!is.data.frame(candidates) || !is.numeric(size_out))
         stop("Error: incorrect input to view deduplication function")
     
-    if(nrow(candidates) <= size_beam || size_beam < 1)
+    if(nrow(candidates) <= size_out || size_out < 1)
         return(candidates)
     
     cat("Before:", nrow(candidates))
@@ -65,7 +65,7 @@ deduplicate_views <- function(candidates, size_beam){
     bin_candidates <- bin_candidates %>% select(-id)
     
     # Clustering
-    clust_analysis <- pam(bin_candidates, size_beam, metric = "manhattan")
+    clust_analysis <- pam(bin_candidates, size_out, metric = "manhattan")
     medoids <- clust_analysis$medoids
     
     # Final join
@@ -232,7 +232,7 @@ generate_ids <- function(...){
 }
 
 search_approx <- function(data, target_col, q=NULL, size_view, 
-                          size_beam=NULL, pessimistic=TRUE, dup_factor=1,
+                          size_beam=NULL, pessimistic=TRUE, dup_factor=NULL,
                           logfun=NULL, outfun = NULL){
     
     cat("Starting approximate search\n")
@@ -245,29 +245,45 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     # First iterations are classic
     views <- list()
     first_levels <- list()
+    views_df <- data.frame(column1 = dim_names, stringsAsFactors = F)
+    
     for (i in 1:min(size_view, 2)){
         cat("*** Computing level", i, "... ")
         
-        candidate_cols <- if (i == 1) dim_names else views_df[["column1"]]
-        combs <- combn(candidate_cols, i)
-        cat("Getting strength for", length(combs), "views...")
-        strengths <- apply(combs, 2, fast_joint_mutual_information, target, data)
+        # Gets strength
+        cat("Getting strength for", nrow(views_df), "views...")
+        views_df$strength <- select(views_df, starts_with("column")) %>%
+                                apply(1, fast_joint_mutual_information, target, data)
         
-        views_df <- as.data.frame(t(combs), stringsAsFactors = F)
-        names(views_df) <- paste0("column", 1:i)
-        views_df[["strength"]] <- strengths
-        
-        if (i > 1 && dup_factor != 1){
-            views_df <- filter(views_df, row_number(desc(strength)) <= size_beam * dup_factor)
-            views_df <- deduplicate_views(views_df, size_beam)
-        } else {
-            views_df <- filter(views_df, row_number(desc(strength)) <= size_beam)
+        # Compresses and Filters
+        if (i > 1 && !is.null(dup_factor)){
+            views_df <- deduplicate_views(views_df, dup_factor)
         }
-        
+        views_df <- filter(views_df, row_number(desc(strength)) <= size_beam)        
+
+        # Flushes and backs up
         views <- flush_views(views_df, views)
         first_levels[[i]] <- views_df
+
+        # Prepares for next iteration...
+        # Gets data
+        dims_df <- data.frame(dim_names, stringsAsFactors = F)
+        names(dims_df) <- paste0("column", i+1)
+        views_df <- merge(dims_df, views_df, all=TRUE) %>%
+                    select(-strength) %>%
+                    filter(column1 != column2)
+
+        # Deduplicates
+        views_df$ids <- apply(views_df, 1, function(r) paste0(sort(r), collapse = ".."))
+        views_df <- views_df %>%
+                    group_by(ids) %>%
+                    filter(row_number() == 1) %>%
+                    ungroup %>%
+                    select(-ids)
+
         cat("Done\n")
     }
+
     if (size_view <= 2) {
         views <- filter_views(views, q)
         TIME2 <- proc.time()["elapsed"] - TIME
@@ -287,7 +303,7 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     cat(" Done\n")
     TIMEG <- proc.time()["elapsed"]
     if (!is.null(logfun)) logfun("Approximative", "Time-Graph", TIMEG - TIME)
-    
+        
     # Generates an id and ship to the main loop
     candidates <- mutate(first_levels[[2]], id = generate_ids(column1, column2))
     for (level in 3:size_view){
@@ -331,15 +347,15 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                                 row_number(desc(strength))
                             }) %>% ungroup
         
+        # deduplicates soft
+        if (!is.null(dup_factor)){
+            cat("Deduplicating...")
+            candidates <- deduplicate_views(candidates, dup_factor)
+        }
+        
         # prunes
         candidates <- candidates %>% 
-                        filter(row_number(desc(strength)) <= size_beam * dup_factor)
-        
-        # deduplicates soft
-        if (dup_factor != 1){
-            cat("Deduplicating...")
-            candidates <- deduplicate_views(candidates, size_beam)            
-        }
+                        filter(row_number(desc(strength)) <= size_beam)
         
         # flushes
         views <- flush_views(candidates, views, size_beam)
