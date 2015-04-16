@@ -61,7 +61,6 @@ outplot2 <- prettify(outplot2) +
 
 
 # WRITING
-
 pdf("../documents/plots/tmp_compare-strength-f1.pdf", width = 3.5, height = 4)
 outplot <- grid.arrange(outplot1, outplot2, ncol=1)
 dev.off()

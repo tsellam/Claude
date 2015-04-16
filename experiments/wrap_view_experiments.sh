@@ -9,16 +9,16 @@ then
     mkdir KEEP THROW
     machine=`hostname -s`
     case $machine in
-        rocks136)
+        rocks018)
             mv internet_usage.arff pendigits.arff vowel.arff KEEP
         ;;
-        rocks138)
+        rocks024)
             mv adult.arff communities.arff diabetes.arff KEEP
         ;;
-        rocks139)
+        rocks027)
             mv insurance.arff liver.arff shape.arff KEEP
         ;;
-        rocks141)
+        rocks028)
            mv breast.arff cover_type.arff glass.arff KEEP
         ;;
     esac
@@ -27,10 +27,10 @@ then
     cd ../../experiments
 fi
 
-R -f View-POI-Eval.R
-R -f StrengthTest.R
+#R -f StrengthTest.R
 R -f get-target-entropies.R
 R -f ViewSelection.R
+R -f View-POI-Eval.R
 
 tarname=FindView-`hostname -s`-` date +'%B%d'`.tar.gz
 tar -czvf $tarname nohup.out *.csv *.out *.log
