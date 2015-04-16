@@ -65,7 +65,8 @@ deduplicate_views <- function(candidates, size_out){
     bin_candidates <- bin_candidates %>% select(-id)
     
     # Clustering
-    clust_analysis <- pam(bin_candidates, size_out, metric = "manhattan")
+    clust_analysis <- pam(bin_candidates, size_out,
+                          metric = "manhattan", do.swap = FALSE)
     medoids <- clust_analysis$medoids
     
     # Final join

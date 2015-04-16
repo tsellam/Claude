@@ -326,67 +326,113 @@ established strategy, based on the Minimum Description Length principle
 return one representative view per cluster.
 
 
-\section{Real-life example: meteorology data set}
+\section{Use Cases}
 
-{\color{red}
-    The discussion about how to reduce the target space with PCA is irrelevant.
-    Instead, we can just pick two vibration columns and ignore the others.
-}
+\subsection{Criminality}
 
 \begin{figure*}[t!]
-        \centering
-        \begin{subfigure}[b]{0.75\textwidth}
-                \includegraphics[width=\textwidth]{images/vibration_group_1}
-                \caption{Visualization of the First view. The green area
-                represents the first point of interest.}
-                \label{fig:vibration_group_1}
-        \end{subfigure}%
-        \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\textwidth]{images/vibration_target_1}
-                \caption{Items of the POI projected on the vibration columns,
-                after PCA.}
-                \label{fig:/vibration_target_2}
-        \end{subfigure}
-        \caption{First view, first POI}\label{fig:vibra-group1}
+    \centering
+    
+    \begin{subfigure}[b]{\textwidth}
+    \includegraphics[width=\textwidth]{plots/ViolentCrimesExample1}
+    \caption{Fully worked out example 1}
+    \label{fig:violent-example1}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{\textwidth}
+    \includegraphics[width=\textwidth]{plots/ViolentCrimesExample2}
+    \caption{Fully worked out example 2}
+    \label{fig:violent-example2}
+    \end{subfigure}
+
+\label{pic:violent-example}
 \end{figure*}
 
-\begin{figure*}[t!]
-        \centering
-        \begin{subfigure}[b]{0.75\textwidth}
-                \includegraphics[width=\textwidth]{images/vibration_group_2}
-                \caption{Third view, fifth point of interest.}
-                \label{fig:vibration_group_1}
-        \end{subfigure}%
-        \begin{subfigure}[b]{0.25\textwidth}
-                \includegraphics[width=\textwidth]{images/vibration_target_2}
-                \caption{Items of the POI projected on the vibration columns,
-                after PCA}
-                \label{fig:/vibration_target_2}
-        \end{subfigure}
-        \caption{Third view, fifth POI}\label{fig:vibra-group2}
-\end{figure*}
+\begin{table}[position specifier]
+  \centering
+\begin{tabular}{l c}
+    \hline
+    View & Score (bits) \\
+    \hline
+    Police.Overtime, Pct.Vacant.Boarded, & 0.88\\
+    Pct.Race.White & \\
+    Pct.Families.2.Parents, Pct.Race.White, & 0.84\\
+    Police.Requests.Per.Officer & \\
+    Pct.Police.White, Pct.Police.Minority, & 0.64\\
+    Pct.Vacant.Boarded &\\
+    Pct.Empl.Profes.Services, Pct.Empl.Manual & 0.64\\
+    Pct.Police.On.Patrol & \\      
+    Pct.Retired, Pct.Use.Public.Transports & 0.61 \\
+     Pct.Police.On.Patrol & \\ 
+    Pct.Recently.Moved, Population.Density & 0.60 \\
+    Police.Cars & \\
+    \hline
+\end{tabular}
+\caption{Examples of views from the Crime example.}
+  \label{tab:crime_views}
+\end{table}
 
-Our task is to study vibrations in a plane. The data contains two kind of
-columns: sensor data, and observed vibrations. We want to explain the
-vibrations with sensor measurements.
-
-Before we apply Claude, we need to create a target variable, which describes
-the type of vibrations associated with each tuple. To form this variable, we
-select the columns which describe the vibrations, reduce their dimensionality
-with PCA, then we cluster the resulting space with k-means. Luckily, most of
-the variance of the vibrations is contained in the first two dimensions. We
-obtain a cluster identifier for each row.
-
-We can now run our view detection algorithm. We generate 10 views, with 10 POIs
-each. We illustrate some results with Figures \ref{fig:vibra-group1} and
-\ref{fig:vibra-group2}. We see that Claude manages to ``explain'' different
-areas of the target space.
-
-PROBLEM: the subgroups are uber-redundant. Even if their description is
-different, their extents all look the same. Maybe we could change the target
-as the algorithm runs, or see how the SD literature does it.
-
-To be continued.
+%\subsection{Meteorology }
+%
+%{\color{red}
+%    The discussion about how to reduce the target space with PCA is irrelevant.
+%    Instead, we can just pick two vibration columns and ignore the others.
+%}
+%
+%\begin{figure*}[t!]
+%        \centering
+%        \begin{subfigure}[b]{0.75\textwidth}
+%                \includegraphics[width=\textwidth]{images/vibration_group_1}
+%                \caption{Visualization of the First view. The green area
+%                represents the first point of interest.}
+%                \label{fig:vibration_group_1}
+%        \end{subfigure}%
+%        \begin{subfigure}[b]{0.25\textwidth}
+%                \includegraphics[width=\textwidth]{images/vibration_target_1}
+%                \caption{Items of the POI projected on the vibration columns,
+%                after PCA.}
+%                \label{fig:/vibration_target_2}
+%        \end{subfigure}
+%        \caption{First view, first POI}\label{fig:vibra-group1}
+%\end{figure*}
+%
+%\begin{figure*}[t!]
+%        \centering
+%        \begin{subfigure}[b]{0.75\textwidth}
+%                \includegraphics[width=\textwidth]{images/vibration_group_2}
+%                \caption{Third view, fifth point of interest.}
+%                \label{fig:vibration_group_1}
+%        \end{subfigure}%
+%        \begin{subfigure}[b]{0.25\textwidth}
+%                \includegraphics[width=\textwidth]{images/vibration_target_2}
+%                \caption{Items of the POI projected on the vibration columns,
+%                after PCA}
+%                \label{fig:/vibration_target_2}
+%        \end{subfigure}
+%        \caption{Third view, fifth POI}\label{fig:vibra-group2}
+%\end{figure*}
+%
+%Our task is to study vibrations in a plane. The data contains two kind of
+%columns: sensor data, and observed vibrations. We want to explain the
+%vibrations with sensor measurements.
+%
+%Before we apply Claude, we need to create a target variable, which describes
+%the type of vibrations associated with each tuple. To form this variable, we
+%select the columns which describe the vibrations, reduce their dimensionality
+%with PCA, then we cluster the resulting space with k-means. Luckily, most of
+%the variance of the vibrations is contained in the first two dimensions. We
+%obtain a cluster identifier for each row.
+%
+%We can now run our view detection algorithm. We generate 10 views, with 10 POIs
+%each. We illustrate some results with Figures \ref{fig:vibra-group1} and
+%\ref{fig:vibra-group2}. We see that Claude manages to ``explain'' different
+%areas of the target space.
+%
+%PROBLEM: the subgroups are uber-redundant. Even if their description is
+%different, their extents all look the same. Maybe we could change the target
+%as the algorithm runs, or see how the SD literature does it.
+%
+%To be continued.
 
 \section{Experiments}
 

@@ -38,6 +38,24 @@ plot_subgroups <- function(groups, data_file){
     dev.off()
 }
 
+correct_for_NAs <- function(subgroups, NAs, size_original){
+    
+    # Builds conversion table
+    conversion <- data.frame(before=1:size_original)
+    conversion <- conversion[-NAs,,drop=FALSE]
+    conversion$after <- 1:nrow(conversion)
+    
+    subgroups <- lapply(subgroups, function(gp){
+        conv_items <- filter(conversion, after %in% gp$items)
+        list(
+            description = gp$description,
+            score = gp$score,
+            items = conv_items$before
+        )
+    })
+    
+}
+
 ##################
 # Core algorithm #
 ##################
@@ -94,7 +112,9 @@ subgroup_discovery <- function(df, cols, target,
         )
         stop("Incorrect input data, make sure your input is a data frame of factors and numerics")
     
+    size_df <- nrow(df)
     df <- na.omit(df[, c(cols, target)])
+    NAs <- attr(df,"na.action")
     
     subgroups <- list(
         list(
@@ -135,6 +155,7 @@ subgroup_discovery <- function(df, cols, target,
             subgroup_items <- subgroup_items %>%
                 mutate_(.dots = bin_expr)
             
+
             # Does the maths
             subgroup_items <- subgroup_items %>%
                 gather_("column", "label", good_cols) %>% 
@@ -159,10 +180,14 @@ subgroup_discovery <- function(df, cols, target,
         
         cat("Updates candidates... ")
         refinments <-  rbind_all(refinments)
-        subgroups <- flush_refinments(refinments, subgroups, size_beam)
         
+        subgroups <- flush_refinments(refinments, subgroups, size_beam)
+                
         cat("done\n")
     }
+    
+    if (!is.null(NAs)) 
+        subgroups <- correct_for_NAs(subgroups, NAs, size_df)
     
     return(subgroups)
 }

@@ -3,17 +3,6 @@ library(dplyr)
 source("StrongViews.R", chdir = TRUE)
 source("SubgroupDiscovery.R", chdir = TRUE)
 
-FEW_COLS = c(
-  green="#008C48",
-  blue="#185AA9",
-  orange="#F47D23",
-  red="#EE2E2F",
-  purple="#662C91",
-  maroon="#A21D21",
-  magenta="#B43894"
-)
-
-
 write_results <- function(algo, POIs, outfun){
     if (is.null(outfun)) return()
     
@@ -61,7 +50,7 @@ generate_views <- function(data, target_col, nbins_target = 2,
         cat("Doing view:", paste(view$columns), "\n")
         subgroup_discovery(preproc_for_POIs, view$columns, target,
                            min_freq, k, size_beam_k,  nbins, levels)
-
+        
     })
     
     TIMEP <- proc.time()["elapsed"]
