@@ -9,11 +9,11 @@ then
     mkdir KEEP THROW
     machine=`hostname -s`
     case $machine in
+        rocks017)
+            mv adult.arff communities.arff diabetes.arff KEEP
+        ;;
         rocks018)
             mv internet_usage.arff pendigits.arff vowel.arff KEEP
-        ;;
-        rocks024)
-            mv adult.arff communities.arff diabetes.arff KEEP
         ;;
         rocks027)
             mv insurance.arff liver.arff shape.arff KEEP

@@ -96,15 +96,6 @@ for (arff_file in file_list){
                                 algo = "Approximative"
                             )                
                 
-                clique_approx <-  wrapper(
-                            search_cliques(clean_data, target, q = q,
-                                size_view = s, size_beam = b, 
-                                logfun = writelog, outfun = writeout),
-                            score_function = score_function,
-                            algo = "Clique"
-                            
-                )
-                
                 # Baseline
                 beamed_NB <-  wrapper(
                             search_exact_NB(clean_data, target, q = q,
