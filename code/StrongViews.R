@@ -134,6 +134,7 @@ search_exact <- function(data, target_col, q, size_view, size_beam=NULL,
             cand_cols <- as.list(dim_names)
         }
         cat("Going through", length(cand_cols), "candidates\n")
+        if (length(cand_cols) < 1) break
         
         # Computes the strength of the view
         cat("Gets joint entropies...")
@@ -237,6 +238,8 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                           logfun=NULL, outfun = NULL){
     
     cat("Starting approximate search\n")
+    if (size_beam <= size_view) stop("Beam to small!!!")
+    
     TIME <- proc.time()["elapsed"]
     
     # Basic stuff
@@ -309,7 +312,6 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     candidates <- mutate(first_levels[[2]], id = generate_ids(column1, column2))
     for (level in 3:size_view){
         cat("*** Computing level", level, "... ")
-        
         # Pivots
         piv_candidates <- candidates %>%
                         gather(col_index, col_name, matches("column*"))

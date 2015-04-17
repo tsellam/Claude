@@ -175,6 +175,7 @@ cond_mutual_information <- function(col1, col2, cond_cols, data){
 # Fast C implementations #
 ##########################
 fast_joint_mutual_information <- function(cols, target, data){
+        
     if (!is.data.frame(data) ||
         !all(c(cols, target) %in% names(data)) ||
         !all(sapply(data[c(cols, target)], is.numeric)))

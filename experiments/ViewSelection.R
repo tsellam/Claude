@@ -8,6 +8,7 @@ library(R.utils)
 
 source("../code/StrongViews.R", chdir = TRUE)
 source("../code/Baselines.R", chdir = TRUE)
+jar_loc <- paste0(getwd(), "/../code/4S/4S.jar")
 
 files_location <- "../data/experiments"
 file_list <- list.files(path = files_location, pattern = "*.arff$")
@@ -40,6 +41,11 @@ wrapper <- function(..., score_function, algo){
      )
 }
 
+#####################################
+# First Experiment: Different Algos #
+#####################################
+
+cat("\n\nSECOND ROUND OF EXPERIMENTS\n")
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
@@ -52,20 +58,15 @@ for (arff_file in file_list){
          target <- names(file)[[ncol(file)]]
          
          clean_data <- preprocess(file, target)
-            
-         # First run to get the parameters
-         q <- 25
-         b <- 25
-         s <- 5
-         
+
          # Prepares a function to output stuff
          writelog <- function(...){
-             line <- paste0(c(arff_file, b, s, ... ), collapse="\t")
-             cat(line, "\n", file = file_log, append = TRUE)
+             line <- paste0(c("VaryAlgos", arff_file, q, b, s, ... ), collapse="\t")
+             cat(line, "\n", file = file_log, append = TRUE, sep = "")
          }
          writeout <- function(...){
-             line <- paste0(c(arff_file, b, s, ...) , collapse="\t")
-             cat(line, "\n", file = file_out, append = TRUE)
+             line <- paste0(c("VaryAlgos", arff_file, q, b, s, ...) , collapse="\t")
+             cat(line, "\n", file = file_out, append = TRUE, sep = "")
          }
         
         # Creates alternative score function
@@ -79,7 +80,27 @@ for (arff_file in file_list){
     
         cat("Running algos\n")
         
-        # Baselines
+        # First run of 4S to get the parameters
+        fourS_views <- FourS(clean_data, target, jar_loc = jar_loc)
+
+        s_4s <- ceiling(mean(
+           sapply(fourS_views, function(v) length(v$columns))
+        ))
+        s <- s_4s
+        q <- length(fourS_views)
+        b <- max(2*q, 2*s)
+        
+        cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
+         
+        
+        #  Baselines
+        fourS_views <-  wrapper(
+            FourS(clean_data, target, jar_loc = jar_loc,
+                    logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "4S"
+        )
+        
         beamed_NB <-  wrapper(
             search_exact_NB(clean_data_NB, target, q = q,
                             size_view = s, size_beam = b,
@@ -96,7 +117,7 @@ for (arff_file in file_list){
                             score_function = score_function,
                             algo = "Exhaustive"
                           )
-
+ 
         approx <- wrapper(
                     search_approx(clean_data, target, q = q,
                         size_view = s, size_beam = b,
@@ -119,4 +140,71 @@ for (arff_file in file_list){
          cat("ERROR!\n")
          print(e)
      })
+}
+
+#################################
+# Second Experiment: Vary Beam #
+################################
+for (arff_file in file_list){
+    cat("\n**** Doing file", arff_file, "\n")
+    
+    tryCatch({
+
+        # Loading and Preprocessing
+        cat("Loading file...\n")
+        file  <- read.arff(paste0(files_location, "/", arff_file))
+        file  <- file[sample(1:nrow(file), nrow(file), replace=FALSE),]
+        target <- names(file)[[ncol(file)]]
+        
+        clean_data <- preprocess(file, target)
+        
+        # Prepares a function to output stuff
+        writelog <- function(...){
+            line <- paste0(c("VaryBeam", arff_file, q, b, s, ... ), collapse="\t")
+            cat(line, "\n", file = file_log, append = TRUE, sep = "")
+        }
+        writeout <- function(...){
+            line <- paste0(c("VaryBeam", arff_file, q, b, s, ...) , collapse="\t")
+            cat(line, "\n", file = file_out, append = TRUE, sep = "")
+        }
+        
+        # Creates alternative score function
+        clean_data_NB <- preprocess_NB(file, target)
+        clean_data_kNN <- preprocess_kNN(file, target)
+        
+        score_function <- function(res, algo){
+            get_NB_score(res, clean_data_NB, target, writeout, algo)
+            get_kNN_score(res, clean_data_kNN, target, writeout, algo)
+        }
+        
+        s <- 5
+        q <- 25
+        
+        for (b in c(25, 50, 100)){
+            cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
+            
+            # Own boys
+            beamed <- wrapper(
+                search_exact(clean_data, target, q = q,
+                             size_view = s, size_beam = b,
+                             logfun = writelog, outfun = writeout),
+                score_function = score_function,
+                algo = "Exhaustive"
+            )
+            
+            approx <- wrapper(
+                search_approx(clean_data, target, q = q,
+                              size_view = s, size_beam = b,
+                              logfun = writelog, outfun = writeout),
+                score_function = score_function,
+                algo = "Approximative"
+            )
+            
+            cat("Done\n")
+        }
+    },
+    error = function(e){
+        cat("ERROR!\n")
+        print(e)
+    })
 }
