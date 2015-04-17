@@ -1,10 +1,15 @@
 library(e1071)
 library(class)
 
-# Naive Bayes
+###############
+# Naive Bayes #
+###############
 preprocess_NB <- function(data, target){
-    if (is.numeric(data[[target]]) && length(unique(data[[target]])) > 10)
+    if (is.numeric(data[[target]]) && length(unique(data[[target]])) > 10) {
         data[,target] <- cut(data[,target], 10)
+    } else {
+        data[,target] <- factor(data[,target])                
+    }
     content <- lapply(data, function(col){
         if (length(unique(col)) < 2) {
             NULL
@@ -52,7 +57,7 @@ score <- function(pred, truth, F1=TRUE){
 }
 
 NB_strength <- function(columns, target, data,
-                        folds=2, F1 = TRUE){
+                        folds=5, F1 = TRUE){
     set <- data[,c(columns, target)]
     set <- na.omit(set)
     
@@ -67,14 +72,11 @@ NB_strength <- function(columns, target, data,
         train <- set[-fold[1]:-fold[2],]
         
         nb_model <- naiveBayes(train[, columns, drop=FALSE], train[[target]], laplace = 1)
-        data.matrix(test[, columns, drop=FALSE])
-        
         nb_predict <- predict(nb_model, test[, columns, drop=FALSE], type = "class")
         if (length(nb_predict) < 1 )
             nb_predict <- rep(train[[target]][1], length(test[[target]]))
         scores <- c(scores, score(nb_predict, test[[target]], F1))
     }
-    
     return(mean(scores, na.rm = TRUE))
 }
 
@@ -163,7 +165,9 @@ get_NB_score <- function(view_set, data, target, logfun, algo = NULL){
 }
 
 
-# kNN
+#######
+# kNN #
+#######
 preprocess_kNN <- function(data, target){
     if (is.numeric(data[[target]]) && length(unique(data[[target]])) > 10)
         data[,target] <- cut(data[,target], 10)
@@ -184,7 +188,7 @@ preprocess_kNN <- function(data, target){
 
 
 kNN_strength <- function(columns, target, data,
-                        folds=2, F1 = TRUE){
+                        folds=5, F1 = TRUE){
     set <- data[,c(columns, target)]
     set <- na.omit(set)
     
@@ -198,11 +202,8 @@ kNN_strength <- function(columns, target, data,
         test  <- set[fold[1]:fold[2],]
         train <- set[-fold[1]:-fold[2],]
         
-        nb_model <- naiveBayes(train[, columns, drop=FALSE], train[[target]], laplace = 1)
-        nb_predict <- predict(nb_model, test[, columns, drop=FALSE], type = "class")
-        
         try({
-            predict <- knn_predict <- knn(train[, columns, drop=FALSE],
+            knn_predict <- knn(train[, columns, drop=FALSE],
                                test[, columns, drop=FALSE], 
                                train[[target]],
                                k = 5,
@@ -214,11 +215,15 @@ kNN_strength <- function(columns, target, data,
     return(mean(scores, na.rm = TRUE))
 }
 
-get_kNN_score <- function(view_set, data, target, logfun){
+get_kNN_score <- function(view_set, data, target, logfun, algo = NULL){
     for (i in 1:length(view_set)){
         view <- view_set[[i]]
         strength <- view$strength
         kNN_strength <- kNN_strength(view$columns, target, data, folds=10)
-        logfun(i, strength, "kNN", kNN_strength)
+        if (is.null(algo)) {
+            logfun(i, strength, "kNN", kNN_strength)
+        } else {
+            logfun(algo, i, "kNN - F1", kNN_strength)
+        }
     }
 }
