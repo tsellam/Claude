@@ -3,11 +3,32 @@ source("graph-utils.R")
 library(dplyr)
 library(tidyr)
 
+FOLDER <- "18-04"
+
 ###############
 # PREPARATION #
 ###############
-log_file <- read.delim("~/Projects/TurboGroups/experiments/results.log")
-out_file <- read.delim("~/Projects/TurboGroups/experiments/results.out")
+# Out files
+files <- list.files(FOLDER, pattern = "results.out", recursive = TRUE)
+files <- paste(FOLDER, files, sep = "/")
+
+cat(length(files), " result files found!\n")
+file_contents <- lapply(files, function(f){
+    cat("Reading", f, "\n")
+    read.delim(f, stringsAsFactors = FALSE)
+})
+out_file <- rbind_all(file_contents)
+
+# Timing files
+files <- list.files(FOLDER, pattern = "results.log", recursive = TRUE)
+files <- paste(FOLDER, files, sep = "/")
+
+cat(length(files), " log files found!\n")
+file_contents <- lapply(files, function(f){
+    cat("Reading", f, "\n")
+    read.delim(f, stringsAsFactors = FALSE)
+})
+log_file <- rbind_all(file_contents)
 
 #####################
 # Plots view scores #
@@ -15,12 +36,29 @@ out_file <- read.delim("~/Projects/TurboGroups/experiments/results.out")
 to_plot <- out_file %>%
             filter(grepl("- F1", key) | grepl("Strength", key)) %>%
             spread(key, value, convert = TRUE) %>% 
-            mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`))
+            mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`)) %>%
+            group_by(file, algo) %>%
+            summarize(F1 = mean(F1))%>% ungroup
 
 p1 <- ggplot(to_plot, aes(x = file, y = F1, fill = algo)) +
-        geom_boxplot()
+        #geom_boxplot()
+        geom_bar(position = "dodge", stat = "identity")
 p1 <- prettify(p1)
 print(p1)
+
+####################
+# Plots time spent #
+####################
+to_plot <- log_file %>%
+    filter(key == "Time") %>%
+    spread(key, value)
+
+p2 <- ggplot(to_plot, aes(x = file, y = Time, fill = algo)) +
+    geom_bar(stat = "identity", position = "dodge") +
+    coord_cartesian(ylim = c(0, 15))
+p2 <- prettify(p2)
+#print(p2)
+
 
 #ggsave("../documents/plots/tmp_column-select-score.pdf", algo_accuracy, width = 8.5, height = 2.25)
 #ggsave("../documents/plots/tmp_column-select-score-beam.pdf", beam_accuracy, width = 6.66, height = 2)

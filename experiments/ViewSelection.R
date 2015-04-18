@@ -16,12 +16,12 @@ sizes <- file.info(paste0(files_location, "/", file_list))$size
 file_list <- file_list[order(sizes)]
 
 file_log     <- "results.log"
-log_headers <- c("file", "beam_size", "size_view",
+log_headers <- c("experiment", "file", "q", "beam_size", "size_view",
                   "algo","key", "value\n")
 cat(paste0(log_headers, collapse="\t"), file = file_log)
 
 file_out <- "results.out"
-out_headers <- c("file", "beam_size", "size_view", 
+out_headers <- c("experiment", "file", "q", "beam_size", "size_view", 
                  "algo", "view", "key", "value\n")
 cat(paste0(out_headers, collapse="\t"), file = file_out)
 
@@ -83,7 +83,7 @@ for (arff_file in file_list){
         # First run of 4S to get the parameters
         fourS_views <- FourS(clean_data, target, jar_loc = jar_loc)
 
-        s_4s <- ceiling(mean(
+        s_4s <- ceiling(max(
            sapply(fourS_views, function(v) length(v$columns))
         ))
         s <- s_4s
