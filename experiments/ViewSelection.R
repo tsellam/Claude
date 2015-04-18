@@ -88,7 +88,7 @@ for (arff_file in file_list){
         ))
         s <- s_4s
         q <- length(fourS_views)
-        b <- max(2*q, 2*s)
+        b <- ceiling(max(1.25*q, 1.25*s))
         
         cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
          
