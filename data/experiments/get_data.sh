@@ -113,14 +113,14 @@ do
 
 	# Converts to clean file
 	echo Cleans
-	./csv2cleancsv.R $file $file
+	R -f csv2cleancsv.R --args $file $file
 
 	# Converts to ARFF
 	arff_file=${file//.csv/.arff}
 	nrows=`wc -l < $file`
 	ncols=`head -1 $file | sed 's/;/ /g' | wc -w`
 	echo Converting file with dimensions $nrows and $ncols
-	./csv2arff.R $file $arff_file $ncols $nrows FALSE
+	R -f csv2arff.R --args $file $arff_file $ncols $nrows FALSE
 done
 
 rm *.bak *.true *.csv tmp
