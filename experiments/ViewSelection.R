@@ -26,7 +26,7 @@ out_headers <- c("experiment", "file", "q", "beam_size", "size_view",
 cat(paste0(out_headers, collapse="\t"), file = file_out)
 
 if (test_mode){
-    file_list <- "adult.arff" #file_list[3]
+    file_list <- "breast.arff" #file_list[3]
 }
 
 wrapper <- function(..., score_function, algo){
@@ -99,20 +99,20 @@ for (arff_file in file_list){
             algo = "4S"
         )
         
-        beamed_kNN <-  wrapper(
-            search_exact_kNN(clean_data_kNN, target, q = q,
-                            size_view = s, size_beam = b,
-                            logfun = writelog, outfun = writeout),
-            score_function = score_function,
-            algo = "Wrap_kNN"
-        )
-        
         beamed_NB <-  wrapper(
             search_exact_NB(clean_data_NB, target, q = q,
                             size_view = s, size_beam = b,
                             logfun = writelog, outfun = writeout),
             score_function = score_function,
             algo = "Wrap_NaiveBayes"
+        )
+        
+        beamed_kNN <-  wrapper(
+            search_exact_kNN(clean_data_kNN, target, q = q,
+                            size_view = s, size_beam = b,
+                            logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "Wrap_kNN"
         )
         
         # Own boys

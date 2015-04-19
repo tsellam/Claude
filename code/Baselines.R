@@ -191,6 +191,7 @@ search_exact_NB <- function(data, target_col, q, size_view, size_beam=NULL,
         # Computes the strength of the view
         cat("Gets view strength...")
         cand_NB_strengths <- sapply(cand_cols, NB_strength, target, data)
+        cand_NB_strengths[!is.finite(cand_NB_strengths)] <- 0
         
         # Applies pruning
         if (!is.null(size_beam)){
