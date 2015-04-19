@@ -154,11 +154,11 @@ subgroup_discovery <- function(df, cols, target,
             names(bin_expr) <- good_cols
             subgroup_items <- subgroup_items %>%
                 mutate_(.dots = bin_expr)
-            
 
             # Does the maths
             subgroup_items <- subgroup_items %>%
-                gather_("column", "label", good_cols) %>% 
+                gather_("column", "label", good_cols) %>%
+                mutate(column = as.character(column)) %>%
                 group_by(root_description, column, label) %>% 
                 do(items = .$row,
                    KL    = fast_kullback_leibler(target_col, .[[target]]),
@@ -180,7 +180,6 @@ subgroup_discovery <- function(df, cols, target,
         
         cat("Updates candidates... ")
         refinments <-  rbind_all(refinments)
-        
         subgroups <- flush_refinments(refinments, subgroups, size_beam)
                 
         cat("done\n")

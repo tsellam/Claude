@@ -30,13 +30,18 @@ file_contents <- lapply(files, function(f){
 })
 log_file <- rbind_all(file_contents)
 
-# Filters
+# Filters and Prettifies
 black_list <-  c("internet_usage.arff", "insurance.arff", "liver.arff")
 out_file <- out_file %>%
-            filter(!file %in% black_list)
+            filter(!file %in% black_list) %>%
+            mutate(file = sub(".arff", "", file))
+            
 log_file <- log_file %>%
-    filter(!file %in% black_list)
+    filter(!file %in% black_list) %>%
+    mutate(file = sub(".arff", "", file))
 
+# Entropies
+entropies <- read.delim("entropies.out")
 
 #####################
 # Plots view scores #
@@ -71,6 +76,28 @@ p2 <- ggplot(to_plot, aes(x = file, y = Time, fill = algo)) +
     coord_cartesian(ylim = c(0,30))
 p2 <- prettify(p2)
 print(p2)
+
+###############################
+# Plots vary beam experiments #
+###############################
+to_plot <- out_file %>%
+    filter(experiment == "VaryBeam" & algo == "Approximative") %>%
+    filter(grepl("- F1", key) | grepl("Strength", key)) %>%
+    spread(key, value, convert = TRUE) %>%
+    mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`, na.rm = TRUE))
+
+to_plot <- to_plot %>%
+            inner_join(entropies) %>%
+            mutate(Strength = Strength / entropy) %>%
+            select(-entropy)
+
+
+p3 <- ggplot(to_plot, aes(x = file, y = Strength, fill = factor(beam_size))) +
+    geom_boxplot(outlier.size=0.5, width = .5)
+    #geom_bar(position = "dodge", stat = "identity")
+
+p3 <- prettify(p3)
+print(p3)
 
 
 #ggsave("../documents/plots/tmp_column-select-score.pdf", algo_accuracy, width = 8.5, height = 2.25)

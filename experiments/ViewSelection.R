@@ -22,11 +22,11 @@ cat(paste0(log_headers, collapse="\t"), file = file_log)
 
 file_out <- "results.out"
 out_headers <- c("experiment", "file", "q", "beam_size", "size_view", 
-                 "algo", "view", "key", "value\n")
+                 "dedup", "algo", "view", "key", "value\n")
 cat(paste0(out_headers, collapse="\t"), file = file_out)
 
 if (test_mode){
-    file_list <- file_list[3]
+    file_list <- "adult.arff" #file_list[3]
 }
 
 wrapper <- function(..., score_function, algo){
@@ -44,8 +44,6 @@ wrapper <- function(..., score_function, algo){
 #####################################
 # First Experiment: Different Algos #
 #####################################
-
-cat("\n\nSECOND ROUND OF EXPERIMENTS\n")
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
@@ -61,11 +59,11 @@ for (arff_file in file_list){
 
          # Prepares a function to output stuff
          writelog <- function(...){
-             line <- paste0(c("VaryAlgos", arff_file, q, b, s, ... ), collapse="\t")
+             line <- paste0(c("VaryAlgos", arff_file, q, b, s, d_factor, ... ), collapse="\t")
              cat(line, "\n", file = file_log, append = TRUE, sep = "")
          }
          writeout <- function(...){
-             line <- paste0(c("VaryAlgos", arff_file, q, b, s, ...) , collapse="\t")
+             line <- paste0(c("VaryAlgos", arff_file, q, b, s, d_factor, ...) , collapse="\t")
              cat(line, "\n", file = file_out, append = TRUE, sep = "")
          }
         
@@ -88,17 +86,25 @@ for (arff_file in file_list){
         ))
         s <- s_4s
         q <- length(fourS_views)
-        b <- ceiling(max(1.25*q, 1.25*s))
+        b <- ceiling(max(2.0*q, 2.0*s))
+        d_factor <- NULL
         
         cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
          
-        
         #  Baselines
         fourS_views <-  wrapper(
             FourS(clean_data, target, jar_loc = jar_loc,
                     logfun = writelog, outfun = writeout),
             score_function = score_function,
             algo = "4S"
+        )
+        
+        beamed_kNN <-  wrapper(
+            search_exact_kNN(clean_data_kNN, target, q = q,
+                            size_view = s, size_beam = b,
+                            logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "Wrap_kNN"
         )
         
         beamed_NB <-  wrapper(
@@ -145,6 +151,8 @@ for (arff_file in file_list){
 #################################
 # Second Experiment: Vary Beam #
 ################################
+cat("\n\nSECOND ROUND OF EXPERIMENTS\n")
+
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
@@ -160,11 +168,11 @@ for (arff_file in file_list){
         
         # Prepares a function to output stuff
         writelog <- function(...){
-            line <- paste0(c("VaryBeam", arff_file, q, b, s, ... ), collapse="\t")
+            line <- paste0(c("VaryBeam", arff_file, q, b, s, d_factor, ... ), collapse="\t")
             cat(line, "\n", file = file_log, append = TRUE, sep = "")
         }
         writeout <- function(...){
-            line <- paste0(c("VaryBeam", arff_file, q, b, s, ...) , collapse="\t")
+            line <- paste0(c("VaryBeam", arff_file, q, b, s, d_factor, ...) , collapse="\t")
             cat(line, "\n", file = file_out, append = TRUE, sep = "")
         }
         
@@ -179,8 +187,9 @@ for (arff_file in file_list){
         
         s <- 5
         q <- 25
+        d_factor <- NULL
         
-        for (b in c(25, 50, 100)){
+        for (b in c(25, 50, 250)){
             cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
             
             # Own boys
@@ -195,6 +204,70 @@ for (arff_file in file_list){
             approx <- wrapper(
                 search_approx(clean_data, target, q = q,
                               size_view = s, size_beam = b,
+                              logfun = writelog, outfun = writeout),
+                score_function = score_function,
+                algo = "Approximative"
+            )
+            
+            cat("Done\n")
+        }
+    },
+    error = function(e){
+        cat("ERROR!\n")
+        print(e)
+    })
+}
+
+################################
+# Last Experiment: deduplicate #
+################################
+cat("\nTHIRD ROUND OF EXPERIMENTS\n")
+
+for (arff_file in file_list){
+    cat("\n**** Doing file", arff_file, "\n")
+    
+    tryCatch({
+        
+        # Loading and Preprocessing
+        cat("Loading file...\n")
+        file  <- read.arff(paste0(files_location, "/", arff_file))
+        file  <- file[sample(1:nrow(file), nrow(file), replace=FALSE),]
+        target <- names(file)[[ncol(file)]]
+        
+        clean_data <- preprocess(file, target)
+        
+        # Prepares a function to output stuff
+        writelog <- function(...){
+            line <- paste0(c("VaryDeduplication", arff_file, q, b, s, d_factor, ... ), collapse="\t")
+            cat(line, "\n", file = file_log, append = TRUE, sep = "")
+        }
+        writeout <- function(...){
+            line <- paste0(c("VaryDeduplication", arff_file, q, b, s, d_factor, ...) , collapse="\t")
+            cat(line, "\n", file = file_out, append = TRUE, sep = "")
+        }
+        
+        # Creates alternative score function
+        clean_data_NB <- preprocess_NB(file, target)
+        clean_data_kNN <- preprocess_kNN(file, target)
+        
+        score_function <- function(res, algo){
+            get_NB_score(res, clean_data_NB, target, writeout, algo)
+            get_kNN_score(res, clean_data_kNN, target, writeout, algo)
+            get_diversity_score(res, clean_data, target, writeout, algo)
+        }
+        
+        s <- 5
+        q <- 25
+        b <- 50
+        
+        for (d_factor in c(25, 50, 100)){
+            
+            d <- ceiling((d_factor / 100) * min(b, ncol(clean_data)) * ncol(clean_data))
+            cat("Parameters: d-", d, "\n", sep = "")
+                        
+            approx <- wrapper(
+                search_approx(clean_data, target, q = q,
+                              size_view = s, size_beam = b, dup_factor = d,
                               logfun = writelog, outfun = writeout),
                 score_function = score_function,
                 algo = "Approximative"

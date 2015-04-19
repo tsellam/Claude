@@ -284,18 +284,106 @@ kNN_strength <- function(columns, target, data,
         test  <- set[fold[1]:fold[2],]
         train <- set[-fold[1]:-fold[2],]
         
+        knn_predict <- c()
         try({
             knn_predict <- knn(train[, columns, drop=FALSE],
                                test[, columns, drop=FALSE], 
                                train[[target]],
                                k = 5,
                                use.all = FALSE)
-            scores <- c(scores, score(knn_predict, test[[target]], F1))
         }, silent = TRUE)
-    }
         
-    return(mean(scores, na.rm = TRUE))
+        if (length(knn_predict) > 1) {
+            scores <- c(scores, score(knn_predict, test[[target]], F1))
+        }
+    }
+    
+    out <- if(length(scores) > 1){
+            mean(scores, na.rm = TRUE)
+        } else {
+            NA
+        }
+        
+    return(out)
 }
+
+search_exact_kNN <- function(data, target_col, q, size_view, size_beam=NULL,
+                            logfun=NULL, outfun = NULL){
+    
+    cat("Starting beam search with kNN\n")
+    TIME <- proc.time()["elapsed"]
+    
+    # Basic stuff
+    dim_names <- names(data)[!names(data) == target_col]
+    size_view <- min(size_view, length(dim_names))
+    
+    # Initialization and useful variables
+    view_columns   <- list()
+    view_kNN_strengths <- c()
+    
+    # Main loop
+    for (level in 1:size_view){
+        cat("**** Running search for level", level, "\n")
+        
+        # Generates new candidates from the old ones
+        if (level > 1) {
+            new_cand_cols <- lapply(cand_cols, function(cand){
+                next_cols <- get_next_items(cand[length(cand)], dim_names)
+                lapply(next_cols, function(col) c(col, cand))
+            })
+            cand_cols <- unlist(new_cand_cols, recursive = FALSE)
+        } else {
+            cand_cols <- as.list(dim_names)
+        }
+        cat("Going through", length(cand_cols), "candidates\n")
+        if (length(cand_cols) < 1) break
+        
+        # Computes the strength of the view
+        cat("Gets view strength...")
+        cand_kNN_strengths <- sapply(cand_cols, kNN_strength, target, data)
+        cand_kNN_strengths[is.na(cand_kNN_strengths)] <- 0
+        
+        # Applies pruning
+        if (!is.null(size_beam)){
+            # Gets the threhold
+            all_strengths <- c(cand_kNN_strengths, view_kNN_strengths)
+            min_pos <- min(size_beam, length(all_strengths))
+            threshold <- sort(all_strengths, decreasing = TRUE)[min_pos]
+            # Prunes
+            to_prune <- (cand_kNN_strengths < threshold)
+            cat("Removes", sum(to_prune), "candidates outside beam\n")
+            cand_cols <- cand_cols[!to_prune]
+            cand_kNN_strengths <- cand_kNN_strengths[!to_prune]
+        }
+        
+        # Appending
+        cat("Adding", length(cand_cols), "new views\n")
+        view_columns   <- c(view_columns, cand_cols)
+        view_kNN_strengths <- c(view_kNN_strengths, cand_kNN_strengths)
+    }
+    
+    # Real Score Calculations
+    data <- as.data.frame(lapply(data, as.numeric))
+    view_strengths <- sapply(view_columns, fast_joint_mutual_information,
+                             target_col, data)
+    
+    # Final filtering and wrapping up
+    out_order <- order(view_strengths, decreasing = TRUE)
+    out_order <- out_order[1:min(q, length(out_order))]
+    views <- lapply(out_order, function(i){
+        list(
+            columns  = view_columns[[i]],
+            strength = view_strengths[i]
+        )
+    })
+    
+    TIME2 <- proc.time()["elapsed"] - TIME
+    if (!is.null(logfun))
+        logfun("Wrap_kNN", "Time", TIME2)
+    write_results("Wrap_kNN", views, outfun)
+    return(views)
+}
+
 
 get_kNN_score <- function(view_set, data, target, logfun, algo = NULL){
     for (i in 1:length(view_set)){
@@ -308,4 +396,13 @@ get_kNN_score <- function(view_set, data, target, logfun, algo = NULL){
             logfun(algo, i, "kNN - F1", kNN_strength)
         }
     }
+}
+
+###################
+# DIVERSITY SCORE #
+###################
+get_diversity_score <- function(view_set, data, target, logfun, algo){
+    all_cols <- unlist(sapply(view_set, function(v) v$columns))
+    score <- length(unique(all_cols))
+    logfun(algo, 0, "Diversity", score)
 }

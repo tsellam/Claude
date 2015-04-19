@@ -313,6 +313,7 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     for (level in 3:size_view){
         cat("*** Computing level", level, "... ")
         # Pivots
+        
         piv_candidates <- candidates %>%
                         gather(col_index, col_name, matches("column*"))
         

@@ -1,5 +1,7 @@
 library(MASS)
 library(dplyr)
+select <- dplyr::select
+
 source("StrongViews.R", chdir = TRUE)
 source("SubgroupDiscovery.R", chdir = TRUE)
 
