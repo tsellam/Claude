@@ -19,7 +19,8 @@ then
             mv insurance.arff liver.arff shape.arff KEEP
         ;;
         rocks028)
-           mv breast.arff cover_type.arff glass.arff KEEP
+           # mv breast.arff cover_type.arff glass.arff KEEP
+           mv breast.arff glass.arff KEEP
         ;;
     esac
     mv *.arff THROW

@@ -40,7 +40,7 @@ save_plots <- function(file, ..., keep_legend=FALSE, pdfwidth=18, pdfheight=3.3)
 
 # OK!
 prettify <- function(chart, ...) {
-    chart <- chart + theme_few(base_size = 8)
+    chart <- chart + theme_few(base_size = 10)
     
     chart <- chart + scale_colour_few(...)
     chart <- chart + scale_fill_few(...)

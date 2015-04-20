@@ -60,19 +60,12 @@ for (arff_file in file_list){
             file  <- read.arff(paste0(files_location, "/", arff_file))
             file  <- file[sample(1:nrow(file), nrow(file), replace=FALSE),]
             target <- names(file)[[ncol(file)]]
-            
-            # First run of 4S to get the parameters
-            cat("Runs 4S to get parameters....")
-            clean_data <- preprocess(file, target)
-            fourS_views <- FourS(clean_data, target, jar_loc = jar_loc)
-            
-            s_4s <- ceiling(max(
-                sapply(fourS_views, function(v) length(v$columns))
-            ))
-            s <- s_4s
-            q <- length(fourS_views)
-            b <- ceiling(max(2.0*q, 2.0*s))
 
+            s <- 5
+            q <- 25
+            b <- 50 
+            d_factor <- NULL
+            
             k <- 25
             b_k <- floor(1.25 * k)
             

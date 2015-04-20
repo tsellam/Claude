@@ -2,102 +2,73 @@ library("dplyr")
 library("tidyr")
 source("graph-utils.R")
 
-# !!!!!!!!!!! WARNING !!!!!!!!!!! #
-# THERE IS A FILE REPAIR FUNCTION #
-# !!!!!!!!!!! WARNING !!!!!!!!!!! #
+FOLDER <- "20-04"
 
+###############
+# PREPARATION #
+###############
+# Out files
+files <- list.files(FOLDER, pattern = "view\\+poi.out", recursive = TRUE)
+files <- paste(FOLDER, files, sep = "/")
 
-# Reading, preprocessing and so on
-log_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.view+poi.log")
-log_file <- log_file %>%
-    #group_by(file, q, k, size, key) %>%
-    #mutate(algo = c("ViewSearch + POI", "POI")[row_number()]) %>%
-    #ungroup %>%
-    mutate(algo = factor(algo,
-                         levels = c("Just_POIs_FALSE", "Just_POIs_TRUE"), 
-                         labels = c("ViewSearch + POI", "POI"))) %>%
-    filter( (q==10 & k==10) | (q==25 & k==25)  ) %>%
-    mutate(file = sub(".arff", "", file),
-           setup = paste0("q = ", q, ", k = ", k),
-           size = factor(size,
-                         levels = unique(sort(size)),
-                         labels = paste(unique(sort(size)), " dimensions")))
+cat(length(files), " result files found!\n")
+file_contents <- lapply(files, function(f){
+    cat("Reading", f, "\n")
+    read.delim(f, stringsAsFactors = FALSE)
+})
+out_file <- rbind_all(file_contents)
 
-out_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.view+poi.out")
+# Timing files
+files <- list.files(FOLDER, pattern = "view\\+poi.log", recursive = TRUE)
+files <- paste(FOLDER, files, sep = "/")
+
+cat(length(files), " log files found!\n")
+file_contents <- lapply(files, function(f){
+    cat("Reading", f, "\n")
+    read.delim(f, stringsAsFactors = FALSE)
+})
+log_file <- rbind_all(file_contents)
+
+# Filters and Prettifies
+black_list <-  c("internet_usage.arff", "insurance.arff")#, "liver.arff")
 out_file <- out_file %>%
-    #group_by(file, q, k, size, view) %>%
-    #mutate(algo = c("ViewSearch + POI", "POI")[row_number()]) %>%
-    #data.frame %>%
-    mutate(algo = factor(algo,
-                         levels = c("Just_POIs_FALSE", "Just_POIs_TRUE"), 
-                         labels = c("ViewSearch + POI", "POI"))) %>%
-    select(-description) %>%
-    filter( (q==10 & k==10) | (q==25 & k==50)  ) %>%
-    mutate(file = sub(".arff", "", file),
-           setup = paste0("q = ", q, ", k = ", k),
-           size = factor(size,
-                          levels = unique(sort(size)),
-                          labels = paste(unique(sort(size)), " dimensions")))
-    
-#####################
-# Plotting accuracy #
-#####################
-no_view <- out_file %>%
-    filter(algo == "POI") %>%
-    select(-view, -score, -algo) %>%
-    distinct()
-out_file <- out_file %>% semi_join(no_view)
-
-acc_plot <- ggplot(out_file, aes(x = factor(file), y = score, fill = algo, color = algo)) +
-            geom_boxplot(outlier.colour = "darkgrey", outlier.size = .5, ) +
-            facet_grid(size ~ setup, scale = "free") +
-            scale_x_discrete(name = "Dataset") +
-            scale_y_continuous(name = "POI Divergence")
-acc_plot <- prettify(acc_plot)+
-    theme(legend.position = "top", axis.text.x = element_text(angle = 22, hjust = 1))
-
-plot(acc_plot)
-
-##################
-# Plotting SPEED #
-##################
-log_file <- log_file %>%
-                filter(key == "Time") %>%
-                mutate(time = value, xceed = round(time)) %>%
-                select(-key, -value)
-
-all_matches <- log_file %>%
-                select(-algo, -time, -xceed) %>%
-                distinct()
-
-no_match <- all_matches %>%
-                anti_join(filter(log_file, algo == "POI"))%>%
-                mutate(algo = "POI", time = 1999, xceed = ">1999")
-log_file <- rbind(log_file, no_match)
+    filter(!file %in% black_list) %>%
+    mutate(file = sub(".arff", "", file))
 
 log_file <- log_file %>%
-            group_by(file, size, setup) %>%
-            mutate(time = time / max(time)) %>%
-            ungroup
+    filter(!file %in% black_list) %>%
+    mutate(file = sub(".arff", "", file)) %>%
+    filter(key == "Time")
 
 
-time_plot <- ggplot(log_file, aes(x = factor(file),
-                                  y = time * 100,
-                                  fill = algo,
-                                  color = algo)) +
-                geom_bar(stat = "identity", position = "dodge") +
-                geom_text(aes(label = xceed, y = time * 100 / 2), 
-                          position = position_dodge(width = 0.9),
-                          color = "black",
-                          size=2) +
-                facet_grid(size ~ setup, scale = "free") +
-                scale_x_discrete(name = "Dataset") +
-                scale_y_continuous(name = "Runtime (% max)", breaks = c(0,100))
+####################
+# Plots the Scores #
+####################
+to_plot <- out_file %>%
+            group_by(file, algo) %>%
+            summarize(med_score = median(score),
+                      min_score = min(score),
+                      max_score = max(score))
 
-time_plot <- prettify(time_plot) +
-    theme(legend.position = "top", axis.text.x = element_text(angle = 22, hjust = 1))
+g1 <- ggplot(to_plot, aes(x = file, y = med_score, 
+                          ymin = min_score, ymax = max_score,
+                          color = algo, fill = algo)) +
+    geom_pointrange(position = position_dodge(width = 0.5), size = 0.75)
 
-plot(time_plot)
+g1 <- prettify(g1)
 
-ggsave("../documents/plots/tmp_View-POI-Acc.pdf", acc_plot, width = 8.5, height = 2.25)
-ggsave("../documents/plots/tmp_View-POI-Time.pdf", time_plot, width = 8.5, height = 2.25)
+print(g1)
+
+#####################
+# Plots the runtimes #
+#####################
+to_plot <- log_file %>%
+    spread(key, value)
+
+g2 <- ggplot(to_plot, aes(x = file, y = Time, color = algo, fill = algo)) +
+        geom_bar(position = "dodge", stat = "identity")# +
+    #coord_cartesian(ylim = c(0,30))
+g2 <- prettify(g2)
+
+print(g2)
+

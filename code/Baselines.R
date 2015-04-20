@@ -208,22 +208,20 @@ search_exact_NB <- function(data, target_col, q, size_view, size_beam=NULL,
         
         # Appending
         cat("Adding", length(cand_cols), "new views\n")
+        
         view_columns   <- c(view_columns, cand_cols)
         view_NB_strengths <- c(view_NB_strengths, cand_NB_strengths)
     }
     
-    # Real Score Calculations
-    data <- as.data.frame(lapply(data, as.numeric))
-    view_strengths <- sapply(view_columns, fast_joint_mutual_information,
-                             target_col, data)
-    
     # Final filtering and wrapping up
-    out_order <- order(view_strengths, decreasing = TRUE)
+    out_order <- order(view_NB_strengths, decreasing = TRUE)
     out_order <- out_order[1:min(q, length(out_order))]
+    data <- as.data.frame(lapply(data, as.numeric))
     views <- lapply(out_order, function(i){
+        real_strength <- fast_joint_mutual_information(view_columns[[i]], target_col, data)
         list(
             columns  = view_columns[[i]],
-            strength = view_strengths[i]
+            strength = real_strength
         )
     })
     
@@ -363,18 +361,15 @@ search_exact_kNN <- function(data, target_col, q, size_view, size_beam=NULL,
         view_kNN_strengths <- c(view_kNN_strengths, cand_kNN_strengths)
     }
     
-    # Real Score Calculations
-    data <- as.data.frame(lapply(data, as.numeric))
-    view_strengths <- sapply(view_columns, fast_joint_mutual_information,
-                             target_col, data)
-    
     # Final filtering and wrapping up
-    out_order <- order(view_strengths, decreasing = TRUE)
+    out_order <- order(view_kNN_strengths, decreasing = TRUE)
     out_order <- out_order[1:min(q, length(out_order))]
+    data <- as.data.frame(lapply(data, as.numeric))
     views <- lapply(out_order, function(i){
+        real_strength <- fast_joint_mutual_information(view_columns[[i]], target_col, data)
         list(
             columns  = view_columns[[i]],
-            strength = view_strengths[i]
+            strength = real_strength
         )
     })
     

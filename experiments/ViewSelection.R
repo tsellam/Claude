@@ -17,7 +17,7 @@ file_list <- file_list[order(sizes)]
 
 file_log     <- "results.log"
 log_headers <- c("experiment", "file", "q", "beam_size", "size_view",
-                  "algo","key", "value\n")
+                  "dedup", "algo","key", "value\n")
 cat(paste0(log_headers, collapse="\t"), file = file_log)
 
 file_out <- "results.out"
@@ -26,7 +26,7 @@ out_headers <- c("experiment", "file", "q", "beam_size", "size_view",
 cat(paste0(out_headers, collapse="\t"), file = file_out)
 
 if (test_mode){
-    file_list <- "breast.arff" #file_list[3]
+    file_list <- "vowel.arff" #file_list[3]
 }
 
 wrapper <- function(..., score_function, algo){
@@ -59,11 +59,11 @@ for (arff_file in file_list){
 
          # Prepares a function to output stuff
          writelog <- function(...){
-             line <- paste0(c("VaryAlgos", arff_file, q, b, s, d_factor, ... ), collapse="\t")
+             line <- paste0(c("VaryAlgos", arff_file, q, b, s, ifelse(is.null(d_factor), "100", d_factor), ... ), collapse="\t")
              cat(line, "\n", file = file_log, append = TRUE, sep = "")
          }
          writeout <- function(...){
-             line <- paste0(c("VaryAlgos", arff_file, q, b, s, d_factor, ...) , collapse="\t")
+             line <- paste0(c("VaryAlgos", arff_file, q, b, s, ifelse(is.null(d_factor), "100", d_factor), ...) , collapse="\t")
              cat(line, "\n", file = file_out, append = TRUE, sep = "")
          }
         
@@ -168,11 +168,11 @@ for (arff_file in file_list){
         
         # Prepares a function to output stuff
         writelog <- function(...){
-            line <- paste0(c("VaryBeam", arff_file, q, b, s, d_factor, ... ), collapse="\t")
+            line <- paste0(c("VaryBeam", arff_file, q, b, s, ifelse(is.null(d_factor), "100", d_factor), ... ), collapse="\t")
             cat(line, "\n", file = file_log, append = TRUE, sep = "")
         }
         writeout <- function(...){
-            line <- paste0(c("VaryBeam", arff_file, q, b, s, d_factor, ...) , collapse="\t")
+            line <- paste0(c("VaryBeam", arff_file, q, b, s, ifelse(is.null(d_factor), "100", d_factor), ...) , collapse="\t")
             cat(line, "\n", file = file_out, append = TRUE, sep = "")
         }
         
@@ -189,7 +189,7 @@ for (arff_file in file_list){
         q <- 25
         d_factor <- NULL
         
-        for (b in c(25, 50, 250)){
+        for (b in c(25, 50, 100, 250)){
             cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
             
             # Own boys
@@ -238,11 +238,11 @@ for (arff_file in file_list){
         
         # Prepares a function to output stuff
         writelog <- function(...){
-            line <- paste0(c("VaryDeduplication", arff_file, q, b, s, d_factor, ... ), collapse="\t")
+            line <- paste0(c("VaryDeduplication", arff_file, q, b, s, ifelse(is.null(d_factor), "100", d_factor), ... ), collapse="\t")
             cat(line, "\n", file = file_log, append = TRUE, sep = "")
         }
         writeout <- function(...){
-            line <- paste0(c("VaryDeduplication", arff_file, q, b, s, d_factor, ...) , collapse="\t")
+            line <- paste0(c("VaryDeduplication", arff_file, q, b, s, ifelse(is.null(d_factor), "100", d_factor), ...) , collapse="\t")
             cat(line, "\n", file = file_out, append = TRUE, sep = "")
         }
         
@@ -258,9 +258,9 @@ for (arff_file in file_list){
         
         s <- 5
         q <- 25
-        b <- 50
+        b <- 500
         
-        for (d_factor in c(25, 50, 100)){
+        for (d_factor in c(5, 25, 50, 100)){
             
             d <- ceiling((d_factor / 100) * min(b, ncol(clean_data)) * ncol(clean_data))
             cat("Parameters: d-", d, "\n", sep = "")
