@@ -237,7 +237,7 @@ generate_ids <- function(...){
 
 search_approx <- function(data, target_col, q=NULL, size_view, 
                           size_beam=NULL, pessimistic=TRUE, dup_factor=NULL,
-                          logfun=NULL, outfun = NULL){
+                          preprune=FALSE, logfun=NULL, outfun = NULL){
     
     cat("Starting approximate search\n")
     if (size_beam <= size_view) stop("Beam to small!!!")
@@ -251,7 +251,7 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     # First iterations are classic
     views <- list()
     first_levels <- list()
-    views_df <- data.frame(column1 = dim_names, stringsAsFactors = F)
+    views_df <- data.frame(column1 = dim_names, stringsAsFactors = FALSE)
     
     for (i in 1:min(size_view, 2)){
         cat("*** Computing level", i, "... ")
@@ -273,7 +273,12 @@ search_approx <- function(data, target_col, q=NULL, size_view,
 
         # Prepares for next iteration...
         # Gets data
-        dims_df <- data.frame(dim_names, stringsAsFactors = F)
+        dims_df <- if(!(preprune) | (i>1)){
+            data.frame(dim_names, stringsAsFactors = F)
+        } else {
+            data.frame(as.character(views_df$column1), stringsAsFactors = F)
+        }
+
         names(dims_df) <- paste0("column", i+1)
         views_df <- merge(dims_df, views_df, all=TRUE) %>%
                     select(-strength) %>%

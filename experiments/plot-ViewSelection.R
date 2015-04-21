@@ -31,9 +31,10 @@ file_contents <- lapply(files, function(f){
 log_file <- rbind_all(file_contents)
 
 # Filters and Prettifies
-black_list <-  c("internet_usage.arff", "insurance.arff")#, "liver.arff")
+black_list <-  c("internet_usage.arff")#, "insurance.arff")#, "liver.arff")
 out_file <- out_file %>%
             filter(!file %in% black_list) %>%
+            filter(!algo %in% c("Wrap_NaiveBayes")) %>%
             mutate(file = sub(".arff", "", file))
             
 log_file <- log_file %>%
@@ -75,7 +76,7 @@ to_plot <- log_file %>%
 
 p2 <- ggplot(to_plot, aes(x = file, y = Time, fill = algo)) +
     geom_bar(stat = "identity", position = "dodge") +
-    coord_cartesian(ylim = c(0,30))
+    coord_cartesian(ylim = c(0,60))
 p2 <- prettify(p2)
 print(p2)
 

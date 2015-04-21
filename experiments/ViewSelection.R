@@ -92,6 +92,15 @@ for (arff_file in file_list){
         cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
          
         #  Baselines
+        
+        approx_prune <- wrapper(
+            search_approx(clean_data, target, q = q,
+                          size_view = s, size_beam = b, preprune = TRUE,
+                          logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "Approximative_prune"
+        )
+        
         fourS_views <-  wrapper(
             FourS(clean_data, target, jar_loc = jar_loc,
                     logfun = writelog, outfun = writeout),
@@ -223,7 +232,7 @@ for (arff_file in file_list){
 ################################
 cat("\nTHIRD ROUND OF EXPERIMENTS\n")
 
-#file_list <- c("breast.arff", "internet_usage.arff","insurance.arff","communities.arff")
+file_list <- c("breast.arff", "internet_usage.arff","insurance.arff","communities.arff")
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
