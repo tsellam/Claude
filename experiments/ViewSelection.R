@@ -232,7 +232,7 @@ for (arff_file in file_list){
 ################################
 cat("\nTHIRD ROUND OF EXPERIMENTS\n")
 
-file_list <- c("breast.arff", "internet_usage.arff","insurance.arff","communities.arff")
+#file_list <- c("breast.arff", "internet_usage.arff","insurance.arff","communities.arff")
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
