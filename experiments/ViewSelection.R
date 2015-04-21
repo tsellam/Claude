@@ -26,7 +26,7 @@ out_headers <- c("experiment", "file", "q", "beam_size", "size_view",
 cat(paste0(out_headers, collapse="\t"), file = file_out)
 
 if (test_mode){
-    file_list <- "vowel.arff" #file_list[3]
+    file_list <- "communities.arff" #file_list[3]
 }
 
 wrapper <- function(..., score_function, algo){
@@ -223,6 +223,7 @@ for (arff_file in file_list){
 ################################
 cat("\nTHIRD ROUND OF EXPERIMENTS\n")
 
+file_list <- c("breast.arff", "internet_usage.arff","insurance.arff","communities.arff")
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
@@ -258,11 +259,15 @@ for (arff_file in file_list){
         
         s <- 5
         q <- 25
-        b <- 500
+        b <- 25
         
-        for (d_factor in c(5, 25, 50, 100)){
+        for (d_factor in c(0, 25, 50, 75, 100)){
+        #for (d_factor in c(0, 50, 100)){
+        
+            n_cand <- b * (ncol(clean_data) - 1)
+            d <- (n_cand - b) * (d_factor) / 100 + b
+            d <- ceiling(d)
             
-            d <- ceiling((d_factor / 100) * min(b, ncol(clean_data)) * ncol(clean_data))
             cat("Parameters: d-", d, "\n", sep = "")
                         
             approx <- wrapper(

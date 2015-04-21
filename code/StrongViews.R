@@ -62,16 +62,18 @@ deduplicate_views <- function(candidates, size_out){
                     spread(item, value, fill = 0)
     
     rownames(bin_candidates) <- bin_candidates$id
-    bin_candidates <- bin_candidates %>% select(-id)
+    bin_candidates <- bin_candidates %>%
+                        select(-id) %>%
+                        as.matrix      
     
     # Clustering
-    clust_analysis <- pam(bin_candidates, size_out,
-                          metric = "manhattan", do.swap = FALSE)
+    d_m <- daisy(bin_candidates, metric = "gower", type=list(asymm=colnames(bin_candidates)))
+    clust_analysis <- pam(d_m, size_out, do.swap = TRUE)
     medoids <- clust_analysis$medoids
     
     # Final join
-    med_names <- rownames(medoids)
-    candidates <- candidates %>% filter(id %in% med_names)
+    #med_names <- rownames(medoids)
+    candidates <- candidates %>% filter(id %in% medoids)
     
     cat("...After:", nrow(candidates), "...")
     return(candidates)
@@ -312,8 +314,8 @@ search_approx <- function(data, target_col, q=NULL, size_view,
     candidates <- mutate(first_levels[[2]], id = generate_ids(column1, column2))
     for (level in 3:size_view){
         cat("*** Computing level", level, "... ")
-        # Pivots
         
+        # Pivots
         piv_candidates <- candidates %>%
                         gather(col_index, col_name, matches("column*"))
         
@@ -334,7 +336,7 @@ search_approx <- function(data, target_col, q=NULL, size_view,
         new_colname  <- paste0("column", length(old_colnames) + 1)
         pasted_colnames <- paste0(old_colnames, collapse=",")
         id_generator <- as.formula(paste0("~generate_ids(", pasted_colnames, ",new_column)"))
-        
+                
         candidates <- candidates %>%
                         inner_join(neighbors, by = c("id" = "id")) %>%                    
                         mutate_(id = id_generator) %>%

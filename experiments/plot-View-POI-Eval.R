@@ -2,7 +2,7 @@ library("dplyr")
 library("tidyr")
 source("graph-utils.R")
 
-FOLDER <- "20-04"
+FOLDER <- "21-04"
 
 ###############
 # PREPARATION #

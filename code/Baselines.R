@@ -398,7 +398,20 @@ get_kNN_score <- function(view_set, data, target, logfun, algo = NULL){
 # DIVERSITY SCORE #
 ###################
 get_diversity_score <- function(view_set, data, target, logfun, algo){
-    all_cols <- unlist(sapply(view_set, function(v) v$columns))
-    score <- length(unique(all_cols))
+    
+    all_cols <- lapply(view_set, function(v) v$columns)
+    
+    # Score 1: distinct columns
+    score <- length(unique(unlist(all_cols)))
     logfun(algo, 0, "Diversity", score)
+    
+    # Score 2: dissimilarity
+    pairs <- combn(1:length(all_cols), 2)
+    dissims <- apply(pairs, 2, function(p){
+        v1 <- all_cols[[p[[1]]]]
+        v2 <- all_cols[[p[[2]]]]
+        length(intersect(v1, v2)) / length(union(v1, v2))
+    })
+    score_dissim <- mean(dissims)
+    logfun(algo, 0, "Dissimilarity", score_dissim)
 }
