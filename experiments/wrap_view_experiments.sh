@@ -27,10 +27,10 @@ then
     cd ../../experiments
 fi
 
-R -f StrengthTest.R
 R -f get-target-entropies.R
 R -f ViewSelection.R
 R -f View-POI-Eval.R
+R -f StrengthTest.R
 
 tarname=FindView-`hostname -s`-` date +'%B%d'`.tar.gz
 tar -czvf $tarname nohup.out *.csv *.out *.log
