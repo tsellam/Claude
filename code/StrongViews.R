@@ -237,7 +237,7 @@ generate_ids <- function(...){
 
 search_approx <- function(data, target_col, q=NULL, size_view, 
                           size_beam=NULL, pessimistic=TRUE, dup_factor=NULL,
-                          preprune=FALSE, logfun=NULL, outfun = NULL){
+                          preprune=TRUE, logfun=NULL, outfun = NULL){
     
     cat("Starting approximate search\n")
     if (size_beam <= size_view) stop("Beam to small!!!")

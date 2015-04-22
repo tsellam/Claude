@@ -40,14 +40,13 @@ save_plots <- function(file, ..., keep_legend=FALSE, pdfwidth=18, pdfheight=3.3)
 
 # OK!
 prettify <- function(chart, ...) {
-    chart <- chart + theme_few(base_size = 10)
+    chart <- chart + theme_few(base_size = 8)
     
     chart <- chart + scale_colour_few(...)
     chart <- chart + scale_fill_few(...)
     
     chart <- chart + theme(legend.title=element_blank(),
-                           plot.margin=unit(c(0,0,0,0),"cm"),
-                            legend.key.height=unit(8,"pt"),
-          #axis.title.y=element_text(vjust=0.5),
-                            plot.margin=unit(c(0.1,0.1,0.1,0.1),"cm"))
+                           axis.title = element_text(size = 6),
+                            legend.key.height=unit(8,"pt"))#,
+                            #plot.margin=unit(c(0.3,0.3,0.3,0.3),"cm"))
 }

@@ -2,7 +2,7 @@ library("dplyr")
 library("tidyr")
 source("graph-utils.R")
 
-FOLDER <- "21-04"
+FOLDER <- "22-04"
 
 ###############
 # PREPARATION #
@@ -30,7 +30,7 @@ file_contents <- lapply(files, function(f){
 log_file <- rbind_all(file_contents)
 
 # Filters and Prettifies
-black_list <-  c("internet_usage.arff", "insurance.arff")#, "liver.arff")
+black_list <-  c("internet_usage.arff")#, "insurance.arff")#, "liver.arff")
 out_file <- out_file %>%
     filter(!file %in% black_list) %>%
     mutate(file = sub(".arff", "", file))
@@ -38,8 +38,7 @@ out_file <- out_file %>%
 log_file <- log_file %>%
     filter(!file %in% black_list) %>%
     mutate(file = sub(".arff", "", file)) %>%
-    filter(key == "Time")
-
+    filter(key == "Time") 
 
 ####################
 # Plots the Scores #
@@ -53,11 +52,15 @@ to_plot <- out_file %>%
 g1 <- ggplot(to_plot, aes(x = file, y = med_score, 
                           ymin = min_score, ymax = max_score,
                           color = algo, fill = algo)) +
-    geom_pointrange(position = position_dodge(width = 0.5), size = 0.75)
+    geom_pointrange(position = position_dodge(width = 0.5), size = 0.4) +
+    scale_x_discrete(name="Dataset") +
+    scale_y_continuous(name="Score")
 
 g1 <- prettify(g1)
 
 print(g1)
+ggsave("../documents/plots/POI-score.pdf", g1,
+       width = 16, height = 3.5, units = "cm")
 
 #####################
 # Plots the runtimes #
@@ -71,4 +74,6 @@ g2 <- ggplot(to_plot, aes(x = file, y = Time, color = algo, fill = algo)) +
 g2 <- prettify(g2)
 
 print(g2)
+
+system("cd ../documents ; ../documents/renderPDF.sh")
 

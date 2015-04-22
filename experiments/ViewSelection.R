@@ -92,15 +92,6 @@ for (arff_file in file_list){
         cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
          
         #  Baselines
-        
-        approx_prune <- wrapper(
-            search_approx(clean_data, target, q = q,
-                          size_view = s, size_beam = b, preprune = TRUE,
-                          logfun = writelog, outfun = writeout),
-            score_function = score_function,
-            algo = "Approximative_prune"
-        )
-        
         fourS_views <-  wrapper(
             FourS(clean_data, target, jar_loc = jar_loc,
                     logfun = writelog, outfun = writeout),
@@ -202,14 +193,6 @@ for (arff_file in file_list){
             cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
             
             # Own boys
-            beamed <- wrapper(
-                search_exact(clean_data, target, q = q,
-                             size_view = s, size_beam = b,
-                             logfun = writelog, outfun = writeout),
-                score_function = score_function,
-                algo = "Exhaustive"
-            )
-            
             approx <- wrapper(
                 search_approx(clean_data, target, q = q,
                               size_view = s, size_beam = b,
@@ -268,7 +251,7 @@ for (arff_file in file_list){
         
         s <- 5
         q <- 25
-        b <- 25
+        b <- 100
         
         for (d_factor in c(0, 25, 50, 75, 100)){
         #for (d_factor in c(0, 50, 100)){
@@ -282,7 +265,7 @@ for (arff_file in file_list){
             approx <- wrapper(
                 search_approx(clean_data, target, q = q,
                               size_view = s, size_beam = b, dup_factor = d,
-                              logfun = writelog, outfun = writeout),
+                              preprune = FALSE, logfun = writelog, outfun = writeout),
                 score_function = score_function,
                 algo = "Approximative"
             )

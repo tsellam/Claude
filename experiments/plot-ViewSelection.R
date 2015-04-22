@@ -2,8 +2,9 @@
 source("graph-utils.R")
 library(dplyr)
 library(tidyr)
+library(xtable)
 
-FOLDER <- "21-04"
+FOLDER <- "22-04"
 
 ###############
 # PREPARATION #
@@ -31,16 +32,40 @@ file_contents <- lapply(files, function(f){
 log_file <- rbind_all(file_contents)
 
 # Filters and Prettifies
-black_list <-  c("internet_usage.arff")#, "insurance.arff")#, "liver.arff")
+black_list <-  c("internet_usage.arff")
 out_file <- out_file %>%
             filter(!file %in% black_list) %>%
             filter(!algo %in% c("Wrap_NaiveBayes")) %>%
-            mutate(file = sub(".arff", "", file))
+            mutate(file = sub(".arff", "", file)) %>%
+            mutate(algo = factor(algo, levels = c("ApproximativePrune",
+                                                  "Approximative",
+                                                  "Exhaustive",
+                                                  "Wrap_kNN",
+                                                  "Clique",
+                                                  "4S"),
+                                        labels = c("ApproximativePrune",
+                                                  "Claude",
+                                                  "Exact",
+                                                  "Wrap 5-NN",
+                                                  "Clique",
+                                                  "4S")))
             
 log_file <- log_file %>%
     filter(!file %in% black_list) %>%
-    mutate(file = sub(".arff", "", file))
-
+    filter(!algo %in% c("Wrap_NaiveBayes")) %>%
+    mutate(file = sub(".arff", "", file)) %>% 
+    mutate(algo = factor(algo, levels = c("ApproximativePrune",
+                                          "Approximative",
+                                          "Exhaustive",
+                                          "Wrap_kNN",
+                                          "Clique",
+                                          "4S"),
+                         labels = c("ApproximativePrune",
+                                    "Claude",
+                                    "Exact",
+                                    "Wrap 5-NN",
+                                    "Clique",
+                                    "4S")))
 # Entropies
 entropies <- read.delim("entropies.out")
 
@@ -58,13 +83,24 @@ to_plot <- to_plot %>%
            summarize(med_F1 = median(F1), min_F1 = min(F1), max_F1 = max(F1)) %>%
            ungroup
 
+all_combis <-  unique(merge(to_plot$file, to_plot$algo))
+colnames(all_combis) <- c("file", "algo")
+to_plot <- left_join(all_combis, to_plot, by =  c("algo", "file"))
+#to_plot[is.na(to_plot)] <- 55
+
 p1 <- ggplot(to_plot, aes(x = file, y = med_F1,
                           ymax=max_F1, ymin=min_F1,
                           color = algo, fill= algo)) +
-        geom_pointrange(position = position_dodge(width = 0.5), size = 0.75) 
+        geom_pointrange(position = position_dodge(width = 0.5),
+                        size = 0.4) +
+        scale_x_discrete(name = "Dataset") +
+        scale_y_continuous(name = "Accuracy - F1")
+        
     
 p1 <- prettify(p1)
 print(p1)
+ggsave("../documents/plots/view-scores.pdf", p1,
+       width = 16, height = 3.5, units = "cm")
 
 ####################
 # Plots time spent #
@@ -78,14 +114,35 @@ p2 <- ggplot(to_plot, aes(x = file, y = Time, fill = algo)) +
     geom_bar(stat = "identity", position = "dodge") +
     coord_cartesian(ylim = c(0,60))
 p2 <- prettify(p2)
+
 print(p2)
+
+to_table <- to_plot %>%
+            select(file, algo, Time) %>%
+            spread(algo, Time) %>%
+            arrange(Claude)
+rownames(to_table) <- to_table$file
+to_table$file <- NULL
+
+old_n <- colnames(to_table)
+to_table <- apply(to_table, 1, function(row){
+    out <- as.character(round(row, 2))
+    out[is.na(row)] <- "*"
+    out[which.min(row)] <- paste0('\\cellcolor{grn} ', out[which.min(row)])
+    out[which.max(row)] <- paste0('\\cellcolor{red} ', out[which.max(row)])
+    out
+})
+to_table <- t(to_table)
+colnames(to_table) <- old_n
+
+print(xtable(to_table), sanitize.text.function = identity)
 
 ###############################
 # Plots vary beam experiments #
 ###############################
 # Prepares the out file
 to_plot <- out_file %>%
-    filter(experiment == "VaryBeam" & algo == "Approximative") %>%
+    filter(experiment == "VaryBeam" & algo == "Claude") %>%
     filter(grepl("- F1", key) | grepl("Strength", key)) %>%
     spread(key, value, convert = TRUE) %>%
     mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`, na.rm = TRUE)) %>%
@@ -104,7 +161,7 @@ to_plot <- to_plot %>%
 
 # Prepares the log file
 time_to_plot <- log_file %>%
-    filter(experiment == "VaryBeam" & algo == "Approximative" & key == "Time") %>%
+    filter(experiment == "VaryBeam" & algo == "Claude" & key == "Time") %>%
     select(file, beam_size, Time=value)
             
 # Joins!
@@ -113,19 +170,23 @@ to_plot <- inner_join(to_plot, time_to_plot, by= c("file"="file", "beam_size" = 
 p3 <- ggplot(to_plot, aes(x = Time, y = med_strength, ymin=min_strength, ymax=max_strength)) +
     scale_y_continuous(limits=c(0,1)) +
     expand_limits(x = 0, y = 0) +
+    scale_x_continuous(name = "Execution Time (s)") +
+    scale_y_continuous(name = "Normalized Strength") +
     facet_grid(. ~ file, scales="free_x") +
-    geom_pointrange(position = position_dodge(width = 0.5), size = 0.75) +
+    geom_pointrange(position = position_dodge(width = 0.5), size = 0.4) +
     geom_ribbon(alpha = 0.3)
     
 p3 <- prettify(p3)
 print(p3)
+ggsave("../documents/plots/view-vary-beam.pdf", p3,
+       width = 16, height = 3.5, units = "cm")
 
 ##################################
 # Prepares diversify experiments #
 ##################################
 # Prepares the out file
 to_plot <- out_file %>%
-    filter(experiment == "VaryDeduplication" & algo == "Approximative") %>%
+    filter(experiment == "VaryDeduplication" & algo == "Claude") %>%
     filter(grepl("- F1", key) | grepl("Strength", key) | grepl("Diversity", key)) %>%
     spread(key, value, convert = TRUE) %>%
     mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`, na.rm = TRUE)) %>%
@@ -145,12 +206,16 @@ to_plot <- to_plot %>%
               F1 = median(F1, na.rm = TRUE))
 
 p4 <- ggplot(to_plot, aes(x=dedup, y=Diversity)) +
-        geom_point() +
+        geom_point(size = 0.4) +
         geom_line() +
-        facet_grid(. ~ file, scales="free_x") 
+        facet_grid(. ~ file, scales="free_x")
+
 
 p4 <- prettify(p4)
 print(p4)
+
+ggsave("../documents/plots/view-vary-diversification.pdf", p4,
+       width = 16, height = 3.5, units = "cm")        
 
 
 #ggsave("../documents/plots/tmp_column-select-score.pdf", algo_accuracy, width = 8.5, height = 2.25)

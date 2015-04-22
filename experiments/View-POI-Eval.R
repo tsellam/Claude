@@ -63,11 +63,11 @@ for (arff_file in file_list){
 
             s <- 5
             q <- 25
-            b <- 35
+            b <- 30
             d_factor <- NULL
             
-            k <- 25
-            b_k <- floor(4 * k)
+            k <- 25 
+            b_k <- floor(2 * k)
             
             cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
             
@@ -76,14 +76,15 @@ for (arff_file in file_list){
             wrapper(
                 generate_views(file, target, nbins_target = 5,
                                q = q, size_view = s, size_beam_q = b, pessimistic=TRUE,
-                               min_freq = 0.05, k = k, size_beam_k = b_k, nbins = 5, levels = 3,
-                               just_POIs = FALSE, logfun = writelog, outfun = writeout)
+                               min_freq = 0.05, k = k, size_beam_k = b_k, nbins = 5,
+                               levels = 5, just_POIs = FALSE, logfun = writelog, outfun = writeout)
             )
             
             cat("\nWihtout View Selection\n")
             wrapper(
                 generate_views(file, target, nbins_target = 5,
-                               min_freq = 0.05, k = k * q, size_beam_k = floor(4 * k * q), nbins = 5, levels = 3,
+                               min_freq = 0.05, k = k * q, size_beam_k =
+                               floor(2 * k * q), nbins = 5, levels = 5,
                                just_POIs = TRUE, logfun = writelog, outfun = writeout)
             )
             
