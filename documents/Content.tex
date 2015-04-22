@@ -333,13 +333,13 @@ return one representative view per cluster.
 \begin{figure*}[t!]
     \centering
     
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}[b]{0.75\textwidth}
     \includegraphics[width=\textwidth]{plots/ViolentCrimesExample1}
     \caption{Fully worked out example 1}
     \label{fig:violent-example1}
     \end{subfigure}
 
-    \begin{subfigure}[b]{\textwidth}
+    \begin{subfigure}[b]{0.75\textwidth}
     \includegraphics[width=\textwidth]{plots/ViolentCrimesExample2}
     \caption{Fully worked out example 2}
     \label{fig:violent-example2}
@@ -415,33 +415,69 @@ strength of the views. We present the results for six datasets in Figure
 on accuracy. This confirms our approach: a strong view contains all the
 information necessary to understand how the target varies. 
 
-
 \subsection{View Selection}
-
-{\color{red}
-    We need more baselines here.
-    \begin{itemize}
-        \item The wrapper based on Naive Bayes
-        \item A feature selection algorithm
-        \item HiCS?
-     \end{itemize}
-}
-
+\begin{table}[t!]
+\centering
+\begin{tabular}{rll}
+  \hline
+  Name & Columns & Rows \\ 
+  \hline
+  liver & 7 & 345\\
+  shape & 18 & 180\\
+  diabetes & 9 & 779\\
+  glass & 10 & 226\\
+  vowel & 11 & 1.003\\
+  shape & 18 & 160\\
+  breast & 34 & 234\\
+  pendigits & 17 & 7,513\\
+  adult & 15 & 32,578\\
+  insurance & 86 & 5,910\\ 
+  communities & 101 & 2,124\\
+  cover\_type & 55 & 581,069\\
+   \hline
+\end{tabular}
+\label{table:datasets}
+\end{table}
 
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=2\columnwidth]{plots/column-select-score}
-\caption{Performance of the View Selection Algorithms with different view and
-beam sizes. The symbol \texttt{x} represents a missing value.}
+\includegraphics[width=2\columnwidth]{plots/view-scores}
+\caption{Performance of the View Selection Algorithms.}
 \label{pic:column-select-score}
 \end{figure*}
- 
+
+\begin{table*}[ht]
+\centering
+\begin{tabular}{rllllll}
+  \hline
+ & ApproximativePrune & Claude & Exact & Wrap 5-NN & Clique & 4S \\ 
+  \hline
+liver & 0.17 & 0.11 & 0.52 & \cellcolor{red} 1.41 & \cellcolor{grn} 0.03 & 0.15 \\ 
+  glass & 0.19 & 0.13 & 0.57 & \cellcolor{red} 2.46 & \cellcolor{grn} 0.04 & 0.15 \\ 
+  diabetes & 0.35 & 0.3 & 3.75 & \cellcolor{red} 5.53 & \cellcolor{grn} 0.09 & 0.34 \\ 
+  shape & 0.31 & 0.33 & \cellcolor{red} 23.37 & 10.53 & \cellcolor{grn} 0.13 & 0.23 \\ 
+  vowel & 0.64 & 0.56 & \cellcolor{red} 234.29 & 25.65 & \cellcolor{grn} 0.18 & 0.58 \\ 
+  breast & 1.39 & 1.65 & * & \cellcolor{red} 27.98 & 0.53 & \cellcolor{grn} 0.35 \\ 
+  pendigits & 4.67 & 4.62 & 183.94 & \cellcolor{red} 658.85 & \cellcolor{grn} 2.66 & 3.59 \\ 
+  adult & 13.46 & 13.52 & \cellcolor{red} 264.92 & * & \cellcolor{grn} 8.55 & 15.94 \\ 
+  communities & 8.19 & 27.65 & * & * & \cellcolor{red} 42.79 & \cellcolor{grn} 3 \\ 
+  insurance & 25.96 & \cellcolor{red} 52.12 & * & * & 51.99 & \cellcolor{grn} 10.32 \\ 
+   \hline
+\end{tabular}
+\end{table*}
+
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=2\columnwidth]{plots/column-select-time}
-\caption{Runtime of the View Selection Algorithms. The symbol \texttt{x}
-indicates that the experiment breached our 15 minutes threshold.} 
-\label{pic:column-select-time}
+\includegraphics[width=2\columnwidth]{plots/view-vary-beam}
+\caption{Impact of the bin size on the result.}
+\label{pic:bin-size}
+\end{figure*}
+
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=2.0\columnwidth]{plots/view-vary-diversification}
+\caption{Impact of the diversification on the result.}
+\label{pic:diversification}
 \end{figure*}
 
 We now evaluate our view selection strategy. We compare two approaches, both
@@ -462,20 +498,13 @@ whole database to evaluate the strength of each view. The approximate algorithm
 only performs a few lookups on the co-dependency graph.
 
 \subsection{View and POIs}
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=2\columnwidth]{plots/POI-score}
+\caption{Quality of the POIs.}
+\label{pic:POI-quali}
+\end{figure*}
 
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=2\columnwidth]{plots/View-POI-Acc}
-\caption{Quality of the POIs returned by Claude, for different q, k and n.}
-\label{pic:quali-POIs}
-\end{figure*}
- 
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=2\columnwidth]{plots/View-POI-Time}
-\caption{Execution time of Claude versus Beam Search for different q, k and n.} 
-\label{pic:time-POIs}
-\end{figure*}
 
 Figures \ref{pic:quali-POIs} and \ref{pic:time-POIs} present our evaluation of
 Claude's POIs. We compare two approaches. The algorithm \texttt{View Search +

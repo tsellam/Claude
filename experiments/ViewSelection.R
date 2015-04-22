@@ -44,7 +44,6 @@ wrapper <- function(..., score_function, algo){
 #####################################
 # First Experiment: Different Algos #
 #####################################
-file_list <- c("diabetic_data.arff")
 for (arff_file in file_list){
     cat("\n**** Doing file", arff_file, "\n")
     
