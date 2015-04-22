@@ -336,6 +336,11 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                      group_by(id, new_column) %>%
                      filter(delta == ifelse(pessimistic, min(delta), max(delta)))
         
+        if (nrow(neighbors) < 1) {
+            cat("Early termination...\n")
+            break
+        }
+        
         # joins back on the original data and generates ids
         old_colnames <- grep("column*", names(candidates), value=TRUE)
         new_colname  <- paste0("column", length(old_colnames) + 1)

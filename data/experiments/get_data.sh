@@ -2,6 +2,49 @@
 
 rm -rf *.csv *.arff data.zip*
 
+##########################
+# Big Files from the UCI #
+##########################
+# Magic Gamma
+echo Doing Magic Gamma
+wget --quiet http://archive.ics.uci.edu/ml/machine-learning-databases/magic/magic04.data
+sed "s/,/;/g" < magic04.data > magic.csv
+rm -rf magic04.data
+
+# Bank Marketing
+echo Doing Bank Marketing
+wget --quiet http://archive.ics.uci.edu/ml/machine-learning-databases/00222/bank.zip
+unzip bank.zip
+tail -n +2 bank-full.csv > bank.csv
+R -f csv2arff2.R --args bank.csv bank.arff
+rm bank-full.csv bank.zip bank.csv bank-names.txt bank.csv
+
+# Diabetes
+echo Diabetes
+wget --quiet http://archive.ics.uci.edu/ml/machine-learning-databases/00296/dataset_diabetes.zip
+unzip dataset_diabetes.zip 
+mv dataset_diabetes/diabetic_data.csv .
+rm -rf dataset_diabetes dataset_diabetes.zip
+tail -n +2 diabetic_data.csv | \
+        sed 's/,/;/g' | \
+        sed 's/?/NA/g' > diabetic_data_clean.csv
+R -f csv2arff2.R --args diabetic_data_clean.csv diabetic_data.arff
+rm diabetic_data_clean.csv
+
+# Letter
+echo Letter
+wget --quiet http://archive.ics.uci.edu/ml/machine-learning-databases/letter-recognition/letter-recognition.data.Z
+gunzip letter-recognition.data.Z
+awk 'BEGIN{FS=","; OFS=";"}
+     {tmp = $1
+      $1 = ""
+      print substr($0, 2), tmp }' letter-recognition.data > letrec.csv
+R -f csv2arff2.R --args letrec.csv letrec.arff
+rm letrec.csv letter-recognition.data
+
+# Census2
+
+
 #####################
 # FILES FROM AACHEN #
 #####################

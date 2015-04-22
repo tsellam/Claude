@@ -10,17 +10,16 @@ then
     machine=`hostname -s`
     case $machine in
         rocks017)
-            mv adult.arff communities.arff diabetes.arff KEEP
+            mv adult.arff communities.arff KEEP
         ;;
         rocks018)
-            mv internet_usage.arff pendigits.arff vowel.arff KEEP
+            mv pendigits.arff magic.arff KEEP
         ;;
         rocks027)
-            mv insurance.arff liver.arff shape.arff KEEP
+            mv insurance.arff bank.arff KEEP
         ;;
         rocks028)
-           # mv breast.arff cover_type.arff glass.arff KEEP
-           mv breast.arff glass.arff KEEP
+           mv breast.arff letrec.arff KEEP
         ;;
     esac
     mv *.arff THROW
@@ -28,7 +27,7 @@ then
     cd ../../experiments
 fi
 
-#R -f StrengthTest.R
+R -f StrengthTest.R
 R -f get-target-entropies.R
 R -f ViewSelection.R
 R -f View-POI-Eval.R

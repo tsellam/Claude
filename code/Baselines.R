@@ -20,6 +20,7 @@ FourS <- function(data, target,
     ncols <- ncol(data) - 1
     nrows <- nrow(data)
     prep_data <- scale(data)
+    prep_data[is.na(prep_data)] <- 0
     max <- max(prep_data)
     TIME_PREPARE <- proc.time()["elapsed"] - TIME
     
@@ -28,7 +29,7 @@ FourS <- function(data, target,
     write.table(prep_data, file="ztmp_data.csv", sep = ";",
                 quote = FALSE, col.names = FALSE, row.names = FALSE)
     cat("Done\n")
-    
+        
     TIME <- proc.time()["elapsed"]
     # Runs the thing
     command <- paste(
@@ -50,12 +51,14 @@ FourS <- function(data, target,
     cat("Running Java 4S...")
     system(command, ignore.stdout = TRUE)
     cat("Done!..\n")
+    TIME_EVAL <- proc.time()["elapsed"] - TIME
     
     cat("Reading..")
     df_subspaces_num <- read.csv("ztmp_subspaces.out", header=FALSE)
     subspaces_num <- apply(df_subspaces_num, 1, function(row) c(na.omit(row) + 1))
     if (!is.list(subspaces_num)) subspaces_num <- list(subspaces_num)
     
+    TIME <- proc.time()["elapsed"]
     cat("Evaluating..")
     view_columns <- lapply(subspaces_num, function(v) colnames[v])
     strengths <- sapply(view_columns, fast_joint_mutual_information, target, data)
@@ -65,14 +68,16 @@ FourS <- function(data, target,
             strength = strengths[i]
         )
     })
-    TIME_EVAL <- proc.time()["elapsed"] - TIME
+    TIME_FINAL <- proc.time()["elapsed"] - TIME
     
     cat("Getting runtime...")
     TIME_RUN <- scan("ztmp_runtime.out",  quiet = TRUE) / 1000
     
-    if (!is.null(logfun))
-        logfun("4S", "Time", TIME_EVAL + TIME_PREPARE)
     write_results("4S", views, outfun)
+    if (!is.null(logfun)){
+        logfun("4S", "Time", TIME_EVAL + TIME_PREPARE + TIME_FINAL)
+        logfun("4S_official", "Time", TIME_RUN + TIME_PREPARE + TIME_FINAL)
+    }
     
     cat("Done\n")
     views

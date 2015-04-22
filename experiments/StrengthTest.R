@@ -22,7 +22,7 @@ s <- 3
 if (test_mode){
     q <- 25
 } else {
-    q <- 1000
+    q <- 500
 }
 
 for (arff_file in file_list){
