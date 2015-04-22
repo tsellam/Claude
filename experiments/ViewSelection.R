@@ -92,46 +92,46 @@ for (arff_file in file_list){
         
         cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")
          
-#         #  Baselines
-#         fourS_views <-  wrapper(
-#             FourS(clean_data, target, jar_loc = jar_loc,
-#                     logfun = writelog, outfun = writeout),
-#             score_function = score_function,
-#             algo = "4S"
-#         )
-#         
-#         beamed_NB <-  wrapper(
-#             search_exact_NB(clean_data_NB, target, q = q,
-#                             size_view = s, size_beam = b,
-#                             logfun = writelog, outfun = writeout),
-#             score_function = score_function,
-#             algo = "Wrap_NaiveBayes"
-#         )
-#         
-#         beamed_kNN <-  wrapper(
-#             search_exact_kNN(clean_data_kNN, target, q = q,
-#                             size_view = s, size_beam = b,
-#                             logfun = writelog, outfun = writeout),
-#             score_function = score_function,
-#             algo = "Wrap_kNN"
-#         )
-#         
-#         # Own boys
-#         beamed <- wrapper(
-#                       search_exact(clean_data, target, q = q,
-#                              size_view = s, size_beam = b,
-#                              logfun = writelog, outfun = writeout),
-#                             score_function = score_function,
-#                             algo = "Exhaustive"
-#                           )
-#         
-#         clique_approx <-  wrapper(
-#             search_cliques(clean_data, target, q = q,
-#                            size_view = s, size_beam = b, 
-#                            logfun = writelog, outfun = writeout),
-#             score_function = score_function,
-#             algo = "Clique"
-#         )
+        #  Baselines
+        fourS_views <-  wrapper(
+            FourS(clean_data, target, jar_loc = jar_loc,
+                    logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "4S"
+        )
+        
+        beamed_NB <-  wrapper(
+            search_exact_NB(clean_data_NB, target, q = q,
+                            size_view = s, size_beam = b,
+                            logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "Wrap_NaiveBayes"
+        )
+        
+        beamed_kNN <-  wrapper(
+            search_exact_kNN(clean_data_kNN, target, q = q,
+                            size_view = s, size_beam = b,
+                            logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "Wrap_kNN"
+        )
+        
+        # Own boys
+        beamed <- wrapper(
+                      search_exact(clean_data, target, q = q,
+                             size_view = s, size_beam = b,
+                             logfun = writelog, outfun = writeout),
+                            score_function = score_function,
+                            algo = "Exhaustive"
+                          )
+        
+        clique_approx <-  wrapper(
+            search_cliques(clean_data, target, q = q,
+                           size_view = s, size_beam = b, 
+                           logfun = writelog, outfun = writeout),
+            score_function = score_function,
+            algo = "Clique"
+        )
         
         approx <- wrapper(
                     search_approx(clean_data, target, q = q,
