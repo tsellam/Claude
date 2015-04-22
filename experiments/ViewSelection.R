@@ -31,7 +31,7 @@ if (test_mode){
 
 wrapper <- function(..., score_function, algo){
      tryCatch({
-        out <- evalWithTimeout(... , timeout=1800)
+        out <- evalWithTimeout(... , timeout=3600)
         score_function(out, algo)
      },
      error = function(e){
@@ -99,13 +99,13 @@ for (arff_file in file_list){
             algo = "4S"
         )
         
-        beamed_NB <-  wrapper(
-            search_exact_NB(clean_data_NB, target, q = q,
-                            size_view = s, size_beam = b,
-                            logfun = writelog, outfun = writeout),
-            score_function = score_function,
-            algo = "Wrap_NaiveBayes"
-        )
+#        beamed_NB <-  wrapper(
+#            search_exact_NB(clean_data_NB, target, q = q,
+#                            size_view = s, size_beam = b,
+#                            logfun = writelog, outfun = writeout),
+#            score_function = score_function,
+#            algo = "Wrap_NaiveBayes"
+#        )
         
         beamed_kNN <-  wrapper(
             search_exact_kNN(clean_data_kNN, target, q = q,
