@@ -4,7 +4,7 @@ library(dplyr)
 library(tidyr)
 library(xtable)
 
-FOLDER <- "22-04"
+FOLDER <- "23-04"
 
 ###############
 # PREPARATION #
@@ -12,7 +12,6 @@ FOLDER <- "22-04"
 # Out files
 files <- list.files(FOLDER, pattern = "results.out", recursive = TRUE)
 files <- paste(FOLDER, files, sep = "/")
-
 cat(length(files), " result files found!\n")
 file_contents <- lapply(files, function(f){
     cat("Reading", f, "\n")
@@ -23,7 +22,6 @@ out_file <- rbind_all(file_contents)
 # Timing files
 files <- list.files(FOLDER, pattern = "results.log", recursive = TRUE)
 files <- paste(FOLDER, files, sep = "/")
-
 cat(length(files), " log files found!\n")
 file_contents <- lapply(files, function(f){
     cat("Reading", f, "\n")
@@ -31,7 +29,20 @@ file_contents <- lapply(files, function(f){
 })
 log_file <- rbind_all(file_contents)
 
-# Filters and Prettifies
+# Entropies
+files <- list.files(FOLDER, pattern = "entropies.out", recursive = TRUE)
+files <- paste(FOLDER, files, sep = "/")
+cat(length(files), "entropy files found!\n")
+file_contents <- lapply(files, function(f){
+    cat("Reading", f, "\n")
+    read.delim(f, stringsAsFactors = FALSE)
+})
+entropies <- rbind_all(file_contents)
+
+
+##########################
+# Filters and Prettifies #
+##########################
 black_list <-  c("internet_usage.arff")
 out_file <- out_file %>%
             filter(!file %in% black_list) %>%
@@ -42,32 +53,34 @@ out_file <- out_file %>%
                                                   "Exhaustive",
                                                   "Wrap_kNN",
                                                   "Clique",
-                                                  "4S"),
+                                                  "4S",
+                                                  "4S_official"),
                                         labels = c("ApproximativePrune",
                                                   "Claude",
                                                   "Exact",
                                                   "Wrap 5-NN",
                                                   "Clique",
-                                                  "4S")))
+                                                  "4S",
+                                                  "4S_official")))
             
 log_file <- log_file %>%
     filter(!file %in% black_list) %>%
-    filter(!algo %in% c("Wrap_NaiveBayes")) %>%
+    filter(!algo %in% c("Wrap_NaiveBayes", "4S_official")) %>%
     mutate(file = sub(".arff", "", file)) %>% 
     mutate(algo = factor(algo, levels = c("ApproximativePrune",
                                           "Approximative",
                                           "Exhaustive",
                                           "Wrap_kNN",
                                           "Clique",
-                                          "4S"),
+                                          "4S",
+                                          "4S_official"),
                          labels = c("ApproximativePrune",
                                     "Claude",
                                     "Exact",
                                     "Wrap 5-NN",
                                     "Clique",
-                                    "4S")))
-# Entropies
-entropies <- read.delim("entropies.out")
+                                    "4S",
+                                    "4S_official")))
 
 #####################
 # Plots view scores #

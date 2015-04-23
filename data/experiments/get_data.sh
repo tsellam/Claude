@@ -5,6 +5,17 @@ rm -rf *.csv *.arff data.zip*
 ##########################
 # Big Files from the UCI #
 ##########################
+
+# Musk
+echo Doing Musk
+wget --quiet https://archive.ics.uci.edu/ml/machine-learning-databases/musk/clean2.data.Z
+gunzip clean2.data.Z
+sed -e's/.$//g' -e's/,/;/g' clean2.data |\
+    cut -d";" -f 3- \
+    > musk.csv
+R -f csv2arff2.R --args musk.csv musk.arff
+
+
 # Magic Gamma
 echo Doing Magic Gamma
 wget --quiet http://archive.ics.uci.edu/ml/machine-learning-databases/magic/magic04.data

@@ -33,7 +33,7 @@ wrapper <- function(...){
     tryCatch(
         evalWithTimeout(
             ...,
-            timeout=1800
+            timeout=3600
         ),
         error = function(e){
                 cat("Error, or TIMEOUT!\n")
@@ -66,7 +66,7 @@ for (arff_file in file_list){
             b <- 30
             d_factor <- NULL
             
-            k <- 25 
+            k <- 10
             b_k <- floor(2 * k)
             
             cat("Parameters: q-", q, ", b-", b, ", s-", s, "\n", sep = "")

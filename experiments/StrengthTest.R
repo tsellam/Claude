@@ -31,7 +31,7 @@ for (arff_file in file_list){
     # Prepares a function to output stuff
     writelog <- function(...){
         line <- paste0(c(arff_file, s, ... ), collapse="\t")
-        cat(line, "\n", file = file_log, append = TRUE)
+        cat(line, "\n", file = file_log, append = TRUE, sep = "")
     }
   
     tryCatch({

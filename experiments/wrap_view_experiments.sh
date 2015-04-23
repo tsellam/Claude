@@ -10,7 +10,7 @@ then
     machine=`hostname -s`
     case $machine in
         rocks017)
-            mv adult.arff communities.arff KEEP
+            mv musk.arff adult.arff communities.arff KEEP
         ;;
         rocks018)
             mv pendigits.arff magic.arff KEEP

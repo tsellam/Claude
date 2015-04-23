@@ -4,22 +4,42 @@ source("graph-utils.R")
 library(dplyr)
 library(tidyr)
 
+FOLDER <- "23-04"
 
-# READING AND PREPROCESSING
-raw_file <- read.delim("~/Projects/TurboGroups/experiments/results-12:12/agg.compare_scores.out")
-levels(raw_file$file) <-  sub(".arff", "", levels(raw_file$file))
-raw_file$F1_score    <- as.numeric(as.character(raw_file$F1_score))
-#raw_file$strength    <- as.numeric(as.character(raw_file$strength))
+#############################
+# READING AND PREPROCESSING #
+#############################
+# Reading File
+files <- list.files(FOLDER, pattern = "compare_scores.out", recursive = TRUE)
+files <- paste(FOLDER, files, sep = "/")
 
-target_entropies <- read.delim("entropies.out")
-raw_file <- left_join(raw_file, target_entropies, by = c('file' = 'file'))
-raw_file <- mutate(raw_file, strength = strength / entropy)
+cat(length(files), " result files found!\n")
+file_contents <- lapply(files, function(f){
+    cat("Reading", f, "\n")
+    read.delim(f, stringsAsFactors = FALSE)
+})
+raw_file <- rbind_all(file_contents)
 
-# PLOTTING
+# Reading entropies
+files <- list.files(FOLDER, pattern = "entropies.out", recursive = TRUE)
+files <- paste(FOLDER, files, sep = "/")
+cat(length(files), "entropy files found!\n")
+file_contents <- lapply(files, function(f){
+    cat("Reading", f, "\n")
+    read.delim(f, stringsAsFactors = FALSE)
+})
+entropies <- rbind_all(file_contents)
 
-#to_plot_all <- filter(raw_file, !file %in% c("insurance", "internet_usage"))
+# Joins
+raw_file <- raw_file %>%
+            mutate(file = sub(".arff", "", file)) %>%
+            left_join(entropies, by = c('file' = 'file')) %>%
+            mutate(strength = strength / entropy)
 
-outplotall <- ggplot(to_plot_all, aes(x = strength, y=F1_score, color=algo)) +
+############
+# PLOTTING #
+############
+outplotall <- ggplot(raw_file, aes(x = strength, y=F1_score, color=algo)) +
     geom_point(size=0.5) +
     stat_smooth(method = "loess") +
     scale_x_continuous(name = "") +
@@ -29,7 +49,6 @@ outplotall <- ggplot(to_plot_all, aes(x = strength, y=F1_score, color=algo)) +
 
 outplotall <- prettify(outplotall)
 plot(outplotall)
-
 
 
 
@@ -45,6 +64,7 @@ outplot1 <- ggplot(to_plot_1, aes(x = strength, y=F1_score, color=algo, shape = 
 
 outplot1 <- prettify(outplot1) +
     theme(legend.position = "top")
+
 
 to_plot_2 <- filter(raw_file, file %in% c("pendigits", "shape", "vowel"))
 
