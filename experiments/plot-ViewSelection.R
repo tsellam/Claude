@@ -4,7 +4,7 @@ library(dplyr)
 library(tidyr)
 library(xtable)
 
-FOLDER <- "23-04"
+FOLDER <- "24-04"
 
 ###############
 # PREPARATION #

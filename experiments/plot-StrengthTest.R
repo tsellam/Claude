@@ -4,7 +4,7 @@ source("graph-utils.R")
 library(dplyr)
 library(tidyr)
 
-FOLDER <- "23-04"
+FOLDER <- "24-04"
 
 #############################
 # READING AND PREPROCESSING #

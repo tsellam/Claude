@@ -326,9 +326,9 @@ established strategy, based on the Minimum Description Length principle
 return one representative view per cluster.
 
 
-\section{Use Cases}
+\section{Experiments}
 
-\subsection{Criminality}
+\subsection{Detailed Example: Crimes in US}
 
 \begin{figure*}[t!]
     \centering
@@ -372,7 +372,65 @@ return one representative view per cluster.
   \label{tab:crime_views}
 \end{table}
 
-\section{Experiments}
+
+\section{Related Work}
+
+Our work is inspired by both database research and machine learning. On the
+database side, Claude is related to the \emph{query recommendation} problem:
+how to automatically generate interesting SQL queries for a given database? On
+the machine learning side, our work is based on \emph{feature selection}, e.g.,
+how to select variables for a given inference problem, and \emph{subgroup
+discovery}, e.g., how to find the tuples which maximize a particular score
+function.
+
+\textbf{Query Recommendation.} We identify two types of recommendation systems:
+\emph{human-driven} approaches and \emph{data-driven} approaches. Human-driven
+systems learn from user feedback. For instance, Chatzopoulou et al. propose to
+make recommendations from query logs, similarly to search engines
+\cite{chatzopoulou2009query}. More recently, authors have proposed interactive
+exploration systems, where a recommendation system ``guides'' the user through
+the database. In Explore-by-Example, the system infers queries from examples
+provided by the user \cite{dimitriadou2014explore}. With Charles, the engine
+decomposes large queries into smaller ones \cite{sellam2013meet}. Sarawagi's
+method builds a maximum entropy model over the database from the user's history 
+\cite{sarawagi2000user}. Bonifati et al. propose a similar method to recomend
+joins \cite{bonifati2014interactive}.  Claude competes with neither of these
+approaches, since it uses the content of the database only.
+
+Our work is closer data-driven data recommendation, in which the system makes
+recommendations based on the content of the data. The general idea is to build
+a statistical model of the database, and find regions which behave
+unexpectedly. Sarawagi et al. have published seminal work on this topic for
+OLAP cubes \cite{sarawagi1998discovery}. Their system highlights sequences of
+drill-in operations which lead to ``surprising data'', e.g., tuples which
+differ from their neighbourhood. It requires that the data is organized in an
+OLAP cube (with hierchical dimensions), it supposes that the users know which
+variables to use, and it seeks thin-grained deviations. Oppositely, our system
+uses regular tables, it recommends views (not only selections) and it seeks
+large trends. More recently, Dash et al. have proposed a method to reveal
+surprising subsets in a faceted search context \cite{dash2008dynamic}. This
+method is related to Claude, but it targets document search, it does not
+recommend views.
+
+
+\textbf{Feature Selection, Subspace Search.} Chosing which variables to use for
+classification or regression is a crucial problem, for which dozens of methods
+were proposed \cite{guyon2003introduction}. A typical feature selection
+algorithm outputs one set of variables on which a certain predictor performs
+optimally. Our objective is different: we seek several, small sets of variables,
+simple enough to be interepreted by a humans. Claude is halfway between
+inference and exploration.
+
+On the unsupervised learning side, our work is close to subspace search. The
+idea is detect subspaces where the data is clustered distinctly
+\cite{keller2012hics,nguyen20134s}. We compare Claude to state-of-the-art
+methods in our Experiments section.
+
+\textbf{Subgroup Discovery.}
+
+
+\clearpage\clearpage\clearpage
+\section{Appendix}
 
 {\color{red}
 The graphs should be simplified. Instead, use tables.

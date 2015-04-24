@@ -37,7 +37,7 @@ for (arff_file in file_list){
     tryCatch({
         cat("Loading file...\n")
         file  <- read.arff(paste0(files_location, "/", arff_file))
-        file  <- file[sample(1:nrow(file), min(nrow(file), 10000), replace=FALSE),]
+        file  <- file[sample(1:nrow(file), min(nrow(file), 15000), replace=FALSE),]
         target <- names(file)[[ncol(file)]]
         
         cat("Running algos\n")
