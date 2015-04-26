@@ -34,20 +34,27 @@ plot_group <- function(i, groups, group = NULL){
     parcoord(data_file[, columns], col = colors, var.label = TRUE)
 }
 
-prettify <- function(chart, ...) {
-    chart <- chart + theme_few(base_size = 8)
+prettify <- function(chart, ..., remove_guides = TRUE) {
+    chart <- chart + theme_few(base_size = 6)
     chart <- chart + theme(legend.key.height=unit(8,"pt"),
+                           legend.key.width=unit(6,"pt"),
                            plot.margin=unit(c(0.1,0.5,0.1,0.5),"cm"))
+    chart <- chart + coord_fixed()
+    if (remove_guides) chart <- chart + guides(fill=FALSE)
+    
+    chart       
 }
 
+# Util
 save_plots <- function(file, ..., keep_legend=FALSE, pdfwidth=18, pdfheight=3.3){
-    # Util
+
     g_legend<-function(a.gplot){
         tmp <- ggplot_gtable(ggplot_build(a.gplot))
         leg <- which(sapply(tmp$grobs, function(x) x$name) == "guide-box")
         legend <- tmp$grobs[[leg]]
         return(legend)
     }
+    
     # Treats and extracts legends
     graphs <- list(...)
     if (!keep_legend) {
@@ -76,24 +83,24 @@ save_plots <- function(file, ..., keep_legend=FALSE, pdfwidth=18, pdfheight=3.3)
 data_file <- read.arff("~/Projects/TurboGroups/data/communities.arff")
 data_file <- select(data_file, -community)
 
-# Execution
-target <- "ViolentCrimesPerPop"
-
-views1 <- generate_views(data_file, target, 
-                       nbins_target = 2,
-                       q=100, size_view=3, size_beam_q=100, dup_factor=NULL, # 100-100-[-250] is optimal
-                       min_freq = 0.01, k=50, size_beam_k=50, nbins=5, levels=3,
-                       logfun = function(...) print(paste(...)),
-                       outfun = function(...) print(paste(...))
-)
-
-views2 <- generate_views(data_file, target, 
-                         nbins_target = 2,
-                         q=100, size_view=3, size_beam_q=100, dup_factor=250, # 100-100-[-250] is optimal
-                         min_freq = 0.01, k=50, size_beam_k=50, nbins=5, levels=3,
-                         logfun = function(...) print(paste(...)),
-                         outfun = function(...) print(paste(...))
-)
+# # Execution
+# target <- "ViolentCrimesPerPop"
+# 
+# views1 <- generate_views(data_file, target, 
+#                        nbins_target = 2,
+#                        q=100, size_view=3, size_beam_q=100, dup_factor=NULL, # 100-100-[-250] is optimal
+#                        min_freq = 0.01, k=50, size_beam_k=50, nbins=5, levels=3,
+#                        logfun = function(...) print(paste(...)),
+#                        outfun = function(...) print(paste(...))
+# )
+# 
+# views2 <- generate_views(data_file, target, 
+#                          nbins_target = 2,
+#                          q=100, size_view=3, size_beam_q=100, dup_factor=250, # 100-100-[-250] is optimal
+#                          min_freq = 0.01, k=50, size_beam_k=50, nbins=5, levels=3,
+#                          logfun = function(...) print(paste(...)),
+#                          outfun = function(...) print(paste(...))
+# )
 #######################
 # Plots for old Views #
 #######################
@@ -102,7 +109,7 @@ g1 <- ggplot(data_file, aes(x=racePctWhite * 100, y=PctVacantBoarded * 100, z=Vi
     stat_summary_hex() +
     scale_fill_gradient2(midpoint = 23,
                          low = "darkblue", mid = "#EEEEEE", high = muted("red"),
-                         name = "Violent Crimes (%)") +
+                         name = "Violent Crime\nper pop. (%)") +
     xlab("Pct.Race.White (%)") + 
     ylab("Pct.Vacant.Boarded (%)") +
     geom_rect(aes(xmin = -2, xmax = 18, ymin = 80, ymax = 102),
@@ -116,7 +123,10 @@ g1 <- ggplot(data_file, aes(x=racePctWhite * 100, y=PctVacantBoarded * 100, z=Vi
               alpha=0.001,
               size = 0.3)
 
-g1 <- prettify(g1)
+g1 <- prettify(g1, remove_guides = FALSE) +
+    theme(legend.position="top",
+          legend.margin=unit(0, "cm"),
+          legend.text.align=0)
 
 # Plotting view 13 - POI 21 - 26
 g2 <- ggplot(data_file, aes(x=PolicReqPerOffic * 100, y=PctFam2Par * 100, z=ViolentCrimesPerPop * 100)) +
@@ -159,8 +169,6 @@ g3 <- ggplot(data_file, aes(x=PctPolicMinor * 100, y=PctPolicWhite * 100, z=Viol
               size = 0.3)
 
 g3 <- prettify(g3)
-
-save_plots("ViolentCrimesExample1.pdf", g1, g2, g3, pdfwidth = 21, pdfheight=4.2)
 
 ################################
 # Plots for deduplicated views #
@@ -209,19 +217,19 @@ g5 <- ggplot(data_file, aes(x=pctWRetire * 100, y=PctUsePubTrans * 100, z=Violen
 g5 <- prettify(g5)
 
 # View 8 - POI 37
-g6 <- ggplot(data_file, aes(x=PctSameState85 * 100, y=PopDens, z=ViolentCrimesPerPop * 100)) +
+g6 <- ggplot(data_file, aes(x=PctSameState85 * 100, y=PopDens * 100, z=ViolentCrimesPerPop * 100)) +
     stat_summary_hex() +
     scale_fill_gradient2(midpoint = 23,
                          low = "darkblue", mid = "#EEEEEE", high = muted("red"),
                          name = "Violent Crimes (%)") +
     xlab("Pct.Recently.Moved (%)") + 
     ylab("Population.Density") +
-    geom_rect(aes(xmin = 52, xmax = 74, ymin = 0.78, ymax = 1.02),
+    geom_rect(aes(xmin = 52, xmax = 74, ymin = 78, ymax = 102),
               fill="white",
               colour = "darkred", 
               alpha=0.001,
               size = 0.3) +
-    geom_rect(aes(xmin = 63, xmax = 81, ymin = 0.94, ymax = 1.02),
+    geom_rect(aes(xmin = 63, xmax = 81, ymin = 94, ymax = 102),
               fill="white",
               colour = "darkred", 
               alpha=0.001,
@@ -229,7 +237,18 @@ g6 <- ggplot(data_file, aes(x=PctSameState85 * 100, y=PopDens, z=ViolentCrimesPe
 
 g6 <- prettify(g6)
 
-save_plots("ViolentCrimesExample2.pdf", g4, g5, g6, pdfwidth = 21, pdfheight=4.2)
+pdfwidth  <- 5
+pdfheight <- 5
+
+ggsave("../documents/plots/tmp_crime1.pdf", g1, width=pdfwidth, height=pdfheight + 2, units="cm")
+ggsave("../documents/plots/tmp_crime2.pdf", g2, width=pdfwidth, height=pdfheight, units="cm")
+ggsave("../documents/plots/tmp_crime3.pdf", g3, width=pdfwidth, height=pdfheight, units="cm")
+ggsave("../documents/plots/tmp_crime4.pdf", g4, width=pdfwidth, height=pdfheight, units="cm")
+ggsave("../documents/plots/tmp_crime5.pdf", g5, width=pdfwidth, height=pdfheight, units="cm")
+ggsave("../documents/plots/tmp_crime6.pdf", g6, width=pdfwidth, height=pdfheight, units="cm")
+
+
+#save_plots("ViolentCrimesExample2.pdf", g4, g5, g6, pdfwidth = 21, pdfheight=4.2)
 
 
 # library(foreign)

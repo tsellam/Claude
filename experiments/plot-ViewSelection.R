@@ -4,7 +4,7 @@ library(dplyr)
 library(tidyr)
 library(xtable)
 
-FOLDER <- "24-04"
+FOLDER <- "25-04"
 
 ###############
 # PREPARATION #
@@ -43,44 +43,67 @@ entropies <- rbind_all(file_contents)
 ##########################
 # Filters and Prettifies #
 ##########################
-black_list <-  c("internet_usage.arff")
+black_list <-  c("internet_usage.arff", "insurance.arff")
 out_file <- out_file %>%
             filter(!file %in% black_list) %>%
             filter(!algo %in% c("Wrap_NaiveBayes")) %>%
             mutate(file = sub(".arff", "", file)) %>%
             mutate(algo = factor(algo, levels = c("ApproximativePrune",
                                                   "Approximative",
-                                                  "Exhaustive",
-                                                  "Wrap_kNN",
-                                                  "Clique",
                                                   "4S",
-                                                  "4S_official"),
+                                                  "4S_official",
+                                                  "Clique",
+                                                  "Exhaustive",
+                                                  "Wrap_kNN"),
                                         labels = c("ApproximativePrune",
                                                   "Claude",
-                                                  "Exact",
-                                                  "Wrap 5-NN",
-                                                  "Clique",
                                                   "4S",
-                                                  "4S_official")))
-            
+                                                  "4S_official",
+                                                  "Clique",
+                                                  "Exact",
+                                                  "Wrap 5-NN"))) %>%
+            mutate(file = factor(file, 
+                                 levels = c("adult", "communities", "musk",
+                                            "magic", "pendigits", "bank",
+                                            "insurance", "breast", "letrec"),
+                                 labels = c("USCensus", "Crime", "MuskMolecules",
+                                            "MAGICTelescope", "PenDigits", "BankMarketing",
+                                            "Insurance", "BreastCancer", "LetterRecog")))
+
 log_file <- log_file %>%
     filter(!file %in% black_list) %>%
     filter(!algo %in% c("Wrap_NaiveBayes", "4S_official")) %>%
     mutate(file = sub(".arff", "", file)) %>% 
     mutate(algo = factor(algo, levels = c("ApproximativePrune",
                                           "Approximative",
-                                          "Exhaustive",
-                                          "Wrap_kNN",
-                                          "Clique",
                                           "4S",
-                                          "4S_official"),
+                                          "4S_official",
+                                          "Clique",
+                                          "Exhaustive",
+                                          "Wrap_kNN"),
                          labels = c("ApproximativePrune",
                                     "Claude",
-                                    "Exact",
-                                    "Wrap 5-NN",
-                                    "Clique",
                                     "4S",
-                                    "4S_official")))
+                                    "4S_official",
+                                    "Clique",
+                                    "Exact",
+                                    "Wrap 5-NN"))) %>%
+    mutate(file = factor(file, 
+                         levels = c("adult", "communities", "musk",
+                                    "magic", "pendigits", "bank",
+                                    "insurance", "breast", "letrec"),
+                         labels = c("USCensus", "Crime", "MuskMolecules",
+                                    "MAGICTelescope", "PenDigits", "BankMarketing",
+                                    "Insurance", "BreastCancer", "LetterRecog")))
+
+entropies <- entropies %>%
+                mutate(file = factor(file, 
+                                  levels = c("adult", "communities", "musk",
+                                             "magic", "pendigits", "bank",
+                                             "insurance", "breast", "letrec"),
+                                  labels = c("USCensus", "Crime", "MuskMolecules",
+                                             "MAGICTelescope", "PenDigits", "BankMarketing",
+                                             "Insurance", "BreastCancer", "LetterRecog")))
 
 #####################
 # Plots view scores #
@@ -99,7 +122,6 @@ to_plot <- to_plot %>%
 all_combis <-  unique(merge(to_plot$file, to_plot$algo))
 colnames(all_combis) <- c("file", "algo")
 to_plot <- left_join(all_combis, to_plot, by =  c("algo", "file"))
-#to_plot[is.na(to_plot)] <- 55
 
 p1 <- ggplot(to_plot, aes(x = file, y = med_F1,
                           ymax=max_F1, ymin=min_F1,
@@ -110,10 +132,13 @@ p1 <- ggplot(to_plot, aes(x = file, y = med_F1,
         scale_y_continuous(name = "Accuracy - F1")
         
     
-p1 <- prettify(p1)
+p1 <- prettify(p1) +
+    theme(axis.text.x = element_text(angle = 15, hjust = 1))
+
 print(p1)
-ggsave("../documents/plots/view-scores.pdf", p1,
-       width = 16, height = 3.5, units = "cm")
+
+ggsave("../documents/plots/tmp_view-scores.pdf", p1,
+       width = 16, height = 4, units = "cm")
 
 ####################
 # Plots time spent #
@@ -123,32 +148,58 @@ to_plot <- log_file %>%
     filter(key == "Time") %>%
     spread(key, value)
 
-p2 <- ggplot(to_plot, aes(x = file, y = Time, fill = algo)) +
-    geom_bar(stat = "identity", position = "dodge") +
+all_combis <-  unique(merge(to_plot$file, to_plot$algo))
+colnames(all_combis) <- c("file", "algo")
+to_plot <- left_join(all_combis, to_plot, by =  c("algo", "file")) %>%
+            mutate(xceeds = ifelse(is.na(Time), "X", ""))
+
+to_plot[is.na(to_plot)] <- 3600
+
+p2 <- ggplot(to_plot, aes(x = file, y = Time, fill = algo, color=algo, label = xceeds)) +
+    geom_bar(stat = "identity", position = "dodge", width=.75) +
+    geom_text(aes(y=55), color="black",
+              position = position_dodge(width=.75), size=2) +
+    scale_x_discrete(name="Dataset") + 
+    scale_y_continuous(name="Execution Time (s)") +
     coord_cartesian(ylim = c(0,60))
-p2 <- prettify(p2)
+
+p2 <- prettify(p2) +
+    theme(axis.text.x = element_text(angle = 15, hjust = 1))
+
 
 print(p2)
 
-to_table <- to_plot %>%
-            select(file, algo, Time) %>%
-            spread(algo, Time) %>%
-            arrange(Claude)
-rownames(to_table) <- to_table$file
-to_table$file <- NULL
+ggsave("../documents/plots/tmp_view-times.pdf", p2,
+       width = 16, height = 4, units = "cm")
 
-old_n <- colnames(to_table)
-to_table <- apply(to_table, 1, function(row){
-    out <- as.character(round(row, 2))
-    out[is.na(row)] <- "*"
-    out[which.min(row)] <- paste0('\\cellcolor{grn} ', out[which.min(row)])
-    out[which.max(row)] <- paste0('\\cellcolor{red} ', out[which.max(row)])
-    out
-})
-to_table <- t(to_table)
-colnames(to_table) <- old_n
+# to_table <- to_plot %>%
+#             select(file, algo, Time) %>%
+#             spread(algo, Time) %>%
+#             arrange(Claude)
+# rownames(to_table) <- to_table$file
+# to_table$file <- NULL
+# 
+# old_n <- colnames(to_table)
+# to_table <- apply(to_table, 1, function(row){
+#     out <- as.character(round(row, 2))
+#     out[is.na(row)] <- "*"
+#     out[which.min(row)] <- paste0('\\cellcolor{grn} ', out[which.min(row)])
+#     out[which.max(row)] <- paste0('\\cellcolor{red} ', out[which.max(row)])
+#     out
+# })
+# to_table <- t(to_table)
+# colnames(to_table) <- old_n
+# 
+# print(xtable(to_table), sanitize.text.function = identity)
 
-print(xtable(to_table), sanitize.text.function = identity)
+
+
+
+###################################
+# FILTER FOR CLOSE UP EXPERIMENTS #
+###################################
+zoom_files <- c("MuskMolecules", "MAGICTelescope", "LetterRecog", "USCensus")
+
 
 ###############################
 # Plots vary beam experiments #
@@ -157,6 +208,7 @@ print(xtable(to_table), sanitize.text.function = identity)
 to_plot <- out_file %>%
     filter(experiment == "VaryBeam" & algo == "Claude") %>%
     filter(grepl("- F1", key) | grepl("Strength", key)) %>%
+    filter(file %in% zoom_files) %>%
     spread(key, value, convert = TRUE) %>%
     mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`, na.rm = TRUE)) %>%
     select(file, beam_size, view, F1, Strength)
@@ -177,22 +229,22 @@ time_to_plot <- log_file %>%
     filter(experiment == "VaryBeam" & algo == "Claude" & key == "Time") %>%
     select(file, beam_size, Time=value)
             
-# Joins!
+# Joins!p
 to_plot <- inner_join(to_plot, time_to_plot, by= c("file"="file", "beam_size" = "beam_size"))
 
 p3 <- ggplot(to_plot, aes(x = Time, y = med_strength, ymin=min_strength, ymax=max_strength)) +
     scale_y_continuous(limits=c(0,1)) +
     expand_limits(x = 0, y = 0) +
     scale_x_continuous(name = "Execution Time (s)") +
-    scale_y_continuous(name = "Normalized Strength") +
-    facet_grid(. ~ file, scales="free_x") +
+    scale_y_continuous(name = "View Strength (Normalized)") +
+    facet_wrap(~ file, scales="free") +
     geom_pointrange(position = position_dodge(width = 0.5), size = 0.4) +
     geom_ribbon(alpha = 0.3)
     
 p3 <- prettify(p3)
 print(p3)
-ggsave("../documents/plots/view-vary-beam.pdf", p3,
-       width = 16, height = 3.5, units = "cm")
+ggsave("../documents/plots/tmp_view-vary-beam.pdf", p3,
+       width = 9, height = 6, units = "cm")
 
 ##################################
 # Prepares diversify experiments #
@@ -200,10 +252,11 @@ ggsave("../documents/plots/view-vary-beam.pdf", p3,
 # Prepares the out file
 to_plot <- out_file %>%
     filter(experiment == "VaryDeduplication" & algo == "Claude") %>%
-    filter(grepl("- F1", key) | grepl("Strength", key) | grepl("Diversity", key)) %>%
+    filter(grepl("- F1", key) | grepl("Strength", key) | grepl("Diversity", key)| grepl("Dissimilarity", key)) %>%
+   filter(file %in% zoom_files) %>%
     spread(key, value, convert = TRUE) %>%
     mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`, na.rm = TRUE)) %>%
-    select(file, dedup, view, F1, Strength, Diversity)
+    select(file, dedup, view, F1, Strength, Diversity, Dissimilarity)
 
 to_plot <- to_plot %>%
     inner_join(entropies) %>%
@@ -216,21 +269,21 @@ to_plot <- to_plot %>%
               min_strength = min(Strength, na.rm = TRUE),
               max_strength = max(Strength, na.rm = TRUE),
               Diversity = max(Diversity, na.rm = TRUE),
+              Dissimilarity = max(Diversity, na.rm = TRUE),
               F1 = median(F1, na.rm = TRUE))
 
 p4 <- ggplot(to_plot, aes(x=dedup, y=Diversity)) +
-        geom_point(size = 0.4) +
+        scale_x_continuous(name="Deduplication Level (%)") +
+        scale_y_continuous(name="# Distinct Variables", breaks= pretty_breaks()) +
+        geom_point(size = 0.8) +
         geom_line() +
-        facet_grid(. ~ file, scales="free_x")
+        facet_wrap(~ file, ncol = 2, scales="free") + expand_limits(y=0)
 
 
 p4 <- prettify(p4)
 print(p4)
 
-ggsave("../documents/plots/view-vary-diversification.pdf", p4,
-       width = 16, height = 3.5, units = "cm")        
+ggsave("../documents/plots/tmp_view-vary-diversification.pdf", p4,
+       width = 9, height = 6, units = "cm")        
 
-
-#ggsave("../documents/plots/tmp_column-select-score.pdf", algo_accuracy, width = 8.5, height = 2.25)
-#ggsave("../documents/plots/tmp_column-select-score-beam.pdf", beam_accuracy, width = 6.66, height = 2)
-#ggsave("../documents/plots/tmp_column-select-time.pdf", algo_runtime, width = 8.5, height = 2.25)
+#system("cd ../documents ; ../documents/renderPDF.sh")
