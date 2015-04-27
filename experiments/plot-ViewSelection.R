@@ -272,7 +272,7 @@ to_plot <- to_plot %>%
               Dissimilarity = max(Diversity, na.rm = TRUE),
               F1 = median(F1, na.rm = TRUE))
 
-p4 <- ggplot(to_plot, aes(x=dedup, y=Diversity)) +
+p4 <- ggplot(to_plot, aes(x=100-dedup, y=Diversity)) +
         scale_x_continuous(name="Deduplication Level (%)") +
         scale_y_continuous(name="# Distinct Variables", breaks= pretty_breaks()) +
         geom_point(size = 0.8) +

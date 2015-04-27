@@ -36,7 +36,7 @@ out_file <- out_file %>%
     mutate(file = sub(".arff", "", file))%>%
     mutate(algo = factor(algo,
                          levels = c("Just_POIs_FALSE", "Just_POIs_TRUE"),
-                         labels = c("Claude", "Beam Search"))) %>%
+                         labels = c("Claude", "FullSpace"))) %>%
     mutate(file = factor(file, 
                          levels = c("adult", "communities", "musk",
                                     "magic", "pendigits", "bank",
@@ -52,7 +52,7 @@ log_file <- log_file %>%
     filter(key == "Time") %>%
     mutate(algo = factor(algo,
                          levels = c("Just_POIs_FALSE", "Just_POIs_TRUE"),
-                         labels = c("Claude", "Beam Search"))) %>%
+                         labels = c("Claude", "FullSpace"))) %>%
     mutate(file = factor(file, 
                          levels = c("adult", "communities", "musk",
                                     "magic", "pendigits", "bank",
