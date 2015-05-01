@@ -1,6 +1,10 @@
 library(foreign)
 library(hexbin)
-source("MakeViews.R", chdir = TRUE)
+library(ggplot2)
+library(ggthemes)
+library(grid)
+library(scales)
+source("../code/MakeViews.R", chdir = TRUE)
 
 FEW_COLS = c(
     green="#008C48",
@@ -101,6 +105,86 @@ data_file <- select(data_file, -community)
 #                          logfun = function(...) print(paste(...)),
 #                          outfun = function(...) print(paste(...))
 # )
+
+####################
+# Plots for Figure #
+####################
+pdfwidth  <- 5
+pdfheight <- 5
+
+# Main Plot
+x1 <- ggplot(data_file, aes(x=PctUnemployed, y=PopDens)) +
+        geom_point(size=0.45, color = "darkgrey") +
+        scale_x_continuous("Unemployement", breaks = c(0, 1)) +
+        scale_y_continuous("Population Density", breaks = c(0, 1)) +
+    geom_rect(aes(xmin = 0, xmax = 0.3, ymin = 0, ymax = 0.3),
+              fill="#EE2E2F",
+              colour = "#EE2E2F", 
+              alpha=0.001,
+              size = 0.3) +
+    geom_text(aes(label = "POI 2", x = 0.1, y=0.4),
+              colour = "#EE2E2F", size = 2.5) +
+    geom_rect(aes(xmin = 0.6, xmax = 1.0, ymin = 0.8, ymax = 1.0),
+              fill="#008C48",
+              colour = "#008C48", 
+              alpha=0.001,
+              size = 0.3) +
+    geom_text(aes(label = "POI 1", x = 0.4, y=0.9),
+               colour = "#008C48", size = 2.5)
+x1 <- prettify(x1)
+print(x1)
+
+# Subgroup selection
+subgroup <- data_file %>%
+            mutate(Selection = "Whole DB")
+
+sg1 <- data_file %>%
+        filter(PctUnemployed < 0.3 & PopDens < 0.3) %>%
+        mutate(Selection = "POI 2")
+
+sg2 <- data_file %>%
+        filter(PctUnemployed > 0.7 & PopDens > 0.8) %>%
+        mutate(Selection = "POI 1")
+
+subgroup <- rbind(subgroup, sg1, sg2)
+subgroup$Selection <- factor(subgroup$Selection)
+
+# Two subgroup plots
+sgx1 <- ggplot(filter(subgroup, Selection %in% c("Whole DB", "POI 2")),
+               aes(x=ViolentCrimesPerPop, color = Selection, fill=Selection)) +
+    geom_density(alpha = 0.25) +
+    geom_text(aes(label = "Full DB", x = 0.85, y=1), colour = "#010202", size = 2.5) +
+    geom_text(aes(label = "POI 2", x = 0.2, y=7), colour = "#EE2E2F", size = 2.5) +
+    theme_few(base_size = 8) +
+    scale_x_continuous(name = "Crime", breaks = c(0, 1)) +
+    scale_y_continuous(name = "Proba. Density", breaks = c(0, 8), limits = c(0, 8)) +
+    scale_color_manual (breaks = c("POI 1", "Whole DB"), values = c("#EE2E2F", "#010202")) +
+    scale_fill_manual(breaks = c("POI 1", "Whole DB"), values =c("#EE2E2F", "grey")) +
+    guides(fill=FALSE, color = FALSE)
+
+print(sgx1)
+
+sgx2 <- ggplot(filter(subgroup, Selection %in% c("Whole DB", "POI 1")),
+               aes(x=ViolentCrimesPerPop, color = Selection, fill=Selection)) +
+    geom_density(alpha = 0.25) +
+    geom_text(aes(label = "Full DB", x = 0.2, y=4), colour = "#010202", size = 2.5) +
+    geom_text(aes(label = "POI 1", x = 0.85, y=2), colour = "#008C48", size = 2.5) +
+    theme_few(base_size = 8) +
+    scale_x_continuous(name = "Crime", breaks = c(0, 1)) +
+    scale_y_continuous(name = "Proba. Density", breaks = c(0, 8), limits = c(0, 8)) +
+    scale_color_manual (breaks = c("POI 2", "Whole DB"), values = c("#008C48", "#010202")) +
+    scale_fill_manual(breaks = c("POI 2", "Whole DB"), values =c("#008C48", "grey")) +
+    guides(fill=FALSE, color = FALSE)
+
+print(sgx2)
+
+
+ggsave("../documents/images/pres-ex-1.pdf", x1, width=pdfwidth, height=pdfheight, units="cm")
+ggsave("../documents/images/pres-ex-2.pdf", sgx1, width=pdfwidth, height=pdfheight, units="cm")
+ggsave("../documents/images/pres-ex-3.pdf", sgx2, width=pdfwidth, height=pdfheight, units="cm")
+
+system("cd ../documents ; ./renderPDF.sh")
+
 #######################
 # Plots for old Views #
 #######################

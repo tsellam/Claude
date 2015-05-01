@@ -64,7 +64,7 @@ to_plot_1 <- filter(raw_file, file %in% c("USCensus", "MAGICTelescope", "PenDigi
 outplot1 <- ggplot(to_plot_1, aes(x = strength, y=F1_score, color=algo,
                                   shape = algo, linetype = algo)) +
             geom_point(size=0.3) +
-            stat_smooth(method = "lm") +
+            stat_smooth(method = "lm", se = FALSE) +
             scale_x_continuous(name = "View Strength (Normalized)", limits=c(0,1), breaks=c(0,1)) +
             scale_y_continuous(name = "Classification F1", limits=c(0,1), breaks=c(0,1)) +
             facet_grid( . ~ file) +
@@ -76,10 +76,11 @@ outplot1 <- prettify(outplot1) +
 
 print(outplot1)
 
-for (file in unique(to_plot_1$file)){
-    for(algo in unique(to_plot_1$algo)){
+for (f in unique(to_plot_1$file)){
+    for(a in unique(to_plot_1$algo)){
+        cat("Analysis:", f, a, "\n")
         subset <- to_plot_1 %>%
-                    filter(file == file & algo == algo)
+                    filter(file == f & algo == a)
         reg <- lm(F1_score ~ strength, subset)
         print(summary(reg))
     }

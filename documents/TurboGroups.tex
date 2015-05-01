@@ -21,7 +21,7 @@
 
 \begin{document}
 
-\title{Semi-Automated Exploration of Data Cubes}
+\title{Semi-Automated Exploration of Data Warehouses}
 
 
 \numberofauthors{3}
@@ -45,21 +45,19 @@ Martin Kersten\\
 \begin{abstract}
 Exploratory data analysis tries to discover novel dependencies and unexpected
 patterns in large databases. Traditionally, such exploration is manual and
-hypothesis-driven, e.g. within a data warehouse system. However, analysts'
-patience and imagination are not unlimited. Data warehouses lack automated
-analysis of unknown dependencies of dimensions, and detection of unexpected
-local patterns.
- 
-With Claude we follow a 2-step approach: (1) Claude detects non-linear
+hypothesis-driven. However, analysts can quickly come short of patience and imagination.
+
+In this paper, we introduce Claude, a hypothesis generator for data warehouses.
+Our system follows 2-step approach: (1) Claude detects non-linear
 statistical dependencies among dimensions, and hence selects views for
 semi-automated exploration. (2) To explain its findings, Claude detects local
-patterns in these views with so-called point-of-interest anaysis.
+patterns in these views with so-called point-of-interest analysis.
 
 Technically, we propose a statistical dependency analysis based on mutual
 information. Due to exponential search space of all possible views, we face
 severe efficiency challenges. For a scalable computation we propose a novel
 approximate selection of views. By analyzing the unexpectedness of the data
-distribution revealed by these views, we generate hypothese and express them
+distribution revealed by these views, we generate hypotheses and express them
 with SQL queries.
 \end{abstract}
 

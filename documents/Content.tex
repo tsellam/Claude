@@ -29,13 +29,6 @@ The bottom picture illustrates what we expect from our query generation system:
 a simpler low dimension view of dependent dimensions and measures.  Anyone can
 quickly perceive bright regions.
 
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.8\columnwidth]{images/intro}
-\caption{Revealing interesting regions}
-\label{intro}
-\end{figure}
-
 Semi-automated exploration of data cubes is fundamentally challenging for two
 reasons. The first reason is obvious: how do we recognize ``interesting''
 queries?  The diversity of opinions in the literature is rather depressing.
@@ -71,154 +64,230 @@ introduce two algorithms.  The first one is exact and based on a systematic
 level-wise search paradigm.  The second one is a much faster and based on a
 relaxation of our model and a heuristic search.
 
-\section{Preliminaries}
+\section{Presentation and Objectives}
 
-\subsection{Concepts}
+\subsection{Overview}
 \begin{figure}[t!]
 \centering
-\includegraphics[width=0.9\columnwidth]{images/cube}
-\caption{Example of recommendation}
-\label{cube}
+\includegraphics[width=\columnwidth]{images/Overview}
+\caption{Example of explanation, with two points of interest. All the values
+are normalized.}
+\label{fig:overview}
 \end{figure}
-We model the database as a large relation $DB$. This table contains two types
-of columns: the dimensions $D_0, \ldots, D_d$ and a target column $T$. The
-target column contains the target value for each tuple. Note that this view is
-logical: we are oblivious to the physical structure of the data.  Claude's aim
-is to generate a set of \textbf{explanations}.  An explanation contains two
-elements: a \textbf{view} and several \textbf{points of interest} (POI). A view
-is an ``informative'' set of dimensions, on which we project the data.  A point of
-interest is a selection over this view. It contains tuples for which the target
-has a ``remarkable'' distribution.
+We represent the database by a large table $DB$. This table contains two types
+of columns: the dimensions $X_0, \ldots, X_N$ and a target column $T$. This
+view is logical, we are oblivious to the physical structure of the data.
+Claude's aim is to describe what causes the target to vary. To do so, it
+generates \textbf{explanations}.  An explanation is a set of two elements: a
+\textbf{view} and a list of \textbf{points of interest} (POI). A view is an
+``interesting'' set of columns.  More exactly, it is a set of columns which
+have a strong \emph{influence} on the target. A POI is a region where this
+influence is maximal, and thus the target takes unusual values.
 
-We illustrate these concepts with Figure \ref{cube}. Our example database
-describes light sources.  It contains three dimensions: \texttt{right
-ascension}, \texttt{declination} and \texttt{error}. The first two describe a
-source's position. The third one describes the measurement errors. For each
-tuple, we target the value of the column \texttt{brightness}. Claude's output
-is highlighted in red. It contains a view based on \texttt{right ascension},
-and \texttt{declination}. We see that the view is a SQL query with the
-following structure:
+We illustrate these notions with a running example. We want to understand what
+causes crime in US communities. We have a database of cities with several dozen
+socio-economic indicators (for instance, employment, age, or diplomas). For
+each city we also have the annual number of violent crimes: this is our target
+variable. This example comes from a real use case, which we will
+present in Section \ref{sec:crime}.
+
+Figure~\ref{fig:overview} presents an example of explanation. The leftmost
+scatterplot is a view based on the dimensions \texttt{Unemployment} and
+\texttt{Population Density}. Why did Claude pick these two columns? The two
+POIs provide more explanations. Cities with high densities and high
+unemployment rates have more crimes (cf. $POI_1$). Oppositely, cities which low
+densities and lower emplyments rates are safer (cf. $POI_2$). We see that the
+dimensions \texttt{Unemployment} and \texttt{Population Density} influence our
+target variable, \texttt{Crime}, and that this influence is maximal in the
+POIs.
+
+In practice, Claude expresses its recommendations with SQL queries. It returns
+points of interest as follows:
 \begin{verbatim}
-SELECT   D1, ... , Dn , AVG(T)
-FROM     DB 
-GROUPBY  D1, ... , Dn
+    SELECT X1, ... , Xd, T
+    FROM DB
+    WHERE X1 BETWEEN [L1, H1]
+      AND ... 
+      AND Xd BETWEEN [Ld, Hd]
 \end{verbatim}
-The $n$ distinct variables $\texttt{D1} \ldots \texttt{Dn}$ define the view. Once
-Claude has chosen a view, it must explain \emph{why} it has chosen this view.
-This is the role of POIs. In Figure \ref{cube}, Claude suggests three POIs. We
-can express them in SQL as follows:
-\begin{verbatim}
-SELECT   AVG(T)
-FROM     DB
-WHERE    D1 BETWEEN l1 AND h1
- AND     ...
- AND     Dn BETWEEN ln AND ln
-\end{verbatim}
-The POIs are defined by the ranges $\texttt{[l1,h1]}, \dots \texttt{[ln,hn]}$.
+In this query, $\texttt{X1},\ldots, \texttt{Xd}$ represent the variables of the
+view, $\texttt{[L1, H1]}\ldots\texttt{[Ln, Hn]}$ represents the bounds of the
+POI, and $T$ represents the target.
 
+\subsection{Formalization}
+\label{sec:formalization}
+We introduced our notions of explanations, views and POIs. We now formalize
+these concepts with elements of information theory~\cite{cover2012elements}. In
+the remaining of this paper, we suppose that each column $X_n = (x_n^1, \ldots,
+x_n^M)$ contains $M$ samples drawn from a random variable $\rv{X}_n$ with
+sample space $\Omega_n$.
 
-\subsection{Informative explanations}
-\label{sec:infor}
+\subsubsection{View Strength}
+\label{sec:view-strength}
+First, let's define what makes a view ``interesting''. A set of columns is
+worth considering if it \emph{influences} the target: a selection on
+the columns will affect the value of the target. For instance, the dimension
+\texttt{Unemplyoment} is important because selecting cites with high
+unemplyment leads to higher levels of crime. We can model this relationship
+with \emph{mututal information}, which we present below.
+
+The \emph{entropy} $H(\rv{X})$ of a variable $\rv{X}$ describes its
+variability. If $\rv{X}$ has a constant value, then $H(\rv{X}) = 0$.
+Oppositely, if $\rv{X}$ is highly unpredictable (e.g., $\rv{X}$ is
+the outcome of flipping a perfectly balanced coin) then $H(\rv{X})$ is
+maximal. Formally, if $\rv{X}$ is a discrete variable with sample space
+$\Omega$, then we have:
+\begin{equation}\label{eq:ent-disc}
+    H(\rv{X}) = - \sum_{x\in \Omega} P(\rv{X} = x).\log{P(\rv{X} = x)}
+\end{equation}
+If $\rv{X}$ is continuous with density $p$, we define it as follows:
+\begin{equation}\label{eq:ent-cont}
+    H(\rv{X}) = - \int_{-\infty}^{+\infty} p(x).\log{p(x)}\mathrm{d}x
+\end{equation}
+
+We now describe how variables interact. If two two variables are dependent,
+then conditioning (e.g., restricting the range of values) on one variable will
+affect the other. In our example, cities with high unemployment have high
+levels of crime.  Therefore, conditioning on the variable \texttt{Unemployment}
+\emph{decreases the uncertainty} of the variable \texttt{Crime}. This causes a
+loss in entropy, and the value of this loss is called \emph{mutual
+information}.  Formally, if $\rv{X}$ and $\rv{T}$ are two random variables, the
+expression $H(\rv{T} | \rv{X} = x)$ describes the entropy of $\rv{T}$
+\emph{given $X = x$}. If we average this expression over all possible values of
+$x$, we obtain the conditional entropy: $H(\rv{T}|\rv{X}) = \mathbb{E}_{x}
+[H(\rv{T} | \rv{X} = x)]$. We define the mutual information $I$ as follows:
+\begin{equation}\label{eq:mut-inf}
+    I(\rv{X}; \rv{T}) = H(\rv{T}) - H(\rv{T} | \rv{X})
+\end{equation}
+The mutual information is the loss in entropy between $\rv{T}$ and
+$\rv{T} | \rv{X}$. It is symmetic, and it is always positive or null. In our
+study, a variable $\rv{X}$ is interesting if $I(\rv{X}; \rv{T})$ is as high as
+possible.  We can generalize this notion to several variables: a set of
+variables $\rv{X}_1, \ldots, \rv{X}_D$ is interesting they are \emph{jointly}
+dependent to the target, e.g., $I(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})$ is
+high.
+\begin{definition}
+Consider a view $V = \{X_1, \ldots, X_D\}$, and the target column $T$. We
+define the \textbf{strength} of $V$ as follows: 
+\begin{equation}\label{eq:strength}
+    \sigma(V) = I(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})
+\end{equation}
+\end{definition} 
+The stength is the central concept behind our study. We will spend most of this
+paper describing how to detect strong sets of variables.
+
+In practice, we cannot know the distributions of the variables $\rv{X}_n$, we
+only have acess to the samples $X_n$. Therefore, we must compute \emph{estimates}
+of the mutual informations $\hat{I}(X_n, T) \approx I(\rv{X}_n, \rv{T})$.  If
+$\rv{X}_n$ is discrete, we simply set $\hat{P}(\rv{X}_n = x) \approx P(\rv{X}_n =
+x)$ to be the proportion of tuples with $X_n=x$. We then ``plug'' this
+estimator in Equations~\ref{eq:ent-disc} and~\ref{eq:mut-inf}.
+
+Dealing with continuous variables is more difficult, for two reasons. First,
+estimating the density function in Equation~\ref{eq:ent-cont} is costly,
+especially with multivariate distributions.  Second, it is not clear how to
+deal with mixed datasets, e.g. continuous and discrete dimensions, or discrete
+target and continuous dimensions.  Therefore, Claude bins all the continuous
+variables, and treats them like discrete dimensions.
+
+\subsubsection{Points of Interest and Divergence}
+
+We discussed how to recognize good views. In this section, we formalize our
+notion of Point of Interest. A POI is a set of tuples for which the target has
+an ``unusual'' distribution. Observe the two POIs in Figure~\ref{fig:overview}.
+The distribution of \texttt{Crime} in these regions differs from the
+distribution of \texttt{Crime} in the rest of the database.  In $POI_1$, the
+distribution is skewed to the right, which indicates higher levels of crime. In
+$POI_2$, it is skewed to the left. We will characterize this difference with the
+\textbf{divergence}.
+
+Consider a d-dimensional view $\{\rv{X}_1, \ldots, \rv{X}_D\}$. The set
+$R\subset \Omega_1 \times \ldots \times \Omega_D$ represents a region in this
+view.  The random variable $\rv{T}$ represents the target \emph{for the whole
+database}.  The random variable $\big[ \rv{T} | (\rv{X}_1, \ldots, \rv{X}_D) \in R
+\big] $ represents the target \emph{for the tuples within R}. From here on, we
+will shorten this notation to $\rv{T} | R$. The region $R$ is a good point
+of interest if $\rv{T} |R $ and $\rv{T}$ have large differences in
+distribution.  We quantify this difference with the \emph{Kullback-Leibler
+divergence} (KL).  The KL divergence measures the difference between two
+probability distributions. It is null if the two distributions are similar, and
+it grows when the distributions differ.  Formally, if $\mathcal{X}$ and
+$\mathcal{Y}$ are two discrete random variables with the same sample space
+$\Omega$, we have:
+\begin{equation}\label{eq:KL_disc} 
+    KL\big( \mathcal{X} \parallel \mathcal{Y} \big) = 
+    \sum_{x\in \Omega} P(\rv{X} = x).\log{\frac{P(\rv{X} = x)}{P(\rv{Y} = x)}} 
+\end{equation}
+As Claude discretizes the continuous variables, we ignore the continuous case
+(cf.  Section~\ref{sec:view-strength}). Our region $R$ is a good point of
+interest if $KL ( \rv{T} \parallel \rv{T} |R )$ is as large as possible.
+\begin{definition}
+    Consider a set $R$ and the target variable $\rv{T}$. We define the
+    \textbf{divergence} of $R$ as follows: 
+\begin{equation}\label{eq:divergence}
+    \delta(R) = KL \big( \rv{T} \parallel \rv{T} |R \big)
+\end{equation}
+\end{definition}
+
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\columnwidth]{images/poi}
-\caption{The POIs have unusual distributions}
-\label{poi}
+\includegraphics[width=0.6\columnwidth]{images/3Dtest}
+\caption{Example of view with three discrete variables $V = \{X_1, X_2, X_3\}$.
+The average divergence of the cells $\delta(\mathbf{x})$ equals the strength of
+the view  $\sigma(V)$.}
+\label{fig:binningexample}
 \end{figure}
-
-We defined Claude's search space: we want to suggest views and POIs. We now
-present how the target helps us recognize the ``interesting'' ones. 
-
-First let's explain how to choose the views. A set of columns is informative if
-it is somehow related to the target: if we filter the data on these columns,
-the target value changes.  We model this relationship with statistical
-dependency. We represent each  dimension $D_k$ by a random variable $\rv{D}_k$.
-We model the target with a random variable $\rv{T}$.  A view is interesting if
-there exists some statistical dependency between its columns and the target. We
-formalize this statement with Mutual Information \cite{cover2012elements}:
-
-\begin{definition}
-Consider a view $V = \{D_1, \ldots, D_n\}$, and the target column $T$.  Let
-$I$ denote the \emph{Mutual Information} between two random variables. We
-define the \textbf{strength} of $V$ as follows:
-\[\sigma(V) = I(\rv{D}_1, \ldots, \rv{D}_n ; \rv{T})\]
-\end{definition}
-
-{\color{red}
-Detail what the MI is, how to compute, etc...
-}
-
-Claude seeks variables which are \emph{jointly depdendent} to the target. We
-measure dependency with the mutual information, because this quantity is
-general (correlation is only one type of dependency).
-
-The next step is to extract the POIs. The POIs contain tuples for which the
-measure have an ``unusual'' distribution compared to the rest of the database.
-Consider Figure \ref{poi}. The curves show the probability mass function of the
-brightness for three sets of tuples: the whole database, $POI_1$ and $POI_2$.
-The sets $POI_1$ and $POI_2$ come from the view \texttt{right ascension -
-declination} in Figure \ref{cube}. We observe that they deviate from $DB$.
-They illustrate how right ascension and declination can influence brightness.
-We quantify this observation with the Kullback-Leibler divergence:
-
-\begin{definition}
-Consider a range $R = [l_1, h_1] \times \ldots \times [l_n, h_n]$. 
-The random variable $\rv{T}_R$ describes the target for
-the tuples in $R$, and $\Pr(\rv{T}_R)$ its distribution.
-We define the \textbf{divergence} of the range $R$ as follows: 
-\[\delta(R) = KL \big( \Pr(\rv{T}) \| \Pr(\rv{T_R})  \big)\]
-\end{definition}
-
-The Kullback-Leibler divergence measures the difference between two probability
-distributions. Our function $\delta$ grows when a range has unsual target
-values, it decreases otherwise. It does not target specifically high or low
-values. It seeks \emph{any} type of deviation from the target's global
-distribution.  Note that divergence is tightly related to strength:
-
+In fact, strength and divergence are closely connected.  Consider a view $V$.
+If $V's$ dimensions are continuous, we bin them. If we compute the divergence
+of each tuple and average the results, we obtain the $V$'s strength. We illustrate
+this property with Figure~\ref{fig:binningexample}.  Therefore, strength and
+divergence are ``two sides of the same coin''. We formalize this property it
+with the lemma below.
 \begin{lemma}
-Let $V$ denote a view. We create a grid over $V$ by discretizing its
-columns. The variable $\rv{R}$ describes a random cell.  We observe the
-following relationship:
-\[
-    \sigma(V) = \mathbb{E}_{\rv{R}} \{ \delta(\rv{R}) \}
-\]
+    If $V$ is a view with $d$ discrete variables and $\mathbf{x} \in \Omega_1
+    \times \ldots \Omega_D$ is a tuple from this view, then:
+    \begin{equation}\label{eq:coin}
+        \sigma(V) = \mathbb{E}_{\mathbf{x}}  \big[ \delta(\{\mathbf{x}\}) \big]
+    \end{equation}
 \end{lemma}
-
 \begin{proof}
-Let $\rv{V}$ represent the joint distribution $\rv{D}_1, \ldots, \rv{D}_n$.
-We have $\sigma(V) = I(\rv{V},\rv{T})$.
-By definition of the Kullback-Leibler divergence, we have: 
-$I(\rv{V},\rv{T}) = $ $\mathbb{E}_{\rv{V}} \{ KL( \Pr(\rv{T} | \rv{V}) \|$ $ \Pr(\rv{T}) ) \}$
-As the data is discretized, $\rv{V}$ and $\rv{R}$ are equivalent. Also,
-for any bin $R$, $\Pr(\rv{T} | \rv{V} = R)$ is equivalent to
-$\Pr(\rv{T}_R)$. We derive the lemma.
+    By definitions of the KL divergence, we have 
+    $I(\mathbf{x} ; \rv{T})= \mathbb{E}_{\mathbf{x}}[ KL( T \parallel T |
+    \{\mathbf{x}\} )]$.
+    Substituting the left side with Equation~\ref{eq:strength}, and the right
+    side with Equation~\ref{eq:divergence}, we obtain the lemma.
+\end{proof}
+Suppose that we obtained a view $V^*$ by discretizing a set of continuous
+variables $V$. The average divergence of the bins equals the strength of $V^*$,
+but not that of $V$. Luckily, these quantities converge as the bins get small.
+\begin{lemma}
+    The view $V$ is a set of continuous variables, $V^b$ is a discretized
+    version of $V$ in which each variable is binned with bin size $b$, and
+    $\mathbf{x}^b$ is a tuple from $V^b$. We have $\mathbb{E}_{\mathbf{x^b}}
+    \big[ \delta(\{\mathbf{x^b}\}) \big] \to  \sigma(V)$ as $b \to 0$.
+\end{lemma}
+\begin{proof}
+    Let the $D$-dimensional random vector $\mathbf{X}$ describe the
+    (continuous) variables of $V$, and $\mathbf{X}^b$ describe the (discrete)
+    variables of $V^b$. By generalizing Cover and Thomas, Theorem
+    8.3.1~\cite{cover2012elements}, we infer that $H(\mathbf{X}^b) + D.\log{b}
+    \to H(\mathbf{X})$ as $b \to 0$ .  Thus, using Equation~\ref{eq:mut-inf},
+    we have $I(\mathbf{X}^b, \rv{T}) \to I(\mathbf{X}, \rv{T})$. We conclude
+    that $\sigma(V^b) \to \sigma(V)$. We apply Equation~\ref{eq:coin} to obtain
+    the lemma.
 \end{proof}
 
+\subsubsection{Problem Formulation}
 
-This lemma is simple but powerful. It shows that strength and divergence are
-``two sides of the same coin'': the strength of a view equals exactly the
-average divergence of its bins. We use the terms strength and
-deviation interchangeably to characterize an \emph{explanation} (recall that a
-explanation contains both the view and its POIs).
-
-\begin{definition}
-Let $S=(\{ D_1, \ldots, D_n\}, \{R_1, \ldots, R_r\})$ describe an explanation . The
-\textbf{strength} (or \textbf{divergence}) of $S$ equals the strength
-of its view.
-\end{definition}
-
-We are now ready to formulate our problem.
-
+We can now formulate our problem:
 \begin{problem}
-Consider a dataset $DB$, a target column $T$ and a triplet $(q, n, r)$. Find
-the top $q$ strongest explanations, with $n$ variables and $r$ POIs.
+Consider a dataset $DB$, a target column $T$ and a triplet $(K, D, P)$. Find
+the top $K$ strongest views with at most $D$ columns. For each of these
+views, find the top $P$ divergent POIs.
 \end{problem}
-
-To solve this problem, Claude operates in two steps. First, it detects $q$
-strong sets of columns.  We call this step \emph{column search}.  Then comes
-the \emph{POI dectection} step: for each view we extract $r$ POIs. In practice,
-our top $q$ strategy can generate redundancy. We tackle this problem with an
-optional \emph{refinment} step.
+To solve this problem, Claude operates in two steps. First, it detects $K$
+strong sets of columns.  We call this step \emph{column search}.  Then, it
+extracts $P$ POI for each view. This is the \emph{POI dectection} step.
 
 \section{Column selection}
 \label{sec:colum}
@@ -233,9 +302,10 @@ This section requires some reordering.
 Also, the description of the approximation should be deepened.
 }
 
-The aim of this phase is identify the $q$ strongest sets of variables. From
-here on, we use the notations $D_i$ and $\rv{D}_i$ interchangeably - we can use
-the context to distinguish database columns and random variables.
+The aim of this phase is identify the $K$ strongest sets of variables. From
+here on, we assume that all the variables are discrete, and we use the
+notations $D_n$ and $\rv{D}_n$ interchangeably - we can use the context to
+distinguish database columns and random variables.
 
 \subsection{Base algorithm}
 \begin{figure}[t!]
@@ -245,20 +315,19 @@ the context to distinguish database columns and random variables.
 \label{pic:beam-search}
 \end{figure}
 
-To recommend views, Claude must find the best sets of at most $n$ variables.
-The search space of this problen grows exponentially with $n$: from a database
-with $d$ variable, we can generate $\sum_{i \leq n} \binom{d}{i}$ combinations.
-Besides, there is to our knowledge no bound which would allow us to prune the
-search space efficiently. 
+To recommend views, Claude must find the best sets of at most $D$ variables.
+The search space of this problen grows exponentially with $D$: from a database
+with $N$ variable, we can generate $\sum_{n \leq N} \binom{N}{n}$ combinations.
 
 We propose to use level-wise search. To initialise the algorithm, we compute
-the strength of each variable separately (we compute $\sigma(D_i) = I(D_i;
-T)$). We order the candidates, and keep the top $b$ variables. We call this set
-the \emph{beam}. We then form new candidates by appending each variable of the
-database to each variable in the beam. We obtain views with two columns. We
-compute the best $b$ results and update the beam. The procedure is repeated
-until the beam contains views with $n$ variables. We illustrate the procedure
-in Figure \ref{pic:beam-search}.
+the strength of each variable separately, i.e., we compute $\sigma(D_n) =
+I(D_n; T)$ for every $n \in [1, N]$. We order the candidates, and keep the top
+$B$ variables. We call this set the \emph{beam}. We then form new candidates by
+appending each variable of the database to each variable in the beam. We obtain
+views with two columns. We keep the best $B$ view, and discard the others. We
+obtain a new beam.  The procedure is repeated until the beam contains views
+with $D$ variables. We illustrate the procedure in Figure
+\ref{pic:beam-search}.
 
 \begin{figure}[t!]
 \centering
@@ -269,11 +338,11 @@ the value of the target class. }
 \label{pic:strength-jump}
 \end{figure}
 Thanks to our beam strategy, we avoid exploring an exponentially large search
-space. Instead, we compute the strengths of at at most $n.b$ settings.
+space. Instead, we compute the strengths of at at most $N.B$ settings.
 Unfortunately, this strategy induces an accuracy penalty: if the beam is too
 small, we may miss some good candidates. This is a consequence of the following
-observation: a set of columns which is outside the top $q$ candidates at step
-$i$, could very well appear in the top $q$ at step $i+1$. Consider for instance
+observation: a set of columns which is outside the top $B$ candidates at step
+$i$, could very well appear in the top $B$ at step $i+1$. Consider for instance
 the two classic scenarios pictured in Figure \ref{pic:strength-jump}. The
 dimensions $var1$ and $var2$ taken in isolation are weak: we can infer no
 useful information about the target from either of them. However, their
@@ -286,7 +355,6 @@ var2\}$.
 
 \subsection{Approximating the View Strength}
 \label{sec:approx}
-
 
 The Beam Search aslgorithm gives us a convenient way to find good views.
 Through the size of the beam, we can find a compromise between execution time
@@ -324,14 +392,14 @@ expensive than calculating the strength of $\{D_1, \ldots, D_{i+1}\}$ directly.
 But we can use the following approximation:
 \[
 \begin{split}
-    \sigma(V \cup \{D_{n+1}\}) & = \sigma(V)   + I(D_{n+1} ; T | D_0, \ldots, D_{n})\\
-                           & \approx \sigma(V) + I(D_{n+1} ; T | D_{i})
+    \sigma(V \cup \{D_{i+1}\}) & = \sigma(V)   + I(D_{i+1} ; T | D_0, \ldots, D_{i})\\
+                           & \approx \sigma(V) + I(D_{i+1} ; T | D_{i})
 \text{ for } D_i \in V
 \end{split}
 \]
 
-The idea behind this approximation is naive: we assume that $I(D_{n+1} ; T |
-D_0, \ldots, D_{n}) \approx I(D_{n+1} ; T | D_{i})$. We ignore the high order
+The idea behind this approximation is naive: we assume that $I(D_{i+1} ; T |
+D_0, \ldots, D_{n}) \approx I(D_{i+1} ; T | D_{i})$. We ignore the high order
 dependencies. Thanks to this assumption, we can compute the strength of a view
 much faster.  Consider a directed graph in which each vertex represents a
 variables $D_i$. Each edge $(D_i, D_{i+1})$ has a a weight $ I(D_{i+1} ; T |
@@ -344,7 +412,7 @@ weights. Which one should we use? We could use two variants. An
 \emph{optimisic} approximation $\sigma_+ $ would consider the \emph{maximum}
 spanning tree.  A \emph{pessimistic} approximation $\sigma_- $ would use the
 weight of the \emph{minimum} spanning tree. For the rest of this paper, we will
-only consider the latter aleternative. 
+only consider the latter alternative. 
 
 We now present a faster version of our view search algorithm.  We operate in
 two steps. First, we compute the strength of every column and every couple of
@@ -359,6 +427,10 @@ This algorithm is much faster because it spares us expensive database
 operations. Instead, we perform computations on a graph with $d$ nodes.  To
 save some accuracy, we use the exact version of the view strength for the final
 top $q$ ranking.
+
+\subsection{Deduplication}
+
+TO DO
 
 \section{Detecting Points Of Interest}
 \label{sec:detec}
@@ -385,20 +457,6 @@ in the view. We use the \emph{weighted} deviation $\delta_w(R) = |R|/|V| \times
 \delta(R)$. This new score introduces a penalty for small POIs.
 
 
-\section{Improving the Diversity of the Views}
-
-{ \color{red} This section should go. Instead, replace it with a few mentions
-to deduplication in the previous section and/or in the experiments}
-
-As Claude is based on a top-k approach, its output may be redundant: the views
-may be very similar to each other.  Some users prefer small but diverse sets of
-suggestions.  We tackle this problem with compression techniques from the
-frequent petterns literature. For instance, the Krimp algorithm is an
-established strategy, based on the Minimum Description Length principle
-\cite{vreeken2011krimp}. Another approach would be to cluster the views, and
-return one representative view per cluster.
-
-
 \section{Experiments}
 \label{sec:experiments}
 
@@ -420,7 +478,7 @@ return one representative view per cluster.
         \hline
     \end{tabular}
     \caption{Characteristics of the datasets. The last two columns are used for
-    comparison with 4S, as explained in Section~\ref{sec:exp-view-selection}.}
+    comparison with 4S, cf. Section~\ref{sec:exp-view-selection}.}
     \label{tab:datasets}
 \end{table}
 We now present our experimental results. All our experiments are based on 8
@@ -428,6 +486,7 @@ datasets from the UCI Repository, described in Table~\ref{tab:datasets}. The
 files are freely available online\footnote{archive.ics.uci.edu/ml/}.
 
 \subsection{Detailed Example: Crimes in the US}
+\label{sec:crime}
 
 \begin{table}[t]
   \centering
@@ -477,50 +536,48 @@ represents a Point of Interest.}
 
 In this section, we showcase Claude with a real-life example: we analyze the
 Communities and Crime dataset form the UCI
-repository\footnote{archive.ics.uci.edu/ml/datasets/Communities+and+Crime}
-(abbreviated as Crime in this paper). Our aim is to understand which US cities
-are subject to violent crimes. Our database compiles crime data and
-socio-economic indicators about 1994 communities, with a total of 128
-variables. Note that all the variables are normalized to have a minimum of 0
-and a maximum of 100.
+repository\footnote{archive.ics.uci.edu/ml/datasets/Communities+and+Crime}.
+Our aim is to understand which US cities are subject to violent crimes. Our
+database compiles crime data and socio-economic indicators about 1994
+communities, with a total of 128 variables. The data comes mostly from the
+90's, and it was provided by US government sources - among others, the 1990 US
+census and the 1995 FBI Uniform Crime Report. All the variables are
+normalized to have a minimum of 0 and a maximum of 100.
 
-We generated $q=100$ explanations containing up to 3 dimensions, both with and
-without deduplication. The best view has a strength of 51\%, which means that
-51\% of the target's information is contained in the variables of the view. The
-last view has a strength of 21\%. We depict a few explanations in
-Table~\ref{tab:crime_views} and Figure~\ref{pic:crime_charts} - the table lists
-the columns in each view, and the figure displays 2D projections and points of
-interest.
+We generated $K=100$ explanations with up to $D=3$ dimensions, both with and
+without deduplication. We present a selection of explanations in
+Table~\ref{tab:crime_views}, along with 2-dimension heatmaps in
+Figure~\ref{pic:crime_charts}. Observe that strong views have a visual
+signature: in the top two maps, the blue and red areas are neatly separated. In
+the bottom two views, the distinction is less clear.
 
-The first view in the table is the strongest view we found in our
-whole study.  The variables \texttt{Police.Overtime} and
-\texttt{Pct.White.Race} respectively describe the average time overworked by
-the police, and the percentage of caucasian population. The third variable,
-\texttt{Pct.Vacant.Boarded} is maybe more surprising: it describes the
-percentage of vacant houses which are boarded up. How does this relate to
+The first view of Table \ref{tab:crime_views} is the best one we found:
+\texttt{Police. Overtime, Pct.Race.White, Pct.Vacant.Boarded}. It has a score
+of 0.51. which means that these three variables contain 51\% of the target's
+information. The columns \texttt{Police. Overtime} and \texttt{Pct.White.Race}
+respectively describe the average time overworked by the police and the
+percentage of caucasian population. The third variable,
+\texttt{Pct.Vacant.Boarded} was surprising to us: it describes the
+percentage of vacant houses which are boarded up.  How does this relate to
 crime? We could assume that boarded houses are associated with long term
 abandon, and thus, poverty. The top-left plot of Figure \ref{pic:crime_charts}
-shows the relation between race, boarded houses and crime. We notice that the
+shows the relation between race, boarded houses and crime. Observe that the
 variables complement each other: a high proportion of caucasians may or may not
-lead to low crime. However,  a high proportion of caucasians \emph{combined
+lead to low crime. However, a high proportion of caucasians \emph{combined
 with} a low rate of boarded house correspond to safe areas, while little
 caucasians and many boarded houses correspond to more violent communities.
 
-The second view shows that cities with more monoparental families tend to be
-more violent: both POIs point to the bottom of the chart. Visual inspection
-also reveals surpising areas: a few communities have a relatively high number
-of two-parents families, but also a high number of police requests and crime (in the
-top right corner of the chart). Manual inspection reveals that many of these
-cities are located in the suburbs of Los Angeles, and contain a majority of
-Hispanics. Does this explain the peculiarity? Although we will not answer this
-question, we see that Claude's views lead to surprising findings, with little
-prior knowledge.
-
-Finally, note that the strength of the views have a visual impact. In the first
-two heatmaps, the blue and red areas are very well separated. In the last two
-views, they overlap strongly. Therefore, we see that strong views are somehow
-more discriminative.  We will exploit this observation in the following
-sections.
+Our second view shows that cities with more monoparental families tend to be
+more violent: the correlation is clearly visible, and both POIs point to the
+bottom of the chart. However, close inspection also reveals surpsises: a few
+communities have a relatively high number of two-parents families, but also
+high indicators of police requests and crime (in the top right corner of the
+chart). Manual queries reveals that many of these cities are located in the
+suburbs of Los Angeles, and contain a majority of Hispanics. Does this explain
+the peculiarity? We leave this question open for future investigations. We see
+that some findings come from the recommendations directly while others are
+serendipitous.  But in both cases, Claude lets us discover ``nuggets'' with
+little prior knowledge and few assumptions. 
 
 \subsection{View Strength and Prediction}
 \label{sec:view-strengh}
@@ -529,18 +586,17 @@ sections.
 \centering
 \includegraphics[width=\columnwidth]{plots/compare-strength-f1}
 \caption{Strength vs. Classification accuracy for 500 random views. The blue
-    and red lines were obtained by linear regression, the grey shades represent
-    95\% confidence intervals.}
+and red lines were obtained by linear regression.}
 \label{pic:strength-vs-f1}
 \end{figure}
 In this section, we show experimentally that our notion of view strength
-``works'', e.g. that views with a higher strength do provide more information
-about the target column. To verify this assumption, we simulate users with
-statistical classifiers. Consider a view $V$ over a database. If a classifier
-can predict the value of the target from $V$'s columns, then $V$ is
-informative. Oppositely, if the classifier fails, then $V$ is potentially
-uninteresting. In other words, we should observe a positive correlation between
-views strength and classification accuracy.
+``works'', e.g. that strong views effectively provide information about the
+target column. To verify this assumption, we simulate users with statistical
+classifiers. Consider a view $V$ over a database. If a classifier can predict
+the value of the target from $V$'s columns, then $V$ is informative.
+Oppositely, if the classifier fails, then $V$ is potentially uninteresting. In
+other words, we should observe a positive correlation between views strength
+and classification accuracy.
 
 We now detail our experiment. We chose three datasets from the UCI repository.
 For each dataset, we generated 500 random views and measured their strengths.
@@ -552,57 +608,62 @@ variables (as opposed to, e.g., decision trees). We measure the classification
 performance with 5-fold validation, to avoid the effects of overfitting.
 
 In all three cases, we observe a positive correlation between the strengths of
-the views and the accuracy of the predicictions. Statistical tests confirm this
-observation: all the p-values associated to the slopes of the regression lines
-are under $10^{-3}$. We conclude that strong views contain more information
-about the targets.
+the views and the accuracy of the predicictions. We confirm these observations
+with statistical tests: the coefficients of determination ($R^2$) vary between
+0.11 and 0.84, which indicates the presence of a trend (despite some
+variablity). Furthermore, the p-values associated to the coefficients are all
+under $10^{-3}$, this gives us excellent confidence that the strength
+influences positively the prediction accuracy. In conclusion, strong views are
+indeed more instructive.
 
 
 \subsection{View Selection}
 \label{sec:exp-view-selection}
 
-We now evalute Claude's output and runtime in more detail. In this section, we
+We now evalute Claude's output and runtime in detail. In this section, we
 verify if Claude's algorithm produces good views in a short amount of time. To
-do so, we compare it to four methods. The first method, \texttt{Exact}, is
-similar to Claude, but we removed the approximation scheme presented in
-\ref{sec:approx} - instead we compute the exact mutual information between the
-views and the target. This approach should be slower, but more accurate. 
+do so, we compare it to four methods, three of which come from the machine
+learning litterature.  Our first baseline, \texttt{Exact}, is similar to
+Claude, but we removed the approximation scheme presented in \ref{sec:approx} -
+instead we compute the exact mutual information between the views and the
+target. The method should be slower, but more accurate. 
 
-The second approach, \texttt{Clique}, is a top-down approach inspired by recent
-work on pattern mining~\cite{xie2010max}. The idea is to compute the strength
-of every pair of columns, and keep the top $B$ pairs.  We then derive an
-undirected graph where each vertex represents a variable and each edge
-represent one of these top $B$ pairs. To obtain $q$ views with at most $n$
-variables, we seek $q$ cliques with at most $n$ vertices in the graph.  We
-expect this method to be faster but less accurate. We used the \texttt{igraph}
-package from R.
+The second algorithm, \texttt{Clique}, is a top-down approach inspired by
+recent work on pattern mining~\cite{xie2010max}. The idea is to build a graph
+where each vertex $i$ represents a column $D_i$, and each edge $(i,j)$
+represents the view $\{D_i, D_j\}$. We then simplify the graph: we keep the
+edges associated with the top $B$ strongest views, and we eliminate all the
+others. To detect strong views with $D >2$ variables, we seek cliques in this
+degenerated graph. We used the \texttt{igraph} package from R. We expect this
+algorithm to be very fast, but less accurate.
 
 The third method, \texttt{Wrap 5-NN}, is a classic feature selection
 algorithm~\cite{guyon2003introduction}. The idea is to train a 5-Nearest
 Neighbour classifier with increasingly large sets of variables. We first test
 each variable separately, and keep the column which led to the best prediction.
-We keep adding variables as long as the quality of prediction increases and our
-maximum of $n$ variables is not reached.  Our implementation is based on the
-\texttt{class} package from R.  We modified the original algorithm to maintain
-and update $q$ distinct sets of variables instead of just one. We chose the
-nearest neighbour algorithm because it is fast, and it gave us good
-performance, as shown in \ref{sec:view-strengh}. We expect this algorithm to be
-very slow, but close to optimal.
+Then we keep adding variables in a Breadth-First manner, until the
+quality of the predictions stops increasing or we reach $n$ variables. Our
+implementation is based on the \texttt{class} package from R.  We modified the
+original algorithm to maintain and update $q$ distinct sets of variables
+instead of just one. We chose the nearest neighbour algorithm because it is
+fast, and it gave us good performance, as shown in \ref{sec:view-strengh}. We
+expect this algorithm to be very slow, but close to optimal.
 
 Finally, the last method, \texttt{4S} is a state-of-the-art subspace search
 method from the unsupervised learning literature~\cite{nguyen20134s}. The aim
-of the algorithm is to detect interesting subspaces in large databases. To
-do so, it seeks groups of variables which are mutually correlated, with
-sketches and graph-based heurstics.  We used the author's implementation,
-written in Java. We expect the algorithm to be both fast and accurate.
+of the algorithm is to detect ``interesting'' subspaces in large databases,
+independantly of a target variable. To do so, it seeks groups of variables
+which are mutually correlated, with sketches and graph-based techniques.  We
+used the author's implementation, written in Java. We expect the algorithm to
+be very fast and reasonably accurate.
 
-We use 8 public datasets, presented in Section \ref{sec:experiments}. For a fair
-comparison, we must ensure that each algorithm generates the same number of
-views ($q$) with the same number of variables ($n$).  However, we have no
-way to specify these parameters a priori with 4S - instead, the algorithm has a
-built-in mechanism to pick optimal values. Therefore, for each dataset, we
-first run 4S to get $q$ and $n$, then we reuse these values for the subsequent
-algorithms. We report the obtained parameters in Table~\ref{tab:datasets}.
+We use 8 public datasets, presented in Section \ref{sec:experiments}. For a
+fair comparison, we must ensure that each algorithm generates the same number
+of views ($K$) with the same number of variables ($D$).  However, we have no
+way to specify these parameters a priori with 4S, because the algorithm has a
+built-in mechanism to pick optimal values. Therefore, we run 4S first on each
+dataset, we let it chose $K$ and $D$, and we use these values for the remaining
+algorithms.  We report the obtained parameters in Table~\ref{tab:datasets}.
 
 We implemented Claude in R, except for some information theory primitives
 written in C. For practical reasons, we interupted all the experiments which
@@ -631,15 +692,14 @@ indicates that the experiment did not finish within 3,600 seconds.}
 \textbf{Accuracy.} In Figure \ref{pic:column-select-score}, we compare the
 quality of the views returned by each algorithm. For each competitor, we
 generate $q$ views with $n$ variables, train a classifier on each view and
-measure the quality of the predictions. Higher results describe better views.
-For the classification, we use both Naive Bayes and 5-Nearest Neighbors, and
-report the highest score.  We measure accuracy with the F1 score on 5-fold
-cross validation.  
+measure the quality of the predictions. For the classification, we use both
+Naive Bayes and 5-Nearest Neighbors, and report the highest score.  We measure
+accuracy with the F1 score on 5-fold cross validation; higher is better.
 
-We observe that \texttt{Wrap 5-NN} comes first for all the datasets on which it
-completed. Since the algorithm optimizes exactly what we measure, this is not
-surprising; \texttt{Wrap 5-NN} is our ``gold standard''. Our two algorithms,
-\texttt{Claude} and \texttt{Exhaustive} come very close. This indicates that
+The method \texttt{Wrap 5-NN} comes first for all the datasets on which it
+completed. This is not surprising since the algorithm optimizes exactly what we
+measure: \texttt{Wrap 5-NN} is our ``gold standard''. Our two algorithms,
+\texttt{Claude} and \texttt{Exhaustive}, come very close. This indicates that
 both algorithms find good views, and that our approximation scheme works
 correctly.  The algorithms \texttt{4S} and \texttt{Clique} come much lower. As
 \texttt{4S} is completely unsupervised, we cannot expect it to perform as well
@@ -650,9 +710,9 @@ apparently too naive.
 experiments. The algorithms \texttt{Exact} and \texttt{Wrap 5-NN} are orders of
 magnitude slower than the other approaches. The remaining three approaches are
 comparable: depending on the datasets, either \texttt{Clique} or \texttt{4S}
-come first. Our approach comes first for \texttt{MuskMolecules}, and close
+come first. Claude comes first for \texttt{MuskMolecules}, and close
 second for all the other datasets. We conclude that Claude is compairable to
-state-of-the-art algorithms in terms of runtime - with better accuracy.
+state-of-the-art algorithms in terms of runtime, but it generates better views.
 
 \begin{figure}[t!]
 \centering
@@ -672,20 +732,18 @@ distinct variables used in the top 25 views.}
 \end{figure}
 \textbf{Impact of the beam size.} Figure~\ref{pic:view-beam} shows the impact
 of the beam size $B$ on Claude's performance, for 4 databases. To obain these
-plots, we ran Claude with $q=25$ and $n=5$, and varied $B$ between 25 and 250.
+plots, we ran Claude with $K=25$ and $D=5$, and varied $B$ between 25 and 250.
 We observe that smaller beams lead to lower execution times, while larger beam
 lead to stronger views. However, the heuristic converges fast: we observe
 little to no improvement for $B$ greater than 50.
 
 \textbf{Impact of the deduplication.} We show the impact of our deduplication
-strategy in Figure \ref{pic:view-diversification}.  We ran Claude with $q=25$
-and $n=5$, and varied the level of deduplication. To describe the diversity of
-the views, we report the number of distinct variables used in all 25 views. We
-observe that the strategy works in all four cases, but with different levels of
-efficiency. In the \texttt{LetterRecog} case, the deduplication increases the
-number of variables by close to 30\%. The effect is much lighter on
-\texttt{MuskMolecules}.
-
+strategy in Figure \ref{pic:view-diversification}.  We ran Claude with $K=25$
+and $D=5$, and varied the level of deduplication. To quantify the diversity of
+the views, we report the number of distinct variables used. We observe that the
+strategy works in all four cases, but with different levels of efficiency. In
+the \texttt{LetterRecog} case, our strategy increases the number of variables
+by almost 30\%. The effect is much lighter on \texttt{MuskMolecules}.
 
 \subsection{POI Detection}
 \label{sec:exp-poi}
@@ -693,7 +751,7 @@ number of variables by close to 30\%. The effect is much lighter on
 \begin{figure*}[t!]
 \centering
 \includegraphics[width=2\columnwidth]{plots/POI-score}
-\caption{Quality of the Point of Interests. For each view, we detect $k=10$
+\caption{Quality of the Point of Interests. For each view, we detect $P=10$
 POIs. The
     points represent median scores, the bars represent the lowest and greatest
     scores.}
@@ -707,28 +765,32 @@ indicates that the experiment did not finish within 7,200 seconds.}
 \label{pic:POI-time}
 \end{figure*}
 
-We now evaluate Claude's POI detection strategy. We compare two approaches. The
-first approach is the algorithm presented in the paper: first we search $q$
-views, then we return $k$ POIs per view. The second approach,
-\texttt{FullSpace}, is a strategy used in much of the recent Subgroup Discovery
+In this section, we evaluate Claude's POI detection strategy. We compare two
+approaches. The first approach is the algorithm presented in the paper: first
+we search $K$ views, then we return $P$ POIs per view. The second approach,
+\texttt{FullSpace}, is the method used in much of the recent Subgroup Discovery
 litterature \cite{van2011non, duivesteijn2010subgroup}.  The idea is to apply
-Beam Search on the whole database directly. Instead of seeking $k$ POIs in $q$
-projections, we seek $q.k$ selections from the full column space; we skip the
+Beam Search on the whole database directly. Instead of seeking $P$ POIs in $K$
+projections, we seek $K.P$ selections from the full column space; we skip the
 view selection step. We use the same datasets as previoulsy. Our default
-parameters are $q=25$, $n=5$ and $k=10$. To set the beam size, we use a rule of
-thumb: $B_{POI} = 2 * k$. In order to gather sufficient data, we raise our time
+parameters are $K=25$, $D=5$, $B=50$ and $P=10$. To set the beam size, we use a rule of
+thumb: $B_{POI} = 2.k$ ($B_{POI}$ is the beam used for POI detection,
+not for view search). In order to gather sufficient data, we raise our time
 limit to 2 hours. 
 
 Figure \ref{pic:POI-quali} compares the quality of the POIs found by both
 algorithms. The strategy \texttt{FullSpace} gives slightly better results on
-\texttt{Crime} and \texttt{PenDigits}, but the difference is close to null. We
-conclude that Claude's POIs are very close to those found by a state-of-the-art
-approach. Figure~\ref{pic:POI-time} compares the runtimes of both approaches.
-We observe that Claude is much faster than \texttt{FullSpace}. The difference
-grows with the number of columns: the difference is small for datasets with
-few columns (\texttt{MAGICTelescope}), but it is considerable for larger
-databases (more than an order of magnitude for \texttt{MuskMolecules}). We
-conclude that view selection lets us accelerate subgroup discovery drastically.
+\texttt{Crime} and \texttt{PenDigits}, but the difference is close to null. The
+scores are similar on all the other datasets. We conclude that Claude's POIs
+are very close to those found by a state-of-the-art Subgroup Discovery approach.
+Figure~\ref{pic:POI-time} compares the runtimes of both approaches.  We observe
+that Claude is much faster than \texttt{FullSpace}. The difference grows with
+the number of columns: the runtimes are almost similar for datasets with few
+columns (\texttt{MAGICTelescope}), but \texttt{Claude} is considerably faster
+for larger databases (more than an order of magnitude difference for
+\texttt{MuskMolecules}). Although this was not our initial aim, decoupling view
+search and POI extraction allows us to find subgroups faster in high dimension
+datasets.
 
 \section{Related Work}
 Our work is inspired by both database research and machine learning. On the
@@ -768,14 +830,17 @@ surprising subsets in a faceted search context \cite{dash2008dynamic}. This
 method is related to Claude, but it targets document search, it does not
 recommend views.
 
+\textbf{Projection Search.} cf. data viz: Grand Tour, scagnostics, etc...
+
 
 \textbf{Feature Selection, Subspace Search.} Chosing which variables to use for
 classification or regression is a crucial problem, for which dozens of methods
-were proposed \cite{guyon2003introduction}. A typical feature selection
-algorithm outputs one set of variables on which a certain predictor performs
-optimally. Our objective is different: we seek several, small sets of variables,
-simple enough to be interepreted by a humans. Claude is halfway between
-inference and exploration.
+were proposed \cite{guyon2003introduction}. Similarly to Claude, some of these
+methods rely on mutual information~\cite{peng2005feature} Nevertheless, the
+objective is different. A feature selection algorithm seeks \emph{one} set of
+variables on which a statistical predictor will perform optimally. Claude seeks
+several, small sets of variables, simple enough to be interepreted by a humans.
+Claude is halfway between inference and exploration.
 
 On the unsupervised learning side, our work is close to subspace search. The
 idea is detect subspaces where the data is clustered distinctly
@@ -788,3 +853,5 @@ connections and compare approaches in Sections~\ref{sec:detec}
 and~\ref{sec:exp-poi} respectively.
 
 \section{Conclusion}
+
+Future work: Causation models, synergy with visualisation
