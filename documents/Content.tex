@@ -15,20 +15,6 @@ We want to assist the humans in understanding how measures are distributed,
 where unexpected measures appear, and where interesting dependencies between
 dimensions and measures arise.
 
-We believe that automating query generation is essential to make analysts more
-productive. Informations which are trivial for domain experts are not
-necessarily so for data specialists. Besides, experts themselves may need
-guidance. Consider for instance Figure \ref{intro}. The table shows a small
-extract from a dataset of astronomical observations\footnote{This dataset come
-from the LOFAR research programme, 21 May 2012, the Netherlands}. We want to
-observe the \emph{brightness} of more than 100,000 sources, taken at different
-times, frequency ranges and with different precisions. In total, there are more
-than fifty dimensions. Even for an astronomer, this dataset cannot be
-understood by intuition alone. We need intelligent tools to provide guidance.
-The bottom picture illustrates what we expect from our query generation system:
-a simpler low dimension view of dependent dimensions and measures.  Anyone can
-quickly perceive bright regions.
-
 Semi-automated exploration of data cubes is fundamentally challenging for two
 reasons. The first reason is obvious: how do we recognize ``interesting''
 queries?  The diversity of opinions in the literature is rather depressing.
@@ -289,148 +275,197 @@ To solve this problem, Claude operates in two steps. First, it detects $K$
 strong sets of columns.  We call this step \emph{column search}.  Then, it
 extracts $P$ POI for each view. This is the \emph{POI dectection} step.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Column selection}
 \label{sec:colum}
 
-{\color{red} 
-This section requires some reordering.
-\begin{itemize}
-    \item Introduce Lemma 2, and the idea to search for columns greedily
-    \item Present the exact approach
-    \item Present the approximation
-\end{itemize}
-Also, the description of the approximation should be deepened.
-}
-
-The aim of this phase is identify the $K$ strongest sets of variables. From
+In this section, we discuss how to detect strong sets of variables. From
 here on, we assume that all the variables are discrete, and we use the
 notations $D_n$ and $\rv{D}_n$ interchangeably - we can use the context to
 distinguish database columns and random variables.
 
 \subsection{Base algorithm}
+\label{sec:base}
 \begin{figure}[t!]
 \centering
-\includegraphics[width=0.8\columnwidth]{images/beam-search}
-\caption{Example of Beam Search, with a beam size of 2}
+\includegraphics[width=\columnwidth]{images/beam-search}
+\caption{Example of Beam Search, with $D=3$ and beam size $B=2$}
 \label{pic:beam-search}
 \end{figure}
+Given a set of columns, our aim is to find the top $K$ views with at most $D$
+columns. If our database includes $N$ dimensions, our search space contains
+$\sum_{n \leq N} \binom{N}{n} = 2^N$ combinations, which is clearly
+impractical. Therefore, we resort to a  greedy heuristic.
 
-To recommend views, Claude must find the best sets of at most $D$ variables.
-The search space of this problen grows exponentially with $D$: from a database
-with $N$ variable, we can generate $\sum_{n \leq N} \binom{N}{n}$ combinations.
-
-We propose to use level-wise search. To initialise the algorithm, we compute
-the strength of each variable separately, i.e., we compute $\sigma(D_n) =
-I(D_n; T)$ for every $n \in [1, N]$. We order the candidates, and keep the top
-$B$ variables. We call this set the \emph{beam}. We then form new candidates by
-appending each variable of the database to each variable in the beam. We obtain
-views with two columns. We keep the best $B$ view, and discard the others. We
-obtain a new beam.  The procedure is repeated until the beam contains views
-with $D$ variables. We illustrate the procedure in Figure
-\ref{pic:beam-search}.
-
+We operate in a level-wise manner, illustrated in Figure~\ref{pic:beam-search}.
+To initialise the algorithm, we compute the strength of each variable
+separately. We sort the candidates, and keep the top $B$ elements. We call this
+set the \emph{beam}, greyed in the Figure. Then, we  generate new candidates by
+appending each variable of the database to the variables in the beam. We obtain
+views with two columns.  We keep the top $B$ view and discard the others, which
+gives us a new beam. We repeat the procedure until the views in the beam
+contain $D$ variables, or the views stop improving.
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/strength-jump}
-\caption{Limit cases of the beam search strategy. The variables $var1$ and
-$var2$ represent two dimensions. The symbol and color of the plots represent
-the value of the target class. }
+\caption{Limit cases of the beam search strategy. The variables $X_1$ and
+$X_2$ represent two dimensions. The symbol and color of the plots represent
+the value of the target. }
 \label{pic:strength-jump}
 \end{figure}
+
 Thanks to our beam strategy, we avoid exploring an exponentially large search
-space. Instead, we compute the strengths of at at most $N.B$ settings.
-Unfortunately, this strategy induces an accuracy penalty: if the beam is too
-small, we may miss some good candidates. This is a consequence of the following
-observation: a set of columns which is outside the top $B$ candidates at step
-$i$, could very well appear in the top $B$ at step $i+1$. Consider for instance
-the two classic scenarios pictured in Figure \ref{pic:strength-jump}. The
-dimensions $var1$ and $var2$ taken in isolation are weak: we can infer no
-useful information about the target from either of them. However, their
-combination is very interesting.  This observation is reflected by the
-strength: the views $\{var1\}$ and $\{var2\}$ have a very poor strength, but
-$\{var1, var2\}$ is an excellent candidate. If use a beam search strategy, we
-may discard  $\{var1\}$ and $\{var2\}$ early because they have a low score.
-This would be a mistake, because we lose the opportunity to discover $\{var1,
-var2\}$.
+space. Instead, we compute the strengths of at most $N.B$ candidates at each
+level. Our algorithm gets faster as the beam gets smaller.  Nevertheless, it is
+not exact, and it may miss some good candidates if the beam is too tight. Let
+us explain why. At each level of the algorithm, we discard the views which are
+too weak to reach the top $B$ candidates. We assume that if a combination of
+column is weak at level $i$, then it will be weak at all subsequent levels.
+Unfortunately, this assumption does \emph{not} hold: we can form strong views by
+combining weak columns. Therefore there are ``jumps'' in the search space.
+Consider for instance the two classic scenarios pictured in Figure
+\ref{pic:strength-jump}.  The dimensions $X_1$ and $X_2$ taken in isolation are
+weak: we can infer no useful information about the target from either of them.
+However, their combination is very interesting.  This observation is reflected
+by the strength: the views $\{X_1\}$ and $\{X_2\}$ have a very poor strength,
+but $\{X_1, X_2\}$ is an excellent candidate. In a beam search scenation, we
+may discard $\{X_1\}$ and $\{X_2\}$ early because they have a low score.  This
+would be a mistake, because we lose the opportunity to discover $\{X_1, X_2\}$.
+To mitigate this effect, we set beam sizes larger than $K$.  During our
+experiments, we obtained excellent results with $B \geq 2.K$
+(cf.~\ref{sec:exp-view-selection}).
 
-\subsection{Approximating the View Strength}
-\label{sec:approx}
 
-The Beam Search aslgorithm gives us a convenient way to find good views.
-Through the size of the beam, we can find a compromise between execution time
-and accuracy.  Nevertheless, the algorithm is still too heavy for an
-interactive application. For each candidate, it computes the mutual information
-between all the variables of the view and the target, which involves heavy grouping
-operations. Our solution is to \emph{approximate} the strength of the views
-during the iterations of the algorithm. Then, we use exact calculations for the
-final ranking.
-
-To present our approximation scheme, we must first describe how a
-view is impacted when we add a column to it.
-
+\subsection{Approximating the Strength of a View}
+Our beam search algorithm proceeds in a greedy manner. It starts with simple
+views, and adds variables one by one. To test if a variable $X_i$ is worth
+adding to a view $V$, it computes the strength $\sigma(V \cup \{X_i\})$. If the
+outcome is high enough, it will keep the candidate. If not, it will discard it.
+In total, the algorithm must evaluate the strength of $B.N$ candidates for each
+of the $D$ levels.  Unfortunately, computing the strength is very expensive -
+it requires a group-by operation over the whole database. In this section, we present a
+much faster approximation scheme.
+ 
+So far, we have considered each level of our beam search in isolation: we have
+\emph{not} made use of $\sigma(V)$ to compute the strength $\sigma(V \cup \{X_i\})$.
+We have computed the score of each candidate ``from scratch''. Nonetheless, we
+can derive a recursive formulation for the strength of a view. 
 \begin{lemma}\label{lem:chain}
 Consider a view $V = \{D_1, \ldots, D_i\}$, and a target $T$.
 For any column $D_{i+1}$: 
-$$
+\begin{equation}\label{eq:bonus}
 \sigma(V \cup \{D_{i+1}\}) =  \sigma(V) + I(D_{i+1} ; T | D_1 , \ldots, D_i)
- $$
+\end{equation}
 \end{lemma}
 \begin{proof}
-This lemma is a direct consequence of the Mutual Information's chain rule
-\cite{cover2012elements}.
+This lemma is a consequence of the Mutual Information's chain rule,
+Cover and Thomas, Theorem 2.5.2~\cite{cover2012elements}.
 \end{proof}
+This lemma describes how adding a column impacts the strength of a view.  For
+any random variables $D_i,D_j,T$, the notation $I(D_j;T|D_i)$  expresses the
+\emph{conditional mutual information}. The conditional mutual information is a
+conditioned version of the mutual information: it describes the
+dependency between $D_j$ and $T$ \emph{given restrictions on $D_i$}. To obtain
+it, we compute the mutual information between $D_j$ and $T$ given all the
+possible values of $D_i$, and average the results. Formally:
+\begin{equation}\label{eq:condmutinfo}
+    I(D_j;T|D_i) = \mathbb{E}_{x_i}\big[ I(D_j; T)| D_i = x_i)  \big]
+\end{equation}
+The influence of $D_i$ can go either way: it can weaken the dependency between
+$D_j$ and $T$, or it can strengthen it. The conditional mutual information is
+positive or null, and it is bounded by the entropy of $D_j$ and $T$. 
 
-This lemma describes how much a view improves if we append a new dimension.
-For any random variables $X,Y,Z$, the notation $I(X;Y|Z)$ expresses the
-\emph{conditional mutual information}. It describes the dependency between $X$
-and $Y$, \emph{given $Z$}. The influence of $Z$ can go either way: it can
-weaken or strengthen the relationship between $X$ and $Y$. In any case, it is
-positive or null, and it is bounded by the entropy of $X$ and $Y$.
-
-In practive, computing $ I(D_{i+1} ; T | D_1 , \ldots, D_i)$ is not less
-expensive than calculating the strength of $\{D_1, \ldots, D_{i+1}\}$ directly.
-But we can use the following approximation:
-\[
+Unfortunately, we cannot directly exploit Lemma~\ref{lem:chain} in our
+algorithm: computing $I(D_{i+1} ; T | D_1 , \ldots, D_i)$ is as expensive as
+computing $\sigma(V \cup \{D_{j+1}\}) $ from scratch.  However, we can use an
+approximation.  Recall that $V = \{D_1, \ldots, D_i\}$, we propose to use the
+following scheme:
+\begin{equation}\label{eq:approx}
 \begin{split}
-    \sigma(V \cup \{D_{i+1}\}) & = \sigma(V)   + I(D_{i+1} ; T | D_0, \ldots, D_{i})\\
-                           & \approx \sigma(V) + I(D_{i+1} ; T | D_{i})
-\text{ for } D_i \in V
+    \sigma(V \cup \{D_{i+1}\}) & = \sigma(V)   + I(D_{i+1} ; T | D_1, \ldots, D_{i})\\
+                               & \approx \sigma(V) + I(D_{i+1} ; T | D_{i})
 \end{split}
-\]
-
+\end{equation}
 The idea behind this approximation is naive: we assume that $I(D_{i+1} ; T |
-D_0, \ldots, D_{n}) \approx I(D_{i+1} ; T | D_{i})$. We ignore the high order
-dependencies. Thanks to this assumption, we can compute the strength of a view
-much faster.  Consider a directed graph in which each vertex represents a
-variables $D_i$. Each edge $(D_i, D_{i+1})$ has a a weight $ I(D_{i+1} ; T |
-D_{i})$.  We call this graph \emph{co-dependency} graph.  To compute the
-approximate strength of ${D_0, \ldots, D_i}$, we build a spanning tree which
-covers all the vertices of the view, and sum the weights of the edges.
+D_0, \ldots, D_{n}) \approx I(D_{i+1} ; T | D_{i})$. We simply ignore the high
+order dependencies. Thanks to this assumption, we can compute the strength of
+our candidates much faster. 
 
-In most cases, we can build several different spanning trees with different
-weights. Which one should we use? We could use two variants. An
-\emph{optimisic} approximation $\sigma_+ $ would consider the \emph{maximum}
-spanning tree.  A \emph{pessimistic} approximation $\sigma_- $ would use the
-weight of the \emph{minimum} spanning tree. For the rest of this paper, we will
-only consider the latter alternative. 
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.5\columnwidth]{images/codependency}
+\caption{Example of co-dependency graph with 5 dimensions. To approximate the
+strength of $V \cup \{X_5\}$, we add the weight of edge $(X_4, X_5)$ to V's
+strength -  in this case 0.5.}
+\label{pic:codependency}
+\end{figure}
+Our new algorithm operates in two steps, an offline step and an online step.
+Offline, we compute the conditional mutual information  $ I(D_j ; T | D_i)$
+between every pair of variable $(D_i, D_j)$. We call the resulting structure
+\textbf{co-dependency graph}. In this graph, the vertices represent the
+dimensions, and the edges represent the conditional mutual information. The
+co-dependency graph is oriented and weighted.  Online, we run our beam search
+as previously, but we use Equation~\ref{eq:approx} to compute the strength of
+the new candidates.  Suppose that the beam contains a view $V_i= \{D_1, \ldots,
+D_i\}$ at step $i$.  To evaluate the strength of a new candidate $V_i \cup
+\{D_{i+1}\}$, we fetch the value of  $ I(D_{i+1} ; T | D_i)$ in the
+codependency graph and add it to $V_i$'s strength. We illustrate this method in
+Figure~\ref{pic:codependency}.  This algorithm is much faster because it spares
+us expensive database operations. Previously, computing $\sigma(V_i \cup
+\{D_{i+1}\})$ involved heavy groupings and aggregations on the whole database.
+Now, we simply perform a lookup in a graph with $d$ edges.
 
-We now present a faster version of our view search algorithm.  We operate in
-two steps. First, we compute the strength of every column and every couple of
-columns.  This gives us a first set of candidates, and we can derive the
-co-dependency graph using the fact that $I(D_{j} ; T | D_i) = \sigma(D_i ;
-D_{j}) - \sigma(D_i)$.  Then, we run Beam Search as previously, but with the
-approximate strength computation.  To append the variable $D_i$ to the view
-$V$, we list every edge which connects  $D_i$ to the columns of $V$. We
-identify the lightest one and add the value of its weight to $\sigma(V)$.  
+Our approximation has a drawback: it depends on the order in which we include
+the variables in the view. If we enrich a view by successively adding variables
+$X_1$, $X_2$ then $X_3$, we obtain a different stength than if we incorporate
+$X_3$, $X_2$ then $X_1$. In Equation~\ref{eq:approx}, we obtain different
+approximations if we change the indexing of the dimensions $X_1, \ldots, X_i$.
+For more robustness, we introduce a ``pessimistic'' variant of our
+approximation:
+\begin{equation}\label{eq:robustapprox}
+    \sigma(V \cup \{D_{i+1}\}) 
+    \approx \min_{n \in [1, i]} \sigma(V) + I(D_{i+1} ; T | D_{n})
+\end{equation}
+Instead of adding the strength $I(D_{i+1}; T | D_i)$, where $D_i$ is the last
+variable inserted, we add $I(D_{i+1}; T | D_n)$, where $D_n$ is the variable
+which weakens $D_{i+1}$ the most. We will use this version in the rest of the
+paper.
 
-This algorithm is much faster because it spares us expensive database
-operations. Instead, we perform computations on a graph with $d$ nodes.  To
-save some accuracy, we use the exact version of the view strength for the final
-top $q$ ranking.
+In some use cases, obtaining approximations may not be enough.  To save some
+accuracy, we can combine approximate and exact computations. In Claude's
+implementation, we operate as follows. We use the exact version of the strength
+to compute the first two levels of the beam search. Conveniently, we can derive
+the co-dependency graph ``for free'' from these steps, noticing that $I(D_j; T
+| D_i) = \sigma(\{D_i, D_j\}) - \sigma(\{D_i\})$. We then switch to approximate
+computations. We revert to the exact computation for the final top $K$ ranking.
 
 \subsection{Deduplication}
+\label{sec:variety}
+Our algorithm seeks strong views. In some cases however, it may be preferable
+to have weaker views, but with more variety. To deal with these cases, we
+introduce an optional \emph{deduplication step} in our algorithm.
 
-TO DO
+We can decompose each level of beam search into two steps. First, we generate
+new candidates, appending each of the $N$ columns of the database to each of
+the $B$ views in the beam. We obtain $N.B$ candidates. Second, we evaluate the
+candidates and keep the top $B$ strongest ones. The deduplication step occurs
+between these two phases. The idea is to first reduce the $N.B$ candidates to $B'$
+candidats with a deduplication algorithm. Then, we evaluate these $B'$
+candidates, and keep the top $B$.
+
 
 \section{Detecting Points Of Interest}
 \label{sec:detec}

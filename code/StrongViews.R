@@ -263,10 +263,12 @@ search_approx <- function(data, target_col, q=NULL, size_view,
         
         # Compresses and Filters
         if (i > 1 && !is.null(dup_factor)){
-            views_df <- deduplicate_views(views_df, dup_factor)
+            views_df <- filter(views_df, row_number(desc(strength)) <= dup_factor)
+            views_df <- deduplicate_views(views_df, size_beam)
+        } else {
+            views_df <- filter(views_df, row_number(desc(strength)) <= size_beam)        
         }
-        views_df <- filter(views_df, row_number(desc(strength)) <= size_beam)        
-
+        
         # Flushes and backs up
         views <- flush_views(views_df, views)
         first_levels[[i]] <- views_df
@@ -362,16 +364,20 @@ search_approx <- function(data, target_col, q=NULL, size_view,
                             } else { 
                                 row_number(desc(strength))
                             }) %>% ungroup
-        
-        # deduplicates soft
+
         if (!is.null(dup_factor)){
+            cat("Pruning...")
+            candidates <- candidates %>% 
+                filter(row_number(desc(strength)) <= dup_factor)
+            
             cat("Deduplicating...")
-            candidates <- deduplicate_views(candidates, dup_factor)
+            candidates <- deduplicate_views(candidates, size_beam)
+
+        } else {
+            cat("Pruning...")
+            candidates <- candidates %>% 
+                filter(row_number(desc(strength)) <= size_beam)
         }
-        
-        # prunes
-        candidates <- candidates %>% 
-                        filter(row_number(desc(strength)) <= size_beam)
         
         # flushes
         views <- flush_views(candidates, views, size_beam)
