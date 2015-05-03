@@ -55,7 +55,7 @@ relaxation of our model and a heuristic search.
 \subsection{Overview}
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\columnwidth]{images/Overview}
+\includegraphics[width=0.8\columnwidth]{images/Overview}
 \caption{Example of explanation, with two points of interest. All the values
 are normalized.}
 \label{fig:overview}
@@ -217,7 +217,7 @@ interest if $KL ( \rv{T} \parallel \rv{T} |R )$ is as large as possible.
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=0.6\columnwidth]{images/3Dtest}
+\includegraphics[width=0.5\columnwidth]{images/3Dtest}
 \caption{Example of view with three discrete variables $V = \{X_1, X_2, X_3\}$.
 The average divergence of the cells $\delta(\mathbf{x})$ equals the strength of
 the view  $\sigma(V)$.}
@@ -298,6 +298,7 @@ notations $D_n$ and $\rv{D}_n$ interchangeably - we can use the context to
 distinguish database columns and random variables.
 
 \subsection{Base algorithm}
+
 \label{sec:base}
 \begin{figure}[t!]
 \centering
@@ -305,6 +306,26 @@ distinguish database columns and random variables.
 \caption{Example of Beam Search, with $D=3$ and beam size $B=2$}
 \label{pic:beam-search}
 \end{figure}
+\begin{algorithm}[t]
+\caption{Beam Search for view selection}
+\label{algo:beam_search}
+\begin{algorithmic}
+    \Function{TopViews}{$K$, $D$, $B$, $DB$}
+    \State $\text{Beam} \gets \{\}$
+    \For{$i \in [1, D]$}
+        \State $\text{Cand} \gets \{\}, \text{Scores} \gets \{\}$
+        \For{$V \in \text{Beam}$}
+            \For{$X \in \text{columns}(DB)$}
+            \State $\text{Cand} \gets \text{Cand} \cup \{V \cup \{X\} \}$
+            \State $\text{Scores} \gets \text{Scores} \cup \sigma(V \cup \{X\}) $
+            \EndFor
+        \EndFor
+        \State $\text{Beam} \gets \text{findTopK}(\text{Cand}, \text{Scores}, B)$
+    \EndFor
+    \State \Return $\text{findTopK}(\text{Beam}, \text{Scores}, K)$
+    \EndFunction
+\end{algorithmic}
+\end{algorithm}
 Given a set of columns, our aim is to find the top $K$ views with at most $D$
 columns. If our database includes $N$ dimensions, our search space contains
 $\sum_{n \leq N} \binom{N}{n} = 2^N$ combinations, which is clearly
@@ -318,6 +339,8 @@ appending each variable of the database to the variables in the beam. We obtain
 views with two columns.  We keep the top $B$ view and discard the others, which
 gives us a new beam. We repeat the procedure until the views in the beam
 contain $D$ variables, or the views stop improving.
+Algorithm~\ref{algo:beam_search} presents the full procedure.
+
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/strength-jump}
@@ -326,7 +349,6 @@ $X_2$ represent two dimensions. The symbol and color of the plots represent
 the value of the target. }
 \label{pic:strength-jump}
 \end{figure}
-
 Thanks to our beam strategy, we avoid exploring an exponentially large search
 space. Instead, we compute the strengths of at most $N.B$ candidates at each
 level. Our algorithm gets faster as the beam gets smaller.  Nevertheless, it is
@@ -350,6 +372,7 @@ experiments, we obtained excellent results with $B \geq 2.K$
 
 
 \subsection{Approximating the Strength of a View}
+\label{sec:approximate}
 Our beam search algorithm proceeds in a greedy manner. It starts with simple
 views, and adds variables one by one. To test if a variable $X_i$ is worth
 adding to a view $V$, it computes the strength $\sigma(V \cup \{X_i\})$. If the
@@ -430,11 +453,11 @@ Now, we simply perform a lookup in a graph with $d$ edges.
 
 Our approximation has a drawback: it depends on the order in which we include
 the variables in the view. If we enrich a view by successively adding variables
-$X_1$, $X_2$ then $X_3$, we obtain a different stength than if we incorporate
-$X_3$, $X_2$ then $X_1$. In Equation~\ref{eq:approx}, we obtain different
-approximations if we change the indexing of the dimensions $X_1, \ldots, X_i$.
-For more robustness, we introduce a ``pessimistic'' variant of our
-approximation:
+$X_1$, $X_2$ and $X_3$, then we obtain a different stength than if we
+incorporate $X_3$, $X_2$ then $X_1$. Similarly, in Equation~\ref{eq:approx}, we
+obtain different approximations if we change the indexing of the dimensions
+$X_1, \ldots, X_i$.  For more robustness, we introduce a ``pessimistic''
+variant of our approximation:
 \begin{equation}\label{eq:robustapprox}
     \sigma(V \cup \{D_{i+1}\}) 
     \approx \min_{n \in [1, i]} \sigma(V) + I(D_{i+1} ; T | D_{n})
@@ -447,24 +470,41 @@ paper.
 In some use cases, obtaining approximations may not be enough.  To save some
 accuracy, we can combine approximate and exact computations. In Claude's
 implementation, we operate as follows. We use the exact version of the strength
-to compute the first two levels of the beam search. Conveniently, we can derive
-the co-dependency graph ``for free'' from these steps, noticing that $I(D_j; T
-| D_i) = \sigma(\{D_i, D_j\}) - \sigma(\{D_i\})$. We then switch to approximate
-computations. We revert to the exact computation for the final top $K$ ranking.
+to compute the first two levels of the beam search. We switch to approximations
+for the following levels, and revert to the exact computation for the final top
+$K$ ranking.
 
 \subsection{Deduplication}
 \label{sec:variety}
-Our algorithm seeks strong views. In some cases however, it may be preferable
-to have weaker views, but with more variety. To deal with these cases, we
-introduce an optional \emph{deduplication step} in our algorithm.
 
-We can decompose each level of beam search into two steps. First, we generate
-new candidates, appending each of the $N$ columns of the database to each of
-the $B$ views in the beam. We obtain $N.B$ candidates. Second, we evaluate the
-candidates and keep the top $B$ strongest ones. The deduplication step occurs
-between these two phases. The idea is to first reduce the $N.B$ candidates to $B'$
-candidats with a deduplication algorithm. Then, we evaluate these $B'$
-candidates, and keep the top $B$.
+\begin{figure}[t!]
+\centering
+\includegraphics[width=\columnwidth]{images/deduplication}
+\caption{Beam search augmented with a deduplication step. We display in italic
+the size of the intermediate results. Note that $N.B \geq B' \geq B$.}
+\label{pic:deduplication}
+\end{figure}
+Our algorithm seeks strong views. In some cases however, it may be preferable
+to have weaker but more diverse views. To deal with those cases, we introduce
+an optional \emph{deduplication} step, during which we reduce the number of
+views with an algorithm from the literature. As pictured in
+Figure~\ref{pic:deduplication}, we run this procedure at the end of each
+beam search iteration.  By definition, deduplication reduces the number
+of candidates. Therefore, to obtain $B$ views at the end of the algorithm, we
+must generate $B' > B$ views beforehand. A low $B'$ will lead to more variety,
+while a high $B'$ may lead to better views.
+
+Authors have proposed quantity of methods to deduplicate itemsets in the
+pattern mining literature~\cite{xin2005mining, van2006compression}. We opted
+for a simple approach. First, we compute the dissimilarity between every pair
+of views. Then, we then run a clustering algorithm over the resulting
+dissimilarity matrix. To quantify the dissimilarity between the views, we use
+the Jaccard distance. Given two views $V_i$ and $V_j$, this distance defined as
+follows: $d_J(V_i, V_j) = |V_i \cap V_j | / | V_i \cup V_j |$. For the
+clustering, we use Partitioning Around Medoids, an algorithm of type k-medoids.
+We refer the interested reader to the literature for more
+details~\cite{kaufman2009finding}.
+
 
 
 \section{Detecting Points Of Interest}
@@ -620,8 +660,8 @@ little prior knowledge and few assumptions.
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{plots/compare-strength-f1}
-\caption{Strength vs. Classification accuracy for 500 random views. The blue
-and red lines were obtained by linear regression.}
+\caption{Strength vs. Classification accuracy for 500 random views. We obtained
+    the blue and red lines with simple linear regression.}
 \label{pic:strength-vs-f1}
 \end{figure}
 In this section, we show experimentally that our notion of view strength
@@ -659,9 +699,9 @@ We now evalute Claude's output and runtime in detail. In this section, we
 verify if Claude's algorithm produces good views in a short amount of time. To
 do so, we compare it to four methods, three of which come from the machine
 learning litterature.  Our first baseline, \texttt{Exact}, is similar to
-Claude, but we removed the approximation scheme presented in \ref{sec:approx} -
-instead we compute the exact mutual information between the views and the
-target. The method should be slower, but more accurate. 
+Claude, but we removed the approximation scheme presented in
+\ref{sec:approximate} - instead we compute the exact mutual information between
+the views and the target. The method should be slower, but more accurate. 
 
 The second algorithm, \texttt{Clique}, is a top-down approach inspired by
 recent work on pattern mining~\cite{xie2010max}. The idea is to build a graph
@@ -708,7 +748,7 @@ space is limited to 8 GB. The operating system is Fedora 16.
 
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=2\columnwidth]{plots/view-scores}
+\includegraphics[width=1.8\columnwidth]{plots/view-scores}
 \caption{Performance of the View Selection algorithms. For each data set, we
     generate $q$ views, train a 5-NN classifier over the columns of each view
     and report the classification accuracy (F1, 5-fold cross validation). The
@@ -718,7 +758,7 @@ space is limited to 8 GB. The operating system is Fedora 16.
 \end{figure*}
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=2\columnwidth]{plots/view-times}
+\includegraphics[width=1.8\columnwidth]{plots/view-times}
 \caption{Execution time of the View Selection algorithms. A \texttt{X} symbol
 indicates that the experiment did not finish within 3,600 seconds.}
 \label{pic:column-select-time}
@@ -761,8 +801,9 @@ scores.}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{plots/view-vary-diversification}
-\caption{Impact of the deduplication. The y-axis presents the number of
-distinct variables used in the top 25 views.}
+\caption{Impact of the deduplication. We generated 25 views for each dataset.
+The y-axis presents the average Jaccard dissimilarity between each pair of
+views.}
 \label{pic:view-diversification}
 \end{figure}
 \textbf{Impact of the beam size.} Figure~\ref{pic:view-beam} shows the impact
@@ -774,18 +815,23 @@ little to no improvement for $B$ greater than 50.
 
 \textbf{Impact of the deduplication.} We show the impact of our deduplication
 strategy in Figure \ref{pic:view-diversification}.  We ran Claude with $K=25$
-and $D=5$, and varied the level of deduplication. To quantify the diversity of
-the views, we report the number of distinct variables used. We observe that the
-strategy works in all four cases, but with different levels of efficiency. In
-the \texttt{LetterRecog} case, our strategy increases the number of variables
-by almost 30\%. The effect is much lighter on \texttt{MuskMolecules}.
+and $D=5$, varied the level of deduplication and measured the diversity of the
+views. To change the level of deduplication, we varied the value of $B'$
+between $B$ and $N.B$ (cf. Section \ref{sec:variety}). A level of 0\% means
+that $B'=B$. A level of 100\% means that $B'=N.B$. To quantify the diversity of
+the views, we measured the pariwise Jaccard dissimilarity between every pair of
+views and averaged the results. We observe that the strategy works in all four
+cases, but with different levels of efficiency. In the \texttt{BankMarketing}
+case, our strategy almost doubles the pairwise dissimilarity of the views. The
+effect is much lighter on datasets with few columns, such as \texttt{USCensus}
+and \texttt{MAGICTelescope}.
 
 \subsection{POI Detection}
 \label{sec:exp-poi}
 
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=2\columnwidth]{plots/POI-score}
+\includegraphics[width=1.8\columnwidth]{plots/POI-score}
 \caption{Quality of the Point of Interests. For each view, we detect $P=10$
 POIs. The
     points represent median scores, the bars represent the lowest and greatest
@@ -794,7 +840,7 @@ POIs. The
 \end{figure*}
 \begin{figure*}[t!]
 \centering
-\includegraphics[width=2\columnwidth]{plots/POI-timing}
+\includegraphics[width=1.8\columnwidth]{plots/POI-timing}
 \caption{Execution time of the POI detection. A \texttt{X} symbol
 indicates that the experiment did not finish within 7,200 seconds.}
 \label{pic:POI-time}
@@ -860,13 +906,21 @@ differ from their neighbourhood. It requires that the data is organized in an
 OLAP cube (with hierchical dimensions), it supposes that the users know which
 variables to use, and it seeks thin-grained deviations. Oppositely, our system
 uses regular tables, it recommends views (not only selections) and it seeks
-large trends. More recently, Dash et al. have proposed a method to reveal
-surprising subsets in a faceted search context \cite{dash2008dynamic}. This
-method is related to Claude, but it targets document search, it does not
+large trends. Similarly, constrained gradient
+analysis~\cite{imielinski2002cubegrades, dong2001mining} focuses on
+hierarchical data cubes. More recently, Dash et al. have proposed a method to
+reveal surprising subsets in a faceted search context \cite{dash2008dynamic}.
+This method is related to Claude, but it targets document search, it does not
 recommend views.
 
-\textbf{Projection Search.} cf. data viz: Grand Tour, scagnostics, etc...
-
+\textbf{Projection Search.} Authors from the data visualization literature have
+proposed methods to detect the ``best'' projections of multidimensional data
+sets, such as Projection Pursuit~\cite{yoi1974projection},
+Scagnostics~\cite{wilkinson2005graph}, or Tatu et al.'s relevance
+measures~\cite{tatu2011automated}. Such methods would form excellent complements
+for Claude's recommendations. Nevertheless, most of them focus on 2-dimensional
+scatterplots, are limited to continuous variables, and involve materializing
+and analyzing every possible 2D projection of the data.
 
 \textbf{Feature Selection, Subspace Search.} Chosing which variables to use for
 classification or regression is a crucial problem, for which dozens of methods

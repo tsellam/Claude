@@ -4,7 +4,7 @@ library(dplyr)
 library(tidyr)
 library(xtable)
 
-FOLDER <- "25-04"
+FOLDER <- "01-05-everything"
 
 ###############
 # PREPARATION #
@@ -198,7 +198,7 @@ ggsave("../documents/plots/tmp_view-times.pdf", p2,
 ###################################
 # FILTER FOR CLOSE UP EXPERIMENTS #
 ###################################
-zoom_files <- c("MuskMolecules", "MAGICTelescope", "LetterRecog", "USCensus")
+zoom_files <- c("MAGICTelescope", "BankMarketing", "LetterRecog", "USCensus")
 
 
 ###############################
@@ -253,7 +253,7 @@ ggsave("../documents/plots/tmp_view-vary-beam.pdf", p3,
 to_plot <- out_file %>%
     filter(experiment == "VaryDeduplication" & algo == "Claude") %>%
     filter(grepl("- F1", key) | grepl("Strength", key) | grepl("Diversity", key)| grepl("Dissimilarity", key)) %>%
-   filter(file %in% zoom_files) %>%
+    filter(file %in% zoom_files) %>%
     spread(key, value, convert = TRUE) %>%
     mutate(F1 = pmax(`kNN - F1`, `NaiveBayes - F1`, na.rm = TRUE)) %>%
     select(file, dedup, view, F1, Strength, Diversity, Dissimilarity)
@@ -269,12 +269,12 @@ to_plot <- to_plot %>%
               min_strength = min(Strength, na.rm = TRUE),
               max_strength = max(Strength, na.rm = TRUE),
               Diversity = max(Diversity, na.rm = TRUE),
-              Dissimilarity = max(Diversity, na.rm = TRUE),
+              Dissimilarity = max(Dissimilarity, na.rm = TRUE),
               F1 = median(F1, na.rm = TRUE))
 
-p4 <- ggplot(to_plot, aes(x=100-dedup, y=Diversity)) +
+p4 <- ggplot(to_plot, aes(x=100-dedup, y=Dissimilarity)) +
         scale_x_continuous(name="Deduplication Level (%)") +
-        scale_y_continuous(name="# Distinct Variables", breaks= pretty_breaks()) +
+        scale_y_continuous(name="Average Pairwise Dissimilarity", breaks= pretty_breaks()) +
         geom_point(size = 0.8) +
         geom_line() +
         facet_wrap(~ file, ncol = 2, scales="free") + expand_limits(y=0)
