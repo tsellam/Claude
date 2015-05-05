@@ -11,7 +11,7 @@ other hand, automated, machine learning-based methods are gaining much
 popularity, as shown by the recent success of industrial ``data
 scientists''. Nevertheless, at the time of writing this paper, these experts
 are still a rare and expensive resource. How can we find a middle way? Can we
-a flexible, accessible method to automatically analyze data warehouses?
+design a flexible, accessible method to automatically analyze data warehouses?
 
 Consider the following scenario. A government analyst wishes to analyze
 criminality in US citites. Her database describes how a \emph{measure}, the
@@ -69,46 +69,48 @@ Section~\ref{sec:experiments}, related work in Section~\ref{sec:related} and
 conclude in Section~\ref{sec:conclusion}.
 
 
-\section{Presentation and Objectives}
+\section{Overview}
 \label{sec:presentation}
-
-\subsection{Overview}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/Overview}
-\caption{Example of explanation, with two points of interest. All the values
+\caption{Example of view, with two points of interest. All the values
 are normalized.}
 \label{fig:overview}
 \end{figure}
-We represent the database by a large table $DB$. This table contains two types
-of columns: the dimensions $X_0, \ldots, X_N$ and a target column $T$. This
-view is logical, we are oblivious to the physical structure of the data.
-Claude's aim is to describe what causes the target to vary. To do so, it
-generates \textbf{explanations}.  An explanation is a set of two elements: a
-\textbf{view} and a list of \textbf{points of interest} (POI). A view is an
-``interesting'' set of columns.  More exactly, it is a set of columns which
-have a strong \emph{influence} on the target. A POI is a region where this
-influence is maximal, and thus the target takes unusual values.
+Let us define our setting. We reduce our database to a flat table $DB$. This
+table contains two types of columns: the \emph{dimensions} $X_0, \ldots, X_N$
+and a \emph{measure} (or \emph{target})~$T$. This model is logical, we
+are oblivious to the physical structure of the data. Our aim is to describe how
+the measure varies across the dimensions. To do so, we want to detect
+\textbf{views}, that is, \emph{interesting} selections of dimensions. We also
+want to show \emph{why} these views are interesting, by detecting
+\textbf{points of interests} (POI). A point of interest is a local pattern
+which illustrates how the measure varies across the view.
 
-We illustrate these notions with a running example. We want to understand what
+We demonstrate these notions with a running example. We want to understand what
 causes crime in US communities. We have a database of cities with several dozen
 socio-economic indicators (for instance, employment, age, or diplomas). For
 each city we also have the annual number of violent crimes: this is our target
-variable. This example comes from a real use case, which we will
-present in Section \ref{sec:crime}.
-
-Figure~\ref{fig:overview} presents an example of explanation. The leftmost
-scatterplot is a view based on the dimensions \texttt{Unemployment} and
+variable. Figure~\ref{fig:overview} presents an example of view. The leftmost
+scatterplot pictures the dimensions \texttt{Unemployment} and
 \texttt{Population Density}. Why did Claude pick these two columns? The two
-POIs provide more explanations. Cities with high densities and high
-unemployment rates have more crimes (cf. $POI_1$). Oppositely, cities which low
-densities and lower emplyments rates are safer (cf. $POI_2$). We see that the
-dimensions \texttt{Unemployment} and \texttt{Population Density} influence our
-target variable, \texttt{Crime}, and that this influence is maximal in the
-POIs.
+POIs provide explanations. Cities with high densities and high unemployment
+rates have more crimes (cf. $POI_1$).  Oppositely, cities which low densities
+and lower emplyments rates are safe (cf.  $POI_2$). We see that
+\texttt{Unemployment} and \texttt{Population Density} are interesting because
+they influence the target \texttt{Crime}.  The POIs highlight where this
+influence is maximal.
 
-In practice, Claude expresses its recommendations with SQL queries. It returns
-points of interest as follows:
+Interesting views and POIs are the key concepts behind our study. We
+illustrated these notions, but did not formalize them. In fact, defining
+exactly what makes a view or a POI ``interesting'' is all but trivial, and it
+is the first problem this paper will tackle. Then, given this framework, we
+will show how our system, Claude, makes recommendations in practice.
+
+In the rest of this paper, we will illustrate Claude's views with mathematical
+notation or visualizations. In relaity however Claude expresses its
+recommendations with SQL queries. It returns points of interest as follows:
 \begin{verbatim}
     SELECT X1, ... , Xd, T
     FROM DB
@@ -120,15 +122,16 @@ In this query, $\texttt{X1},\ldots, \texttt{Xd}$ represent the variables of the
 view, $\texttt{[L1, H1]}\ldots\texttt{[Ln, Hn]}$ represents the bounds of the
 POI, and $T$ represents the target.
 
-\subsection{Formalization}
+
+\section{Interestingness Model}
 \label{sec:formalization}
-We introduced our notions of explanations, views and POIs. We now formalize
+We introduced our notions of views and POIs. We now formalize
 these concepts with elements of information theory~\cite{cover2012elements}. In
 the remaining of this paper, we suppose that each column $X_n = (x_n^1, \ldots,
 x_n^M)$ contains $M$ samples drawn from a random variable $\rv{X}_n$ with
 sample space $\Omega_n$.
 
-\subsubsection{View Strength}
+\subsection{View Strength}
 \label{sec:view-strength}
 First, let's define what makes a view ``interesting''. A set of columns is
 worth considering if it \emph{influences} the target: a selection on
@@ -179,8 +182,7 @@ define the \textbf{strength} of $V$ as follows:
     \sigma(V) = I(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})
 \end{equation}
 \end{definition} 
-The stength is the central concept behind our study. We will spend most of this
-paper describing how to detect strong sets of variables.
+We will spend most of this paper describing how to detect strong sets of variables.
 
 In practice, we cannot know the distributions of the variables $\rv{X}_n$, we
 only have acess to the samples $X_n$. Therefore, we must compute \emph{estimates}
@@ -194,17 +196,18 @@ estimating the density function in Equation~\ref{eq:ent-cont} is costly,
 especially with multivariate distributions.  Second, it is not clear how to
 deal with mixed datasets, e.g. continuous and discrete dimensions, or discrete
 target and continuous dimensions.  Therefore, Claude bins all the continuous
-variables, and treats them like discrete dimensions.
+variables, and treats them like discrete columns.
 
-\subsubsection{Points of Interest and Divergence}
+\subsection{Points of Interest and Divergence}
 
 We discussed how to recognize good views. In this section, we formalize our
-notion of Point of Interest. A POI is a set of tuples for which the target has
-an ``unusual'' distribution. Observe the two POIs in Figure~\ref{fig:overview}.
-The distribution of \texttt{Crime} in these regions differs from the
-distribution of \texttt{Crime} in the rest of the database.  In $POI_1$, the
-distribution is skewed to the right, which indicates higher levels of crime. In
-$POI_2$, it is skewed to the left. We will characterize this difference with the
+notion of Point of Interest. A POI is a set of tuples in which the dimensions'
+influence is at its peak. Therefore, the measure has an ``unusual''
+distribution. Observe the two POIs in Figure~\ref{fig:overview}.  The
+distribution of \texttt{Crime} in these regions differs from the distribution
+of \texttt{Crime} in the rest of the database.  In $POI_1$, the distribution is
+skewed to the right, which indicates higher levels of crime. In $POI_2$, it is
+skewed to the left. We will characterize this difference with the
 \textbf{divergence}.
 
 Consider a d-dimensional view $\{\rv{X}_1, \ldots, \rv{X}_D\}$. The set
@@ -283,17 +286,122 @@ but not that of $V$. Luckily, these quantities converge as the bins get small.
     the lemma.
 \end{proof}
 
-\subsubsection{Problem Formulation}
+\subsection{Generating Hypotheses, Revisited}
 
-We can now formulate our problem:
-\begin{problem}
-Consider a dataset $DB$, a target column $T$ and a triplet $(K, D, P)$. Find
+We can now formalize the  problem of generating hypotheses in our framework:
+
+\emph{Consider a dataset $DB$, a target column $T$ and a triplet $(K, D, P)$. Find
 the top $K$ strongest views with at most $D$ columns. For each of these
-views, find the top $P$ divergent POIs.
-\end{problem}
+views, find the top $P$ divergent POIs.}\\
 To solve this problem, Claude operates in two steps. First, it detects $K$
 strong sets of columns.  We call this step \emph{column search}.  Then, it
-extracts $P$ POI for each view. This is the \emph{POI dectection} step.
+extracts $P$ POIs for each view. This is the \emph{POI dectection} step.
+
+
+
+
+\section{Approximate View Strength}
+\label{sec:approximate}
+
+We now have a formal objective: we want to find the top $K$ views with the highest
+strength. At this point, we could easily envision a greedy heuristic to solve
+this task. We start with simple views, based on one dimension. We then add
+columns, one by one.  To test if a column $X$ is worth adding to a view $V$,
+it computes the strength $\sigma(V \cup \{X\})$. If the outcome is high enough,
+we keep the candidate. If not, we discard it. We will indeed present such an
+algorithm in Section~\ref{sec:column}. However, we first present a
+computational shortcut to obtain $\sigma(V \cup \{X\})$.
+
+We established several ways to compute the strength of a view, with
+Equations~\ref{eq:strength} and~\ref{eq:coin}. Nevertheless, none of these
+approaches fit incremental algorithms.  Suppose that we wish to compute the
+strength of a view $V$, and then the stength of another view $V \cup \{X\}$.
+Equations~\ref{eq:strength} and~\ref{eq:coin} give us no opportunity to share
+computations.  We must compute $\sigma(V)$ and $\sigma(V \cup \{X\})$
+separately. To make things worse, both expressions are expensive, as they
+involve group-by queries over the whole database. Therefore, we need to derive
+a new \emph{recursive} formulation for the strength of a view:
+\begin{lemma}\label{lem:chain}
+Consider a view $V = \{X_1, \ldots, X_i\}$, and a target $T$.
+For any column $X_{i+1}$: 
+\begin{equation}\label{eq:bonus}
+    \sigma(V \cup \{X_{i+1}\}) =  \sigma(V) + I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_1 , \ldots, \rv{X}_i)
+\end{equation}
+\end{lemma}
+\begin{proof}
+This lemma is a consequence of the Mutual Information's chain rule,
+Cover and Thomas, Theorem 2.5.2~\cite{cover2012elements}.
+\end{proof}
+This lemma describes how adding a column impacts the strength of a view.  For
+any random variables $\rv{X}_i, \rv{X}_j, \rv{T}$, the notation
+$I(\rv{X}_j;\rv{T}|\rv{X}_i)$  expresses the \emph{conditional mutual
+information}. The conditional mutual information is a conditioned version of
+the mutual information: it describes the dependency between $\rv{X}_j$ and
+$\rv{T}$ \emph{given restrictions on $\rv{X}_i$}. To obtain it, we compute the
+mutual information between $\rv{X}_j$ and $\rv{T}$ given all the possible
+values of $\rv{X}_i$, and average the results. Formally:
+\begin{equation}\label{eq:condmutinfo}
+    I(\rv{X}_j;\rv{T}|\rv{X}_i) = \mathbb{E}_{x_i}\big[ I(\rv{X}_j; \rv{T})| \rv{X}_i = x_i)  \big]
+\end{equation}
+The influence of $\rv{X}_i$ can go either way: it can weaken the dependency between
+$\rv{X}_j$ and $\rv{T}$, or it can strengthen it. The conditional mutual information is
+positive or null, and it is bounded by the entropy of $\rv{X}_j$ and $T$. 
+
+Unfortunately, we cannot directly exploit Lemma~\ref{lem:chain} in our
+algorithm: estimating $I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_1 , \ldots, \rv{X}_i)$
+is as expensive as computing $\sigma(V \cup \{X_{i+1}\}) $ directly.  However,
+we can use an approximation.  Recall that $V = \{X_1, \ldots, X_i\}$, we
+exploit the following observation:
+\begin{equation}\label{eq:approx}
+\begin{split}
+    \sigma(V \cup \{X_{i+1}\}) & = \sigma(V)   + I(\rv{X}_{i+1} ; \rv{T} |
+    \rv{X}_1, \ldots, \rv{X}_{i})\\
+    & \approx \sigma(V) + I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_{i})
+\end{split}
+\end{equation}
+The idea behind this approximation is naive: we assume that $I(\rv{X}_{i+1} ;
+\rv{T} | \rv{X}_1, \ldots, \rv{X}_{i}) \approx I(\rv{X}_{i+1} ; \rv{T} |
+\rv{X}_{i})$. We simply ignore the high order dependencies. Thanks to this
+assumption, we can compute the strength of our candidates much faster. 
+
+\begin{figure}[t!]
+\centering
+\includegraphics[width=0.5\columnwidth]{images/codependency}
+\caption{Example of co-dependency graph with 5 dimensions. To approximate the
+strength of $V \cup \{X_5\}$, we add the weight of edge $(X_4, X_5)$ to V's
+strength -  in this case 0.5.}
+\label{pic:codependency}
+\end{figure}
+Our new approach operates in two steps, an offline step and an online step.
+Offline, we compute the conditional mutual information  $ I(\rv{X}_j ; \rv{T} |
+\rv{X}_i)$ between every pair of variable $(\rv{X}_i, \rv{X}_j)$. We call the
+resulting structure \textbf{co-dependency graph}. In this graph, the vertices
+represent the dimensions, and the edges represent the conditional mutual
+information. The co-dependency graph is oriented and weighted.  Online, we run
+a greedy algorithm as described previously, but we use Equation~\ref{eq:approx}
+to evaluate new candidates.  To compute the strength of a view $V \cup
+\{X_{i+1}\}$ with  $V= \{X_1, \ldots, X_i\}$ , we fetch the value of  $
+I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_i)$ in the codependency graph and add it to
+$V$'s strength. We illustrate this method in Figure~\ref{pic:codependency}.
+Previously, computing $\sigma(V \cup \{X_{i+1}\})$ involved heavy groupings and
+aggregations on the whole dataset.  Now, we simply perform a lookup in a graph
+with $N$ edges, where $N$ is the number of columns in the database.
+
+Our approximation has a drawback: it depends on the order in which we include
+the variables in the view. If we enrich a view by successively adding variables
+$X_1$, $X_2$ and $X_3$, then we obtain a different stength than if we
+incorporate $X_3$, $X_2$ then $X_1$. Similarly, in Equation~\ref{eq:approx}, we
+obtain different approximations if we change the indexing of the dimensions
+$\rv{X}_1, \ldots, \rv{X}_i$.  For more robustness, we introduce a
+``pessimistic'' variant:
+\begin{equation}\label{eq:robustapprox}
+    \sigma(V \cup \{X_{i+1}\}) 
+    \approx \min_{n \in [1, i]} \sigma(V) + I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_{n})
+\end{equation}
+Instead of adding the strength $I(\rv{X}_{i+1}; \rv{T} | \rv{X}_i)$, where
+$\rv{X}_i$ is the last variable inserted, we add $I(\rv{X}_{i+1}; T |
+\rv{X}_n)$, where $\rv{X}_n$ is the variable which weakens $\rv{X}_{i+1}$ the
+most. We will use this version in the rest of the paper.
 
 
 
@@ -301,24 +409,16 @@ extracts $P$ POI for each view. This is the \emph{POI dectection} step.
 
 
 
-
-
-
-
-
-
-
-
-\section{Column selection}
+\section{Practical Column selection}
 \label{sec:column}
 
-In this section, we discuss how to detect strong sets of variables. From
-here on, we assume that all the variables are discrete, and we use the
-notations $D_n$ and $\rv{D}_n$ interchangeably - we can use the context to
-distinguish database columns and random variables.
+This section presents our view search strategy. Our aim is to find the top $K$
+views with at most $D$ columns. If our database includes $N$ dimensions, our
+search space contains $\sum_{n \leq N} \binom{N}{n} = 2^N$ combinations, which
+is clearly impractical. Therefore, we resort to a  greedy, level-wise
+heuristic.
 
 \subsection{Base algorithm}
-
 \label{sec:base}
 \begin{figure}[t!]
 \centering
@@ -326,6 +426,17 @@ distinguish database columns and random variables.
 \caption{Example of Beam Search, with $D=3$ and beam size $B=2$}
 \label{pic:beam-search}
 \end{figure}
+Our algorithm is based on \emph{beam search}, as illustrated in
+Figure~\ref{pic:beam-search}.  To initialise the algorithm, we compute the
+strength of each variable separately. We sort the candidates, and keep the top
+$B$ elements. We call this set the \emph{beam}, greyed in the Figure. Then, we
+generate new candidates by appending each variable of the database to the
+variables in the beam. We obtain views with two columns.  We compute the
+strength of these views, keep the top $B$ strongest and discard the others.
+This gives us a new beam. We repeat the procedure until the views in the beam
+contain $D$ variables, or the views stop improving.
+Algorithm~\ref{algo:beam_search} presents the full procedure.
+
 \begin{algorithm}[t]
 \caption{Beam Search for view selection}
 \label{algo:beam_search}
@@ -346,21 +457,6 @@ distinguish database columns and random variables.
     \EndFunction
 \end{algorithmic}
 \end{algorithm}
-Given a set of columns, our aim is to find the top $K$ views with at most $D$
-columns. If our database includes $N$ dimensions, our search space contains
-$\sum_{n \leq N} \binom{N}{n} = 2^N$ combinations, which is clearly
-impractical. Therefore, we resort to a  greedy heuristic.
-
-We operate in a level-wise manner, illustrated in Figure~\ref{pic:beam-search}.
-To initialise the algorithm, we compute the strength of each variable
-separately. We sort the candidates, and keep the top $B$ elements. We call this
-set the \emph{beam}, greyed in the Figure. Then, we  generate new candidates by
-appending each variable of the database to the variables in the beam. We obtain
-views with two columns.  We keep the top $B$ view and discard the others, which
-gives us a new beam. We repeat the procedure until the views in the beam
-contain $D$ variables, or the views stop improving.
-Algorithm~\ref{algo:beam_search} presents the full procedure.
-
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.8\columnwidth]{images/strength-jump}
@@ -371,128 +467,36 @@ the value of the target. }
 \end{figure}
 Thanks to our beam strategy, we avoid exploring an exponentially large search
 space. Instead, we compute the strengths of at most $N.B$ candidates at each
-level. Our algorithm gets faster as the beam gets smaller.  Nevertheless, it is
-not exact, and it may miss some good candidates if the beam is too tight. Let
-us explain why. At each level of the algorithm, we discard the views which are
-too weak to reach the top $B$ candidates. We assume that if a combination of
-column is weak at level $i$, then it will be weak at all subsequent levels.
-Unfortunately, this assumption does \emph{not} hold: we can form strong views by
-combining weak columns; there are ``jumps'' in the search space.
-Consider for instance the two classic scenarios pictured in Figure
+level. The size of the beam lets us control the trade-off between accuracy and
+runtime. With a small beam, we evaluate less candidates, and thus terminate
+earlier. Oppositely, a large beam lets us explore more candidates.  Let us
+explain why this is necessary. At each level of the algorithm, we discard the
+views which are too weak to reach the top $B$ candidates. We assume that if a
+combination of column is weak at level $i$, then it will be weak at all
+subsequent levels.  Unfortunately, this assumption does \emph{not} hold: we can
+form strong views by combining weak columns; there are ``jumps'' in the search
+space.  Consider for instance the two classic scenarios pictured in Figure
 \ref{pic:strength-jump}.  The dimensions $X_1$ and $X_2$ taken in isolation are
 weak: we can infer no useful information about the target from either of them.
-However, their combination is very interesting.  This observation is reflected
-by the strength: the views $\{X_1\}$ and $\{X_2\}$ have a very poor strength,
-but $\{X_1, X_2\}$ is an excellent candidate. In a beam search scenation, we
-may discard $\{X_1\}$ and $\{X_2\}$ early because they have a low score.  This
-would be a mistake, because we lose the opportunity to discover $\{X_1, X_2\}$.
-To mitigate this effect, we set beam sizes larger than $K$.  During our
-experiments, we obtained excellent results with $B \geq 2.K$
-(cf.~\ref{sec:exp-view-selection}).
+However, their combination is very interesting. Equivalently, the views
+$\{X_1\}$ and $\{X_2\}$ have a very poor strength, but $\{X_1, X_2\}$ is an
+excellent candidate. If the beam is too tight, we may discard $\{X_1\}$ and
+$\{X_2\}$ early because they have a low score.  This would be a mistake,
+because we lose the opportunity to discover $\{X_1, X_2\}$. Therefore, we
+recommend to set $B > K$. During our experiments, we obtained excellent results
+with $B \geq 2.K$ (cf.~\ref{sec:exp-view-selection}).
 
-
-\subsection{Approximating the Strength of a View}
-\label{sec:approximate}
-Our beam search algorithm proceeds in a greedy manner. It starts with simple
-views, and adds variables one by one.To test if a variable $D$ is worth adding
-to a view $V$, it computes the strength $\sigma(V \cup \{D\})$. If the outcome
-is high enough, it will keep the candidate. If not, it will discard it.  In
-total, the algorithm must evaluate the strength of $B.N$ candidates for each of
-the $D$ levels.  Unfortunately, computing this strength is very expensive - it
-requires a group-by operation over the whole database. In this section, we
-present a much faster approximation scheme.
- 
-So far, we have considered each level of our beam search in isolation: we have
-\emph{not} made use of $\sigma(V)$ to compute the strength $\sigma(V \cup \{D_i\})$.
-We have computed the score of each candidate ``from scratch''. Nonetheless, we
-can derive a recursive formulation for the strength of a view. 
-\begin{lemma}\label{lem:chain}
-Consider a view $V = \{D_1, \ldots, D_i\}$, and a target $T$.
-For any column $D_{i+1}$: 
-\begin{equation}\label{eq:bonus}
-\sigma(V \cup \{D_{i+1}\}) =  \sigma(V) + I(D_{i+1} ; T | D_1 , \ldots, D_i)
-\end{equation}
-\end{lemma}
-\begin{proof}
-This lemma is a consequence of the Mutual Information's chain rule,
-Cover and Thomas, Theorem 2.5.2~\cite{cover2012elements}.
-\end{proof}
-This lemma describes how adding a column impacts the strength of a view.  For
-any random variables $D_i,D_j,T$, the notation $I(D_j;T|D_i)$  expresses the
-\emph{conditional mutual information}. The conditional mutual information is a
-conditioned version of the mutual information: it describes the
-dependency between $D_j$ and $T$ \emph{given restrictions on $D_i$}. To obtain
-it, we compute the mutual information between $D_j$ and $T$ given all the
-possible values of $D_i$, and average the results. Formally:
-\begin{equation}\label{eq:condmutinfo}
-    I(D_j;T|D_i) = \mathbb{E}_{x_i}\big[ I(D_j; T)| D_i = x_i)  \big]
-\end{equation}
-The influence of $D_i$ can go either way: it can weaken the dependency between
-$D_j$ and $T$, or it can strengthen it. The conditional mutual information is
-positive or null, and it is bounded by the entropy of $D_j$ and $T$. 
-
-Unfortunately, we cannot directly exploit Lemma~\ref{lem:chain} in our
-algorithm: computing $I(D_{i+1} ; T | D_1 , \ldots, D_i)$ is as expensive as
-computing $\sigma(V \cup \{D_{j+1}\}) $ directly.  However, we can use an
-approximation.  Recall that $V = \{D_1, \ldots, D_i\}$, we exploit the
-following observation:
-\begin{equation}\label{eq:approx}
-\begin{split}
-    \sigma(V \cup \{D_{i+1}\}) & = \sigma(V)   + I(D_{i+1} ; T | D_1, \ldots, D_{i})\\
-                               & \approx \sigma(V) + I(D_{i+1} ; T | D_{i})
-\end{split}
-\end{equation}
-The idea behind this approximation is naive: we assume that $I(D_{i+1} ; T |
-D_0, \ldots, D_{n}) \approx I(D_{i+1} ; T | D_{i})$. We simply ignore the high
-order dependencies. Thanks to this assumption, we can compute the strength of
-our candidates much faster. 
-
-\begin{figure}[t!]
-\centering
-\includegraphics[width=0.5\columnwidth]{images/codependency}
-\caption{Example of co-dependency graph with 5 dimensions. To approximate the
-strength of $V \cup \{X_5\}$, we add the weight of edge $(X_4, X_5)$ to V's
-strength -  in this case 0.5.}
-\label{pic:codependency}
-\end{figure}
-Our new algorithm operates in two steps, an offline step and an online step.
-Offline, we compute the conditional mutual information  $ I(D_j ; T | D_i)$
-between every pair of variable $(D_i, D_j)$. We call the resulting structure
-\textbf{co-dependency graph}. In this graph, the vertices represent the
-dimensions, and the edges represent the conditional mutual information. The
-co-dependency graph is oriented and weighted.  Online, we run our beam search
-as previously, but we use Equation~\ref{eq:approx} to compute the strength of
-the new candidates.  Suppose that the beam contains a view $V_i= \{D_1, \ldots,
-D_i\}$ at step $i$.  To evaluate the strength of a new view $V_i \cup
-\{D_{i+1}\}$, we fetch the value of  $ I(D_{i+1} ; T | D_i)$ in the
-codependency graph and add it to $V_i$'s strength. We illustrate this method in
-Figure~\ref{pic:codependency}.  This algorithm is much faster because it spares
-us expensive database operations. Previously, computing $\sigma(V_i \cup
-\{D_{i+1}\})$ involved heavy groupings and aggregations on the whole dataset.
-Now, we simply perform a lookup in a graph with $d$ edges.
-
-Our approximation has a drawback: it depends on the order in which we include
-the variables in the view. If we enrich a view by successively adding variables
-$X_1$, $X_2$ and $X_3$, then we obtain a different stength than if we
-incorporate $X_3$, $X_2$ then $X_1$. Similarly, in Equation~\ref{eq:approx}, we
-obtain different approximations if we change the indexing of the dimensions
-$X_1, \ldots, X_i$.  For more robustness, we introduce a ``pessimistic''
-variant:
-\begin{equation}\label{eq:robustapprox}
-    \sigma(V \cup \{D_{i+1}\}) 
-    \approx \min_{n \in [1, i]} \sigma(V) + I(D_{i+1} ; T | D_{n})
-\end{equation}
-Instead of adding the strength $I(D_{i+1}; T | D_i)$, where $D_i$ is the last
-variable inserted, we add $I(D_{i+1}; T | D_n)$, where $D_n$ is the variable
-which weakens $D_{i+1}$ the most. We will use this version in the rest of the
-paper.
-
-In some use cases, obtaining approximations may not be enough.  To save some
-accuracy, we can combine approximate and exact computations. In Claude's
-implementation, we operate as follows. We use the exact version of the strength
-to compute the first two levels of the beam search. We switch to approximations
-for the following levels, and revert to the exact computation for the final top
-$K$ ranking.
+\subsection{Approximations and Refinments}
+In total, we must evaluate the strength of $B.N$ candidates for each of the $D$
+levels of the beam search. To carry out this computation,  we can either use
+the exact formulation of strength, as shown in Equation~\ref{eq:strength}, or
+use the approximation scheme presented in Section~\ref{sec:approximate}. In
+Claude's implementation, we opted for a hybrid approach. We perform the first
+two levels of search with the exact strength (which is equivalent to building
+the co-dependency graph).  Then, for all subsequent steps, we use the
+approximate strength. Finally, we revert to the exact strength for the top $k$
+ranking, at the very end of the procedure. Thanks to this enhancement, we
+obtain significant speed gains at little accuracy cost.
 
 \subsection{Deduplication}
 \label{sec:variety}
@@ -543,12 +547,13 @@ with divergence. As pointed our by van Leeuwen and Knobbe~\cite{van2011non}, we
 can also solve this problem with beam search.
 
 Let $V$ represent the view to analyze. As the variables are binned, can form a
-grid over $V$, as shown in Figure~\ref{fig:binningexample}. We denote by $b$ the number of
-bins for each variable. To initialize the algorithm, we compute the divergence of
-each cell and keep the top $B_{POI}$ most divergent. We obtain our beam. We then
-``drill into'' each of these cells: we decompose them into smaller cells by
-splitting the edges into $b$ bins. We evaluate the new candidates and keep
-the top $B_{POI}$ most divergent. We reiterate until the algorithm converges.
+grid over $V$, as shown in Figure~\ref{fig:binningexample}. We denote by $b$
+the number of bins for each variable. To initialize the algorithm, we compute
+the divergence of each cell and keep the top $B_{POI}$ most divergent. We
+obtain our beam. We then ``drill into'' each of these cells: we decompose them
+into smaller cells by splitting the edges into $b$ bins. We evaluate the new
+candidates and keep the top $B_{POI}$ most divergent. We reiterate until the
+algorithm converges.
 
 In practice, KL-based approaches tends to favour smaller regions. Therefore,
 Beam Search may converge late, or not at all. A practical solution is to set a
@@ -566,7 +571,6 @@ score introduces a penalty for small POIs.
 
 \section{Experiments}
 \label{sec:experiments}
-
 \begin{table}
     \centering
     \small
@@ -597,7 +601,6 @@ $\sigma_{norm}(V) = \sigma(V) / H(V)$.
 
 \subsection{Detailed Example: Crimes in the US}
 \label{sec:crime}
-
 \begin{table}[t]
   \centering
   \small
@@ -654,8 +657,8 @@ communities, with a total of 128 variables. The data comes mostly from the
 census and the 1995 FBI Uniform Crime Report. All the variables are
 normalized to have a minimum of 0 and a maximum of 100.
 
-We generated $K=100$ explanations with up to $D=3$ dimensions, both with and
-without deduplication. We present a selection of explanations in
+We generated $K=100$ views with up to $D=3$ dimensions, both with and
+without deduplication. We present a selection of views in
 Table~\ref{tab:crime_views}, along with 2-dimension heatmaps in
 Figure~\ref{pic:crime_charts}. Observe that strong views have a visual
 signature: in the top two maps, the blue and red areas are neatly separated. In
@@ -691,7 +694,6 @@ little prior knowledge and few assumptions.
 
 \subsection{View Strength and Prediction}
 \label{sec:view-strengh}
-
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{plots/compare-strength-f1}
@@ -728,22 +730,21 @@ indeed more instructive.
 
 
 \subsection{View Selection}
-\label{sec:exp-view-selection}
+\label{sec:exp-view-selection} 
 
 We now evalute Claude's output and runtime in detail. In this section, we
 verify if Claude's algorithm produces good views in a short amount of time. To
 do so, we compare it to four methods, three of which come from the machine
 learning litterature.  Our first baseline, \texttt{Exact}, is similar to
 Claude, but we removed the approximation scheme presented in
-\ref{sec:approximate} - instead we compute the exact mutual information between
-the views and the target. The method should be slower, but more accurate. 
+\ref{sec:approximate} - instead we compute the exact the mutual information, as
+in Equation~\ref{eq:strength} The method should be slower, but more accurate. 
 
 The second algorithm, \texttt{Clique}, is a top-down approach inspired by
-recent work on pattern mining~\cite{xie2010max}. The idea is to build a graph
-where each vertex $i$ represents a column $D_i$, and each edge $(i,j)$
-represents the view $\{D_i, D_j\}$. We then simplify the graph: we keep the
-edges associated with the top $B$ strongest views, and we eliminate all the
-others. To detect strong views with $D >2$ variables, we seek cliques in this
+recent work on pattern mining~\cite{xie2010max}. We build a graph where each
+vertex $i$ represents a column $D_i$, and each edge $(i,j)$ represents the view
+$\{D_i, D_j\}$. We then eliminate all the edges except those which represent
+the top $B$ views. To detect views with $D>2$ columns, we seek cliques in this
 degenerated graph. We used the \texttt{igraph} package from R. We expect this
 algorithm to be very fast, but less accurate.
 
@@ -751,7 +752,7 @@ The third method, \texttt{Wrap 5-NN}, is a classic feature selection
 algorithm~\cite{guyon2003introduction}. The idea is to train a 5-Nearest
 Neighbour classifier with increasingly large sets of variables. We first test
 each variable separately, and keep the column which led to the best prediction.
-Then we keep adding variables in a Breadth-First manner, until the
+Then we keep adding variables in a breadth-first manner, until the
 quality of the predictions stops increasing or we reach $n$ variables. Our
 implementation is based on the \texttt{class} package from R.  We modified the
 original algorithm to maintain and update $q$ distinct sets of variables
@@ -909,33 +910,26 @@ datasets.
 \section{Related Work}
 \label{sec:related}
 
-\textbf{Query Recommendation.} Claude is related to the \emph{query
-recommendation} problem: how to automatically generate interesting SQL queries
-for a given database? We identify two types of recommendation systems:
+\textbf{SQL Query Recommendation.} We identify two types of systems:
 \emph{human-driven} approaches and \emph{data-driven} approaches. Human-driven
-systems learn from user feedback. For instance, Chatzopoulou et al. propose to
-make recommendations from query logs, similarly to search engines
-\cite{chatzopoulou2009query}. More recently, authors have proposed interactive
-exploration systems, where a recommendation system ``guides'' the user through
-the database. In Explore-by-Example, the system infers queries from examples
-provided by the user \cite{dimitriadou2014explore}. With Charles, the engine
-decomposes large queries into smaller ones \cite{sellam2013meet}. Sarawagi's
-method builds a maximum entropy model over the database from the user's history
-\cite{sarawagi2000user}. Bonifati et al. propose a similar method to recomend
-joins \cite{bonifati2014interactive}.  Claude competes with neither of these
-approaches, since it uses the content of the database only.
+systems learn from user feedback. For instance, Chatzopoulou et al.  make
+recommendations from query logs, similarly to search engines
+\cite{chatzopoulou2009query}. In Explore-by-Example, the system infers queries from
+examples provided by the user \cite{dimitriadou2014explore}. With Charles, the
+engine decomposes large queries into smaller ones \cite{sellam2013meet}.
+Sarawagi's method builds a maximum entropy model over the database from the
+user's history \cite{sarawagi2000user}. Bonifati et al. propose a similar
+method to recomend joins \cite{bonifati2014interactive}.  Claude competes with
+neither of these approaches, since it uses the content of the database only.
 
-Our work is closer data-driven data recommendation, in which the system makes
-recommendations based on the content of the data. The general idea is to build
-a statistical model of the database, and find regions which behave
-unexpectedly. Sarawagi et al. have published seminal work on this topic for
-OLAP cubes \cite{sarawagi1998discovery}. Their system highlights sequences of
-drill-in operations which lead to ``surprising data'', e.g., tuples which
-differ from their neighbourhood. It requires that the data is organized in an
-OLAP cube (with hierchical dimensions), it supposes that the users know which
-variables to use, and it seeks thin-grained deviations. Oppositely, our system
-uses regular tables, it recommends views (not only selections) and it seeks
-large trends. Similarly, constrained gradient
+Our work is closer data-driven data recommendation. The general idea is to
+build a statistical model of the database, and find regions which behave
+unexpectedly. Sarawagi et al. have published seminal work on this
+topic~\cite{sarawagi1998discovery}. Their system requires that the data is
+organized in an OLAP cube (with hierchical dimensions), it supposes that the
+users know which variables to use, and it seeks thin-grained deviations.
+Oppositely, our system uses regular tables, it recommends views (not only
+selections) and it seeks large trends. Similarly, constrained gradient
 analysis~\cite{imielinski2002cubegrades, dong2001mining} focuses on
 hierarchical data cubes. More recently, Dash et al. have proposed a method to
 reveal surprising subsets in a faceted search context \cite{dash2008dynamic}.
@@ -972,4 +966,18 @@ and~\ref{sec:exp-poi} respectively.
 
 \section{Conclusion}
 \label{sec:conclusion}
-Future work: Causation models, synergy with visualisation
+We formalized what makes a query ``interesting'', using the mutual information
+and the Kullback-Leibler divergence. We presented practical methods to detect
+these queries, using carefully designed approximations.  Finally, we presented
+and evaluated Claude, a system based on these ideas. As our experiments show,
+the methods we developped for this study have broader applications than the
+strict realm of query recommendation. Our column selection scheme competes with
+state-of-the-art feature selection methods. Also, the idea to decouple column
+selection selection from subgroup search could benefit the a wide range of
+subgroup discovery algorithms.
+
+We are genuinely excited about the possible extensions of this study. Future
+work includes dealing explicitely with the structure of the data, e.g.,
+hierarchical dimensions and relational joins. We will study how to integrate
+Claude more tightly with visualizations, for a fully interactive experience.
+Finally, we will refine our model with causation models.
