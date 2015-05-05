@@ -1,56 +1,76 @@
 \section{Introduction}
 \label{sec:intro}
 
-{ \color{red}
-    Emphasize the hypothesis generation, remove references to OLAP}
+Businesses and scientists willing to extract knowledge from their databases
+face a dilemma. On one hand, software editors have commercialized quantity of
+Business Intelligence tools to visualize data warehouses, such as Tableau or
+Qlik. Yet, these rely almost entirely on users' expertise, intiution, and
+patience. In an exploratory scenario, when users know little about their data,
+exploiting those can involve time-consuming cycles of trial and error. On the
+other hand, automated, machine learning-based methods are gaining much
+popularity, as shown by the recent success of industrial ``data
+scientists''. Nevertheless, at the time of writing this paper, these experts
+are still a rare and expensive resource. How can we find a middle way? Can we
+a flexible, accessible method to automatically analyze data warehouses?
 
-Consider a data warehouse scenario: a database describes how a set of
-\emph{measures} varies along several \emph{dimensions}. To work with this
-database, analysts need a lot of prior knowledge: which dimensions and measures
-they are interested in, where interesting patterns are hidden in the cube,
-which dependencies among dimensions and measures exist, and much more.  Manual
-exploration may expose some of this knowledge, but its success depends entirely
-on chance and intuition. In contrast, we aim at a semi-automated exploration.
-We want to assist the humans in understanding how measures are distributed,
-where unexpected measures appear, and where interesting dependencies between
-dimensions and measures arise.
+Consider the following scenario. A government analyst wishes to analyze
+criminality in US citites. Her database describes how a \emph{measure}, the
+number of crimes, varies along several dozen \emph{dimensions}, e.g., the
+population, unemployment rate or location. Which cities are prone to crimes?
+Can we identify patterns? And if so, are there exceptions? Our aim is to
+\emph{generate hypothese} about what influences the crime rate. We want to
+synthetize SQL queries which highlight how crime varies, and what causes these
+varations.
 
-Semi-automated exploration of data cubes is fundamentally challenging for two
-reasons. The first reason is obvious: how do we recognize ``interesting''
-queries?  The diversity of opinions in the literature is rather depressing.
-What is interesting for a user can be extremely boring for another. The second
-problem is practical.  Suppose that we had a universal measure of interest, how
-could we explore the search space fast enough to find the interesting queries?
+We believe that this problem is extremely common, both in business and science.
+Addressing it with an automated method would bring considerable efficiency
+benefits. Business analysts and researchers could make discoveries more
+quickly, focusing on interpretation rather than writing queries. Such a
+technique could provoke serendipitous findings, e.g., highlighting a surprising
+correlation or confronting an ill-posed hypothesis.  Besides, the problem is
+getting more pressing as data warehouses grow in size and complexity: manual
+exploration can turn to be out a painful a exercise when dealing with hundreds
+of columns.
 
-Many authors have proposed semi-automated (or discovery-driven) exploration
-frameworks in the past. Typically, they introduce a fixed ``interestingness''
-model, then the exploit the particularities of their model to speed up
-computations.  For instance, a seminal work was presented by Sarawagi et al.
-\cite{sarawagi1998discovery}. According to their paper, the most interesting
-queries are the most ``surprising'' ones.  They suggest to build a (log-linear)
-model over the data, and identify the largest deviations. More recently, Dash
-et al.\cite{dash2008dynamic} proposed a facet selection method, also based on
-surprise. Nevertheless, given the diversity of users and requirements, are
-these interestingness models \emph{really} interesting?
+Automating data warehouse exploration is a difficult problem for
+two reasons.  First, how do we recognize ``interesting'' SQL queries?  There
+is, to our knowledge, no universal measure of interestingness. The challenge is
+to devise a theoretically well-founded model, general enough to cover a wide
+range of use cases. The second problem is efficiency: given a measure of
+intest, how can we explore the space of all database queries quickly enough to
+support large datasets? We must design efficient heuristics and approximations
+to traverse an exponentially large space of hypotheses.
 
-In this paper, we introduce \textit{Claude}, a generic query generation
-system. \emph{Claude lets users describe what they are looking for.
-Given their input, it explores the database and reveals interesting OLAP views}.
-Here is how it operates. First, the users assign a value to each tuple in
-the database.  We call this value the \emph{target}. It can come from the raw
-data (e.g., the brightness of light sources), a calculation (e.g., a
-``surprise'' score from the litterature), or manual effort. Claude's job is to
-present the ``big picture'': it explains how the target is distributed across
-the database, and what influences it. To do so, it operates in two steps.
-First, it explores the database for interesting projections. Then, for each
-projection, it reveals ``remarkable'' areas. 
+Several authors have proposed semi-automated exploration frameworks in the
+past, in the context of OLAP data cubes~\cite{sarawagi1998discovery,
+imielinski2002cubegrades}. They assumed that databases contained less than a
+dozen well-known dimensions.  The whole challenge was to drill-in correctly, in
+order to locate ``exceptions'', e.g., local anomalies. We believe that many of
+these assumptions do not hold anymore. In our model, databases can contain more
+than a hundred dimensions with mixed types. Analysts have little to no
+knowledge about the effects of these, even less about their combination.
+Therefore, we seek \emph{macro}-deviations: our challenge is to depict a
+general picture of how the measure varies across the database.
 
-Making Claude efficient is a major challenge. We
-introduce two algorithms.  The first one is exact and based on a systematic
-level-wise search paradigm.  The second one is a much faster and based on a
-relaxation of our model and a heuristic search.
+In this paper, we introduce \textit{Claude}, a hypothesis generator for data
+warehouses. Claude's aim is to detect interesting views, i.e., interesting
+combination of columns, and highlight local patterns in these views. We make
+three contributions: (1) We devise an information theoretic model of what makes
+a view ``interesting''. (2) We present practical methods to detect good views
+in large databases, using approximations and greedy search. (3) We apply our
+model to practical situations, invloving either humans (i.e,, subgroup
+discovery) or automatic predictors (i.e., classification).
+
+The rest of this paper is organized as follows. Section~\ref{sec:presentation}
+describes our framework and formalizes the problem. Section~\ref{sec:column}
+presents our view detection algorithm, and Section~\ref{sec:detec}
+introduces how to detect points of interest. We present our experiments in
+Section~\ref{sec:experiments}, related work in Section~\ref{sec:related} and
+conclude in Section~\ref{sec:conclusion}.
+
 
 \section{Presentation and Objectives}
+\label{sec:presentation}
 
 \subsection{Overview}
 \begin{figure}[t!]
@@ -290,7 +310,7 @@ extracts $P$ POI for each view. This is the \emph{POI dectection} step.
 
 
 \section{Column selection}
-\label{sec:colum}
+\label{sec:column}
 
 In this section, we discuss how to detect strong sets of variables. From
 here on, we assume that all the variables are discrete, and we use the
@@ -322,7 +342,7 @@ distinguish database columns and random variables.
         \EndFor
         \State $\text{Beam} \gets \text{findTopK}(\text{Cand}, \text{Scores}, B)$
     \EndFor
-    \State \Return $\text{findTopK}(\text{Beam}, \text{Scores}, K)$
+    \State \Return $\text{findTopK}(\text{Cand}, \text{Scores}, K)$
     \EndFunction
 \end{algorithmic}
 \end{algorithm}
@@ -357,7 +377,7 @@ us explain why. At each level of the algorithm, we discard the views which are
 too weak to reach the top $B$ candidates. We assume that if a combination of
 column is weak at level $i$, then it will be weak at all subsequent levels.
 Unfortunately, this assumption does \emph{not} hold: we can form strong views by
-combining weak columns. Therefore there are ``jumps'' in the search space.
+combining weak columns; there are ``jumps'' in the search space.
 Consider for instance the two classic scenarios pictured in Figure
 \ref{pic:strength-jump}.  The dimensions $X_1$ and $X_2$ taken in isolation are
 weak: we can infer no useful information about the target from either of them.
@@ -374,16 +394,16 @@ experiments, we obtained excellent results with $B \geq 2.K$
 \subsection{Approximating the Strength of a View}
 \label{sec:approximate}
 Our beam search algorithm proceeds in a greedy manner. It starts with simple
-views, and adds variables one by one. To test if a variable $X_i$ is worth
-adding to a view $V$, it computes the strength $\sigma(V \cup \{X_i\})$. If the
-outcome is high enough, it will keep the candidate. If not, it will discard it.
-In total, the algorithm must evaluate the strength of $B.N$ candidates for each
-of the $D$ levels.  Unfortunately, computing the strength is very expensive -
-it requires a group-by operation over the whole database. In this section, we present a
-much faster approximation scheme.
+views, and adds variables one by one.To test if a variable $D$ is worth adding
+to a view $V$, it computes the strength $\sigma(V \cup \{D\})$. If the outcome
+is high enough, it will keep the candidate. If not, it will discard it.  In
+total, the algorithm must evaluate the strength of $B.N$ candidates for each of
+the $D$ levels.  Unfortunately, computing this strength is very expensive - it
+requires a group-by operation over the whole database. In this section, we
+present a much faster approximation scheme.
  
 So far, we have considered each level of our beam search in isolation: we have
-\emph{not} made use of $\sigma(V)$ to compute the strength $\sigma(V \cup \{X_i\})$.
+\emph{not} made use of $\sigma(V)$ to compute the strength $\sigma(V \cup \{D_i\})$.
 We have computed the score of each candidate ``from scratch''. Nonetheless, we
 can derive a recursive formulation for the strength of a view. 
 \begin{lemma}\label{lem:chain}
@@ -413,9 +433,9 @@ positive or null, and it is bounded by the entropy of $D_j$ and $T$.
 
 Unfortunately, we cannot directly exploit Lemma~\ref{lem:chain} in our
 algorithm: computing $I(D_{i+1} ; T | D_1 , \ldots, D_i)$ is as expensive as
-computing $\sigma(V \cup \{D_{j+1}\}) $ from scratch.  However, we can use an
-approximation.  Recall that $V = \{D_1, \ldots, D_i\}$, we propose to use the
-following scheme:
+computing $\sigma(V \cup \{D_{j+1}\}) $ directly.  However, we can use an
+approximation.  Recall that $V = \{D_1, \ldots, D_i\}$, we exploit the
+following observation:
 \begin{equation}\label{eq:approx}
 \begin{split}
     \sigma(V \cup \{D_{i+1}\}) & = \sigma(V)   + I(D_{i+1} ; T | D_1, \ldots, D_{i})\\
@@ -443,12 +463,12 @@ dimensions, and the edges represent the conditional mutual information. The
 co-dependency graph is oriented and weighted.  Online, we run our beam search
 as previously, but we use Equation~\ref{eq:approx} to compute the strength of
 the new candidates.  Suppose that the beam contains a view $V_i= \{D_1, \ldots,
-D_i\}$ at step $i$.  To evaluate the strength of a new candidate $V_i \cup
+D_i\}$ at step $i$.  To evaluate the strength of a new view $V_i \cup
 \{D_{i+1}\}$, we fetch the value of  $ I(D_{i+1} ; T | D_i)$ in the
 codependency graph and add it to $V_i$'s strength. We illustrate this method in
 Figure~\ref{pic:codependency}.  This algorithm is much faster because it spares
 us expensive database operations. Previously, computing $\sigma(V_i \cup
-\{D_{i+1}\})$ involved heavy groupings and aggregations on the whole database.
+\{D_{i+1}\})$ involved heavy groupings and aggregations on the whole dataset.
 Now, we simply perform a lookup in a graph with $d$ edges.
 
 Our approximation has a drawback: it depends on the order in which we include
@@ -457,7 +477,7 @@ $X_1$, $X_2$ and $X_3$, then we obtain a different stength than if we
 incorporate $X_3$, $X_2$ then $X_1$. Similarly, in Equation~\ref{eq:approx}, we
 obtain different approximations if we change the indexing of the dimensions
 $X_1, \ldots, X_i$.  For more robustness, we introduce a ``pessimistic''
-variant of our approximation:
+variant:
 \begin{equation}\label{eq:robustapprox}
     \sigma(V \cup \{D_{i+1}\}) 
     \approx \min_{n \in [1, i]} \sigma(V) + I(D_{i+1} ; T | D_{n})
@@ -491,45 +511,57 @@ views with an algorithm from the literature. As pictured in
 Figure~\ref{pic:deduplication}, we run this procedure at the end of each
 beam search iteration.  By definition, deduplication reduces the number
 of candidates. Therefore, to obtain $B$ views at the end of the algorithm, we
-must generate $B' > B$ views beforehand. A low $B'$ will lead to more variety,
-while a high $B'$ may lead to better views.
+must generate $B' > B$ views beforehand. A low $B'$ yields more variety,
+while a high $B'$ may lead to stronger views.
 
 Authors have proposed quantity of methods to deduplicate itemsets in the
 pattern mining literature~\cite{xin2005mining, van2006compression}. We opted
-for a simple approach. First, we compute the dissimilarity between every pair
-of views. Then, we then run a clustering algorithm over the resulting
-dissimilarity matrix. To quantify the dissimilarity between the views, we use
-the Jaccard distance. Given two views $V_i$ and $V_j$, this distance defined as
-follows: $d_J(V_i, V_j) = |V_i \cap V_j | / | V_i \cup V_j |$. For the
-clustering, we use Partitioning Around Medoids, an algorithm of type k-medoids.
-We refer the interested reader to the literature for more
-details~\cite{kaufman2009finding}.
+for a simple compression-based approach. First, we compute the dissimilarity
+between every pair of views with the Jaccard distance. Given two views $V_i$
+and $V_j$, this distance defined as follows: $d_J(V_i, V_j) = |V_i \cap V_j | /
+| V_i \cup V_j |$. Then, we cluster the resulting matrix with Partitioning
+Around Medoids, an algorithm of type k-medoids.  We refer the interested reader
+to the literature for more details~\cite{kaufman2009finding}.
+
+
+
 
 
 
 \section{Detecting Points Of Interest}
 \label{sec:detec}
 
-During this phase, we find the $r$ most divergent regions for each view.
-Fortunatly, this task is an instance of a known Data Mining problem,
-\emph{Subgroup Discovery} \cite{klosgen1996explora}\cite{wrobel1997algorithm}.
-The aim of Subgroup Discovery is to identify sets for which the target value
-maximizes a user-defined quality measure. To solve our problem, we instantiate
-the quality measure with the divergence.
+We previously described how to find strong views. We now
+describe how to identify $P$ points of interests for each of these views. 
 
-In principle, we could use any efficient algorithm from the Subgroup Discovery
-litterature.  We propose to reuse the beam Search strategy from the previous
-section, but to explore \emph{tuples} instead of columns. We bin the data in a
-coarse manner and get a first set of $b$ cells. We then refine these cells with
-a thinner binning, etc...
+Fortunately, finding POIs is an instance of a known problem called
+\emph{subgroup discovery}~\cite{klosgen1996explora, wrobel1997algorithm}, which
+can be formulated as follows: given a set of tuples, a target column and a
+measure of exceptionality, detect sets of tuples for which the target behaves
+exceptionally. In our case, we instantiate the exceptionality measure
+with divergence. As pointed our by van Leeuwen and Knobbe~\cite{van2011non}, we
+can also solve this problem with beam search.
 
-As mentioned in the Subgroup Discovery litterature \cite{van2011non}, our
-divergence score has a drawback: it favours smaller groups.  Therefore, Beam
-Search may converge very late or not at all.  A practical
-solution is to alter the model to take the size into account. Let $R$
-represents a range with cover $|R|$, and $|V|$ represent the number of tuples
-in the view. We use the \emph{weighted} deviation $\delta_w(R) = |R|/|V| \times
-\delta(R)$. This new score introduces a penalty for small POIs.
+Let $V$ represent the view to analyze. As the variables are binned, can form a
+grid over $V$, as shown in Figure~\ref{fig:binningexample}. We denote by $b$ the number of
+bins for each variable. To initialize the algorithm, we compute the divergence of
+each cell and keep the top $B_{POI}$ most divergent. We obtain our beam. We then
+``drill into'' each of these cells: we decompose them into smaller cells by
+splitting the edges into $b$ bins. We evaluate the new candidates and keep
+the top $B_{POI}$ most divergent. We reiterate until the algorithm converges.
+
+In practice, KL-based approaches tends to favour smaller regions. Therefore,
+Beam Search may converge late, or not at all. A practical solution is to set a
+minimum count threshold. Alternatively, we can alter our model to take the size
+into account~\cite{van2011non}. Let $R$ represents a region with count $|R|$,
+and $|DB|$ represent the number of tuples in the database. We introduce the
+\emph{weighted} deviation $\delta_w(R) = |R|/|DB| \times \delta(R)$. This new
+score introduces a penalty for small POIs.
+
+
+
+
+
 
 
 \section{Experiments}
@@ -544,7 +576,7 @@ in the view. We use the \emph{weighted} deviation $\delta_w(R) = |R|/|V| \times
         \hline
         MuskMolecules & 167 & 6,600 & 22 & 18\\
         Crime & 128 & 1,996 & 20 & 17\\
-        BreastCancer & 34 & 200 & 10 & 13\\
+        BreastCancer & 34 & 234 & 10 & 13\\
         PenDigits & 17 & 7,496 & 9 & 10\\
         BankMarketing & 17 & 45,213 & 11& 8\\
         LetterRecog & 16 & 20,000 & 10 & 12\\
@@ -558,7 +590,10 @@ in the view. We use the \emph{weighted} deviation $\delta_w(R) = |R|/|V| \times
 \end{table}
 We now present our experimental results. All our experiments are based on 8
 datasets from the UCI Repository, described in Table~\ref{tab:datasets}. The
-files are freely available online\footnote{archive.ics.uci.edu/ml/}.
+files are freely available online\footnote{archive.ics.uci.edu/ml/}. In several
+experiments, we report the \emph{normalized} view strength instead of the usual
+strength. If $V$ is a view with entropy $H(V)$, we obtain it as follows:
+$\sigma_{norm}(V) = \sigma(V) / H(V)$.
 
 \subsection{Detailed Example: Crimes in the US}
 \label{sec:crime}
@@ -802,7 +837,7 @@ scores.}
 \centering
 \includegraphics[width=\columnwidth]{plots/view-vary-diversification}
 \caption{Impact of the deduplication. We generated 25 views for each dataset.
-The y-axis presents the average Jaccard dissimilarity between each pair of
+The y-axis presents the average Jaccard dissimilarity between every pair of
 views.}
 \label{pic:view-diversification}
 \end{figure}
@@ -815,20 +850,15 @@ little to no improvement for $B$ greater than 50.
 
 \textbf{Impact of the deduplication.} We show the impact of our deduplication
 strategy in Figure \ref{pic:view-diversification}.  We ran Claude with $K=25$
-and $D=5$, varied the level of deduplication and measured the diversity of the
-views. To change the level of deduplication, we varied the value of $B'$
-between $B$ and $N.B$ (cf. Section \ref{sec:variety}). A level of 0\% means
-that $B'=B$. A level of 100\% means that $B'=N.B$. To quantify the diversity of
-the views, we measured the pariwise Jaccard dissimilarity between every pair of
-views and averaged the results. We observe that the strategy works in all four
-cases, but with different levels of efficiency. In the \texttt{BankMarketing}
-case, our strategy almost doubles the pairwise dissimilarity of the views. The
-effect is much lighter on datasets with few columns, such as \texttt{USCensus}
-and \texttt{MAGICTelescope}.
-
-\subsection{POI Detection}
-\label{sec:exp-poi}
-
+and $D=5$ and increased the level of deduplication, i.e., varied the value of
+$B'$ between $B$ and $N.B$ (cf. Section \ref{sec:variety}). A level of 0\%
+means that $B'=B$. A level of 100\% means that $B'=N.B$. To measure the
+diversity of the views, we measured the Jaccard dissimilarity between every
+pair of views and averaged the results. We observe that the strategy works in
+all four cases, but with different levels of efficiency. In the
+\texttt{BankMarketing} case, our strategy almost doubles the pairwise
+dissimilarity of the views. The effect is much lighter on datasets with few
+columns, such as \texttt{USCensus} and \texttt{MAGICTelescope}.
 \begin{figure*}[t!]
 \centering
 \includegraphics[width=1.8\columnwidth]{plots/POI-score}
@@ -845,6 +875,9 @@ POIs. The
 indicates that the experiment did not finish within 7,200 seconds.}
 \label{pic:POI-time}
 \end{figure*}
+
+\subsection{POI Detection}
+\label{sec:exp-poi}
 
 In this section, we evaluate Claude's POI detection strategy. We compare two
 approaches. The first approach is the algorithm presented in the paper: first
@@ -874,15 +907,11 @@ search and POI extraction allows us to find subgroups faster in high dimension
 datasets.
 
 \section{Related Work}
-Our work is inspired by both database research and machine learning. On the
-database side, Claude is related to the \emph{query recommendation} problem:
-how to automatically generate interesting SQL queries for a given database? On
-the machine learning side, our work is based on \emph{feature selection}, e.g.,
-how to select variables for a given inference problem, and \emph{subgroup
-discovery}, e.g., how to find the tuples which maximize a particular score
-function.
+\label{sec:related}
 
-\textbf{Query Recommendation.} We identify two types of recommendation systems:
+\textbf{Query Recommendation.} Claude is related to the \emph{query
+recommendation} problem: how to automatically generate interesting SQL queries
+for a given database? We identify two types of recommendation systems:
 \emph{human-driven} approaches and \emph{data-driven} approaches. Human-driven
 systems learn from user feedback. For instance, Chatzopoulou et al. propose to
 make recommendations from query logs, similarly to search engines
@@ -891,7 +920,7 @@ exploration systems, where a recommendation system ``guides'' the user through
 the database. In Explore-by-Example, the system infers queries from examples
 provided by the user \cite{dimitriadou2014explore}. With Charles, the engine
 decomposes large queries into smaller ones \cite{sellam2013meet}. Sarawagi's
-method builds a maximum entropy model over the database from the user's history 
+method builds a maximum entropy model over the database from the user's history
 \cite{sarawagi2000user}. Bonifati et al. propose a similar method to recomend
 joins \cite{bonifati2014interactive}.  Claude competes with neither of these
 approaches, since it uses the content of the database only.
@@ -929,7 +958,7 @@ methods rely on mutual information~\cite{peng2005feature} Nevertheless, the
 objective is different. A feature selection algorithm seeks \emph{one} set of
 variables on which a statistical predictor will perform optimally. Claude seeks
 several, small sets of variables, simple enough to be interepreted by a humans.
-Claude is halfway between inference and exploration.
+In fact, Claude is halfway between inference and exploration.
 
 On the unsupervised learning side, our work is close to subspace search. The
 idea is detect subspaces where the data is clustered distinctly
@@ -942,5 +971,5 @@ connections and compare approaches in Sections~\ref{sec:detec}
 and~\ref{sec:exp-poi} respectively.
 
 \section{Conclusion}
-
+\label{sec:conclusion}
 Future work: Causation models, synergy with visualisation
