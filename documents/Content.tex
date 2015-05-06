@@ -4,26 +4,24 @@
 Businesses and scientists willing to extract knowledge from their databases
 face a dilemma. On one hand, software editors have commercialized quantity of
 Business Intelligence tools to visualize data warehouses, such as Tableau or
-Qlik. Yet, these rely almost entirely on users' expertise, intiution, and
+Qlik. Yet, these rely almost entirely on users' expertise, intuition, and
 patience. In an exploratory scenario, when users know little about their data,
 exploiting those can involve time-consuming cycles of trial and error. On the
-other hand, automated, machine learning-based methods are gaining much
+other hand, automated, machine learning methods are gaining much
 popularity, as shown by the recent success of industrial ``data
 scientists''. Nevertheless, at the time of writing this paper, these experts
 are still a rare and expensive resource. How can we find a middle way? Can we
 design a flexible, accessible method to automatically analyze data warehouses?
 
 Consider the following scenario. A government analyst wishes to analyze
-criminality in US citites. Her database describes how a \emph{measure}, the
-number of crimes, varies along several dozen \emph{dimensions}, e.g., the
-population, unemployment rate or location. Which cities are prone to crimes?
-Can we identify patterns? And if so, are there exceptions? Our aim is to
-\emph{generate hypothese} about what influences the crime rate. We want to
+criminality in US cities. The given database describes the
+number of crimes (as a \emph{measure}) which varies along several dozen \emph{dimensions}, e.g., the
+population, unemployment rate, or location. Exploring all dependencies between all combinations of dimension and the measure (i.e. all possible \emph{views} on the data warehouse) is not possible for a human. Thus essential questions can not be answered: Which cities and under which side conditions are exceptionally prone to crimes? Can we identify patterns among dimensions and crime activity? And if so, are there exceptions w.r.t. the regular behavior of crime activity? Our aim is to automatically
+\emph{generate hypotheses} about what influences the crime rate. We want to
 synthetize SQL queries which highlight how crime varies, and what causes these
-varations.
+variations. Given such SQL queries even unexperienced users can explore the data easily and detect unexpected patterns.
 
-We believe that this problem is extremely common, both in business and science.
-Addressing it with an automated method would bring considerable efficiency
+We believe that this problem is extremely common, both in business and science, where the multi-dimensional model of data warehouses has been deployed for various applications. Addressing this problem with an automated method would bring considerable efficiency
 benefits. Business analysts and researchers could make discoveries more
 quickly, focusing on interpretation rather than writing queries. Such a
 technique could provoke serendipitous findings, e.g., highlighting a surprising
@@ -37,11 +35,11 @@ two reasons.  First, how do we recognize ``interesting'' SQL queries?  There
 is, to our knowledge, no universal measure of interestingness. The challenge is
 to devise a theoretically well-founded model, general enough to cover a wide
 range of use cases. The second problem is efficiency: given a measure of
-intest, how can we explore the space of all database queries quickly enough to
+interest, how can we explore the space of all database queries quickly enough to
 support large datasets? We must design efficient heuristics and approximations
-to traverse an exponentially large space of hypotheses.
+to traverse an exponentially large space of hypotheses in any combination of dimensions.
 
-Several authors have proposed semi-automated exploration frameworks in the
+Several semi-automated exploration frameworks have been proposed in the
 past, in the context of OLAP data cubes~\cite{sarawagi1998discovery,
 imielinski2002cubegrades}. They assumed that databases contained less than a
 dozen well-known dimensions.  The whole challenge was to drill-in correctly, in
@@ -50,16 +48,16 @@ these assumptions do not hold anymore. In our model, databases can contain more
 than a hundred dimensions with mixed types. Analysts have little to no
 knowledge about the effects of these, even less about their combination.
 Therefore, we seek \emph{macro}-deviations: our challenge is to depict a
-general picture of how the measure varies across the database.
+general picture of how the measure varies across any possible view on the database.
 
 In this paper, we introduce \textit{Claude}, a hypothesis generator for data
 warehouses. Claude's aim is to detect interesting views, i.e., interesting
-combination of columns, and highlight local patterns in these views. We make
+combination of dimensions, and highlight local patterns in these views. We make
 three contributions: (1) We devise an information theoretic model of what makes
 a view ``interesting''. (2) We present practical methods to detect good views
 in large databases, using approximations and greedy search. (3) We apply our
-model to practical situations, invloving either humans (i.e,, subgroup
-discovery) or automatic predictors (i.e., classification).
+model to practical situations, involving either humans (data exploration by subgroup
+discovery) or automatic prediction (classification algorithms).
 
 The rest of this paper is organized as follows. Section~\ref{sec:presentation}
 describes our framework and formalizes the problem. Section~\ref{sec:column}
