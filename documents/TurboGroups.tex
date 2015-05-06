@@ -45,11 +45,20 @@ Martin Kersten\\
 \maketitle
 
 \begin{abstract}
-Exploratory data analysis tries to discover novel dependencies and unexpected patterns in large databases. Traditionally, such exploration is manual and hypothesis-driven. However, analysts can quickly come short of patience and imagination.
-
-In this paper, we introduce Claude, a hypothesis generator for data warehouses. Our system follows a 2-step approach: (1) Claude detects non-linear statistical dependencies among dimensions, and hence selects views for semi-automated exploration. (2) To explain its findings, Claude detects local patterns in these views with so-called point-of-interest analysis. Technically, we propose a statistical dependency analysis based on mutual information. Due to exponential search space of all possible views, such statistical dependency analysis faces severe efficiency challenges. Thus, we propose a scalable computation based on a novel approximate selection of views. By analyzing the unexpectedness of the data distribution revealed by these views, we generate hypotheses and express them with SQL queries.
+Exploratory data analysis tries to discover novel dependencies and unexpected
+patterns in large databases. Traditionally, this task is manual and
+hypothesis-driven. However, analysts can quickly come short of patience and
+imagination. In this paper, we study how to detect interesting views and
+selections automatically, exploiting non-linear statistical dependencies across
+the columns of the database. We introduce simple notions of information theory,
+and derive a complete model of interestingness. We then present Claude, our
+hypothesis generator for data warehouses. Claude follows a 2-step approach: (1)
+It detects interesting views with a level-wise, greedy strategy.  (2) To
+explain its findings, it detects local patterns in these views and describes
+them with SQL queries.  To implement Claude, we developped aggressive
+approximations and heuristics, allowing our system to be both fast and more
+accurate than state-of-art view search algorithms. 
 \end{abstract}
-
 \input{Content}
 
 \bibliographystyle{abbrv}
