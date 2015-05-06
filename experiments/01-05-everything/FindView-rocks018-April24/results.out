@@ -1,0 +1,997 @@
+experiment	file	q	beam_size	size_view	dedup	algo	view	key	value
+VaryAlgos	magic.arff	1	48	24	100	4S	1	Strength	0.906064482663083
+VaryAlgos	magic.arff	1	48	24	100	4S	1	Columns	V6, V1, V2, V3, V4, V5, V7, V10, V8, V1, V2, V3, V4, V5, V7, V10, V9, V1, V2, V3, V4, V5, V7, V10
+VaryAlgos	magic.arff	1	48	24	100	4S	1	NaiveBayes - F1	0.467452328273998
+VaryAlgos	magic.arff	1	48	24	100	4S	1	kNN - F1	0.682744668963311
+VaryAlgos	magic.arff	1	48	24	100	Exhaustive	1	Strength	0.906064482663105
+VaryAlgos	magic.arff	1	48	24	100	Exhaustive	1	Columns	V2, V8, V7, V6, V5, V10, V4, V9, V3, V1
+VaryAlgos	magic.arff	1	48	24	100	Exhaustive	1	NaiveBayes - F1	0.492878445681531
+VaryAlgos	magic.arff	1	48	24	100	Exhaustive	1	kNN - F1	0.686006896610814
+VaryAlgos	magic.arff	1	48	24	100	Clique	1	Strength	0.906064482663096
+VaryAlgos	magic.arff	1	48	24	100	Clique	1	Columns	V10, V1, V9, V8, V7, V6, V5, V4, V3, V2
+VaryAlgos	magic.arff	1	48	24	100	Clique	1	NaiveBayes - F1	0.492878445681531
+VaryAlgos	magic.arff	1	48	24	100	Clique	1	kNN - F1	0.686006896610814
+VaryAlgos	magic.arff	1	48	24	100	Approximative	1	Strength	0.906064482663087
+VaryAlgos	magic.arff	1	48	24	100	Approximative	1	Columns	V2, V1, V9, V7, V4, V3, V8, V10, V6, V5
+VaryAlgos	magic.arff	1	48	24	100	Approximative	1	NaiveBayes - F1	0.492878445681531
+VaryAlgos	magic.arff	1	48	24	100	Approximative	1	kNN - F1	0.686006896610814
+VaryAlgos	pendigits.arff	9	20	10	100	4S	1	Strength	3.11803963901705
+VaryAlgos	pendigits.arff	9	20	10	100	4S	1	Columns	dim6, dim7, dim8, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	4S	2	Strength	3.07589959244942
+VaryAlgos	pendigits.arff	9	20	10	100	4S	2	Columns	dim6, dim7, dim8, dim9
+VaryAlgos	pendigits.arff	9	20	10	100	4S	3	Strength	3.13353411334775
+VaryAlgos	pendigits.arff	9	20	10	100	4S	3	Columns	dim8, dim7, dim11, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	4S	4	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	4S	4	Columns	dim14, dim8, dim9, dim10, dim4, dim2, dim5, dim7, dim11, dim13
+VaryAlgos	pendigits.arff	9	20	10	100	4S	5	Strength	3.3191699441378
+VaryAlgos	pendigits.arff	9	20	10	100	4S	5	Columns	dim0, dim4, dim1, dim6, dim9, dim5, dim7, dim11, dim13, dim15
+VaryAlgos	pendigits.arff	9	20	10	100	4S	6	Strength	3.31556753388662
+VaryAlgos	pendigits.arff	9	20	10	100	4S	6	Columns	dim0, dim4, dim2, dim8, dim7, dim11, dim9, dim15
+VaryAlgos	pendigits.arff	9	20	10	100	4S	7	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	4S	7	Columns	dim14, dim0, dim12, dim4, dim6, dim10, dim3, dim2, dim5, dim7
+VaryAlgos	pendigits.arff	9	20	10	100	4S	8	Strength	2.23527063738261
+VaryAlgos	pendigits.arff	9	20	10	100	4S	8	Columns	dim11, dim13, dim15
+VaryAlgos	pendigits.arff	9	20	10	100	4S	9	Strength	3.318903063967
+VaryAlgos	pendigits.arff	9	20	10	100	4S	9	Columns	dim10, dim8, dim4, dim6, dim1, dim7, dim9, dim5, dim11
+VaryAlgos	pendigits.arff	9	20	10	100	4S	1	NaiveBayes - F1	0.636606205248711
+VaryAlgos	pendigits.arff	9	20	10	100	4S	2	NaiveBayes - F1	0.646508682966555
+VaryAlgos	pendigits.arff	9	20	10	100	4S	3	NaiveBayes - F1	0.633285006057214
+VaryAlgos	pendigits.arff	9	20	10	100	4S	4	NaiveBayes - F1	0.81828797150935
+VaryAlgos	pendigits.arff	9	20	10	100	4S	5	NaiveBayes - F1	0.760082053900704
+VaryAlgos	pendigits.arff	9	20	10	100	4S	6	NaiveBayes - F1	0.789302682331785
+VaryAlgos	pendigits.arff	9	20	10	100	4S	7	NaiveBayes - F1	0.788153011894359
+VaryAlgos	pendigits.arff	9	20	10	100	4S	8	NaiveBayes - F1	0.42178855954562
+VaryAlgos	pendigits.arff	9	20	10	100	4S	9	NaiveBayes - F1	0.779454084387098
+VaryAlgos	pendigits.arff	9	20	10	100	4S	1	kNN - F1	0.843940845480876
+VaryAlgos	pendigits.arff	9	20	10	100	4S	2	kNN - F1	0.843079648123504
+VaryAlgos	pendigits.arff	9	20	10	100	4S	3	kNN - F1	0.848606679566164
+VaryAlgos	pendigits.arff	9	20	10	100	4S	4	kNN - F1	0.981441963946024
+VaryAlgos	pendigits.arff	9	20	10	100	4S	5	kNN - F1	0.957071009300451
+VaryAlgos	pendigits.arff	9	20	10	100	4S	6	kNN - F1	0.952018466170249
+VaryAlgos	pendigits.arff	9	20	10	100	4S	7	kNN - F1	0.96993271625622
+VaryAlgos	pendigits.arff	9	20	10	100	4S	8	kNN - F1	0.668992426540409
+VaryAlgos	pendigits.arff	9	20	10	100	4S	9	kNN - F1	0.972784182322111
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	1	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	1	Columns	dim10, dim5, dim6, dim11, dim8, dim12, dim14, dim7, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	2	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	2	Columns	dim10, dim5, dim6, dim11, dim12, dim8, dim14, dim7, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	3	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	3	Columns	dim10, dim5, dim12, dim6, dim11, dim8, dim14, dim7, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	4	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	4	Columns	dim9, dim12, dim5, dim6, dim11, dim8, dim14, dim13, dim7, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	5	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	5	Columns	dim10, dim5, dim6, dim12, dim11, dim8, dim14, dim7, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	6	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	6	Columns	dim15, dim5, dim6, dim11, dim12, dim8, dim14, dim13, dim7, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	7	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	7	Columns	dim10, dim12, dim5, dim6, dim11, dim8, dim7, dim14, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	8	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	8	Columns	dim9, dim5, dim6, dim12, dim11, dim8, dim14, dim13, dim7, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	9	Strength	3.32077122516262
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	9	Columns	dim15, dim5, dim12, dim6, dim11, dim8, dim14, dim7, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	1	NaiveBayes - F1	0.822145358834564
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	2	NaiveBayes - F1	0.822145358834564
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	3	NaiveBayes - F1	0.822145358834564
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	4	NaiveBayes - F1	0.833354243819212
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	5	NaiveBayes - F1	0.822145358834564
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	6	NaiveBayes - F1	0.832955249855241
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	7	NaiveBayes - F1	0.822145358834564
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	8	NaiveBayes - F1	0.833354243819212
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	9	NaiveBayes - F1	0.832955249855241
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	1	kNN - F1	0.982108773858125
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	2	kNN - F1	0.981842731334467
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	3	kNN - F1	0.981846278604029
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	4	kNN - F1	0.981704547343056
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	5	kNN - F1	0.981711541628601
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	6	kNN - F1	0.981704006385125
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	7	kNN - F1	0.982111816303291
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	8	kNN - F1	0.981702232257301
+VaryAlgos	pendigits.arff	9	20	10	100	Wrap_kNN	9	kNN - F1	0.982102431070008
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	1	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	1	Columns	dim5, dim10, dim5, dim6, dim12, dim8, dim13, dim9, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	2	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	2	Columns	dim10, dim14, dim5, dim6, dim12, dim8, dim13, dim9, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	3	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	3	Columns	dim5, dim5, dim10, dim6, dim12, dim8, dim13, dim9, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	4	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	4	Columns	dim10, dim14, dim5, dim6, dim12, dim9, dim8, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	5	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	5	Columns	dim5, dim5, dim10, dim6, dim12, dim9, dim8, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	6	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	6	Columns	dim10, dim14, dim5, dim6, dim9, dim12, dim8, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	7	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	7	Columns	dim10, dim14, dim5, dim6, dim12, dim8, dim9, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	8	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	8	Columns	dim5, dim5, dim10, dim6, dim12, dim8, dim9, dim13, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	9	Strength	3.32050434499182
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	9	Columns	dim15, dim5, dim10, dim5, dim6, dim12, dim8, dim13, dim9, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	1	NaiveBayes - F1	0.803046112888647
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	2	NaiveBayes - F1	0.812560538365448
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	3	NaiveBayes - F1	0.803046112888647
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	4	NaiveBayes - F1	0.812560538365448
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	5	NaiveBayes - F1	0.803046112888647
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	6	NaiveBayes - F1	0.812560538365448
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	7	NaiveBayes - F1	0.812560538365448
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	8	NaiveBayes - F1	0.803046112888647
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	9	NaiveBayes - F1	0.805533922403889
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	1	kNN - F1	0.972767371686965
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	2	kNN - F1	0.976513028055382
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	3	kNN - F1	0.972493932995611
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	4	kNN - F1	0.975978537682088
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	5	kNN - F1	0.972764803955757
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	6	kNN - F1	0.976108394276292
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	7	kNN - F1	0.976113084126717
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	8	kNN - F1	0.972761415421755
+VaryAlgos	pendigits.arff	9	20	10	100	Exhaustive	9	kNN - F1	0.977603949628314
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	1	Strength	3.07501197015157
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	1	Columns	dim5, dim0, dim9, dim2
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	2	Strength	2.74245914782901
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	2	Columns	dim3, dim2, dim5, dim0
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	3	Strength	2.41695717122147
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	3	Columns	dim7, dim2, dim9
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	4	Strength	2.25160673620849
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	4	Columns	dim9, dim1, dim2
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	5	Strength	2.16061649863939
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	5	Columns	dim3, dim2, dim7
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	6	Strength	2.14269262591991
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	6	Columns	dim4, dim2, dim3
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	7	Strength	2.00186739500027
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	7	Columns	dim6, dim2, dim3
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	8	Strength	1.75351081400776
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	8	Columns	dim3, dim2, dim1
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	9	Strength	1.45839945093674
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	9	Columns	dim8, dim0
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	1	NaiveBayes - F1	0.581798898802188
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	2	NaiveBayes - F1	0.489573216452346
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	3	NaiveBayes - F1	0.404329728663019
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	4	NaiveBayes - F1	0.501773137189142
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	5	NaiveBayes - F1	0.455621051983719
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	6	NaiveBayes - F1	0.381545392762842
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	7	NaiveBayes - F1	0.379409375837158
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	8	NaiveBayes - F1	0.436727636066462
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	9	NaiveBayes - F1	0.375672168483261
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	1	kNN - F1	0.817057029001736
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	2	kNN - F1	0.705545452920175
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	3	kNN - F1	0.658901485110423
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	4	kNN - F1	0.633907894683467
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	5	kNN - F1	0.606846388670167
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	6	kNN - F1	0.550447450991343
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	7	kNN - F1	0.503169028040746
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	8	kNN - F1	0.509047948468689
+VaryAlgos	pendigits.arff	9	20	10	100	Clique	9	kNN - F1	0.411588499759461
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	1	Strength	3.3200360003155
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	1	Columns	dim9, dim5, dim15, dim13, dim8, dim14, dim10, dim7, dim4, dim11
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	2	Strength	3.3197691201447
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	2	Columns	dim9, dim5, dim7, dim10, dim8, dim14, dim13, dim11, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	3	Strength	3.31950223997389
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	3	Columns	dim9, dim5, dim7, dim10, dim11, dim8, dim15, dim14, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	4	Strength	3.318903063967
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	4	Columns	dim9, dim5, dim15, dim13, dim8, dim14, dim10, dim7, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	5	Strength	3.31853545154344
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	5	Columns	dim9, dim5, dim7, dim10, dim8, dim14, dim4, dim15
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	6	Strength	3.31837275058949
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	6	Columns	dim9, dim5, dim15, dim13, dim8, dim11, dim10, dim7, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	7	Strength	3.31832336796213
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	7	Columns	dim9, dim5, dim15, dim13, dim8, dim11, dim14, dim4, dim7
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	8	Strength	3.31806710686712
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	8	Columns	dim9, dim5, dim15, dim13, dim8, dim11, dim14, dim10, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	9	Strength	3.31710031843666
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	9	Columns	dim9, dim5, dim7, dim10, dim11, dim14, dim8, dim4
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	1	NaiveBayes - F1	0.822842403296724
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	2	NaiveBayes - F1	0.808112749147758
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	3	NaiveBayes - F1	0.825458718138729
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	4	NaiveBayes - F1	0.817407756263783
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	5	NaiveBayes - F1	0.822565903807365
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	6	NaiveBayes - F1	0.780539259221559
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	7	NaiveBayes - F1	0.805487200483245
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	8	NaiveBayes - F1	0.80757055847407
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	9	NaiveBayes - F1	0.746839780052891
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	1	kNN - F1	0.978157644647917
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	2	kNN - F1	0.973853865090259
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	3	kNN - F1	0.975363808195746
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	4	kNN - F1	0.976537118998248
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	5	kNN - F1	0.973871689991049
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	6	kNN - F1	0.968838442009316
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	7	kNN - F1	0.971419623481092
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	8	kNN - F1	0.967883772565467
+VaryAlgos	pendigits.arff	9	20	10	100	Approximative	9	kNN - F1	0.962099828654237
+VaryBeam	magic.arff	25	25	5	100	Approximative	1	Strength	0.701271972421724
+VaryBeam	magic.arff	25	25	5	100	Approximative	1	Columns	V9, V3, V5, V10, V7
+VaryBeam	magic.arff	25	25	5	100	Approximative	2	Strength	0.686189680536698
+VaryBeam	magic.arff	25	25	5	100	Approximative	2	Columns	V9, V3, V6, V4, V10
+VaryBeam	magic.arff	25	25	5	100	Approximative	3	Strength	0.680884035398554
+VaryBeam	magic.arff	25	25	5	100	Approximative	3	Columns	V9, V3, V5, V4, V10
+VaryBeam	magic.arff	25	25	5	100	Approximative	4	Strength	0.676620908438112
+VaryBeam	magic.arff	25	25	5	100	Approximative	4	Columns	V9, V3, V6, V5, V10
+VaryBeam	magic.arff	25	25	5	100	Approximative	5	Strength	0.661742929809316
+VaryBeam	magic.arff	25	25	5	100	Approximative	5	Columns	V9, V3, V8, V4, V10
+VaryBeam	magic.arff	25	25	5	100	Approximative	6	Strength	0.654225066841528
+VaryBeam	magic.arff	25	25	5	100	Approximative	6	Columns	V9, V3, V4, V10, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	7	Strength	0.649012988684939
+VaryBeam	magic.arff	25	25	5	100	Approximative	7	Columns	V9, V3, V5, V10, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	8	Strength	0.580933954030387
+VaryBeam	magic.arff	25	25	5	100	Approximative	8	Columns	V9, V3, V5, V4, V7
+VaryBeam	magic.arff	25	25	5	100	Approximative	9	Strength	0.575614722962483
+VaryBeam	magic.arff	25	25	5	100	Approximative	9	Columns	V3, V1, V9, V6, V10
+VaryBeam	magic.arff	25	25	5	100	Approximative	10	Strength	0.570773221711086
+VaryBeam	magic.arff	25	25	5	100	Approximative	10	Columns	V3, V1, V9, V4, V6
+VaryBeam	magic.arff	25	25	5	100	Approximative	11	Strength	0.561839142449772
+VaryBeam	magic.arff	25	25	5	100	Approximative	11	Columns	V9, V3, V6, V5, V7
+VaryBeam	magic.arff	25	25	5	100	Approximative	12	Strength	0.559859811443705
+VaryBeam	magic.arff	25	25	5	100	Approximative	12	Columns	V5, V1, V9, V6, V3
+VaryBeam	magic.arff	25	25	5	100	Approximative	13	Strength	0.554433337221091
+VaryBeam	magic.arff	25	25	5	100	Approximative	13	Columns	V9, V3, V6, V10, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	14	Strength	0.552372003967012
+VaryBeam	magic.arff	25	25	5	100	Approximative	14	Columns	V9, V3, V8, V6, V10
+VaryBeam	magic.arff	25	25	5	100	Approximative	15	Strength	0.547915834164606
+VaryBeam	magic.arff	25	25	5	100	Approximative	15	Columns	V9, V3, V6, V5, V4
+VaryBeam	magic.arff	25	25	5	100	Approximative	16	Strength	0.542702906078091
+VaryBeam	magic.arff	25	25	5	100	Approximative	16	Columns	V9, V3, V8, V6, V4
+VaryBeam	magic.arff	25	25	5	100	Approximative	17	Strength	0.540632056409624
+VaryBeam	magic.arff	25	25	5	100	Approximative	17	Columns	V9, V3, V6, V4, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	18	Strength	0.535831237832801
+VaryBeam	magic.arff	25	25	5	100	Approximative	18	Columns	V9, V3, V8, V10, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	19	Strength	0.529747860446442
+VaryBeam	magic.arff	25	25	5	100	Approximative	19	Columns	V9, V3, V6, V5, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	20	Strength	0.52807996155104
+VaryBeam	magic.arff	25	25	5	100	Approximative	20	Columns	V9, V3, V5, V4, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	21	Strength	0.515084245302839
+VaryBeam	magic.arff	25	25	5	100	Approximative	21	Columns	V9, V3, V8, V4, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	22	Strength	0.510453327581152
+VaryBeam	magic.arff	25	25	5	100	Approximative	22	Columns	V9, V1, V6, V2, V10
+VaryBeam	magic.arff	25	25	5	100	Approximative	23	Strength	0.492751896460128
+VaryBeam	magic.arff	25	25	5	100	Approximative	23	Columns	V9, V6, V7, V10, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	24	Strength	0.49131643783509
+VaryBeam	magic.arff	25	25	5	100	Approximative	24	Columns	V3, V1, V9, V6, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	25	Strength	0.456855244401012
+VaryBeam	magic.arff	25	25	5	100	Approximative	25	Columns	V9, V3, V8, V6, V2
+VaryBeam	magic.arff	25	25	5	100	Approximative	1	NaiveBayes - F1	0.613151241813031
+VaryBeam	magic.arff	25	25	5	100	Approximative	2	NaiveBayes - F1	0.589426873979062
+VaryBeam	magic.arff	25	25	5	100	Approximative	3	NaiveBayes - F1	0.574486684798498
+VaryBeam	magic.arff	25	25	5	100	Approximative	4	NaiveBayes - F1	0.590860224410499
+VaryBeam	magic.arff	25	25	5	100	Approximative	5	NaiveBayes - F1	0.580478800492486
+VaryBeam	magic.arff	25	25	5	100	Approximative	6	NaiveBayes - F1	0.560103994487664
+VaryBeam	magic.arff	25	25	5	100	Approximative	7	NaiveBayes - F1	0.560979026765218
+VaryBeam	magic.arff	25	25	5	100	Approximative	8	NaiveBayes - F1	0.609746076580855
+VaryBeam	magic.arff	25	25	5	100	Approximative	9	NaiveBayes - F1	0.561924402370017
+VaryBeam	magic.arff	25	25	5	100	Approximative	10	NaiveBayes - F1	0.563471879671984
+VaryBeam	magic.arff	25	25	5	100	Approximative	11	NaiveBayes - F1	0.590439257933215
+VaryBeam	magic.arff	25	25	5	100	Approximative	12	NaiveBayes - F1	0.564168183717536
+VaryBeam	magic.arff	25	25	5	100	Approximative	13	NaiveBayes - F1	0.554144635341576
+VaryBeam	magic.arff	25	25	5	100	Approximative	14	NaiveBayes - F1	0.579266153277061
+VaryBeam	magic.arff	25	25	5	100	Approximative	15	NaiveBayes - F1	0.581806516747726
+VaryBeam	magic.arff	25	25	5	100	Approximative	16	NaiveBayes - F1	0.579784990295999
+VaryBeam	magic.arff	25	25	5	100	Approximative	17	NaiveBayes - F1	0.557979243654642
+VaryBeam	magic.arff	25	25	5	100	Approximative	18	NaiveBayes - F1	0.526288690685165
+VaryBeam	magic.arff	25	25	5	100	Approximative	19	NaiveBayes - F1	0.560582042663174
+VaryBeam	magic.arff	25	25	5	100	Approximative	20	NaiveBayes - F1	0.562521285166054
+VaryBeam	magic.arff	25	25	5	100	Approximative	21	NaiveBayes - F1	0.530096150646378
+VaryBeam	magic.arff	25	25	5	100	Approximative	22	NaiveBayes - F1	0.525417383517851
+VaryBeam	magic.arff	25	25	5	100	Approximative	23	NaiveBayes - F1	0.551961866194896
+VaryBeam	magic.arff	25	25	5	100	Approximative	24	NaiveBayes - F1	0.521754285919109
+VaryBeam	magic.arff	25	25	5	100	Approximative	25	NaiveBayes - F1	0.527695566776552
+VaryBeam	magic.arff	25	25	5	100	Approximative	1	kNN - F1	0.664414117847881
+VaryBeam	magic.arff	25	25	5	100	Approximative	2	kNN - F1	0.647111180578961
+VaryBeam	magic.arff	25	25	5	100	Approximative	3	kNN - F1	0.610745926630877
+VaryBeam	magic.arff	25	25	5	100	Approximative	4	kNN - F1	0.647056145970659
+VaryBeam	magic.arff	25	25	5	100	Approximative	5	kNN - F1	0.628373641709919
+VaryBeam	magic.arff	25	25	5	100	Approximative	6	kNN - F1	0.644295224878281
+VaryBeam	magic.arff	25	25	5	100	Approximative	7	kNN - F1	0.644039255045082
+VaryBeam	magic.arff	25	25	5	100	Approximative	8	kNN - F1	0.66504360392578
+VaryBeam	magic.arff	25	25	5	100	Approximative	9	kNN - F1	0.687888783865402
+VaryBeam	magic.arff	25	25	5	100	Approximative	10	kNN - F1	0.689940847305377
+VaryBeam	magic.arff	25	25	5	100	Approximative	11	kNN - F1	0.680842534032615
+VaryBeam	magic.arff	25	25	5	100	Approximative	12	kNN - F1	0.689432922500736
+VaryBeam	magic.arff	25	25	5	100	Approximative	13	kNN - F1	0.670069914185422
+VaryBeam	magic.arff	25	25	5	100	Approximative	14	kNN - F1	0.646325970407506
+VaryBeam	magic.arff	25	25	5	100	Approximative	15	kNN - F1	0.632847335268275
+VaryBeam	magic.arff	25	25	5	100	Approximative	16	kNN - F1	0.647735861981767
+VaryBeam	magic.arff	25	25	5	100	Approximative	17	kNN - F1	0.669936619232151
+VaryBeam	magic.arff	25	25	5	100	Approximative	18	kNN - F1	0.636894267974405
+VaryBeam	magic.arff	25	25	5	100	Approximative	19	kNN - F1	0.669886048148921
+VaryBeam	magic.arff	25	25	5	100	Approximative	20	kNN - F1	0.668845509318678
+VaryBeam	magic.arff	25	25	5	100	Approximative	21	kNN - F1	0.636391907983593
+VaryBeam	magic.arff	25	25	5	100	Approximative	22	kNN - F1	0.698572598540012
+VaryBeam	magic.arff	25	25	5	100	Approximative	23	kNN - F1	0.679803946554805
+VaryBeam	magic.arff	25	25	5	100	Approximative	24	kNN - F1	0.713645032611783
+VaryBeam	magic.arff	25	25	5	100	Approximative	25	kNN - F1	0.665694751716863
+VaryBeam	magic.arff	25	50	5	100	Approximative	1	Strength	0.710843045428513
+VaryBeam	magic.arff	25	50	5	100	Approximative	1	Columns	V4, V1, V10, V9, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	2	Strength	0.706873645996001
+VaryBeam	magic.arff	25	50	5	100	Approximative	2	Columns	V7, V4, V9, V10, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	3	Strength	0.702464832511756
+VaryBeam	magic.arff	25	50	5	100	Approximative	3	Columns	V5, V1, V10, V9, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	4	Strength	0.701271972421791
+VaryBeam	magic.arff	25	50	5	100	Approximative	4	Columns	V7, V5, V9, V10, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	5	Strength	0.686189680536685
+VaryBeam	magic.arff	25	50	5	100	Approximative	5	Columns	V9, V4, V10, V3, V6
+VaryBeam	magic.arff	25	50	5	100	Approximative	6	Strength	0.677183310813437
+VaryBeam	magic.arff	25	50	5	100	Approximative	6	Columns	V5, V4, V9, V1, V10
+VaryBeam	magic.arff	25	50	5	100	Approximative	7	Strength	0.673066659014541
+VaryBeam	magic.arff	25	50	5	100	Approximative	7	Columns	V7, V5, V9, V4, V10
+VaryBeam	magic.arff	25	50	5	100	Approximative	8	Strength	0.661742929809323
+VaryBeam	magic.arff	25	50	5	100	Approximative	8	Columns	V9, V4, V10, V3, V8
+VaryBeam	magic.arff	25	50	5	100	Approximative	9	Strength	0.655321114195758
+VaryBeam	magic.arff	25	50	5	100	Approximative	9	Columns	V7, V1, V4, V9, V10
+VaryBeam	magic.arff	25	50	5	100	Approximative	10	Strength	0.654225066841583
+VaryBeam	magic.arff	25	50	5	100	Approximative	10	Columns	V3, V2, V9, V4, V10
+VaryBeam	magic.arff	25	50	5	100	Approximative	11	Strength	0.649012988684897
+VaryBeam	magic.arff	25	50	5	100	Approximative	11	Columns	V5, V2, V3, V9, V10
+VaryBeam	magic.arff	25	50	5	100	Approximative	12	Strength	0.638060068545096
+VaryBeam	magic.arff	25	50	5	100	Approximative	12	Columns	V7, V1, V9, V10, V5
+VaryBeam	magic.arff	25	50	5	100	Approximative	13	Strength	0.635696725020717
+VaryBeam	magic.arff	25	50	5	100	Approximative	13	Columns	V4, V1, V10, V9, V8
+VaryBeam	magic.arff	25	50	5	100	Approximative	14	Strength	0.623125877046245
+VaryBeam	magic.arff	25	50	5	100	Approximative	14	Columns	V5, V1, V10, V9, V8
+VaryBeam	magic.arff	25	50	5	100	Approximative	15	Strength	0.618478187698154
+VaryBeam	magic.arff	25	50	5	100	Approximative	15	Columns	V7, V5, V9, V10, V8
+VaryBeam	magic.arff	25	50	5	100	Approximative	16	Strength	0.594724264547382
+VaryBeam	magic.arff	25	50	5	100	Approximative	16	Columns	V7, V1, V9, V10, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	17	Strength	0.591340441951694
+VaryBeam	magic.arff	25	50	5	100	Approximative	17	Columns	V7, V1, V4, V9, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	18	Strength	0.587422968554327
+VaryBeam	magic.arff	25	50	5	100	Approximative	18	Columns	V5, V4, V9, V1, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	19	Strength	0.58093395403043
+VaryBeam	magic.arff	25	50	5	100	Approximative	19	Columns	V7, V3, V9, V5, V4
+VaryBeam	magic.arff	25	50	5	100	Approximative	20	Strength	0.57998932113359
+VaryBeam	magic.arff	25	50	5	100	Approximative	20	Columns	V7, V1, V9, V3, V5
+VaryBeam	magic.arff	25	50	5	100	Approximative	21	Strength	0.567702962610563
+VaryBeam	magic.arff	25	50	5	100	Approximative	21	Columns	V2, V1, V9, V4, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	22	Strength	0.565416961224999
+VaryBeam	magic.arff	25	50	5	100	Approximative	22	Columns	V4, V2, V9, V7, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	23	Strength	0.558501623025533
+VaryBeam	magic.arff	25	50	5	100	Approximative	23	Columns	V2, V1, V9, V5, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	24	Strength	0.557499774778153
+VaryBeam	magic.arff	25	50	5	100	Approximative	24	Columns	V5, V2, V7, V9, V3
+VaryBeam	magic.arff	25	50	5	100	Approximative	25	Strength	0.554116014628157
+VaryBeam	magic.arff	25	50	5	100	Approximative	25	Columns	V4, V1, V10, V9
+VaryBeam	magic.arff	25	50	5	100	Approximative	1	NaiveBayes - F1	0.597254833653812
+VaryBeam	magic.arff	25	50	5	100	Approximative	2	NaiveBayes - F1	0.61334686494288
+VaryBeam	magic.arff	25	50	5	100	Approximative	3	NaiveBayes - F1	0.597693859305181
+VaryBeam	magic.arff	25	50	5	100	Approximative	4	NaiveBayes - F1	0.613151241813031
+VaryBeam	magic.arff	25	50	5	100	Approximative	5	NaiveBayes - F1	0.589426873979062
+VaryBeam	magic.arff	25	50	5	100	Approximative	6	NaiveBayes - F1	0.604923877936983
+VaryBeam	magic.arff	25	50	5	100	Approximative	7	NaiveBayes - F1	0.613530377953362
+VaryBeam	magic.arff	25	50	5	100	Approximative	8	NaiveBayes - F1	0.580478800492486
+VaryBeam	magic.arff	25	50	5	100	Approximative	9	NaiveBayes - F1	0.579817037670958
+VaryBeam	magic.arff	25	50	5	100	Approximative	10	NaiveBayes - F1	0.560103994487664
+VaryBeam	magic.arff	25	50	5	100	Approximative	11	NaiveBayes - F1	0.560979026765218
+VaryBeam	magic.arff	25	50	5	100	Approximative	12	NaiveBayes - F1	0.58226776193495
+VaryBeam	magic.arff	25	50	5	100	Approximative	13	NaiveBayes - F1	0.580768167158439
+VaryBeam	magic.arff	25	50	5	100	Approximative	14	NaiveBayes - F1	0.582954839890118
+VaryBeam	magic.arff	25	50	5	100	Approximative	15	NaiveBayes - F1	0.599233775024795
+VaryBeam	magic.arff	25	50	5	100	Approximative	16	NaiveBayes - F1	0.570292027236637
+VaryBeam	magic.arff	25	50	5	100	Approximative	17	NaiveBayes - F1	0.573597874138946
+VaryBeam	magic.arff	25	50	5	100	Approximative	18	NaiveBayes - F1	0.599107336384281
+VaryBeam	magic.arff	25	50	5	100	Approximative	19	NaiveBayes - F1	0.609746076580855
+VaryBeam	magic.arff	25	50	5	100	Approximative	20	NaiveBayes - F1	0.574079624749852
+VaryBeam	magic.arff	25	50	5	100	Approximative	21	NaiveBayes - F1	0.547595247675843
+VaryBeam	magic.arff	25	50	5	100	Approximative	22	NaiveBayes - F1	0.566289077509474
+VaryBeam	magic.arff	25	50	5	100	Approximative	23	NaiveBayes - F1	0.548841884417628
+VaryBeam	magic.arff	25	50	5	100	Approximative	24	NaiveBayes - F1	0.567093683889372
+VaryBeam	magic.arff	25	50	5	100	Approximative	25	NaiveBayes - F1	0.605156739441762
+VaryBeam	magic.arff	25	50	5	100	Approximative	1	kNN - F1	0.697807423325791
+VaryBeam	magic.arff	25	50	5	100	Approximative	2	kNN - F1	0.664303073269718
+VaryBeam	magic.arff	25	50	5	100	Approximative	3	kNN - F1	0.697750965487917
+VaryBeam	magic.arff	25	50	5	100	Approximative	4	kNN - F1	0.664414117847881
+VaryBeam	magic.arff	25	50	5	100	Approximative	5	kNN - F1	0.647111180578961
+VaryBeam	magic.arff	25	50	5	100	Approximative	6	kNN - F1	0.697921182056349
+VaryBeam	magic.arff	25	50	5	100	Approximative	7	kNN - F1	0.66424601592023
+VaryBeam	magic.arff	25	50	5	100	Approximative	8	kNN - F1	0.628373641709919
+VaryBeam	magic.arff	25	50	5	100	Approximative	9	kNN - F1	0.696743473147129
+VaryBeam	magic.arff	25	50	5	100	Approximative	10	kNN - F1	0.644295224878281
+VaryBeam	magic.arff	25	50	5	100	Approximative	11	kNN - F1	0.644039255045082
+VaryBeam	magic.arff	25	50	5	100	Approximative	12	kNN - F1	0.696579325414882
+VaryBeam	magic.arff	25	50	5	100	Approximative	13	kNN - F1	0.69526685314571
+VaryBeam	magic.arff	25	50	5	100	Approximative	14	kNN - F1	0.695321599580332
+VaryBeam	magic.arff	25	50	5	100	Approximative	15	kNN - F1	0.669617892556305
+VaryBeam	magic.arff	25	50	5	100	Approximative	16	kNN - F1	0.696634114516839
+VaryBeam	magic.arff	25	50	5	100	Approximative	17	kNN - F1	0.707707059620345
+VaryBeam	magic.arff	25	50	5	100	Approximative	18	kNN - F1	0.693097029334333
+VaryBeam	magic.arff	25	50	5	100	Approximative	19	kNN - F1	0.66504360392578
+VaryBeam	magic.arff	25	50	5	100	Approximative	20	kNN - F1	0.707549866738209
+VaryBeam	magic.arff	25	50	5	100	Approximative	21	kNN - F1	0.719900783006001
+VaryBeam	magic.arff	25	50	5	100	Approximative	22	kNN - F1	0.694086624103105
+VaryBeam	magic.arff	25	50	5	100	Approximative	23	kNN - F1	0.720112079224434
+VaryBeam	magic.arff	25	50	5	100	Approximative	24	kNN - F1	0.694241238299418
+VaryBeam	magic.arff	25	50	5	100	Approximative	25	kNN - F1	0.697864717483215
+VaryBeam	magic.arff	25	100	5	100	Approximative	1	Strength	0.710843045428517
+VaryBeam	magic.arff	25	100	5	100	Approximative	1	Columns	V4, V1, V10, V3, V9
+VaryBeam	magic.arff	25	100	5	100	Approximative	2	Strength	0.706873645995948
+VaryBeam	magic.arff	25	100	5	100	Approximative	2	Columns	V10, V3, V7, V9, V4
+VaryBeam	magic.arff	25	100	5	100	Approximative	3	Strength	0.702464832511758
+VaryBeam	magic.arff	25	100	5	100	Approximative	3	Columns	V5, V1, V10, V3, V9
+VaryBeam	magic.arff	25	100	5	100	Approximative	4	Strength	0.701271972421756
+VaryBeam	magic.arff	25	100	5	100	Approximative	4	Columns	V10, V3, V7, V9, V5
+VaryBeam	magic.arff	25	100	5	100	Approximative	5	Strength	0.677183310813433
+VaryBeam	magic.arff	25	100	5	100	Approximative	5	Columns	V4, V1, V5, V9, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	6	Strength	0.673066659014436
+VaryBeam	magic.arff	25	100	5	100	Approximative	6	Columns	V5, V4, V7, V9, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	7	Strength	0.655321114195758
+VaryBeam	magic.arff	25	100	5	100	Approximative	7	Columns	V7, V1, V4, V9, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	8	Strength	0.654225066841493
+VaryBeam	magic.arff	25	100	5	100	Approximative	8	Columns	V4, V2, V10, V9, V3
+VaryBeam	magic.arff	25	100	5	100	Approximative	9	Strength	0.649012988684897
+VaryBeam	magic.arff	25	100	5	100	Approximative	9	Columns	V5, V2, V10, V9, V3
+VaryBeam	magic.arff	25	100	5	100	Approximative	10	Strength	0.642790953800871
+VaryBeam	magic.arff	25	100	5	100	Approximative	10	Columns	V6, V1, V4, V9, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	11	Strength	0.639762608706304
+VaryBeam	magic.arff	25	100	5	100	Approximative	11	Columns	V6, V4, V9, V7, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	12	Strength	0.638060068545094
+VaryBeam	magic.arff	25	100	5	100	Approximative	12	Columns	V7, V1, V5, V9, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	13	Strength	0.621787186143475
+VaryBeam	magic.arff	25	100	5	100	Approximative	13	Columns	V6, V1, V5, V9, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	14	Strength	0.620815028403369
+VaryBeam	magic.arff	25	100	5	100	Approximative	14	Columns	V4, V2, V10, V9, V7
+VaryBeam	magic.arff	25	100	5	100	Approximative	15	Strength	0.61645685613817
+VaryBeam	magic.arff	25	100	5	100	Approximative	15	Columns	V2, V1, V10, V9, V4
+VaryBeam	magic.arff	25	100	5	100	Approximative	16	Strength	0.616354206301683
+VaryBeam	magic.arff	25	100	5	100	Approximative	16	Columns	V6, V5, V9, V7, V10
+VaryBeam	magic.arff	25	100	5	100	Approximative	17	Strength	0.603360135096784
+VaryBeam	magic.arff	25	100	5	100	Approximative	17	Columns	V5, V2, V10, V9, V7
+VaryBeam	magic.arff	25	100	5	100	Approximative	18	Strength	0.601827763605073
+VaryBeam	magic.arff	25	100	5	100	Approximative	18	Columns	V2, V1, V10, V9, V5
+VaryBeam	magic.arff	25	100	5	100	Approximative	19	Strength	0.594724264547379
+VaryBeam	magic.arff	25	100	5	100	Approximative	19	Columns	V7, V1, V10, V9, V3
+VaryBeam	magic.arff	25	100	5	100	Approximative	20	Strength	0.591340441951694
+VaryBeam	magic.arff	25	100	5	100	Approximative	20	Columns	V7, V1, V4, V3, V9
+VaryBeam	magic.arff	25	100	5	100	Approximative	21	Strength	0.587422968554376
+VaryBeam	magic.arff	25	100	5	100	Approximative	21	Columns	V3, V1, V4, V5, V9
+VaryBeam	magic.arff	25	100	5	100	Approximative	22	Strength	0.585624609889022
+VaryBeam	magic.arff	25	100	5	100	Approximative	22	Columns	V7, V2, V10, V9, V3
+VaryBeam	magic.arff	25	100	5	100	Approximative	23	Strength	0.583568733898025
+VaryBeam	magic.arff	25	100	5	100	Approximative	23	Columns	V2, V1, V10, V9, V3
+VaryBeam	magic.arff	25	100	5	100	Approximative	24	Strength	0.580933954030426
+VaryBeam	magic.arff	25	100	5	100	Approximative	24	Columns	V7, V3, V5, V9, V4
+VaryBeam	magic.arff	25	100	5	100	Approximative	25	Strength	0.579989321133585
+VaryBeam	magic.arff	25	100	5	100	Approximative	25	Columns	V7, V1, V5, V3, V9
+VaryBeam	magic.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.597254833653812
+VaryBeam	magic.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.61334686494288
+VaryBeam	magic.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.597693859305181
+VaryBeam	magic.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.613151241813031
+VaryBeam	magic.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.604923877936983
+VaryBeam	magic.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.613530377953362
+VaryBeam	magic.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.579817037670958
+VaryBeam	magic.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.560103994487664
+VaryBeam	magic.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.560979026765218
+VaryBeam	magic.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.570087863506671
+VaryBeam	magic.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.591304314700964
+VaryBeam	magic.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.58226776193495
+VaryBeam	magic.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.571523284964129
+VaryBeam	magic.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.567013753114321
+VaryBeam	magic.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.549602706729334
+VaryBeam	magic.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.594144730490714
+VaryBeam	magic.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.569689900454739
+VaryBeam	magic.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.550154060053567
+VaryBeam	magic.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.570292027236637
+VaryBeam	magic.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.573597874138946
+VaryBeam	magic.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.599107336384281
+VaryBeam	magic.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.559728559473819
+VaryBeam	magic.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.541972825478898
+VaryBeam	magic.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.609746076580855
+VaryBeam	magic.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.574079624749852
+VaryBeam	magic.arff	25	100	5	100	Approximative	1	kNN - F1	0.697807423325791
+VaryBeam	magic.arff	25	100	5	100	Approximative	2	kNN - F1	0.664303073269718
+VaryBeam	magic.arff	25	100	5	100	Approximative	3	kNN - F1	0.697750965487917
+VaryBeam	magic.arff	25	100	5	100	Approximative	4	kNN - F1	0.664414117847881
+VaryBeam	magic.arff	25	100	5	100	Approximative	5	kNN - F1	0.697921182056349
+VaryBeam	magic.arff	25	100	5	100	Approximative	6	kNN - F1	0.66424601592023
+VaryBeam	magic.arff	25	100	5	100	Approximative	7	kNN - F1	0.696743473147129
+VaryBeam	magic.arff	25	100	5	100	Approximative	8	kNN - F1	0.644295224878281
+VaryBeam	magic.arff	25	100	5	100	Approximative	9	kNN - F1	0.644039255045082
+VaryBeam	magic.arff	25	100	5	100	Approximative	10	kNN - F1	0.687885997563469
+VaryBeam	magic.arff	25	100	5	100	Approximative	11	kNN - F1	0.670511760281226
+VaryBeam	magic.arff	25	100	5	100	Approximative	12	kNN - F1	0.696579325414882
+VaryBeam	magic.arff	25	100	5	100	Approximative	13	kNN - F1	0.687831498275676
+VaryBeam	magic.arff	25	100	5	100	Approximative	14	kNN - F1	0.681040154365678
+VaryBeam	magic.arff	25	100	5	100	Approximative	15	kNN - F1	0.708816760683639
+VaryBeam	magic.arff	25	100	5	100	Approximative	16	kNN - F1	0.670401630328655
+VaryBeam	magic.arff	25	100	5	100	Approximative	17	kNN - F1	0.680930121140802
+VaryBeam	magic.arff	25	100	5	100	Approximative	18	kNN - F1	0.708816760683639
+VaryBeam	magic.arff	25	100	5	100	Approximative	19	kNN - F1	0.696634114516839
+VaryBeam	magic.arff	25	100	5	100	Approximative	20	kNN - F1	0.707707059620345
+VaryBeam	magic.arff	25	100	5	100	Approximative	21	kNN - F1	0.693097029334333
+VaryBeam	magic.arff	25	100	5	100	Approximative	22	kNN - F1	0.681217175983689
+VaryBeam	magic.arff	25	100	5	100	Approximative	23	kNN - F1	0.708929340925752
+VaryBeam	magic.arff	25	100	5	100	Approximative	24	kNN - F1	0.66504360392578
+VaryBeam	magic.arff	25	100	5	100	Approximative	25	kNN - F1	0.707549866738209
+VaryBeam	magic.arff	25	250	5	100	Approximative	1	Strength	0.710843045428517
+VaryBeam	magic.arff	25	250	5	100	Approximative	1	Columns	V4, V1, V10, V3, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	2	Strength	0.706873645995945
+VaryBeam	magic.arff	25	250	5	100	Approximative	2	Columns	V10, V3, V7, V4, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	3	Strength	0.702464832511758
+VaryBeam	magic.arff	25	250	5	100	Approximative	3	Columns	V5, V1, V10, V3, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	4	Strength	0.701271972421756
+VaryBeam	magic.arff	25	250	5	100	Approximative	4	Columns	V10, V3, V7, V9, V5
+VaryBeam	magic.arff	25	250	5	100	Approximative	5	Strength	0.686189680536724
+VaryBeam	magic.arff	25	250	5	100	Approximative	5	Columns	V6, V3, V10, V4, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	6	Strength	0.680884035398496
+VaryBeam	magic.arff	25	250	5	100	Approximative	6	Columns	V10, V3, V5, V9, V4
+VaryBeam	magic.arff	25	250	5	100	Approximative	7	Strength	0.677183310813435
+VaryBeam	magic.arff	25	250	5	100	Approximative	7	Columns	V4, V1, V5, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	8	Strength	0.676620908438139
+VaryBeam	magic.arff	25	250	5	100	Approximative	8	Columns	V6, V3, V5, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	9	Strength	0.673066659014433
+VaryBeam	magic.arff	25	250	5	100	Approximative	9	Columns	V5, V4, V7, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	10	Strength	0.661742929809307
+VaryBeam	magic.arff	25	250	5	100	Approximative	10	Columns	V8, V3, V4, V9, V10
+VaryBeam	magic.arff	25	250	5	100	Approximative	11	Strength	0.655321114195763
+VaryBeam	magic.arff	25	250	5	100	Approximative	11	Columns	V7, V1, V4, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	12	Strength	0.654225066841493
+VaryBeam	magic.arff	25	250	5	100	Approximative	12	Columns	V4, V2, V10, V3, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	13	Strength	0.651462989689827
+VaryBeam	magic.arff	25	250	5	100	Approximative	13	Columns	V8, V3, V5, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	14	Strength	0.649012988684897
+VaryBeam	magic.arff	25	250	5	100	Approximative	14	Columns	V5, V2, V10, V3, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	15	Strength	0.642790953800866
+VaryBeam	magic.arff	25	250	5	100	Approximative	15	Columns	V6, V1, V4, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	16	Strength	0.639762608706301
+VaryBeam	magic.arff	25	250	5	100	Approximative	16	Columns	V6, V4, V10, V9, V7
+VaryBeam	magic.arff	25	250	5	100	Approximative	17	Strength	0.638060068545094
+VaryBeam	magic.arff	25	250	5	100	Approximative	17	Columns	V7, V1, V5, V9, V10
+VaryBeam	magic.arff	25	250	5	100	Approximative	18	Strength	0.636887902967716
+VaryBeam	magic.arff	25	250	5	100	Approximative	18	Columns	V5, V4, V6, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	19	Strength	0.636268581913573
+VaryBeam	magic.arff	25	250	5	100	Approximative	19	Columns	V8, V4, V10, V7, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	20	Strength	0.63569672502077
+VaryBeam	magic.arff	25	250	5	100	Approximative	20	Columns	V8, V1, V4, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	21	Strength	0.623125877046322
+VaryBeam	magic.arff	25	250	5	100	Approximative	21	Columns	V8, V1, V5, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	22	Strength	0.621787186143482
+VaryBeam	magic.arff	25	250	5	100	Approximative	22	Columns	V6, V1, V5, V10, V9
+VaryBeam	magic.arff	25	250	5	100	Approximative	23	Strength	0.620815028403369
+VaryBeam	magic.arff	25	250	5	100	Approximative	23	Columns	V4, V2, V10, V9, V7
+VaryBeam	magic.arff	25	250	5	100	Approximative	24	Strength	0.618478187698029
+VaryBeam	magic.arff	25	250	5	100	Approximative	24	Columns	V8, V5, V10, V9, V7
+VaryBeam	magic.arff	25	250	5	100	Approximative	25	Strength	0.61645685613817
+VaryBeam	magic.arff	25	250	5	100	Approximative	25	Columns	V2, V1, V10, V9, V4
+VaryBeam	magic.arff	25	250	5	100	Approximative	1	NaiveBayes - F1	0.597254833653812
+VaryBeam	magic.arff	25	250	5	100	Approximative	2	NaiveBayes - F1	0.61334686494288
+VaryBeam	magic.arff	25	250	5	100	Approximative	3	NaiveBayes - F1	0.597693859305181
+VaryBeam	magic.arff	25	250	5	100	Approximative	4	NaiveBayes - F1	0.613151241813031
+VaryBeam	magic.arff	25	250	5	100	Approximative	5	NaiveBayes - F1	0.589426873979062
+VaryBeam	magic.arff	25	250	5	100	Approximative	6	NaiveBayes - F1	0.574486684798498
+VaryBeam	magic.arff	25	250	5	100	Approximative	7	NaiveBayes - F1	0.604923877936983
+VaryBeam	magic.arff	25	250	5	100	Approximative	8	NaiveBayes - F1	0.590860224410499
+VaryBeam	magic.arff	25	250	5	100	Approximative	9	NaiveBayes - F1	0.613530377953362
+VaryBeam	magic.arff	25	250	5	100	Approximative	10	NaiveBayes - F1	0.580478800492486
+VaryBeam	magic.arff	25	250	5	100	Approximative	11	NaiveBayes - F1	0.579817037670958
+VaryBeam	magic.arff	25	250	5	100	Approximative	12	NaiveBayes - F1	0.560103994487664
+VaryBeam	magic.arff	25	250	5	100	Approximative	13	NaiveBayes - F1	0.580708949168379
+VaryBeam	magic.arff	25	250	5	100	Approximative	14	NaiveBayes - F1	0.560979026765218
+VaryBeam	magic.arff	25	250	5	100	Approximative	15	NaiveBayes - F1	0.570087863506671
+VaryBeam	magic.arff	25	250	5	100	Approximative	16	NaiveBayes - F1	0.591304314700964
+VaryBeam	magic.arff	25	250	5	100	Approximative	17	NaiveBayes - F1	0.58226776193495
+VaryBeam	magic.arff	25	250	5	100	Approximative	18	NaiveBayes - F1	0.588855192199219
+VaryBeam	magic.arff	25	250	5	100	Approximative	19	NaiveBayes - F1	0.597889404786832
+VaryBeam	magic.arff	25	250	5	100	Approximative	20	NaiveBayes - F1	0.580768167158439
+VaryBeam	magic.arff	25	250	5	100	Approximative	21	NaiveBayes - F1	0.582954839890118
+VaryBeam	magic.arff	25	250	5	100	Approximative	22	NaiveBayes - F1	0.571523284964129
+VaryBeam	magic.arff	25	250	5	100	Approximative	23	NaiveBayes - F1	0.567013753114321
+VaryBeam	magic.arff	25	250	5	100	Approximative	24	NaiveBayes - F1	0.599233775024795
+VaryBeam	magic.arff	25	250	5	100	Approximative	25	NaiveBayes - F1	0.549602706729334
+VaryBeam	magic.arff	25	250	5	100	Approximative	1	kNN - F1	0.697807423325791
+VaryBeam	magic.arff	25	250	5	100	Approximative	2	kNN - F1	0.664303073269718
+VaryBeam	magic.arff	25	250	5	100	Approximative	3	kNN - F1	0.697750965487917
+VaryBeam	magic.arff	25	250	5	100	Approximative	4	kNN - F1	0.664414117847881
+VaryBeam	magic.arff	25	250	5	100	Approximative	5	kNN - F1	0.647111180578961
+VaryBeam	magic.arff	25	250	5	100	Approximative	6	kNN - F1	0.610745926630877
+VaryBeam	magic.arff	25	250	5	100	Approximative	7	kNN - F1	0.697921182056349
+VaryBeam	magic.arff	25	250	5	100	Approximative	8	kNN - F1	0.647056145970659
+VaryBeam	magic.arff	25	250	5	100	Approximative	9	kNN - F1	0.66424601592023
+VaryBeam	magic.arff	25	250	5	100	Approximative	10	kNN - F1	0.628373641709919
+VaryBeam	magic.arff	25	250	5	100	Approximative	11	kNN - F1	0.696743473147129
+VaryBeam	magic.arff	25	250	5	100	Approximative	12	kNN - F1	0.644295224878281
+VaryBeam	magic.arff	25	250	5	100	Approximative	13	kNN - F1	0.628089563744076
+VaryBeam	magic.arff	25	250	5	100	Approximative	14	kNN - F1	0.644039255045082
+VaryBeam	magic.arff	25	250	5	100	Approximative	15	kNN - F1	0.687885997563469
+VaryBeam	magic.arff	25	250	5	100	Approximative	16	kNN - F1	0.670511760281226
+VaryBeam	magic.arff	25	250	5	100	Approximative	17	kNN - F1	0.696579325414882
+VaryBeam	magic.arff	25	250	5	100	Approximative	18	kNN - F1	0.646115624943152
+VaryBeam	magic.arff	25	250	5	100	Approximative	19	kNN - F1	0.669617892556305
+VaryBeam	magic.arff	25	250	5	100	Approximative	20	kNN - F1	0.69526685314571
+VaryBeam	magic.arff	25	250	5	100	Approximative	21	kNN - F1	0.695321599580332
+VaryBeam	magic.arff	25	250	5	100	Approximative	22	kNN - F1	0.687831498275676
+VaryBeam	magic.arff	25	250	5	100	Approximative	23	kNN - F1	0.681040154365678
+VaryBeam	magic.arff	25	250	5	100	Approximative	24	kNN - F1	0.669617892556305
+VaryBeam	magic.arff	25	250	5	100	Approximative	25	kNN - F1	0.708816760683639
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	1	Strength	3.25977512365886
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	1	Columns	dim7, dim4, dim10, dim5, dim8
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	2	Strength	3.24877702003915
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	2	Columns	dim13, dim4, dim9, dim5, dim10
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	3	Strength	3.23430093588897
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	3	Columns	dim7, dim4, dim10, dim5, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	4	Strength	3.22879056985903
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	4	Columns	dim9, dim5, dim13, dim10, dim8
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	5	Strength	3.22053215274651
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	5	Columns	dim9, dim4, dim5, dim10, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	6	Strength	3.21181916326864
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	6	Columns	dim10, dim5, dim7, dim15, dim4
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	7	Strength	3.20751278398112
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	7	Columns	dim10, dim5, dim7, dim8, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	8	Strength	3.20411459203669
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	8	Columns	dim7, dim4, dim10, dim5, dim14
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	9	Strength	3.19998854285572
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	9	Columns	dim7, dim4, dim9, dim5, dim10
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	10	Strength	3.19571876254699
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	10	Columns	dim9, dim5, dim13, dim14, dim8
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	11	Strength	3.18506770309721
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	11	Columns	dim10, dim5, dim7, dim14, dim8
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	12	Strength	3.17937896946245
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	12	Columns	dim7, dim4, dim9, dim5, dim8
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	13	Strength	3.1785833937724
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	13	Columns	dim10, dim5, dim7, dim8, dim15
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	14	Strength	3.17316767387026
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	14	Columns	dim9, dim5, dim10, dim7, dim8
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	15	Strength	3.16496799608659
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	15	Columns	dim7, dim4, dim9, dim5, dim14
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	16	Strength	3.16180771794183
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	16	Columns	dim9, dim4, dim5, dim15, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	17	Strength	3.15074780975326
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	17	Columns	dim9, dim5, dim13, dim10, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	18	Strength	3.14842609112628
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	18	Columns	dim9, dim5, dim10, dim11, dim15
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	19	Strength	3.14141558622815
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	19	Columns	dim10, dim5, dim13, dim8, dim14
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	20	Strength	3.13970238249278
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	20	Columns	dim9, dim5, dim13, dim10, dim14
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	21	Strength	3.13939973585681
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	21	Columns	dim10, dim5, dim7, dim15, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	22	Strength	3.12522753732573
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	22	Columns	dim10, dim5, dim7, dim15, dim14
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	23	Strength	3.10127906057232
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	23	Columns	dim10, dim5, dim7, dim14, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	24	Strength	3.08118751814013
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	24	Columns	dim9, dim5, dim10, dim7, dim14
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	25	Strength	3.06669015551933
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	25	Columns	dim9, dim5, dim10, dim7, dim11
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	1	NaiveBayes - F1	0.702614781657299
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	2	NaiveBayes - F1	0.756837027333503
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	3	NaiveBayes - F1	0.69824506223528
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	4	NaiveBayes - F1	0.717798172144042
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	5	NaiveBayes - F1	0.693390177214745
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	6	NaiveBayes - F1	0.706967418739958
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	7	NaiveBayes - F1	0.633750743848328
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	8	NaiveBayes - F1	0.708774668917863
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	9	NaiveBayes - F1	0.690990111201138
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	10	NaiveBayes - F1	0.740525048333582
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	11	NaiveBayes - F1	0.682200703820603
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	12	NaiveBayes - F1	0.660330605985265
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	13	NaiveBayes - F1	0.681606929901184
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	14	NaiveBayes - F1	0.64526395368668
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	15	NaiveBayes - F1	0.685135801658119
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	16	NaiveBayes - F1	0.660532820841234
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	17	NaiveBayes - F1	0.69806635476951
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	18	NaiveBayes - F1	0.646846835669343
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	19	NaiveBayes - F1	0.718174199745764
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	20	NaiveBayes - F1	0.728892554926756
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	21	NaiveBayes - F1	0.705638162669628
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	22	NaiveBayes - F1	0.73021909863532
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	23	NaiveBayes - F1	0.665726031676381
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	24	NaiveBayes - F1	0.648678030919636
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	25	NaiveBayes - F1	0.63667392312473
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	1	kNN - F1	0.895305287164168
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	2	kNN - F1	0.9245337155909
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	3	kNN - F1	0.892642529339594
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	4	kNN - F1	0.909538260293594
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	5	kNN - F1	0.888229663782508
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	6	kNN - F1	0.907476342713301
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	7	kNN - F1	0.876794733369009
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	8	kNN - F1	0.882731763863115
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	9	kNN - F1	0.885731392968906
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	10	kNN - F1	0.896034849952642
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	11	kNN - F1	0.874380142904849
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	12	kNN - F1	0.849971728758965
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	13	kNN - F1	0.888415374533234
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	14	kNN - F1	0.873451223516322
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	15	kNN - F1	0.882237143778796
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	16	kNN - F1	0.885718136117428
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	17	kNN - F1	0.88908273183073
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	18	kNN - F1	0.890359858506026
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	19	kNN - F1	0.870914361324466
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	20	kNN - F1	0.886888898957841
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	21	kNN - F1	0.880964993505338
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	22	kNN - F1	0.875843331686525
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	23	kNN - F1	0.848313479331922
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	24	kNN - F1	0.856240305411722
+VaryBeam	pendigits.arff	25	25	5	100	Approximative	25	kNN - F1	0.845559177178917
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	1	Strength	3.28956685334648
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	1	Columns	dim7, dim4, dim10, dim8, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	2	Strength	3.28482819618461
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	2	Columns	dim7, dim0, dim4, dim10, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	3	Strength	3.27594571171434
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	3	Columns	dim7, dim4, dim14, dim11, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	4	Strength	3.27375458631012
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	4	Columns	dim7, dim4, dim11, dim10, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	5	Strength	3.27189808989137
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	5	Columns	dim7, dim4, dim14, dim10, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	6	Strength	3.26365410311789
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	6	Columns	dim11, dim4, dim9, dim8, dim14
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	7	Strength	3.26238856834315
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	7	Columns	dim9, dim4, dim6, dim15, dim10
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	8	Strength	3.2589936855907
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	8	Columns	dim9, dim4, dim6, dim5, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	9	Strength	3.25565445280283
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	9	Columns	dim7, dim4, dim9, dim10, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	10	Strength	3.25507733627884
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	10	Columns	dim7, dim4, dim11, dim10, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	11	Strength	3.25163065961359
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	11	Columns	dim9, dim4, dim5, dim8, dim10
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	12	Strength	3.25076767928347
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	12	Columns	dim9, dim4, dim6, dim5, dim10
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	13	Strength	3.24976048870456
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	13	Columns	dim7, dim4, dim14, dim9, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	14	Strength	3.24901965816501
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	14	Columns	dim9, dim4, dim5, dim8, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	15	Strength	3.24877702003917
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	15	Columns	dim9, dim4, dim5, dim10, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	16	Strength	3.24363920272548
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	16	Columns	dim7, dim4, dim14, dim11, dim10
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	17	Strength	3.2433243878211
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	17	Columns	dim11, dim4, dim9, dim8, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	18	Strength	3.24282463990004
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	18	Columns	dim7, dim4, dim14, dim10, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	19	Strength	3.23976396161269
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	19	Columns	dim9, dim4, dim14, dim5, dim8
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	20	Strength	3.23664588243923
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	20	Columns	dim9, dim3, dim4, dim15, dim10
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	21	Strength	3.2361902693114
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	21	Columns	dim9, dim4, dim6, dim5, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	22	Strength	3.23145140661147
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	22	Columns	dim11, dim4, dim9, dim15, dim10
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	23	Strength	3.23004650235949
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	23	Columns	dim9, dim4, dim14, dim5, dim6
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	24	Strength	3.22537266637738
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	24	Columns	dim8, dim7, dim10, dim11, dim13
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	25	Strength	3.22286363122988
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	25	Columns	dim9, dim4, dim14, dim15, dim10
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	1	NaiveBayes - F1	0.772989131081014
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	2	NaiveBayes - F1	0.744942153380072
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	3	NaiveBayes - F1	0.705913710458381
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	4	NaiveBayes - F1	0.695232274361851
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	5	NaiveBayes - F1	0.707256712711847
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	6	NaiveBayes - F1	0.690809936094894
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	7	NaiveBayes - F1	0.742007121363906
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	8	NaiveBayes - F1	0.706318252315754
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	9	NaiveBayes - F1	0.698743774847825
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	10	NaiveBayes - F1	0.770386380170532
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	11	NaiveBayes - F1	0.698482985357626
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	12	NaiveBayes - F1	0.709821796237819
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	13	NaiveBayes - F1	0.701213364794735
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	14	NaiveBayes - F1	0.722349538052164
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	15	NaiveBayes - F1	0.756837027333503
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	16	NaiveBayes - F1	0.712130792503467
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	17	NaiveBayes - F1	0.695467875739199
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	18	NaiveBayes - F1	0.794114632015616
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	19	NaiveBayes - F1	0.710329873536378
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	20	NaiveBayes - F1	0.732710615072653
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	21	NaiveBayes - F1	0.715555651266917
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	22	NaiveBayes - F1	0.739151931164548
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	23	NaiveBayes - F1	0.706891167237205
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	24	NaiveBayes - F1	0.697878636886088
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	25	NaiveBayes - F1	0.771792094264385
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	1	kNN - F1	0.929524168973965
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	2	kNN - F1	0.911034834100654
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	3	kNN - F1	0.919256489349877
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	4	kNN - F1	0.917802585597505
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	5	kNN - F1	0.914537809436572
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	6	kNN - F1	0.913617580919279
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	7	kNN - F1	0.92261067206532
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	8	kNN - F1	0.895290874395856
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	9	kNN - F1	0.906277464691551
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	10	kNN - F1	0.92168852762988
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	11	kNN - F1	0.901144727060861
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	12	kNN - F1	0.911260497606996
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	13	kNN - F1	0.90606090130495
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	14	kNN - F1	0.89561203051755
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	15	kNN - F1	0.923312249428592
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	16	kNN - F1	0.904443151210968
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	17	kNN - F1	0.90270902377937
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	18	kNN - F1	0.91807114421821
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	19	kNN - F1	0.901175335828884
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	20	kNN - F1	0.923616630256611
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	21	kNN - F1	0.901244880335727
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	22	kNN - F1	0.908582262300259
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	23	kNN - F1	0.905826097293235
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	24	kNN - F1	0.912174109548083
+VaryBeam	pendigits.arff	25	50	5	100	Approximative	25	kNN - F1	0.913769757496669
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	1	Strength	3.28702523187862
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	1	Columns	dim13, dim4, dim9, dim8, dim10
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	2	Strength	3.28103285659223
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	2	Columns	dim13, dim4, dim9, dim8, dim14
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	3	Strength	3.27594571171432
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	3	Columns	dim14, dim4, dim7, dim11, dim8
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	4	Strength	3.27375458631012
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	4	Columns	dim7, dim4, dim11, dim10, dim8
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	5	Strength	3.26604182090093
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	5	Columns	dim7, dim4, dim11, dim6, dim10
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	6	Strength	3.26519688654269
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	6	Columns	dim13, dim0, dim14, dim9, dim8
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	7	Strength	3.25565445280282
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	7	Columns	dim9, dim7, dim8, dim4, dim10
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	8	Strength	3.24976048870456
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	8	Columns	dim14, dim4, dim7, dim9, dim8
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	9	Strength	3.24363920272548
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	9	Columns	dim14, dim4, dim7, dim11, dim10
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	10	Strength	3.2433243878211
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	10	Columns	dim13, dim4, dim9, dim11, dim8
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	11	Strength	3.23585293620323
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	11	Columns	dim10, dim4, dim13, dim9, dim11
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	12	Strength	3.23581286167245
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	12	Columns	dim7, dim4, dim11, dim9, dim12
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	13	Strength	3.23430093588897
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	13	Columns	dim7, dim4, dim11, dim10, dim5
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	14	Strength	3.23411045238994
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	14	Columns	dim7, dim4, dim11, dim8, dim15
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	15	Strength	3.23370804804458
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	15	Columns	dim7, dim0, dim11, dim8, dim13
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	16	Strength	3.23320580879133
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	16	Columns	dim9, dim7, dim10, dim4, dim11
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	17	Strength	3.23280363616624
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	17	Columns	dim11, dim4, dim9, dim8, dim15
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	18	Strength	3.22746208538676
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	18	Columns	dim10, dim4, dim13, dim14, dim9
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	19	Strength	3.22643495116213
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	19	Columns	dim14, dim4, dim7, dim10, dim9
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	20	Strength	3.22465354139436
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	20	Columns	dim9, dim7, dim13, dim14, dim8
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	21	Strength	3.2244935150231
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	21	Columns	dim7, dim4, dim11, dim8, dim5
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	22	Strength	3.22431382924808
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	22	Columns	dim11, dim4, dim9, dim8, dim5
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	23	Strength	3.22327291739771
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	23	Columns	dim7, dim0, dim11, dim10, dim15
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	24	Strength	3.22305898627086
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	24	Columns	dim7, dim6, dim8, dim11, dim15
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	25	Strength	3.22244302835533
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	25	Columns	dim14, dim9, dim11, dim4, dim10
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.757380738892499
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.785253117459895
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.705913710458381
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.695232274361851
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.712895848838777
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.791962953853231
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.698743774847825
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.701213364794735
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.712130792503467
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.695467875739199
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.736554416035924
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.645206272131651
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.69824506223528
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.748671559156891
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.761449405609212
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.681185456376167
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.711351577025639
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.801038938038751
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.696588545140447
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.734383082823603
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.654220355926224
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.642167544259921
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.761360908079361
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.708212278896002
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.695285054625147
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	1	kNN - F1	0.932721319669286
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	2	kNN - F1	0.934070489500595
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	3	kNN - F1	0.92022292911591
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	4	kNN - F1	0.91766681925769
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	5	kNN - F1	0.909165797293519
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	6	kNN - F1	0.915754055577673
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	7	kNN - F1	0.906474486876706
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	8	kNN - F1	0.905329415733649
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	9	kNN - F1	0.904592988748503
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	10	kNN - F1	0.902411935157688
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	11	kNN - F1	0.910883069328836
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	12	kNN - F1	0.889554429553292
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	13	kNN - F1	0.891894136767102
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	14	kNN - F1	0.907480462673356
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	15	kNN - F1	0.901945132417201
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	16	kNN - F1	0.900172647673885
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	17	kNN - F1	0.90051182147464
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	18	kNN - F1	0.925828352476137
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	19	kNN - F1	0.904412481298668
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	20	kNN - F1	0.910991767336175
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	21	kNN - F1	0.873174178863478
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	22	kNN - F1	0.872999900277854
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	23	kNN - F1	0.91627844331678
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	24	kNN - F1	0.912638683913038
+VaryBeam	pendigits.arff	25	100	5	100	Approximative	25	kNN - F1	0.902962048135344
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	1	Strength	3.29425103241888
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	1	Columns	dim7, dim4, dim12, dim11, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	2	Strength	3.29311501526089
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	2	Columns	dim7, dim4, dim12, dim10, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	3	Strength	3.28956685334648
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	3	Columns	dim10, dim4, dim13, dim8, dim7
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	4	Strength	3.28922487487012
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	4	Columns	dim8, dim4, dim13, dim7, dim14
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	5	Strength	3.28702523187862
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	5	Columns	dim13, dim4, dim9, dim8, dim10
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	6	Strength	3.28665566485301
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	6	Columns	dim14, dim4, dim7, dim12, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	7	Strength	3.28571431391726
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	7	Columns	dim8, dim4, dim9, dim7, dim12
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	8	Strength	3.28363108441623
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	8	Columns	dim4, dim0, dim7, dim14, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	9	Strength	3.28144947072224
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	9	Columns	dim7, dim4, dim12, dim11, dim10
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	10	Strength	3.28103285659223
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	10	Columns	dim13, dim4, dim9, dim8, dim14
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	11	Strength	3.28026754811773
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	11	Columns	dim14, dim4, dim7, dim8, dim1
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	12	Strength	3.27974519869696
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	12	Columns	dim13, dim4, dim9, dim8, dim6
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	13	Strength	3.27910385882376
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	13	Columns	dim4, dim0, dim13, dim10, dim9
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	14	Strength	3.27725940831512
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	14	Columns	dim4, dim0, dim13, dim9, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	15	Strength	3.27680209925838
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	15	Columns	dim10, dim4, dim13, dim9, dim6
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	16	Strength	3.27605949184045
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	16	Columns	dim14, dim4, dim7, dim6, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	17	Strength	3.27594571171432
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	17	Columns	dim14, dim4, dim7, dim11, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	18	Strength	3.27541430895237
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	18	Columns	dim13, dim0, dim9, dim8, dim10
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	19	Strength	3.27375458631012
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	19	Columns	dim7, dim4, dim10, dim8, dim11
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	20	Strength	3.2736572325096
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	20	Columns	dim4, dim0, dim7, dim11, dim10
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	21	Strength	3.27332888241066
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	21	Columns	dim4, dim0, dim7, dim11, dim8
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	22	Strength	3.27275657136648
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	22	Columns	dim10, dim4, dim9, dim7, dim12
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	23	Strength	3.27134977610562
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	23	Columns	dim15, dim4, dim8, dim7, dim14
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	24	Strength	3.2709749476556
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	24	Columns	dim15, dim4, dim8, dim10, dim9
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	25	Strength	3.2703575692278
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	25	Columns	dim10, dim4, dim13, dim7, dim9
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	1	NaiveBayes - F1	0.708931789414464
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	2	NaiveBayes - F1	0.713039211943751
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	3	NaiveBayes - F1	0.772989131081014
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	4	NaiveBayes - F1	0.797039774569552
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	5	NaiveBayes - F1	0.757380738892499
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	6	NaiveBayes - F1	0.730545074225178
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	7	NaiveBayes - F1	0.69184051458807
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	8	NaiveBayes - F1	0.725015544697639
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	9	NaiveBayes - F1	0.717843896948745
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	10	NaiveBayes - F1	0.785253117459895
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	11	NaiveBayes - F1	0.753535066346936
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	12	NaiveBayes - F1	0.72736470869304
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	13	NaiveBayes - F1	0.805212310004538
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	14	NaiveBayes - F1	0.75724010557317
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	15	NaiveBayes - F1	0.758045193175416
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	16	NaiveBayes - F1	0.701172146825689
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	17	NaiveBayes - F1	0.705913710458381
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	18	NaiveBayes - F1	0.786035881385268
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	19	NaiveBayes - F1	0.695232274361851
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	20	NaiveBayes - F1	0.762733343055321
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	21	NaiveBayes - F1	0.701777661330567
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	22	NaiveBayes - F1	0.709533573691245
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	23	NaiveBayes - F1	0.787453673971451
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	24	NaiveBayes - F1	0.742569775922561
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	25	NaiveBayes - F1	0.753651123141127
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	1	kNN - F1	0.920171721326599
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	2	kNN - F1	0.916356002925789
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	3	kNN - F1	0.930481948054314
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	4	kNN - F1	0.932432053581584
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	5	kNN - F1	0.931695388189816
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	6	kNN - F1	0.916729950912775
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	7	kNN - F1	0.898318938157038
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	8	kNN - F1	0.898251542381547
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	9	kNN - F1	0.913345617599523
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	10	kNN - F1	0.934058095949062
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	11	kNN - F1	0.915376605614201
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	12	kNN - F1	0.91797784490424
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	13	kNN - F1	0.92847433398553
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	14	kNN - F1	0.897055705922462
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	15	kNN - F1	0.930948571731013
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	16	kNN - F1	0.904025095506943
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	17	kNN - F1	0.919052928385717
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	18	kNN - F1	0.931432636516325
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	19	kNN - F1	0.917651630676403
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	20	kNN - F1	0.914949920224267
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	21	kNN - F1	0.890240556135636
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	22	kNN - F1	0.907470464674809
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	23	kNN - F1	0.929914238226496
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	24	kNN - F1	0.921516674039134
+VaryBeam	pendigits.arff	25	250	5	100	Approximative	25	kNN - F1	0.925843790053702

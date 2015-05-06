@@ -1,0 +1,13 @@
+file	q	k	size	algo	key	value
+insurance.arff	25	10	5	Just_POIs_FALSE	Views	8.837 
+insurance.arff	25	10	5	Just_POIs_FALSE	POIs	178.711 
+insurance.arff	25	10	5	Just_POIs_FALSE	Time	187.548 
+insurance.arff	25	10	5	Just_POIs_TRUE	Views	0 
+insurance.arff	25	10	5	Just_POIs_TRUE	POIs	3008.046 
+insurance.arff	25	10	5	Just_POIs_TRUE	Time	3008.047 
+bank.arff	25	10	5	Just_POIs_FALSE	Views	21.7869999999998 
+bank.arff	25	10	5	Just_POIs_FALSE	POIs	1591.568 
+bank.arff	25	10	5	Just_POIs_FALSE	Time	1613.355 
+bank.arff	25	10	5	Just_POIs_TRUE	Views	0 
+bank.arff	25	10	5	Just_POIs_TRUE	POIs	3750.263 
+bank.arff	25	10	5	Just_POIs_TRUE	Time	3750.263 

@@ -1,0 +1,1021 @@
+experiment	file	q	beam_size	size_view	dedup	algo	view	key	value
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	1	Strength	0.207483365597492
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	1	Columns	V18, V1, V31, V68, V59
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	2	Strength	0.207149806938979
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	2	Columns	V18, V1, V30, V68, V59
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	3	Strength	0.196913837147829
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	3	Columns	V47, V1, V37, V59, V18
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	4	Strength	0.195985268136535
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	4	Columns	V59, V1, V37, V18, V68
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	5	Strength	0.189014936273507
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	5	Columns	V68, V1, V59, V28, V42
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	6	Strength	0.185412939785515
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	6	Columns	V59, V1, V42, V23, V18
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	7	Strength	0.185027904099709
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	7	Columns	V68, V1, V59, V28, V23
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	8	Strength	0.183349035505039
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	8	Columns	V18, V1, V31, V68, V42
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	9	Strength	0.182991108153765
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	9	Columns	V18, V1, V30, V68, V42
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	10	Strength	0.182806451615209
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	10	Columns	V47, V1, V42, V59, V18
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	11	Strength	0.181846045145761
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	11	Columns	V47, V5, V18, V59, V37
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	12	Strength	0.181184377315351
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	12	Columns	V18, V1, V31, V68, V37
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	13	Strength	0.181184377315349
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	13	Columns	V18, V1, V30, V68, V37
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	14	Strength	0.181166852993503
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	14	Columns	V59, V1, V42, V18, V28
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	15	Strength	0.180587940773421
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	15	Columns	V59, V1, V28, V18, V23
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	16	Strength	0.17954617397023
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	16	Columns	V18, V1, V31, V68, V25
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	17	Strength	0.178890181092767
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	17	Columns	V18, V1, V30, V68, V25
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	18	Strength	0.175627216179594
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	18	Columns	V68, V1, V59, V23, V42
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	19	Strength	0.169277327039024
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	19	Columns	V47, V5, V42, V59, V18
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	20	Strength	0.1652983120619
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	20	Columns	V18, V1, V31, V68, V43
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	21	Strength	0.164933668802465
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	21	Columns	V18, V1, V30, V68, V43
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	22	Strength	0.164268466351293
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	22	Columns	V59, V1, V18, V5, V15
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	23	Strength	0.162955513799321
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	23	Columns	V47, V1, V42, V59, V37
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	24	Strength	0.161765330325785
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	24	Columns	V59, V1, V31, V5, V18
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	25	Strength	0.161533046135446
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	25	Columns	V59, V1, V30, V5, V18
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	1	NaiveBayes - F1	0.0330527628399969
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	2	NaiveBayes - F1	0.0330527628399969
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	3	NaiveBayes - F1	0.0140712140712141
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	4	NaiveBayes - F1	0.0377136752136752
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	5	NaiveBayes - F1	0.0144927536231884
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	6	NaiveBayes - F1	0.0526315789473684
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	7	NaiveBayes - F1	0.00555555555555556
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	8	NaiveBayes - F1	0.0470906466861978
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	9	NaiveBayes - F1	0.0470906466861978
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	10	NaiveBayes - F1	0.0611059146023655
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	11	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	12	NaiveBayes - F1	0.0336071633943974
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	13	NaiveBayes - F1	0.0336071633943974
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	14	NaiveBayes - F1	0.0468797719637585
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	15	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	16	NaiveBayes - F1	0.0777443511835181
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	17	NaiveBayes - F1	0.0777443511835181
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	18	NaiveBayes - F1	0.00869565217391305
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	19	NaiveBayes - F1	0.0478672117084902
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	20	NaiveBayes - F1	0.0523810915154313
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	21	NaiveBayes - F1	0.0523810915154313
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	22	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	23	NaiveBayes - F1	0.0489644494182214
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	24	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	25	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	1	kNN - F1	0.0608187571690425
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	2	kNN - F1	0.0663860668900992
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	3	kNN - F1	0.0497477537114136
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	4	kNN - F1	0.0555764019178653
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	5	kNN - F1	0.0535714285714286
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	6	kNN - F1	0.0605978711612422
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	7	kNN - F1	0.0560944402767359
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	8	kNN - F1	0.0506888802032441
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	9	kNN - F1	0.101262263959538
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	10	kNN - F1	0.0572306574420116
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	11	kNN - F1	0.0794651484889282
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	12	kNN - F1	0.0648874503688168
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	13	kNN - F1	0.0687231293639013
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	14	kNN - F1	0.0525270122831099
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	15	kNN - F1	0.0655950305143854
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	16	kNN - F1	0.0675500345065563
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	17	kNN - F1	0.0717955713911225
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	18	kNN - F1	0.0795615404021323
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	19	kNN - F1	0.103131534456548
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	20	kNN - F1	0.0631561835481817
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	21	kNN - F1	0.0664138706817694
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	22	kNN - F1	0.0760135135135135
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	23	kNN - F1	0.100927300710662
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	24	kNN - F1	0.0541224876887915
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	25	kNN - F1	0.0532818100358423
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	0	Diversity	15
+VaryDeduplication	insurance.arff	25	100	5	0	Approximative	0	Dissimilarity	0.384986772486772
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	1	Strength	0.0308348767340934
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	1	Columns	V81, V68, V85, V82, V80
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	2	Strength	0.0304557175572513
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	2	Columns	V85, V68, V82, V80
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	3	Strength	0.0286323613614057
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	3	Columns	V82, V68, V83, V76, V75
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	4	Strength	0.0285291700242269
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	4	Columns	V47, V44
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	5	Strength	0.0283142663884299
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	5	Columns	V69, V68, V70, V65, V80
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	6	Strength	0.0277546892383373
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	6	Columns	V66, V65, V68, V80, V81
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	7	Strength	0.0277439037879406
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	7	Columns	V82, V75, V85, V83, V68
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	8	Strength	0.027028955849564
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	8	Columns	V81, V68, V83, V84, V65
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	9	Strength	0.0269465986995407
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	9	Columns	V76, V65, V77, V68, V63
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	10	Strength	0.0268343590474331
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	10	Columns	V66, V65, V68, V80
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	11	Strength	0.0265839524877602
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	11	Columns	V68, V62, V63, V65, V81
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	12	Strength	0.0260740139412801
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	12	Columns	V68, V62, V63, V65
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	13	Strength	0.0259201569846215
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	13	Columns	V78, V65, V79, V68, V73
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	14	Strength	0.0258921563607264
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	14	Columns	V82, V68, V83, V76
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	15	Strength	0.0254848126567477
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	15	Columns	V68, V65, V80
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	16	Strength	0.0254795459451671
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	16	Columns	V59, V39
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	17	Strength	0.0254313538227748
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	17	Columns	V85, V68, V80
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	18	Strength	0.024833269445713
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	18	Columns	V61, V12, V85, V80, V67
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	19	Strength	0.0248317364949073
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	19	Columns	V68, V64, V82, V84, V85
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	20	Strength	0.0247475343314458
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	20	Columns	V68, V64, V82, V84
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	21	Strength	0.0247218670465266
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	21	Columns	V74, V65, V81, V68, V85
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	22	Strength	0.0242534685050817
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	22	Columns	V78, V65, V79, V68
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	23	Strength	0.0241313563878709
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	23	Columns	V76, V65, V77, V68
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	24	Strength	0.0241132706380149
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	24	Columns	V47
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	25	Strength	0.023845972228187
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	25	Columns	V71, V65, V73, V68, V81
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	1	NaiveBayes - F1	0.122962494252102
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	2	NaiveBayes - F1	0.122851752280895
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	3	NaiveBayes - F1	0.133217049842595
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	4	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	5	NaiveBayes - F1	0.00952380952380952
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	6	NaiveBayes - F1	0.0256282498434965
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	7	NaiveBayes - F1	0.150854935511659
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	8	NaiveBayes - F1	0.0892184600041089
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	9	NaiveBayes - F1	0.0799050285043998
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	10	NaiveBayes - F1	0.00516795865633075
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	11	NaiveBayes - F1	0.0941737856467647
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	12	NaiveBayes - F1	0.083096159065278
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	13	NaiveBayes - F1	0.0959292412617221
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	14	NaiveBayes - F1	0.132423400094836
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	15	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	16	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	17	NaiveBayes - F1	0.0828279839667003
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	18	NaiveBayes - F1	0.119551754048909
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	19	NaiveBayes - F1	0.117520783366201
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	20	NaiveBayes - F1	0.117520783366201
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	21	NaiveBayes - F1	0.15139208191671
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	22	NaiveBayes - F1	0.0953741996336
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	23	NaiveBayes - F1	0.0803017775634432
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	24	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	25	NaiveBayes - F1	0.139776128388271
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	1	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	2	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	3	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	4	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	5	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	6	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	7	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	8	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	9	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	10	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	11	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	12	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	13	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	14	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	15	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	16	kNN - F1	0.018018018018018
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	17	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	18	kNN - F1	0.0552340975490881
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	19	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	20	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	21	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	22	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	23	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	24	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	25	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	0	Diversity	29
+VaryDeduplication	insurance.arff	25	100	5	25	Approximative	0	Dissimilarity	0.201406084656085
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	1	Strength	0.025945786345142
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	1	Columns	V49, V47
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	2	Strength	0.0241132706380149
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	2	Columns	V47
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	3	Strength	0.0189115688138886
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	3	Columns	V43, V42
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	4	Strength	0.0181165664847653
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	4	Columns	V59, V56
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	5	Strength	0.017172787830934
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	5	Columns	V71, V68
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	6	Strength	0.0170163135181753
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	6	Columns	V59
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	7	Strength	0.0170151113660033
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	7	Columns	V68
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	8	Strength	0.01551341085686
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	8	Columns	V19, V18
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	9	Strength	0.015406388386948
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	9	Columns	V37, V36
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	10	Strength	0.014462682492522
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	10	Columns	V5, V2
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	11	Strength	0.0143294488596739
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	11	Columns	V39, V38
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	12	Strength	0.014265531272053
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	12	Columns	V82, V78, V85, V80, V83
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	13	Strength	0.0142565384832469
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	13	Columns	V35, V34
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	14	Strength	0.0141314829752401
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	14	Columns	V23, V22
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	15	Strength	0.0140810540418417
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	15	Columns	V83, V77, V85, V82, V80
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	16	Strength	0.0140800702253987
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	16	Columns	V83, V78, V85, V80, V76
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	17	Strength	0.0140339744876221
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	17	Columns	V80, V79, V82, V83, V85
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	18	Strength	0.0138861380741329
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	18	Columns	V3, V1
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	19	Strength	0.0137988117201751
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	19	Columns	V84, V80, V82, V85, V83
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	20	Strength	0.0136837231566234
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	20	Columns	V85, V80, V81, V83, V82
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	21	Strength	0.0133689173749638
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	21	Columns	V85, V80, V82, V83
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	22	Strength	0.0130286951452763
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	22	Columns	V80, V78, V84, V82, V75
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	23	Strength	0.0124429301035727
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	23	Columns	V85, V78, V80, V79, V82
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	24	Strength	0.0122996543794038
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	24	Columns	V80, V78, V79, V83, V82
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	25	Strength	0.0122919540231066
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	25	Columns	V81, V80, V83, V82, V77
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	1	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	2	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	3	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	4	NaiveBayes - F1	0.0157699443413729
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	5	NaiveBayes - F1	0.112395074904988
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	6	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	7	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	8	NaiveBayes - F1	0.0459830866807611
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	9	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	10	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	11	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	12	NaiveBayes - F1	0.152618090036273
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	13	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	14	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	15	NaiveBayes - F1	0.149028402891686
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	16	NaiveBayes - F1	0.1352088176642
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	17	NaiveBayes - F1	0.157216975191344
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	18	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	19	NaiveBayes - F1	0.143272742871684
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	20	NaiveBayes - F1	0.149532233756297
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	21	NaiveBayes - F1	0.14957949359203
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	22	NaiveBayes - F1	0.0996228205340578
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	23	NaiveBayes - F1	0.136868404737532
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	24	NaiveBayes - F1	0.133366788496271
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	25	NaiveBayes - F1	0.112420719956482
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	1	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	2	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	3	kNN - F1	0.0151515151515152
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	4	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	5	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	6	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	7	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	8	kNN - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	9	kNN - F1	0.018018018018018
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	10	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	11	kNN - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	12	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	13	kNN - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	14	kNN - F1	0.0512820512820513
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	15	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	16	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	17	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	18	kNN - F1	0
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	19	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	20	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	21	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	22	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	23	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	24	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	25	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	0	Diversity	33
+VaryDeduplication	insurance.arff	25	100	5	50	Approximative	0	Dissimilarity	0.100357142857143
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	1	Strength	0.025945786345142
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	1	Columns	V49, V47
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	2	Strength	0.0241132706380149
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	2	Columns	V47
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	3	Strength	0.0189115688138886
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	3	Columns	V43, V42
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	4	Strength	0.0181165664847653
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	4	Columns	V59, V56
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	5	Strength	0.017172787830934
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	5	Columns	V71, V68
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	6	Strength	0.0170163135181753
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	6	Columns	V59
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	7	Strength	0.0170151113660033
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	7	Columns	V68
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	8	Strength	0.01551341085686
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	8	Columns	V19, V18
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	9	Strength	0.015406388386948
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	9	Columns	V37, V36
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	10	Strength	0.014462682492522
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	10	Columns	V5, V2
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	11	Strength	0.0143294488596739
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	11	Columns	V39, V38
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	12	Strength	0.014265531272053
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	12	Columns	V82, V78, V85, V80, V83
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	13	Strength	0.0142565384832469
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	13	Columns	V35, V34
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	14	Strength	0.0141314829752401
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	14	Columns	V23, V22
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	15	Strength	0.0140810540418417
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	15	Columns	V83, V77, V85, V82, V80
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	16	Strength	0.0140800702253987
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	16	Columns	V83, V78, V85, V80, V76
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	17	Strength	0.0140339744876221
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	17	Columns	V80, V79, V82, V83, V85
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	18	Strength	0.0138861380741329
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	18	Columns	V3, V1
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	19	Strength	0.0137988117201751
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	19	Columns	V84, V80, V82, V85, V83
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	20	Strength	0.0136837231566234
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	20	Columns	V85, V80, V81, V83, V82
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	21	Strength	0.0133689173749638
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	21	Columns	V85, V80, V82, V83
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	22	Strength	0.0130286951452763
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	22	Columns	V80, V78, V84, V82, V75
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	23	Strength	0.0124429301035727
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	23	Columns	V85, V78, V80, V79, V82
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	24	Strength	0.0122996543794038
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	24	Columns	V80, V78, V79, V83, V82
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	25	Strength	0.0122919540231066
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	25	Columns	V81, V80, V83, V82, V77
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	1	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	2	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	3	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	4	NaiveBayes - F1	0.0157699443413729
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	5	NaiveBayes - F1	0.112395074904988
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	6	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	7	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	8	NaiveBayes - F1	0.0459830866807611
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	9	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	10	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	11	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	12	NaiveBayes - F1	0.152618090036273
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	13	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	14	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	15	NaiveBayes - F1	0.149028402891686
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	16	NaiveBayes - F1	0.1352088176642
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	17	NaiveBayes - F1	0.157216975191344
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	18	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	19	NaiveBayes - F1	0.143272742871684
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	20	NaiveBayes - F1	0.149532233756297
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	21	NaiveBayes - F1	0.14957949359203
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	22	NaiveBayes - F1	0.0996228205340578
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	23	NaiveBayes - F1	0.136868404737532
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	24	NaiveBayes - F1	0.133366788496271
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	25	NaiveBayes - F1	0.112420719956482
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	1	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	2	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	3	kNN - F1	0.0421074398154194
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	4	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	5	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	6	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	7	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	8	kNN - F1	0.00952380952380952
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	9	kNN - F1	0.0400696864111498
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	10	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	11	kNN - F1	0.0269334684228301
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	12	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	13	kNN - F1	0
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	14	kNN - F1	0.039922480620155
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	15	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	16	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	17	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	18	kNN - F1	0.0151515151515152
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	19	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	20	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	21	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	22	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	23	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	24	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	25	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	0	Diversity	33
+VaryDeduplication	insurance.arff	25	100	5	75	Approximative	0	Dissimilarity	0.100357142857143
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	1	Strength	0.025945786345142
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	1	Columns	V49, V47
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	2	Strength	0.0241132706380149
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	2	Columns	V47
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	3	Strength	0.0189115688138886
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	3	Columns	V43, V42
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	4	Strength	0.0181165664847653
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	4	Columns	V59, V56
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	5	Strength	0.017172787830934
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	5	Columns	V71, V68
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	6	Strength	0.0170163135181753
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	6	Columns	V59
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	7	Strength	0.0170151113660033
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	7	Columns	V68
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	8	Strength	0.01551341085686
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	8	Columns	V19, V18
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	9	Strength	0.015406388386948
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	9	Columns	V37, V36
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	10	Strength	0.014462682492522
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	10	Columns	V5, V2
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	11	Strength	0.0143294488596739
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	11	Columns	V39, V38
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	12	Strength	0.014265531272053
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	12	Columns	V82, V78, V85, V80, V83
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	13	Strength	0.0142565384832469
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	13	Columns	V35, V34
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	14	Strength	0.0141314829752401
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	14	Columns	V23, V22
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	15	Strength	0.0140810540418417
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	15	Columns	V83, V77, V85, V82, V80
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	16	Strength	0.0140800702253987
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	16	Columns	V83, V78, V85, V80, V76
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	17	Strength	0.0140339744876221
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	17	Columns	V80, V79, V82, V83, V85
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	18	Strength	0.0138861380741329
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	18	Columns	V3, V1
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	19	Strength	0.0137988117201751
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	19	Columns	V84, V80, V82, V85, V83
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	20	Strength	0.0136837231566234
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	20	Columns	V85, V80, V81, V83, V82
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	21	Strength	0.0133689173749638
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	21	Columns	V85, V80, V82, V83
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	22	Strength	0.0130286951452763
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	22	Columns	V80, V78, V84, V82, V75
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	23	Strength	0.0124429301035727
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	23	Columns	V85, V78, V80, V79, V82
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	24	Strength	0.0122996543794038
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	24	Columns	V80, V78, V79, V83, V82
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	25	Strength	0.0122919540231066
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	25	Columns	V81, V80, V83, V82, V77
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.0157699443413729
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.112395074904988
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.0459830866807611
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.152618090036273
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.149028402891686
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.1352088176642
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.157216975191344
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.143272742871684
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.149532233756297
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.14957949359203
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.0996228205340578
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.136868404737532
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.133366788496271
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.112420719956482
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	1	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	2	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	3	kNN - F1	0.0240998838559814
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	4	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	5	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	6	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	7	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	8	kNN - F1	0.0254724236431553
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	9	kNN - F1	0
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	10	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	11	kNN - F1	0.0241441441441441
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	12	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	13	kNN - F1	0.0377260981912145
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	14	kNN - F1	0.0135135135135135
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	15	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	16	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	17	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	18	kNN - F1	0.0471491228070175
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	19	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	20	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	21	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	22	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	23	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	24	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	25	kNN - F1	NA
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	0	Diversity	33
+VaryDeduplication	insurance.arff	25	100	5	100	Approximative	0	Dissimilarity	0.100357142857143
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	1	Strength	0.352249955926995
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	1	Columns	V11, V1, V12, V10, V14
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	2	Strength	0.348126376543572
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	2	Columns	V12, V1, V16, V11, V10
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	3	Strength	0.341395181885192
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	3	Columns	V10, V2, V12, V14, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	4	Strength	0.338720097709515
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	4	Columns	V12, V10, V16, V2, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	5	Strength	0.303362937011517
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	5	Columns	V2, V1, V12, V14, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	6	Strength	0.297488737673538
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	6	Columns	V2, V1, V12, V16, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	7	Strength	0.29000239271023
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	7	Columns	V10, V4, V12, V16, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	8	Strength	0.282790515431534
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	8	Columns	V12, V3, V16, V11, V10
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	9	Strength	0.281742814705447
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	9	Columns	V10, V9, V12, V14, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	10	Strength	0.278060593472745
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	10	Columns	V10, V7, V12, V11, V14
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	11	Strength	0.277341030539366
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	11	Columns	V12, V10, V16, V9, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	12	Strength	0.277134237098
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	12	Columns	V12, V10, V16, V14, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	13	Strength	0.275116306389018
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	13	Columns	V10, V7, V12, V11, V16
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	14	Strength	0.268089440306509
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	14	Columns	V11, V4, V12, V1, V14
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	15	Strength	0.263662764009943
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	15	Columns	V12, V6, V16, V11, V10
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	16	Strength	0.263362868810891
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	16	Columns	V13, V10, V12, V16, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	17	Strength	0.26206763214665
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	17	Columns	V12, V4, V16, V11, V1
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	18	Strength	0.261621490799881
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	18	Columns	V12, V8, V16, V11, V10
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	19	Strength	0.257354101192995
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	19	Columns	V9, V1, V12, V14, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	20	Strength	0.254716925262935
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	20	Columns	V12, V10, V14, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	21	Strength	0.254513187904463
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	21	Columns	V3, V1, V12, V11, V14
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	22	Strength	0.253822003799998
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	22	Columns	V7, V1, V12, V14, V11
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	23	Strength	0.252983575839975
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	23	Columns	V12, V1, V16, V11, V14
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	24	Strength	0.252447476685392
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	24	Columns	V12, V5, V16, V11, V10
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	25	Strength	0.251660870713726
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	25	Columns	V11, V4, V12, V14, V2
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	1	NaiveBayes - F1	0.403613604942019
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	2	NaiveBayes - F1	0.456454717074686
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	3	NaiveBayes - F1	0.403832340495229
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	4	NaiveBayes - F1	0.463302043145093
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	5	NaiveBayes - F1	0.418611345773107
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	6	NaiveBayes - F1	0.471873142147901
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	7	NaiveBayes - F1	0.442771305349028
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	8	NaiveBayes - F1	0.442220445663751
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	9	NaiveBayes - F1	0.397162414376642
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	10	NaiveBayes - F1	0.398906249581041
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	11	NaiveBayes - F1	0.462500334790781
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	12	NaiveBayes - F1	0.462463616466219
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	13	NaiveBayes - F1	0.463433464432758
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	14	NaiveBayes - F1	0.404531781256105
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	15	NaiveBayes - F1	0.426518188150838
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	16	NaiveBayes - F1	0.488535184196782
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	17	NaiveBayes - F1	0.456414265659277
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	18	NaiveBayes - F1	0.443779694630508
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	19	NaiveBayes - F1	0.417074501791053
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	20	NaiveBayes - F1	0.388465087826183
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	21	NaiveBayes - F1	0.407635458492476
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	22	NaiveBayes - F1	0.417580720416022
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	23	NaiveBayes - F1	0.474607305064192
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	24	NaiveBayes - F1	0.439217801588175
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	25	NaiveBayes - F1	0.405724549688411
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	1	kNN - F1	0.406473956843965
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	2	kNN - F1	0.311565622493641
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	3	kNN - F1	0.39899971063382
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	4	kNN - F1	0.294928546340747
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	5	kNN - F1	0.40811905862307
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	6	kNN - F1	0.319617902909475
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	7	kNN - F1	0.313407568972818
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	8	kNN - F1	0.310251666515769
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	9	kNN - F1	0.400737692599314
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	10	kNN - F1	0.399773085843565
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	11	kNN - F1	0.321621226443211
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	12	kNN - F1	0.39966334836675
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	13	kNN - F1	0.314499235800433
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	14	kNN - F1	0.410253413802746
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	15	kNN - F1	0.283728198959805
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	16	kNN - F1	0.318647778695975
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	17	kNN - F1	0.31706866457498
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	18	kNN - F1	0.314813394161581
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	19	kNN - F1	0.416065339417905
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	20	kNN - F1	0.39747547488405
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	21	kNN - F1	0.413250700537386
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	22	kNN - F1	0.412501553654458
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	23	kNN - F1	0.413978226089064
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	24	kNN - F1	0.314031634085129
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	25	kNN - F1	0.40677252578583
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	0	Diversity	15
+VaryDeduplication	bank.arff	25	100	5	0	Approximative	0	Dissimilarity	0.491230158730159
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	1	Strength	0.203446779359918
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	1	Columns	V3, V1, V16, V2, V12
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	2	Strength	0.183716426119795
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	2	Columns	V12, V2, V14, V16, V3
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	3	Strength	0.180833882216076
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	3	Columns	V3, V1, V12, V4, V16
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	4	Strength	0.179288674698139
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	4	Columns	V3, V1, V12, V9, V16
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	5	Strength	0.179248921452951
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	5	Columns	V3, V1, V16, V2, V11
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	6	Strength	0.179043696618864
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	6	Columns	V3, V1, V12, V2, V9
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	7	Strength	0.178849039819682
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	7	Columns	V3, V1, V12, V7, V16
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	8	Strength	0.177345872348489
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	8	Columns	V3, V1, V12, V11
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	9	Strength	0.175072338208354
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	9	Columns	V3, V1, V13, V12, V10
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	10	Strength	0.170236156662233
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	10	Columns	V3, V1, V12, V2, V4
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	11	Strength	0.167754371412061
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	11	Columns	V3, V1, V16, V12, V6
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	12	Strength	0.167136155238156
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	12	Columns	V12, V2, V14, V16
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	13	Strength	0.165960045177021
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	13	Columns	V3, V1, V12, V2, V7
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	14	Strength	0.165532170379763
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	14	Columns	V3, V1, V12, V8, V16
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	15	Strength	0.163551117724483
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	15	Columns	V16, V2, V5, V12, V7
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	16	Strength	0.15969240590927
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	16	Columns	V3, V1, V12, V5, V16
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	17	Strength	0.158060691244953
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	17	Columns	V3, V1, V14, V12
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	18	Strength	0.157382744145358
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	18	Columns	V3, V1, V16, V12
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	19	Strength	0.156234992190212
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	19	Columns	V3, V1, V12, V4, V9
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	20	Strength	0.156198254700082
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	20	Columns	V9, V4, V16, V6, V12
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	21	Strength	0.154076247672883
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	21	Columns	V3, V1, V12, V10
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	22	Strength	0.152693525833783
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	22	Columns	V3, V1, V12, V2, V8
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	23	Strength	0.152659043035221
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	23	Columns	V3, V1, V12, V2, V6
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	24	Strength	0.149952482421615
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	24	Columns	V3, V1, V12, V7, V9
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	25	Strength	0.148947289397894
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	25	Columns	V10, V3, V11, V6, V16
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	1	NaiveBayes - F1	0.43957520590461
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	2	NaiveBayes - F1	0.454278321547511
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	3	NaiveBayes - F1	0.434467926551329
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	4	NaiveBayes - F1	0.456370514110289
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	5	NaiveBayes - F1	0.339528768916247
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	6	NaiveBayes - F1	0.386408094756848
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	7	NaiveBayes - F1	0.449207854924225
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	8	NaiveBayes - F1	0.383416684949061
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	9	NaiveBayes - F1	0.384856323379444
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	10	NaiveBayes - F1	0.37723874155078
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	11	NaiveBayes - F1	0.410676841855625
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	12	NaiveBayes - F1	0.453073036417362
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	13	NaiveBayes - F1	0.38558868102268
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	14	NaiveBayes - F1	0.435796223911419
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	15	NaiveBayes - F1	0.457198147423428
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	16	NaiveBayes - F1	0.428170033468194
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	17	NaiveBayes - F1	0.384153483596566
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	18	NaiveBayes - F1	0.427967002342622
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	19	NaiveBayes - F1	0.373645171136769
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	20	NaiveBayes - F1	0.423167491153964
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	21	NaiveBayes - F1	0.363615825015211
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	22	NaiveBayes - F1	0.379064733909016
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	23	NaiveBayes - F1	0.366729475105572
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	24	NaiveBayes - F1	0.377679573004545
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	25	NaiveBayes - F1	0.290561154952585
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	1	kNN - F1	0.324151391763109
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	2	kNN - F1	0.394644630585824
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	3	kNN - F1	0.320216691269695
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	4	kNN - F1	0.33005061593207
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	5	kNN - F1	0.183400471741842
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	6	kNN - F1	0.333663095420796
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	7	kNN - F1	0.329457041184888
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	8	kNN - F1	0.319290371728435
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	9	kNN - F1	0.306730228553967
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	10	kNN - F1	0.324282629035831
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	11	kNN - F1	0.286590665971756
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	12	kNN - F1	0.396481523400829
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	13	kNN - F1	0.326280279286686
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	14	kNN - F1	0.32502129481629
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	15	kNN - F1	0.308553412479786
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	16	kNN - F1	0.322593587474095
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	17	kNN - F1	0.404740905977648
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	18	kNN - F1	0.323579302245237
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	19	kNN - F1	0.332117781527345
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	20	kNN - F1	0.279924314825752
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	21	kNN - F1	0.305882121826928
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	22	kNN - F1	0.325671857000114
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	23	kNN - F1	0.287546865921743
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	24	kNN - F1	0.33391596960952
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	25	kNN - F1	0.0856208002068528
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	0	Diversity	15
+VaryDeduplication	bank.arff	25	100	5	25	Approximative	0	Dissimilarity	0.438890211640212
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	1	Strength	0.192312629648331
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	1	Columns	V3, V1, V11, V10, V9
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	2	Strength	0.167900837770909
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	2	Columns	V16, V14, V15, V2, V12
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	3	Strength	0.167136155238156
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	3	Columns	V12, V2, V14, V16
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	4	Strength	0.155118342204448
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	4	Columns	V3, V1, V11, V10
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	5	Strength	0.142926847119636
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	5	Columns	V3, V1, V9, V6, V12
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	6	Strength	0.14181866014109
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	6	Columns	V12, V2, V14
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	7	Strength	0.13059521017281
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	7	Columns	V12, V11
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	8	Strength	0.129332002395692
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	8	Columns	V16, V12
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	9	Strength	0.125691339259332
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	9	Columns	V12, V5, V13, V2, V7
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	10	Strength	0.121004278271463
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	10	Columns	V14, V12
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	11	Strength	0.120403359265356
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	11	Columns	V8, V4, V5, V12, V9
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	12	Strength	0.113419252899969
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	12	Columns	V3, V1, V12, V6
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	13	Strength	0.108484297718022
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	13	Columns	V12, V5, V13, V2
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	14	Strength	0.107708411214813
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	14	Columns	V12, V9
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	15	Strength	0.105882245375344
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	15	Columns	V3, V1, V12
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	16	Strength	0.103538853005887
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	16	Columns	V16, V8, V9, V11, V7
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	17	Strength	0.101913743653819
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	17	Columns	V12, V7
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	18	Strength	0.101866888158362
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	18	Columns	V3, V1, V9, V16, V2
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	19	Strength	0.099577249400447
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	19	Columns	V11, V7, V14, V6, V3
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	20	Strength	0.0989784119526504
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	20	Columns	V12, V2
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	21	Strength	0.0942638658726649
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	21	Columns	V8, V4, V5, V12
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	22	Strength	0.0935825060356006
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	22	Columns	V16, V2, V5, V10, V7
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	23	Strength	0.093090522664943
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	23	Columns	V8, V4, V12
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	24	Strength	0.0926008062627757
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	24	Columns	V12, V10
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	25	Strength	0.0915198262597858
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	25	Columns	V16, V8, V9, V11
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	1	NaiveBayes - F1	0.219207797190259
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	2	NaiveBayes - F1	0.449012621930388
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	3	NaiveBayes - F1	0.453073036417362
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	4	NaiveBayes - F1	0.174069526953357
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	5	NaiveBayes - F1	0.36205752223561
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	6	NaiveBayes - F1	0.375392687422894
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	7	NaiveBayes - F1	0.357290632685637
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	8	NaiveBayes - F1	0.395476303080084
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	9	NaiveBayes - F1	0.377679771711819
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	10	NaiveBayes - F1	0.369750027436837
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	11	NaiveBayes - F1	0.361017412628666
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	12	NaiveBayes - F1	0.353293760499727
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	13	NaiveBayes - F1	0.37187939932395
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	14	NaiveBayes - F1	0.357813792967162
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	15	NaiveBayes - F1	0.363782852267965
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	16	NaiveBayes - F1	0.366073259167122
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	17	NaiveBayes - F1	0.350978569920955
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	18	NaiveBayes - F1	0.322841352788272
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	19	NaiveBayes - F1	0.206932633365154
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	20	NaiveBayes - F1	0.35571263942918
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	21	NaiveBayes - F1	0.350245406833963
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	22	NaiveBayes - F1	0.274157841825245
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	23	NaiveBayes - F1	0.349750030209848
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	24	NaiveBayes - F1	0.349884720814033
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	25	NaiveBayes - F1	0.346557756962233
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	1	kNN - F1	0.233669053112237
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	2	kNN - F1	0.400149181547788
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	3	kNN - F1	0.399035708950775
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	4	kNN - F1	0.204937809764217
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	5	kNN - F1	0.287413000102483
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	6	kNN - F1	0.393992258425528
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	7	kNN - F1	0.32014459027428
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	8	kNN - F1	0.341032586332831
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	9	kNN - F1	0.303432393134439
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	10	kNN - F1	0.387016854559796
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	11	kNN - F1	0.308122925733469
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	12	kNN - F1	0.287376834452242
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	13	kNN - F1	0.290974211589643
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	14	kNN - F1	0.29122828760041
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	15	kNN - F1	0.317730938312161
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	16	kNN - F1	NA
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	17	kNN - F1	0.295909936621149
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	18	kNN - F1	0.219143050069764
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	19	kNN - F1	0.181013473705016
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	20	kNN - F1	0.290320368586134
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	21	kNN - F1	0.284361193060433
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	22	kNN - F1	0.217811396333812
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	23	kNN - F1	0.280679431213462
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	24	kNN - F1	0.283704369244717
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	25	kNN - F1	NA
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	0	Diversity	16
+VaryDeduplication	bank.arff	25	100	5	50	Approximative	0	Dissimilarity	0.200670634920635
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	1	Strength	0.192312629648331
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	1	Columns	V3, V1, V11, V10, V9
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	2	Strength	0.167900837770909
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	2	Columns	V16, V14, V15, V2, V12
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	3	Strength	0.167136155238156
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	3	Columns	V12, V2, V14, V16
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	4	Strength	0.155118342204448
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	4	Columns	V3, V1, V11, V10
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	5	Strength	0.142926847119636
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	5	Columns	V3, V1, V9, V6, V12
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	6	Strength	0.14181866014109
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	6	Columns	V12, V2, V14
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	7	Strength	0.13059521017281
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	7	Columns	V12, V11
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	8	Strength	0.129332002395692
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	8	Columns	V16, V12
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	9	Strength	0.125691339259332
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	9	Columns	V12, V5, V13, V2, V7
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	10	Strength	0.121004278271463
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	10	Columns	V14, V12
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	11	Strength	0.120403359265356
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	11	Columns	V8, V4, V5, V12, V9
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	12	Strength	0.113419252899969
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	12	Columns	V3, V1, V12, V6
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	13	Strength	0.108484297718022
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	13	Columns	V12, V5, V13, V2
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	14	Strength	0.107708411214813
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	14	Columns	V12, V9
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	15	Strength	0.105882245375344
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	15	Columns	V3, V1, V12
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	16	Strength	0.103538853005887
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	16	Columns	V16, V8, V9, V11, V7
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	17	Strength	0.101913743653819
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	17	Columns	V12, V7
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	18	Strength	0.101866888158362
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	18	Columns	V3, V1, V9, V16, V2
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	19	Strength	0.099577249400447
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	19	Columns	V11, V7, V14, V6, V3
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	20	Strength	0.0989784119526504
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	20	Columns	V12, V2
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	21	Strength	0.0942638658726649
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	21	Columns	V8, V4, V5, V12
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	22	Strength	0.0935825060356006
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	22	Columns	V16, V2, V5, V10, V7
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	23	Strength	0.093090522664943
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	23	Columns	V8, V4, V12
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	24	Strength	0.0926008062627757
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	24	Columns	V12, V10
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	25	Strength	0.0915198262597858
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	25	Columns	V16, V8, V9, V11
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	1	NaiveBayes - F1	0.219207797190259
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	2	NaiveBayes - F1	0.449012621930388
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	3	NaiveBayes - F1	0.453073036417362
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	4	NaiveBayes - F1	0.174069526953357
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	5	NaiveBayes - F1	0.36205752223561
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	6	NaiveBayes - F1	0.375392687422894
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	7	NaiveBayes - F1	0.357290632685637
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	8	NaiveBayes - F1	0.395476303080084
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	9	NaiveBayes - F1	0.377679771711819
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	10	NaiveBayes - F1	0.369750027436837
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	11	NaiveBayes - F1	0.361017412628666
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	12	NaiveBayes - F1	0.353293760499727
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	13	NaiveBayes - F1	0.37187939932395
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	14	NaiveBayes - F1	0.357813792967162
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	15	NaiveBayes - F1	0.363782852267965
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	16	NaiveBayes - F1	0.366073259167122
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	17	NaiveBayes - F1	0.350978569920955
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	18	NaiveBayes - F1	0.322841352788272
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	19	NaiveBayes - F1	0.206932633365154
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	20	NaiveBayes - F1	0.35571263942918
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	21	NaiveBayes - F1	0.350245406833963
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	22	NaiveBayes - F1	0.274157841825245
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	23	NaiveBayes - F1	0.349750030209848
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	24	NaiveBayes - F1	0.349884720814033
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	25	NaiveBayes - F1	0.346557756962233
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	1	kNN - F1	0.237031100998667
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	2	kNN - F1	0.401019641430946
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	3	kNN - F1	0.399429501359259
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	4	kNN - F1	0.201181498374261
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	5	kNN - F1	0.287413000102483
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	6	kNN - F1	0.394144578371999
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	7	kNN - F1	0.321696422740171
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	8	kNN - F1	0.339261734612185
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	9	kNN - F1	0.30551178632801
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	10	kNN - F1	0.386409157630583
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	11	kNN - F1	0.310622549308889
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	12	kNN - F1	0.287376834452242
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	13	kNN - F1	0.290500611729953
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	14	kNN - F1	0.290219168321069
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	15	kNN - F1	0.318624213512253
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	16	kNN - F1	NA
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	17	kNN - F1	0.295325891396562
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	18	kNN - F1	0.210783988503817
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	19	kNN - F1	0.180340822729494
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	20	kNN - F1	0.287419068809213
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	21	kNN - F1	0.281126104063965
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	22	kNN - F1	0.213066221012938
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	23	kNN - F1	0.284164219804693
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	24	kNN - F1	0.284489174403155
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	25	kNN - F1	NA
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	0	Diversity	16
+VaryDeduplication	bank.arff	25	100	5	75	Approximative	0	Dissimilarity	0.200670634920635
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	1	Strength	0.192312629648331
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	1	Columns	V3, V1, V11, V10, V9
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	2	Strength	0.167900837770909
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	2	Columns	V16, V14, V15, V2, V12
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	3	Strength	0.167136155238156
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	3	Columns	V12, V2, V14, V16
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	4	Strength	0.155118342204448
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	4	Columns	V3, V1, V11, V10
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	5	Strength	0.142926847119636
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	5	Columns	V3, V1, V9, V6, V12
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	6	Strength	0.14181866014109
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	6	Columns	V12, V2, V14
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	7	Strength	0.13059521017281
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	7	Columns	V12, V11
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	8	Strength	0.129332002395692
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	8	Columns	V16, V12
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	9	Strength	0.125691339259332
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	9	Columns	V12, V5, V13, V2, V7
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	10	Strength	0.121004278271463
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	10	Columns	V14, V12
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	11	Strength	0.120403359265356
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	11	Columns	V8, V4, V5, V12, V9
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	12	Strength	0.113419252899969
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	12	Columns	V3, V1, V12, V6
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	13	Strength	0.108484297718022
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	13	Columns	V12, V5, V13, V2
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	14	Strength	0.107708411214813
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	14	Columns	V12, V9
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	15	Strength	0.105882245375344
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	15	Columns	V3, V1, V12
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	16	Strength	0.103538853005887
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	16	Columns	V16, V8, V9, V11, V7
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	17	Strength	0.101913743653819
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	17	Columns	V12, V7
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	18	Strength	0.101866888158362
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	18	Columns	V3, V1, V9, V16, V2
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	19	Strength	0.099577249400447
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	19	Columns	V11, V7, V14, V6, V3
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	20	Strength	0.0989784119526504
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	20	Columns	V12, V2
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	21	Strength	0.0942638658726649
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	21	Columns	V8, V4, V5, V12
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	22	Strength	0.0935825060356006
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	22	Columns	V16, V2, V5, V10, V7
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	23	Strength	0.093090522664943
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	23	Columns	V8, V4, V12
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	24	Strength	0.0926008062627757
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	24	Columns	V12, V10
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	25	Strength	0.0915198262597858
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	25	Columns	V16, V8, V9, V11
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.219207797190259
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.449012621930388
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.453073036417362
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.174069526953357
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.36205752223561
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.375392687422894
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.357290632685637
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.395476303080084
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.377679771711819
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.369750027436837
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.361017412628666
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.353293760499727
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.37187939932395
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.357813792967162
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.363782852267965
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.366073259167122
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.350978569920955
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.322841352788272
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.206932633365154
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.35571263942918
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.350245406833963
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.274157841825245
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.349750030209848
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.349884720814033
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.346557756962233
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	1	kNN - F1	0.236012861235891
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	2	kNN - F1	0.400606386411257
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	3	kNN - F1	0.396198061589388
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	4	kNN - F1	0.202462663422077
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	5	kNN - F1	0.287413000102483
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	6	kNN - F1	0.392210035143664
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	7	kNN - F1	0.319802164922923
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	8	kNN - F1	0.341622988191862
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	9	kNN - F1	0.301538658982524
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	10	kNN - F1	0.389876409776049
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	11	kNN - F1	0.311435642579835
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	12	kNN - F1	0.287376834452242
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	13	kNN - F1	0.289746272029035
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	14	kNN - F1	0.292194757331285
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	15	kNN - F1	0.317607429284636
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	16	kNN - F1	NA
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	17	kNN - F1	0.295428966531909
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	18	kNN - F1	0.212922348345577
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	19	kNN - F1	0.180870594276824
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	20	kNN - F1	0.291492313613632
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	21	kNN - F1	0.278438747382505
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	22	kNN - F1	0.214061977286214
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	23	kNN - F1	0.28255020629499
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	24	kNN - F1	0.285124439436743
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	25	kNN - F1	NA
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	0	Diversity	16
+VaryDeduplication	bank.arff	25	100	5	100	Approximative	0	Dissimilarity	0.200670634920635

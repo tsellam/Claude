@@ -1,0 +1,17 @@
+file	q	k	size	algo	key	value
+communities.arff	25	10	5	Just_POIs_FALSE	Views	3.772 
+communities.arff	25	10	5	Just_POIs_FALSE	POIs	122.56 
+communities.arff	25	10	5	Just_POIs_FALSE	Time	126.332 
+communities.arff	25	10	5	Just_POIs_TRUE	Views	0 
+communities.arff	25	10	5	Just_POIs_TRUE	POIs	2558.975 
+communities.arff	25	10	5	Just_POIs_TRUE	Time	2558.975 
+adult.arff	25	10	5	Just_POIs_FALSE	Views	13.9369999999999 
+adult.arff	25	10	5	Just_POIs_FALSE	POIs	969.072 
+adult.arff	25	10	5	Just_POIs_FALSE	Time	983.009 
+adult.arff	25	10	5	Just_POIs_TRUE	Views	0 
+adult.arff	25	10	5	Just_POIs_TRUE	POIs	2224.929 
+adult.arff	25	10	5	Just_POIs_TRUE	Time	2224.93 
+musk.arff	25	10	5	Just_POIs_FALSE	Views	10.808 
+musk.arff	25	10	5	Just_POIs_FALSE	POIs	280.878 
+musk.arff	25	10	5	Just_POIs_FALSE	Time	291.687 
+musk.arff	25	10	5	Just_POIs_TRUE	Views	0 

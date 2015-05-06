@@ -1,0 +1,13 @@
+file	q	k	size	algo	key	value
+breast.arff	25	10	5	Just_POIs_FALSE	Views	0.881 
+breast.arff	25	10	5	Just_POIs_FALSE	POIs	44.751 
+breast.arff	25	10	5	Just_POIs_FALSE	Time	45.632 
+breast.arff	25	10	5	Just_POIs_TRUE	Views	0 
+breast.arff	25	10	5	Just_POIs_TRUE	POIs	184.373 
+breast.arff	25	10	5	Just_POIs_TRUE	Time	184.374 
+letrec.arff	25	10	5	Just_POIs_FALSE	Views	11.07 
+letrec.arff	25	10	5	Just_POIs_FALSE	POIs	840.096 
+letrec.arff	25	10	5	Just_POIs_FALSE	Time	851.166 
+letrec.arff	25	10	5	Just_POIs_TRUE	Views	0 
+letrec.arff	25	10	5	Just_POIs_TRUE	POIs	2131.606 
+letrec.arff	25	10	5	Just_POIs_TRUE	Time	2131.607 

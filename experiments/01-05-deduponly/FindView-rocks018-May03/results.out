@@ -1,0 +1,1021 @@
+experiment	file	q	beam_size	size_view	dedup	algo	view	key	value
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	1	Strength	0.710843045428517
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	1	Columns	V4, V1, V10, V3, V9
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	2	Strength	0.706873645995948
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	2	Columns	V10, V3, V7, V9, V4
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	3	Strength	0.702464832511758
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	3	Columns	V5, V1, V10, V3, V9
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	4	Strength	0.701271972421756
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	4	Columns	V10, V3, V7, V9, V5
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	5	Strength	0.677183310813433
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	5	Columns	V4, V1, V5, V9, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	6	Strength	0.673066659014436
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	6	Columns	V5, V4, V7, V9, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	7	Strength	0.655321114195758
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	7	Columns	V7, V1, V4, V9, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	8	Strength	0.654225066841493
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	8	Columns	V4, V2, V10, V9, V3
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	9	Strength	0.649012988684897
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	9	Columns	V5, V2, V10, V9, V3
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	10	Strength	0.642790953800871
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	10	Columns	V6, V1, V4, V9, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	11	Strength	0.639762608706304
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	11	Columns	V6, V4, V9, V7, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	12	Strength	0.638060068545094
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	12	Columns	V7, V1, V5, V9, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	13	Strength	0.621787186143475
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	13	Columns	V6, V1, V5, V9, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	14	Strength	0.620815028403369
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	14	Columns	V4, V2, V10, V9, V7
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	15	Strength	0.61645685613817
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	15	Columns	V2, V1, V10, V9, V4
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	16	Strength	0.616354206301683
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	16	Columns	V6, V5, V9, V7, V10
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	17	Strength	0.603360135096784
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	17	Columns	V5, V2, V10, V9, V7
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	18	Strength	0.601827763605073
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	18	Columns	V2, V1, V10, V9, V5
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	19	Strength	0.594724264547379
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	19	Columns	V7, V1, V10, V9, V3
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	20	Strength	0.591340441951694
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	20	Columns	V7, V1, V4, V3, V9
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	21	Strength	0.587422968554376
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	21	Columns	V3, V1, V4, V5, V9
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	22	Strength	0.585624609889022
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	22	Columns	V7, V2, V10, V9, V3
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	23	Strength	0.583568733898025
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	23	Columns	V2, V1, V10, V9, V3
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	24	Strength	0.580933954030426
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	24	Columns	V7, V3, V5, V9, V4
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	25	Strength	0.579989321133585
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	25	Columns	V7, V1, V5, V3, V9
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	1	NaiveBayes - F1	0.597090101134619
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	2	NaiveBayes - F1	0.612641868929818
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	3	NaiveBayes - F1	0.597425012966736
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	4	NaiveBayes - F1	0.613235782832714
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	5	NaiveBayes - F1	0.604738213465274
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	6	NaiveBayes - F1	0.613363949262676
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	7	NaiveBayes - F1	0.580643821869706
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	8	NaiveBayes - F1	0.561218372504516
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	9	NaiveBayes - F1	0.561376160274249
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	10	NaiveBayes - F1	0.570495933877221
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	11	NaiveBayes - F1	0.590892235686859
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	12	NaiveBayes - F1	0.581970202309094
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	13	NaiveBayes - F1	0.571394625268254
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	14	NaiveBayes - F1	0.567748322705338
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	15	NaiveBayes - F1	0.548410675655425
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	16	NaiveBayes - F1	0.593973705472916
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	17	NaiveBayes - F1	0.570149357364579
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	18	NaiveBayes - F1	0.549757291750841
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	19	NaiveBayes - F1	0.570539827274768
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	20	NaiveBayes - F1	0.573508738233502
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	21	NaiveBayes - F1	0.598901295530583
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	22	NaiveBayes - F1	0.56117210720639
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	23	NaiveBayes - F1	0.5422803020104
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	24	NaiveBayes - F1	0.609286042310097
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	25	NaiveBayes - F1	0.573850682710224
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	1	kNN - F1	0.693626585727546
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	2	kNN - F1	0.665695738827457
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	3	kNN - F1	0.69351949641506
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	4	kNN - F1	0.665584660734742
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	5	kNN - F1	0.693140826138344
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	6	kNN - F1	0.665430370953748
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	7	kNN - F1	0.695483643371221
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	8	kNN - F1	0.648133476303993
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	9	kNN - F1	0.648142180350743
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	10	kNN - F1	0.68941890280489
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	11	kNN - F1	0.67376721922916
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	12	kNN - F1	0.695590254211547
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	13	kNN - F1	0.68941890280489
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	14	kNN - F1	0.683035702006627
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	15	kNN - F1	0.708356037128302
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	16	kNN - F1	0.673768343382623
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	17	kNN - F1	0.68293106459015
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	18	kNN - F1	0.708356037128302
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	19	kNN - F1	0.695479351284352
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	20	kNN - F1	0.704992795114433
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	21	kNN - F1	0.690779986674567
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	22	kNN - F1	0.683696203318233
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	23	kNN - F1	0.708091119369697
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	24	kNN - F1	0.659003972001904
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	25	kNN - F1	0.704988865232096
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	0	Diversity	9
+VaryDeduplication	magic.arff	25	100	5	0	Approximative	0	Dissimilarity	0.484920634920635
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	1	Strength	0.636268581913571
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	1	Columns	V8, V4, V9, V7, V10
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	2	Strength	0.623125877046329
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	2	Columns	V8, V1, V5, V9, V10
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	3	Strength	0.591340441951694
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	3	Columns	V7, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	4	Strength	0.590070795625953
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	4	Columns	V6, V2, V4, V9, V10
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	5	Strength	0.587422968554325
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	5	Columns	V4, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	6	Strength	0.580933954030426
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	6	Columns	V7, V3, V5, V9, V4
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	7	Strength	0.579989321133585
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	7	Columns	V7, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	8	Strength	0.579579879088289
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	8	Columns	V8, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	9	Strength	0.575880563057895
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	9	Columns	V8, V3, V7, V4, V9
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	10	Strength	0.573161096805247
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	10	Columns	V6, V3, V9, V4, V7
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	11	Strength	0.5707732217111
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	11	Columns	V6, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	12	Strength	0.567657490111696
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	12	Columns	V8, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	13	Strength	0.566795309558055
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	13	Columns	V8, V3, V7, V9, V5
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	14	Strength	0.565416961224999
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	14	Columns	V4, V2, V9, V7, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	15	Strength	0.56183914244982
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	15	Columns	V6, V3, V5, V9, V7
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	16	Strength	0.559859811443763
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	16	Columns	V6, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	17	Strength	0.557499774778153
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	17	Columns	V5, V2, V7, V3, V9
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	18	Strength	0.547915834164693
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	18	Columns	V6, V3, V9, V4, V5
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	19	Strength	0.542702906078135
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	19	Columns	V6, V3, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	20	Strength	0.542642468773842
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	20	Columns	V7, V1, V5, V4, V9
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	21	Strength	0.540632056409656
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	21	Columns	V6, V2, V4, V3, V9
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	22	Strength	0.531816903541575
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	22	Columns	V7, V1, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	23	Strength	0.529747860446459
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	23	Columns	V6, V2, V5, V3, V9
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	24	Strength	0.528079961551043
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	24	Columns	V4, V2, V9, V5, V3
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	25	Strength	0.522731730264981
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	25	Columns	V6, V1, V4, V5, V9
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	1	NaiveBayes - F1	0.597622696681211
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	2	NaiveBayes - F1	0.582270188027331
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	3	NaiveBayes - F1	0.573508738233502
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	4	NaiveBayes - F1	0.560756150011802
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	5	NaiveBayes - F1	0.598901295530583
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	6	NaiveBayes - F1	0.609286042310097
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	7	NaiveBayes - F1	0.573850682710224
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	8	NaiveBayes - F1	0.5761967919697
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	9	NaiveBayes - F1	0.593530423412072
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	10	NaiveBayes - F1	0.589189954955026
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	11	NaiveBayes - F1	0.563036009195952
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	12	NaiveBayes - F1	0.57720454290866
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	13	NaiveBayes - F1	0.595397065248313
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	14	NaiveBayes - F1	0.566575111070421
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	15	NaiveBayes - F1	0.590349654450175
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	16	NaiveBayes - F1	0.563856155784914
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	17	NaiveBayes - F1	0.567052765503494
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	18	NaiveBayes - F1	0.581607082230704
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	19	NaiveBayes - F1	0.5802465074407
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	20	NaiveBayes - F1	0.584706384637804
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	21	NaiveBayes - F1	0.55726645689231
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	22	NaiveBayes - F1	0.560059515737999
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	23	NaiveBayes - F1	0.559981125849592
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	24	NaiveBayes - F1	0.562762187121706
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	25	NaiveBayes - F1	0.569257050856679
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	1	kNN - F1	0.669850709595061
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	2	kNN - F1	0.696911744092611
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	3	kNN - F1	0.704992795114433
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	4	kNN - F1	0.669129452554346
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	5	kNN - F1	0.690779986674567
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	6	kNN - F1	0.659003972001904
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	7	kNN - F1	0.704988865232096
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	8	kNN - F1	0.695072396160528
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	9	kNN - F1	0.673412368578553
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	10	kNN - F1	0.680573781767265
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	11	kNN - F1	0.692713702245637
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	12	kNN - F1	0.695235295127322
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	13	kNN - F1	0.673318386094156
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	14	kNN - F1	0.693298058833489
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	15	kNN - F1	0.680737094258228
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	16	kNN - F1	0.692269883418941
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	17	kNN - F1	0.693460792885982
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	18	kNN - F1	0.633318342233754
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	19	kNN - F1	0.646338836487924
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	20	kNN - F1	0.703990006354921
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	21	kNN - F1	0.668716820344333
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	22	kNN - F1	0.70392713654335
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	23	kNN - F1	0.669044798861028
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	24	kNN - F1	0.668890650082477
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	25	kNN - F1	0.691829059869458
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	0	Diversity	10
+VaryDeduplication	magic.arff	25	100	5	25	Approximative	0	Dissimilarity	0.453174603174603
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	1	Strength	0.636268581913571
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	1	Columns	V8, V4, V9, V7, V10
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	2	Strength	0.623125877046329
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	2	Columns	V8, V1, V5, V9, V10
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	3	Strength	0.591340441951694
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	3	Columns	V7, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	4	Strength	0.590070795625953
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	4	Columns	V6, V2, V4, V9, V10
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	5	Strength	0.587422968554325
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	5	Columns	V4, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	6	Strength	0.580933954030426
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	6	Columns	V7, V3, V5, V9, V4
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	7	Strength	0.579989321133585
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	7	Columns	V7, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	8	Strength	0.579579879088289
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	8	Columns	V8, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	9	Strength	0.575880563057895
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	9	Columns	V8, V3, V7, V4, V9
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	10	Strength	0.573161096805247
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	10	Columns	V6, V3, V9, V4, V7
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	11	Strength	0.5707732217111
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	11	Columns	V6, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	12	Strength	0.567657490111696
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	12	Columns	V8, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	13	Strength	0.566795309558055
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	13	Columns	V8, V3, V7, V9, V5
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	14	Strength	0.565416961224999
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	14	Columns	V4, V2, V9, V7, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	15	Strength	0.56183914244982
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	15	Columns	V6, V3, V5, V9, V7
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	16	Strength	0.559859811443763
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	16	Columns	V6, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	17	Strength	0.557499774778153
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	17	Columns	V5, V2, V7, V3, V9
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	18	Strength	0.547915834164693
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	18	Columns	V6, V3, V9, V4, V5
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	19	Strength	0.542702906078135
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	19	Columns	V6, V3, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	20	Strength	0.542642468773842
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	20	Columns	V7, V1, V5, V4, V9
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	21	Strength	0.540632056409656
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	21	Columns	V6, V2, V4, V3, V9
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	22	Strength	0.531816903541575
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	22	Columns	V7, V1, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	23	Strength	0.529747860446459
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	23	Columns	V6, V2, V5, V3, V9
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	24	Strength	0.528079961551043
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	24	Columns	V4, V2, V9, V5, V3
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	25	Strength	0.522731730264981
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	25	Columns	V6, V1, V4, V5, V9
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	1	NaiveBayes - F1	0.597622696681211
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	2	NaiveBayes - F1	0.582270188027331
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	3	NaiveBayes - F1	0.573508738233502
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	4	NaiveBayes - F1	0.560756150011802
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	5	NaiveBayes - F1	0.598901295530583
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	6	NaiveBayes - F1	0.609286042310097
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	7	NaiveBayes - F1	0.573850682710224
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	8	NaiveBayes - F1	0.5761967919697
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	9	NaiveBayes - F1	0.593530423412072
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	10	NaiveBayes - F1	0.589189954955026
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	11	NaiveBayes - F1	0.563036009195952
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	12	NaiveBayes - F1	0.57720454290866
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	13	NaiveBayes - F1	0.595397065248313
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	14	NaiveBayes - F1	0.566575111070421
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	15	NaiveBayes - F1	0.590349654450175
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	16	NaiveBayes - F1	0.563856155784914
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	17	NaiveBayes - F1	0.567052765503494
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	18	NaiveBayes - F1	0.581607082230704
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	19	NaiveBayes - F1	0.5802465074407
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	20	NaiveBayes - F1	0.584706384637804
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	21	NaiveBayes - F1	0.55726645689231
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	22	NaiveBayes - F1	0.560059515737999
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	23	NaiveBayes - F1	0.559981125849592
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	24	NaiveBayes - F1	0.562762187121706
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	25	NaiveBayes - F1	0.569257050856679
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	1	kNN - F1	0.669850709595061
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	2	kNN - F1	0.696911744092611
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	3	kNN - F1	0.704992795114433
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	4	kNN - F1	0.669129452554346
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	5	kNN - F1	0.690779986674567
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	6	kNN - F1	0.659003972001904
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	7	kNN - F1	0.704988865232096
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	8	kNN - F1	0.695072396160528
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	9	kNN - F1	0.673412368578553
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	10	kNN - F1	0.680573781767265
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	11	kNN - F1	0.692713702245637
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	12	kNN - F1	0.695235295127322
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	13	kNN - F1	0.673318386094156
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	14	kNN - F1	0.693298058833489
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	15	kNN - F1	0.680737094258228
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	16	kNN - F1	0.692269883418941
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	17	kNN - F1	0.693460792885982
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	18	kNN - F1	0.633318342233754
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	19	kNN - F1	0.646338836487924
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	20	kNN - F1	0.703990006354921
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	21	kNN - F1	0.668716820344333
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	22	kNN - F1	0.70392713654335
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	23	kNN - F1	0.669044798861028
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	24	kNN - F1	0.668890650082477
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	25	kNN - F1	0.691829059869458
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	0	Diversity	10
+VaryDeduplication	magic.arff	25	100	5	50	Approximative	0	Dissimilarity	0.453174603174603
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	1	Strength	0.636268581913571
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	1	Columns	V8, V4, V9, V7, V10
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	2	Strength	0.623125877046329
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	2	Columns	V8, V1, V5, V9, V10
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	3	Strength	0.591340441951694
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	3	Columns	V7, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	4	Strength	0.590070795625953
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	4	Columns	V6, V2, V4, V9, V10
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	5	Strength	0.587422968554325
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	5	Columns	V4, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	6	Strength	0.580933954030426
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	6	Columns	V7, V3, V5, V9, V4
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	7	Strength	0.579989321133585
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	7	Columns	V7, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	8	Strength	0.579579879088289
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	8	Columns	V8, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	9	Strength	0.575880563057895
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	9	Columns	V8, V3, V7, V4, V9
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	10	Strength	0.573161096805247
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	10	Columns	V6, V3, V9, V4, V7
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	11	Strength	0.5707732217111
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	11	Columns	V6, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	12	Strength	0.567657490111696
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	12	Columns	V8, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	13	Strength	0.566795309558055
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	13	Columns	V8, V3, V7, V9, V5
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	14	Strength	0.565416961224999
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	14	Columns	V4, V2, V9, V7, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	15	Strength	0.56183914244982
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	15	Columns	V6, V3, V5, V9, V7
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	16	Strength	0.559859811443763
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	16	Columns	V6, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	17	Strength	0.557499774778153
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	17	Columns	V5, V2, V7, V3, V9
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	18	Strength	0.547915834164693
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	18	Columns	V6, V3, V9, V4, V5
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	19	Strength	0.542702906078135
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	19	Columns	V6, V3, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	20	Strength	0.542642468773842
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	20	Columns	V7, V1, V5, V4, V9
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	21	Strength	0.540632056409656
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	21	Columns	V6, V2, V4, V3, V9
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	22	Strength	0.531816903541575
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	22	Columns	V7, V1, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	23	Strength	0.529747860446459
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	23	Columns	V6, V2, V5, V3, V9
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	24	Strength	0.528079961551043
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	24	Columns	V4, V2, V9, V5, V3
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	25	Strength	0.522731730264981
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	25	Columns	V6, V1, V4, V5, V9
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	1	NaiveBayes - F1	0.597622696681211
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	2	NaiveBayes - F1	0.582270188027331
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	3	NaiveBayes - F1	0.573508738233502
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	4	NaiveBayes - F1	0.560756150011802
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	5	NaiveBayes - F1	0.598901295530583
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	6	NaiveBayes - F1	0.609286042310097
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	7	NaiveBayes - F1	0.573850682710224
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	8	NaiveBayes - F1	0.5761967919697
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	9	NaiveBayes - F1	0.593530423412072
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	10	NaiveBayes - F1	0.589189954955026
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	11	NaiveBayes - F1	0.563036009195952
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	12	NaiveBayes - F1	0.57720454290866
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	13	NaiveBayes - F1	0.595397065248313
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	14	NaiveBayes - F1	0.566575111070421
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	15	NaiveBayes - F1	0.590349654450175
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	16	NaiveBayes - F1	0.563856155784914
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	17	NaiveBayes - F1	0.567052765503494
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	18	NaiveBayes - F1	0.581607082230704
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	19	NaiveBayes - F1	0.5802465074407
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	20	NaiveBayes - F1	0.584706384637804
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	21	NaiveBayes - F1	0.55726645689231
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	22	NaiveBayes - F1	0.560059515737999
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	23	NaiveBayes - F1	0.559981125849592
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	24	NaiveBayes - F1	0.562762187121706
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	25	NaiveBayes - F1	0.569257050856679
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	1	kNN - F1	0.669850709595061
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	2	kNN - F1	0.696911744092611
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	3	kNN - F1	0.704992795114433
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	4	kNN - F1	0.669129452554346
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	5	kNN - F1	0.690779986674567
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	6	kNN - F1	0.659003972001904
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	7	kNN - F1	0.704988865232096
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	8	kNN - F1	0.695072396160528
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	9	kNN - F1	0.673412368578553
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	10	kNN - F1	0.680573781767265
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	11	kNN - F1	0.692713702245637
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	12	kNN - F1	0.695235295127322
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	13	kNN - F1	0.673318386094156
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	14	kNN - F1	0.693298058833489
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	15	kNN - F1	0.680737094258228
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	16	kNN - F1	0.692269883418941
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	17	kNN - F1	0.693460792885982
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	18	kNN - F1	0.633318342233754
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	19	kNN - F1	0.646338836487924
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	20	kNN - F1	0.703990006354921
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	21	kNN - F1	0.668716820344333
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	22	kNN - F1	0.70392713654335
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	23	kNN - F1	0.669044798861028
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	24	kNN - F1	0.668890650082477
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	25	kNN - F1	0.691829059869458
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	0	Diversity	10
+VaryDeduplication	magic.arff	25	100	5	75	Approximative	0	Dissimilarity	0.453174603174603
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	1	Strength	0.636268581913571
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	1	Columns	V8, V4, V9, V7, V10
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	2	Strength	0.623125877046329
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	2	Columns	V8, V1, V5, V9, V10
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	3	Strength	0.591340441951694
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	3	Columns	V7, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	4	Strength	0.590070795625953
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	4	Columns	V6, V2, V4, V9, V10
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	5	Strength	0.587422968554325
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	5	Columns	V4, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	6	Strength	0.580933954030426
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	6	Columns	V7, V3, V5, V9, V4
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	7	Strength	0.579989321133585
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	7	Columns	V7, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	8	Strength	0.579579879088289
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	8	Columns	V8, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	9	Strength	0.575880563057895
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	9	Columns	V8, V3, V7, V4, V9
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	10	Strength	0.573161096805247
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	10	Columns	V6, V3, V9, V4, V7
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	11	Strength	0.5707732217111
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	11	Columns	V6, V1, V4, V9, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	12	Strength	0.567657490111696
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	12	Columns	V8, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	13	Strength	0.566795309558055
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	13	Columns	V8, V3, V7, V9, V5
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	14	Strength	0.565416961224999
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	14	Columns	V4, V2, V9, V7, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	15	Strength	0.56183914244982
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	15	Columns	V6, V3, V5, V9, V7
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	16	Strength	0.559859811443763
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	16	Columns	V6, V1, V5, V9, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	17	Strength	0.557499774778153
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	17	Columns	V5, V2, V7, V3, V9
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	18	Strength	0.547915834164693
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	18	Columns	V6, V3, V9, V4, V5
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	19	Strength	0.542702906078135
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	19	Columns	V6, V3, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	20	Strength	0.542642468773842
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	20	Columns	V7, V1, V5, V4, V9
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	21	Strength	0.540632056409656
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	21	Columns	V6, V2, V4, V3, V9
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	22	Strength	0.531816903541575
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	22	Columns	V7, V1, V8, V9, V4
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	23	Strength	0.529747860446459
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	23	Columns	V6, V2, V5, V3, V9
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	24	Strength	0.528079961551043
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	24	Columns	V4, V2, V9, V5, V3
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	25	Strength	0.522731730264981
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	25	Columns	V6, V1, V4, V5, V9
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.597622696681211
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.582270188027331
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.573508738233502
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.560756150011802
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.598901295530583
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.609286042310097
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.573850682710224
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.5761967919697
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.593530423412072
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.589189954955026
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.563036009195952
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.57720454290866
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.595397065248313
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.566575111070421
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.590349654450175
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.563856155784914
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.567052765503494
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.581607082230704
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.5802465074407
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.584706384637804
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.55726645689231
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.560059515737999
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.559981125849592
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.562762187121706
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.569257050856679
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	1	kNN - F1	0.669850709595061
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	2	kNN - F1	0.696911744092611
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	3	kNN - F1	0.704992795114433
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	4	kNN - F1	0.669129452554346
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	5	kNN - F1	0.690779986674567
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	6	kNN - F1	0.659003972001904
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	7	kNN - F1	0.704988865232096
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	8	kNN - F1	0.695072396160528
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	9	kNN - F1	0.673412368578553
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	10	kNN - F1	0.680573781767265
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	11	kNN - F1	0.692713702245637
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	12	kNN - F1	0.695235295127322
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	13	kNN - F1	0.673318386094156
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	14	kNN - F1	0.693298058833489
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	15	kNN - F1	0.680737094258228
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	16	kNN - F1	0.692269883418941
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	17	kNN - F1	0.693460792885982
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	18	kNN - F1	0.633318342233754
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	19	kNN - F1	0.646338836487924
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	20	kNN - F1	0.703990006354921
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	21	kNN - F1	0.668716820344333
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	22	kNN - F1	0.70392713654335
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	23	kNN - F1	0.669044798861028
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	24	kNN - F1	0.668890650082477
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	25	kNN - F1	0.691829059869458
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	0	Diversity	10
+VaryDeduplication	magic.arff	25	100	5	100	Approximative	0	Dissimilarity	0.453174603174603
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	1	Strength	3.28702523187862
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	1	Columns	dim13, dim4, dim9, dim8, dim10
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	2	Strength	3.28103285659223
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	2	Columns	dim13, dim4, dim9, dim8, dim14
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	3	Strength	3.27594571171432
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	3	Columns	dim14, dim4, dim7, dim11, dim8
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	4	Strength	3.27375458631012
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	4	Columns	dim7, dim4, dim11, dim10, dim8
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	5	Strength	3.26604182090093
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	5	Columns	dim7, dim4, dim11, dim6, dim10
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	6	Strength	3.26519688654269
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	6	Columns	dim13, dim0, dim14, dim9, dim8
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	7	Strength	3.25565445280282
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	7	Columns	dim9, dim7, dim8, dim4, dim10
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	8	Strength	3.24976048870456
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	8	Columns	dim14, dim4, dim7, dim9, dim8
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	9	Strength	3.24363920272548
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	9	Columns	dim14, dim4, dim7, dim11, dim10
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	10	Strength	3.2433243878211
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	10	Columns	dim13, dim4, dim9, dim11, dim8
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	11	Strength	3.23585293620323
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	11	Columns	dim10, dim4, dim13, dim9, dim11
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	12	Strength	3.23581286167245
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	12	Columns	dim7, dim4, dim11, dim9, dim12
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	13	Strength	3.23430093588897
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	13	Columns	dim7, dim4, dim11, dim10, dim5
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	14	Strength	3.23411045238994
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	14	Columns	dim7, dim4, dim11, dim8, dim15
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	15	Strength	3.23370804804458
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	15	Columns	dim7, dim0, dim11, dim8, dim13
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	16	Strength	3.23320580879133
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	16	Columns	dim9, dim7, dim10, dim4, dim11
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	17	Strength	3.23280363616624
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	17	Columns	dim11, dim4, dim9, dim8, dim15
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	18	Strength	3.22746208538676
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	18	Columns	dim10, dim4, dim13, dim14, dim9
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	19	Strength	3.22643495116213
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	19	Columns	dim14, dim4, dim7, dim10, dim9
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	20	Strength	3.22465354139436
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	20	Columns	dim9, dim7, dim13, dim14, dim8
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	21	Strength	3.2244935150231
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	21	Columns	dim7, dim4, dim11, dim8, dim5
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	22	Strength	3.22431382924808
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	22	Columns	dim11, dim4, dim9, dim8, dim5
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	23	Strength	3.22327291739771
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	23	Columns	dim7, dim0, dim11, dim10, dim15
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	24	Strength	3.22305898627086
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	24	Columns	dim7, dim6, dim8, dim11, dim15
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	25	Strength	3.22244302835533
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	25	Columns	dim14, dim9, dim11, dim4, dim10
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	1	NaiveBayes - F1	0.75578949889659
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	2	NaiveBayes - F1	0.785748002492709
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	3	NaiveBayes - F1	0.705922306880837
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	4	NaiveBayes - F1	0.695934509750191
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	5	NaiveBayes - F1	0.713478962915078
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	6	NaiveBayes - F1	0.791912790328892
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	7	NaiveBayes - F1	0.700571541848845
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	8	NaiveBayes - F1	0.699468432171874
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	9	NaiveBayes - F1	0.714720907803074
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	10	NaiveBayes - F1	0.696960602826731
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	11	NaiveBayes - F1	0.736603567801117
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	12	NaiveBayes - F1	0.645760673361268
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	13	NaiveBayes - F1	0.70032329804743
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	14	NaiveBayes - F1	0.747836040346525
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	15	NaiveBayes - F1	0.760173262413333
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	16	NaiveBayes - F1	0.682294379403548
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	17	NaiveBayes - F1	0.709476313009309
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	18	NaiveBayes - F1	0.801826519490944
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	19	NaiveBayes - F1	0.698655695383955
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	20	NaiveBayes - F1	0.734845112457613
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	21	NaiveBayes - F1	0.654013504158025
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	22	NaiveBayes - F1	0.642669765023396
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	23	NaiveBayes - F1	0.760625368524177
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	24	NaiveBayes - F1	0.707587417438285
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	25	NaiveBayes - F1	0.695067849402056
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	1	kNN - F1	0.931787382231888
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	2	kNN - F1	0.932764851283497
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	3	kNN - F1	0.921776088031164
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	4	kNN - F1	0.919619160179377
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	5	kNN - F1	0.909122760844633
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	6	kNN - F1	0.916242044151657
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	7	kNN - F1	0.907642911827973
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	8	kNN - F1	0.906879298176526
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	9	kNN - F1	0.902936115679389
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	10	kNN - F1	0.898232275892128
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	11	kNN - F1	0.909861225959881
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	12	kNN - F1	0.885139447073257
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	13	kNN - F1	0.890330353832231
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	14	kNN - F1	0.906272481793296
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	15	kNN - F1	0.901340120879433
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	16	kNN - F1	0.900943066697853
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	17	kNN - F1	0.899524486639144
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	18	kNN - F1	0.92410780750223
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	19	kNN - F1	0.902897221159305
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	20	kNN - F1	0.912025550963225
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	21	kNN - F1	0.874503540911423
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	22	kNN - F1	0.873935197772898
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	23	kNN - F1	0.915950127685937
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	24	kNN - F1	0.913105285246158
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	25	kNN - F1	0.902836254683333
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	0	Diversity	13
+VaryDeduplication	pendigits.arff	25	100	5	0	Approximative	0	Dissimilarity	0.384298941798942
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	1	Strength	3.28026754811774
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	1	Columns	dim4, dim1, dim8, dim7, dim14
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	2	Strength	3.27831930667767
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	2	Columns	dim4, dim1, dim2, dim7, dim14
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	3	Strength	3.26986997368476
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	3	Columns	dim5, dim2, dim9, dim6, dim8
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	4	Strength	3.26429534603379
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	4	Columns	dim4, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	5	Strength	3.26363495469795
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	5	Columns	dim4, dim2, dim8, dim7, dim13
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	6	Strength	3.2615387598864
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	6	Columns	dim4, dim1, dim2, dim7, dim8
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	7	Strength	3.25995171979485
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	7	Columns	dim4, dim1, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	8	Strength	3.25919395342979
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	8	Columns	dim4, dim1, dim7, dim6, dim14
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	9	Strength	3.2589936855907
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	9	Columns	dim5, dim4, dim8, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	10	Strength	3.25574472654038
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	10	Columns	dim7, dim2, dim6, dim9, dim8
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	11	Strength	3.25570487486685
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	11	Columns	dim4, dim1, dim15, dim9, dim8
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	12	Strength	3.2516545896546
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	12	Columns	dim9, dim1, dim8, dim5, dim6
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	13	Strength	3.25076767928346
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	13	Columns	dim5, dim4, dim9, dim6, dim10
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	14	Strength	3.24980514870501
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	14	Columns	dim8, dim4, dim9, dim7, dim2
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	15	Strength	3.24920091539999
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	15	Columns	dim5, dim2, dim4, dim9, dim14
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	16	Strength	3.24723397278523
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	16	Columns	dim4, dim1, dim15, dim9, dim6
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	17	Strength	3.24488410842518
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	17	Columns	dim4, dim1, dim9, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	18	Strength	3.24467073973966
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	18	Columns	dim6, dim5, dim9, dim8, dim14
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	19	Strength	3.24343974219553
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	19	Columns	dim6, dim5, dim9, dim8, dim13
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	20	Strength	3.24340567810719
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	20	Columns	dim4, dim2, dim7, dim9, dim0
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	21	Strength	3.24295651781689
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	21	Columns	dim4, dim1, dim15, dim7, dim10
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	22	Strength	3.24294070757009
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	22	Columns	dim4, dim1, dim9, dim7, dim14
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	23	Strength	3.24145413379629
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	23	Columns	dim9, dim1, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	24	Strength	3.2413991329625
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	24	Columns	dim5, dim2, dim4, dim9, dim6
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	25	Strength	3.24106809290245
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	25	Columns	dim4, dim2, dim7, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	1	NaiveBayes - F1	0.754557088331314
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	2	NaiveBayes - F1	0.719741370835354
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	3	NaiveBayes - F1	0.668974738151136
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	4	NaiveBayes - F1	0.646487032361603
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	5	NaiveBayes - F1	0.73146556325314
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	6	NaiveBayes - F1	0.724745073070331
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	7	NaiveBayes - F1	0.716543215356665
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	8	NaiveBayes - F1	0.727876515143694
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	9	NaiveBayes - F1	0.707342265082862
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	10	NaiveBayes - F1	0.663003352985889
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	11	NaiveBayes - F1	0.764868518215574
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	12	NaiveBayes - F1	0.724112703003007
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	13	NaiveBayes - F1	0.710302701670747
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	14	NaiveBayes - F1	0.672377440094868
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	15	NaiveBayes - F1	0.692809990326823
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	16	NaiveBayes - F1	0.74211141302008
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	17	NaiveBayes - F1	0.722372485142236
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	18	NaiveBayes - F1	0.688015830032818
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	19	NaiveBayes - F1	0.722084117693176
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	20	NaiveBayes - F1	0.660755938563357
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	21	NaiveBayes - F1	0.796442320167939
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	22	NaiveBayes - F1	0.732120908495368
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	23	NaiveBayes - F1	0.741398160923711
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	24	NaiveBayes - F1	0.675908294114013
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	25	NaiveBayes - F1	0.653299970611173
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	1	kNN - F1	0.917613937238488
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	2	kNN - F1	0.904484147941621
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	3	kNN - F1	0.877078666756971
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	4	kNN - F1	0.877904232476492
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	5	kNN - F1	0.890373933159154
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	6	kNN - F1	0.877373078130126
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	7	kNN - F1	0.898895019362268
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	8	kNN - F1	0.901173942232
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	9	kNN - F1	0.89671544583057
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	10	kNN - F1	0.86330867984701
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	11	kNN - F1	0.895070453479749
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	12	kNN - F1	0.884692721365502
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	13	kNN - F1	0.910111564144463
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	14	kNN - F1	0.870104889258042
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	15	kNN - F1	0.911569049148361
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	16	kNN - F1	0.903173556853231
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	17	kNN - F1	0.891061810778022
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	18	kNN - F1	0.904843814698639
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	19	kNN - F1	0.903948717882051
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	20	kNN - F1	0.865414067454412
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	21	kNN - F1	0.914304324695145
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	22	kNN - F1	0.911949309597352
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	23	kNN - F1	0.890561270254993
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	24	kNN - F1	0.877150338325821
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	25	kNN - F1	0.872337672589926
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	0	Diversity	13
+VaryDeduplication	pendigits.arff	25	100	5	25	Approximative	0	Dissimilarity	0.371071428571429
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	1	Strength	3.26986997368476
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	1	Columns	dim5, dim2, dim9, dim6, dim8
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	2	Strength	3.26429534603379
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	2	Columns	dim4, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	3	Strength	3.26346328182524
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	3	Columns	dim5, dim2, dim4, dim8, dim9
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	4	Strength	3.25995171979484
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	4	Columns	dim7, dim4, dim8, dim6, dim1
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	5	Strength	3.2589936855907
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	5	Columns	dim5, dim4, dim8, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	6	Strength	3.25574472654038
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	6	Columns	dim7, dim2, dim6, dim9, dim8
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	7	Strength	3.2516545896546
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	7	Columns	dim9, dim1, dim8, dim5, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	8	Strength	3.25051698478644
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	8	Columns	dim5, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	9	Strength	3.249805148705
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	9	Columns	dim4, dim2, dim8, dim9, dim7
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	10	Strength	3.24944647487141
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	10	Columns	dim4, dim2, dim8, dim9, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	11	Strength	3.24832034087345
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	11	Columns	dim3, dim2, dim4, dim8, dim9
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	12	Strength	3.24830042703493
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	12	Columns	dim4, dim1, dim9, dim8, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	13	Strength	3.24620524746445
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	13	Columns	dim5, dim2, dim4, dim7, dim12
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	14	Strength	3.24611671521757
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	14	Columns	dim4, dim1, dim9, dim11, dim10
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	15	Strength	3.24488410842517
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	15	Columns	dim9, dim1, dim7, dim6, dim4
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	16	Strength	3.24409974924932
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	16	Columns	dim3, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	17	Strength	3.24145413379629
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	17	Columns	dim9, dim1, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	18	Strength	3.2413991329625
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	18	Columns	dim5, dim2, dim4, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	19	Strength	3.24106809290245
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	19	Columns	dim4, dim2, dim7, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	20	Strength	3.24094884786833
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	20	Columns	dim5, dim2, dim4, dim8, dim7
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	21	Strength	3.24058399949557
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	21	Columns	dim3, dim2, dim8, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	22	Strength	3.24032258484103
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	22	Columns	dim5, dim2, dim9, dim0, dim13
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	23	Strength	3.24023342097128
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	23	Columns	dim8, dim4, dim9, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	24	Strength	3.23889280967543
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	24	Columns	dim4, dim1, dim6, dim5, dim9
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	25	Strength	3.23863871592662
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	25	Columns	dim3, dim2, dim7, dim4, dim8
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	1	NaiveBayes - F1	0.668974738151136
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	2	NaiveBayes - F1	0.646487032361603
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	3	NaiveBayes - F1	0.672783666626804
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	4	NaiveBayes - F1	0.716543215356665
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	5	NaiveBayes - F1	0.707342265082862
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	6	NaiveBayes - F1	0.663003352985889
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	7	NaiveBayes - F1	0.724112703003007
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	8	NaiveBayes - F1	0.639355775061146
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	9	NaiveBayes - F1	0.672377440094868
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	10	NaiveBayes - F1	0.62778697275435
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	11	NaiveBayes - F1	0.657835509908107
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	12	NaiveBayes - F1	0.65376804506465
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	13	NaiveBayes - F1	0.6333169094456
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	14	NaiveBayes - F1	0.688961813348861
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	15	NaiveBayes - F1	0.722372485142236
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	16	NaiveBayes - F1	0.626931187011347
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	17	NaiveBayes - F1	0.741398160923711
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	18	NaiveBayes - F1	0.675908294114013
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	19	NaiveBayes - F1	0.653299970611173
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	20	NaiveBayes - F1	0.660314485012835
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	21	NaiveBayes - F1	0.653135819328798
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	22	NaiveBayes - F1	0.666751241127784
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	23	NaiveBayes - F1	0.689097347493514
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	24	NaiveBayes - F1	0.734316572957563
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	25	NaiveBayes - F1	0.654083188662183
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	1	kNN - F1	0.876745282182144
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	2	kNN - F1	0.877633307417329
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	3	kNN - F1	0.873988212192514
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	4	kNN - F1	0.899919682405163
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	5	kNN - F1	0.896807968190045
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	6	kNN - F1	0.8644701469435
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	7	kNN - F1	0.88389013914197
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	8	kNN - F1	0.855965500971236
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	9	kNN - F1	0.869686772316579
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	10	kNN - F1	0.870026147929245
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	11	kNN - F1	0.881464505502422
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	12	kNN - F1	0.873054689950193
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	13	kNN - F1	0.863036960331936
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	14	kNN - F1	0.910065278952824
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	15	kNN - F1	0.890441333501133
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	16	kNN - F1	0.857788564841432
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	17	kNN - F1	0.890995858114534
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	18	kNN - F1	0.877429047849913
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	19	kNN - F1	0.87261024573824
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	20	kNN - F1	0.848363720660199
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	21	kNN - F1	0.873196983262014
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	22	kNN - F1	0.886072584689953
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	23	kNN - F1	0.895592794048012
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	24	kNN - F1	0.883887811860457
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	25	kNN - F1	0.86410445023015
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	0	Diversity	14
+VaryDeduplication	pendigits.arff	25	100	5	50	Approximative	0	Dissimilarity	0.416878306878307
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	1	Strength	3.26986997368476
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	1	Columns	dim5, dim2, dim9, dim6, dim8
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	2	Strength	3.26429534603379
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	2	Columns	dim4, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	3	Strength	3.26346328182524
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	3	Columns	dim5, dim2, dim4, dim8, dim9
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	4	Strength	3.25995171979484
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	4	Columns	dim7, dim4, dim8, dim6, dim1
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	5	Strength	3.2589936855907
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	5	Columns	dim5, dim4, dim8, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	6	Strength	3.25574472654038
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	6	Columns	dim7, dim2, dim6, dim9, dim8
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	7	Strength	3.2516545896546
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	7	Columns	dim9, dim1, dim8, dim5, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	8	Strength	3.25051698478644
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	8	Columns	dim5, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	9	Strength	3.249805148705
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	9	Columns	dim4, dim2, dim8, dim9, dim7
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	10	Strength	3.24944647487141
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	10	Columns	dim4, dim2, dim8, dim9, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	11	Strength	3.24832034087345
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	11	Columns	dim3, dim2, dim4, dim8, dim9
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	12	Strength	3.24830042703493
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	12	Columns	dim4, dim1, dim9, dim8, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	13	Strength	3.24620524746445
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	13	Columns	dim5, dim2, dim4, dim7, dim12
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	14	Strength	3.24611671521757
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	14	Columns	dim4, dim1, dim9, dim11, dim10
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	15	Strength	3.24488410842517
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	15	Columns	dim9, dim1, dim7, dim6, dim4
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	16	Strength	3.24409974924932
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	16	Columns	dim3, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	17	Strength	3.24145413379629
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	17	Columns	dim9, dim1, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	18	Strength	3.2413991329625
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	18	Columns	dim5, dim2, dim4, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	19	Strength	3.24106809290245
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	19	Columns	dim4, dim2, dim7, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	20	Strength	3.24094884786833
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	20	Columns	dim5, dim2, dim4, dim8, dim7
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	21	Strength	3.24058399949557
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	21	Columns	dim3, dim2, dim8, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	22	Strength	3.24032258484103
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	22	Columns	dim5, dim2, dim9, dim0, dim13
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	23	Strength	3.24023342097128
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	23	Columns	dim8, dim4, dim9, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	24	Strength	3.23889280967543
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	24	Columns	dim4, dim1, dim6, dim5, dim9
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	25	Strength	3.23863871592662
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	25	Columns	dim3, dim2, dim7, dim4, dim8
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	1	NaiveBayes - F1	0.668974738151136
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	2	NaiveBayes - F1	0.646487032361603
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	3	NaiveBayes - F1	0.672783666626804
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	4	NaiveBayes - F1	0.716543215356665
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	5	NaiveBayes - F1	0.707342265082862
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	6	NaiveBayes - F1	0.663003352985889
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	7	NaiveBayes - F1	0.724112703003007
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	8	NaiveBayes - F1	0.639355775061146
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	9	NaiveBayes - F1	0.672377440094868
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	10	NaiveBayes - F1	0.62778697275435
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	11	NaiveBayes - F1	0.657835509908107
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	12	NaiveBayes - F1	0.65376804506465
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	13	NaiveBayes - F1	0.6333169094456
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	14	NaiveBayes - F1	0.688961813348861
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	15	NaiveBayes - F1	0.722372485142236
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	16	NaiveBayes - F1	0.626931187011347
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	17	NaiveBayes - F1	0.741398160923711
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	18	NaiveBayes - F1	0.675908294114013
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	19	NaiveBayes - F1	0.653299970611173
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	20	NaiveBayes - F1	0.660314485012835
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	21	NaiveBayes - F1	0.653135819328798
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	22	NaiveBayes - F1	0.666751241127784
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	23	NaiveBayes - F1	0.689097347493514
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	24	NaiveBayes - F1	0.734316572957563
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	25	NaiveBayes - F1	0.654083188662183
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	1	kNN - F1	0.875332503271785
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	2	kNN - F1	0.878262715653738
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	3	kNN - F1	0.873217982187911
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	4	kNN - F1	0.90105591744386
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	5	kNN - F1	0.895141421714183
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	6	kNN - F1	0.863560218100228
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	7	kNN - F1	0.885364815725263
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	8	kNN - F1	0.857369984504864
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	9	kNN - F1	0.871117277742457
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	10	kNN - F1	0.870614746564976
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	11	kNN - F1	0.880576281298032
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	12	kNN - F1	0.87499176541165
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	13	kNN - F1	0.863379028853502
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	14	kNN - F1	0.910159776185079
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	15	kNN - F1	0.890829299644693
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	16	kNN - F1	0.858341327029984
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	17	kNN - F1	0.89206000206847
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	18	kNN - F1	0.877930177871161
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	19	kNN - F1	0.872059269834624
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	20	kNN - F1	0.849000140990375
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	21	kNN - F1	0.872081873972348
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	22	kNN - F1	0.887402068867366
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	23	kNN - F1	0.895039607066154
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	24	kNN - F1	0.884745651873835
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	25	kNN - F1	0.864653291310353
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	0	Diversity	14
+VaryDeduplication	pendigits.arff	25	100	5	75	Approximative	0	Dissimilarity	0.416878306878307
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	1	Strength	3.26986997368476
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	1	Columns	dim5, dim2, dim9, dim6, dim8
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	2	Strength	3.26429534603379
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	2	Columns	dim4, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	3	Strength	3.26346328182524
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	3	Columns	dim5, dim2, dim4, dim8, dim9
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	4	Strength	3.25995171979484
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	4	Columns	dim7, dim4, dim8, dim6, dim1
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	5	Strength	3.2589936855907
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	5	Columns	dim5, dim4, dim8, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	6	Strength	3.25574472654038
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	6	Columns	dim7, dim2, dim6, dim9, dim8
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	7	Strength	3.2516545896546
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	7	Columns	dim9, dim1, dim8, dim5, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	8	Strength	3.25051698478644
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	8	Columns	dim5, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	9	Strength	3.249805148705
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	9	Columns	dim4, dim2, dim8, dim9, dim7
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	10	Strength	3.24944647487141
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	10	Columns	dim4, dim2, dim8, dim9, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	11	Strength	3.24832034087345
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	11	Columns	dim3, dim2, dim4, dim8, dim9
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	12	Strength	3.24830042703493
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	12	Columns	dim4, dim1, dim9, dim8, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	13	Strength	3.24620524746445
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	13	Columns	dim5, dim2, dim4, dim7, dim12
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	14	Strength	3.24611671521757
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	14	Columns	dim4, dim1, dim9, dim11, dim10
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	15	Strength	3.24488410842517
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	15	Columns	dim9, dim1, dim7, dim6, dim4
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	16	Strength	3.24409974924932
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	16	Columns	dim3, dim2, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	17	Strength	3.24145413379629
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	17	Columns	dim9, dim1, dim8, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	18	Strength	3.2413991329625
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	18	Columns	dim5, dim2, dim4, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	19	Strength	3.24106809290245
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	19	Columns	dim4, dim2, dim7, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	20	Strength	3.24094884786833
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	20	Columns	dim5, dim2, dim4, dim8, dim7
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	21	Strength	3.24058399949557
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	21	Columns	dim3, dim2, dim8, dim6, dim9
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	22	Strength	3.24032258484103
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	22	Columns	dim5, dim2, dim9, dim0, dim13
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	23	Strength	3.24023342097128
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	23	Columns	dim8, dim4, dim9, dim7, dim6
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	24	Strength	3.23889280967543
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	24	Columns	dim4, dim1, dim6, dim5, dim9
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	25	Strength	3.23863871592662
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	25	Columns	dim3, dim2, dim7, dim4, dim8
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.668974738151136
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.646487032361603
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.672783666626804
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.716543215356665
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.707342265082862
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.663003352985889
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.724112703003007
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.639355775061146
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.672377440094868
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.62778697275435
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.657835509908107
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.65376804506465
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.6333169094456
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.688961813348861
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.722372485142236
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.626931187011347
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.741398160923711
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.675908294114013
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.653299970611173
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.660314485012835
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.653135819328798
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.666751241127784
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.689097347493514
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.734316572957563
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.654083188662183
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	1	kNN - F1	0.87587916719364
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	2	kNN - F1	0.878306049172731
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	3	kNN - F1	0.87406533023674
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	4	kNN - F1	0.898867222093458
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	5	kNN - F1	0.89657638020313
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	6	kNN - F1	0.862672533143296
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	7	kNN - F1	0.884309559056345
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	8	kNN - F1	0.856928320973562
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	9	kNN - F1	0.870354410500472
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	10	kNN - F1	0.869369841682155
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	11	kNN - F1	0.882048527647128
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	12	kNN - F1	0.874456962933136
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	13	kNN - F1	0.863424543054581
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	14	kNN - F1	0.911092893937465
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	15	kNN - F1	0.890721468865496
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	16	kNN - F1	0.859585398210636
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	17	kNN - F1	0.891404351350474
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	18	kNN - F1	0.877538815465193
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	19	kNN - F1	0.871866675686206
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	20	kNN - F1	0.849285280842611
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	21	kNN - F1	0.872343176731021
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	22	kNN - F1	0.886476458467786
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	23	kNN - F1	0.895831609605504
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	24	kNN - F1	0.884329072204213
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	25	kNN - F1	0.864374695318313
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	0	Diversity	14
+VaryDeduplication	pendigits.arff	25	100	5	100	Approximative	0	Dissimilarity	0.416878306878307

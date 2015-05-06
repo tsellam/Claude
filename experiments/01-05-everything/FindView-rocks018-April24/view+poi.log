@@ -1,0 +1,13 @@
+file	q	k	size	algo	key	value
+magic.arff	25	10	5	Just_POIs_FALSE	Views	6.41 
+magic.arff	25	10	5	Just_POIs_FALSE	POIs	796.908 
+magic.arff	25	10	5	Just_POIs_FALSE	Time	803.318 
+magic.arff	25	10	5	Just_POIs_TRUE	Views	0 
+magic.arff	25	10	5	Just_POIs_TRUE	POIs	1160.197 
+magic.arff	25	10	5	Just_POIs_TRUE	Time	1160.197 
+pendigits.arff	25	10	5	Just_POIs_FALSE	Views	4.40900000000011 
+pendigits.arff	25	10	5	Just_POIs_FALSE	POIs	351.189 
+pendigits.arff	25	10	5	Just_POIs_FALSE	Time	355.599 
+pendigits.arff	25	10	5	Just_POIs_TRUE	Views	0 
+pendigits.arff	25	10	5	Just_POIs_TRUE	POIs	847.286 
+pendigits.arff	25	10	5	Just_POIs_TRUE	Time	847.286 

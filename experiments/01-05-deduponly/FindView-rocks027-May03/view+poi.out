@@ -1,0 +1,501 @@
+file	q	k	size	algo	view	score	description
+insurance.arff	25	10	5	Just_POIs_FALSE	1	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	2	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	3	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	4	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	5	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	6	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	7	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	8	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	9	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	10	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	11	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	12	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	13	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	14	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	15	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	16	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	17	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	18	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	19	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	20	0.0082824596239194	V47: (4.8,6.4] - V47: (5.8,6] - V30: (-0.009,1.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	21	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	22	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	23	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	24	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	25	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	26	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	27	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	28	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	29	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	30	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	31	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	32	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	33	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	34	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	35	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	36	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	37	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	38	0.00934124574375342	V47: (-0.008,1.6] - V37: (3.6,5.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	39	0.00934124574375342	V37: (3.6,5.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	40	0.00934124574375342	V37: (3.6,5.4] - V68: (-0.004,0.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	41	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	42	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	43	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	44	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	45	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	46	0.0129440475250829	V47: (4.8,6.4] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	47	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	48	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	49	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	50	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	51	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	52	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	53	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	54	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	55	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V59: (3.8,4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	56	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	57	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	58	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	59	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	60	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	61	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	62	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	63	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	64	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	65	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	66	0.0119234711251822	V42: (1.8,3.6] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	67	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	68	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	69	0.0119234711251822	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	70	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	71	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	72	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	73	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	74	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	75	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	76	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	77	0.0119234711251822	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	78	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	79	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	80	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	81	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	82	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	83	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	84	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	85	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	86	0.0129440475250829	V47: (4.8,6.4] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	87	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	88	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	89	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	90	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	91	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	92	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	93	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	94	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	95	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V59: (3.8,4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	96	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	97	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	98	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	99	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	100	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	101	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	102	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	103	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	104	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	105	0.0129440475250829	V47: (4.8,6.4] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	106	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	107	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	108	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	109	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	110	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	111	0.0119234711251822	V42: (1.8,3.6] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	112	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	113	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	114	0.0119234711251822	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	115	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	116	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	117	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	118	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	119	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	120	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	121	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	122	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	123	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	124	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	125	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	126	0.0119234711251822	V42: (1.8,3.6] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	127	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	128	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	129	0.0119234711251822	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	130	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	131	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	132	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	133	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	134	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	135	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	136	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	137	0.0119234711251822	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	138	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	139	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	140	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	141	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	142	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	143	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	144	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	145	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	146	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	147	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	148	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	149	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	150	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	151	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	152	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	153	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	154	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	155	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	156	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	157	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	158	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	159	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	160	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	161	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	162	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	163	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	164	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	165	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	166	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	167	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	168	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	169	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	170	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	171	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	172	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	173	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	174	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	175	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	176	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	177	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	178	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	179	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	180	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	181	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	182	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	183	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	184	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	185	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	186	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	187	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	188	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	189	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	190	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	191	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	192	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	193	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	194	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	195	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	196	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	197	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	198	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	199	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	200	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	201	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	202	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	203	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	204	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	205	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	206	0.00990139194304061	V5: (4.6,6.4] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	207	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	208	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	209	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	210	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	211	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	212	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	213	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	214	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	215	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	216	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	217	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	218	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	219	0.0098457383357751	V47: (4.8,6.4] - V47: (5.8,6] - V5: (0.991,2.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	220	0.0098457383357751	V5: (0.991,2.8] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	221	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	222	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	223	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	224	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	225	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	226	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	227	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	228	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	229	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	230	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	231	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	232	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	233	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	234	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	235	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	236	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	237	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	238	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	239	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	240	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	241	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	242	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	243	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	244	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	245	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	246	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	247	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	248	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	249	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	250	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	251	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	252	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	253	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	254	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	255	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	256	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	257	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	258	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	259	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	260	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	261	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	262	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	263	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	264	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	265	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	266	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	267	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	268	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	269	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	270	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	271	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	272	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	273	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	274	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	275	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	276	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	277	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	278	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	279	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	280	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	281	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	282	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	283	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	284	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	285	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	286	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	287	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	288	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	289	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	290	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	291	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	292	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	293	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	294	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	295	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	296	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	297	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	298	0.00934124574375342	V47: (-0.008,1.6] - V37: (3.6,5.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	299	0.00934124574375342	V37: (3.6,5.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	300	0.00934124574375342	V37: (3.6,5.4] - V68: (-0.004,0.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	301	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	302	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	303	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	304	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	305	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	306	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	307	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	308	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	309	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	310	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	311	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	312	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	313	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	314	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	315	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	316	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	317	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	318	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	319	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	320	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	321	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	322	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	323	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	324	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	325	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	326	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	327	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	328	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	329	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	330	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	331	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	332	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	333	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	334	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	335	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	336	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	337	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	338	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	339	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	340	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	341	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	342	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	343	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	344	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	345	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	346	0.00990139194304061	V5: (4.6,6.4] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	347	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	348	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	349	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	350	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	351	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	352	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	353	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	354	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	355	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	356	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	357	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	358	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	359	0.0098457383357751	V47: (4.8,6.4] - V47: (5.8,6] - V5: (0.991,2.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	360	0.0098457383357751	V5: (0.991,2.8] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	361	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	362	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	363	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	364	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	365	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	366	0.00990139194304061	V5: (4.6,6.4] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	367	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	368	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	369	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	370	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	371	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	372	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	373	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	374	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	375	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	376	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	377	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	378	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	379	0.0098457383357751	V47: (4.8,6.4] - V47: (5.8,6] - V5: (0.991,2.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	380	0.0098457383357751	V5: (0.991,2.8] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	381	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	382	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	383	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	384	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	385	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	386	0.0129440475250829	V47: (4.8,6.4] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	387	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	388	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	389	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	390	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	391	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	392	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	393	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	394	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	395	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V59: (3.8,4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	396	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	397	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	398	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	399	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	400	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	401	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	402	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	403	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	404	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	405	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	406	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	407	0.0096475718013774	V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	408	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	409	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	410	0.00937526204771808	V47: (4.8,6.4] - V1: (0.96,9] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	411	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	412	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	413	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	414	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	415	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	416	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	417	0.00937526204771808	V47: (4.8,6.4] - V47: (5.8,6] - V1: (0.96,9] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	418	0.00937526204771808	V1: (0.96,9] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	419	0.00905302708810308	V1: (0.96,9] - V47: (5.6,7.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	420	0.00861818775048372	V47: (4.8,6.4] - V47: (5.8,6] - V43: (6.6,8.01] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	421	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	422	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	423	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	424	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	425	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	426	0.00990139194304061	V5: (4.6,6.4] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	427	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	428	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	429	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	430	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	431	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	432	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	433	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	434	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	435	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	436	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	437	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	438	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	439	0.0098457383357751	V47: (4.8,6.4] - V47: (5.8,6] - V5: (0.991,2.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	440	0.0098457383357751	V5: (0.991,2.8] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	441	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	442	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	443	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	444	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	445	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	446	0.00990139194304061	V5: (4.6,6.4] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	447	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	448	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	449	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	450	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	451	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	452	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	453	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	454	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	455	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	456	0.00990139194304061	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	457	0.00990139194304061	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	458	0.00990139194304061	V47: (-0.008,1.6] - V5: (4.6,6.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	459	0.0098457383357751	V47: (4.8,6.4] - V47: (5.8,6] - V5: (0.991,2.8] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	460	0.0098457383357751	V5: (0.991,2.8] - V47: (5.6,7.01] - V47: (6,6.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	461	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	462	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	463	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	464	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	465	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	466	0.0119234711251822	V42: (1.8,3.6] - V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	467	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	468	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	469	0.0119234711251822	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	470	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	471	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	472	0.0119234711251822	V42: (1.8,3.6] - V68: (-0.006,1.2] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	473	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	474	0.0119234711251822	V68: (-0.007,1.4] - V42: (1.8,3.6] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	475	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	476	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	477	0.0119234711251822	V68: (-0.007,1.4] - V68: (-0.001,0.2] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	478	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	479	0.0119234711251822	V47: (-0.008,1.6] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	480	0.0119234711251822	V68: (-0.007,1.4] - V47: (-0.007,1.4] - V42: (1.8,3.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	481	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	482	0.0140602331160684	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	483	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	484	0.0140602331160684	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	485	0.0129440475250829	V47: (4.8,6.4] - V59: (2.8,4.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	486	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	487	0.0121232257817777	V68: (-0.007,1.4] - V47: (-0.007,1.4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	488	0.0121232257817777	V68: (-0.007,1.4] - V68: (-0.001,0.2] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	489	0.0121232257817777	V47: (-0.008,1.6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	490	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	491	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	492	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	493	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	494	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V59: (3.8,4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	495	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	496	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	497	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	498	0.0109944106353325	V47: (4.8,6.4] - V47: (5.8,6] - V59: (2.8,4.2] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	499	0.0109944106353325	V47: (4.8,6.4] - V59: (2.8,4.2] - V47: (5.8,6] - V59: (3.8,4] -  
+insurance.arff	25	10	5	Just_POIs_FALSE	500	0.0109944106353325	V59: (3.2,4.8] - V47: (4.8,6.4] - V47: (5.8,6] -  

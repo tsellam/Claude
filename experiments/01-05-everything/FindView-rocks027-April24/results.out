@@ -1,0 +1,1205 @@
+experiment	file	q	beam_size	size_view	dedup	algo	view	key	value
+VaryAlgos	insurance.arff	19	44	22	100	4S	1	Strength	0.00823553564305168
+VaryAlgos	insurance.arff	19	44	22	100	4S	1	Columns	V11, V10
+VaryAlgos	insurance.arff	19	44	22	100	4S	2	Strength	0.144285729046659
+VaryAlgos	insurance.arff	19	44	22	100	4S	2	Columns	V12, V10, V24, V29, V30, V31, V34, V37, V39, V42, V43, V35, V36
+VaryAlgos	insurance.arff	19	44	22	100	4S	3	Strength	0.121067381417875
+VaryAlgos	insurance.arff	19	44	22	100	4S	3	Columns	V38, V16, V25, V35, V36, V37, V42, V39, V40
+VaryAlgos	insurance.arff	19	44	22	100	4S	4	Strength	0.150514422966983
+VaryAlgos	insurance.arff	19	44	22	100	4S	4	Columns	V22, V1, V5, V17, V18, V24, V23, V16, V19, V25, V28, V35, V36, V42, V43, V29, V30, V31, V37, V39, V34, V26
+VaryAlgos	insurance.arff	19	44	22	100	4S	5	Strength	0.145252017536027
+VaryAlgos	insurance.arff	19	44	22	100	4S	5	Columns	V32, V10, V12, V13, V34, V37, V39, V42, V43, V15, V3, V30, V31, V29, V33
+VaryAlgos	insurance.arff	19	44	22	100	4S	6	Strength	0.248856644690653
+VaryAlgos	insurance.arff	19	44	22	100	4S	6	Columns	V59, V44, V65, V80, V40, V16, V18, V19, V25, V28, V30, V31, V35, V36, V37, V42, V43
+VaryAlgos	insurance.arff	19	44	22	100	4S	7	Strength	0.129207981220526
+VaryAlgos	insurance.arff	19	44	22	100	4S	7	Columns	V27, V17, V18, V28, V33, V10, V30, V31, V34, V35, V36
+VaryAlgos	insurance.arff	19	44	22	100	4S	8	Strength	0.1250236326522
+VaryAlgos	insurance.arff	19	44	22	100	4S	8	Columns	V9, V7, V30, V31, V14, V3, V4, V15
+VaryAlgos	insurance.arff	19	44	22	100	4S	9	Strength	0.139190434181252
+VaryAlgos	insurance.arff	19	44	22	100	4S	9	Columns	V21, V1, V5, V22, V4, V3, V13, V15
+VaryAlgos	insurance.arff	19	44	22	100	4S	10	Strength	0.11139852114786
+VaryAlgos	insurance.arff	19	44	22	100	4S	10	Columns	V20, V16, V25, V27, V17, V18, V29
+VaryAlgos	insurance.arff	19	44	22	100	4S	11	Strength	0.0929490327596962
+VaryAlgos	insurance.arff	19	44	22	100	4S	11	Columns	V41, V40, V42, V6, V18, V19
+VaryAlgos	insurance.arff	19	44	22	100	4S	12	Strength	0.0116627988720719
+VaryAlgos	insurance.arff	19	44	22	100	4S	12	Columns	V8, V7, V45, V66
+VaryAlgos	insurance.arff	19	44	22	100	4S	13	Strength	0.00200158336185019
+VaryAlgos	insurance.arff	19	44	22	100	4S	13	Columns	V46, V67, V49, V70
+VaryAlgos	insurance.arff	19	44	22	100	4S	14	Strength	0.00290205491240214
+VaryAlgos	insurance.arff	19	44	22	100	4S	14	Columns	V51, V72, V54, V75
+VaryAlgos	insurance.arff	19	44	22	100	4S	15	Strength	0.0048062284464333
+VaryAlgos	insurance.arff	19	44	22	100	4S	15	Columns	V55, V76, V57, V78
+VaryAlgos	insurance.arff	19	44	22	100	4S	16	Strength	0.00340027212993776
+VaryAlgos	insurance.arff	19	44	22	100	4S	16	Columns	V62, V83, V64, V85
+VaryAlgos	insurance.arff	19	44	22	100	4S	17	Strength	0.0274881151653257
+VaryAlgos	insurance.arff	19	44	22	100	4S	17	Columns	V68, V47, V73, V52
+VaryAlgos	insurance.arff	19	44	22	100	4S	18	Strength	0.0305293527862061
+VaryAlgos	insurance.arff	19	44	22	100	4S	18	Columns	V67, V52, V47, V44
+VaryAlgos	insurance.arff	19	44	22	100	4S	19	Strength	0.0386051336843947
+VaryAlgos	insurance.arff	19	44	22	100	4S	19	Columns	V11, V4, V6, V7
+VaryAlgos	insurance.arff	19	44	22	100	4S	1	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	2	NaiveBayes - F1	0.157848893972466
+VaryAlgos	insurance.arff	19	44	22	100	4S	3	NaiveBayes - F1	0.119198551774185
+VaryAlgos	insurance.arff	19	44	22	100	4S	4	NaiveBayes - F1	0.165819736187803
+VaryAlgos	insurance.arff	19	44	22	100	4S	5	NaiveBayes - F1	0.144110343852068
+VaryAlgos	insurance.arff	19	44	22	100	4S	6	NaiveBayes - F1	0.169460483343405
+VaryAlgos	insurance.arff	19	44	22	100	4S	7	NaiveBayes - F1	0.0946020925867441
+VaryAlgos	insurance.arff	19	44	22	100	4S	8	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	9	NaiveBayes - F1	0.0748102139406487
+VaryAlgos	insurance.arff	19	44	22	100	4S	10	NaiveBayes - F1	0.0998491391766077
+VaryAlgos	insurance.arff	19	44	22	100	4S	11	NaiveBayes - F1	0.0714686720354104
+VaryAlgos	insurance.arff	19	44	22	100	4S	12	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	13	NaiveBayes - F1	0.00625
+VaryAlgos	insurance.arff	19	44	22	100	4S	14	NaiveBayes - F1	0.0402272019919079
+VaryAlgos	insurance.arff	19	44	22	100	4S	15	NaiveBayes - F1	0.0888196802074718
+VaryAlgos	insurance.arff	19	44	22	100	4S	16	NaiveBayes - F1	0.119310959017984
+VaryAlgos	insurance.arff	19	44	22	100	4S	17	NaiveBayes - F1	0.0537634408602151
+VaryAlgos	insurance.arff	19	44	22	100	4S	18	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	19	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	1	kNN - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	2	kNN - F1	0.0285714285714286
+VaryAlgos	insurance.arff	19	44	22	100	4S	3	kNN - F1	0.0445304437564499
+VaryAlgos	insurance.arff	19	44	22	100	4S	4	kNN - F1	0.0523809523809524
+VaryAlgos	insurance.arff	19	44	22	100	4S	5	kNN - F1	0.0392444856730571
+VaryAlgos	insurance.arff	19	44	22	100	4S	6	kNN - F1	0.0228205128205128
+VaryAlgos	insurance.arff	19	44	22	100	4S	7	kNN - F1	0.0575657894736842
+VaryAlgos	insurance.arff	19	44	22	100	4S	8	kNN - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	9	kNN - F1	0.0341005967604433
+VaryAlgos	insurance.arff	19	44	22	100	4S	10	kNN - F1	0.0579831932773109
+VaryAlgos	insurance.arff	19	44	22	100	4S	11	kNN - F1	0.0390715159993006
+VaryAlgos	insurance.arff	19	44	22	100	4S	12	kNN - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	4S	13	kNN - F1	NA
+VaryAlgos	insurance.arff	19	44	22	100	4S	14	kNN - F1	NA
+VaryAlgos	insurance.arff	19	44	22	100	4S	15	kNN - F1	NA
+VaryAlgos	insurance.arff	19	44	22	100	4S	16	kNN - F1	NA
+VaryAlgos	insurance.arff	19	44	22	100	4S	17	kNN - F1	NA
+VaryAlgos	insurance.arff	19	44	22	100	4S	18	kNN - F1	NA
+VaryAlgos	insurance.arff	19	44	22	100	4S	19	kNN - F1	0.058974358974359
+VaryAlgos	insurance.arff	19	44	22	100	Clique	1	Strength	0.0495301975307108
+VaryAlgos	insurance.arff	19	44	22	100	Clique	1	Columns	V13, V1, V8
+VaryAlgos	insurance.arff	19	44	22	100	Clique	2	Strength	0.0455841830445687
+VaryAlgos	insurance.arff	19	44	22	100	Clique	2	Columns	V1, V8, V7
+VaryAlgos	insurance.arff	19	44	22	100	Clique	3	Strength	0.0423263898715556
+VaryAlgos	insurance.arff	19	44	22	100	Clique	3	Columns	V12, V1, V8
+VaryAlgos	insurance.arff	19	44	22	100	Clique	4	Strength	0.0346417466957698
+VaryAlgos	insurance.arff	19	44	22	100	Clique	4	Columns	V7, V8, V32
+VaryAlgos	insurance.arff	19	44	22	100	Clique	5	Strength	0.0314447106532869
+VaryAlgos	insurance.arff	19	44	22	100	Clique	5	Columns	V1, V8, V3
+VaryAlgos	insurance.arff	19	44	22	100	Clique	6	Strength	0.0304208754827462
+VaryAlgos	insurance.arff	19	44	22	100	Clique	6	Columns	V1, V8, V5, V2
+VaryAlgos	insurance.arff	19	44	22	100	Clique	7	Strength	0.0285224578920067
+VaryAlgos	insurance.arff	19	44	22	100	Clique	7	Columns	V18, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	8	Strength	0.0250461173250809
+VaryAlgos	insurance.arff	19	44	22	100	Clique	8	Columns	V30, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	9	Strength	0.024933651472141
+VaryAlgos	insurance.arff	19	44	22	100	Clique	9	Columns	V31, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	10	Strength	0.0248418835182971
+VaryAlgos	insurance.arff	19	44	22	100	Clique	10	Columns	V22, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	11	Strength	0.0240355777718486
+VaryAlgos	insurance.arff	19	44	22	100	Clique	11	Columns	V10, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	12	Strength	0.0234722513707029
+VaryAlgos	insurance.arff	19	44	22	100	Clique	12	Columns	V28, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	13	Strength	0.0226694157099079
+VaryAlgos	insurance.arff	19	44	22	100	Clique	13	Columns	V9, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	14	Strength	0.0223912315883554
+VaryAlgos	insurance.arff	19	44	22	100	Clique	14	Columns	V26, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	15	Strength	0.022273708728533
+VaryAlgos	insurance.arff	19	44	22	100	Clique	15	Columns	V17, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	16	Strength	0.022268427860455
+VaryAlgos	insurance.arff	19	44	22	100	Clique	16	Columns	V23, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	17	Strength	0.0219366499449372
+VaryAlgos	insurance.arff	19	44	22	100	Clique	17	Columns	V8, V32, V3
+VaryAlgos	insurance.arff	19	44	22	100	Clique	18	Strength	0.0216776298597461
+VaryAlgos	insurance.arff	19	44	22	100	Clique	18	Columns	V34, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	19	Strength	0.0216063933216128
+VaryAlgos	insurance.arff	19	44	22	100	Clique	19	Columns	V19, V1
+VaryAlgos	insurance.arff	19	44	22	100	Clique	1	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	2	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	3	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	4	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	5	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	6	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	7	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	8	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	9	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	10	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	11	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	12	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	13	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	14	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	15	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	16	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	17	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	18	NaiveBayes - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	19	NaiveBayes - F1	0.0313768918420081
+VaryAlgos	insurance.arff	19	44	22	100	Clique	1	kNN - F1	0.0505050505050505
+VaryAlgos	insurance.arff	19	44	22	100	Clique	2	kNN - F1	NaN
+VaryAlgos	insurance.arff	19	44	22	100	Clique	3	kNN - F1	0.0366568914956012
+VaryAlgos	insurance.arff	19	44	22	100	Clique	4	kNN - F1	0.0252838948491122
+VaryAlgos	insurance.arff	19	44	22	100	Clique	5	kNN - F1	0.0486772486772487
+VaryAlgos	insurance.arff	19	44	22	100	Clique	6	kNN - F1	0.0469176213857065
+VaryAlgos	insurance.arff	19	44	22	100	Clique	7	kNN - F1	0.0444444444444444
+VaryAlgos	insurance.arff	19	44	22	100	Clique	8	kNN - F1	0.0583670715249663
+VaryAlgos	insurance.arff	19	44	22	100	Clique	9	kNN - F1	0.0410668615272196
+VaryAlgos	insurance.arff	19	44	22	100	Clique	10	kNN - F1	0.0703832865123188
+VaryAlgos	insurance.arff	19	44	22	100	Clique	11	kNN - F1	0.0585537918871252
+VaryAlgos	insurance.arff	19	44	22	100	Clique	12	kNN - F1	0.0561132561132561
+VaryAlgos	insurance.arff	19	44	22	100	Clique	13	kNN - F1	0.0378681626928471
+VaryAlgos	insurance.arff	19	44	22	100	Clique	14	kNN - F1	0
+VaryAlgos	insurance.arff	19	44	22	100	Clique	15	kNN - F1	0.0185185185185185
+VaryAlgos	insurance.arff	19	44	22	100	Clique	16	kNN - F1	0.037745879851143
+VaryAlgos	insurance.arff	19	44	22	100	Clique	17	kNN - F1	0.0202020202020202
+VaryAlgos	insurance.arff	19	44	22	100	Clique	18	kNN - F1	0.0527777777777778
+VaryAlgos	insurance.arff	19	44	22	100	Clique	19	kNN - F1	0.0285106382978723
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	1	Strength	0.289655174220767
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	1	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V32, V19, V16, V44
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	2	Strength	0.280182585223658
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	2	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V32, V19, V16, V61, V80
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	3	Strength	0.280182585223656
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	3	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V35, V23, V43, V39, V25, V34, V32, V28, V16, V19, V80, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	4	Strength	0.280182585223656
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	4	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V34, V32, V16, V19, V80, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	5	Strength	0.280182585223656
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	5	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V32, V19, V80, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	6	Strength	0.280182585223656
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	6	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V32, V16, V80, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	7	Strength	0.280182585223656
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	7	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V19, V16, V80, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	8	Strength	0.280182585223656
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	8	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V34, V28, V43, V39, V25, V16, V32, V23, V10, V19, V80, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	9	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	9	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V32, V19, V16, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	10	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	10	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V35, V23, V43, V39, V25, V34, V32, V28, V16, V19, V61, V10
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	11	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	11	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V34, V32, V16, V19, V10, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	12	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	12	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V32, V19, V10, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	13	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	13	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V35, V23, V43, V39, V25, V34, V32, V28, V16, V29, V19, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	14	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	14	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V32, V16, V10, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	15	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	15	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V19, V16, V10, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	16	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	16	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V34, V32, V16, V19, V29, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	17	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	17	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V35, V23, V43, V39, V25, V34, V32, V28, V16, V19, V22, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	18	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	18	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V32, V19, V16, V10, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	19	Strength	0.279307228320109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	19	Columns	V47, V1, V68, V37, V18, V42, V59, V31, V30, V5, V36, V23, V43, V28, V25, V39, V35, V34, V32, V19, V29, V61
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	1	NaiveBayes - F1	0.198929399359233
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	2	NaiveBayes - F1	0.208404741341882
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	3	NaiveBayes - F1	0.212227150938636
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	4	NaiveBayes - F1	0.212227150938636
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	5	NaiveBayes - F1	0.209191757638901
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	6	NaiveBayes - F1	0.210082938854983
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	7	NaiveBayes - F1	0.203767748305498
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	8	NaiveBayes - F1	0.212176062912148
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	9	NaiveBayes - F1	0.203141510669473
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	10	NaiveBayes - F1	0.204093088028952
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	11	NaiveBayes - F1	0.204093088028952
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	12	NaiveBayes - F1	0.205760907133557
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	13	NaiveBayes - F1	0.20936623392941
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	14	NaiveBayes - F1	0.206259876491988
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	15	NaiveBayes - F1	0.196142444329483
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	16	NaiveBayes - F1	0.209630737544293
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	17	NaiveBayes - F1	0.218043989953243
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	18	NaiveBayes - F1	0.204138698381238
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	19	NaiveBayes - F1	0.206924788348955
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	1	kNN - F1	0.0897435897435897
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	2	kNN - F1	0.0622239917892092
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	3	kNN - F1	0.0618709472092931
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	4	kNN - F1	0.0621080263937407
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	5	kNN - F1	0.0667463442684799
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	6	kNN - F1	0.0552838272838273
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	7	kNN - F1	0.0658664506225482
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	8	kNN - F1	0.0833321009563246
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	9	kNN - F1	0.0563484708491258
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	10	kNN - F1	0.0671760660689611
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	11	kNN - F1	0.0671760660689611
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	12	kNN - F1	0.0649251787124128
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	13	kNN - F1	0.0651929824561404
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	14	kNN - F1	0.0661778758870109
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	15	kNN - F1	0.0702442827442828
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	16	kNN - F1	0.0616567631461249
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	17	kNN - F1	0.0609676562932865
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	18	kNN - F1	0.05597566651513
+VaryAlgos	insurance.arff	19	44	22	100	Approximative	19	kNN - F1	0.074877111998168
+VaryAlgos	bank.arff	11	22	8	100	4S	1	Strength	0.207270277606618
+VaryAlgos	bank.arff	11	22	8	100	4S	1	Columns	V12, V1, V9, V10, V3
+VaryAlgos	bank.arff	11	22	8	100	4S	2	Strength	0.194809308103455
+VaryAlgos	bank.arff	11	22	8	100	4S	2	Columns	V12, V1, V9, V10, V13
+VaryAlgos	bank.arff	11	22	8	100	4S	3	Strength	0.275274316646662
+VaryAlgos	bank.arff	11	22	8	100	4S	3	Columns	V13, V1, V7, V9, V10, V11, V14, V16
+VaryAlgos	bank.arff	11	22	8	100	4S	4	Strength	0.289516847054779
+VaryAlgos	bank.arff	11	22	8	100	4S	4	Columns	V8, V1, V3, V4, V7, V11, V14, V2
+VaryAlgos	bank.arff	11	22	8	100	4S	5	Strength	0.218464924315748
+VaryAlgos	bank.arff	11	22	8	100	4S	5	Columns	V8, V1, V3, V4, V7, V11, V14, V16
+VaryAlgos	bank.arff	11	22	8	100	4S	6	Strength	0.338830119056913
+VaryAlgos	bank.arff	11	22	8	100	4S	6	Columns	V16, V1, V3, V4, V7, V9, V10, V11
+VaryAlgos	bank.arff	11	22	8	100	4S	7	Strength	0.0303147304534086
+VaryAlgos	bank.arff	11	22	8	100	4S	7	Columns	V14
+VaryAlgos	bank.arff	11	22	8	100	4S	8	Strength	0.149708434561935
+VaryAlgos	bank.arff	11	22	8	100	4S	8	Columns	V5, V8, V16, V2, V1, V3, V4, V7
+VaryAlgos	bank.arff	11	22	8	100	4S	9	Strength	0.138676046021319
+VaryAlgos	bank.arff	11	22	8	100	4S	9	Columns	V9, V10, V11, V14
+VaryAlgos	bank.arff	11	22	8	100	4S	10	Strength	0.154941605780904
+VaryAlgos	bank.arff	11	22	8	100	4S	10	Columns	V15, V14, V16, V6, V1, V2, V4, V7
+VaryAlgos	bank.arff	11	22	8	100	4S	11	Strength	0.0379083659345003
+VaryAlgos	bank.arff	11	22	8	100	4S	11	Columns	V8, V11
+VaryAlgos	bank.arff	11	22	8	100	4S	1	NaiveBayes - F1	0.373722592797432
+VaryAlgos	bank.arff	11	22	8	100	4S	2	NaiveBayes - F1	0.397816623370489
+VaryAlgos	bank.arff	11	22	8	100	4S	3	NaiveBayes - F1	0.363178574535793
+VaryAlgos	bank.arff	11	22	8	100	4S	4	NaiveBayes - F1	0.28603924815792
+VaryAlgos	bank.arff	11	22	8	100	4S	5	NaiveBayes - F1	0.357518053489261
+VaryAlgos	bank.arff	11	22	8	100	4S	6	NaiveBayes - F1	0.366938809932351
+VaryAlgos	bank.arff	11	22	8	100	4S	7	NaiveBayes - F1	0.0792599357668566
+VaryAlgos	bank.arff	11	22	8	100	4S	8	NaiveBayes - F1	0.312515116839725
+VaryAlgos	bank.arff	11	22	8	100	4S	9	NaiveBayes - F1	0.192170533894166
+VaryAlgos	bank.arff	11	22	8	100	4S	10	NaiveBayes - F1	0.321946709900341
+VaryAlgos	bank.arff	11	22	8	100	4S	11	NaiveBayes - F1	0.0835429317966843
+VaryAlgos	bank.arff	11	22	8	100	4S	1	kNN - F1	0.310348152351271
+VaryAlgos	bank.arff	11	22	8	100	4S	2	kNN - F1	0.30800596222965
+VaryAlgos	bank.arff	11	22	8	100	4S	3	kNN - F1	0.28904544173743
+VaryAlgos	bank.arff	11	22	8	100	4S	4	kNN - F1	0.251486664466498
+VaryAlgos	bank.arff	11	22	8	100	4S	5	kNN - F1	0.274713001847251
+VaryAlgos	bank.arff	11	22	8	100	4S	6	kNN - F1	0.243395596297941
+VaryAlgos	bank.arff	11	22	8	100	4S	7	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	4S	8	kNN - F1	0.193734930881689
+VaryAlgos	bank.arff	11	22	8	100	4S	9	kNN - F1	0.33603996446567
+VaryAlgos	bank.arff	11	22	8	100	4S	10	kNN - F1	0.178086087241497
+VaryAlgos	bank.arff	11	22	8	100	4S	11	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	1	Strength	0.480458797178581
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	1	Columns	V3, V4, V2, V14, V10, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	2	Strength	0.480458797178581
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	2	Columns	V3, V4, V2, V11, V10, V14, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	3	Strength	0.48045879717858
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	3	Columns	V3, V4, V2, V10, V14, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	4	Strength	0.480458797178573
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	4	Columns	V3, V4, V14, V10, V2, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	5	Strength	0.480458797178571
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	5	Columns	V4, V3, V14, V10, V2, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	6	Strength	0.480458797178571
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	6	Columns	V4, V3, V2, V10, V14, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	7	Strength	0.480458797178571
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	7	Columns	V4, V3, V2, V11, V10, V14, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	8	Strength	0.480458797178571
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	8	Columns	V4, V3, V2, V10, V11, V14, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	9	Strength	0.480458797178569
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	9	Columns	V4, V3, V14, V2, V10, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	10	Strength	0.480458797178569
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	10	Columns	V4, V3, V2, V14, V10, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	11	Strength	0.480458797178567
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	11	Columns	V4, V14, V3, V2, V10, V11, V12, V1
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	1	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	2	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	3	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	4	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	5	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	6	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	7	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	8	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	9	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	10	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	11	NaiveBayes - F1	0.424932536626802
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	1	kNN - F1	0.405653323836633
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	2	kNN - F1	0.405653323836633
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	3	kNN - F1	0.405698570989728
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	4	kNN - F1	0.405698570989728
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	5	kNN - F1	0.405698570989728
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	6	kNN - F1	0.405698570989728
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	7	kNN - F1	0.405653323836633
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	8	kNN - F1	0.405653323836633
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	9	kNN - F1	0.405653323836633
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	10	kNN - F1	0.405653323836633
+VaryAlgos	bank.arff	11	22	8	100	Exhaustive	11	kNN - F1	0.405653323836633
+VaryAlgos	bank.arff	11	22	8	100	Clique	1	Strength	0.0989784119526504
+VaryAlgos	bank.arff	11	22	8	100	Clique	1	Columns	V12, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	2	Strength	0.0676049665310936
+VaryAlgos	bank.arff	11	22	8	100	Clique	2	Columns	V14, V1, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	3	Strength	0.0515285069342193
+VaryAlgos	bank.arff	11	22	8	100	Clique	3	Columns	V16, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	4	Strength	0.0465369017735275
+VaryAlgos	bank.arff	11	22	8	100	Clique	4	Columns	V11, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	5	Strength	0.0427282889863356
+VaryAlgos	bank.arff	11	22	8	100	Clique	5	Columns	V1, V2, V13, V3
+VaryAlgos	bank.arff	11	22	8	100	Clique	6	Strength	0.0356814813030368
+VaryAlgos	bank.arff	11	22	8	100	Clique	6	Columns	V7, V1, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	7	Strength	0.0302120587919106
+VaryAlgos	bank.arff	11	22	8	100	Clique	7	Columns	V9, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	8	Strength	0.0218242105666668
+VaryAlgos	bank.arff	11	22	8	100	Clique	8	Columns	V4, V2, V13
+VaryAlgos	bank.arff	11	22	8	100	Clique	9	Strength	0.0218192920373292
+VaryAlgos	bank.arff	11	22	8	100	Clique	9	Columns	V10, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	10	Strength	0.017667659422373
+VaryAlgos	bank.arff	11	22	8	100	Clique	10	Columns	V5, V2, V13
+VaryAlgos	bank.arff	11	22	8	100	Clique	11	Strength	0.0157338107266165
+VaryAlgos	bank.arff	11	22	8	100	Clique	11	Columns	V8, V2
+VaryAlgos	bank.arff	11	22	8	100	Clique	1	NaiveBayes - F1	0.356183049457409
+VaryAlgos	bank.arff	11	22	8	100	Clique	2	NaiveBayes - F1	0.152699281938511
+VaryAlgos	bank.arff	11	22	8	100	Clique	3	NaiveBayes - F1	0.287608602930874
+VaryAlgos	bank.arff	11	22	8	100	Clique	4	NaiveBayes - F1	0.150585731067233
+VaryAlgos	bank.arff	11	22	8	100	Clique	5	NaiveBayes - F1	0.142793130267353
+VaryAlgos	bank.arff	11	22	8	100	Clique	6	NaiveBayes - F1	0.120809337308461
+VaryAlgos	bank.arff	11	22	8	100	Clique	7	NaiveBayes - F1	0
+VaryAlgos	bank.arff	11	22	8	100	Clique	8	NaiveBayes - F1	0
+VaryAlgos	bank.arff	11	22	8	100	Clique	9	NaiveBayes - F1	0
+VaryAlgos	bank.arff	11	22	8	100	Clique	10	NaiveBayes - F1	0
+VaryAlgos	bank.arff	11	22	8	100	Clique	11	NaiveBayes - F1	0
+VaryAlgos	bank.arff	11	22	8	100	Clique	1	kNN - F1	0.286749456280867
+VaryAlgos	bank.arff	11	22	8	100	Clique	2	kNN - F1	0.222481674282971
+VaryAlgos	bank.arff	11	22	8	100	Clique	3	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	Clique	4	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	Clique	5	kNN - F1	0.103908126627985
+VaryAlgos	bank.arff	11	22	8	100	Clique	6	kNN - F1	0.121816966667157
+VaryAlgos	bank.arff	11	22	8	100	Clique	7	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	Clique	8	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	Clique	9	kNN - F1	0.0629939603077466
+VaryAlgos	bank.arff	11	22	8	100	Clique	10	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	Clique	11	kNN - F1	NA
+VaryAlgos	bank.arff	11	22	8	100	Approximative	1	Strength	0.470820066527365
+VaryAlgos	bank.arff	11	22	8	100	Approximative	1	Columns	V11, V9, V12, V14, V7, V2, V1, V10
+VaryAlgos	bank.arff	11	22	8	100	Approximative	2	Strength	0.462266426394899
+VaryAlgos	bank.arff	11	22	8	100	Approximative	2	Columns	V12, V1, V16, V11, V14, V10, V7, V2
+VaryAlgos	bank.arff	11	22	8	100	Approximative	3	Strength	0.459720452177182
+VaryAlgos	bank.arff	11	22	8	100	Approximative	3	Columns	V12, V1, V16, V11, V14, V10, V9, V2
+VaryAlgos	bank.arff	11	22	8	100	Approximative	4	Strength	0.413638700585517
+VaryAlgos	bank.arff	11	22	8	100	Approximative	4	Columns	V12, V2, V16, V11, V14, V10, V7, V4
+VaryAlgos	bank.arff	11	22	8	100	Approximative	5	Strength	0.412797315863878
+VaryAlgos	bank.arff	11	22	8	100	Approximative	5	Columns	V12, V2, V16, V11, V14, V10, V4, V9
+VaryAlgos	bank.arff	11	22	8	100	Approximative	6	Strength	0.410772478037345
+VaryAlgos	bank.arff	11	22	8	100	Approximative	6	Columns	V12, V1, V16, V11, V14, V10, V9, V7
+VaryAlgos	bank.arff	11	22	8	100	Approximative	7	Strength	0.404512440611379
+VaryAlgos	bank.arff	11	22	8	100	Approximative	7	Columns	V12, V2, V16, V11, V14, V10, V7, V9
+VaryAlgos	bank.arff	11	22	8	100	Approximative	8	Strength	0.39572968754899
+VaryAlgos	bank.arff	11	22	8	100	Approximative	8	Columns	V12, V2, V16, V11, V14, V10, V8, V7
+VaryAlgos	bank.arff	11	22	8	100	Approximative	9	Strength	0.395586332139917
+VaryAlgos	bank.arff	11	22	8	100	Approximative	9	Columns	V12, V2, V16, V11, V14, V10, V8, V9
+VaryAlgos	bank.arff	11	22	8	100	Approximative	10	Strength	0.395162375338638
+VaryAlgos	bank.arff	11	22	8	100	Approximative	10	Columns	V12, V2, V16, V11, V14, V10, V7, V13
+VaryAlgos	bank.arff	11	22	8	100	Approximative	11	Strength	0.39452149189348
+VaryAlgos	bank.arff	11	22	8	100	Approximative	11	Columns	V12, V2, V16, V11, V14, V10, V9, V13
+VaryAlgos	bank.arff	11	22	8	100	Approximative	1	NaiveBayes - F1	0.447313019267204
+VaryAlgos	bank.arff	11	22	8	100	Approximative	2	NaiveBayes - F1	0.496183769048731
+VaryAlgos	bank.arff	11	22	8	100	Approximative	3	NaiveBayes - F1	0.487984140927634
+VaryAlgos	bank.arff	11	22	8	100	Approximative	4	NaiveBayes - F1	0.492636980444832
+VaryAlgos	bank.arff	11	22	8	100	Approximative	5	NaiveBayes - F1	0.486432493669357
+VaryAlgos	bank.arff	11	22	8	100	Approximative	6	NaiveBayes - F1	0.496404946432244
+VaryAlgos	bank.arff	11	22	8	100	Approximative	7	NaiveBayes - F1	0.500379159779366
+VaryAlgos	bank.arff	11	22	8	100	Approximative	8	NaiveBayes - F1	0.490849684464796
+VaryAlgos	bank.arff	11	22	8	100	Approximative	9	NaiveBayes - F1	0.483259800716059
+VaryAlgos	bank.arff	11	22	8	100	Approximative	10	NaiveBayes - F1	0.507467484543577
+VaryAlgos	bank.arff	11	22	8	100	Approximative	11	NaiveBayes - F1	0.493195937542443
+VaryAlgos	bank.arff	11	22	8	100	Approximative	1	kNN - F1	0.404788172366476
+VaryAlgos	bank.arff	11	22	8	100	Approximative	2	kNN - F1	0.406851165146285
+VaryAlgos	bank.arff	11	22	8	100	Approximative	3	kNN - F1	0.405205072288962
+VaryAlgos	bank.arff	11	22	8	100	Approximative	4	kNN - F1	0.396297218969229
+VaryAlgos	bank.arff	11	22	8	100	Approximative	5	kNN - F1	0.396498112165241
+VaryAlgos	bank.arff	11	22	8	100	Approximative	6	kNN - F1	0.404980149566814
+VaryAlgos	bank.arff	11	22	8	100	Approximative	7	kNN - F1	0.396010213055227
+VaryAlgos	bank.arff	11	22	8	100	Approximative	8	kNN - F1	0.394452984061505
+VaryAlgos	bank.arff	11	22	8	100	Approximative	9	kNN - F1	0.396102277653119
+VaryAlgos	bank.arff	11	22	8	100	Approximative	10	kNN - F1	0.393379751599381
+VaryAlgos	bank.arff	11	22	8	100	Approximative	11	kNN - F1	0.394999611437936
+VaryBeam	insurance.arff	25	25	5	100	Approximative	1	Strength	0.140801917993281
+VaryBeam	insurance.arff	25	25	5	100	Approximative	1	Columns	V47, V1, V68, V37, V18
+VaryBeam	insurance.arff	25	25	5	100	Approximative	2	Strength	0.134287197811057
+VaryBeam	insurance.arff	25	25	5	100	Approximative	2	Columns	V47, V1, V59, V68, V18
+VaryBeam	insurance.arff	25	25	5	100	Approximative	3	Strength	0.127571348013568
+VaryBeam	insurance.arff	25	25	5	100	Approximative	3	Columns	V47, V1, V68, V42, V18
+VaryBeam	insurance.arff	25	25	5	100	Approximative	4	Strength	0.12684503828639
+VaryBeam	insurance.arff	25	25	5	100	Approximative	4	Columns	V47, V1, V59, V68, V37
+VaryBeam	insurance.arff	25	25	5	100	Approximative	5	Strength	0.118003259098355
+VaryBeam	insurance.arff	25	25	5	100	Approximative	5	Columns	V47, V1, V59, V68, V42
+VaryBeam	insurance.arff	25	25	5	100	Approximative	6	Strength	0.113593382468322
+VaryBeam	insurance.arff	25	25	5	100	Approximative	6	Columns	V47, V1, V68, V42, V37
+VaryBeam	insurance.arff	25	25	5	100	Approximative	7	Strength	0.110814069192823
+VaryBeam	insurance.arff	25	25	5	100	Approximative	7	Columns	V47, V1, V68, V43, V18
+VaryBeam	insurance.arff	25	25	5	100	Approximative	8	Strength	0.107621520120379
+VaryBeam	insurance.arff	25	25	5	100	Approximative	8	Columns	V47, V1, V68, V43, V31
+VaryBeam	insurance.arff	25	25	5	100	Approximative	9	Strength	0.107217475117025
+VaryBeam	insurance.arff	25	25	5	100	Approximative	9	Columns	V47, V1, V68, V43, V30
+VaryBeam	insurance.arff	25	25	5	100	Approximative	10	Strength	0.103300611971083
+VaryBeam	insurance.arff	25	25	5	100	Approximative	10	Columns	V47, V1, V68, V43, V39
+VaryBeam	insurance.arff	25	25	5	100	Approximative	11	Strength	0.101495850915361
+VaryBeam	insurance.arff	25	25	5	100	Approximative	11	Columns	V47, V1, V68, V43, V28
+VaryBeam	insurance.arff	25	25	5	100	Approximative	12	Strength	0.0959273239758698
+VaryBeam	insurance.arff	25	25	5	100	Approximative	12	Columns	V47, V1, V68, V43, V37
+VaryBeam	insurance.arff	25	25	5	100	Approximative	13	Strength	0.0956023503527916
+VaryBeam	insurance.arff	25	25	5	100	Approximative	13	Columns	V47, V1, V68, V43, V25
+VaryBeam	insurance.arff	25	25	5	100	Approximative	14	Strength	0.0937771741085083
+VaryBeam	insurance.arff	25	25	5	100	Approximative	14	Columns	V47, V1, V5, V68, V18
+VaryBeam	insurance.arff	25	25	5	100	Approximative	15	Strength	0.0900671422020984
+VaryBeam	insurance.arff	25	25	5	100	Approximative	15	Columns	V47, V1, V59, V68, V43
+VaryBeam	insurance.arff	25	25	5	100	Approximative	16	Strength	0.0898319774079965
+VaryBeam	insurance.arff	25	25	5	100	Approximative	16	Columns	V47, V1, V68, V43, V34
+VaryBeam	insurance.arff	25	25	5	100	Approximative	17	Strength	0.0892094497011566
+VaryBeam	insurance.arff	25	25	5	100	Approximative	17	Columns	V47, V1, V5, V68, V31
+VaryBeam	insurance.arff	25	25	5	100	Approximative	18	Strength	0.0891873583253044
+VaryBeam	insurance.arff	25	25	5	100	Approximative	18	Columns	V47, V1, V5, V68, V30
+VaryBeam	insurance.arff	25	25	5	100	Approximative	19	Strength	0.0878169088781284
+VaryBeam	insurance.arff	25	25	5	100	Approximative	19	Columns	V47, V1, V68, V43, V42
+VaryBeam	insurance.arff	25	25	5	100	Approximative	20	Strength	0.086472185418712
+VaryBeam	insurance.arff	25	25	5	100	Approximative	20	Columns	V47, V43, V59, V68, V5
+VaryBeam	insurance.arff	25	25	5	100	Approximative	21	Strength	0.0828367015533651
+VaryBeam	insurance.arff	25	25	5	100	Approximative	21	Columns	V47, V1, V5, V68, V37
+VaryBeam	insurance.arff	25	25	5	100	Approximative	22	Strength	0.0783780127120028
+VaryBeam	insurance.arff	25	25	5	100	Approximative	22	Columns	V47, V1, V59, V68, V5
+VaryBeam	insurance.arff	25	25	5	100	Approximative	23	Strength	0.0781566720593556
+VaryBeam	insurance.arff	25	25	5	100	Approximative	23	Columns	V47, V1, V5, V68, V25
+VaryBeam	insurance.arff	25	25	5	100	Approximative	24	Strength	0.0760479699056065
+VaryBeam	insurance.arff	25	25	5	100	Approximative	24	Columns	V47, V1, V5, V68, V42
+VaryBeam	insurance.arff	25	25	5	100	Approximative	25	Strength	0.0542989460278749
+VaryBeam	insurance.arff	25	25	5	100	Approximative	25	Columns	V47, V1, V5, V68, V43
+VaryBeam	insurance.arff	25	25	5	100	Approximative	1	NaiveBayes - F1	0.0609890740044306
+VaryBeam	insurance.arff	25	25	5	100	Approximative	2	NaiveBayes - F1	0.0839618943211056
+VaryBeam	insurance.arff	25	25	5	100	Approximative	3	NaiveBayes - F1	0.0856053720715375
+VaryBeam	insurance.arff	25	25	5	100	Approximative	4	NaiveBayes - F1	0.068646929274107
+VaryBeam	insurance.arff	25	25	5	100	Approximative	5	NaiveBayes - F1	0.0744119475826793
+VaryBeam	insurance.arff	25	25	5	100	Approximative	6	NaiveBayes - F1	0.0655629458261037
+VaryBeam	insurance.arff	25	25	5	100	Approximative	7	NaiveBayes - F1	0.110175695549652
+VaryBeam	insurance.arff	25	25	5	100	Approximative	8	NaiveBayes - F1	0.0714424035212664
+VaryBeam	insurance.arff	25	25	5	100	Approximative	9	NaiveBayes - F1	0.0711520434748087
+VaryBeam	insurance.arff	25	25	5	100	Approximative	10	NaiveBayes - F1	0.0651450702905204
+VaryBeam	insurance.arff	25	25	5	100	Approximative	11	NaiveBayes - F1	0.0628063195525572
+VaryBeam	insurance.arff	25	25	5	100	Approximative	12	NaiveBayes - F1	0.0672373892138655
+VaryBeam	insurance.arff	25	25	5	100	Approximative	13	NaiveBayes - F1	0.113502192910978
+VaryBeam	insurance.arff	25	25	5	100	Approximative	14	NaiveBayes - F1	0.0883389773755222
+VaryBeam	insurance.arff	25	25	5	100	Approximative	15	NaiveBayes - F1	0.1012837136635
+VaryBeam	insurance.arff	25	25	5	100	Approximative	16	NaiveBayes - F1	0.071997593150688
+VaryBeam	insurance.arff	25	25	5	100	Approximative	17	NaiveBayes - F1	0.0763211951447246
+VaryBeam	insurance.arff	25	25	5	100	Approximative	18	NaiveBayes - F1	0.0755502601003021
+VaryBeam	insurance.arff	25	25	5	100	Approximative	19	NaiveBayes - F1	0.0811723375335472
+VaryBeam	insurance.arff	25	25	5	100	Approximative	20	NaiveBayes - F1	0.102898264526171
+VaryBeam	insurance.arff	25	25	5	100	Approximative	21	NaiveBayes - F1	0.0706907852408273
+VaryBeam	insurance.arff	25	25	5	100	Approximative	22	NaiveBayes - F1	0.0900543315315001
+VaryBeam	insurance.arff	25	25	5	100	Approximative	23	NaiveBayes - F1	0.11494084522445
+VaryBeam	insurance.arff	25	25	5	100	Approximative	24	NaiveBayes - F1	0.0811424480631798
+VaryBeam	insurance.arff	25	25	5	100	Approximative	25	NaiveBayes - F1	0.10097878497562
+VaryBeam	insurance.arff	25	25	5	100	Approximative	1	kNN - F1	0.0644910644910645
+VaryBeam	insurance.arff	25	25	5	100	Approximative	2	kNN - F1	0.0618611135027004
+VaryBeam	insurance.arff	25	25	5	100	Approximative	3	kNN - F1	0.0804093567251462
+VaryBeam	insurance.arff	25	25	5	100	Approximative	4	kNN - F1	0.0853374862397419
+VaryBeam	insurance.arff	25	25	5	100	Approximative	5	kNN - F1	0.0901711601235634
+VaryBeam	insurance.arff	25	25	5	100	Approximative	6	kNN - F1	0.0745072287826951
+VaryBeam	insurance.arff	25	25	5	100	Approximative	7	kNN - F1	0.0919284168826279
+VaryBeam	insurance.arff	25	25	5	100	Approximative	8	kNN - F1	0.100626065517946
+VaryBeam	insurance.arff	25	25	5	100	Approximative	9	kNN - F1	0.0771313638182529
+VaryBeam	insurance.arff	25	25	5	100	Approximative	10	kNN - F1	0.0675268648272627
+VaryBeam	insurance.arff	25	25	5	100	Approximative	11	kNN - F1	0.0704941365112082
+VaryBeam	insurance.arff	25	25	5	100	Approximative	12	kNN - F1	0.0765444389137769
+VaryBeam	insurance.arff	25	25	5	100	Approximative	13	kNN - F1	0.0817977584574788
+VaryBeam	insurance.arff	25	25	5	100	Approximative	14	kNN - F1	0.0885627705627706
+VaryBeam	insurance.arff	25	25	5	100	Approximative	15	kNN - F1	0.13069755826148
+VaryBeam	insurance.arff	25	25	5	100	Approximative	16	kNN - F1	0.0719235090594224
+VaryBeam	insurance.arff	25	25	5	100	Approximative	17	kNN - F1	0.0581302680247642
+VaryBeam	insurance.arff	25	25	5	100	Approximative	18	kNN - F1	0.0648679115401996
+VaryBeam	insurance.arff	25	25	5	100	Approximative	19	kNN - F1	0.050713392818656
+VaryBeam	insurance.arff	25	25	5	100	Approximative	20	kNN - F1	0.114684721770478
+VaryBeam	insurance.arff	25	25	5	100	Approximative	21	kNN - F1	0.047258778033854
+VaryBeam	insurance.arff	25	25	5	100	Approximative	22	kNN - F1	0.101767301767302
+VaryBeam	insurance.arff	25	25	5	100	Approximative	23	kNN - F1	0.0747755584894163
+VaryBeam	insurance.arff	25	25	5	100	Approximative	24	kNN - F1	0.0527487953069348
+VaryBeam	insurance.arff	25	25	5	100	Approximative	25	kNN - F1	0.0727223785035465
+VaryBeam	insurance.arff	25	50	5	100	Approximative	1	Strength	0.156878020102035
+VaryBeam	insurance.arff	25	50	5	100	Approximative	1	Columns	V47, V1, V68, V31, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	2	Strength	0.156516155528648
+VaryBeam	insurance.arff	25	50	5	100	Approximative	2	Columns	V47, V1, V68, V30, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	3	Strength	0.146569907338121
+VaryBeam	insurance.arff	25	50	5	100	Approximative	3	Columns	V47, V1, V68, V37, V31
+VaryBeam	insurance.arff	25	50	5	100	Approximative	4	Strength	0.14637713431844
+VaryBeam	insurance.arff	25	50	5	100	Approximative	4	Columns	V47, V1, V68, V37, V30
+VaryBeam	insurance.arff	25	50	5	100	Approximative	5	Strength	0.140801917993281
+VaryBeam	insurance.arff	25	50	5	100	Approximative	5	Columns	V47, V1, V68, V37, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	6	Strength	0.140387178289078
+VaryBeam	insurance.arff	25	50	5	100	Approximative	6	Columns	V47, V1, V59, V68, V30
+VaryBeam	insurance.arff	25	50	5	100	Approximative	7	Strength	0.139903804237065
+VaryBeam	insurance.arff	25	50	5	100	Approximative	7	Columns	V47, V1, V59, V68, V31
+VaryBeam	insurance.arff	25	50	5	100	Approximative	8	Strength	0.138007012966604
+VaryBeam	insurance.arff	25	50	5	100	Approximative	8	Columns	V47, V1, V68, V23, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	9	Strength	0.134287197811057
+VaryBeam	insurance.arff	25	50	5	100	Approximative	9	Columns	V47, V1, V59, V68, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	10	Strength	0.133959053602974
+VaryBeam	insurance.arff	25	50	5	100	Approximative	10	Columns	V47, V1, V68, V37, V23
+VaryBeam	insurance.arff	25	50	5	100	Approximative	11	Strength	0.132597524392571
+VaryBeam	insurance.arff	25	50	5	100	Approximative	11	Columns	V47, V1, V68, V37, V25
+VaryBeam	insurance.arff	25	50	5	100	Approximative	12	Strength	0.130629487607864
+VaryBeam	insurance.arff	25	50	5	100	Approximative	12	Columns	V47, V1, V68, V25, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	13	Strength	0.130173832976583
+VaryBeam	insurance.arff	25	50	5	100	Approximative	13	Columns	V47, V1, V68, V28, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	14	Strength	0.127626272858089
+VaryBeam	insurance.arff	25	50	5	100	Approximative	14	Columns	V68, V5, V59, V47, V30
+VaryBeam	insurance.arff	25	50	5	100	Approximative	15	Strength	0.127571348013568
+VaryBeam	insurance.arff	25	50	5	100	Approximative	15	Columns	V47, V1, V42, V68, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	16	Strength	0.12684503828639
+VaryBeam	insurance.arff	25	50	5	100	Approximative	16	Columns	V47, V1, V59, V68, V37
+VaryBeam	insurance.arff	25	50	5	100	Approximative	17	Strength	0.122910241186927
+VaryBeam	insurance.arff	25	50	5	100	Approximative	17	Columns	V47, V1, V59, V68, V25
+VaryBeam	insurance.arff	25	50	5	100	Approximative	18	Strength	0.122521964332426
+VaryBeam	insurance.arff	25	50	5	100	Approximative	18	Columns	V68, V5, V59, V47, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	19	Strength	0.118003259098355
+VaryBeam	insurance.arff	25	50	5	100	Approximative	19	Columns	V47, V1, V59, V68, V42
+VaryBeam	insurance.arff	25	50	5	100	Approximative	20	Strength	0.114815910846062
+VaryBeam	insurance.arff	25	50	5	100	Approximative	20	Columns	V68, V5, V59, V47, V37
+VaryBeam	insurance.arff	25	50	5	100	Approximative	21	Strength	0.110814069192822
+VaryBeam	insurance.arff	25	50	5	100	Approximative	21	Columns	V47, V1, V43, V68, V18
+VaryBeam	insurance.arff	25	50	5	100	Approximative	22	Strength	0.107621520120375
+VaryBeam	insurance.arff	25	50	5	100	Approximative	22	Columns	V47, V1, V43, V68, V31
+VaryBeam	insurance.arff	25	50	5	100	Approximative	23	Strength	0.107217475117025
+VaryBeam	insurance.arff	25	50	5	100	Approximative	23	Columns	V47, V1, V43, V68, V30
+VaryBeam	insurance.arff	25	50	5	100	Approximative	24	Strength	0.107070549471196
+VaryBeam	insurance.arff	25	50	5	100	Approximative	24	Columns	V68, V5, V59, V47, V42
+VaryBeam	insurance.arff	25	50	5	100	Approximative	25	Strength	0.105968573846786
+VaryBeam	insurance.arff	25	50	5	100	Approximative	25	Columns	V47, V5, V68, V18, V43
+VaryBeam	insurance.arff	25	50	5	100	Approximative	1	NaiveBayes - F1	0.0701624779466442
+VaryBeam	insurance.arff	25	50	5	100	Approximative	2	NaiveBayes - F1	0.0701624779466442
+VaryBeam	insurance.arff	25	50	5	100	Approximative	3	NaiveBayes - F1	0.0648504273504273
+VaryBeam	insurance.arff	25	50	5	100	Approximative	4	NaiveBayes - F1	0.0648504273504273
+VaryBeam	insurance.arff	25	50	5	100	Approximative	5	NaiveBayes - F1	0.0609890740044306
+VaryBeam	insurance.arff	25	50	5	100	Approximative	6	NaiveBayes - F1	0.0694330445356437
+VaryBeam	insurance.arff	25	50	5	100	Approximative	7	NaiveBayes - F1	0.0694330445356437
+VaryBeam	insurance.arff	25	50	5	100	Approximative	8	NaiveBayes - F1	0.0698664004183902
+VaryBeam	insurance.arff	25	50	5	100	Approximative	9	NaiveBayes - F1	0.0839618943211056
+VaryBeam	insurance.arff	25	50	5	100	Approximative	10	NaiveBayes - F1	0.0166666666666667
+VaryBeam	insurance.arff	25	50	5	100	Approximative	11	NaiveBayes - F1	0.105294010520897
+VaryBeam	insurance.arff	25	50	5	100	Approximative	12	NaiveBayes - F1	0.108622263605959
+VaryBeam	insurance.arff	25	50	5	100	Approximative	13	NaiveBayes - F1	0.0535216718266254
+VaryBeam	insurance.arff	25	50	5	100	Approximative	14	NaiveBayes - F1	0.0656596004318964
+VaryBeam	insurance.arff	25	50	5	100	Approximative	15	NaiveBayes - F1	0.0856053720715375
+VaryBeam	insurance.arff	25	50	5	100	Approximative	16	NaiveBayes - F1	0.068646929274107
+VaryBeam	insurance.arff	25	50	5	100	Approximative	17	NaiveBayes - F1	0.091158630905221
+VaryBeam	insurance.arff	25	50	5	100	Approximative	18	NaiveBayes - F1	0.0769669428725156
+VaryBeam	insurance.arff	25	50	5	100	Approximative	19	NaiveBayes - F1	0.0744119475826793
+VaryBeam	insurance.arff	25	50	5	100	Approximative	20	NaiveBayes - F1	0.0611474504331647
+VaryBeam	insurance.arff	25	50	5	100	Approximative	21	NaiveBayes - F1	0.110175695549652
+VaryBeam	insurance.arff	25	50	5	100	Approximative	22	NaiveBayes - F1	0.0714424035212664
+VaryBeam	insurance.arff	25	50	5	100	Approximative	23	NaiveBayes - F1	0.0711520434748087
+VaryBeam	insurance.arff	25	50	5	100	Approximative	24	NaiveBayes - F1	0.0656329757042435
+VaryBeam	insurance.arff	25	50	5	100	Approximative	25	NaiveBayes - F1	0.107527647452778
+VaryBeam	insurance.arff	25	50	5	100	Approximative	1	kNN - F1	0.103054379694569
+VaryBeam	insurance.arff	25	50	5	100	Approximative	2	kNN - F1	0.10299494156637
+VaryBeam	insurance.arff	25	50	5	100	Approximative	3	kNN - F1	0.0960601665977629
+VaryBeam	insurance.arff	25	50	5	100	Approximative	4	kNN - F1	0.0768695621879386
+VaryBeam	insurance.arff	25	50	5	100	Approximative	5	kNN - F1	0.0455158876211508
+VaryBeam	insurance.arff	25	50	5	100	Approximative	6	kNN - F1	0.0686353770386669
+VaryBeam	insurance.arff	25	50	5	100	Approximative	7	kNN - F1	0.142163718634307
+VaryBeam	insurance.arff	25	50	5	100	Approximative	8	kNN - F1	0.0811203771730088
+VaryBeam	insurance.arff	25	50	5	100	Approximative	9	kNN - F1	0.0523796270762904
+VaryBeam	insurance.arff	25	50	5	100	Approximative	10	kNN - F1	0.0751736404377575
+VaryBeam	insurance.arff	25	50	5	100	Approximative	11	kNN - F1	0.0853939940896463
+VaryBeam	insurance.arff	25	50	5	100	Approximative	12	kNN - F1	0.0741389307485752
+VaryBeam	insurance.arff	25	50	5	100	Approximative	13	kNN - F1	0.0844387755102041
+VaryBeam	insurance.arff	25	50	5	100	Approximative	14	kNN - F1	0.075208086578451
+VaryBeam	insurance.arff	25	50	5	100	Approximative	15	kNN - F1	0.0693732193732194
+VaryBeam	insurance.arff	25	50	5	100	Approximative	16	kNN - F1	0.0947803673914874
+VaryBeam	insurance.arff	25	50	5	100	Approximative	17	kNN - F1	0.082051990589244
+VaryBeam	insurance.arff	25	50	5	100	Approximative	18	kNN - F1	0.0804562830935082
+VaryBeam	insurance.arff	25	50	5	100	Approximative	19	kNN - F1	0.0912998114197369
+VaryBeam	insurance.arff	25	50	5	100	Approximative	20	kNN - F1	0.0978426423308449
+VaryBeam	insurance.arff	25	50	5	100	Approximative	21	kNN - F1	0.0879365079365079
+VaryBeam	insurance.arff	25	50	5	100	Approximative	22	kNN - F1	0.0920860187422007
+VaryBeam	insurance.arff	25	50	5	100	Approximative	23	kNN - F1	0.0864320580155852
+VaryBeam	insurance.arff	25	50	5	100	Approximative	24	kNN - F1	0.0759515886160623
+VaryBeam	insurance.arff	25	50	5	100	Approximative	25	kNN - F1	0.0627461910070606
+VaryBeam	insurance.arff	25	100	5	100	Approximative	1	Strength	0.207483365597492
+VaryBeam	insurance.arff	25	100	5	100	Approximative	1	Columns	V18, V1, V31, V68, V59
+VaryBeam	insurance.arff	25	100	5	100	Approximative	2	Strength	0.207149806938979
+VaryBeam	insurance.arff	25	100	5	100	Approximative	2	Columns	V18, V1, V30, V68, V59
+VaryBeam	insurance.arff	25	100	5	100	Approximative	3	Strength	0.196913837147829
+VaryBeam	insurance.arff	25	100	5	100	Approximative	3	Columns	V47, V1, V37, V59, V18
+VaryBeam	insurance.arff	25	100	5	100	Approximative	4	Strength	0.195985268136535
+VaryBeam	insurance.arff	25	100	5	100	Approximative	4	Columns	V59, V1, V37, V18, V68
+VaryBeam	insurance.arff	25	100	5	100	Approximative	5	Strength	0.189014936273507
+VaryBeam	insurance.arff	25	100	5	100	Approximative	5	Columns	V68, V1, V59, V28, V42
+VaryBeam	insurance.arff	25	100	5	100	Approximative	6	Strength	0.185412939785515
+VaryBeam	insurance.arff	25	100	5	100	Approximative	6	Columns	V59, V1, V42, V23, V18
+VaryBeam	insurance.arff	25	100	5	100	Approximative	7	Strength	0.185027904099709
+VaryBeam	insurance.arff	25	100	5	100	Approximative	7	Columns	V68, V1, V59, V28, V23
+VaryBeam	insurance.arff	25	100	5	100	Approximative	8	Strength	0.183349035505039
+VaryBeam	insurance.arff	25	100	5	100	Approximative	8	Columns	V18, V1, V31, V68, V42
+VaryBeam	insurance.arff	25	100	5	100	Approximative	9	Strength	0.182991108153765
+VaryBeam	insurance.arff	25	100	5	100	Approximative	9	Columns	V18, V1, V30, V68, V42
+VaryBeam	insurance.arff	25	100	5	100	Approximative	10	Strength	0.182806451615209
+VaryBeam	insurance.arff	25	100	5	100	Approximative	10	Columns	V47, V1, V42, V59, V18
+VaryBeam	insurance.arff	25	100	5	100	Approximative	11	Strength	0.181846045145761
+VaryBeam	insurance.arff	25	100	5	100	Approximative	11	Columns	V47, V5, V18, V59, V37
+VaryBeam	insurance.arff	25	100	5	100	Approximative	12	Strength	0.181184377315351
+VaryBeam	insurance.arff	25	100	5	100	Approximative	12	Columns	V18, V1, V31, V68, V37
+VaryBeam	insurance.arff	25	100	5	100	Approximative	13	Strength	0.181184377315349
+VaryBeam	insurance.arff	25	100	5	100	Approximative	13	Columns	V18, V1, V30, V68, V37
+VaryBeam	insurance.arff	25	100	5	100	Approximative	14	Strength	0.181166852993503
+VaryBeam	insurance.arff	25	100	5	100	Approximative	14	Columns	V59, V1, V42, V18, V28
+VaryBeam	insurance.arff	25	100	5	100	Approximative	15	Strength	0.180587940773421
+VaryBeam	insurance.arff	25	100	5	100	Approximative	15	Columns	V59, V1, V28, V18, V23
+VaryBeam	insurance.arff	25	100	5	100	Approximative	16	Strength	0.17954617397023
+VaryBeam	insurance.arff	25	100	5	100	Approximative	16	Columns	V18, V1, V31, V68, V25
+VaryBeam	insurance.arff	25	100	5	100	Approximative	17	Strength	0.178890181092767
+VaryBeam	insurance.arff	25	100	5	100	Approximative	17	Columns	V18, V1, V30, V68, V25
+VaryBeam	insurance.arff	25	100	5	100	Approximative	18	Strength	0.175627216179594
+VaryBeam	insurance.arff	25	100	5	100	Approximative	18	Columns	V68, V1, V59, V23, V42
+VaryBeam	insurance.arff	25	100	5	100	Approximative	19	Strength	0.169277327039024
+VaryBeam	insurance.arff	25	100	5	100	Approximative	19	Columns	V47, V5, V42, V59, V18
+VaryBeam	insurance.arff	25	100	5	100	Approximative	20	Strength	0.1652983120619
+VaryBeam	insurance.arff	25	100	5	100	Approximative	20	Columns	V18, V1, V31, V68, V43
+VaryBeam	insurance.arff	25	100	5	100	Approximative	21	Strength	0.164933668802465
+VaryBeam	insurance.arff	25	100	5	100	Approximative	21	Columns	V18, V1, V30, V68, V43
+VaryBeam	insurance.arff	25	100	5	100	Approximative	22	Strength	0.164268466351293
+VaryBeam	insurance.arff	25	100	5	100	Approximative	22	Columns	V59, V1, V18, V5, V15
+VaryBeam	insurance.arff	25	100	5	100	Approximative	23	Strength	0.162955513799321
+VaryBeam	insurance.arff	25	100	5	100	Approximative	23	Columns	V47, V1, V42, V59, V37
+VaryBeam	insurance.arff	25	100	5	100	Approximative	24	Strength	0.161765330325785
+VaryBeam	insurance.arff	25	100	5	100	Approximative	24	Columns	V59, V1, V31, V5, V18
+VaryBeam	insurance.arff	25	100	5	100	Approximative	25	Strength	0.161533046135446
+VaryBeam	insurance.arff	25	100	5	100	Approximative	25	Columns	V59, V1, V30, V5, V18
+VaryBeam	insurance.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.0295778593650934
+VaryBeam	insurance.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.0295778593650934
+VaryBeam	insurance.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.0162037037037037
+VaryBeam	insurance.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.0342865749044239
+VaryBeam	insurance.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.0327442827442827
+VaryBeam	insurance.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.0185185185185185
+VaryBeam	insurance.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.00657894736842105
+VaryBeam	insurance.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.0593714014766646
+VaryBeam	insurance.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.0585503834142673
+VaryBeam	insurance.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.0692401016889426
+VaryBeam	insurance.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.00823045267489712
+VaryBeam	insurance.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.0376976626976627
+VaryBeam	insurance.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.0499268499268499
+VaryBeam	insurance.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.0357142857142857
+VaryBeam	insurance.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.101547355699417
+VaryBeam	insurance.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.101547355699417
+VaryBeam	insurance.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.018018018018018
+VaryBeam	insurance.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.0613887660327289
+VaryBeam	insurance.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.0525080787309048
+VaryBeam	insurance.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.0525080787309048
+VaryBeam	insurance.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.0508658008658009
+VaryBeam	insurance.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.0142857142857143
+VaryBeam	insurance.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.0142857142857143
+VaryBeam	insurance.arff	25	100	5	100	Approximative	1	kNN - F1	0.067089518668466
+VaryBeam	insurance.arff	25	100	5	100	Approximative	2	kNN - F1	0.0745014245014245
+VaryBeam	insurance.arff	25	100	5	100	Approximative	3	kNN - F1	0.0549723006097501
+VaryBeam	insurance.arff	25	100	5	100	Approximative	4	kNN - F1	0.057212604468702
+VaryBeam	insurance.arff	25	100	5	100	Approximative	5	kNN - F1	0.073040663087402
+VaryBeam	insurance.arff	25	100	5	100	Approximative	6	kNN - F1	0.0847916782127308
+VaryBeam	insurance.arff	25	100	5	100	Approximative	7	kNN - F1	0.0474152046783626
+VaryBeam	insurance.arff	25	100	5	100	Approximative	8	kNN - F1	0.0628615570494268
+VaryBeam	insurance.arff	25	100	5	100	Approximative	9	kNN - F1	0.0598449612403101
+VaryBeam	insurance.arff	25	100	5	100	Approximative	10	kNN - F1	0.0675080056475405
+VaryBeam	insurance.arff	25	100	5	100	Approximative	11	kNN - F1	0.0624074206816691
+VaryBeam	insurance.arff	25	100	5	100	Approximative	12	kNN - F1	0.0702759300320276
+VaryBeam	insurance.arff	25	100	5	100	Approximative	13	kNN - F1	0.0763824289405685
+VaryBeam	insurance.arff	25	100	5	100	Approximative	14	kNN - F1	0.048321867834063
+VaryBeam	insurance.arff	25	100	5	100	Approximative	15	kNN - F1	0.0623645320197044
+VaryBeam	insurance.arff	25	100	5	100	Approximative	16	kNN - F1	0.0660968660968661
+VaryBeam	insurance.arff	25	100	5	100	Approximative	17	kNN - F1	0.0688259109311741
+VaryBeam	insurance.arff	25	100	5	100	Approximative	18	kNN - F1	0.0637683223209539
+VaryBeam	insurance.arff	25	100	5	100	Approximative	19	kNN - F1	0.0809248224362096
+VaryBeam	insurance.arff	25	100	5	100	Approximative	20	kNN - F1	0.0816189526715843
+VaryBeam	insurance.arff	25	100	5	100	Approximative	21	kNN - F1	0.0712734932174661
+VaryBeam	insurance.arff	25	100	5	100	Approximative	22	kNN - F1	0.0966742292860664
+VaryBeam	insurance.arff	25	100	5	100	Approximative	23	kNN - F1	0.0622027318519884
+VaryBeam	insurance.arff	25	100	5	100	Approximative	24	kNN - F1	NaN
+VaryBeam	insurance.arff	25	100	5	100	Approximative	25	kNN - F1	NaN
+VaryBeam	insurance.arff	25	250	5	100	Approximative	1	Strength	0.203970247801179
+VaryBeam	insurance.arff	25	250	5	100	Approximative	1	Columns	V9, V1, V18, V39, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	2	Strength	0.201016112669967
+VaryBeam	insurance.arff	25	250	5	100	Approximative	2	Columns	V7, V1, V18, V39, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	3	Strength	0.1940797169842
+VaryBeam	insurance.arff	25	250	5	100	Approximative	3	Columns	V22, V1, V30, V10, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	4	Strength	0.1940797169842
+VaryBeam	insurance.arff	25	250	5	100	Approximative	4	Columns	V22, V1, V31, V10, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	5	Strength	0.190655770071631
+VaryBeam	insurance.arff	25	250	5	100	Approximative	5	Columns	V13, V1, V30, V22, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	6	Strength	0.189959254707782
+VaryBeam	insurance.arff	25	250	5	100	Approximative	6	Columns	V22, V1, V31, V13, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	7	Strength	0.189377954964993
+VaryBeam	insurance.arff	25	250	5	100	Approximative	7	Columns	V7, V1, V18, V30, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	8	Strength	0.189377954964993
+VaryBeam	insurance.arff	25	250	5	100	Approximative	8	Columns	V7, V1, V18, V31, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	9	Strength	0.187208038348251
+VaryBeam	insurance.arff	25	250	5	100	Approximative	9	Columns	V18, V1, V26, V39, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	10	Strength	0.185027904099709
+VaryBeam	insurance.arff	25	250	5	100	Approximative	10	Columns	V59, V1, V23, V28, V68
+VaryBeam	insurance.arff	25	250	5	100	Approximative	11	Strength	0.184567101509217
+VaryBeam	insurance.arff	25	250	5	100	Approximative	11	Columns	V9, V1, V18, V39, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	12	Strength	0.184224637817529
+VaryBeam	insurance.arff	25	250	5	100	Approximative	12	Columns	V7, V1, V18, V39, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	13	Strength	0.183761522904668
+VaryBeam	insurance.arff	25	250	5	100	Approximative	13	Columns	V9, V1, V18, V30, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	14	Strength	0.183761522904668
+VaryBeam	insurance.arff	25	250	5	100	Approximative	14	Columns	V9, V1, V18, V31, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	15	Strength	0.181184377315351
+VaryBeam	insurance.arff	25	250	5	100	Approximative	15	Columns	V18, V1, V37, V30, V68
+VaryBeam	insurance.arff	25	250	5	100	Approximative	16	Strength	0.181184377315351
+VaryBeam	insurance.arff	25	250	5	100	Approximative	16	Columns	V18, V1, V37, V31, V68
+VaryBeam	insurance.arff	25	250	5	100	Approximative	17	Strength	0.181002409073859
+VaryBeam	insurance.arff	25	250	5	100	Approximative	17	Columns	V22, V1, V30, V10, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	18	Strength	0.180831254415262
+VaryBeam	insurance.arff	25	250	5	100	Approximative	18	Columns	V22, V1, V31, V10, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	19	Strength	0.180298185337884
+VaryBeam	insurance.arff	25	250	5	100	Approximative	19	Columns	V18, V1, V28, V68, V31
+VaryBeam	insurance.arff	25	250	5	100	Approximative	20	Strength	0.17961630603607
+VaryBeam	insurance.arff	25	250	5	100	Approximative	20	Columns	V7, V1, V18, V28, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	21	Strength	0.179545302416162
+VaryBeam	insurance.arff	25	250	5	100	Approximative	21	Columns	V18, V1, V28, V68, V30
+VaryBeam	insurance.arff	25	250	5	100	Approximative	22	Strength	0.179001013843408
+VaryBeam	insurance.arff	25	250	5	100	Approximative	22	Columns	V17, V1, V43, V31, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	23	Strength	0.178657489281401
+VaryBeam	insurance.arff	25	250	5	100	Approximative	23	Columns	V17, V1, V43, V30, V59
+VaryBeam	insurance.arff	25	250	5	100	Approximative	24	Strength	0.178224736000608
+VaryBeam	insurance.arff	25	250	5	100	Approximative	24	Columns	V13, V1, V30, V22, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	25	Strength	0.178175607798877
+VaryBeam	insurance.arff	25	250	5	100	Approximative	25	Columns	V18, V1, V28, V31, V47
+VaryBeam	insurance.arff	25	250	5	100	Approximative	1	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	2	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	3	NaiveBayes - F1	0.0365914786967419
+VaryBeam	insurance.arff	25	250	5	100	Approximative	4	NaiveBayes - F1	0.0365914786967419
+VaryBeam	insurance.arff	25	250	5	100	Approximative	5	NaiveBayes - F1	0.0175438596491228
+VaryBeam	insurance.arff	25	250	5	100	Approximative	6	NaiveBayes - F1	0.0175438596491228
+VaryBeam	insurance.arff	25	250	5	100	Approximative	7	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	8	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	9	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	10	NaiveBayes - F1	0.00657894736842105
+VaryBeam	insurance.arff	25	250	5	100	Approximative	11	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	12	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	13	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	14	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	15	NaiveBayes - F1	0.0499268499268499
+VaryBeam	insurance.arff	25	250	5	100	Approximative	16	NaiveBayes - F1	0.0376976626976627
+VaryBeam	insurance.arff	25	250	5	100	Approximative	17	NaiveBayes - F1	0.0424677077308656
+VaryBeam	insurance.arff	25	250	5	100	Approximative	18	NaiveBayes - F1	0.0324812030075188
+VaryBeam	insurance.arff	25	250	5	100	Approximative	19	NaiveBayes - F1	0.0356125356125356
+VaryBeam	insurance.arff	25	250	5	100	Approximative	20	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	21	NaiveBayes - F1	0.0356125356125356
+VaryBeam	insurance.arff	25	250	5	100	Approximative	22	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	23	NaiveBayes - F1	0
+VaryBeam	insurance.arff	25	250	5	100	Approximative	24	NaiveBayes - F1	0.0424677077308656
+VaryBeam	insurance.arff	25	250	5	100	Approximative	25	NaiveBayes - F1	0.0114942528735632
+VaryBeam	insurance.arff	25	250	5	100	Approximative	1	kNN - F1	0.04961959937693
+VaryBeam	insurance.arff	25	250	5	100	Approximative	2	kNN - F1	0.0590508839147678
+VaryBeam	insurance.arff	25	250	5	100	Approximative	3	kNN - F1	0.0625893370574222
+VaryBeam	insurance.arff	25	250	5	100	Approximative	4	kNN - F1	0.0650774749186872
+VaryBeam	insurance.arff	25	250	5	100	Approximative	5	kNN - F1	0.0526803066848833
+VaryBeam	insurance.arff	25	250	5	100	Approximative	6	kNN - F1	0.0507219357723277
+VaryBeam	insurance.arff	25	250	5	100	Approximative	7	kNN - F1	0.0878838323285555
+VaryBeam	insurance.arff	25	250	5	100	Approximative	8	kNN - F1	0.0925979281548329
+VaryBeam	insurance.arff	25	250	5	100	Approximative	9	kNN - F1	0.0531924148370594
+VaryBeam	insurance.arff	25	250	5	100	Approximative	10	kNN - F1	0.0482009545139444
+VaryBeam	insurance.arff	25	250	5	100	Approximative	11	kNN - F1	0.0650583376162075
+VaryBeam	insurance.arff	25	250	5	100	Approximative	12	kNN - F1	0.0802005482469258
+VaryBeam	insurance.arff	25	250	5	100	Approximative	13	kNN - F1	0.0795722830440539
+VaryBeam	insurance.arff	25	250	5	100	Approximative	14	kNN - F1	0.0876581493317694
+VaryBeam	insurance.arff	25	250	5	100	Approximative	15	kNN - F1	0.0685966810966811
+VaryBeam	insurance.arff	25	250	5	100	Approximative	16	kNN - F1	0.0922635470698598
+VaryBeam	insurance.arff	25	250	5	100	Approximative	17	kNN - F1	0.104982443467368
+VaryBeam	insurance.arff	25	250	5	100	Approximative	18	kNN - F1	0.102969074317501
+VaryBeam	insurance.arff	25	250	5	100	Approximative	19	kNN - F1	0.0910506203708072
+VaryBeam	insurance.arff	25	250	5	100	Approximative	20	kNN - F1	0.0555465790248399
+VaryBeam	insurance.arff	25	250	5	100	Approximative	21	kNN - F1	0.0641972795777144
+VaryBeam	insurance.arff	25	250	5	100	Approximative	22	kNN - F1	0.0481991860281334
+VaryBeam	insurance.arff	25	250	5	100	Approximative	23	kNN - F1	0.060004741583689
+VaryBeam	insurance.arff	25	250	5	100	Approximative	24	kNN - F1	0.104997512221928
+VaryBeam	insurance.arff	25	250	5	100	Approximative	25	kNN - F1	0.0653978476139899
+VaryBeam	bank.arff	25	25	5	100	Approximative	1	Strength	0.341395181885156
+VaryBeam	bank.arff	25	25	5	100	Approximative	1	Columns	V12, V2, V14, V11, V10
+VaryBeam	bank.arff	25	25	5	100	Approximative	2	Strength	0.278060593472727
+VaryBeam	bank.arff	25	25	5	100	Approximative	2	Columns	V12, V7, V14, V11, V10
+VaryBeam	bank.arff	25	25	5	100	Approximative	3	Strength	0.277134237098
+VaryBeam	bank.arff	25	25	5	100	Approximative	3	Columns	V12, V10, V16, V11, V14
+VaryBeam	bank.arff	25	25	5	100	Approximative	4	Strength	0.257354101193018
+VaryBeam	bank.arff	25	25	5	100	Approximative	4	Columns	V11, V1, V12, V14, V9
+VaryBeam	bank.arff	25	25	5	100	Approximative	5	Strength	0.25382200380003
+VaryBeam	bank.arff	25	25	5	100	Approximative	5	Columns	V11, V1, V12, V14, V7
+VaryBeam	bank.arff	25	25	5	100	Approximative	6	Strength	0.252983575839975
+VaryBeam	bank.arff	25	25	5	100	Approximative	6	Columns	V12, V1, V16, V11, V14
+VaryBeam	bank.arff	25	25	5	100	Approximative	7	Strength	0.250974425263811
+VaryBeam	bank.arff	25	25	5	100	Approximative	7	Columns	V11, V9, V12, V14, V2
+VaryBeam	bank.arff	25	25	5	100	Approximative	8	Strength	0.245278650577374
+VaryBeam	bank.arff	25	25	5	100	Approximative	8	Columns	V16, V2, V12, V11, V14
+VaryBeam	bank.arff	25	25	5	100	Approximative	9	Strength	0.243385196387488
+VaryBeam	bank.arff	25	25	5	100	Approximative	9	Columns	V12, V2, V14, V11, V7
+VaryBeam	bank.arff	25	25	5	100	Approximative	10	Strength	0.222488431819719
+VaryBeam	bank.arff	25	25	5	100	Approximative	10	Columns	V16, V9, V12, V11, V14
+VaryBeam	bank.arff	25	25	5	100	Approximative	11	Strength	0.221424923588819
+VaryBeam	bank.arff	25	25	5	100	Approximative	11	Columns	V11, V9, V12, V14, V7
+VaryBeam	bank.arff	25	25	5	100	Approximative	12	Strength	0.217935209644268
+VaryBeam	bank.arff	25	25	5	100	Approximative	12	Columns	V16, V11, V12, V14, V4
+VaryBeam	bank.arff	25	25	5	100	Approximative	13	Strength	0.216889963555152
+VaryBeam	bank.arff	25	25	5	100	Approximative	13	Columns	V16, V7, V12, V11, V14
+VaryBeam	bank.arff	25	25	5	100	Approximative	14	Strength	0.215673605045729
+VaryBeam	bank.arff	25	25	5	100	Approximative	14	Columns	V16, V11, V12, V14, V3
+VaryBeam	bank.arff	25	25	5	100	Approximative	15	Strength	0.205651086246556
+VaryBeam	bank.arff	25	25	5	100	Approximative	15	Columns	V16, V11, V12, V14, V6
+VaryBeam	bank.arff	25	25	5	100	Approximative	16	Strength	0.205601460219137
+VaryBeam	bank.arff	25	25	5	100	Approximative	16	Columns	V16, V11, V12, V14, V13
+VaryBeam	bank.arff	25	25	5	100	Approximative	17	Strength	0.20507995993969
+VaryBeam	bank.arff	25	25	5	100	Approximative	17	Columns	V16, V11, V12, V14, V8
+VaryBeam	bank.arff	25	25	5	100	Approximative	18	Strength	0.199472291156156
+VaryBeam	bank.arff	25	25	5	100	Approximative	18	Columns	V16, V11, V12, V14, V5
+VaryBeam	bank.arff	25	25	5	100	Approximative	19	Strength	0.198862064273825
+VaryBeam	bank.arff	25	25	5	100	Approximative	19	Columns	V16, V11, V12, V14, V15
+VaryBeam	bank.arff	25	25	5	100	Approximative	20	Strength	0.198300994743949
+VaryBeam	bank.arff	25	25	5	100	Approximative	20	Columns	V16, V11, V12, V14
+VaryBeam	bank.arff	25	25	5	100	Approximative	21	Strength	0.192755858023351
+VaryBeam	bank.arff	25	25	5	100	Approximative	21	Columns	V12, V1, V16, V14, V7
+VaryBeam	bank.arff	25	25	5	100	Approximative	22	Strength	0.19166002412256
+VaryBeam	bank.arff	25	25	5	100	Approximative	22	Columns	V12, V1, V16, V14, V9
+VaryBeam	bank.arff	25	25	5	100	Approximative	23	Strength	0.188223600234784
+VaryBeam	bank.arff	25	25	5	100	Approximative	23	Columns	V16, V2, V12, V14, V9
+VaryBeam	bank.arff	25	25	5	100	Approximative	24	Strength	0.185533488620074
+VaryBeam	bank.arff	25	25	5	100	Approximative	24	Columns	V16, V2, V12, V14, V7
+VaryBeam	bank.arff	25	25	5	100	Approximative	25	Strength	0.171685986937547
+VaryBeam	bank.arff	25	25	5	100	Approximative	25	Columns	V16, V7, V12, V14, V9
+VaryBeam	bank.arff	25	25	5	100	Approximative	1	NaiveBayes - F1	0.404673386920735
+VaryBeam	bank.arff	25	25	5	100	Approximative	2	NaiveBayes - F1	0.398271129602955
+VaryBeam	bank.arff	25	25	5	100	Approximative	3	NaiveBayes - F1	0.462231532415795
+VaryBeam	bank.arff	25	25	5	100	Approximative	4	NaiveBayes - F1	0.416473505029286
+VaryBeam	bank.arff	25	25	5	100	Approximative	5	NaiveBayes - F1	0.417492806234024
+VaryBeam	bank.arff	25	25	5	100	Approximative	6	NaiveBayes - F1	0.47456396511432
+VaryBeam	bank.arff	25	25	5	100	Approximative	7	NaiveBayes - F1	0.416279297274287
+VaryBeam	bank.arff	25	25	5	100	Approximative	8	NaiveBayes - F1	0.474304440322722
+VaryBeam	bank.arff	25	25	5	100	Approximative	9	NaiveBayes - F1	0.417998084045345
+VaryBeam	bank.arff	25	25	5	100	Approximative	10	NaiveBayes - F1	0.469862499028284
+VaryBeam	bank.arff	25	25	5	100	Approximative	11	NaiveBayes - F1	0.417569327323863
+VaryBeam	bank.arff	25	25	5	100	Approximative	12	NaiveBayes - F1	0.463520948277459
+VaryBeam	bank.arff	25	25	5	100	Approximative	13	NaiveBayes - F1	0.475769276462579
+VaryBeam	bank.arff	25	25	5	100	Approximative	14	NaiveBayes - F1	0.461700722925926
+VaryBeam	bank.arff	25	25	5	100	Approximative	15	NaiveBayes - F1	0.449998745644865
+VaryBeam	bank.arff	25	25	5	100	Approximative	16	NaiveBayes - F1	0.474232712124935
+VaryBeam	bank.arff	25	25	5	100	Approximative	17	NaiveBayes - F1	0.467378299476433
+VaryBeam	bank.arff	25	25	5	100	Approximative	18	NaiveBayes - F1	0.461563428573917
+VaryBeam	bank.arff	25	25	5	100	Approximative	19	NaiveBayes - F1	0.456411616982376
+VaryBeam	bank.arff	25	25	5	100	Approximative	20	NaiveBayes - F1	0.461854365791011
+VaryBeam	bank.arff	25	25	5	100	Approximative	21	NaiveBayes - F1	0.469148071046702
+VaryBeam	bank.arff	25	25	5	100	Approximative	22	NaiveBayes - F1	0.464309751399404
+VaryBeam	bank.arff	25	25	5	100	Approximative	23	NaiveBayes - F1	0.464155614165492
+VaryBeam	bank.arff	25	25	5	100	Approximative	24	NaiveBayes - F1	0.471676076593107
+VaryBeam	bank.arff	25	25	5	100	Approximative	25	NaiveBayes - F1	0.47866585437218
+VaryBeam	bank.arff	25	25	5	100	Approximative	1	kNN - F1	0.397002730153816
+VaryBeam	bank.arff	25	25	5	100	Approximative	2	kNN - F1	0.40073507710994
+VaryBeam	bank.arff	25	25	5	100	Approximative	3	kNN - F1	0.400447808968493
+VaryBeam	bank.arff	25	25	5	100	Approximative	4	kNN - F1	0.412744189104028
+VaryBeam	bank.arff	25	25	5	100	Approximative	5	kNN - F1	0.41088356333372
+VaryBeam	bank.arff	25	25	5	100	Approximative	6	kNN - F1	0.410938104559923
+VaryBeam	bank.arff	25	25	5	100	Approximative	7	kNN - F1	0.406590374046261
+VaryBeam	bank.arff	25	25	5	100	Approximative	8	kNN - F1	0.403807013021193
+VaryBeam	bank.arff	25	25	5	100	Approximative	9	kNN - F1	0.405751337695752
+VaryBeam	bank.arff	25	25	5	100	Approximative	10	kNN - F1	0.415506672044416
+VaryBeam	bank.arff	25	25	5	100	Approximative	11	kNN - F1	0.417642195504423
+VaryBeam	bank.arff	25	25	5	100	Approximative	12	kNN - F1	0.407694660504437
+VaryBeam	bank.arff	25	25	5	100	Approximative	13	kNN - F1	0.41465170454159
+VaryBeam	bank.arff	25	25	5	100	Approximative	14	kNN - F1	0.406140314866991
+VaryBeam	bank.arff	25	25	5	100	Approximative	15	kNN - F1	0.356594953832292
+VaryBeam	bank.arff	25	25	5	100	Approximative	16	kNN - F1	0.410597393070602
+VaryBeam	bank.arff	25	25	5	100	Approximative	17	kNN - F1	0.40670215249607
+VaryBeam	bank.arff	25	25	5	100	Approximative	18	kNN - F1	0.408532199719957
+VaryBeam	bank.arff	25	25	5	100	Approximative	19	kNN - F1	0.411178502798843
+VaryBeam	bank.arff	25	25	5	100	Approximative	20	kNN - F1	0.408776791915654
+VaryBeam	bank.arff	25	25	5	100	Approximative	21	kNN - F1	0.410699304896665
+VaryBeam	bank.arff	25	25	5	100	Approximative	22	kNN - F1	0.410635275879443
+VaryBeam	bank.arff	25	25	5	100	Approximative	23	kNN - F1	0.403367057312396
+VaryBeam	bank.arff	25	25	5	100	Approximative	24	kNN - F1	0.404611445329494
+VaryBeam	bank.arff	25	25	5	100	Approximative	25	kNN - F1	0.410200411228651
+VaryBeam	bank.arff	25	50	5	100	Approximative	1	Strength	0.352249955926995
+VaryBeam	bank.arff	25	50	5	100	Approximative	1	Columns	V11, V1, V12, V10, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	2	Strength	0.348126376543572
+VaryBeam	bank.arff	25	50	5	100	Approximative	2	Columns	V12, V1, V16, V11, V10
+VaryBeam	bank.arff	25	50	5	100	Approximative	3	Strength	0.341395181885186
+VaryBeam	bank.arff	25	50	5	100	Approximative	3	Columns	V11, V2, V12, V14, V10
+VaryBeam	bank.arff	25	50	5	100	Approximative	4	Strength	0.338720097709519
+VaryBeam	bank.arff	25	50	5	100	Approximative	4	Columns	V12, V10, V16, V11, V2
+VaryBeam	bank.arff	25	50	5	100	Approximative	5	Strength	0.30336293701151
+VaryBeam	bank.arff	25	50	5	100	Approximative	5	Columns	V11, V1, V12, V2, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	6	Strength	0.297488737673534
+VaryBeam	bank.arff	25	50	5	100	Approximative	6	Columns	V12, V1, V16, V11, V2
+VaryBeam	bank.arff	25	50	5	100	Approximative	7	Strength	0.281742814705444
+VaryBeam	bank.arff	25	50	5	100	Approximative	7	Columns	V11, V9, V12, V10, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	8	Strength	0.278060593472755
+VaryBeam	bank.arff	25	50	5	100	Approximative	8	Columns	V11, V7, V12, V10, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	9	Strength	0.27734103053937
+VaryBeam	bank.arff	25	50	5	100	Approximative	9	Columns	V12, V10, V16, V11, V9
+VaryBeam	bank.arff	25	50	5	100	Approximative	10	Strength	0.277134237098
+VaryBeam	bank.arff	25	50	5	100	Approximative	10	Columns	V12, V10, V16, V11, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	11	Strength	0.275116306388991
+VaryBeam	bank.arff	25	50	5	100	Approximative	11	Columns	V12, V10, V16, V11, V7
+VaryBeam	bank.arff	25	50	5	100	Approximative	12	Strength	0.26206763214665
+VaryBeam	bank.arff	25	50	5	100	Approximative	12	Columns	V12, V4, V16, V11, V1
+VaryBeam	bank.arff	25	50	5	100	Approximative	13	Strength	0.257354101193016
+VaryBeam	bank.arff	25	50	5	100	Approximative	13	Columns	V11, V1, V12, V9, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	14	Strength	0.254716925262935
+VaryBeam	bank.arff	25	50	5	100	Approximative	14	Columns	V12, V10, V14, V11
+VaryBeam	bank.arff	25	50	5	100	Approximative	15	Strength	0.253822003800034
+VaryBeam	bank.arff	25	50	5	100	Approximative	15	Columns	V11, V1, V12, V7, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	16	Strength	0.252983575839975
+VaryBeam	bank.arff	25	50	5	100	Approximative	16	Columns	V12, V1, V16, V11, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	17	Strength	0.250974425263802
+VaryBeam	bank.arff	25	50	5	100	Approximative	17	Columns	V11, V2, V12, V14, V9
+VaryBeam	bank.arff	25	50	5	100	Approximative	18	Strength	0.250248087161262
+VaryBeam	bank.arff	25	50	5	100	Approximative	18	Columns	V12, V1, V16, V11, V9
+VaryBeam	bank.arff	25	50	5	100	Approximative	19	Strength	0.247100559571853
+VaryBeam	bank.arff	25	50	5	100	Approximative	19	Columns	V12, V1, V16, V11, V7
+VaryBeam	bank.arff	25	50	5	100	Approximative	20	Strength	0.24684325700407
+VaryBeam	bank.arff	25	50	5	100	Approximative	20	Columns	V12, V3, V16, V11, V1
+VaryBeam	bank.arff	25	50	5	100	Approximative	21	Strength	0.245317024848068
+VaryBeam	bank.arff	25	50	5	100	Approximative	21	Columns	V12, V4, V16, V11, V2
+VaryBeam	bank.arff	25	50	5	100	Approximative	22	Strength	0.245278650577374
+VaryBeam	bank.arff	25	50	5	100	Approximative	22	Columns	V16, V2, V12, V14, V11
+VaryBeam	bank.arff	25	50	5	100	Approximative	23	Strength	0.245145172901561
+VaryBeam	bank.arff	25	50	5	100	Approximative	23	Columns	V16, V2, V12, V11, V9
+VaryBeam	bank.arff	25	50	5	100	Approximative	24	Strength	0.243385196387484
+VaryBeam	bank.arff	25	50	5	100	Approximative	24	Columns	V11, V2, V12, V7, V14
+VaryBeam	bank.arff	25	50	5	100	Approximative	25	Strength	0.240419053895343
+VaryBeam	bank.arff	25	50	5	100	Approximative	25	Columns	V11, V1, V12, V14, V13
+VaryBeam	bank.arff	25	50	5	100	Approximative	1	NaiveBayes - F1	0.404581596007685
+VaryBeam	bank.arff	25	50	5	100	Approximative	2	NaiveBayes - F1	0.455921572384095
+VaryBeam	bank.arff	25	50	5	100	Approximative	3	NaiveBayes - F1	0.404673386920735
+VaryBeam	bank.arff	25	50	5	100	Approximative	4	NaiveBayes - F1	0.463075947926308
+VaryBeam	bank.arff	25	50	5	100	Approximative	5	NaiveBayes - F1	0.419904473187644
+VaryBeam	bank.arff	25	50	5	100	Approximative	6	NaiveBayes - F1	0.470716556949074
+VaryBeam	bank.arff	25	50	5	100	Approximative	7	NaiveBayes - F1	0.396682724405986
+VaryBeam	bank.arff	25	50	5	100	Approximative	8	NaiveBayes - F1	0.398271129602955
+VaryBeam	bank.arff	25	50	5	100	Approximative	9	NaiveBayes - F1	0.462798938336703
+VaryBeam	bank.arff	25	50	5	100	Approximative	10	NaiveBayes - F1	0.462231532415795
+VaryBeam	bank.arff	25	50	5	100	Approximative	11	NaiveBayes - F1	0.46368345547749
+VaryBeam	bank.arff	25	50	5	100	Approximative	12	NaiveBayes - F1	0.456805479403433
+VaryBeam	bank.arff	25	50	5	100	Approximative	13	NaiveBayes - F1	0.416473505029286
+VaryBeam	bank.arff	25	50	5	100	Approximative	14	NaiveBayes - F1	0.387646044853855
+VaryBeam	bank.arff	25	50	5	100	Approximative	15	NaiveBayes - F1	0.417492806234024
+VaryBeam	bank.arff	25	50	5	100	Approximative	16	NaiveBayes - F1	0.47456396511432
+VaryBeam	bank.arff	25	50	5	100	Approximative	17	NaiveBayes - F1	0.416279297274287
+VaryBeam	bank.arff	25	50	5	100	Approximative	18	NaiveBayes - F1	0.475747598839611
+VaryBeam	bank.arff	25	50	5	100	Approximative	19	NaiveBayes - F1	0.472083358093561
+VaryBeam	bank.arff	25	50	5	100	Approximative	20	NaiveBayes - F1	0.462409622979123
+VaryBeam	bank.arff	25	50	5	100	Approximative	21	NaiveBayes - F1	0.465866047910493
+VaryBeam	bank.arff	25	50	5	100	Approximative	22	NaiveBayes - F1	0.474304440322722
+VaryBeam	bank.arff	25	50	5	100	Approximative	23	NaiveBayes - F1	0.478820406041605
+VaryBeam	bank.arff	25	50	5	100	Approximative	24	NaiveBayes - F1	0.417998084045345
+VaryBeam	bank.arff	25	50	5	100	Approximative	25	NaiveBayes - F1	0.427514358541102
+VaryBeam	bank.arff	25	50	5	100	Approximative	1	kNN - F1	0.403982589683632
+VaryBeam	bank.arff	25	50	5	100	Approximative	2	kNN - F1	0.316068128287869
+VaryBeam	bank.arff	25	50	5	100	Approximative	3	kNN - F1	0.397050304877158
+VaryBeam	bank.arff	25	50	5	100	Approximative	4	kNN - F1	0.298302289341894
+VaryBeam	bank.arff	25	50	5	100	Approximative	5	kNN - F1	0.406928804356531
+VaryBeam	bank.arff	25	50	5	100	Approximative	6	kNN - F1	0.319132285562901
+VaryBeam	bank.arff	25	50	5	100	Approximative	7	kNN - F1	0.398889200755464
+VaryBeam	bank.arff	25	50	5	100	Approximative	8	kNN - F1	0.400827753923148
+VaryBeam	bank.arff	25	50	5	100	Approximative	9	kNN - F1	0.319639080009957
+VaryBeam	bank.arff	25	50	5	100	Approximative	10	kNN - F1	0.400371559534713
+VaryBeam	bank.arff	25	50	5	100	Approximative	11	kNN - F1	0.309280876531611
+VaryBeam	bank.arff	25	50	5	100	Approximative	12	kNN - F1	0.320451983163811
+VaryBeam	bank.arff	25	50	5	100	Approximative	13	kNN - F1	0.412548740508174
+VaryBeam	bank.arff	25	50	5	100	Approximative	14	kNN - F1	0.398457382747197
+VaryBeam	bank.arff	25	50	5	100	Approximative	15	kNN - F1	0.41093505103951
+VaryBeam	bank.arff	25	50	5	100	Approximative	16	kNN - F1	0.411037168490841
+VaryBeam	bank.arff	25	50	5	100	Approximative	17	kNN - F1	0.40646905171209
+VaryBeam	bank.arff	25	50	5	100	Approximative	18	kNN - F1	0.327006235524065
+VaryBeam	bank.arff	25	50	5	100	Approximative	19	kNN - F1	0.322496935177264
+VaryBeam	bank.arff	25	50	5	100	Approximative	20	kNN - F1	0.320739018754464
+VaryBeam	bank.arff	25	50	5	100	Approximative	21	kNN - F1	0.309393248577327
+VaryBeam	bank.arff	25	50	5	100	Approximative	22	kNN - F1	0.404279364462857
+VaryBeam	bank.arff	25	50	5	100	Approximative	23	kNN - F1	0.316425365695065
+VaryBeam	bank.arff	25	50	5	100	Approximative	24	kNN - F1	0.405033952848617
+VaryBeam	bank.arff	25	50	5	100	Approximative	25	kNN - F1	0.413207049055437
+VaryBeam	bank.arff	25	100	5	100	Approximative	1	Strength	0.352249955926995
+VaryBeam	bank.arff	25	100	5	100	Approximative	1	Columns	V11, V1, V12, V10, V14
+VaryBeam	bank.arff	25	100	5	100	Approximative	2	Strength	0.348126376543572
+VaryBeam	bank.arff	25	100	5	100	Approximative	2	Columns	V12, V1, V16, V11, V10
+VaryBeam	bank.arff	25	100	5	100	Approximative	3	Strength	0.341395181885192
+VaryBeam	bank.arff	25	100	5	100	Approximative	3	Columns	V10, V2, V12, V14, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	4	Strength	0.338720097709515
+VaryBeam	bank.arff	25	100	5	100	Approximative	4	Columns	V12, V10, V16, V2, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	5	Strength	0.303362937011517
+VaryBeam	bank.arff	25	100	5	100	Approximative	5	Columns	V2, V1, V12, V14, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	6	Strength	0.297488737673538
+VaryBeam	bank.arff	25	100	5	100	Approximative	6	Columns	V2, V1, V12, V16, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	7	Strength	0.29000239271023
+VaryBeam	bank.arff	25	100	5	100	Approximative	7	Columns	V10, V4, V12, V16, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	8	Strength	0.282790515431534
+VaryBeam	bank.arff	25	100	5	100	Approximative	8	Columns	V12, V3, V16, V11, V10
+VaryBeam	bank.arff	25	100	5	100	Approximative	9	Strength	0.281742814705447
+VaryBeam	bank.arff	25	100	5	100	Approximative	9	Columns	V10, V9, V12, V14, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	10	Strength	0.278060593472745
+VaryBeam	bank.arff	25	100	5	100	Approximative	10	Columns	V10, V7, V12, V11, V14
+VaryBeam	bank.arff	25	100	5	100	Approximative	11	Strength	0.277341030539366
+VaryBeam	bank.arff	25	100	5	100	Approximative	11	Columns	V12, V10, V16, V9, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	12	Strength	0.277134237098
+VaryBeam	bank.arff	25	100	5	100	Approximative	12	Columns	V12, V10, V16, V14, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	13	Strength	0.275116306389018
+VaryBeam	bank.arff	25	100	5	100	Approximative	13	Columns	V10, V7, V12, V11, V16
+VaryBeam	bank.arff	25	100	5	100	Approximative	14	Strength	0.268089440306509
+VaryBeam	bank.arff	25	100	5	100	Approximative	14	Columns	V11, V4, V12, V1, V14
+VaryBeam	bank.arff	25	100	5	100	Approximative	15	Strength	0.263662764009943
+VaryBeam	bank.arff	25	100	5	100	Approximative	15	Columns	V12, V6, V16, V11, V10
+VaryBeam	bank.arff	25	100	5	100	Approximative	16	Strength	0.263362868810891
+VaryBeam	bank.arff	25	100	5	100	Approximative	16	Columns	V13, V10, V12, V16, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	17	Strength	0.26206763214665
+VaryBeam	bank.arff	25	100	5	100	Approximative	17	Columns	V12, V4, V16, V11, V1
+VaryBeam	bank.arff	25	100	5	100	Approximative	18	Strength	0.261621490799881
+VaryBeam	bank.arff	25	100	5	100	Approximative	18	Columns	V12, V8, V16, V11, V10
+VaryBeam	bank.arff	25	100	5	100	Approximative	19	Strength	0.257354101192995
+VaryBeam	bank.arff	25	100	5	100	Approximative	19	Columns	V9, V1, V12, V14, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	20	Strength	0.254716925262935
+VaryBeam	bank.arff	25	100	5	100	Approximative	20	Columns	V12, V10, V14, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	21	Strength	0.254513187904463
+VaryBeam	bank.arff	25	100	5	100	Approximative	21	Columns	V3, V1, V12, V11, V14
+VaryBeam	bank.arff	25	100	5	100	Approximative	22	Strength	0.253822003799998
+VaryBeam	bank.arff	25	100	5	100	Approximative	22	Columns	V7, V1, V12, V14, V11
+VaryBeam	bank.arff	25	100	5	100	Approximative	23	Strength	0.252983575839975
+VaryBeam	bank.arff	25	100	5	100	Approximative	23	Columns	V12, V1, V16, V11, V14
+VaryBeam	bank.arff	25	100	5	100	Approximative	24	Strength	0.252447476685392
+VaryBeam	bank.arff	25	100	5	100	Approximative	24	Columns	V12, V5, V16, V11, V10
+VaryBeam	bank.arff	25	100	5	100	Approximative	25	Strength	0.251660870713726
+VaryBeam	bank.arff	25	100	5	100	Approximative	25	Columns	V11, V4, V12, V14, V2
+VaryBeam	bank.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.404581596007685
+VaryBeam	bank.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.455921572384095
+VaryBeam	bank.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.404673386920735
+VaryBeam	bank.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.463075947926308
+VaryBeam	bank.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.419904473187644
+VaryBeam	bank.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.470716556949074
+VaryBeam	bank.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.444828569027018
+VaryBeam	bank.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.443539269271407
+VaryBeam	bank.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.396682724405986
+VaryBeam	bank.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.398271129602955
+VaryBeam	bank.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.462798938336703
+VaryBeam	bank.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.462231532415795
+VaryBeam	bank.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.46368345547749
+VaryBeam	bank.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.405042854995019
+VaryBeam	bank.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.426179395045079
+VaryBeam	bank.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.488959791469611
+VaryBeam	bank.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.456805479403433
+VaryBeam	bank.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.444623052215816
+VaryBeam	bank.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.416473505029286
+VaryBeam	bank.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.387646044853855
+VaryBeam	bank.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.40690860839675
+VaryBeam	bank.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.417492806234024
+VaryBeam	bank.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.47456396511432
+VaryBeam	bank.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.439694915723504
+VaryBeam	bank.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.406732892903054
+VaryBeam	bank.arff	25	100	5	100	Approximative	1	kNN - F1	0.403982589683632
+VaryBeam	bank.arff	25	100	5	100	Approximative	2	kNN - F1	0.316068128287869
+VaryBeam	bank.arff	25	100	5	100	Approximative	3	kNN - F1	0.397002730153816
+VaryBeam	bank.arff	25	100	5	100	Approximative	4	kNN - F1	0.298085129381801
+VaryBeam	bank.arff	25	100	5	100	Approximative	5	kNN - F1	0.406928804356531
+VaryBeam	bank.arff	25	100	5	100	Approximative	6	kNN - F1	0.319383057393954
+VaryBeam	bank.arff	25	100	5	100	Approximative	7	kNN - F1	0.308161099718985
+VaryBeam	bank.arff	25	100	5	100	Approximative	8	kNN - F1	0.307381460261631
+VaryBeam	bank.arff	25	100	5	100	Approximative	9	kNN - F1	0.3986257821869
+VaryBeam	bank.arff	25	100	5	100	Approximative	10	kNN - F1	0.400643514627287
+VaryBeam	bank.arff	25	100	5	100	Approximative	11	kNN - F1	0.3199836345227
+VaryBeam	bank.arff	25	100	5	100	Approximative	12	kNN - F1	0.400188890351857
+VaryBeam	bank.arff	25	100	5	100	Approximative	13	kNN - F1	0.30909336397949
+VaryBeam	bank.arff	25	100	5	100	Approximative	14	kNN - F1	0.41206507936813
+VaryBeam	bank.arff	25	100	5	100	Approximative	15	kNN - F1	0.284100739221233
+VaryBeam	bank.arff	25	100	5	100	Approximative	16	kNN - F1	0.312179838442003
+VaryBeam	bank.arff	25	100	5	100	Approximative	17	kNN - F1	0.320447735708222
+VaryBeam	bank.arff	25	100	5	100	Approximative	18	kNN - F1	0.307785628120935
+VaryBeam	bank.arff	25	100	5	100	Approximative	19	kNN - F1	0.41264848947362
+VaryBeam	bank.arff	25	100	5	100	Approximative	20	kNN - F1	0.398553287648782
+VaryBeam	bank.arff	25	100	5	100	Approximative	21	kNN - F1	0.4097837849953
+VaryBeam	bank.arff	25	100	5	100	Approximative	22	kNN - F1	0.410888621052533
+VaryBeam	bank.arff	25	100	5	100	Approximative	23	kNN - F1	0.41103511640093
+VaryBeam	bank.arff	25	100	5	100	Approximative	24	kNN - F1	0.306690169513454
+VaryBeam	bank.arff	25	100	5	100	Approximative	25	kNN - F1	0.404338302191904
+VaryBeam	bank.arff	25	250	5	100	Approximative	1	Strength	0.390463049026343
+VaryBeam	bank.arff	25	250	5	100	Approximative	1	Columns	V2, V1, V12, V11, V10
+VaryBeam	bank.arff	25	250	5	100	Approximative	2	Strength	0.352249955926995
+VaryBeam	bank.arff	25	250	5	100	Approximative	2	Columns	V11, V1, V14, V12, V10
+VaryBeam	bank.arff	25	250	5	100	Approximative	3	Strength	0.348126376543574
+VaryBeam	bank.arff	25	250	5	100	Approximative	3	Columns	V12, V1, V16, V10, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	4	Strength	0.34139518188519
+VaryBeam	bank.arff	25	250	5	100	Approximative	4	Columns	V10, V2, V14, V12, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	5	Strength	0.338720097709537
+VaryBeam	bank.arff	25	250	5	100	Approximative	5	Columns	V16, V2, V10, V12, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	6	Strength	0.32159998310641
+VaryBeam	bank.arff	25	250	5	100	Approximative	6	Columns	V9, V1, V12, V11, V10
+VaryBeam	bank.arff	25	250	5	100	Approximative	7	Strength	0.319462639446998
+VaryBeam	bank.arff	25	250	5	100	Approximative	7	Columns	V7, V1, V12, V11, V10
+VaryBeam	bank.arff	25	250	5	100	Approximative	8	Strength	0.31411336951502
+VaryBeam	bank.arff	25	250	5	100	Approximative	8	Columns	V2, V1, V14, V12, V10
+VaryBeam	bank.arff	25	250	5	100	Approximative	9	Strength	0.310630088562426
+VaryBeam	bank.arff	25	250	5	100	Approximative	9	Columns	V10, V9, V12, V2, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	10	Strength	0.304526691483982
+VaryBeam	bank.arff	25	250	5	100	Approximative	10	Columns	V2, V1, V16, V12, V10
+VaryBeam	bank.arff	25	250	5	100	Approximative	11	Strength	0.303362937011519
+VaryBeam	bank.arff	25	250	5	100	Approximative	11	Columns	V2, V1, V14, V12, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	12	Strength	0.297488737673538
+VaryBeam	bank.arff	25	250	5	100	Approximative	12	Columns	V2, V1, V16, V12, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	13	Strength	0.294066369426597
+VaryBeam	bank.arff	25	250	5	100	Approximative	13	Columns	V10, V4, V12, V14, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	14	Strength	0.29000239271023
+VaryBeam	bank.arff	25	250	5	100	Approximative	14	Columns	V10, V4, V12, V16, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	15	Strength	0.286741022272514
+VaryBeam	bank.arff	25	250	5	100	Approximative	15	Columns	V10, V3, V12, V14, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	16	Strength	0.282790515431518
+VaryBeam	bank.arff	25	250	5	100	Approximative	16	Columns	V10, V3, V12, V16, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	17	Strength	0.281742814705447
+VaryBeam	bank.arff	25	250	5	100	Approximative	17	Columns	V10, V9, V14, V12, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	18	Strength	0.278060593472741
+VaryBeam	bank.arff	25	250	5	100	Approximative	18	Columns	V10, V7, V12, V14, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	19	Strength	0.277341030539391
+VaryBeam	bank.arff	25	250	5	100	Approximative	19	Columns	V16, V9, V10, V12, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	20	Strength	0.277134237098
+VaryBeam	bank.arff	25	250	5	100	Approximative	20	Columns	V12, V10, V16, V14, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	21	Strength	0.275116306389018
+VaryBeam	bank.arff	25	250	5	100	Approximative	21	Columns	V10, V7, V12, V11, V16
+VaryBeam	bank.arff	25	250	5	100	Approximative	22	Strength	0.268540087836756
+VaryBeam	bank.arff	25	250	5	100	Approximative	22	Columns	V10, V6, V12, V14, V11
+VaryBeam	bank.arff	25	250	5	100	Approximative	23	Strength	0.268324317949805
+VaryBeam	bank.arff	25	250	5	100	Approximative	23	Columns	V13, V10, V12, V11, V14
+VaryBeam	bank.arff	25	250	5	100	Approximative	24	Strength	0.268089440306518
+VaryBeam	bank.arff	25	250	5	100	Approximative	24	Columns	V11, V1, V4, V12, V14
+VaryBeam	bank.arff	25	250	5	100	Approximative	25	Strength	0.266217158096598
+VaryBeam	bank.arff	25	250	5	100	Approximative	25	Columns	V10, V8, V12, V11, V14
+VaryBeam	bank.arff	25	250	5	100	Approximative	1	NaiveBayes - F1	0.40103948260966
+VaryBeam	bank.arff	25	250	5	100	Approximative	2	NaiveBayes - F1	0.404581596007685
+VaryBeam	bank.arff	25	250	5	100	Approximative	3	NaiveBayes - F1	0.455921572384095
+VaryBeam	bank.arff	25	250	5	100	Approximative	4	NaiveBayes - F1	0.404673386920735
+VaryBeam	bank.arff	25	250	5	100	Approximative	5	NaiveBayes - F1	0.463075947926308
+VaryBeam	bank.arff	25	250	5	100	Approximative	6	NaiveBayes - F1	0.396441073554602
+VaryBeam	bank.arff	25	250	5	100	Approximative	7	NaiveBayes - F1	0.394701675286428
+VaryBeam	bank.arff	25	250	5	100	Approximative	8	NaiveBayes - F1	0.39438043251125
+VaryBeam	bank.arff	25	250	5	100	Approximative	9	NaiveBayes - F1	0.394474667211564
+VaryBeam	bank.arff	25	250	5	100	Approximative	10	NaiveBayes - F1	0.437560176805004
+VaryBeam	bank.arff	25	250	5	100	Approximative	11	NaiveBayes - F1	0.419904473187644
+VaryBeam	bank.arff	25	250	5	100	Approximative	12	NaiveBayes - F1	0.470716556949074
+VaryBeam	bank.arff	25	250	5	100	Approximative	13	NaiveBayes - F1	0.391196222424681
+VaryBeam	bank.arff	25	250	5	100	Approximative	14	NaiveBayes - F1	0.444828569027018
+VaryBeam	bank.arff	25	250	5	100	Approximative	15	NaiveBayes - F1	0.390514649335442
+VaryBeam	bank.arff	25	250	5	100	Approximative	16	NaiveBayes - F1	0.443539269271407
+VaryBeam	bank.arff	25	250	5	100	Approximative	17	NaiveBayes - F1	0.396682724405986
+VaryBeam	bank.arff	25	250	5	100	Approximative	18	NaiveBayes - F1	0.398271129602955
+VaryBeam	bank.arff	25	250	5	100	Approximative	19	NaiveBayes - F1	0.462798938336703
+VaryBeam	bank.arff	25	250	5	100	Approximative	20	NaiveBayes - F1	0.462231532415795
+VaryBeam	bank.arff	25	250	5	100	Approximative	21	NaiveBayes - F1	0.46368345547749
+VaryBeam	bank.arff	25	250	5	100	Approximative	22	NaiveBayes - F1	0.381726231498233
+VaryBeam	bank.arff	25	250	5	100	Approximative	23	NaiveBayes - F1	0.407137359953388
+VaryBeam	bank.arff	25	250	5	100	Approximative	24	NaiveBayes - F1	0.405042854995019
+VaryBeam	bank.arff	25	250	5	100	Approximative	25	NaiveBayes - F1	0.387867360262042
+VaryBeam	bank.arff	25	250	5	100	Approximative	1	kNN - F1	0.312418462000654
+VaryBeam	bank.arff	25	250	5	100	Approximative	2	kNN - F1	0.403982589683632
+VaryBeam	bank.arff	25	250	5	100	Approximative	3	kNN - F1	0.316068128287869
+VaryBeam	bank.arff	25	250	5	100	Approximative	4	kNN - F1	0.397050304877158
+VaryBeam	bank.arff	25	250	5	100	Approximative	5	kNN - F1	0.298122173408277
+VaryBeam	bank.arff	25	250	5	100	Approximative	6	kNN - F1	0.318272444095367
+VaryBeam	bank.arff	25	250	5	100	Approximative	7	kNN - F1	0.320155682754654
+VaryBeam	bank.arff	25	250	5	100	Approximative	8	kNN - F1	0.405985696773921
+VaryBeam	bank.arff	25	250	5	100	Approximative	9	kNN - F1	0.305686692310589
+VaryBeam	bank.arff	25	250	5	100	Approximative	10	kNN - F1	0.317523692586601
+VaryBeam	bank.arff	25	250	5	100	Approximative	11	kNN - F1	0.406928804356531
+VaryBeam	bank.arff	25	250	5	100	Approximative	12	kNN - F1	0.319174254332347
+VaryBeam	bank.arff	25	250	5	100	Approximative	13	kNN - F1	0.396366439422921
+VaryBeam	bank.arff	25	250	5	100	Approximative	14	kNN - F1	0.307929464052098
+VaryBeam	bank.arff	25	250	5	100	Approximative	15	kNN - F1	0.395233667685545
+VaryBeam	bank.arff	25	250	5	100	Approximative	16	kNN - F1	0.307540820813948
+VaryBeam	bank.arff	25	250	5	100	Approximative	17	kNN - F1	0.39863464578226
+VaryBeam	bank.arff	25	250	5	100	Approximative	18	kNN - F1	0.401179750722931
+VaryBeam	bank.arff	25	250	5	100	Approximative	19	kNN - F1	0.319922204776959
+VaryBeam	bank.arff	25	250	5	100	Approximative	20	kNN - F1	0.400514770604152
+VaryBeam	bank.arff	25	250	5	100	Approximative	21	kNN - F1	0.309558388631339
+VaryBeam	bank.arff	25	250	5	100	Approximative	22	kNN - F1	0.354477057598921
+VaryBeam	bank.arff	25	250	5	100	Approximative	23	kNN - F1	0.398986354556401
+VaryBeam	bank.arff	25	250	5	100	Approximative	24	kNN - F1	0.412111368196002
+VaryBeam	bank.arff	25	250	5	100	Approximative	25	kNN - F1	0.399105976873979

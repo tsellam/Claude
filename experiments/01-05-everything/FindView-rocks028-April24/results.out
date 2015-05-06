@@ -1,0 +1,1105 @@
+experiment	file	q	beam_size	size_view	dedup	algo	view	key	value
+VaryAlgos	breast.arff	10	26	13	100	4S	1	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	4S	1	Columns	dim26, dim6, dim27, dim28, dim11, dim1, dim3, dim4, dim13, dim14, dim21, dim23, dim24
+VaryAlgos	breast.arff	10	26	13	100	4S	2	Strength	0.780544540953671
+VaryAlgos	breast.arff	10	26	13	100	4S	2	Columns	dim27, dim6, dim7, dim28, dim8, dim1, dim3, dim4, dim21, dim23, dim24
+VaryAlgos	breast.arff	10	26	13	100	4S	3	Strength	0.726226927306381
+VaryAlgos	breast.arff	10	26	13	100	4S	3	Columns	dim30, dim10, dim26, dim6, dim7, dim8, dim28
+VaryAlgos	breast.arff	10	26	13	100	4S	4	Strength	0.726226927306382
+VaryAlgos	breast.arff	10	26	13	100	4S	4	Columns	dim2, dim22, dim9, dim6, dim10
+VaryAlgos	breast.arff	10	26	13	100	4S	5	Strength	0.636326578519615
+VaryAlgos	breast.arff	10	26	13	100	4S	5	Columns	dim18, dim17, dim20, dim6, dim10
+VaryAlgos	breast.arff	10	26	13	100	4S	6	Strength	0.620688558860727
+VaryAlgos	breast.arff	10	26	13	100	4S	6	Columns	dim29, dim9, dim20, dim6, dim16
+VaryAlgos	breast.arff	10	26	13	100	4S	7	Strength	0.660471624232374
+VaryAlgos	breast.arff	10	26	13	100	4S	7	Columns	dim25, dim5, dim16, dim6, dim26
+VaryAlgos	breast.arff	10	26	13	100	4S	8	Strength	0.670572634333383
+VaryAlgos	breast.arff	10	26	13	100	4S	8	Columns	dim25, dim30, dim5, dim6, dim7
+VaryAlgos	breast.arff	10	26	13	100	4S	9	Strength	0.678197760617862
+VaryAlgos	breast.arff	10	26	13	100	4S	9	Columns	dim17, dim7, dim5, dim6, dim10
+VaryAlgos	breast.arff	10	26	13	100	4S	10	Strength	0.613063432576246
+VaryAlgos	breast.arff	10	26	13	100	4S	10	Columns	dim17, dim16, dim10, dim6, dim26
+VaryAlgos	breast.arff	10	26	13	100	4S	1	NaiveBayes - F1	0.497644716394716
+VaryAlgos	breast.arff	10	26	13	100	4S	2	NaiveBayes - F1	0.484362859362859
+VaryAlgos	breast.arff	10	26	13	100	4S	3	NaiveBayes - F1	0.388113275613276
+VaryAlgos	breast.arff	10	26	13	100	4S	4	NaiveBayes - F1	0.216269841269841
+VaryAlgos	breast.arff	10	26	13	100	4S	5	NaiveBayes - F1	0.256132756132756
+VaryAlgos	breast.arff	10	26	13	100	4S	6	NaiveBayes - F1	0.142857142857143
+VaryAlgos	breast.arff	10	26	13	100	4S	7	NaiveBayes - F1	0.111111111111111
+VaryAlgos	breast.arff	10	26	13	100	4S	8	NaiveBayes - F1	0.125
+VaryAlgos	breast.arff	10	26	13	100	4S	9	NaiveBayes - F1	0.210714285714286
+VaryAlgos	breast.arff	10	26	13	100	4S	10	NaiveBayes - F1	0.142857142857143
+VaryAlgos	breast.arff	10	26	13	100	4S	1	kNN - F1	0.351190476190476
+VaryAlgos	breast.arff	10	26	13	100	4S	2	kNN - F1	0.354308390022676
+VaryAlgos	breast.arff	10	26	13	100	4S	3	kNN - F1	0.330026455026455
+VaryAlgos	breast.arff	10	26	13	100	4S	4	kNN - F1	0.28901257472686
+VaryAlgos	breast.arff	10	26	13	100	4S	5	kNN - F1	0.449433106575964
+VaryAlgos	breast.arff	10	26	13	100	4S	6	kNN - F1	0.371428571428571
+VaryAlgos	breast.arff	10	26	13	100	4S	7	kNN - F1	0.358730158730159
+VaryAlgos	breast.arff	10	26	13	100	4S	8	kNN - F1	0.309804393137726
+VaryAlgos	breast.arff	10	26	13	100	4S	9	kNN - F1	0.402678571428571
+VaryAlgos	breast.arff	10	26	13	100	4S	10	kNN - F1	0.390649350649351
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	1	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	1	Columns	dim21, dim21, dim21, dim30, dim21, dim10, dim21, dim16, dim21, dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	2	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	2	Columns	dim21, dim21, dim21, dim30, dim21, dim10, dim21, dim16, dim12, dim21, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	3	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	3	Columns	dim10, dim16, dim16, dim7, dim16, dim7, dim16, dim6, dim10, dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	4	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	4	Columns	dim10, dim16, dim7, dim16, dim16, dim7, dim16, dim6, dim10, dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	5	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	5	Columns	dim9, dim18, dim20, dim10, dim7, dim16, dim7, dim16, dim6, dim10, dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	6	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	6	Columns	dim24, dim21, dim21, dim30, dim21, dim10, dim21, dim16, dim21, dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	7	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	7	Columns	dim24, dim21, dim21, dim30, dim21, dim10, dim21, dim16, dim12, dim21, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	8	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	8	Columns	dim21, dim21, dim21, dim21, dim30, dim21, dim10, dim21, dim16, dim21, dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	9	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	9	Columns	dim21, dim21, dim21, dim21, dim30, dim21, dim10, dim21, dim16, dim12, dim21, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	10	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	10	Columns	dim20, dim9, dim18, dim20, dim10, dim7, dim16, dim7, dim16, dim6, dim10, dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	1	NaiveBayes - F1	0.518210955710956
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	2	NaiveBayes - F1	0.518210955710956
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	3	NaiveBayes - F1	0.497435897435897
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	4	NaiveBayes - F1	0.497435897435897
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	5	NaiveBayes - F1	0.533236045000751
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	6	NaiveBayes - F1	0.514015151515152
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	7	NaiveBayes - F1	0.514015151515152
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	8	NaiveBayes - F1	0.511392773892774
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	9	NaiveBayes - F1	0.511392773892774
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	10	NaiveBayes - F1	0.520008531773238
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	1	kNN - F1	0.627831196581197
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	2	kNN - F1	0.627831196581197
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	3	kNN - F1	0.685851648351648
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	4	kNN - F1	0.685851648351648
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	5	kNN - F1	0.608073870573871
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	6	kNN - F1	0.605509768009768
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	7	kNN - F1	0.605509768009768
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	8	kNN - F1	0.636645299145299
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	9	kNN - F1	0.636645299145299
+VaryAlgos	breast.arff	10	26	13	100	Wrap_kNN	10	kNN - F1	0.623985042735043
+VaryAlgos	breast.arff	10	26	13	100	Clique	1	Strength	0.611938086482694
+VaryAlgos	breast.arff	10	26	13	100	Clique	1	Columns	dim1, dim2, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	2	Strength	0.569058162262122
+VaryAlgos	breast.arff	10	26	13	100	Clique	2	Columns	dim3, dim0, dim22
+VaryAlgos	breast.arff	10	26	13	100	Clique	3	Strength	0.497765849630236
+VaryAlgos	breast.arff	10	26	13	100	Clique	3	Columns	dim1, dim2, dim13
+VaryAlgos	breast.arff	10	26	13	100	Clique	4	Strength	0.334864329725129
+VaryAlgos	breast.arff	10	26	13	100	Clique	4	Columns	dim11, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	5	Strength	0.313722042639084
+VaryAlgos	breast.arff	10	26	13	100	Clique	5	Columns	dim20, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	6	Strength	0.310424516651443
+VaryAlgos	breast.arff	10	26	13	100	Clique	6	Columns	dim23, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	7	Strength	0.297644895580969
+VaryAlgos	breast.arff	10	26	13	100	Clique	7	Columns	dim18, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	8	Strength	0.296050927124411
+VaryAlgos	breast.arff	10	26	13	100	Clique	8	Columns	dim21, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	9	Strength	0.294320217609603
+VaryAlgos	breast.arff	10	26	13	100	Clique	9	Columns	dim12, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	10	Strength	0.291590998425175
+VaryAlgos	breast.arff	10	26	13	100	Clique	10	Columns	dim8, dim0
+VaryAlgos	breast.arff	10	26	13	100	Clique	1	NaiveBayes - F1	0.462722462722463
+VaryAlgos	breast.arff	10	26	13	100	Clique	2	NaiveBayes - F1	0.412874779541446
+VaryAlgos	breast.arff	10	26	13	100	Clique	3	NaiveBayes - F1	0.259920634920635
+VaryAlgos	breast.arff	10	26	13	100	Clique	4	NaiveBayes - F1	0.266931216931217
+VaryAlgos	breast.arff	10	26	13	100	Clique	5	NaiveBayes - F1	0.135802469135802
+VaryAlgos	breast.arff	10	26	13	100	Clique	6	NaiveBayes - F1	0.439193522526856
+VaryAlgos	breast.arff	10	26	13	100	Clique	7	NaiveBayes - F1	0.536531986531987
+VaryAlgos	breast.arff	10	26	13	100	Clique	8	NaiveBayes - F1	0.460798460798461
+VaryAlgos	breast.arff	10	26	13	100	Clique	9	NaiveBayes - F1	0.298214285714286
+VaryAlgos	breast.arff	10	26	13	100	Clique	10	NaiveBayes - F1	0.309722222222222
+VaryAlgos	breast.arff	10	26	13	100	Clique	1	kNN - F1	0.435335497835498
+VaryAlgos	breast.arff	10	26	13	100	Clique	2	kNN - F1	0.374305555555556
+VaryAlgos	breast.arff	10	26	13	100	Clique	3	kNN - F1	0.32390873015873
+VaryAlgos	breast.arff	10	26	13	100	Clique	4	kNN - F1	0.424576041242708
+VaryAlgos	breast.arff	10	26	13	100	Clique	5	kNN - F1	0.354700854700855
+VaryAlgos	breast.arff	10	26	13	100	Clique	6	kNN - F1	0.505611672278339
+VaryAlgos	breast.arff	10	26	13	100	Clique	7	kNN - F1	0.420255053588387
+VaryAlgos	breast.arff	10	26	13	100	Clique	8	kNN - F1	0.471049783549784
+VaryAlgos	breast.arff	10	26	13	100	Clique	9	kNN - F1	0.54889713461142
+VaryAlgos	breast.arff	10	26	13	100	Clique	10	kNN - F1	0.495703062369729
+VaryAlgos	breast.arff	10	26	13	100	Approximative	1	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	1	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim12, dim8, dim3
+VaryAlgos	breast.arff	10	26	13	100	Approximative	2	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	2	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim14, dim3, dim12
+VaryAlgos	breast.arff	10	26	13	100	Approximative	3	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	3	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim12, dim3, dim17
+VaryAlgos	breast.arff	10	26	13	100	Approximative	4	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	4	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim14, dim8, dim3
+VaryAlgos	breast.arff	10	26	13	100	Approximative	5	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	5	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim8, dim17, dim3
+VaryAlgos	breast.arff	10	26	13	100	Approximative	6	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	6	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim13, dim23, dim20, dim14, dim8, dim12, dim3
+VaryAlgos	breast.arff	10	26	13	100	Approximative	7	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	7	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim14, dim8, dim12
+VaryAlgos	breast.arff	10	26	13	100	Approximative	8	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	8	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim13, dim23, dim20, dim17, dim12, dim8, dim3
+VaryAlgos	breast.arff	10	26	13	100	Approximative	9	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	9	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim12, dim8, dim17
+VaryAlgos	breast.arff	10	26	13	100	Approximative	10	Strength	0.790645551054681
+VaryAlgos	breast.arff	10	26	13	100	Approximative	10	Columns	dim28, dim1, dim21, dim0, dim32, dim11, dim18, dim23, dim20, dim13, dim12, dim3, dim31
+VaryAlgos	breast.arff	10	26	13	100	Approximative	1	NaiveBayes - F1	0.468919968919969
+VaryAlgos	breast.arff	10	26	13	100	Approximative	2	NaiveBayes - F1	0.508272283272283
+VaryAlgos	breast.arff	10	26	13	100	Approximative	3	NaiveBayes - F1	0.49013209013209
+VaryAlgos	breast.arff	10	26	13	100	Approximative	4	NaiveBayes - F1	0.505411255411255
+VaryAlgos	breast.arff	10	26	13	100	Approximative	5	NaiveBayes - F1	0.487988400488401
+VaryAlgos	breast.arff	10	26	13	100	Approximative	6	NaiveBayes - F1	0.537842712842713
+VaryAlgos	breast.arff	10	26	13	100	Approximative	7	NaiveBayes - F1	0.522774447774448
+VaryAlgos	breast.arff	10	26	13	100	Approximative	8	NaiveBayes - F1	0.493686868686869
+VaryAlgos	breast.arff	10	26	13	100	Approximative	9	NaiveBayes - F1	0.517790851124184
+VaryAlgos	breast.arff	10	26	13	100	Approximative	10	NaiveBayes - F1	0.48954933954934
+VaryAlgos	breast.arff	10	26	13	100	Approximative	1	kNN - F1	0.541945091945092
+VaryAlgos	breast.arff	10	26	13	100	Approximative	2	kNN - F1	0.574558080808081
+VaryAlgos	breast.arff	10	26	13	100	Approximative	3	kNN - F1	0.510758377425044
+VaryAlgos	breast.arff	10	26	13	100	Approximative	4	kNN - F1	0.511647611647612
+VaryAlgos	breast.arff	10	26	13	100	Approximative	5	kNN - F1	0.486932820266154
+VaryAlgos	breast.arff	10	26	13	100	Approximative	6	kNN - F1	0.489001122334456
+VaryAlgos	breast.arff	10	26	13	100	Approximative	7	kNN - F1	0.512393162393162
+VaryAlgos	breast.arff	10	26	13	100	Approximative	8	kNN - F1	0.515375982042649
+VaryAlgos	breast.arff	10	26	13	100	Approximative	9	kNN - F1	0.551851851851852
+VaryAlgos	breast.arff	10	26	13	100	Approximative	10	kNN - F1	0.471476671476671
+VaryAlgos	letrec.arff	10	24	12	100	4S	1	Strength	4.40920416602309
+VaryAlgos	letrec.arff	10	24	12	100	4S	1	Columns	V9, V8, V7, V10, V15
+VaryAlgos	letrec.arff	10	24	12	100	4S	2	Strength	3.81259144120305
+VaryAlgos	letrec.arff	10	24	12	100	4S	2	Columns	V13, V6, V10, V15
+VaryAlgos	letrec.arff	10	24	12	100	4S	3	Strength	4.69728960735379
+VaryAlgos	letrec.arff	10	24	12	100	4S	3	Columns	V4, V1, V2, V3, V5, V13, V15, V12, V7, V6, V16, V10
+VaryAlgos	letrec.arff	10	24	12	100	4S	4	Strength	4.69304955422006
+VaryAlgos	letrec.arff	10	24	12	100	4S	4	Columns	V12, V7, V6, V16, V14, V2, V1, V13, V15, V10
+VaryAlgos	letrec.arff	10	24	12	100	4S	5	Strength	4.69784152267391
+VaryAlgos	letrec.arff	10	24	12	100	4S	5	Columns	V9, V8, V13, V10, V15, V14, V7, V11, V16, V6
+VaryAlgos	letrec.arff	10	24	12	100	4S	6	Strength	4.6867473687393
+VaryAlgos	letrec.arff	10	24	12	100	4S	6	Columns	V12, V7, V9, V10, V3, V1, V5, V15, V16
+VaryAlgos	letrec.arff	10	24	12	100	4S	7	Strength	4.6883147263742
+VaryAlgos	letrec.arff	10	24	12	100	4S	7	Columns	V5, V6, V15, V13, V14, V7, V11, V16, V8
+VaryAlgos	letrec.arff	10	24	12	100	4S	8	Strength	4.69123758492296
+VaryAlgos	letrec.arff	10	24	12	100	4S	8	Columns	V13, V6, V14, V8, V7, V10, V11, V15, V16
+VaryAlgos	letrec.arff	10	24	12	100	4S	9	Strength	4.68216853648255
+VaryAlgos	letrec.arff	10	24	12	100	4S	9	Columns	V12, V7, V9, V14, V1, V15, V16, V10
+VaryAlgos	letrec.arff	10	24	12	100	4S	10	Strength	4.68807218983049
+VaryAlgos	letrec.arff	10	24	12	100	4S	10	Columns	V5, V6, V15, V16, V9, V8, V7, V14
+VaryAlgos	letrec.arff	10	24	12	100	4S	1	NaiveBayes - F1	0.423183298011637
+VaryAlgos	letrec.arff	10	24	12	100	4S	2	NaiveBayes - F1	0.327341905361281
+VaryAlgos	letrec.arff	10	24	12	100	4S	3	NaiveBayes - F1	0.506382168745429
+VaryAlgos	letrec.arff	10	24	12	100	4S	4	NaiveBayes - F1	0.563562974062489
+VaryAlgos	letrec.arff	10	24	12	100	4S	5	NaiveBayes - F1	0.616265071287604
+VaryAlgos	letrec.arff	10	24	12	100	4S	6	NaiveBayes - F1	0.51368590569512
+VaryAlgos	letrec.arff	10	24	12	100	4S	7	NaiveBayes - F1	0.558043885219569
+VaryAlgos	letrec.arff	10	24	12	100	4S	8	NaiveBayes - F1	0.567205433782688
+VaryAlgos	letrec.arff	10	24	12	100	4S	9	NaiveBayes - F1	0.578354108725225
+VaryAlgos	letrec.arff	10	24	12	100	4S	10	NaiveBayes - F1	0.53870033745918
+VaryAlgos	letrec.arff	10	24	12	100	4S	1	kNN - F1	0.78483932414944
+VaryAlgos	letrec.arff	10	24	12	100	4S	2	kNN - F1	0.634180437609203
+VaryAlgos	letrec.arff	10	24	12	100	4S	3	kNN - F1	0.884514125440282
+VaryAlgos	letrec.arff	10	24	12	100	4S	4	kNN - F1	0.890693014988027
+VaryAlgos	letrec.arff	10	24	12	100	4S	5	kNN - F1	0.952130845403525
+VaryAlgos	letrec.arff	10	24	12	100	4S	6	kNN - F1	0.879536161048764
+VaryAlgos	letrec.arff	10	24	12	100	4S	7	kNN - F1	0.899707160010869
+VaryAlgos	letrec.arff	10	24	12	100	4S	8	kNN - F1	0.929177695549649
+VaryAlgos	letrec.arff	10	24	12	100	4S	9	kNN - F1	0.888266887480657
+VaryAlgos	letrec.arff	10	24	12	100	4S	10	kNN - F1	0.878376722338263
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	1	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	1	Columns	V11, V14, V16, V10, V9, V12, V15, V13, V11, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	2	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	2	Columns	V11, V14, V16, V10, V9, V12, V15, V11, V13, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	3	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	3	Columns	V11, V14, V16, V10, V9, V12, V11, V15, V13, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	4	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	4	Columns	V11, V14, V16, V10, V11, V9, V12, V15, V13, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	5	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	5	Columns	V11, V14, V16, V10, V9, V11, V12, V15, V13, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	6	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	6	Columns	V11, V14, V16, V10, V9, V12, V11, V13, V15, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	7	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	7	Columns	V11, V14, V16, V10, V11, V9, V12, V13, V15, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	8	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	8	Columns	V11, V14, V16, V10, V9, V11, V12, V13, V15, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	9	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	9	Columns	V11, V11, V14, V16, V10, V9, V12, V15, V13, V11, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	10	Strength	4.69725881125306
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	10	Columns	V11, V11, V14, V16, V10, V9, V12, V15, V11, V13, V8
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	1	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	2	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	3	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	4	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	5	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	6	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	7	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	8	NaiveBayes - F1	0.605779485136788
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	9	NaiveBayes - F1	0.578772518966606
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	10	NaiveBayes - F1	0.578772518966606
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	1	kNN - F1	0.952298699223674
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	2	kNN - F1	0.952938192181031
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	3	kNN - F1	0.953539082689429
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	4	kNN - F1	0.95367923351777
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	5	kNN - F1	0.952621560120936
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	6	kNN - F1	0.953393949418277
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	7	kNN - F1	0.953834942526919
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	8	kNN - F1	0.953559288207098
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	9	kNN - F1	0.951383722429821
+VaryAlgos	letrec.arff	10	24	12	100	Exhaustive	10	kNN - F1	0.951150539421471
+VaryAlgos	letrec.arff	10	24	12	100	Clique	1	Strength	3.69641686929893
+VaryAlgos	letrec.arff	10	24	12	100	Clique	1	Columns	V8, V2, V9, V7
+VaryAlgos	letrec.arff	10	24	12	100	Clique	2	Strength	3.68989598743316
+VaryAlgos	letrec.arff	10	24	12	100	Clique	2	Columns	V3, V1, V9, V7, V4
+VaryAlgos	letrec.arff	10	24	12	100	Clique	3	Strength	3.60367992434236
+VaryAlgos	letrec.arff	10	24	12	100	Clique	3	Columns	V4, V1, V9, V7, V2
+VaryAlgos	letrec.arff	10	24	12	100	Clique	4	Strength	3.00446361912125
+VaryAlgos	letrec.arff	10	24	12	100	Clique	4	Columns	V5, V1, V9, V6
+VaryAlgos	letrec.arff	10	24	12	100	Clique	5	Strength	2.9722609716162
+VaryAlgos	letrec.arff	10	24	12	100	Clique	5	Columns	V6, V1, V9, V2
+VaryAlgos	letrec.arff	10	24	12	100	Clique	6	Strength	2.76695840291987
+VaryAlgos	letrec.arff	10	24	12	100	Clique	6	Columns	V3, V1, V9, V6
+VaryAlgos	letrec.arff	10	24	12	100	Clique	1	NaiveBayes - F1	0.307711164880807
+VaryAlgos	letrec.arff	10	24	12	100	Clique	2	NaiveBayes - F1	0.252859986239911
+VaryAlgos	letrec.arff	10	24	12	100	Clique	3	NaiveBayes - F1	0.233905333380451
+VaryAlgos	letrec.arff	10	24	12	100	Clique	4	NaiveBayes - F1	0.201055894647925
+VaryAlgos	letrec.arff	10	24	12	100	Clique	5	NaiveBayes - F1	0.191813858428057
+VaryAlgos	letrec.arff	10	24	12	100	Clique	6	NaiveBayes - F1	0.205666386171087
+VaryAlgos	letrec.arff	10	24	12	100	Clique	1	kNN - F1	0.524677821795267
+VaryAlgos	letrec.arff	10	24	12	100	Clique	2	kNN - F1	0.466189904255694
+VaryAlgos	letrec.arff	10	24	12	100	Clique	3	kNN - F1	0.432166255086944
+VaryAlgos	letrec.arff	10	24	12	100	Clique	4	kNN - F1	0.362297240412803
+VaryAlgos	letrec.arff	10	24	12	100	Clique	5	kNN - F1	0.322841229519127
+VaryAlgos	letrec.arff	10	24	12	100	Clique	6	kNN - F1	0.3479709612139
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	1	Strength	4.69607008937751
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	1	Columns	V13, V9, V15, V12, V11, V10, V8, V14, V7
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	2	Strength	4.693465969742
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	2	Columns	V13, V9, V15, V12, V11, V10, V8, V7
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	3	Strength	4.69203992968478
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	3	Columns	V13, V9, V15, V12, V11, V10, V8, V14
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	4	Strength	4.69067513561155
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	4	Columns	V13, V9, V15, V10, V12, V7, V14, V8
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	5	Strength	4.68820510644822
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	5	Columns	V13, V9, V15, V12, V11, V7, V8, V14
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	6	Strength	4.68649223003977
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	6	Columns	V15, V10, V13, V12, V11, V8, V14, V7
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	7	Strength	4.68561221073526
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	7	Columns	V15, V7, V14, V11, V9, V8, V12, V10
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	8	Strength	4.68451424744771
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	8	Columns	V15, V7, V14, V11, V9, V8, V13, V10
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	9	Strength	4.68256948525973
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	9	Columns	V13, V9, V15, V12, V11, V10, V7, V14
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	10	Strength	4.67700763409397
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	10	Columns	V15, V8, V14, V9, V10, V13, V12
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	1	NaiveBayes - F1	0.642674260697763
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	2	NaiveBayes - F1	0.622787135664222
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	3	NaiveBayes - F1	0.626920264777826
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	4	NaiveBayes - F1	0.637210517986866
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	5	NaiveBayes - F1	0.634026663913483
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	6	NaiveBayes - F1	0.597497672674427
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	7	NaiveBayes - F1	0.590354864614631
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	8	NaiveBayes - F1	0.586668134834842
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	9	NaiveBayes - F1	0.606669142105909
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	10	NaiveBayes - F1	0.593823836792358
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	1	kNN - F1	0.947305772446097
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	2	kNN - F1	0.936030988512269
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	3	kNN - F1	0.937969876134142
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	4	kNN - F1	0.931414868277357
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	5	kNN - F1	0.925442516453648
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	6	kNN - F1	0.921138645804528
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	7	kNN - F1	0.920472518843012
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	8	kNN - F1	0.923534163752229
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	9	kNN - F1	0.916611511515811
+VaryAlgos	letrec.arff	10	24	12	100	Approximative	10	kNN - F1	0.912477910219017
+VaryBeam	breast.arff	25	25	5	100	Approximative	1	Strength	0.790645551054681
+VaryBeam	breast.arff	25	25	5	100	Approximative	1	Columns	dim11, dim0, dim21, dim32, dim20
+VaryBeam	breast.arff	25	25	5	100	Approximative	2	Strength	0.776731977811431
+VaryBeam	breast.arff	25	25	5	100	Approximative	2	Columns	dim11, dim0, dim31, dim32, dim17
+VaryBeam	breast.arff	25	25	5	100	Approximative	3	Strength	0.770443530852662
+VaryBeam	breast.arff	25	25	5	100	Approximative	3	Columns	dim31, dim0, dim32, dim23, dim20
+VaryBeam	breast.arff	25	25	5	100	Approximative	4	Strength	0.770443530852662
+VaryBeam	breast.arff	25	25	5	100	Approximative	4	Columns	dim28, dim1, dim21, dim0, dim20
+VaryBeam	breast.arff	25	25	5	100	Approximative	5	Strength	0.770443530852661
+VaryBeam	breast.arff	25	25	5	100	Approximative	5	Columns	dim28, dim1, dim21, dim0, dim11
+VaryBeam	breast.arff	25	25	5	100	Approximative	6	Strength	0.770443530852661
+VaryBeam	breast.arff	25	25	5	100	Approximative	6	Columns	dim11, dim0, dim31, dim32, dim3
+VaryBeam	breast.arff	25	25	5	100	Approximative	7	Strength	0.760342520751652
+VaryBeam	breast.arff	25	25	5	100	Approximative	7	Columns	dim11, dim0, dim23, dim20, dim13
+VaryBeam	breast.arff	25	25	5	100	Approximative	8	Strength	0.760342520751651
+VaryBeam	breast.arff	25	25	5	100	Approximative	8	Columns	dim11, dim0, dim31, dim32, dim1
+VaryBeam	breast.arff	25	25	5	100	Approximative	9	Strength	0.760342520751651
+VaryBeam	breast.arff	25	25	5	100	Approximative	9	Columns	dim31, dim0, dim32, dim3, dim13
+VaryBeam	breast.arff	25	25	5	100	Approximative	10	Strength	0.76034252075165
+VaryBeam	breast.arff	25	25	5	100	Approximative	10	Columns	dim28, dim1, dim21, dim0, dim13
+VaryBeam	breast.arff	25	25	5	100	Approximative	11	Strength	0.756529957609413
+VaryBeam	breast.arff	25	25	5	100	Approximative	11	Columns	dim28, dim1, dim21, dim0, dim32
+VaryBeam	breast.arff	25	25	5	100	Approximative	12	Strength	0.756529957609412
+VaryBeam	breast.arff	25	25	5	100	Approximative	12	Columns	dim31, dim0, dim32, dim20, dim21
+VaryBeam	breast.arff	25	25	5	100	Approximative	13	Strength	0.756529957609411
+VaryBeam	breast.arff	25	25	5	100	Approximative	13	Columns	dim31, dim0, dim32, dim23, dim13
+VaryBeam	breast.arff	25	25	5	100	Approximative	14	Strength	0.746428947508403
+VaryBeam	breast.arff	25	25	5	100	Approximative	14	Columns	dim11, dim0, dim31, dim32, dim8
+VaryBeam	breast.arff	25	25	5	100	Approximative	15	Strength	0.746428947508401
+VaryBeam	breast.arff	25	25	5	100	Approximative	15	Columns	dim31, dim0, dim32, dim20, dim13
+VaryBeam	breast.arff	25	25	5	100	Approximative	16	Strength	0.7464289475084
+VaryBeam	breast.arff	25	25	5	100	Approximative	16	Columns	dim11, dim0, dim31, dim32, dim12
+VaryBeam	breast.arff	25	25	5	100	Approximative	17	Strength	0.740140500549631
+VaryBeam	breast.arff	25	25	5	100	Approximative	17	Columns	dim11, dim0, dim31, dim32, dim20
+VaryBeam	breast.arff	25	25	5	100	Approximative	18	Strength	0.736327937407392
+VaryBeam	breast.arff	25	25	5	100	Approximative	18	Columns	dim11, dim0, dim31, dim32, dim23
+VaryBeam	breast.arff	25	25	5	100	Approximative	19	Strength	0.736327937407392
+VaryBeam	breast.arff	25	25	5	100	Approximative	19	Columns	dim11, dim0, dim31, dim32, dim18
+VaryBeam	breast.arff	25	25	5	100	Approximative	20	Strength	0.732515374265154
+VaryBeam	breast.arff	25	25	5	100	Approximative	20	Columns	dim31, dim0, dim32, dim20, dim18
+VaryBeam	breast.arff	25	25	5	100	Approximative	21	Strength	0.732515374265152
+VaryBeam	breast.arff	25	25	5	100	Approximative	21	Columns	dim28, dim1, dim21, dim0, dim23
+VaryBeam	breast.arff	25	25	5	100	Approximative	22	Strength	0.730039490448621
+VaryBeam	breast.arff	25	25	5	100	Approximative	22	Columns	dim31, dim0, dim32, dim18, dim13
+VaryBeam	breast.arff	25	25	5	100	Approximative	23	Strength	0.719938480347611
+VaryBeam	breast.arff	25	25	5	100	Approximative	23	Columns	dim31, dim0, dim32, dim20, dim3
+VaryBeam	breast.arff	25	25	5	100	Approximative	24	Strength	0.706024907104362
+VaryBeam	breast.arff	25	25	5	100	Approximative	24	Columns	dim11, dim0, dim31, dim32, dim14
+VaryBeam	breast.arff	25	25	5	100	Approximative	25	Strength	0.679534439943572
+VaryBeam	breast.arff	25	25	5	100	Approximative	25	Columns	dim11, dim0, dim31, dim32, dim13
+VaryBeam	breast.arff	25	25	5	100	Approximative	1	NaiveBayes - F1	0.467652717652718
+VaryBeam	breast.arff	25	25	5	100	Approximative	2	NaiveBayes - F1	0.50646645021645
+VaryBeam	breast.arff	25	25	5	100	Approximative	3	NaiveBayes - F1	0.520847670847671
+VaryBeam	breast.arff	25	25	5	100	Approximative	4	NaiveBayes - F1	0.415183581850249
+VaryBeam	breast.arff	25	25	5	100	Approximative	5	NaiveBayes - F1	0.366847041847042
+VaryBeam	breast.arff	25	25	5	100	Approximative	6	NaiveBayes - F1	0.529166666666667
+VaryBeam	breast.arff	25	25	5	100	Approximative	7	NaiveBayes - F1	0.406349206349206
+VaryBeam	breast.arff	25	25	5	100	Approximative	8	NaiveBayes - F1	0.532954545454545
+VaryBeam	breast.arff	25	25	5	100	Approximative	9	NaiveBayes - F1	0.541987179487179
+VaryBeam	breast.arff	25	25	5	100	Approximative	10	NaiveBayes - F1	0.370483405483406
+VaryBeam	breast.arff	25	25	5	100	Approximative	11	NaiveBayes - F1	0.461640211640212
+VaryBeam	breast.arff	25	25	5	100	Approximative	12	NaiveBayes - F1	0.535662485662486
+VaryBeam	breast.arff	25	25	5	100	Approximative	13	NaiveBayes - F1	0.450494505494506
+VaryBeam	breast.arff	25	25	5	100	Approximative	14	NaiveBayes - F1	0.537830687830688
+VaryBeam	breast.arff	25	25	5	100	Approximative	15	NaiveBayes - F1	0.524648268398268
+VaryBeam	breast.arff	25	25	5	100	Approximative	16	NaiveBayes - F1	0.56547619047619
+VaryBeam	breast.arff	25	25	5	100	Approximative	17	NaiveBayes - F1	0.50646645021645
+VaryBeam	breast.arff	25	25	5	100	Approximative	18	NaiveBayes - F1	0.48978021978022
+VaryBeam	breast.arff	25	25	5	100	Approximative	19	NaiveBayes - F1	0.515343915343915
+VaryBeam	breast.arff	25	25	5	100	Approximative	20	NaiveBayes - F1	0.537950937950938
+VaryBeam	breast.arff	25	25	5	100	Approximative	21	NaiveBayes - F1	0.362554112554113
+VaryBeam	breast.arff	25	25	5	100	Approximative	22	NaiveBayes - F1	0.577701465201465
+VaryBeam	breast.arff	25	25	5	100	Approximative	23	NaiveBayes - F1	0.529761904761905
+VaryBeam	breast.arff	25	25	5	100	Approximative	24	NaiveBayes - F1	0.447267316017316
+VaryBeam	breast.arff	25	25	5	100	Approximative	25	NaiveBayes - F1	0.472144522144522
+VaryBeam	breast.arff	25	25	5	100	Approximative	1	kNN - F1	0.574270790937458
+VaryBeam	breast.arff	25	25	5	100	Approximative	2	kNN - F1	0.412722462722463
+VaryBeam	breast.arff	25	25	5	100	Approximative	3	kNN - F1	0.556655844155844
+VaryBeam	breast.arff	25	25	5	100	Approximative	4	kNN - F1	0.395502645502646
+VaryBeam	breast.arff	25	25	5	100	Approximative	5	kNN - F1	0.428587461920795
+VaryBeam	breast.arff	25	25	5	100	Approximative	6	kNN - F1	0.522414622414622
+VaryBeam	breast.arff	25	25	5	100	Approximative	7	kNN - F1	0.377368927368927
+VaryBeam	breast.arff	25	25	5	100	Approximative	8	kNN - F1	0.466442199775533
+VaryBeam	breast.arff	25	25	5	100	Approximative	9	kNN - F1	0.455600649350649
+VaryBeam	breast.arff	25	25	5	100	Approximative	10	kNN - F1	0.372108843537415
+VaryBeam	breast.arff	25	25	5	100	Approximative	11	kNN - F1	0.47037037037037
+VaryBeam	breast.arff	25	25	5	100	Approximative	12	kNN - F1	0.492261904761905
+VaryBeam	breast.arff	25	25	5	100	Approximative	13	kNN - F1	0.463492063492064
+VaryBeam	breast.arff	25	25	5	100	Approximative	14	kNN - F1	0.560025776692443
+VaryBeam	breast.arff	25	25	5	100	Approximative	15	kNN - F1	0.442063492063492
+VaryBeam	breast.arff	25	25	5	100	Approximative	16	kNN - F1	0.574971941638608
+VaryBeam	breast.arff	25	25	5	100	Approximative	17	kNN - F1	0.407182940516274
+VaryBeam	breast.arff	25	25	5	100	Approximative	18	kNN - F1	0.50679012345679
+VaryBeam	breast.arff	25	25	5	100	Approximative	19	kNN - F1	0.544155844155844
+VaryBeam	breast.arff	25	25	5	100	Approximative	20	kNN - F1	0.440602453102453
+VaryBeam	breast.arff	25	25	5	100	Approximative	21	kNN - F1	0.410656565656566
+VaryBeam	breast.arff	25	25	5	100	Approximative	22	kNN - F1	0.422446689113356
+VaryBeam	breast.arff	25	25	5	100	Approximative	23	kNN - F1	0.528227328227328
+VaryBeam	breast.arff	25	25	5	100	Approximative	24	kNN - F1	0.511840628507295
+VaryBeam	breast.arff	25	25	5	100	Approximative	25	kNN - F1	0.411752445085778
+VaryBeam	breast.arff	25	50	5	100	Approximative	1	Strength	0.790645551054681
+VaryBeam	breast.arff	25	50	5	100	Approximative	1	Columns	dim22, dim3, dim31, dim0, dim11
+VaryBeam	breast.arff	25	50	5	100	Approximative	2	Strength	0.790645551054681
+VaryBeam	breast.arff	25	50	5	100	Approximative	2	Columns	dim22, dim3, dim31, dim0, dim13
+VaryBeam	breast.arff	25	50	5	100	Approximative	3	Strength	0.780544540953672
+VaryBeam	breast.arff	25	50	5	100	Approximative	3	Columns	dim28, dim1, dim9, dim0, dim20
+VaryBeam	breast.arff	25	50	5	100	Approximative	4	Strength	0.780544540953671
+VaryBeam	breast.arff	25	50	5	100	Approximative	4	Columns	dim23, dim9, dim28, dim0, dim20
+VaryBeam	breast.arff	25	50	5	100	Approximative	5	Strength	0.770443530852662
+VaryBeam	breast.arff	25	50	5	100	Approximative	5	Columns	dim31, dim3, dim21, dim0, dim11
+VaryBeam	breast.arff	25	50	5	100	Approximative	6	Strength	0.770443530852661
+VaryBeam	breast.arff	25	50	5	100	Approximative	6	Columns	dim22, dim1, dim3, dim0, dim13
+VaryBeam	breast.arff	25	50	5	100	Approximative	7	Strength	0.766630967710422
+VaryBeam	breast.arff	25	50	5	100	Approximative	7	Columns	dim22, dim3, dim31, dim0, dim20
+VaryBeam	breast.arff	25	50	5	100	Approximative	8	Strength	0.760342520751653
+VaryBeam	breast.arff	25	50	5	100	Approximative	8	Columns	dim23, dim9, dim28, dim0, dim11
+VaryBeam	breast.arff	25	50	5	100	Approximative	9	Strength	0.760342520751653
+VaryBeam	breast.arff	25	50	5	100	Approximative	9	Columns	dim23, dim9, dim28, dim0, dim13
+VaryBeam	breast.arff	25	50	5	100	Approximative	10	Strength	0.760342520751651
+VaryBeam	breast.arff	25	50	5	100	Approximative	10	Columns	dim28, dim1, dim9, dim0, dim11
+VaryBeam	breast.arff	25	50	5	100	Approximative	11	Strength	0.760342520751651
+VaryBeam	breast.arff	25	50	5	100	Approximative	11	Columns	dim28, dim9, dim21, dim0, dim11
+VaryBeam	breast.arff	25	50	5	100	Approximative	12	Strength	0.756529957609411
+VaryBeam	breast.arff	25	50	5	100	Approximative	12	Columns	dim22, dim1, dim3, dim0, dim11
+VaryBeam	breast.arff	25	50	5	100	Approximative	13	Strength	0.750241510650643
+VaryBeam	breast.arff	25	50	5	100	Approximative	13	Columns	dim28, dim1, dim9, dim23, dim31
+VaryBeam	breast.arff	25	50	5	100	Approximative	14	Strength	0.743953063691872
+VaryBeam	breast.arff	25	50	5	100	Approximative	14	Columns	dim22, dim3, dim31, dim6, dim32
+VaryBeam	breast.arff	25	50	5	100	Approximative	15	Strength	0.74395306369187
+VaryBeam	breast.arff	25	50	5	100	Approximative	15	Columns	dim32, dim1, dim31, dim28, dim22
+VaryBeam	breast.arff	25	50	5	100	Approximative	16	Strength	0.742616384366162
+VaryBeam	breast.arff	25	50	5	100	Approximative	16	Columns	dim28, dim1, dim9, dim22, dim32
+VaryBeam	breast.arff	25	50	5	100	Approximative	17	Strength	0.740140500549633
+VaryBeam	breast.arff	25	50	5	100	Approximative	17	Columns	dim32, dim1, dim31, dim6, dim28
+VaryBeam	breast.arff	25	50	5	100	Approximative	18	Strength	0.740140500549632
+VaryBeam	breast.arff	25	50	5	100	Approximative	18	Columns	dim28, dim1, dim9, dim2, dim23
+VaryBeam	breast.arff	25	50	5	100	Approximative	19	Strength	0.736327937407393
+VaryBeam	breast.arff	25	50	5	100	Approximative	19	Columns	dim22, dim1, dim3, dim0, dim23
+VaryBeam	breast.arff	25	50	5	100	Approximative	20	Strength	0.736327937407392
+VaryBeam	breast.arff	25	50	5	100	Approximative	20	Columns	dim22, dim1, dim3, dim0, dim20
+VaryBeam	breast.arff	25	50	5	100	Approximative	21	Strength	0.733852053590862
+VaryBeam	breast.arff	25	50	5	100	Approximative	21	Columns	dim28, dim1, dim9, dim22, dim2
+VaryBeam	breast.arff	25	50	5	100	Approximative	22	Strength	0.732515374265153
+VaryBeam	breast.arff	25	50	5	100	Approximative	22	Columns	dim28, dim1, dim9, dim32, dim31
+VaryBeam	breast.arff	25	50	5	100	Approximative	23	Strength	0.732515374265152
+VaryBeam	breast.arff	25	50	5	100	Approximative	23	Columns	dim32, dim1, dim31, dim28, dim2
+VaryBeam	breast.arff	25	50	5	100	Approximative	24	Strength	0.732011003203993
+VaryBeam	breast.arff	25	50	5	100	Approximative	24	Columns	dim31, dim23, dim32, dim9, dim28
+VaryBeam	breast.arff	25	50	5	100	Approximative	25	Strength	0.728702811122912
+VaryBeam	breast.arff	25	50	5	100	Approximative	25	Columns	dim28, dim1, dim9, dim32, dim23
+VaryBeam	breast.arff	25	50	5	100	Approximative	1	NaiveBayes - F1	0.493571428571429
+VaryBeam	breast.arff	25	50	5	100	Approximative	2	NaiveBayes - F1	0.471349206349206
+VaryBeam	breast.arff	25	50	5	100	Approximative	3	NaiveBayes - F1	0.438664421997755
+VaryBeam	breast.arff	25	50	5	100	Approximative	4	NaiveBayes - F1	0.414125380792047
+VaryBeam	breast.arff	25	50	5	100	Approximative	5	NaiveBayes - F1	0.400177045177045
+VaryBeam	breast.arff	25	50	5	100	Approximative	6	NaiveBayes - F1	0.440572390572391
+VaryBeam	breast.arff	25	50	5	100	Approximative	7	NaiveBayes - F1	0.540336207002874
+VaryBeam	breast.arff	25	50	5	100	Approximative	8	NaiveBayes - F1	0.424867724867725
+VaryBeam	breast.arff	25	50	5	100	Approximative	9	NaiveBayes - F1	0.414654481321148
+VaryBeam	breast.arff	25	50	5	100	Approximative	10	NaiveBayes - F1	0.400152316818984
+VaryBeam	breast.arff	25	50	5	100	Approximative	11	NaiveBayes - F1	0.402837902837903
+VaryBeam	breast.arff	25	50	5	100	Approximative	12	NaiveBayes - F1	0.414848484848485
+VaryBeam	breast.arff	25	50	5	100	Approximative	13	NaiveBayes - F1	0.423809523809524
+VaryBeam	breast.arff	25	50	5	100	Approximative	14	NaiveBayes - F1	0.31545042259328
+VaryBeam	breast.arff	25	50	5	100	Approximative	15	NaiveBayes - F1	0.392857142857143
+VaryBeam	breast.arff	25	50	5	100	Approximative	16	NaiveBayes - F1	0.334157905586477
+VaryBeam	breast.arff	25	50	5	100	Approximative	17	NaiveBayes - F1	0.386904761904762
+VaryBeam	breast.arff	25	50	5	100	Approximative	18	NaiveBayes - F1	0.397943722943723
+VaryBeam	breast.arff	25	50	5	100	Approximative	19	NaiveBayes - F1	0.41533189033189
+VaryBeam	breast.arff	25	50	5	100	Approximative	20	NaiveBayes - F1	0.451322751322751
+VaryBeam	breast.arff	25	50	5	100	Approximative	21	NaiveBayes - F1	0.202777777777778
+VaryBeam	breast.arff	25	50	5	100	Approximative	22	NaiveBayes - F1	0.381313131313131
+VaryBeam	breast.arff	25	50	5	100	Approximative	23	NaiveBayes - F1	0.392857142857143
+VaryBeam	breast.arff	25	50	5	100	Approximative	24	NaiveBayes - F1	0.565646258503401
+VaryBeam	breast.arff	25	50	5	100	Approximative	25	NaiveBayes - F1	0.51156462585034
+VaryBeam	breast.arff	25	50	5	100	Approximative	1	kNN - F1	0.495967612634279
+VaryBeam	breast.arff	25	50	5	100	Approximative	2	kNN - F1	0.429046262379596
+VaryBeam	breast.arff	25	50	5	100	Approximative	3	kNN - F1	0.391005291005291
+VaryBeam	breast.arff	25	50	5	100	Approximative	4	kNN - F1	0.41657848324515
+VaryBeam	breast.arff	25	50	5	100	Approximative	5	kNN - F1	0.490514346764347
+VaryBeam	breast.arff	25	50	5	100	Approximative	6	kNN - F1	0.298015873015873
+VaryBeam	breast.arff	25	50	5	100	Approximative	7	kNN - F1	0.396738182452468
+VaryBeam	breast.arff	25	50	5	100	Approximative	8	kNN - F1	0.429573512906846
+VaryBeam	breast.arff	25	50	5	100	Approximative	9	kNN - F1	0.441055241055241
+VaryBeam	breast.arff	25	50	5	100	Approximative	10	kNN - F1	0.442460317460317
+VaryBeam	breast.arff	25	50	5	100	Approximative	11	kNN - F1	0.422414622414622
+VaryBeam	breast.arff	25	50	5	100	Approximative	12	kNN - F1	0.367548500881834
+VaryBeam	breast.arff	25	50	5	100	Approximative	13	kNN - F1	0.264991181657848
+VaryBeam	breast.arff	25	50	5	100	Approximative	14	kNN - F1	0.360750360750361
+VaryBeam	breast.arff	25	50	5	100	Approximative	15	kNN - F1	0.364790764790765
+VaryBeam	breast.arff	25	50	5	100	Approximative	16	kNN - F1	0.171933621933622
+VaryBeam	breast.arff	25	50	5	100	Approximative	17	kNN - F1	0.175297619047619
+VaryBeam	breast.arff	25	50	5	100	Approximative	18	kNN - F1	0.335021645021645
+VaryBeam	breast.arff	25	50	5	100	Approximative	19	kNN - F1	0.376904761904762
+VaryBeam	breast.arff	25	50	5	100	Approximative	20	kNN - F1	0.406596578025149
+VaryBeam	breast.arff	25	50	5	100	Approximative	21	kNN - F1	0.330456349206349
+VaryBeam	breast.arff	25	50	5	100	Approximative	22	kNN - F1	0.229100529100529
+VaryBeam	breast.arff	25	50	5	100	Approximative	23	kNN - F1	0.399025974025974
+VaryBeam	breast.arff	25	50	5	100	Approximative	24	kNN - F1	0.355284992784993
+VaryBeam	breast.arff	25	50	5	100	Approximative	25	kNN - F1	0.35047619047619
+VaryBeam	breast.arff	25	100	5	100	Approximative	1	Strength	0.790645551054681
+VaryBeam	breast.arff	25	100	5	100	Approximative	1	Columns	dim22, dim3, dim31, dim0, dim11
+VaryBeam	breast.arff	25	100	5	100	Approximative	2	Strength	0.790645551054681
+VaryBeam	breast.arff	25	100	5	100	Approximative	2	Columns	dim22, dim3, dim31, dim0, dim13
+VaryBeam	breast.arff	25	100	5	100	Approximative	3	Strength	0.780544540953672
+VaryBeam	breast.arff	25	100	5	100	Approximative	3	Columns	dim28, dim1, dim9, dim0, dim20
+VaryBeam	breast.arff	25	100	5	100	Approximative	4	Strength	0.780544540953671
+VaryBeam	breast.arff	25	100	5	100	Approximative	4	Columns	dim22, dim3, dim13, dim23, dim0
+VaryBeam	breast.arff	25	100	5	100	Approximative	5	Strength	0.780544540953671
+VaryBeam	breast.arff	25	100	5	100	Approximative	5	Columns	dim22, dim1, dim28, dim0, dim11
+VaryBeam	breast.arff	25	100	5	100	Approximative	6	Strength	0.780544540953671
+VaryBeam	breast.arff	25	100	5	100	Approximative	6	Columns	dim22, dim3, dim31, dim0, dim23
+VaryBeam	breast.arff	25	100	5	100	Approximative	7	Strength	0.780544540953671
+VaryBeam	breast.arff	25	100	5	100	Approximative	7	Columns	dim22, dim1, dim28, dim9, dim11
+VaryBeam	breast.arff	25	100	5	100	Approximative	8	Strength	0.78054454095367
+VaryBeam	breast.arff	25	100	5	100	Approximative	8	Columns	dim2, dim1, dim28, dim0, dim11
+VaryBeam	breast.arff	25	100	5	100	Approximative	9	Strength	0.770443530852662
+VaryBeam	breast.arff	25	100	5	100	Approximative	9	Columns	dim22, dim3, dim21, dim13, dim0
+VaryBeam	breast.arff	25	100	5	100	Approximative	10	Strength	0.770443530852662
+VaryBeam	breast.arff	25	100	5	100	Approximative	10	Columns	dim23, dim9, dim28, dim0, dim12
+VaryBeam	breast.arff	25	100	5	100	Approximative	11	Strength	0.770443530852662
+VaryBeam	breast.arff	25	100	5	100	Approximative	11	Columns	dim27, dim9, dim28, dim1, dim22
+VaryBeam	breast.arff	25	100	5	100	Approximative	12	Strength	0.770443530852661
+VaryBeam	breast.arff	25	100	5	100	Approximative	12	Columns	dim22, dim1, dim3, dim13, dim0
+VaryBeam	breast.arff	25	100	5	100	Approximative	13	Strength	0.770443530852661
+VaryBeam	breast.arff	25	100	5	100	Approximative	13	Columns	dim22, dim1, dim28, dim9, dim8
+VaryBeam	breast.arff	25	100	5	100	Approximative	14	Strength	0.766630967710422
+VaryBeam	breast.arff	25	100	5	100	Approximative	14	Columns	dim22, dim3, dim31, dim0, dim20
+VaryBeam	breast.arff	25	100	5	100	Approximative	15	Strength	0.760342520751653
+VaryBeam	breast.arff	25	100	5	100	Approximative	15	Columns	dim23, dim9, dim28, dim0, dim11
+VaryBeam	breast.arff	25	100	5	100	Approximative	16	Strength	0.760342520751653
+VaryBeam	breast.arff	25	100	5	100	Approximative	16	Columns	dim23, dim9, dim28, dim13, dim0
+VaryBeam	breast.arff	25	100	5	100	Approximative	17	Strength	0.760342520751652
+VaryBeam	breast.arff	25	100	5	100	Approximative	17	Columns	dim22, dim3, dim23, dim8, dim0
+VaryBeam	breast.arff	25	100	5	100	Approximative	18	Strength	0.760342520751652
+VaryBeam	breast.arff	25	100	5	100	Approximative	18	Columns	dim23, dim9, dim28, dim0, dim8
+VaryBeam	breast.arff	25	100	5	100	Approximative	19	Strength	0.760342520751651
+VaryBeam	breast.arff	25	100	5	100	Approximative	19	Columns	dim28, dim1, dim9, dim0, dim11
+VaryBeam	breast.arff	25	100	5	100	Approximative	20	Strength	0.760342520751651
+VaryBeam	breast.arff	25	100	5	100	Approximative	20	Columns	dim31, dim6, dim21, dim0, dim11
+VaryBeam	breast.arff	25	100	5	100	Approximative	21	Strength	0.760342520751651
+VaryBeam	breast.arff	25	100	5	100	Approximative	21	Columns	dim23, dim9, dim28, dim0, dim18
+VaryBeam	breast.arff	25	100	5	100	Approximative	22	Strength	0.760342520751651
+VaryBeam	breast.arff	25	100	5	100	Approximative	22	Columns	dim22, dim1, dim28, dim9, dim7
+VaryBeam	breast.arff	25	100	5	100	Approximative	23	Strength	0.76034252075165
+VaryBeam	breast.arff	25	100	5	100	Approximative	23	Columns	dim28, dim1, dim9, dim23, dim13
+VaryBeam	breast.arff	25	100	5	100	Approximative	24	Strength	0.756529957609412
+VaryBeam	breast.arff	25	100	5	100	Approximative	24	Columns	dim22, dim1, dim28, dim9, dim31
+VaryBeam	breast.arff	25	100	5	100	Approximative	25	Strength	0.756529957609412
+VaryBeam	breast.arff	25	100	5	100	Approximative	25	Columns	dim22, dim1, dim32, dim28, dim8
+VaryBeam	breast.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.493571428571429
+VaryBeam	breast.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.471349206349206
+VaryBeam	breast.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.438664421997755
+VaryBeam	breast.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.403182619849286
+VaryBeam	breast.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.384487734487734
+VaryBeam	breast.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.416046176046176
+VaryBeam	breast.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.253061224489796
+VaryBeam	breast.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.391933621933622
+VaryBeam	breast.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.390484207150874
+VaryBeam	breast.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.449382716049383
+VaryBeam	breast.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.112244897959184
+VaryBeam	breast.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.440572390572391
+VaryBeam	breast.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.338528138528139
+VaryBeam	breast.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.540336207002874
+VaryBeam	breast.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.424867724867725
+VaryBeam	breast.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.414654481321148
+VaryBeam	breast.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.41968253968254
+VaryBeam	breast.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.407687991021324
+VaryBeam	breast.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.400152316818984
+VaryBeam	breast.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.5002849002849
+VaryBeam	breast.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.39985754985755
+VaryBeam	breast.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.150793650793651
+VaryBeam	breast.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.385260770975057
+VaryBeam	breast.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.354497354497354
+VaryBeam	breast.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.329251700680272
+VaryBeam	breast.arff	25	100	5	100	Approximative	1	kNN - F1	0.495967612634279
+VaryBeam	breast.arff	25	100	5	100	Approximative	2	kNN - F1	0.429046262379596
+VaryBeam	breast.arff	25	100	5	100	Approximative	3	kNN - F1	0.391005291005291
+VaryBeam	breast.arff	25	100	5	100	Approximative	4	kNN - F1	0.403896103896104
+VaryBeam	breast.arff	25	100	5	100	Approximative	5	kNN - F1	0.360670194003527
+VaryBeam	breast.arff	25	100	5	100	Approximative	6	kNN - F1	0.482312925170068
+VaryBeam	breast.arff	25	100	5	100	Approximative	7	kNN - F1	0.345145330859617
+VaryBeam	breast.arff	25	100	5	100	Approximative	8	kNN - F1	0.445679012345679
+VaryBeam	breast.arff	25	100	5	100	Approximative	9	kNN - F1	0.264172335600907
+VaryBeam	breast.arff	25	100	5	100	Approximative	10	kNN - F1	0.398681318681319
+VaryBeam	breast.arff	25	100	5	100	Approximative	11	kNN - F1	0.319264069264069
+VaryBeam	breast.arff	25	100	5	100	Approximative	12	kNN - F1	0.298015873015873
+VaryBeam	breast.arff	25	100	5	100	Approximative	13	kNN - F1	0.38364898989899
+VaryBeam	breast.arff	25	100	5	100	Approximative	14	kNN - F1	0.396738182452468
+VaryBeam	breast.arff	25	100	5	100	Approximative	15	kNN - F1	0.429573512906846
+VaryBeam	breast.arff	25	100	5	100	Approximative	16	kNN - F1	0.441055241055241
+VaryBeam	breast.arff	25	100	5	100	Approximative	17	kNN - F1	0.373120089786756
+VaryBeam	breast.arff	25	100	5	100	Approximative	18	kNN - F1	0.373037518037518
+VaryBeam	breast.arff	25	100	5	100	Approximative	19	kNN - F1	0.442460317460317
+VaryBeam	breast.arff	25	100	5	100	Approximative	20	kNN - F1	0.392539682539683
+VaryBeam	breast.arff	25	100	5	100	Approximative	21	kNN - F1	0.37549062049062
+VaryBeam	breast.arff	25	100	5	100	Approximative	22	kNN - F1	0.453205524634096
+VaryBeam	breast.arff	25	100	5	100	Approximative	23	kNN - F1	0.217989417989418
+VaryBeam	breast.arff	25	100	5	100	Approximative	24	kNN - F1	0.463863121005978
+VaryBeam	breast.arff	25	100	5	100	Approximative	25	kNN - F1	0.223809523809524
+VaryBeam	breast.arff	25	250	5	100	Approximative	1	Strength	0.790645551054681
+VaryBeam	breast.arff	25	250	5	100	Approximative	1	Columns	dim9, dim5, dim28, dim0, dim20
+VaryBeam	breast.arff	25	250	5	100	Approximative	2	Strength	0.790645551054681
+VaryBeam	breast.arff	25	250	5	100	Approximative	2	Columns	dim23, dim9, dim22, dim27, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	3	Strength	0.790645551054681
+VaryBeam	breast.arff	25	250	5	100	Approximative	3	Columns	dim27, dim1, dim28, dim20, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	4	Strength	0.790645551054681
+VaryBeam	breast.arff	25	250	5	100	Approximative	4	Columns	dim9, dim5, dim28, dim0, dim18
+VaryBeam	breast.arff	25	250	5	100	Approximative	5	Strength	0.790645551054681
+VaryBeam	breast.arff	25	250	5	100	Approximative	5	Columns	dim9, dim5, dim28, dim0, dim17
+VaryBeam	breast.arff	25	250	5	100	Approximative	6	Strength	0.790645551054681
+VaryBeam	breast.arff	25	250	5	100	Approximative	6	Columns	dim9, dim5, dim28, dim0, dim2
+VaryBeam	breast.arff	25	250	5	100	Approximative	7	Strength	0.780544540953672
+VaryBeam	breast.arff	25	250	5	100	Approximative	7	Columns	dim28, dim9, dim20, dim21, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	8	Strength	0.780544540953672
+VaryBeam	breast.arff	25	250	5	100	Approximative	8	Columns	dim9, dim7, dim28, dim0, dim2
+VaryBeam	breast.arff	25	250	5	100	Approximative	9	Strength	0.780544540953671
+VaryBeam	breast.arff	25	250	5	100	Approximative	9	Columns	dim3, dim2, dim22, dim18, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	10	Strength	0.780544540953671
+VaryBeam	breast.arff	25	250	5	100	Approximative	10	Columns	dim3, dim2, dim22, dim7, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	11	Strength	0.780544540953671
+VaryBeam	breast.arff	25	250	5	100	Approximative	11	Columns	dim2, dim1, dim22, dim18, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	12	Strength	0.780544540953671
+VaryBeam	breast.arff	25	250	5	100	Approximative	12	Columns	dim22, dim3, dim18, dim4, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	13	Strength	0.780544540953671
+VaryBeam	breast.arff	25	250	5	100	Approximative	13	Columns	dim3, dim2, dim22, dim11, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	14	Strength	0.780544540953671
+VaryBeam	breast.arff	25	250	5	100	Approximative	14	Columns	dim31, dim6, dim23, dim9, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	15	Strength	0.78054454095367
+VaryBeam	breast.arff	25	250	5	100	Approximative	15	Columns	dim2, dim1, dim22, dim26, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	16	Strength	0.78054454095367
+VaryBeam	breast.arff	25	250	5	100	Approximative	16	Columns	dim2, dim1, dim27, dim31, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	17	Strength	0.78054454095367
+VaryBeam	breast.arff	25	250	5	100	Approximative	17	Columns	dim22, dim1, dim27, dim18, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	18	Strength	0.78054454095367
+VaryBeam	breast.arff	25	250	5	100	Approximative	18	Columns	dim9, dim5, dim28, dim0, dim11
+VaryBeam	breast.arff	25	250	5	100	Approximative	19	Strength	0.776731977811433
+VaryBeam	breast.arff	25	250	5	100	Approximative	19	Columns	dim9, dim5, dim28, dim0, dim12
+VaryBeam	breast.arff	25	250	5	100	Approximative	20	Strength	0.776731977811432
+VaryBeam	breast.arff	25	250	5	100	Approximative	20	Columns	dim9, dim7, dim28, dim0, dim13
+VaryBeam	breast.arff	25	250	5	100	Approximative	21	Strength	0.776731977811431
+VaryBeam	breast.arff	25	250	5	100	Approximative	21	Columns	dim27, dim9, dim28, dim20, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	22	Strength	0.776731977811431
+VaryBeam	breast.arff	25	250	5	100	Approximative	22	Columns	dim27, dim9, dim28, dim0, dim12
+VaryBeam	breast.arff	25	250	5	100	Approximative	23	Strength	0.776731977811431
+VaryBeam	breast.arff	25	250	5	100	Approximative	23	Columns	dim31, dim6, dim26, dim0, dim23
+VaryBeam	breast.arff	25	250	5	100	Approximative	24	Strength	0.770443530852662
+VaryBeam	breast.arff	25	250	5	100	Approximative	24	Columns	dim22, dim4, dim23, dim13, dim0
+VaryBeam	breast.arff	25	250	5	100	Approximative	25	Strength	0.770443530852662
+VaryBeam	breast.arff	25	250	5	100	Approximative	25	Columns	dim9, dim7, dim28, dim0, dim23
+VaryBeam	breast.arff	25	250	5	100	Approximative	1	NaiveBayes - F1	0.457511624178291
+VaryBeam	breast.arff	25	250	5	100	Approximative	2	NaiveBayes - F1	0.490079365079365
+VaryBeam	breast.arff	25	250	5	100	Approximative	3	NaiveBayes - F1	0.431657848324515
+VaryBeam	breast.arff	25	250	5	100	Approximative	4	NaiveBayes - F1	0.49038184038184
+VaryBeam	breast.arff	25	250	5	100	Approximative	5	NaiveBayes - F1	0.453045719712386
+VaryBeam	breast.arff	25	250	5	100	Approximative	6	NaiveBayes - F1	0.467772967772968
+VaryBeam	breast.arff	25	250	5	100	Approximative	7	NaiveBayes - F1	0.434567901234568
+VaryBeam	breast.arff	25	250	5	100	Approximative	8	NaiveBayes - F1	0.424955908289242
+VaryBeam	breast.arff	25	250	5	100	Approximative	9	NaiveBayes - F1	0.471340388007055
+VaryBeam	breast.arff	25	250	5	100	Approximative	10	NaiveBayes - F1	0.430714285714286
+VaryBeam	breast.arff	25	250	5	100	Approximative	11	NaiveBayes - F1	0.471340388007055
+VaryBeam	breast.arff	25	250	5	100	Approximative	12	NaiveBayes - F1	0.482539682539683
+VaryBeam	breast.arff	25	250	5	100	Approximative	13	NaiveBayes - F1	0.415180375180375
+VaryBeam	breast.arff	25	250	5	100	Approximative	14	NaiveBayes - F1	0.470731120731121
+VaryBeam	breast.arff	25	250	5	100	Approximative	15	NaiveBayes - F1	0.455467372134039
+VaryBeam	breast.arff	25	250	5	100	Approximative	16	NaiveBayes - F1	0.552403846153846
+VaryBeam	breast.arff	25	250	5	100	Approximative	17	NaiveBayes - F1	0.483966650633317
+VaryBeam	breast.arff	25	250	5	100	Approximative	18	NaiveBayes - F1	0.421516754850088
+VaryBeam	breast.arff	25	250	5	100	Approximative	19	NaiveBayes - F1	0.52365720699054
+VaryBeam	breast.arff	25	250	5	100	Approximative	20	NaiveBayes - F1	0.363994030660697
+VaryBeam	breast.arff	25	250	5	100	Approximative	21	NaiveBayes - F1	0.369159852493186
+VaryBeam	breast.arff	25	250	5	100	Approximative	22	NaiveBayes - F1	0.443772893772894
+VaryBeam	breast.arff	25	250	5	100	Approximative	23	NaiveBayes - F1	0.547903947903948
+VaryBeam	breast.arff	25	250	5	100	Approximative	24	NaiveBayes - F1	0.397891614558281
+VaryBeam	breast.arff	25	250	5	100	Approximative	25	NaiveBayes - F1	0.449206349206349
+VaryBeam	breast.arff	25	250	5	100	Approximative	1	kNN - F1	0.455891330891331
+VaryBeam	breast.arff	25	250	5	100	Approximative	2	kNN - F1	0.440733869305298
+VaryBeam	breast.arff	25	250	5	100	Approximative	3	kNN - F1	0.346258503401361
+VaryBeam	breast.arff	25	250	5	100	Approximative	4	kNN - F1	0.433367250033917
+VaryBeam	breast.arff	25	250	5	100	Approximative	5	kNN - F1	0.351823870573871
+VaryBeam	breast.arff	25	250	5	100	Approximative	6	kNN - F1	0.457070707070707
+VaryBeam	breast.arff	25	250	5	100	Approximative	7	kNN - F1	0.408641975308642
+VaryBeam	breast.arff	25	250	5	100	Approximative	8	kNN - F1	0.346516182230468
+VaryBeam	breast.arff	25	250	5	100	Approximative	9	kNN - F1	0.440299823633157
+VaryBeam	breast.arff	25	250	5	100	Approximative	10	kNN - F1	0.379862201290773
+VaryBeam	breast.arff	25	250	5	100	Approximative	11	kNN - F1	0.457583774250441
+VaryBeam	breast.arff	25	250	5	100	Approximative	12	kNN - F1	0.453751803751804
+VaryBeam	breast.arff	25	250	5	100	Approximative	13	kNN - F1	0.303703703703704
+VaryBeam	breast.arff	25	250	5	100	Approximative	14	kNN - F1	0.468959435626102
+VaryBeam	breast.arff	25	250	5	100	Approximative	15	kNN - F1	0.372321428571429
+VaryBeam	breast.arff	25	250	5	100	Approximative	16	kNN - F1	0.461507936507936
+VaryBeam	breast.arff	25	250	5	100	Approximative	17	kNN - F1	0.462240537240537
+VaryBeam	breast.arff	25	250	5	100	Approximative	18	kNN - F1	0.335924569257903
+VaryBeam	breast.arff	25	250	5	100	Approximative	19	kNN - F1	0.43289241622575
+VaryBeam	breast.arff	25	250	5	100	Approximative	20	kNN - F1	0.384680134680135
+VaryBeam	breast.arff	25	250	5	100	Approximative	21	kNN - F1	0.47049247049247
+VaryBeam	breast.arff	25	250	5	100	Approximative	22	kNN - F1	0.363744588744589
+VaryBeam	breast.arff	25	250	5	100	Approximative	23	kNN - F1	0.46530612244898
+VaryBeam	breast.arff	25	250	5	100	Approximative	24	kNN - F1	0.325297619047619
+VaryBeam	breast.arff	25	250	5	100	Approximative	25	kNN - F1	0.402698412698413
+VaryBeam	letrec.arff	25	25	5	100	Approximative	1	Strength	4.49201099830448
+VaryBeam	letrec.arff	25	25	5	100	Approximative	1	Columns	V15, V8, V9, V11, V13
+VaryBeam	letrec.arff	25	25	5	100	Approximative	2	Strength	4.48730993594236
+VaryBeam	letrec.arff	25	25	5	100	Approximative	2	Columns	V15, V8, V9, V12, V13
+VaryBeam	letrec.arff	25	25	5	100	Approximative	3	Strength	4.46846318460428
+VaryBeam	letrec.arff	25	25	5	100	Approximative	3	Columns	V15, V8, V9, V7, V13
+VaryBeam	letrec.arff	25	25	5	100	Approximative	4	Strength	4.4559281044823
+VaryBeam	letrec.arff	25	25	5	100	Approximative	4	Columns	V13, V9, V15, V10, V12
+VaryBeam	letrec.arff	25	25	5	100	Approximative	5	Strength	4.45448222621307
+VaryBeam	letrec.arff	25	25	5	100	Approximative	5	Columns	V15, V9, V12, V11, V13
+VaryBeam	letrec.arff	25	25	5	100	Approximative	6	Strength	4.44367479533376
+VaryBeam	letrec.arff	25	25	5	100	Approximative	6	Columns	V13, V8, V15, V10, V11
+VaryBeam	letrec.arff	25	25	5	100	Approximative	7	Strength	4.43887826256196
+VaryBeam	letrec.arff	25	25	5	100	Approximative	7	Columns	V15, V9, V12, V7, V13
+VaryBeam	letrec.arff	25	25	5	100	Approximative	8	Strength	4.43266228395463
+VaryBeam	letrec.arff	25	25	5	100	Approximative	8	Columns	V15, V8, V9, V12, V10
+VaryBeam	letrec.arff	25	25	5	100	Approximative	9	Strength	4.42835822849043
+VaryBeam	letrec.arff	25	25	5	100	Approximative	9	Columns	V13, V9, V15, V10, V11
+VaryBeam	letrec.arff	25	25	5	100	Approximative	10	Strength	4.40199137934853
+VaryBeam	letrec.arff	25	25	5	100	Approximative	10	Columns	V15, V8, V9, V11, V7
+VaryBeam	letrec.arff	25	25	5	100	Approximative	11	Strength	4.38490996377961
+VaryBeam	letrec.arff	25	25	5	100	Approximative	11	Columns	V15, V8, V9, V11, V14
+VaryBeam	letrec.arff	25	25	5	100	Approximative	12	Strength	4.35219987324496
+VaryBeam	letrec.arff	25	25	5	100	Approximative	12	Columns	V15, V8, V9, V7, V14
+VaryBeam	letrec.arff	25	25	5	100	Approximative	13	Strength	4.34763313771891
+VaryBeam	letrec.arff	25	25	5	100	Approximative	13	Columns	V15, V9, V12, V11, V14
+VaryBeam	letrec.arff	25	25	5	100	Approximative	14	Strength	4.34116394381939
+VaryBeam	letrec.arff	25	25	5	100	Approximative	14	Columns	V15, V9, V12, V11, V7
+VaryBeam	letrec.arff	25	25	5	100	Approximative	15	Strength	4.32599661155349
+VaryBeam	letrec.arff	25	25	5	100	Approximative	15	Columns	V15, V9, V10, V11, V14
+VaryBeam	letrec.arff	25	25	5	100	Approximative	16	Strength	4.31704120491734
+VaryBeam	letrec.arff	25	25	5	100	Approximative	16	Columns	V15, V9, V10, V11, V7
+VaryBeam	letrec.arff	25	25	5	100	Approximative	17	Strength	4.30914824897297
+VaryBeam	letrec.arff	25	25	5	100	Approximative	17	Columns	V15, V8, V14, V10, V11
+VaryBeam	letrec.arff	25	25	5	100	Approximative	18	Strength	4.30167273912613
+VaryBeam	letrec.arff	25	25	5	100	Approximative	18	Columns	V11, V10, V13, V14, V15
+VaryBeam	letrec.arff	25	25	5	100	Approximative	19	Strength	4.27782343986037
+VaryBeam	letrec.arff	25	25	5	100	Approximative	19	Columns	V13, V7, V15, V10, V14
+VaryBeam	letrec.arff	25	25	5	100	Approximative	20	Strength	4.20813632022648
+VaryBeam	letrec.arff	25	25	5	100	Approximative	20	Columns	V15, V7, V14, V11, V9
+VaryBeam	letrec.arff	25	25	5	100	Approximative	21	Strength	4.19201232092408
+VaryBeam	letrec.arff	25	25	5	100	Approximative	21	Columns	V15, V7, V14, V11, V8
+VaryBeam	letrec.arff	25	25	5	100	Approximative	22	Strength	4.17875859415487
+VaryBeam	letrec.arff	25	25	5	100	Approximative	22	Columns	V13, V7, V11, V15, V14
+VaryBeam	letrec.arff	25	25	5	100	Approximative	23	Strength	4.11202021995372
+VaryBeam	letrec.arff	25	25	5	100	Approximative	23	Columns	V15, V7, V14, V11, V12
+VaryBeam	letrec.arff	25	25	5	100	Approximative	24	Strength	4.099536930456
+VaryBeam	letrec.arff	25	25	5	100	Approximative	24	Columns	V15, V7, V14, V11, V10
+VaryBeam	letrec.arff	25	25	5	100	Approximative	25	Strength	4.0659603108617
+VaryBeam	letrec.arff	25	25	5	100	Approximative	25	Columns	V13, V7, V11, V10, V14
+VaryBeam	letrec.arff	25	25	5	100	Approximative	1	NaiveBayes - F1	0.481885211344336
+VaryBeam	letrec.arff	25	25	5	100	Approximative	2	NaiveBayes - F1	0.495348584142955
+VaryBeam	letrec.arff	25	25	5	100	Approximative	3	NaiveBayes - F1	0.510995525937394
+VaryBeam	letrec.arff	25	25	5	100	Approximative	4	NaiveBayes - F1	0.464067899028832
+VaryBeam	letrec.arff	25	25	5	100	Approximative	5	NaiveBayes - F1	0.515861130459313
+VaryBeam	letrec.arff	25	25	5	100	Approximative	6	NaiveBayes - F1	0.438510710420208
+VaryBeam	letrec.arff	25	25	5	100	Approximative	7	NaiveBayes - F1	0.543280936856017
+VaryBeam	letrec.arff	25	25	5	100	Approximative	8	NaiveBayes - F1	0.423683266219441
+VaryBeam	letrec.arff	25	25	5	100	Approximative	9	NaiveBayes - F1	0.444362026110395
+VaryBeam	letrec.arff	25	25	5	100	Approximative	10	NaiveBayes - F1	0.447188809231259
+VaryBeam	letrec.arff	25	25	5	100	Approximative	11	NaiveBayes - F1	0.461769951114527
+VaryBeam	letrec.arff	25	25	5	100	Approximative	12	NaiveBayes - F1	0.471051595705333
+VaryBeam	letrec.arff	25	25	5	100	Approximative	13	NaiveBayes - F1	0.511706826414311
+VaryBeam	letrec.arff	25	25	5	100	Approximative	14	NaiveBayes - F1	0.491328614488083
+VaryBeam	letrec.arff	25	25	5	100	Approximative	15	NaiveBayes - F1	0.429316114199738
+VaryBeam	letrec.arff	25	25	5	100	Approximative	16	NaiveBayes - F1	0.424260021602619
+VaryBeam	letrec.arff	25	25	5	100	Approximative	17	NaiveBayes - F1	0.41014822513485
+VaryBeam	letrec.arff	25	25	5	100	Approximative	18	NaiveBayes - F1	0.451417886311619
+VaryBeam	letrec.arff	25	25	5	100	Approximative	19	NaiveBayes - F1	0.466395905573697
+VaryBeam	letrec.arff	25	25	5	100	Approximative	20	NaiveBayes - F1	0.452926960742513
+VaryBeam	letrec.arff	25	25	5	100	Approximative	21	NaiveBayes - F1	0.403991047294077
+VaryBeam	letrec.arff	25	25	5	100	Approximative	22	NaiveBayes - F1	0.444143454902602
+VaryBeam	letrec.arff	25	25	5	100	Approximative	23	NaiveBayes - F1	0.44692225258668
+VaryBeam	letrec.arff	25	25	5	100	Approximative	24	NaiveBayes - F1	0.388646041642686
+VaryBeam	letrec.arff	25	25	5	100	Approximative	25	NaiveBayes - F1	0.393934553873198
+VaryBeam	letrec.arff	25	25	5	100	Approximative	1	kNN - F1	0.813955544392512
+VaryBeam	letrec.arff	25	25	5	100	Approximative	2	kNN - F1	0.81362654953041
+VaryBeam	letrec.arff	25	25	5	100	Approximative	3	kNN - F1	0.805464779782301
+VaryBeam	letrec.arff	25	25	5	100	Approximative	4	kNN - F1	0.804956533439779
+VaryBeam	letrec.arff	25	25	5	100	Approximative	5	kNN - F1	0.802699531968449
+VaryBeam	letrec.arff	25	25	5	100	Approximative	6	kNN - F1	0.804697534394908
+VaryBeam	letrec.arff	25	25	5	100	Approximative	7	kNN - F1	0.795167216451138
+VaryBeam	letrec.arff	25	25	5	100	Approximative	8	kNN - F1	0.797330946743505
+VaryBeam	letrec.arff	25	25	5	100	Approximative	9	kNN - F1	0.796059733605574
+VaryBeam	letrec.arff	25	25	5	100	Approximative	10	kNN - F1	0.77495996140699
+VaryBeam	letrec.arff	25	25	5	100	Approximative	11	kNN - F1	0.77322828871392
+VaryBeam	letrec.arff	25	25	5	100	Approximative	12	kNN - F1	0.760641910253657
+VaryBeam	letrec.arff	25	25	5	100	Approximative	13	kNN - F1	0.761717180462286
+VaryBeam	letrec.arff	25	25	5	100	Approximative	14	kNN - F1	0.759070854831859
+VaryBeam	letrec.arff	25	25	5	100	Approximative	15	kNN - F1	0.760013520623589
+VaryBeam	letrec.arff	25	25	5	100	Approximative	16	kNN - F1	0.760899628764654
+VaryBeam	letrec.arff	25	25	5	100	Approximative	17	kNN - F1	0.753879346789292
+VaryBeam	letrec.arff	25	25	5	100	Approximative	18	kNN - F1	0.747852222370285
+VaryBeam	letrec.arff	25	25	5	100	Approximative	19	kNN - F1	0.739437290012989
+VaryBeam	letrec.arff	25	25	5	100	Approximative	20	kNN - F1	0.717297057159371
+VaryBeam	letrec.arff	25	25	5	100	Approximative	21	kNN - F1	0.70409758888213
+VaryBeam	letrec.arff	25	25	5	100	Approximative	22	kNN - F1	0.706182325440413
+VaryBeam	letrec.arff	25	25	5	100	Approximative	23	kNN - F1	0.684042942382946
+VaryBeam	letrec.arff	25	25	5	100	Approximative	24	kNN - F1	0.685453243070225
+VaryBeam	letrec.arff	25	25	5	100	Approximative	25	kNN - F1	0.678454191733122
+VaryBeam	letrec.arff	25	50	5	100	Approximative	1	Strength	4.49201099830446
+VaryBeam	letrec.arff	25	50	5	100	Approximative	1	Columns	V13, V8, V11, V9, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	2	Strength	4.48805368321901
+VaryBeam	letrec.arff	25	50	5	100	Approximative	2	Columns	V13, V8, V12, V11, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	3	Strength	4.48730993594235
+VaryBeam	letrec.arff	25	50	5	100	Approximative	3	Columns	V13, V8, V12, V15, V9
+VaryBeam	letrec.arff	25	50	5	100	Approximative	4	Strength	4.47412715572308
+VaryBeam	letrec.arff	25	50	5	100	Approximative	4	Columns	V11, V9, V15, V12, V8
+VaryBeam	letrec.arff	25	50	5	100	Approximative	5	Strength	4.47401243206517
+VaryBeam	letrec.arff	25	50	5	100	Approximative	5	Columns	V13, V8, V15, V10, V9
+VaryBeam	letrec.arff	25	50	5	100	Approximative	6	Strength	4.46846318460429
+VaryBeam	letrec.arff	25	50	5	100	Approximative	6	Columns	V13, V7, V9, V8, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	7	Strength	4.46725686341652
+VaryBeam	letrec.arff	25	50	5	100	Approximative	7	Columns	V13, V7, V12, V8, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	8	Strength	4.45592810448231
+VaryBeam	letrec.arff	25	50	5	100	Approximative	8	Columns	V12, V9, V15, V13, V10
+VaryBeam	letrec.arff	25	50	5	100	Approximative	9	Strength	4.45448222621299
+VaryBeam	letrec.arff	25	50	5	100	Approximative	9	Columns	V12, V9, V13, V11, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	10	Strength	4.44442384932699
+VaryBeam	letrec.arff	25	50	5	100	Approximative	10	Columns	V13, V8, V14, V15, V9
+VaryBeam	letrec.arff	25	50	5	100	Approximative	11	Strength	4.44367479533377
+VaryBeam	letrec.arff	25	50	5	100	Approximative	11	Columns	V13, V8, V11, V10, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	12	Strength	4.4389512067868
+VaryBeam	letrec.arff	25	50	5	100	Approximative	12	Columns	V11, V8, V9, V15, V10
+VaryBeam	letrec.arff	25	50	5	100	Approximative	13	Strength	4.4388782625619
+VaryBeam	letrec.arff	25	50	5	100	Approximative	13	Columns	V13, V7, V12, V9, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	14	Strength	4.43864341808487
+VaryBeam	letrec.arff	25	50	5	100	Approximative	14	Columns	V12, V7, V9, V15, V8
+VaryBeam	letrec.arff	25	50	5	100	Approximative	15	Strength	4.4374095090462
+VaryBeam	letrec.arff	25	50	5	100	Approximative	15	Columns	V13, V8, V12, V11, V9
+VaryBeam	letrec.arff	25	50	5	100	Approximative	16	Strength	4.43266228395462
+VaryBeam	letrec.arff	25	50	5	100	Approximative	16	Columns	V15, V8, V10, V9, V12
+VaryBeam	letrec.arff	25	50	5	100	Approximative	17	Strength	4.43195059865404
+VaryBeam	letrec.arff	25	50	5	100	Approximative	17	Columns	V12, V8, V15, V11, V10
+VaryBeam	letrec.arff	25	50	5	100	Approximative	18	Strength	4.43165729097188
+VaryBeam	letrec.arff	25	50	5	100	Approximative	18	Columns	V13, V7, V10, V15, V8
+VaryBeam	letrec.arff	25	50	5	100	Approximative	19	Strength	4.42835822849044
+VaryBeam	letrec.arff	25	50	5	100	Approximative	19	Columns	V13, V9, V11, V15, V10
+VaryBeam	letrec.arff	25	50	5	100	Approximative	20	Strength	4.42633373447963
+VaryBeam	letrec.arff	25	50	5	100	Approximative	20	Columns	V13, V12, V15, V14, V8
+VaryBeam	letrec.arff	25	50	5	100	Approximative	21	Strength	4.41924232478108
+VaryBeam	letrec.arff	25	50	5	100	Approximative	21	Columns	V13, V10, V14, V15, V8
+VaryBeam	letrec.arff	25	50	5	100	Approximative	22	Strength	4.41541221731287
+VaryBeam	letrec.arff	25	50	5	100	Approximative	22	Columns	V13, V7, V10, V15, V9
+VaryBeam	letrec.arff	25	50	5	100	Approximative	23	Strength	4.41101445408068
+VaryBeam	letrec.arff	25	50	5	100	Approximative	23	Columns	V13, V10, V11, V12, V15
+VaryBeam	letrec.arff	25	50	5	100	Approximative	24	Strength	4.40995036859417
+VaryBeam	letrec.arff	25	50	5	100	Approximative	24	Columns	V13, V8, V11, V10, V9
+VaryBeam	letrec.arff	25	50	5	100	Approximative	25	Strength	4.40920416602305
+VaryBeam	letrec.arff	25	50	5	100	Approximative	25	Columns	V8, V7, V15, V9, V10
+VaryBeam	letrec.arff	25	50	5	100	Approximative	1	NaiveBayes - F1	0.481885211344336
+VaryBeam	letrec.arff	25	50	5	100	Approximative	2	NaiveBayes - F1	0.525793613658106
+VaryBeam	letrec.arff	25	50	5	100	Approximative	3	NaiveBayes - F1	0.495348584142955
+VaryBeam	letrec.arff	25	50	5	100	Approximative	4	NaiveBayes - F1	0.492372857477906
+VaryBeam	letrec.arff	25	50	5	100	Approximative	5	NaiveBayes - F1	0.451935819269089
+VaryBeam	letrec.arff	25	50	5	100	Approximative	6	NaiveBayes - F1	0.510995525937394
+VaryBeam	letrec.arff	25	50	5	100	Approximative	7	NaiveBayes - F1	0.534037332796079
+VaryBeam	letrec.arff	25	50	5	100	Approximative	8	NaiveBayes - F1	0.464067899028832
+VaryBeam	letrec.arff	25	50	5	100	Approximative	9	NaiveBayes - F1	0.515861130459313
+VaryBeam	letrec.arff	25	50	5	100	Approximative	10	NaiveBayes - F1	0.501331951143531
+VaryBeam	letrec.arff	25	50	5	100	Approximative	11	NaiveBayes - F1	0.438510710420208
+VaryBeam	letrec.arff	25	50	5	100	Approximative	12	NaiveBayes - F1	0.431645539754482
+VaryBeam	letrec.arff	25	50	5	100	Approximative	13	NaiveBayes - F1	0.543280936856017
+VaryBeam	letrec.arff	25	50	5	100	Approximative	14	NaiveBayes - F1	0.475681186630735
+VaryBeam	letrec.arff	25	50	5	100	Approximative	15	NaiveBayes - F1	0.498415602921818
+VaryBeam	letrec.arff	25	50	5	100	Approximative	16	NaiveBayes - F1	0.423683266219441
+VaryBeam	letrec.arff	25	50	5	100	Approximative	17	NaiveBayes - F1	0.441964698161704
+VaryBeam	letrec.arff	25	50	5	100	Approximative	18	NaiveBayes - F1	0.463800864037594
+VaryBeam	letrec.arff	25	50	5	100	Approximative	19	NaiveBayes - F1	0.444362026110395
+VaryBeam	letrec.arff	25	50	5	100	Approximative	20	NaiveBayes - F1	0.516763035511667
+VaryBeam	letrec.arff	25	50	5	100	Approximative	21	NaiveBayes - F1	0.456548323265892
+VaryBeam	letrec.arff	25	50	5	100	Approximative	22	NaiveBayes - F1	0.474362382123228
+VaryBeam	letrec.arff	25	50	5	100	Approximative	23	NaiveBayes - F1	0.476132303320527
+VaryBeam	letrec.arff	25	50	5	100	Approximative	24	NaiveBayes - F1	0.456105167981789
+VaryBeam	letrec.arff	25	50	5	100	Approximative	25	NaiveBayes - F1	0.424192200670248
+VaryBeam	letrec.arff	25	50	5	100	Approximative	1	kNN - F1	0.817332381654413
+VaryBeam	letrec.arff	25	50	5	100	Approximative	2	kNN - F1	0.817288861726648
+VaryBeam	letrec.arff	25	50	5	100	Approximative	3	kNN - F1	0.811878837138307
+VaryBeam	letrec.arff	25	50	5	100	Approximative	4	kNN - F1	0.806908876909348
+VaryBeam	letrec.arff	25	50	5	100	Approximative	5	kNN - F1	0.814646103503191
+VaryBeam	letrec.arff	25	50	5	100	Approximative	6	kNN - F1	0.806417628323005
+VaryBeam	letrec.arff	25	50	5	100	Approximative	7	kNN - F1	0.797631391955809
+VaryBeam	letrec.arff	25	50	5	100	Approximative	8	kNN - F1	0.803837253065476
+VaryBeam	letrec.arff	25	50	5	100	Approximative	9	kNN - F1	0.801593105022757
+VaryBeam	letrec.arff	25	50	5	100	Approximative	10	kNN - F1	0.806376880383143
+VaryBeam	letrec.arff	25	50	5	100	Approximative	11	kNN - F1	0.80543482539102
+VaryBeam	letrec.arff	25	50	5	100	Approximative	12	kNN - F1	0.802414488873422
+VaryBeam	letrec.arff	25	50	5	100	Approximative	13	kNN - F1	0.796943699645738
+VaryBeam	letrec.arff	25	50	5	100	Approximative	14	kNN - F1	0.785657031187908
+VaryBeam	letrec.arff	25	50	5	100	Approximative	15	kNN - F1	0.796215336562462
+VaryBeam	letrec.arff	25	50	5	100	Approximative	16	kNN - F1	0.798212965031895
+VaryBeam	letrec.arff	25	50	5	100	Approximative	17	kNN - F1	0.811263440852937
+VaryBeam	letrec.arff	25	50	5	100	Approximative	18	kNN - F1	0.788534288795705
+VaryBeam	letrec.arff	25	50	5	100	Approximative	19	kNN - F1	0.796273637308701
+VaryBeam	letrec.arff	25	50	5	100	Approximative	20	kNN - F1	0.797967454355441
+VaryBeam	letrec.arff	25	50	5	100	Approximative	21	kNN - F1	0.796847633055841
+VaryBeam	letrec.arff	25	50	5	100	Approximative	22	kNN - F1	0.790216268181862
+VaryBeam	letrec.arff	25	50	5	100	Approximative	23	kNN - F1	0.795015641219804
+VaryBeam	letrec.arff	25	50	5	100	Approximative	24	kNN - F1	0.785407043921128
+VaryBeam	letrec.arff	25	50	5	100	Approximative	25	kNN - F1	0.786394756006881
+VaryBeam	letrec.arff	25	100	5	100	Approximative	1	Strength	4.49201099830446
+VaryBeam	letrec.arff	25	100	5	100	Approximative	1	Columns	V13, V8, V11, V15, V9
+VaryBeam	letrec.arff	25	100	5	100	Approximative	2	Strength	4.48805368321903
+VaryBeam	letrec.arff	25	100	5	100	Approximative	2	Columns	V13, V8, V11, V12, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	3	Strength	4.48730993594235
+VaryBeam	letrec.arff	25	100	5	100	Approximative	3	Columns	V13, V8, V12, V15, V9
+VaryBeam	letrec.arff	25	100	5	100	Approximative	4	Strength	4.47412715572304
+VaryBeam	letrec.arff	25	100	5	100	Approximative	4	Columns	V12, V8, V9, V11, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	5	Strength	4.47401243206518
+VaryBeam	letrec.arff	25	100	5	100	Approximative	5	Columns	V13, V8, V15, V9, V10
+VaryBeam	letrec.arff	25	100	5	100	Approximative	6	Strength	4.46846318460427
+VaryBeam	letrec.arff	25	100	5	100	Approximative	6	Columns	V13, V7, V15, V8, V9
+VaryBeam	letrec.arff	25	100	5	100	Approximative	7	Strength	4.46794285087728
+VaryBeam	letrec.arff	25	100	5	100	Approximative	7	Columns	V13, V8, V10, V12, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	8	Strength	4.46725686341652
+VaryBeam	letrec.arff	25	100	5	100	Approximative	8	Columns	V13, V7, V12, V8, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	9	Strength	4.45592810448231
+VaryBeam	letrec.arff	25	100	5	100	Approximative	9	Columns	V12, V9, V13, V15, V10
+VaryBeam	letrec.arff	25	100	5	100	Approximative	10	Strength	4.45448222621299
+VaryBeam	letrec.arff	25	100	5	100	Approximative	10	Columns	V12, V9, V13, V11, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	11	Strength	4.44442384932699
+VaryBeam	letrec.arff	25	100	5	100	Approximative	11	Columns	V13, V8, V14, V9, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	12	Strength	4.44367479533376
+VaryBeam	letrec.arff	25	100	5	100	Approximative	12	Columns	V13, V8, V10, V11, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	13	Strength	4.4389512067868
+VaryBeam	letrec.arff	25	100	5	100	Approximative	13	Columns	V11, V8, V9, V10, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	14	Strength	4.4388782625619
+VaryBeam	letrec.arff	25	100	5	100	Approximative	14	Columns	V13, V7, V12, V9, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	15	Strength	4.43864341808487
+VaryBeam	letrec.arff	25	100	5	100	Approximative	15	Columns	V12, V7, V9, V15, V8
+VaryBeam	letrec.arff	25	100	5	100	Approximative	16	Strength	4.43740950904621
+VaryBeam	letrec.arff	25	100	5	100	Approximative	16	Columns	V13, V8, V11, V12, V9
+VaryBeam	letrec.arff	25	100	5	100	Approximative	17	Strength	4.43314957722208
+VaryBeam	letrec.arff	25	100	5	100	Approximative	17	Columns	V13, V8, V11, V15, V16
+VaryBeam	letrec.arff	25	100	5	100	Approximative	18	Strength	4.43266228395462
+VaryBeam	letrec.arff	25	100	5	100	Approximative	18	Columns	V12, V8, V9, V15, V10
+VaryBeam	letrec.arff	25	100	5	100	Approximative	19	Strength	4.43195059865404
+VaryBeam	letrec.arff	25	100	5	100	Approximative	19	Columns	V12, V8, V10, V15, V11
+VaryBeam	letrec.arff	25	100	5	100	Approximative	20	Strength	4.43165729097188
+VaryBeam	letrec.arff	25	100	5	100	Approximative	20	Columns	V13, V7, V10, V15, V8
+VaryBeam	letrec.arff	25	100	5	100	Approximative	21	Strength	4.42835822849044
+VaryBeam	letrec.arff	25	100	5	100	Approximative	21	Columns	V13, V9, V11, V10, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	22	Strength	4.42633373447958
+VaryBeam	letrec.arff	25	100	5	100	Approximative	22	Columns	V14, V8, V12, V13, V15
+VaryBeam	letrec.arff	25	100	5	100	Approximative	23	Strength	4.41924232478108
+VaryBeam	letrec.arff	25	100	5	100	Approximative	23	Columns	V13, V10, V14, V15, V8
+VaryBeam	letrec.arff	25	100	5	100	Approximative	24	Strength	4.41900861820224
+VaryBeam	letrec.arff	25	100	5	100	Approximative	24	Columns	V15, V8, V10, V9, V16
+VaryBeam	letrec.arff	25	100	5	100	Approximative	25	Strength	4.41541221731287
+VaryBeam	letrec.arff	25	100	5	100	Approximative	25	Columns	V13, V7, V10, V15, V9
+VaryBeam	letrec.arff	25	100	5	100	Approximative	1	NaiveBayes - F1	0.481885211344336
+VaryBeam	letrec.arff	25	100	5	100	Approximative	2	NaiveBayes - F1	0.525793613658106
+VaryBeam	letrec.arff	25	100	5	100	Approximative	3	NaiveBayes - F1	0.495348584142955
+VaryBeam	letrec.arff	25	100	5	100	Approximative	4	NaiveBayes - F1	0.492372857477906
+VaryBeam	letrec.arff	25	100	5	100	Approximative	5	NaiveBayes - F1	0.451935819269089
+VaryBeam	letrec.arff	25	100	5	100	Approximative	6	NaiveBayes - F1	0.510995525937394
+VaryBeam	letrec.arff	25	100	5	100	Approximative	7	NaiveBayes - F1	0.445867109555047
+VaryBeam	letrec.arff	25	100	5	100	Approximative	8	NaiveBayes - F1	0.534037332796079
+VaryBeam	letrec.arff	25	100	5	100	Approximative	9	NaiveBayes - F1	0.464067899028832
+VaryBeam	letrec.arff	25	100	5	100	Approximative	10	NaiveBayes - F1	0.515861130459313
+VaryBeam	letrec.arff	25	100	5	100	Approximative	11	NaiveBayes - F1	0.501331951143531
+VaryBeam	letrec.arff	25	100	5	100	Approximative	12	NaiveBayes - F1	0.438510710420208
+VaryBeam	letrec.arff	25	100	5	100	Approximative	13	NaiveBayes - F1	0.431645539754482
+VaryBeam	letrec.arff	25	100	5	100	Approximative	14	NaiveBayes - F1	0.543280936856017
+VaryBeam	letrec.arff	25	100	5	100	Approximative	15	NaiveBayes - F1	0.475681186630735
+VaryBeam	letrec.arff	25	100	5	100	Approximative	16	NaiveBayes - F1	0.498415602921818
+VaryBeam	letrec.arff	25	100	5	100	Approximative	17	NaiveBayes - F1	0.430592858258831
+VaryBeam	letrec.arff	25	100	5	100	Approximative	18	NaiveBayes - F1	0.423683266219441
+VaryBeam	letrec.arff	25	100	5	100	Approximative	19	NaiveBayes - F1	0.441964698161704
+VaryBeam	letrec.arff	25	100	5	100	Approximative	20	NaiveBayes - F1	0.463800864037594
+VaryBeam	letrec.arff	25	100	5	100	Approximative	21	NaiveBayes - F1	0.444362026110395
+VaryBeam	letrec.arff	25	100	5	100	Approximative	22	NaiveBayes - F1	0.516763035511667
+VaryBeam	letrec.arff	25	100	5	100	Approximative	23	NaiveBayes - F1	0.456548323265892
+VaryBeam	letrec.arff	25	100	5	100	Approximative	24	NaiveBayes - F1	0.375303587738701
+VaryBeam	letrec.arff	25	100	5	100	Approximative	25	NaiveBayes - F1	0.474362382123228
+VaryBeam	letrec.arff	25	100	5	100	Approximative	1	kNN - F1	0.815377778819043
+VaryBeam	letrec.arff	25	100	5	100	Approximative	2	kNN - F1	0.818690735793489
+VaryBeam	letrec.arff	25	100	5	100	Approximative	3	kNN - F1	0.812248932879716
+VaryBeam	letrec.arff	25	100	5	100	Approximative	4	kNN - F1	0.806299711288786
+VaryBeam	letrec.arff	25	100	5	100	Approximative	5	kNN - F1	0.811470566637253
+VaryBeam	letrec.arff	25	100	5	100	Approximative	6	kNN - F1	0.804706004380475
+VaryBeam	letrec.arff	25	100	5	100	Approximative	7	kNN - F1	0.803467084698217
+VaryBeam	letrec.arff	25	100	5	100	Approximative	8	kNN - F1	0.798369717481746
+VaryBeam	letrec.arff	25	100	5	100	Approximative	9	kNN - F1	0.80545457040504
+VaryBeam	letrec.arff	25	100	5	100	Approximative	10	kNN - F1	0.803422808283843
+VaryBeam	letrec.arff	25	100	5	100	Approximative	11	kNN - F1	0.804139345380063
+VaryBeam	letrec.arff	25	100	5	100	Approximative	12	kNN - F1	0.806614584693687
+VaryBeam	letrec.arff	25	100	5	100	Approximative	13	kNN - F1	0.801844348115532
+VaryBeam	letrec.arff	25	100	5	100	Approximative	14	kNN - F1	0.794221958534942
+VaryBeam	letrec.arff	25	100	5	100	Approximative	15	kNN - F1	0.786284729167704
+VaryBeam	letrec.arff	25	100	5	100	Approximative	16	kNN - F1	0.795427580767684
+VaryBeam	letrec.arff	25	100	5	100	Approximative	17	kNN - F1	0.786665792106544
+VaryBeam	letrec.arff	25	100	5	100	Approximative	18	kNN - F1	0.797144937020285
+VaryBeam	letrec.arff	25	100	5	100	Approximative	19	kNN - F1	0.809940666087638
+VaryBeam	letrec.arff	25	100	5	100	Approximative	20	kNN - F1	0.790102491345743
+VaryBeam	letrec.arff	25	100	5	100	Approximative	21	kNN - F1	0.797338988699497
+VaryBeam	letrec.arff	25	100	5	100	Approximative	22	kNN - F1	0.797916417319687
+VaryBeam	letrec.arff	25	100	5	100	Approximative	23	kNN - F1	0.794751921610261
+VaryBeam	letrec.arff	25	100	5	100	Approximative	24	kNN - F1	0.778426699188797
+VaryBeam	letrec.arff	25	100	5	100	Approximative	25	kNN - F1	0.791361493677751
+VaryBeam	letrec.arff	25	250	5	100	Approximative	1	Strength	4.49201099830447
+VaryBeam	letrec.arff	25	250	5	100	Approximative	1	Columns	V13, V8, V9, V11, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	2	Strength	4.48805368321901
+VaryBeam	letrec.arff	25	250	5	100	Approximative	2	Columns	V13, V8, V12, V11, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	3	Strength	4.48730993594235
+VaryBeam	letrec.arff	25	250	5	100	Approximative	3	Columns	V13, V8, V12, V9, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	4	Strength	4.47412715572304
+VaryBeam	letrec.arff	25	250	5	100	Approximative	4	Columns	V12, V8, V9, V11, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	5	Strength	4.47401243206519
+VaryBeam	letrec.arff	25	250	5	100	Approximative	5	Columns	V13, V8, V10, V9, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	6	Strength	4.47084909939411
+VaryBeam	letrec.arff	25	250	5	100	Approximative	6	Columns	V13, V8, V9, V15, V2
+VaryBeam	letrec.arff	25	250	5	100	Approximative	7	Strength	4.46846318460429
+VaryBeam	letrec.arff	25	250	5	100	Approximative	7	Columns	V13, V7, V9, V8, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	8	Strength	4.46794285087728
+VaryBeam	letrec.arff	25	250	5	100	Approximative	8	Columns	V13, V8, V12, V15, V10
+VaryBeam	letrec.arff	25	250	5	100	Approximative	9	Strength	4.46725686341652
+VaryBeam	letrec.arff	25	250	5	100	Approximative	9	Columns	V13, V7, V12, V8, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	10	Strength	4.45592810448231
+VaryBeam	letrec.arff	25	250	5	100	Approximative	10	Columns	V12, V9, V15, V13, V10
+VaryBeam	letrec.arff	25	250	5	100	Approximative	11	Strength	4.45487194524275
+VaryBeam	letrec.arff	25	250	5	100	Approximative	11	Columns	V13, V6, V8, V15, V9
+VaryBeam	letrec.arff	25	250	5	100	Approximative	12	Strength	4.45448222621299
+VaryBeam	letrec.arff	25	250	5	100	Approximative	12	Columns	V12, V9, V13, V11, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	13	Strength	4.45094556627274
+VaryBeam	letrec.arff	25	250	5	100	Approximative	13	Columns	V13, V8, V9, V16, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	14	Strength	4.44442384932699
+VaryBeam	letrec.arff	25	250	5	100	Approximative	14	Columns	V13, V8, V14, V9, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	15	Strength	4.44367479533376
+VaryBeam	letrec.arff	25	250	5	100	Approximative	15	Columns	V13, V8, V10, V11, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	16	Strength	4.4389512067868
+VaryBeam	letrec.arff	25	250	5	100	Approximative	16	Columns	V11, V8, V9, V10, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	17	Strength	4.4388782625619
+VaryBeam	letrec.arff	25	250	5	100	Approximative	17	Columns	V13, V7, V12, V9, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	18	Strength	4.43864341808487
+VaryBeam	letrec.arff	25	250	5	100	Approximative	18	Columns	V12, V7, V9, V8, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	19	Strength	4.4374095090462
+VaryBeam	letrec.arff	25	250	5	100	Approximative	19	Columns	V13, V8, V12, V11, V9
+VaryBeam	letrec.arff	25	250	5	100	Approximative	20	Strength	4.43521949710141
+VaryBeam	letrec.arff	25	250	5	100	Approximative	20	Columns	V13, V8, V16, V15, V10
+VaryBeam	letrec.arff	25	250	5	100	Approximative	21	Strength	4.43314957722207
+VaryBeam	letrec.arff	25	250	5	100	Approximative	21	Columns	V13, V8, V16, V11, V15
+VaryBeam	letrec.arff	25	250	5	100	Approximative	22	Strength	4.43266228395462
+VaryBeam	letrec.arff	25	250	5	100	Approximative	22	Columns	V12, V8, V15, V10, V9
+VaryBeam	letrec.arff	25	250	5	100	Approximative	23	Strength	4.43195059865404
+VaryBeam	letrec.arff	25	250	5	100	Approximative	23	Columns	V12, V8, V15, V11, V10
+VaryBeam	letrec.arff	25	250	5	100	Approximative	24	Strength	4.43165729097188
+VaryBeam	letrec.arff	25	250	5	100	Approximative	24	Columns	V13, V7, V10, V15, V8
+VaryBeam	letrec.arff	25	250	5	100	Approximative	25	Strength	4.43133895430868
+VaryBeam	letrec.arff	25	250	5	100	Approximative	25	Columns	V11, V2, V15, V13, V9
+VaryBeam	letrec.arff	25	250	5	100	Approximative	1	NaiveBayes - F1	0.481885211344336
+VaryBeam	letrec.arff	25	250	5	100	Approximative	2	NaiveBayes - F1	0.525793613658106
+VaryBeam	letrec.arff	25	250	5	100	Approximative	3	NaiveBayes - F1	0.495348584142955
+VaryBeam	letrec.arff	25	250	5	100	Approximative	4	NaiveBayes - F1	0.492372857477906
+VaryBeam	letrec.arff	25	250	5	100	Approximative	5	NaiveBayes - F1	0.451935819269089
+VaryBeam	letrec.arff	25	250	5	100	Approximative	6	NaiveBayes - F1	0.397984053840756
+VaryBeam	letrec.arff	25	250	5	100	Approximative	7	NaiveBayes - F1	0.510995525937394
+VaryBeam	letrec.arff	25	250	5	100	Approximative	8	NaiveBayes - F1	0.445867109555047
+VaryBeam	letrec.arff	25	250	5	100	Approximative	9	NaiveBayes - F1	0.534037332796079
+VaryBeam	letrec.arff	25	250	5	100	Approximative	10	NaiveBayes - F1	0.464067899028832
+VaryBeam	letrec.arff	25	250	5	100	Approximative	11	NaiveBayes - F1	0.449907698620554
+VaryBeam	letrec.arff	25	250	5	100	Approximative	12	NaiveBayes - F1	0.515861130459313
+VaryBeam	letrec.arff	25	250	5	100	Approximative	13	NaiveBayes - F1	0.410109930139138
+VaryBeam	letrec.arff	25	250	5	100	Approximative	14	NaiveBayes - F1	0.501331951143531
+VaryBeam	letrec.arff	25	250	5	100	Approximative	15	NaiveBayes - F1	0.438510710420208
+VaryBeam	letrec.arff	25	250	5	100	Approximative	16	NaiveBayes - F1	0.431645539754482
+VaryBeam	letrec.arff	25	250	5	100	Approximative	17	NaiveBayes - F1	0.543280936856017
+VaryBeam	letrec.arff	25	250	5	100	Approximative	18	NaiveBayes - F1	0.475681186630735
+VaryBeam	letrec.arff	25	250	5	100	Approximative	19	NaiveBayes - F1	0.498415602921818
+VaryBeam	letrec.arff	25	250	5	100	Approximative	20	NaiveBayes - F1	0.363683613086357
+VaryBeam	letrec.arff	25	250	5	100	Approximative	21	NaiveBayes - F1	0.430592858258831
+VaryBeam	letrec.arff	25	250	5	100	Approximative	22	NaiveBayes - F1	0.423683266219441
+VaryBeam	letrec.arff	25	250	5	100	Approximative	23	NaiveBayes - F1	0.441964698161704
+VaryBeam	letrec.arff	25	250	5	100	Approximative	24	NaiveBayes - F1	0.463800864037594
+VaryBeam	letrec.arff	25	250	5	100	Approximative	25	NaiveBayes - F1	0.393838340780814
+VaryBeam	letrec.arff	25	250	5	100	Approximative	1	kNN - F1	0.817361956525561
+VaryBeam	letrec.arff	25	250	5	100	Approximative	2	kNN - F1	0.816975294724787
+VaryBeam	letrec.arff	25	250	5	100	Approximative	3	kNN - F1	0.809980659805951
+VaryBeam	letrec.arff	25	250	5	100	Approximative	4	kNN - F1	0.806943491003588
+VaryBeam	letrec.arff	25	250	5	100	Approximative	5	kNN - F1	0.814792503581058
+VaryBeam	letrec.arff	25	250	5	100	Approximative	6	kNN - F1	0.746145257218115
+VaryBeam	letrec.arff	25	250	5	100	Approximative	7	kNN - F1	0.80451553914839
+VaryBeam	letrec.arff	25	250	5	100	Approximative	8	kNN - F1	0.803859844738361
+VaryBeam	letrec.arff	25	250	5	100	Approximative	9	kNN - F1	0.797816773640802
+VaryBeam	letrec.arff	25	250	5	100	Approximative	10	kNN - F1	0.805654306273302
+VaryBeam	letrec.arff	25	250	5	100	Approximative	11	kNN - F1	0.790102476225428
+VaryBeam	letrec.arff	25	250	5	100	Approximative	12	kNN - F1	0.801372686527942
+VaryBeam	letrec.arff	25	250	5	100	Approximative	13	kNN - F1	0.790385203916269
+VaryBeam	letrec.arff	25	250	5	100	Approximative	14	kNN - F1	0.806722850865515
+VaryBeam	letrec.arff	25	250	5	100	Approximative	15	kNN - F1	0.805531885936994
+VaryBeam	letrec.arff	25	250	5	100	Approximative	16	kNN - F1	0.802815343326436
+VaryBeam	letrec.arff	25	250	5	100	Approximative	17	kNN - F1	0.794749828315728
+VaryBeam	letrec.arff	25	250	5	100	Approximative	18	kNN - F1	0.787553745664948
+VaryBeam	letrec.arff	25	250	5	100	Approximative	19	kNN - F1	0.794502242979667
+VaryBeam	letrec.arff	25	250	5	100	Approximative	20	kNN - F1	0.784818895996604
+VaryBeam	letrec.arff	25	250	5	100	Approximative	21	kNN - F1	0.786285467773282
+VaryBeam	letrec.arff	25	250	5	100	Approximative	22	kNN - F1	0.797466889371558
+VaryBeam	letrec.arff	25	250	5	100	Approximative	23	kNN - F1	0.810463898611272
+VaryBeam	letrec.arff	25	250	5	100	Approximative	24	kNN - F1	0.789413746556878
+VaryBeam	letrec.arff	25	250	5	100	Approximative	25	kNN - F1	0.724329918011904
