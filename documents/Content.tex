@@ -65,7 +65,7 @@ situations, involving either humans (data exploration by subgroup discovery) or
 automatic predictors (classification algorithms).
 
 The rest of this paper is organized as follows. Section~\ref{sec:presentation}
-gives an overview of our model, which we formalize in
+gives an overview of our model, which we refine in
 Section~\ref{sec:formalization}. Sections~\ref{sec:approximate} describes how
 to compute the quality a view, Section~\ref{sec:column} presents our view
 detection algorithm, and Section~\ref{sec:detec} introduces how to detect
@@ -74,7 +74,7 @@ Section~\ref{sec:experiments}, related work in Section~\ref{sec:related} and
 conclude in Section~\ref{sec:conclusion}.
 
 
-\section{Overview}
+\section{Problem Formulation}
 \label{sec:presentation}
 \begin{figure}[t!]
 \centering
@@ -90,8 +90,8 @@ are oblivious to the physical structure of the data. Our aim is to describe how
 the measure varies across the dimensions. To do so, we want to detect
 \textbf{views}, that is, \emph{interesting} selections of dimensions. We also
 want to show \emph{why} these views are interesting, by detecting
-\textbf{points of interests} (POI). A point of interest is a local pattern,
-which illustrates unusual variations of the measure.
+\textbf{points of interests} (POI). A point of interest is a region in the view
+where the measure behaves unusually.
 
 We demonstrate these notions with a running example. We want to understand what
 causes crime in US communities. We have a database of cities with several dozen
@@ -102,15 +102,64 @@ scatterplot pictures the dimensions \texttt{Unemployment} and
 \texttt{Population Density}. Why did Claude pick these two columns? The two
 POIs provide explanations. Cities with high densities and high unemployment
 rates have more crimes (cf. $POI_1$).  Oppositely, cities with low densities
-and lower employment rates tend to be safer (cf.  $POI_2$). We see that
-\texttt{Unemployment} and \texttt{Population Density} are interesting because
-they influence the target \texttt{Crime}.  The POIs highlight this influence.
+and lower employment rates tend to be safer (cf.  $POI_2$).
 
-Interesting views and POIs are the key concepts behind our study. We
-illustrated these notions, but did not formalize them. In fact, defining
-exactly what makes a view or a POI ``interesting'' is not trivial, and it
-is the first problem we will tackle. Then, given this framework, we
-will show how our system, Claude, makes recommendations in practice.
+In our example, \texttt{Unemployment} and \texttt{Population Density} are
+interesting because they influence the target \texttt{Crime}. We can measure
+this relationship with statistical dependence. We now introduce the most basic
+asumption behind our study: a view is interesting if its dimensions are
+\emph{jointly dependent} to the measure. We name this property
+\textbf{strength} of a view. From now on we assume that each column $X_n =
+(x_n^1, \ldots, x_n^M)$ contains samples from a random variable $\rv{X}_n$, and
+that $T$ contains samples from $\rv{T}$.
+\begin{definition}
+    Consider a view $V = \{X_1, \ldots, X_D\}$, the target $T$, and measure of
+    statistical dependence $\mathfrak{S}$. We define the \textbf{strength} of V
+    as follows:
+    \begin{equation}\label{eq:strengthgen}
+        \sigma(V) = \mathfrak{S}(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})
+    \end{equation}
+\end{definition}
+The statistics literature provides quantity of dependence measures (e.g., the
+correlation coefficient). We will introduce our approach
+Section~\ref{sec:formalization}.
+
+Observe the two POIs in Figure~\ref{fig:overview}.  The distribution of the
+measure \emph{in these regions} differs from its distribution \emph{in the rest
+of the database}: it is skewed to the right in $POI_1$, it is skewed to the
+left in $POI_2$. In the POIs, the target behaves unusually. We name this
+property \textbf{divergence} of the points of interest. We formalize it as
+follows. Consider a view based on the random variables $\rv{X}_1, \ldots,
+\rv{X}_D$, with respective sample spaces $\Omega_1, \ldots, \Omega_D$.  The set
+$R\subset \Omega_1 \times \ldots \times \Omega_D$ represents a region in this
+view.  The random variable $\rv{T}$ represents the target \emph{for the whole
+database}.  The random variable $\big[ \rv{T} | (\rv{X}_1, \ldots, \rv{X}_D)
+\in R \big] $ represents the target \emph{for the tuples within R}. We shorten
+this notation to $\rv{T} | R$. The region $R$ is a good point of interest if
+$\rv{T} |R $ and $\rv{T}$ have large differences in distribution.
+\begin{definition}
+    Let $R\subset \Omega_1 \times \ldots \times \Omega_D$ represent a region of 
+    the view $\{X_1, \ldots, X_D\}$, and let $\rv{T}$ represent our target
+    variable. The function $\mathfrak{D}$ measures the dissimilarity between
+    two distributions. We define the \textbf{divergence} of $R$ as follows: 
+\begin{equation}\label{eq:divergencegen}
+    \delta(R) = \mathfrak{D} \big( \rv{T} | R;  \rv{T}\big)
+\end{equation}
+\end{definition}
+Here again, the statistics literature provides several options to instantiate
+$\mathfrak{D}$ (e.g., the difference of the means). We will present our method
+in Section~\ref{sec:formalization}.
+
+We are now ready to formulate our problem:
+\begin{problem}
+Consider a dataset $DB$, a target column $T$, a measure of statistical
+dependence $\mathfrak{S}$ and a measure of distribution dissimilarity
+$\mathfrak{D}$. Find the top $K$ strongest views with at most $D$ columns. For
+each of these views, find the top $P$ divergent POIs.
+\end{problem}
+To solve this problem, Claude operates in two steps. First, it detects $K$
+strong sets of columns.  We call this step \emph{column search}.  Then, it
+extracts $P$ POIs for each view. This is the \emph{POI detection} step.
 
 In the rest of this paper, we will illustrate Claude's views with mathematical
 notation or visualizations. In reality however, Claude expresses its
@@ -127,25 +176,24 @@ view, $\texttt{[L1, H1]}\ldots\texttt{[Ln, Hn]}$ represents the bounds of the
 POI, and $T$ represents the target.
 
 
+
+
 \section{Interestingness Model}
 \label{sec:formalization}
-We introduced our notions of views and POIs. We now present elementary notions
-of information theory~\cite{cover2012elements}, and derive our model of
-interestingness. In the remaining of this paper, we suppose that each column
-$X_n = (x_n^1, \ldots, x_n^M)$ contains $M$ samples drawn from a random
-variable $\rv{X}_n$ with sample space $\Omega_n$.
+We presented views and POIs, but without specifying any measure of dependence
+$\mathfrak{S}$ or dissimilarity $\mathfrak{D}$. We now instantiate these
+quantities, with elements from information theory.
 
 \subsection{View Strength}
 \label{sec:view-strength}
-Let us define what makes a view ``interesting''. A set of columns is worth
-considering if it \emph{influences} the target: a selection on the columns will
-affect the value of the target. For instance, the dimension
-\texttt{Unemplyoment} is important because selecting cites with high
-unemployment leads to higher levels of crime. We model this relationship with
-\emph{mutual information}, which we present below.
+A set of dimensions is interesting if its columns are jointly dependent to the
+target. To quantify this dependence, we use the~\emph{mutual information}. This
+measure presents many advantages: it is sensible to non-linear dependences, it
+can cope with any kind variables, and it is practical to compute. We present it
+below.
 
 The \emph{entropy} $H(\rv{X})$ of a variable $\rv{X}$ describes its
-variability. If $\rv{X}$ has a constant value, then $H(\rv{X}) = 0$.
+variability~\cite{cover2012elements}. If $\rv{X}$ has a constant value, then $H(\rv{X}) = 0$.
 Oppositely, if $\rv{X}$ is highly unpredictable (e.g., $\rv{X}$ is
 the outcome of flipping a perfectly balanced coin) then $H(\rv{X})$ is
 maximal. Formally, if $\rv{X}$ is a discrete variable with sample space
@@ -157,14 +205,13 @@ If $\rv{X}$ is continuous with density $p$, we define it as follows:
 \begin{equation}\label{eq:ent-cont}
     H(\rv{X}) = - \int_{-\infty}^{+\infty} p(x).\log{p(x)}\mathrm{d}x
 \end{equation}
-
 We can use entropy to describe how variables interact. If two two variables are
 dependent, then conditioning (e.g., restricting the range of values) on one
 variable will affect the other. In our example, cities with high unemployment
 have high levels of crime.  Therefore, conditioning on the variable
 \texttt{Unemployment} \emph{decreases the uncertainty} of the variable
 \texttt{Crime}. This causes a loss in entropy, and the value of this loss is
-called \emph{mutual information}.  Formally, if $\rv{X}$ and $\rv{T}$ are two
+the mutual information.  Formally, if $\rv{X}$ and $\rv{T}$ are two
 random variables, the expression $H(\rv{T} | \rv{X} = x)$ describes the entropy
 of $\rv{T}$ \emph{given $X = x$}. If we average this expression over all
 possible values of $x$, we obtain the conditional entropy: $H(\rv{T}|\rv{X}) =
@@ -173,21 +220,15 @@ as follows:
 \begin{equation}\label{eq:mut-inf}
     I(\rv{X}; \rv{T}) = H(\rv{T}) - H(\rv{T} | \rv{X})
 \end{equation}
-The mutual information is the loss in entropy between $\rv{T}$ and
-$\rv{T} | \rv{X}$. It is symetic, and it is always positive or null. 
-
-We can now expose the most basic assumption behind our study. A variable $\rv{X}$ is
-interesting if $I(\rv{X}; \rv{T})$ is as high as possible.  We generalize this
-notion to several variables: a set of variables $\rv{X}_1, \ldots, \rv{X}_D$ is
-interesting they are \emph{jointly} dependent to the target, i.e., $I(\rv{X}_1,
-\ldots, \rv{X}_D ; \rv{T})$ is high.
-\begin{definition}
-Consider a view $V = \{X_1, \ldots, X_D\}$, and the target column $T$. We
-define the \textbf{strength} of $V$ as follows: 
+The mutual information is the loss in entropy between $\rv{T}$ and $\rv{T} |
+\rv{X}$. It is symetric, and it is always positive or null. We can generalize
+this quantity to joint distributions, which gives us our new, refined version of
+view strength:
 \begin{equation}\label{eq:strength}
     \sigma(V) = I(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})
 \end{equation}
-\end{definition} 
+A view is strong if the mutual information between the target and its
+dimensions is high.
 
 In practice, we do not know the distributions of the variables $\rv{X}_n$, but
 we have access to the samples $X_n$. Therefore, we \emph{estimate}
@@ -204,25 +245,10 @@ dimensions.  Therefore, Claude bins all the continuous variables, and treats
 them like discrete columns.
 
 \subsection{Points of Interest and Divergence}
-
-We discussed how to recognize good views. In this section, we formalize our
-notion of Point of Interest. A POI is a set of tuples in which the dimensions'
-influence is at its peak. Therefore, the measure has an ``unusual''
-distribution. Observe the two POIs in Figure~\ref{fig:overview}.  The
-distribution of \texttt{Crime} in these regions differs from the distribution
-of \texttt{Crime} in the rest of the database.  In $POI_1$, the distribution is
-skewed to the right, which indicates higher levels of crime. In $POI_2$, it is
-skewed to the left. We will characterize this difference with the
-\textbf{divergence}.
-
-Consider a d-dimensional view $\{\rv{X}_1, \ldots, \rv{X}_D\}$. The set
-$R\subset \Omega_1 \times \ldots \times \Omega_D$ represents a region in this
-view.  The random variable $\rv{T}$ represents the target \emph{for the whole
-database}.  The random variable $\big[ \rv{T} | (\rv{X}_1, \ldots, \rv{X}_D) \in R
-\big] $ represents the target \emph{for the tuples within R}. From here on, we
-will shorten this notation to $\rv{T} | R$. The region $R$ is a good point
-of interest if $\rv{T} |R $ and $\rv{T}$ have large differences in
-distribution.  We quantify this difference with the \emph{Kullback-Leibler
+Let us now refine our definition of divergence. We established that the
+divergence of a POI is the dissimilarity between target's distribution
+\emph{within this POI}, and the target's distribution \emph{in the whole
+database}.  To measure this dissimilarity, we use the~\emph{Kullback-Leibler
 divergence}~(KL).  The KL divergence measures the difference between two
 probability distributions. It is null if the two distributions are similar, and
 it grows when the distributions differ.  Formally, if $\mathcal{X}$ and
@@ -234,18 +260,13 @@ $\Omega$, we have:
 \end{equation}
 As Claude discretizes the continuous variables, we ignore the continuous case
 (cf.  Section~\ref{sec:view-strength}). Our region $R$ is a good point of
-interest if $KL ( \rv{T} |R \parallel \rv{T} )$ is as large as possible.
-\begin{definition}
-    Consider a set $R$ and the target variable $\rv{T}$. We define the
-    \textbf{divergence} of $R$ as follows: 
+interest if $KL ( \rv{T} |R \parallel \rv{T} )$ is as large as possible:
 \begin{equation}\label{eq:divergence}
     \delta(R) = KL \big( \rv{T} | R \parallel \rv{T}\big)
 \end{equation}
-\end{definition}
-
 \begin{figure}[t!]
 \centering
-\includegraphics[width=0.5\columnwidth]{images/3Dtest}
+\includegraphics[width=0.4\columnwidth]{images/3Dtest}
 \caption{Example of view with three discrete variables $V = \{X_1, X_2, X_3\}$.
 The average divergence of the cells $\delta(\mathbf{x})$ equals the strength of
 the view  $\sigma(V)$.}
@@ -291,17 +312,6 @@ but not that of $V$. Luckily, these quantities converge as the bins get small.
     that $\sigma(V^b) \to \sigma(V)$. We apply Equation~\ref{eq:coin} to obtain
     the lemma.
 \end{proof}
-
-\subsection{Generating Hypotheses, Revisited}
-We now formalize the problem of generating hypotheses:\\
-\emph{Consider a dataset $DB$, a target column $T$ and a triplet $(K, D, P)$. Find
-the top $K$ strongest views with at most $D$ columns. For each of these
-views, find the top $P$ divergent POIs.}\\
-To solve this problem, Claude operates in two steps. First, it detects $K$
-strong sets of columns.  We call this step \emph{column search}.  Then, it
-extracts $P$ POIs for each view. This is the \emph{POI detection} step.
-
-
 
 
 \section{Approximate View Strength}
@@ -461,7 +471,7 @@ Algorithm~\ref{algo:beam_search} presents the full procedure.
 \end{algorithm}
 \begin{figure}[t!]
 \centering
-\includegraphics[width=0.8\columnwidth]{images/strength-jump}
+\includegraphics[width=0.7\columnwidth]{images/strength-jump}
 \caption{Limit cases of the beam search strategy. The variables $X_1$ and
 $X_2$ represent two dimensions. The symbol and color of the plots represent
 the value of the target. }
