@@ -40,8 +40,8 @@ universal measure of inte\-restingness. The challenge is to devise a
 theoretically well-founded model, general enough to cover a wide range of use
 cases. The second problem is efficiency: given a measure of interest, how can
 we explore the space of all database queries quickly enough to support large
-datasets? We must design efficient heuristics and approximations to quickly
-traverse all the combinations of all the dimensions.
+datasets? We must design efficient methods to traverse all the possible
+combinations of all dimensions.
 
 Several semi-automated exploration frameworks were proposed in the
 past, in the context of OLAP data cubes~\cite{sarawagi1998discovery,
@@ -59,15 +59,17 @@ warehouses. Claude's aim is to detect interesting views, i.e., interesting
 combination of dimensions, and highlight local patterns in these views. We make
 three contributions: (1) We devise a model of what makes a view
 ``interesting'', using simple notions of information theory. (2)~We present
-practical methods to detect good views in large data\-bases, based on
-approximations and greedy search.  (3) We apply our model to practical
+aggressive methods to detect good views in large data\-bases, based on
+approximations and greedy search.  (3) We apply our model to real-life
 situations, involving either humans (data exploration by subgroup discovery) or
-automatic prediction (classification algorithms).
+automatic predictors (classification algorithms).
 
 The rest of this paper is organized as follows. Section~\ref{sec:presentation}
-describes our framework and formalizes the problem. Section~\ref{sec:column}
-presents our view detection algorithm, and Section~\ref{sec:detec}
-introduces how to detect points of interest. We present our experiments in
+gives an overview of our model, which we formalize in
+Section~\ref{sec:formalization}. Sections~\ref{sec:approximate} describes how
+to compute the quality a view, Section~\ref{sec:column} presents our view
+detection algorithm, and Section~\ref{sec:detec} introduces how to detect
+points of interest. We present our experiments in
 Section~\ref{sec:experiments}, related work in Section~\ref{sec:related} and
 conclude in Section~\ref{sec:conclusion}.
 
@@ -106,7 +108,7 @@ they influence the target \texttt{Crime}.  The POIs highlight this influence.
 
 Interesting views and POIs are the key concepts behind our study. We
 illustrated these notions, but did not formalize them. In fact, defining
-exactly what makes a view or a POI ``interesting'' is all but trivial, and it
+exactly what makes a view or a POI ``interesting'' is not trivial, and it
 is the first problem we will tackle. Then, given this framework, we
 will show how our system, Claude, makes recommendations in practice.
 
@@ -135,12 +137,12 @@ variable $\rv{X}_n$ with sample space $\Omega_n$.
 
 \subsection{View Strength}
 \label{sec:view-strength}
-Let us define what makes a view ``interesting''. A set of columns is
-worth considering if it \emph{influences} the target: a selection on
-the columns will affect the value of the target. For instance, the dimension
+Let us define what makes a view ``interesting''. A set of columns is worth
+considering if it \emph{influences} the target: a selection on the columns will
+affect the value of the target. For instance, the dimension
 \texttt{Unemplyoment} is important because selecting cites with high
-unemployment leads to higher levels of crime. We can model this relationship
-with \emph{mutual information}, which we present below.
+unemployment leads to higher levels of crime. We model this relationship with
+\emph{mutual information}, which we present below.
 
 The \emph{entropy} $H(\rv{X})$ of a variable $\rv{X}$ describes its
 variability. If $\rv{X}$ has a constant value, then $H(\rv{X}) = 0$.
@@ -174,7 +176,7 @@ as follows:
 The mutual information is the loss in entropy between $\rv{T}$ and
 $\rv{T} | \rv{X}$. It is symetic, and it is always positive or null. 
 
-We can now expose the most basic idea behind our study. A variable $\rv{X}$ is
+We can now expose the most basic assumption behind our study. A variable $\rv{X}$ is
 interesting if $I(\rv{X}; \rv{T})$ is as high as possible.  We generalize this
 notion to several variables: a set of variables $\rv{X}_1, \ldots, \rv{X}_D$ is
 interesting they are \emph{jointly} dependent to the target, i.e., $I(\rv{X}_1,
@@ -188,7 +190,7 @@ define the \textbf{strength} of $V$ as follows:
 \end{definition} 
 
 In practice, we do not know the distributions of the variables $\rv{X}_n$, but
-we have access to the samples $X_n$. Therefore, we compute \emph{estimates} of
+we have access to the samples $X_n$. Therefore, we \emph{estimate}
 the strength. If the variables are discrete, we operates as follow.  We set
 $\hat{P}(\rv{X}_n = x) \approx P(\rv{X}_n = x)$ to be the proportion of tuples
 with $X_n=x$. We then ``plug'' this estimator in Equations~\ref{eq:ent-disc},
@@ -221,7 +223,7 @@ database}.  The random variable $\big[ \rv{T} | (\rv{X}_1, \ldots, \rv{X}_D) \in
 will shorten this notation to $\rv{T} | R$. The region $R$ is a good point
 of interest if $\rv{T} |R $ and $\rv{T}$ have large differences in
 distribution.  We quantify this difference with the \emph{Kullback-Leibler
-divergence} (KL).  The KL divergence measures the difference between two
+divergence}~(KL).  The KL divergence measures the difference between two
 probability distributions. It is null if the two distributions are similar, and
 it grows when the distributions differ.  Formally, if $\mathcal{X}$ and
 $\mathcal{Y}$ are two discrete random variables with the same sample space
@@ -232,12 +234,12 @@ $\Omega$, we have:
 \end{equation}
 As Claude discretizes the continuous variables, we ignore the continuous case
 (cf.  Section~\ref{sec:view-strength}). Our region $R$ is a good point of
-interest if $KL ( \rv{T} \parallel \rv{T} |R )$ is as large as possible.
+interest if $KL ( \rv{T} |R \parallel \rv{T} )$ is as large as possible.
 \begin{definition}
     Consider a set $R$ and the target variable $\rv{T}$. We define the
     \textbf{divergence} of $R$ as follows: 
 \begin{equation}\label{eq:divergence}
-    \delta(R) = KL \big( \rv{T} \parallel \rv{T} |R \big)
+    \delta(R) = KL \big( \rv{T} | R \parallel \rv{T}\big)
 \end{equation}
 \end{definition}
 
@@ -254,7 +256,7 @@ view $V$.  If $V's$ dimensions are continuous, we bin them. If we compute the
 divergence of each tuple and average the results, we obtain the $V$'s strength.
 We illustrate this property with Figure~\ref{fig:binningexample}.  Therefore,
 strength and divergence are ``two sides of the same coin''. We formalize this
-property it with the lemma below.
+property with the lemma below.
 \begin{lemma}
     If $V$ is a view with $d$ discrete variables and $\mathbf{x} \in \Omega_1
     \times \ldots \Omega_D$ is a tuple from this view, then:
@@ -263,9 +265,10 @@ property it with the lemma below.
     \end{equation}
 \end{lemma}
 \begin{proof}
-    By definitions of the KL divergence, we have 
-    $I(\mathbf{x} ; \rv{T})= \mathbb{E}_{\mathbf{x}}[ KL( T \parallel T |
-    \{\mathbf{x}\} )]$.
+    The random vector $\mathbf{X}$ describes a random tuple from $V$.
+    Applying Bayes's theorem to Cover and Thomas, Equation
+    2.35~\cite{cover2012elements}, we obtain $ I(\mathbf{X} ; \rv{T})
+    =\mathbb{E}_{\mathbf{x}}[ KL( T | \{\mathbf{x}\} \parallel T )]$.
     Substituting the left side with Equation~\ref{eq:strength}, and the right
     side with Equation~\ref{eq:divergence}, we obtain the lemma.
 \end{proof}
@@ -290,9 +293,7 @@ but not that of $V$. Luckily, these quantities converge as the bins get small.
 \end{proof}
 
 \subsection{Generating Hypotheses, Revisited}
-
-Our framework allow us to formalize the problem of generating hypotheses:
-
+We now formalize the problem of generating hypotheses:\\
 \emph{Consider a dataset $DB$, a target column $T$ and a triplet $(K, D, P)$. Find
 the top $K$ strongest views with at most $D$ columns. For each of these
 views, find the top $P$ divergent POIs.}\\
@@ -898,15 +899,15 @@ Figure \ref{pic:POI-quali} compares the quality of the POIs found by both
 algorithms. The strategy \texttt{FullSpace} gives slightly better results on
 \texttt{Crime} and \texttt{PenDigits}, but the difference is close to null. The
 scores are similar on all the other datasets. We conclude that Claude's POIs
-are very close to those found by a state-of-the-art Subgroup Discovery approach.
-Figure~\ref{pic:POI-time} compares the runtimes of both approaches.  We observe
-that Claude is much faster than \texttt{FullSpace}. The difference grows with
-the number of columns: the runtimes are almost similar for datasets with few
-columns (\texttt{MAGICTelescope}), but \texttt{Claude} is considerably faster
-for larger databases (more than an order of magnitude difference for
-\texttt{MuskMolecules}). Although this was not our initial aim, decoupling view
-search and POI extraction allows us to find subgroups faster in high dimension
-datasets.
+are very close to those found by a state-of-the-art Subgroup Discovery
+approach.  Figure~\ref{pic:POI-time} compares the runtimes of both approaches.
+We observe that Claude is much faster than \texttt{FullSpace}. The difference
+grows with the number of columns: the runtimes are almost similar for datasets
+with few columns (\texttt{MAGICTelescope}), but \texttt{Claude} is considerably
+faster for larger databases (more than an order of magnitude difference for
+\texttt{MuskMolecules}). This is a positive side-effect of our approach:
+decoupling view search and POI extraction allows us to find subgroups faster in
+high dimension datasets.
 
 \section{Related Work}
 \label{sec:related}
@@ -969,11 +970,11 @@ and evaluated Claude, a system based on these ideas. The methods we developed
 for this study have broader applications than the strict realm of query
 recommendation. Our column selection scheme competes with state-of-the-art
 feature selection methods. Also, the idea to decouple column selection
-selection from subgroup search could benefit the a wide range of subgroup
-discovery algorithms.
+selection from subgroup search could benefit a wide range of subgroup discovery
+algorithms.
 
 We are genuinely excited about the possible extensions of this study. Future
 work includes dealing explicitly with the structure of the data, e.g.,
 hierarchical dimensions and relational joins. We will study how to integrate
 Claude more tightly with visualizations, for a fully interactive experience.
-Finally, we will refine our model with causation models.
+Finally, we will refine our framework with causation models.

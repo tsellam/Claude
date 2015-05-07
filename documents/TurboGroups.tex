@@ -46,18 +46,18 @@
 
 \begin{abstract}
 Exploratory data analysis tries to discover novel dependencies and unexpected
-patterns in large databases. Traditionally, this task is manual and
-hypothesis-driven. However, analysts can quickly come short of patience and
+patterns in large databases. Traditionally, this process is manual and
+hypothesis-driven. However, analysts can come short of patience and
 imagination. In this paper, we study how to detect interesting views and
 selections automatically, exploiting non-linear statistical dependencies across
-the columns of the database. We introduce simple notions of information theory,
-and derive a complete model of interestingness. We then present Claude, our
-hypothesis generator for data warehouses. Claude follows a 2-step approach: (1)
-It detects interesting views with a level-wise, greedy strategy.  (2) To
-explain its findings, it detects local patterns in these views and describes
-them with SQL queries.  To implement Claude, we developped aggressive
-approximations and heuristics, allowing our system to be both fast and more
-accurate than state-of-art view search algorithms. 
+the columns of the database. We derive a model of interestingness from simple
+notions of information theory. We then present Claude, our hypothesis generator
+for data warehouses. Claude follows a 2-step approach: (1)~It detects
+interesting views with a level-wise, greedy strategy.  (2) To explain its
+findings, it detects local patterns in these views and describes them with SQL
+queries.  To implement Claude, we developed aggressive approximations and
+heuristics, allowing our system to be fast and more accurate than state-of-art
+view search algorithms. 
 \end{abstract}
 \input{Content}
 
