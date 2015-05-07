@@ -105,40 +105,40 @@ rates have more crimes (cf. $POI_1$).  Oppositely, cities with low densities
 and lower employment rates tend to be safer (cf.  $POI_2$).
 
 In our example, \texttt{Unemployment} and \texttt{Population Density} are
-interesting because they influence the target \texttt{Crime}. We can measure
-this relationship with statistical dependence. We now introduce the most basic
-asumption behind our study: a view is interesting if its dimensions are
-\emph{jointly dependent} to the measure. We name this property
-\textbf{strength} of a view. From now on we assume that each column $X_n =
-(x_n^1, \ldots, x_n^M)$ contains samples from a random variable $\rv{X}_n$, and
-that $T$ contains samples from $\rv{T}$.
+interesting because their combination influences the target \texttt{Crime}. We
+can measure this relationship with statistical dependence. This is the most
+basic assumption behind our study: a view is interesting if its dimensions are
+\emph{jointly dependent} to the measure. We evaluate the degree of this
+dependence with the \textbf{view strength}. In the remainder of this paper, we
+will assume that each database column $X$ contains samples from a random
+variable $\rv{X}$.
 \begin{definition}
     Consider a view $V = \{X_1, \ldots, X_D\}$, the target $T$, and measure of
-    statistical dependence $\mathfrak{S}$. We define the \textbf{strength} of V
-    as follows:
+    statistical dependence $\mathfrak{S}$.   We
+    define the strength of the view $V$ as follows:
     \begin{equation}\label{eq:strengthgen}
         \sigma(V) = \mathfrak{S}(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})
     \end{equation}
 \end{definition}
-The statistics literature provides quantity of dependence measures (e.g., the
-correlation coefficient). We will introduce our approach
-Section~\ref{sec:formalization}.
+The statistics literature provides several dependence measures, with different
+qualitative properties (e.g., the correlation coefficient). We will present our
+approach Section~\ref{sec:formalization}.
 
-Observe the two POIs in Figure~\ref{fig:overview}.  The distribution of the
-measure \emph{in these regions} differs from its distribution \emph{in the rest
-of the database}: it is skewed to the right in $POI_1$, it is skewed to the
-left in $POI_2$. In the POIs, the target behaves unusually. We name this
-property \textbf{divergence} of the points of interest. We formalize it as
-follows. Consider a view based on the random variables $\rv{X}_1, \ldots,
-\rv{X}_D$, with respective sample spaces $\Omega_1, \ldots, \Omega_D$.  The set
-$R\subset \Omega_1 \times \ldots \times \Omega_D$ represents a region in this
-view.  The random variable $\rv{T}$ represents the target \emph{for the whole
-database}.  The random variable $\big[ \rv{T} | (\rv{X}_1, \ldots, \rv{X}_D)
-\in R \big] $ represents the target \emph{for the tuples within R}. We shorten
-this notation to $\rv{T} | R$. The region $R$ is a good point of interest if
-$\rv{T} |R $ and $\rv{T}$ have large differences in distribution.
+Observe the two POIs in Figure~\ref{fig:overview}.  The measure's distribution
+in these regions differs from its distribution in the rest of the database: it
+is skewed to the right in $POI_1$, it is skewed to the left in $POI_2$. We name
+this property \textbf{POI divergence}. Intuitively, a region is divergent if
+the target behaves unexpectedly for its tuples.  Consider a view based on the
+random variables $\rv{X}_1, \ldots, \rv{X}_D$, with respective sample spaces
+$\Omega_1, \ldots, \Omega_D$.  The set $R\subset \Omega_1 \times \ldots \times
+\Omega_D$ represents a region in this view.  The random variable $\rv{T}$
+represents the target \emph{for the whole database}.  The random variable
+$\big[ \rv{T} | (\rv{X}_1, \ldots, \rv{X}_D) \in R \big] $ represents the
+target \emph{for the tuples within R}. We shorten this notation to $\rv{T} |
+R$. The region $R$ is a good point of interest if $\rv{T} |R $ and $\rv{T}$
+have large differences in distribution.
 \begin{definition}
-    Let $R\subset \Omega_1 \times \ldots \times \Omega_D$ represent a region of 
+    Let $R\subset \Omega_1 \times \ldots \times \Omega_D$ represent a region in
     the view $\{X_1, \ldots, X_D\}$, and let $\rv{T}$ represent our target
     variable. The function $\mathfrak{D}$ measures the dissimilarity between
     two distributions. We define the \textbf{divergence} of $R$ as follows: 
@@ -162,7 +162,7 @@ strong sets of columns.  We call this step \emph{column search}.  Then, it
 extracts $P$ POIs for each view. This is the \emph{POI detection} step.
 
 In the rest of this paper, we will illustrate Claude's views with mathematical
-notation or visualizations. In reality however, Claude expresses its
+notation or visualizations. In practice however, Claude expresses its
 recommendations with SQL queries. It returns points of interest as follows:
 \begin{verbatim}
     SELECT X1, ... , Xd, T
@@ -180,9 +180,9 @@ POI, and $T$ represents the target.
 
 \section{Interestingness Model}
 \label{sec:formalization}
-We presented views and POIs, but without specifying any measure of dependence
+We presented views and POIs without specifying any measure of dependence
 $\mathfrak{S}$ or dissimilarity $\mathfrak{D}$. We now instantiate these
-quantities, with elements from information theory.
+quantities with elements from information theory.
 
 \subsection{View Strength}
 \label{sec:view-strength}
@@ -193,7 +193,7 @@ can cope with any kind variables, and it is practical to compute. We present it
 below.
 
 The \emph{entropy} $H(\rv{X})$ of a variable $\rv{X}$ describes its
-variability~\cite{cover2012elements}. If $\rv{X}$ has a constant value, then $H(\rv{X}) = 0$.
+variabi\-lity~\cite{cover2012elements}. If $\rv{X}$ has a constant value, then $H(\rv{X}) = 0$.
 Oppositely, if $\rv{X}$ is highly unpredictable (e.g., $\rv{X}$ is
 the outcome of flipping a perfectly balanced coin) then $H(\rv{X})$ is
 maximal. Formally, if $\rv{X}$ is a discrete variable with sample space
@@ -221,7 +221,7 @@ as follows:
     I(\rv{X}; \rv{T}) = H(\rv{T}) - H(\rv{T} | \rv{X})
 \end{equation}
 The mutual information is the loss in entropy between $\rv{T}$ and $\rv{T} |
-\rv{X}$. It is symetric, and it is always positive or null. We can generalize
+\rv{X}$. It is symmetric, and it is always positive or null. We can generalize
 this quantity to joint distributions, which gives us our new, refined version of
 view strength:
 \begin{equation}\label{eq:strength}
@@ -231,18 +231,17 @@ A view is strong if the mutual information between the target and its
 dimensions is high.
 
 In practice, we do not know the distributions of the variables $\rv{X}_n$, but
-we have access to the samples $X_n$. Therefore, we \emph{estimate}
-the strength. If the variables are discrete, we operates as follow.  We set
-$\hat{P}(\rv{X}_n = x) \approx P(\rv{X}_n = x)$ to be the proportion of tuples
-with $X_n=x$. We then ``plug'' this estimator in Equations~\ref{eq:ent-disc},
-to obtain the estimated entropy $\hat{H}(\rv{X})$. We then use this
-approximation in Equation~\ref{eq:mut-inf}.  Dealing with continuous variables
-is more difficult, for two reasons. First, estimating the density function in
-Equation~\ref{eq:ent-cont} is costly, especially with multivariate
-distributions.  Second, it is not clear how to deal with mixed datasets, e.g.
-continuous and discrete dimensions, or discrete target and continuous
-dimensions.  Therefore, Claude bins all the continuous variables, and treats
-them like discrete columns.
+we have access to the samples $X_n$. Therefore, we \emph{estimate} the
+strength. If the variables are discrete, we set $\hat{P}(\rv{X}_n = x)$ to be
+the proportion of tuples with $X_n=x$. We then ``plug'' this estimator in
+Equations~\ref{eq:ent-disc}, to obtain the estimated entropy $\hat{H}(\rv{X})$.
+We then use this approximation in Equation~\ref{eq:mut-inf}.  Dealing with
+continuous variables is more difficult, for two reasons. First, estimating the
+density function in Equation~\ref{eq:ent-cont} is costly, especially with
+multivariate distributions.  Second, it is not clear how to deal with mixed
+datasets, e.g.  continuous and discrete dimensions, or discrete target and
+continuous dimensions.  Therefore, Claude bins all the continuous variables,
+and treats them like discrete columns.
 
 \subsection{Points of Interest and Divergence}
 Let us now refine our definition of divergence. We established that the
@@ -272,12 +271,12 @@ The average divergence of the cells $\delta(\mathbf{x})$ equals the strength of
 the view  $\sigma(V)$.}
 \label{fig:binningexample}
 \end{figure}
-In fact, view strength and POI divergence are closely related.  Consider a
-view $V$.  If $V's$ dimensions are continuous, we bin them. If we compute the
-divergence of each tuple and average the results, we obtain the $V$'s strength.
-We illustrate this property with Figure~\ref{fig:binningexample}.  Therefore,
-strength and divergence are ``two sides of the same coin''. We formalize this
-property with the lemma below.
+In our model, view strength and POI divergence are closely related.  Consider a
+view $V$, made of discrete variables. If we compute the divergence of each
+tuple and average the results, we obtain the $V$'s strength.  We illustrate
+this property with Figure~\ref{fig:binningexample}.  Therefore, strength and
+divergence are ``two sides of the same coin''. We formalize this property with
+the lemma below.
 \begin{lemma}
     If $V$ is a view with $d$ discrete variables and $\mathbf{x} \in \Omega_1
     \times \ldots \Omega_D$ is a tuple from this view, then:
@@ -286,16 +285,17 @@ property with the lemma below.
     \end{equation}
 \end{lemma}
 \begin{proof}
-    The random vector $\mathbf{X}$ describes a random tuple from $V$.
-    Applying Bayes's theorem to Cover and Thomas, Equation
+    The random vector $\mathbf{X}$ describes the columns of $V$. Applying
+    Bayes's theorem to Cover and Thomas, Equation
     2.35~\cite{cover2012elements}, we obtain $ I(\mathbf{X} ; \rv{T})
     =\mathbb{E}_{\mathbf{x}}[ KL( T | \{\mathbf{x}\} \parallel T )]$.
     Substituting the left side with Equation~\ref{eq:strength}, and the right
     side with Equation~\ref{eq:divergence}, we obtain the lemma.
 \end{proof}
-Suppose that we obtained a view $V^*$ by discretizing a set of continuous
-variables $V$. The average divergence of the bins equals the strength of $V^*$,
-but not that of $V$. Luckily, these quantities converge as the bins get small.
+Suppose that we obtained a view $V$ by discretizing a set of continuous
+variables $V^*$. The average divergence of $V$'s bins equals the strength of $V$,
+but not that of $V^*$. Fortunately, these quantities converge as the bins get
+small.
 \begin{lemma}
     The view $V$ is a set of continuous variables, $V^b$ is a discretized
     version of $V$ in which each variable is binned with bin size $b$, and
@@ -316,24 +316,24 @@ but not that of $V$. Luckily, these quantities converge as the bins get small.
 
 \section{Approximate View Strength}
 \label{sec:approximate}
-We now have a formal objective: we want to find the top $K$ views with the
-highest strength. At this point, we could easily envision a greedy heuristic to
-solve this task. We start with simple views, based on one dimension. We then
-add columns, one by one.  To test if a column $X$ is worth adding to a view
-$V$, it computes the strength $\sigma(V \cup \{X\})$. If the result is high
-enough, we keep the candidate. If not, we discard it. We will indeed present
-such an algorithm in Section~\ref{sec:column}. However, we first present a
-computational shortcut to obtain $\sigma(V \cup \{X\})$.
+We now have a functional definition of view strength.  At this point, we could
+easily envision a greedy heuristic to detect the top $K$ views in a database.
+We start with simple views, based on one dimension. We then add columns, one by
+one.  To test if a column $X$ is worth adding to a view $V$, it computes the
+strength $\sigma(V \cup \{X\})$. If the result is high enough, we keep the
+candidate. If not, we discard it. We will indeed present such an algorithm in
+Section~\ref{sec:column}. However, we first present a computational shortcut to
+obtain $\sigma(V \cup \{X\})$.
 
-We established several ways to compute the strength of a view, with
-Equations~\ref{eq:strength} and~\ref{eq:coin}. Nevertheless, none of these
-approaches fit incremental algorithms.  Suppose that we wish to compute the
-strength of a view $V$, and then the strength of another view $V \cup \{X\}$.
-Equations~\ref{eq:strength} and~\ref{eq:coin} give us no opportunity to share
-computations.  We must compute $\sigma(V)$ and $\sigma(V \cup \{X\})$
-separately. To make things worse, both expressions are expensive, as they
-involve group-by queries over the whole database. Therefore, we need to derive
-a new \emph{recursive} formulation for the strength of a view:
+Equations~\ref{eq:strength} and~\ref{eq:coin} describe several methods to
+compute the strength of a view. Nevertheless, none of those fit incremental
+algorithms.  Suppose that we wish to compute the strength of a view $V$, and
+then the strength of another view $V \cup \{X\}$.  Equations~\ref{eq:strength}
+and~\ref{eq:coin} give us no opportunity to share computations.  We must
+compute $\sigma(V)$ and $\sigma(V \cup \{X\})$ separately. To make things
+worse, both expressions are expensive, as they involve group-by queries over
+the whole database. Therefore, we need to derive a new \emph{recursive}
+formulation for the strength of a view:
 \begin{lemma}\label{lem:chain}
 Consider a view $V = \{X_1, \ldots, X_i\}$, and a target $T$.
 For any column $X_{i+1}$: 
