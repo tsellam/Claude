@@ -24,7 +24,7 @@ the measure.  We want to synthesize SQL queries which highlight what causes
 crime to vary, and how these variations occur. Given such queries, even
 unexperienced users could explore their data and detect unexpected patterns.
 
-We believe that this problem is extremely common both in business and science,
+We believe that this problem is extremely common in both business and science,
 where multi-dimensional data warehouses have been deployed for years.
 Addressing it with an automated method would allow analysts and researchers to
 make discoveries more quickly, focusing on interpretation rather than writing
@@ -60,7 +60,7 @@ combination of dimensions, and highlight local patterns in these views. We make
 three contributions: (1) We devise a model of what makes a view
 ``interesting'', using simple notions of information theory. (2)~We present
 aggressive methods to detect good views in large data\-bases, based on
-approximations and greedy search.  (3) We apply our model to real-life
+approximations and greedy search.  (3)~We apply our model to real-life
 situations, involving either humans (data exploration by subgroup discovery) or
 automatic predictors (classification algorithms).
 
@@ -141,7 +141,7 @@ have large differences in distribution.
     Let $R\subset \Omega_1 \times \ldots \times \Omega_D$ represent a region in
     the view $\{X_1, \ldots, X_D\}$, and let $\rv{T}$ represent our target
     variable. The function $\mathfrak{D}$ measures the dissimilarity between
-    two distributions. We define the \textbf{divergence} of $R$ as follows: 
+    two probability distributions. We define $R$'s \textbf{divergence}:
 \begin{equation}\label{eq:divergencegen}
     \delta(R) = \mathfrak{D} \big( \rv{T} | R;  \rv{T}\big)
 \end{equation}
@@ -205,7 +205,7 @@ If $\rv{X}$ is continuous with density $p$, we define it as follows:
 \begin{equation}\label{eq:ent-cont}
     H(\rv{X}) = - \int_{-\infty}^{+\infty} p(x).\log{p(x)}\mathrm{d}x
 \end{equation}
-We can use entropy to describe how variables interact. If two two variables are
+We can use entropy to describe how variables interact. If two variables are
 dependent, then conditioning (e.g., restricting the range of values) on one
 variable will affect the other. In our example, cities with high unemployment
 have high levels of crime.  Therefore, conditioning on the variable
@@ -224,9 +224,9 @@ The mutual information is the loss in entropy between $\rv{T}$ and $\rv{T} |
 \rv{X}$. It is symmetric, and it is always positive or null. We can generalize
 this quantity to joint distributions, which gives us our new, refined version of
 view strength:
-\begin{equation}\label{eq:strength}
+\begin{equation}\label{eq:strength}\bm{
     \sigma(V) = I(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})
-\end{equation}
+}\end{equation}
 A view is strong if the mutual information between the target and its
 dimensions is high.
 
@@ -245,7 +245,7 @@ and treats them like discrete columns.
 
 \subsection{Points of Interest and Divergence}
 Let us now refine our definition of divergence. We established that the
-divergence of a POI is the dissimilarity between target's distribution
+divergence of a POI is the dissimilarity between the target's distribution
 \emph{within this POI}, and the target's distribution \emph{in the whole
 database}.  To measure this dissimilarity, we use the~\emph{Kullback-Leibler
 divergence}~(KL).  The KL divergence measures the difference between two
@@ -260,9 +260,9 @@ $\Omega$, we have:
 As Claude discretizes the continuous variables, we ignore the continuous case
 (cf.  Section~\ref{sec:view-strength}). Our region $R$ is a good point of
 interest if $KL ( \rv{T} |R \parallel \rv{T} )$ is as large as possible:
-\begin{equation}\label{eq:divergence}
+\begin{equation}\label{eq:divergence}\bm{
     \delta(R) = KL \big( \rv{T} | R \parallel \rv{T}\big)
-\end{equation}
+}\end{equation}
 \begin{figure}[t!]
 \centering
 \includegraphics[width=0.4\columnwidth]{images/3Dtest}
@@ -319,21 +319,20 @@ small.
 We now have a functional definition of view strength.  At this point, we could
 easily envision a greedy heuristic to detect the top $K$ views in a database.
 We start with simple views, based on one dimension. We then add columns, one by
-one.  To test if a column $X$ is worth adding to a view $V$, it computes the
+one.  To test if a column $X$ is worth adding to a view $V$, we compute the
 strength $\sigma(V \cup \{X\})$. If the result is high enough, we keep the
 candidate. If not, we discard it. We will indeed present such an algorithm in
 Section~\ref{sec:column}. However, we first present a computational shortcut to
 obtain $\sigma(V \cup \{X\})$.
 
 Equations~\ref{eq:strength} and~\ref{eq:coin} describe several methods to
-compute the strength of a view. Nevertheless, none of those fit incremental
-algorithms.  Suppose that we wish to compute the strength of a view $V$, and
-then the strength of another view $V \cup \{X\}$.  Equations~\ref{eq:strength}
-and~\ref{eq:coin} give us no opportunity to share computations.  We must
-compute $\sigma(V)$ and $\sigma(V \cup \{X\})$ separately. To make things
-worse, both expressions are expensive, as they involve group-by queries over
-the whole database. Therefore, we need to derive a new \emph{recursive}
-formulation for the strength of a view:
+compute the strength of a view. Nevertheless, none of these fit ite\-rative 
+algorithms.  Suppose that we wish to compute the strength of a view $V$, 
+then the strength of another view $V \cup \{X\}$. These equations give us no
+opportunity to share computations,  We must obtain $\sigma(V)$ and $\sigma(V
+\cup \{X\})$ separately. Furthermore, both expressions are expensive, as they
+involve group-by queries over the whole database. Therefore, we need an
+alternative \emph{recursive} formulation for the strength of a view:
 \begin{lemma}\label{lem:chain}
 Consider a view $V = \{X_1, \ldots, X_i\}$, and a target $T$.
 For any column $X_{i+1}$: 
@@ -362,9 +361,9 @@ positive or null, and it is bounded by the entropy of $\rv{X}_j$ and $T$.
 
 Unfortunately, we cannot directly exploit Lemma~\ref{lem:chain} in our
 algorithm: estimating $I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_1 , \ldots, \rv{X}_i)$
-is as expensive as computing $\sigma(V \cup \{X_{i+1}\}) $ directly.  However,
-we can use an approximation.  Recall that $V = \{X_1, \ldots, X_i\}$, we
-exploit the following observation:
+for every candidate $\{X_1, \ldots, X_{i+1}\}$ is as expensive as computing
+the strength directly.  However, we can use an approximation.
+Recall that $V = \{X_1, \ldots, X_i\}$, we exploit the following observation:
 \begin{equation}\label{eq:approx}
 \begin{split}
     \sigma(V \cup \{X_{i+1}\}) & = \sigma(V)   + I(\rv{X}_{i+1} ; \rv{T} |
