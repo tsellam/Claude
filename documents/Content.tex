@@ -40,7 +40,7 @@ universal measure of inte\-restingness. The challenge is to devise a
 theoretically well-founded model, general enough to cover a wide range of use
 cases. The second problem is efficiency: given a measure of interest, how can
 we explore the space of all database queries quickly enough to support large
-datasets? We have to design efficient methods to traverse all possible
+datasets? We must design efficient methods to traverse all possible
 combinations of dimensions.
 
 Several semi-automated exploration frameworks were proposed in the
@@ -108,7 +108,7 @@ interesting because their combination influences the target \texttt{Crime}. We
 can measure this relationship with statistical dependence. This is the most
 basic assumption behind our study: a view is interesting if its dimensions are
 \emph{jointly dependent} to the measure. We evaluate the degree of this
-dependence as our notion of \textbf{view strength}. 
+dependence with our notion of \textbf{view strength}. 
 \begin{definition}
     Consider a view $V = \{X_1, \ldots, X_D\}$, the target $T$, and measure of
     statistical dependence $\mathfrak{S}$.   We
@@ -175,8 +175,8 @@ POI, and $T$ represents the target.
 \section{Interestingness Model}
 \label{sec:formalization}
 We presented views and POIs without specifying any measure of dependence
-$\mathfrak{S}$ or dissimilarity $\mathfrak{D}$. In the following we instantiate these
-quantities by fundamental information theory.
+$\mathfrak{S}$ or dissimilarity $\mathfrak{D}$. In the following section, we
+instantiate these quantities using fundamental information theory.
 
 \subsection{View Strength}
 \label{sec:view-strength}
@@ -238,7 +238,7 @@ and treats them like discrete columns.
 \subsection{Points of Interest and Divergence}
 Let us now refine our definition of divergence. We established that the
 divergence of a POI is the dissimilarity between the target's distribution
-within this \emph{POI}, and the target's distribution in the whole
+within this POI, and the target's distribution in the whole
 database.  To measure this dissimilarity, we use the~\emph{Kullback-Leibler
 divergence}~(KL).  The KL divergence measures the difference between two
 probability distributions. It is null if the two distributions are similar, and
@@ -390,11 +390,11 @@ Previously, computing $\sigma(V \cup \{X_{i+1}\})$ involved heavy groupings and
 aggregations on the whole dataset.  Now, we simply perform a lookup in a graph
 with $N$ edges, where $N$ is the number of columns in the database.
 
-Please note, that our approximation has a drawback: it depends on the order in which we include
-the variables in the view. If we enrich a view by successively adding variables
-$X_1$, $X_2$ and $X_3$, then we obtain a different strength than if we
-incorporate $X_3$, $X_2$ then $X_1$. Similarly, in Equation~\ref{eq:approx}, we
-obtain different approximations if we change the indexing of the dimensions
+Note that our approximation has a drawback: it depends on the order in which we
+include the variables in the view. If we enrich a view by successively adding
+variables $X_1$, $X_2$ and $X_3$, then we obtain a different strength than if
+we incorporate $X_3$, $X_2$ then $X_1$. Similarly, in Equation~\ref{eq:approx},
+we obtain different approximations if we change the indexing of the dimensions
 $\rv{X}_1, \ldots, \rv{X}_i$.  For more robustness, we introduce a
 ``pessimistic'' variant:
 \begin{equation}\label{eq:robustapprox}
