@@ -22,7 +22,7 @@ impossible. But important observations could hide behind unexpected dependencies
 Our aim is to automatically \emph{generate hypotheses} about what influences
 the measure.  We want to synthesize SQL queries which highlight what causes
 crime to vary, and how these variations occur. Given such queries, even
-unexperienced users could explore their data and detect unexpected patterns.
+lay users could explore their data and detect unexpected patterns.
 
 We believe that this problem is extremely common in both business and science,
 where multi-dimensional data warehouses have been deployed for years.
@@ -31,7 +31,7 @@ make discoveries more quickly, focusing on interpretation rather than writing
 queries. Such a technique could also provoke serendipitous findings, e.g.,
 highlighting a surprising correlation or confronting an ill-posed hypothesis.
 Besides, the problem is getting more pressing as data warehouses grow in size
-and complexity: manual exploration can turn to be out a painful a exercise when
+and complexity: manual exploration can turn out to be a painful exercise when
 dealing with hundreds of columns.
 
 Automating data exploration is a difficult problem for two reasons.  First, how
@@ -40,8 +40,8 @@ universal measure of inte\-restingness. The challenge is to devise a
 theoretically well-founded model, general enough to cover a wide range of use
 cases. The second problem is efficiency: given a measure of interest, how can
 we explore the space of all database queries quickly enough to support large
-datasets? We must design efficient methods to traverse all the possible
-combinations of all dimensions.
+datasets? We have to design efficient methods to traverse all possible
+combinations of dimensions.
 
 Several semi-automated exploration frameworks were proposed in the
 past, in the context of OLAP data cubes~\cite{sarawagi1998discovery,
@@ -50,15 +50,14 @@ dozen well-known dimensions.  The whole challenge was to drill-in correctly, in
 order to locate ``exceptions'', e.g., local anomalies. We believe that many of
 these assumptions do not hold anymore. In our model, databases can contain more
 than a hundred dimensions with mixed types. Analysts have little to no
-knowledge about the effects of these, even less about their combination.
-Therefore, we seek \emph{macro}-deviations: our challenge is to depict a
-general picture of how the measure varies across any possible view on the database.
+knowledge about the effects of these dimensions, even less about their combination and their effect on a given measure.
+Therefore, our challenge is to depict a general picture of how the measure varies across any possible view on the database.
 
 In this paper, we introduce \textit{Claude}, a hypothesis generator for data
 warehouses. Claude's aim is to detect interesting views, i.e., interesting
 combination of dimensions, and highlight local patterns in these views. We make
-three contributions: (1) We devise a model of what makes a view
-``interesting'', using simple notions of information theory. (2)~We present
+three contributions: (1) We derive a model of what makes a view
+``interesting'' from fundamental information theory. (2)~We present
 aggressive methods to detect good views in large data\-bases, based on
 approximations and greedy search.  (3)~We apply our model to real-life
 situations, involving either humans (data exploration by subgroup discovery) or
@@ -79,16 +78,16 @@ conclude in Section~\ref{sec:conclusion}.
 \begin{figure}[t!]
 \centering
 \includegraphics[width=\columnwidth]{images/Overview}
-\caption{Example of view, with two points of interest. All the values
+\caption{Example view, with two points of interest. All values
 are normalized.}
 \label{fig:overview}
 \end{figure}
-Let us define our setting. We reduce our database to a flat table $DB$. This
+Let us define our problem setting. We assume data to be given in flat database table $DB$. This
 table contains two types of columns: the \emph{dimensions} $X_0, \ldots, X_N$
 and a \emph{measure} (or \emph{target})~$T$. This model is logical, we
 are oblivious to the physical structure of the data. Our aim is to describe how
 the measure varies across the dimensions. To do so, we want to detect
-\textbf{views}, that is, \emph{interesting} selections of dimensions. We also
+\textbf{views}, i.e.\ \emph{interesting} selections of dimensions. We also
 want to show \emph{why} these views are interesting, by detecting
 \textbf{points of interests} (POI). A point of interest is a region in the view
 where the measure behaves unusually.
@@ -97,11 +96,11 @@ We demonstrate these notions with a running example. We want to understand what
 causes crime in US communities. We have a database of cities with several dozen
 socio-economic indicators (for instance, employment, age, or diplomas). For
 each city we also have the annual number of violent crimes: this is our target
-variable. Figure~\ref{fig:overview} presents an example of view. The leftmost
+variable. Figure~\ref{fig:overview} presents an example view. The leftmost
 scatterplot pictures the dimensions \texttt{Unemployment} and
 \texttt{Population Density}. Why did Claude pick these two columns? The two
 POIs provide explanations. Cities with high densities and high unemployment
-rates have more crimes (cf. $POI_1$).  Oppositely, cities with low densities
+rates have more crimes (cf. $POI_1$).  In contrast, cities with low densities
 and lower employment rates tend to be safer (cf.  $POI_2$).
 
 In our example, \texttt{Unemployment} and \texttt{Population Density} are
@@ -109,9 +108,7 @@ interesting because their combination influences the target \texttt{Crime}. We
 can measure this relationship with statistical dependence. This is the most
 basic assumption behind our study: a view is interesting if its dimensions are
 \emph{jointly dependent} to the measure. We evaluate the degree of this
-dependence with the \textbf{view strength}. In the remainder of this paper, we
-will assume that each database column $X$ contains samples from a random
-variable $\rv{X}$.
+dependence as our notion of \textbf{view strength}. 
 \begin{definition}
     Consider a view $V = \{X_1, \ldots, X_D\}$, the target $T$, and measure of
     statistical dependence $\mathfrak{S}$.   We
@@ -120,9 +117,7 @@ variable $\rv{X}$.
         \sigma(V) = \mathfrak{S}(\rv{X}_1, \ldots, \rv{X}_D ; \rv{T})
     \end{equation}
 \end{definition}
-The statistics literature provides several dependence measures, with different
-qualitative properties (e.g., the correlation coefficient). We will present our
-approach Section~\ref{sec:formalization}.
+We assume that each database column $X$ contains samples from a random variable $\rv{X}$ and measure the dependence accordingly. 
 
 Observe the two POIs in Figure~\ref{fig:overview}.  The measure's distribution
 in these regions differs from its distribution in the rest of the database: it
@@ -146,11 +141,10 @@ have large differences in distribution.
     \delta(R) = \mathfrak{D} \big( \rv{T} | R;  \rv{T}\big)
 \end{equation}
 \end{definition}
-Here again, the statistics literature provides several options to instantiate
-$\mathfrak{D}$ (e.g., the difference of the means). We will present our method
-in Section~\ref{sec:formalization}.
+%Here again, the statistics literature provides several options to instantiate $\mathfrak{D}$ (e.g., the difference of the means). 
 
-We are now ready to formulate our problem:
+
+Before we present details on our instantiations of strength and divergence in Section~\ref{sec:formalization}, we formulate our general problem statement as follows:
 \begin{problem}
 Consider a dataset $DB$, a target column $T$, a measure of statistical
 dependence $\mathfrak{S}$ and a measure of distribution dissimilarity
@@ -181,35 +175,33 @@ POI, and $T$ represents the target.
 \section{Interestingness Model}
 \label{sec:formalization}
 We presented views and POIs without specifying any measure of dependence
-$\mathfrak{S}$ or dissimilarity $\mathfrak{D}$. We now instantiate these
-quantities with elements from information theory.
+$\mathfrak{S}$ or dissimilarity $\mathfrak{D}$. In the following we instantiate these
+quantities by fundamental information theory.
 
 \subsection{View Strength}
 \label{sec:view-strength}
 A set of dimensions is interesting if its columns are jointly dependent to the
-target. To quantify this dependence, we use the~\emph{mutual information}. This
+target. To quantify this dependence, we use \emph{mutual information}. This
 measure presents many advantages: it is sensible to non-linear dependences, it
-can cope with any kind variables, and it is practical to compute. We present it
-below.
-
+can cope with any kind of variables, and it is practical to compute:
 The \emph{entropy} $H(\rv{X})$ of a variable $\rv{X}$ describes its
 variabi\-lity~\cite{cover2012elements}. If $\rv{X}$ has a constant value, then $H(\rv{X}) = 0$.
-Oppositely, if $\rv{X}$ is highly unpredictable (e.g., $\rv{X}$ is
+In contrast, if $\rv{X}$ is highly unpredictable (e.g., $\rv{X}$ is
 the outcome of flipping a perfectly balanced coin) then $H(\rv{X})$ is
 maximal. Formally, if $\rv{X}$ is a discrete variable with sample space
 $\Omega$, then we have:
 \begin{equation}\label{eq:ent-disc}
-    H(\rv{X}) = - \sum_{x\in \Omega} P(\rv{X} = x).\log{P(\rv{X} = x)}
+    H(\rv{X}) = - \sum_{x\in \Omega} P(\rv{X} = x) \cdot \log{P(\rv{X} = x)}
 \end{equation}
 If $\rv{X}$ is continuous with density $p$, we define it as follows:
 \begin{equation}\label{eq:ent-cont}
-    H(\rv{X}) = - \int_{-\infty}^{+\infty} p(x).\log{p(x)}\mathrm{d}x
+    H(\rv{X}) = - \int_{-\infty}^{+\infty} p(x) \cdot \log{p(x)}\mathrm{d}x
 \end{equation}
 We can use entropy to describe how variables interact. If two variables are
 dependent, then conditioning (e.g., restricting the range of values) on one
 variable will affect the other. In our example, cities with high unemployment
 have high levels of crime.  Therefore, conditioning on the variable
-\texttt{Unemployment} \emph{decreases the uncertainty} of the variable
+\texttt{Unemployment} decreases the uncertainty of the variable
 \texttt{Crime}. This causes a loss in entropy, and the value of this loss is
 the mutual information.  Formally, if $\rv{X}$ and $\rv{T}$ are two
 random variables, the expression $H(\rv{T} | \rv{X} = x)$ describes the entropy
@@ -246,8 +238,8 @@ and treats them like discrete columns.
 \subsection{Points of Interest and Divergence}
 Let us now refine our definition of divergence. We established that the
 divergence of a POI is the dissimilarity between the target's distribution
-\emph{within this POI}, and the target's distribution \emph{in the whole
-database}.  To measure this dissimilarity, we use the~\emph{Kullback-Leibler
+within this \emph{POI}, and the target's distribution in the whole
+database.  To measure this dissimilarity, we use the~\emph{Kullback-Leibler
 divergence}~(KL).  The KL divergence measures the difference between two
 probability distributions. It is null if the two distributions are similar, and
 it grows when the distributions differ.  Formally, if $\mathcal{X}$ and
@@ -255,7 +247,7 @@ $\mathcal{Y}$ are two discrete random variables with the same sample space
 $\Omega$, we have:
 \begin{equation}\label{eq:KL_disc} 
     KL\big( \mathcal{X} \parallel \mathcal{Y} \big) = 
-    \sum_{x\in \Omega} P(\rv{X} = x).\log{\frac{P(\rv{X} = x)}{P(\rv{Y} = x)}} 
+    \sum_{x\in \Omega} P(\rv{X} = x) \cdot \log{\frac{P(\rv{X} = x)}{P(\rv{Y} = x)}} 
 \end{equation}
 As Claude discretizes the continuous variables, we ignore the continuous case
 (cf.  Section~\ref{sec:view-strength}). Our region $R$ is a good point of
@@ -306,7 +298,7 @@ small.
     Let the $D$-dimensional random vector $\mathbf{X}$ describe the
     (continuous) variables of $V$, and $\mathbf{X}^b$ describe the (discrete)
     variables of $V^b$. By generalizing Cover and Thomas, Theorem
-    8.3.1~\cite{cover2012elements}, we infer that $H(\mathbf{X}^b) + D.\log{b}
+    8.3.1~\cite{cover2012elements}, we infer that $H(\mathbf{X}^b) + D \cdot \log{b}
     \to H(\mathbf{X})$ as $b \to 0$ .  Thus, using Equation~\ref{eq:mut-inf},
     we have $I(\mathbf{X}^b, \rv{T}) \to I(\mathbf{X}, \rv{T})$. We conclude
     that $\sigma(V^b) \to \sigma(V)$. We apply Equation~\ref{eq:coin} to obtain
@@ -321,9 +313,8 @@ easily envision a greedy heuristic to detect the top $K$ views in a database.
 We start with simple views, based on one dimension. We then add columns, one by
 one.  To test if a column $X$ is worth adding to a view $V$, we compute the
 strength $\sigma(V \cup \{X\})$. If the result is high enough, we keep the
-candidate. If not, we discard it. We will indeed present such an algorithm in
-Section~\ref{sec:column}. However, we first present a computational shortcut to
-obtain $\sigma(V \cup \{X\})$.
+candidate. If not, we discard it. We will present such an algorithm in
+Section~\ref{sec:column}. However, we first have to tackle the computational challenge of $\sigma(V \cup \{X\})$.
 
 Equations~\ref{eq:strength} and~\ref{eq:coin} describe several methods to
 compute the strength of a view. Nevertheless, none of these fit ite\-rative 
@@ -393,13 +384,13 @@ information. The co-dependency graph is oriented and weighted.  Online, we run
 a greedy algorithm as described previously, but we use Equation~\ref{eq:approx}
 to evaluate new candidates.  To compute the strength of a view $V \cup
 \{X_{i+1}\}$ with  $V= \{X_1, \ldots, X_i\}$ , we fetch the value of  $
-I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_i)$ in the codependency graph and add it to
+I(\rv{X}_{i+1} ; \rv{T} | \rv{X}_i)$ in the co-dependency graph and add it to
 $V$'s strength. We illustrate this method in Figure~\ref{pic:codependency}.
 Previously, computing $\sigma(V \cup \{X_{i+1}\})$ involved heavy groupings and
 aggregations on the whole dataset.  Now, we simply perform a lookup in a graph
 with $N$ edges, where $N$ is the number of columns in the database.
 
-Our approximation has a drawback: it depends on the order in which we include
+Please note, that our approximation has a drawback: it depends on the order in which we include
 the variables in the view. If we enrich a view by successively adding variables
 $X_1$, $X_2$ and $X_3$, then we obtain a different strength than if we
 incorporate $X_3$, $X_2$ then $X_1$. Similarly, in Equation~\ref{eq:approx}, we
@@ -483,7 +474,7 @@ runtime. With a small beam, we evaluate less candidates, and thus terminate
 earlier. Oppositely, a large beam lets us explore more candidates.  Let us
 explain why this is necessary. At each level of the algorithm, we discard the
 views which are too weak to reach the top $B$ candidates. We assume that if a
-combination of column is weak at level $i$, then it will be weak at all
+combination of columns is weak at level $i$, then it will be weak at all
 subsequent levels.  Unfortunately, this assumption does \emph{not} hold: we can
 form strong views by combining weak columns; there are ``jumps'' in the search
 space.  Consider for instance the two classic scenarios pictured in Figure
@@ -492,13 +483,12 @@ weak: we can infer no useful information about the target from either of them.
 However, their combination is very interesting. Equivalently, the views
 $\{X_1\}$ and $\{X_2\}$ have a very poor strength, but $\{X_1, X_2\}$ is an
 excellent candidate. If the beam is too tight, we may discard $\{X_1\}$ and
-$\{X_2\}$ early because they have a low score.  This would be a mistake,
-because we lose the opportunity to discover $\{X_1, X_2\}$. Therefore, we
+$\{X_2\}$ early because of low scores.  We lose the opportunity to discover $\{X_1, X_2\}$. Therefore, we
 recommend to set $B > K$. During our experiments, we obtained excellent results
-with $B \geq 2.K$ (cf.~\ref{sec:exp-view-selection}).
+with $B \geq 2 \cdot K$ (cf.\ Section~\ref{sec:exp-view-selection}).
 
 \subsection{Approximations and Refinements}
-In total, we evaluate the strength of $B.N$ candidates for the $D$
+In total, we evaluate the strength of $B \cdot N$ candidates for the $D$
 levels of the beam search. To carry out this computation,  we can either use
 the exact formulation of strength, as shown in Equation~\ref{eq:strength}, or
 use the approximation scheme presented in Section~\ref{sec:approximate}. In
@@ -506,7 +496,7 @@ Claude's implementation, we opted for a hybrid approach. We perform the first
 two levels of search with the exact strength (which is equivalent to building
 the co-dependency graph).  Then, for all subsequent steps, we use the
 approximations. Finally, we revert to the exact strength for the top $k$
-ranking, at the very end of the procedure. Thanks to this enhancement, we
+ranking, at the very end of the procedure. Due to approximations and refinements, we
 obtain significant speed gains at little accuracy cost.
 
 \subsection{Deduplication}
@@ -516,7 +506,7 @@ obtain significant speed gains at little accuracy cost.
 \centering
 \includegraphics[width=\columnwidth]{images/deduplication}
 \caption{Beam search augmented with a deduplication step. We display in italic
-the size of the intermediate results. Note that $N.B \geq B' \geq B$.}
+the size of the intermediate results. Note that $N \cdot B \geq B' \geq B$.}
 \label{pic:deduplication}
 \end{figure}
 Our algorithm seeks strong views. In some cases however, it may be preferable
@@ -549,7 +539,7 @@ literature for more details~\cite{kaufman2009finding}.
 We previously described how to find strong views. We now
 explain how to identify $P$ points of interests for each of these views. 
 
-Fortunately, finding POIs is an instance of a known problem called
+We instantiate POIs by a well-known analysis called
 \emph{subgroup discovery}~\cite{klosgen1996explora, wrobel1997algorithm}, which
 can be formulated as follows: given a set of tuples, a target column and a
 measure of exceptionality, detect sets of tuples for which the target behaves
