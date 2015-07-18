@@ -1,4 +1,19 @@
-\documentclass{sig-alternate}
+\documentclass{sig-alternate-2013}
+
+\newfont{\mycrnotice}{ptmr8t at 7pt}
+\newfont{\myconfname}{ptmri8t at 7pt}
+\let\crnotice\mycrnotice%
+\let\confname\myconfname%
+
+\permission{Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. Copyrights for components of this work owned by others than ACM must be honored. Abstracting with credit is permitted. To copy otherwise, or republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. Request permissions from Permissions@acm.org.}
+\conferenceinfo{CIKM'15,}{October 19--23, 2015, Melbourne, Australia.} 
+\copyrightetc{\copyright~2015 ACM. ISBN \the\acmcopyr}
+\crdata{978-1-4503-3794-6/15/10\ ...\$15.00.\\
+DOI: http://dx.doi.org/10.1145/2806416.2806538}
+
+\clubpenalty=10000 
+\widowpenalty = 10000
+
 
 \usepackage{graphicx}
 \usepackage{caption}
@@ -11,8 +26,6 @@
 \usepackage{color}
 \usepackage{tabulary}
 \usepackage[table]{xcolor}
-%\definecolor{red}{RGB}{242,175,173}
-%\definecolor{grn}{RGB}{217,228,170}
 
 \usepackage{bm}
 
@@ -28,21 +41,21 @@
 \title{Semi-Automated Exploration of Data Warehouses}
 
 
-%\numberofauthors{3}
-%\author{
-%\alignauthor
-%Thibault Sellam\\
-%       \affaddr{CWI}\\
-%       \email{thibault.sellam@cwi.nl}
-%\alignauthor
-%Emmanuel M\"uller\\
-%       \affaddr{KIT}\\
-%       \email{emmanuel.mueller@kit.edu}
-%\alignauthor
-%Martin Kersten\\
-%       \affaddr{CWI}\\
-%       \email{martin.kersten@cwi.nl}
-%}
+\numberofauthors{3}
+\author{
+\alignauthor
+Thibault Sellam\\
+       \affaddr{CWI\\Amsterdam, the Netherlands}\\
+       \email{thibault.sellam@cwi.nl}
+\alignauthor
+Emmanuel M\"uller\\
+    \affaddr{KIT\\Karlsruhe, Germany}\\
+     \email{emmanuel.mueller@kit.edu}
+\alignauthor
+Martin Kersten\\
+       \affaddr{CWI\\Amsterdam, the Netherlands}\\
+       \email{martin.kersten@cwi.nl}
+}
 
 \maketitle
 
@@ -59,10 +72,20 @@ model of interestingness from fundamental information theory. To exploit this
 model, we present aggressive approximations and heuristics, allowing Claude to
 be fast and more accurate than state-of-art view selection algorithms. 
 \end{abstract}
+
+
+\category{H.2.8}{Database Applications}{Data mining}
+\keywords{Data exploration; Query recommendation; Feature selection; Subgroup
+discovery}
+
 \input{Content}
 
+\section{Acknowledgements}
+This publication was supported by the Dutch national program COMMIT.
+
 \bibliographystyle{abbrv}
-\bibliography{TurboGroups}
-\balancecolumns
+%\balance
+{ \small  \bibliography{TurboGroups} 
+}
 
 \end{document}

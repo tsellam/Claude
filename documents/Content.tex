@@ -257,7 +257,7 @@ interest if $KL ( \rv{T} |R \parallel \rv{T} )$ is as large as possible:
 }\end{equation}
 \begin{figure}[t!]
 \centering
-\includegraphics[width=0.4\columnwidth]{images/3Dtest}
+\includegraphics[width=0.5\columnwidth]{images/3Dtest}
 \caption{Example of view with three discrete variables $V = \{X_1, X_2, X_3\}$.
 The average divergence of the cells $\delta(\mathbf{x})$ equals the strength of
 the view  $\sigma(V)$.}
@@ -369,7 +369,7 @@ assumption, we can compute the strength of our candidates much faster.
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=0.4\columnwidth]{images/codependency}
+\includegraphics[width=0.45\columnwidth]{images/codependency}
 \caption{Example of co-dependency graph with 5 dimensions. To approximate the
 strength of $V \cup \{X_5\}$, we add the weight of edge $(X_4, X_5)$ to V's
 strength -  in this case 0.5.}
@@ -551,10 +551,14 @@ the subgroup discovery problem with beam search.  Let $V$ represent the view to
 analyze. As the variables are binned, can form a grid over $V$, as shown in
 Figure~\ref{fig:binningexample}. We denote by $b$ the number of bins for each
 variable. To initialize the algorithm, we compute the divergence of each cell
-and keep the top $B_{POI}$ most divergent. We obtain our beam. We then ``drill
-into'' each of these cells: we decompose them into smaller cells by splitting
-the edges into $b$ bins. We evaluate the new candidates and keep the top
-$B_{POI}$ most divergent. We reiterate until the algorithm converges.
+and keep the top $B_{POI}$ most divergent. We obtain our beam. We then
+``drill'' into each of these cells: we decompose them into smaller cells by
+splitting the edges into $b$ bins. We evaluate the new candidates and keep the
+top $B_{POI}$ most divergent. We reiterate until the algorithm converges. As
+shown in the subgroup discovery literature~\cite{wrobel1997algorithm,
+van2011non}, we can generalize this method to binary and nominal data. For each
+distinct level $x_i$ of a variable $X$, we create two groups: tuples for which
+$X = x_i$, and tuples for which $X \neq x_i$.
 
 In practice, KL-based approaches tends to favor smaller regions. Therefore,
 Beam Search may converge late, or not at all. A practical solution is to set a
@@ -623,24 +627,24 @@ $\sigma_{norm}(V) = \sigma(V) / H(V)$.
 \end{table}
 \begin{figure}[t!]
     \centering
-    \begin{subfigure}[b]{0.45\columnwidth}
+    \begin{subfigure}[b]{0.42\columnwidth}
     \includegraphics[width=\textwidth]{plots/crime1}
     \end{subfigure}
-    \begin{subfigure}[b]{0.45\columnwidth}
+    \begin{subfigure}[b]{0.42\columnwidth}
     \includegraphics[width=\textwidth]{plots/crime2}
     \end{subfigure}
 
-    \begin{subfigure}[b]{0.45\columnwidth}
+    \begin{subfigure}[b]{0.42\columnwidth}
     \includegraphics[width=\textwidth]{plots/crime3}
     \end{subfigure}
-    \begin{subfigure}[b]{0.45\columnwidth}
+    \begin{subfigure}[b]{0.42\columnwidth}
     \includegraphics[width=\textwidth]{plots/crime4}
     \end{subfigure}
     
-    \begin{subfigure}[b]{0.45\columnwidth}
+    \begin{subfigure}[b]{0.42\columnwidth}
     \includegraphics[width=\textwidth]{plots/crime5}
     \end{subfigure}
-    \begin{subfigure}[b]{0.45\columnwidth}
+    \begin{subfigure}[b]{0.42\columnwidth}
     \includegraphics[width=\textwidth]{plots/crime6}
     \end{subfigure}
 \caption{Heatmaps of the US Crime Dataset, based on Claude's output. Each box
@@ -671,7 +675,7 @@ of 0.51. which means that these three variables contain 51\% of the target's
 information. The columns \texttt{Police. Overtime} and \texttt{Pct.White.Race}
 respectively describe the average time overworked by the police and the
 percentage of caucasian population. The third variable,
-\texttt{Pct.Vacant.Boarded} was surprising to us: it describes the
+\texttt{Pct.Vacant.Boar\-ded} was surprising to us: it describes the
 percentage of vacant houses which are boarded up.  How does this relate to
 crime? We could assume that boarded houses are associated with long term
 abandon, and thus, poverty. The top-left plot of Figure \ref{pic:crime_charts}
@@ -729,10 +733,25 @@ under $10^{-3}$, this gives us excellent confidence that the strength
 influences positively the prediction accuracy. In conclusion, strong views are
 indeed more instructive.
 
-
 \subsection{View Selection}
-\label{sec:exp-view-selection} 
-
+\label{sec:exp-view-selection}
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=1.75\columnwidth]{plots/view-scores}
+\caption{Performance of the View Selection algorithms. For each data set, we
+    generate $q$ views, train a 5-NN classifier over the columns of each view
+    and report the classification accuracy (F1, 5-fold cross validation). The
+    points represent median scores, the bars represent the lowest and greatest
+    scores.} 
+\label{pic:column-select-score}
+\end{figure*}
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=1.75\columnwidth]{plots/view-times}
+\caption{Execution time of the View Selection algorithms. A \texttt{X} symbol
+indicates that the experiment did not finish within 3,600 seconds.}
+\label{pic:column-select-time}
+\end{figure*} 
 We now evaluate Claude's output and runtime in detail. In this section, we
 verify if Claude's algorithm produces good views in a short amount of time. To
 do so, we compare it to four methods, three of which come from the machine
@@ -783,23 +802,6 @@ lasted more than 1 hour. Our test system is based on a 3.40 GHz Intel(R)
 Core(TM) i7-2600 processor. It is equipped with 16 GB RAM, but the Java heap
 space is limited to 8 GB. The operating system is Fedora 16. 
 
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=1.8\columnwidth]{plots/view-scores}
-\caption{Performance of the View Selection algorithms. For each data set, we
-    generate $q$ views, train a 5-NN classifier over the columns of each view
-    and report the classification accuracy (F1, 5-fold cross validation). The
-    points represent median scores, the bars represent the lowest and greatest
-    scores.} 
-\label{pic:column-select-score}
-\end{figure*}
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=1.8\columnwidth]{plots/view-times}
-\caption{Execution time of the View Selection algorithms. A \texttt{X} symbol
-indicates that the experiment did not finish within 3,600 seconds.}
-\label{pic:column-select-time}
-\end{figure*}
 
 \textbf{Accuracy.} In Figure \ref{pic:column-select-score}, we compare the
 quality of the views returned by each algorithm. For each competitor, we
@@ -823,12 +825,12 @@ experiments. The algorithms \texttt{Exact} and \texttt{Wrap 5-NN} are orders of
 magnitude slower than the other approaches. The remaining three approaches are
 comparable: depending on the datasets, either \texttt{Clique} or \texttt{4S}
 come first. Claude comes first for \texttt{MuskMolecules}, and close
-second for all the other datasets. We conclude that Claude is compairable to
+second for all the other datasets. In conclusion, Claude is comparable to
 its competitors in terms of runtime, but it generates better views.
 
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\columnwidth]{plots/view-vary-beam}
+\includegraphics[width=0.95\columnwidth]{plots/view-vary-beam}
 \caption{Impact of the beam size on the execution time and view strength. For
 each dataset, we generated 25 views with beam size 25, 50, 100 and 250. The
 points represent the medium scores, the bars represent the lowest and greatest
@@ -837,13 +839,28 @@ scores.}
 \end{figure}
 \begin{figure}[t!]
 \centering
-\includegraphics[width=\columnwidth]{plots/view-vary-diversification}
+\includegraphics[width=0.95\columnwidth]{plots/view-vary-diversification}
 \caption{Impact of the deduplication. We generated 25 views for each dataset.
 The y-axis presents the average Jaccard dissimilarity between every pair of
 views.}
 \label{pic:view-diversification}
 \end{figure}
-\textbf{Impact of the beam size.} Figure~\ref{pic:view-beam} shows the impact
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=1.75\columnwidth]{plots/POI-score}
+\caption{Quality of the Point of Interests. For each view, we detect $P=10$
+POIs. The
+    points represent median scores, the bars represent the lowest and greatest
+    scores.}
+\label{pic:POI-quali}
+\end{figure*}
+\begin{figure*}[t!]
+\centering
+\includegraphics[width=1.75\columnwidth]{plots/POI-timing}
+\caption{Execution time of the POI detection. A \texttt{X} symbol
+indicates that the experiment did not finish within 7,200 seconds.}
+\label{pic:POI-time}
+\end{figure*}\textbf{Impact of the beam size.} Figure~\ref{pic:view-beam} shows the impact
 of the beam size $B$ on Claude's performance, for 4 databases. To obtain these
 plots, we ran Claude with $K=25$ and $D=5$, and varied $B$ between 25 and 250.
 We observe that smaller beams lead to lower execution times, while larger beam
@@ -861,22 +878,7 @@ all four cases, but with different levels of efficiency. In the
 \texttt{BankMarketing} case, our strategy almost doubles the pairwise
 dissimilarity of the views. The effect is much lighter on datasets with few
 columns, such as \texttt{USCensus} and \texttt{MAGICTelescope}.
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=1.8\columnwidth]{plots/POI-score}
-\caption{Quality of the Point of Interests. For each view, we detect $P=10$
-POIs. The
-    points represent median scores, the bars represent the lowest and greatest
-    scores.}
-\label{pic:POI-quali}
-\end{figure*}
-\begin{figure*}[t!]
-\centering
-\includegraphics[width=1.8\columnwidth]{plots/POI-timing}
-\caption{Execution time of the POI detection. A \texttt{X} symbol
-indicates that the experiment did not finish within 7,200 seconds.}
-\label{pic:POI-time}
-\end{figure*}
+
 
 \subsection{POI Detection}
 \label{sec:exp-poi}
