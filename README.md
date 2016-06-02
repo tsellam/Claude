@@ -1,9 +1,7 @@
 This repository holds ideas and experiments for the turbo Subgroup Discovery
 project. Here are the folders:
 
--  code: Java code. Currently, there is an implementation of classic Beam
-   Search. It is is not useful as such, but the idea was to get a "feel" for the
-   algorithm. Maybe it can be reused for the experiments.
+-  code: contains the R code for view search.
 
 -  data: the cereal data set, from
    http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html
