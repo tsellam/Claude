@@ -6,6 +6,6 @@ This repository contains code, papers and experiments for the Claude project. Th
 
 -  documents: the papers to be written.
 
--  data: the cereal data set, from
-   http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html
+-  data: scripts to download and clean data from the UCI repo. Additionally, the cereal data set, from
+   http://lib.stat.cmu.edu/DASL/Datafiles/Cereals.html -
    Useful for breakfast inspiration.
