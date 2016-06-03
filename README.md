@@ -1,6 +1,8 @@
-This repository contains code, papers and experiments for the Claude project. The directories are organizes as follows:
+This repository contains code, papers and experiments for the Claude project. The directories are organized as follows:
 
 -  code: contains the code - mostly R, a little bit of C and some Java.
+
+-  experiments: benchmark and experiments used for CIKM paper
 
 -  documents: the papers to be written.
 
